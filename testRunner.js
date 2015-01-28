@@ -42,20 +42,6 @@ module.exports = function (validators) {
 	saveResults(start, end, results, validators, goodValidators)
 };
 
-function isExcluded(name) {
-	var retval = true;
-	var grep = null;
-	process.argv.forEach(function (val, index, arr) {
-		if (val === '--grep') {
-			grep = arr[index + 1];
-			if (name.indexOf(grep) !== -1) {
-				retval = false;
-			}
-		}
-	});
-	return grep ? retval : false;
-}
-
 function verifyValidator(validator, testSuite, excludeTests) {
 	// verify that validator really works
 	//process.exit();
@@ -63,8 +49,8 @@ function verifyValidator(validator, testSuite, excludeTests) {
 	try {
 		var validatorInstance = validator.setup(testSuite.schema);
 	} catch (ex) {
-		var message = validator.name + ' could not instantiate with schema for ' + testSuite.description +
-			'. This is multiple tests failing.';
+		var message = validator.name + ' could not instantiate with schema for "' + testSuite.description +
+			'". This is multiple tests failing.';
 		console.warn(message);
 		validator.testsFailed.push({message: message});
 		return false;
@@ -79,7 +65,7 @@ function verifyValidator(validator, testSuite, excludeTests) {
 			givenResult = e.message;
 		}
 		if (givenResult !== test.valid) {
-			var message = validator.name + ' failed the test ' + testName + '. Expected result: ' +
+			var message = validator.name + ' failed the test "' + testName + '". Expected result: ' +
 				JSON.stringify(test.valid) + ' but validator returned: ' +
 				JSON.stringify(givenResult);
 			if (excludeTests.indexOf(testName) === -1) {

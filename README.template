@@ -1,7 +1,22 @@
 # json-schema-benchmark
 Benchmarks for Node.js JSON-schema validators
 
-I just wanted to find the fastest one. Because I've had a slow validator affect my REST API performance.
+# Results
+
+|{{#goodValidators}}{{name}}|{{/goodValidators}}
+|{{#goodValidators}}-----|{{/goodValidators}}
+|{{#results}}{{#fastest}}fastest {{/fastest}}>{{percentage}}% ({{hz}}){{#failed}} failed{{/failed}}|{{/results}}
+
+Generated on {{currentDate}} in {{totalTime}} minutes
+
+`is-my-json-valid` is currently by far the fastest JSON-schema validator out there.
+
+The fastest validator has 100%, the rest a lower score relative to the fastest.
+
+The number in parenthesis is the number of validations of the entire test suite per second.
+# What is this for?
+
+I just wanted to find the fastest JSON-schema validator. Because I've had a slow validator affect my REST API performance.
 
 Feel free to add more validators to the test suite in a pull request.
 
@@ -12,21 +27,6 @@ A few of the tests have been disabled, because almost none of the validators imp
 
 This benchmark is using  the `benchmark` module to gain statistically significant results.
 
-# Results
-
-`is-my-json-valid` is currently by far the fastest JSON-schema validator out there.
-
-Generated on {{currentDate}} in {{totalTime}} minutes
-
-# Results
-
-The fastest validator has 100%, the rest a lower score relative to the fastest.
-
-The number in parenthesis is the number of validations of the entire test suite per second.
-
-|{{#goodValidators}}{{name}}|{{/goodValidators}}
-|{{#goodValidators}}-----|{{/goodValidators}}
-|{{#results}}{{#fastest}}fastest {{/fastest}}>{{percentage}}% ({{hz}}){{#failed}} failed{{/failed}}|{{/results}}
 
 # Compliance with official JSON-schema test suite
 {{#validators}}
