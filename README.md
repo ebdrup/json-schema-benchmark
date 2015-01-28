@@ -5,7 +5,7 @@ Benchmarks for Node.js JSON-schema validators
 
 |is-my-json-valid|themis|z-schema 3|jjv|jayschema|
 |-----|-----|-----|-----|-----|
-|fastest >100% (5721)|>34% (1941)|>11% (608)|>9% (499)|>0% (6)|
+|fastest >100% (5998)|>29% (1715)|>9% (569)|>9% (563)|>0% (6)|
 
 Generated on Wednesday, January 28, 2015 in 0.5 minutes
 

@@ -109,7 +109,7 @@ function runBenchmark(validators, testSuites, excludeTests) {
 			console.log('Fastest is ' + this.filter('fastest').pluck('name'));
 		})
 		.run({
-			"async": false
+			async: false
 		});
 
 	var fastestTestResult = suite.reduce(function (acc, testResult) {

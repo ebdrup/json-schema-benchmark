@@ -21,7 +21,7 @@ testRunner([
 		}
 	},
 	{
-		name: "themis",
+		name: 'themis',
 		setup: function (schema) {
 			return Themis.validator(schema);
 		},
@@ -30,7 +30,7 @@ testRunner([
 		}
 	},
 	{
-		name: "jsck",
+		name: 'jsck',
 		setup: function (schema) {
 			return new jsck.draft4(schema);
 		},
@@ -39,7 +39,7 @@ testRunner([
 		}
 	},
 	{
-		name: "json-model",
+		name: 'json-model',
 		setup: function (schema) {
 			return JsonModel.validator(schema);
 		},
@@ -49,7 +49,7 @@ testRunner([
 		}
 	},
 	{
-		name: "z-schema 3",
+		name: 'z-schema 3',
 		setup: function () {
 			return new ZSchema({
 				ignoreUnresolvableReferences: true
@@ -60,7 +60,7 @@ testRunner([
 		}
 	},
 	{
-		name: "tv4",
+		name: 'tv4',
 		setup: function () {
 			return tv4;
 		},
@@ -69,7 +69,7 @@ testRunner([
 		}
 	},
 	{
-		name: "jjv",
+		name: 'jjv',
 		setup: function () {
 			return jjv();
 		},
@@ -78,7 +78,7 @@ testRunner([
 		}
 	},
 	{
-		name: "jsonschema",
+		name: 'jsonschema',
 		setup: function () {
 			return new JsonSchema.Validator();
 		},
@@ -87,7 +87,7 @@ testRunner([
 		}
 	},
 	{
-		name: "jayschema",
+		name: 'jayschema',
 		setup: function () {
 			return new JaySchema();
 		},
