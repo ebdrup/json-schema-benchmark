@@ -1,0 +1,39 @@
+{
+  "name": "json-schema-benchmark",
+  "main": "benchmark.js",
+  "license": "MIT",
+  "dependencies": {
+    "benchmark": "^1.0.0",
+    "is-my-json-valid": "^2.0.3",
+    "jayschema": "^0.3.1",
+    "jjv": "^1.0.2",
+    "json-model": "^0.2.24",
+    "jsonschema": "^1.0.0",
+    "lodash": "^3.0.0",
+    "mustache": "^1.0.0",
+    "themis": "^1.1.4",
+    "tv4": "^1.1.9",
+    "z-schema": "^3.3.2"
+  },
+  "description": "Benchmarks for Node.js JSON-schema validators",
+  "version": "1.0.0",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/Muscula/json-schema-benchmark.git"
+  },
+  "keywords": [
+    "json-schema",
+    "benchmark",
+    "speed",
+    "fastest"
+  ],
+  "author": "Allan Ebdrup",
+  "bugs": {
+    "url": "https://github.com/Muscula/json-schema-benchmark/issues"
+  },
+  "homepage": "https://github.com/Muscula/json-schema-benchmark"
+}

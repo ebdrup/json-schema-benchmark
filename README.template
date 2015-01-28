@@ -1,0 +1,27 @@
+# json-schema-benchmark
+Benchmarks for Node.js JSON-schema validators
+
+# Results (fastest validator first)
+
+Generated on {{currentDate}} in {{totalTime}} minutes
+
+{{#validators}}
+
+## {{name}}
+
+Passed {{testsPassed}} tests.
+
+Failed {{testsFailed}} tests.
+
+Number of times this validator was the fastest: {{timesFastest}}.
+{{/validators}}
+
+|Test|{{#validators}}{{name}}|{{/validators}}
+|----|{{#validators}}-----|{{/validators}}
+{{#results}}|{{name}}|{{#results}}{{#fastest}}fastest {{/fastest}}>{{percentage}}% ({{hz}}){{#failed}} failed{{/failed}}|{{/results}}
+{{/results}}
+
+# Thanks
+This code was pulled out from the benchmarks in the themis json-schema validater. Thanks go to to Johny Jose for his work.
+
+License: MIT
