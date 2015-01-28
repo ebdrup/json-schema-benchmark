@@ -1,27 +1,48 @@
 # json-schema-benchmark
 Benchmarks for Node.js JSON-schema validators
 
-# Results (fastest validator first)
+I just wanted to find the fastest one. Because I've had a slow validator affect my REST API performance.
+
+Feel free to add more validators to the test suite in a pull request.
+
+This test suite uses the official JSON-schema test suite, but it uses it to test the speed of validators.
+
+This also means, that if a validator does not pass the official test suite, it will show up in these results.
+A few of the tests have been disabled, because almost none of the validators implement these more obscure parts of the spec.
+
+This benchmark is using  the `benchmark` module to gain statistically significant results.
+
+# Results
+
+`is-my-json-valid` is currently by far the fastest JSON-schema validator out there.
 
 Generated on {{currentDate}} in {{totalTime}} minutes
 
+# Results
+
+The fastest validator has 100%, the rest a lower score relative to the fastest.
+
+The number in parenthesis is the number of validations of the entire test suite per second.
+
+|{{#goodValidators}}{{name}}|{{/goodValidators}}
+|{{#goodValidators}}-----|{{/goodValidators}}
+|{{#results}}{{#fastest}}fastest {{/fastest}}>{{percentage}}% ({{hz}}){{#failed}} failed{{/failed}}|{{/results}}
+
+# Compliance with official JSON-schema test suite
 {{#validators}}
 
 ## {{name}}
+{{#testsFailed}}
 
-Passed {{testsPassed}} tests.
+{{message}}
+{{/testsFailed}}
 
-Failed {{testsFailed}} tests.
-
-Number of times this validator was the fastest: {{timesFastest}}.
+All other tests passed.
 {{/validators}}
 
-|Test|{{#validators}}{{name}}|{{/validators}}
-|----|{{#validators}}-----|{{/validators}}
-{{#results}}|{{name}}|{{#results}}{{#fastest}}fastest {{/fastest}}>{{percentage}}% ({{hz}}){{#failed}} failed{{/failed}}|{{/results}}
-{{/results}}
-
 # Thanks
-This code was pulled out from the benchmarks in the themis json-schema validater. Thanks go to to Johny Jose for his work.
+This code was originally pulled out from the benchmarks in the `themis` json-schema validator.
+Thanks goes to Johny Jose for his work.
 
-License: MIT
+# License
+MIT
