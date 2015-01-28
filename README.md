@@ -5,9 +5,11 @@ Benchmarks for Node.js JSON-schema validators
 
 |is-my-json-valid|themis|z-schema 3|jjv|jayschema|
 |-----|-----|-----|-----|-----|
-|fastest >100% (5998)|>29% (1715)|>9% (569)|>9% (563)|>0% (6)|
+|fastest >100% (5463)|>29% (1557)|>9% (496)|>8% (434)|>0% (5)|
 
 Generated on Wednesday, January 28, 2015 in 0.5 minutes
+
+Validators tested: is-my-json-valid, themis, jsck, json-model, z-schema 3, tv4, jjv, jsonschema, jayschema,  (those not in the results above where excluded because of failing tests)
 
 `is-my-json-valid` is currently by far the fastest JSON-schema validator out there.
 

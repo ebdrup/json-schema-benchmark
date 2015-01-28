@@ -33,9 +33,9 @@ module.exports = function (validators) {
 
 	var goodValidators = validators
 		.filter(function (validator) {
-			return testSuites.every(function (testSuite) {
-				return verifyValidator(validator, testSuite, excludeTests);
-			});
+			return testSuites.reduce(function (acc, testSuite) {
+				return acc && verifyValidator(validator, testSuite, excludeTests);
+			}, true);
 		});
 	var results = runBenchmark(goodValidators, testSuites, excludeTests);
 	var end = process.hrtime();
@@ -45,6 +45,7 @@ module.exports = function (validators) {
 function verifyValidator(validator, testSuite, excludeTests) {
 	// verify that validator really works
 	//process.exit();
+	var passedAllTests = true;
 	testSuite = JSON.parse(JSON.stringify(testSuite));
 	try {
 		var validatorInstance = validator.setup(testSuite.schema);
@@ -55,7 +56,6 @@ function verifyValidator(validator, testSuite, excludeTests) {
 		validator.testsFailed.push({message: message});
 		return false;
 	}
-	var passedAllTests = true;
 	testSuite.tests.forEach(function (test) {
 		var testName = [testSuite.description, test.description].join(', ');
 		var givenResult;

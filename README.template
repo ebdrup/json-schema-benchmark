@@ -9,6 +9,8 @@ Benchmarks for Node.js JSON-schema validators
 
 Generated on {{currentDate}} in {{totalTime}} minutes
 
+Validators tested: {{#validators}}{{name}}, {{/validators}} (those not in the results above where excluded because of failing tests)
+
 `is-my-json-valid` is currently by far the fastest JSON-schema validator out there.
 
 The fastest validator has 100%, the rest a lower score relative to the fastest.
