@@ -50,8 +50,8 @@ function verifyValidator(validator, testSuite, excludeTests) {
 		var validatorInstance = validator.setup(testSuite.schema);
 	} catch (ex) {
 		var message = validator.name + ' could not instantiate with schema for "' + testSuite.description +
-			'". This is multiple tests failing.';
-		console.warn(message);
+			'". This is multiple tests failing. This excludes this validator from performance tests (' + ex.message + ')' ;
+		console.warn(message + ex.stack);
 		validator.testsFailed.push({message: message});
 		return false;
 	}
@@ -70,7 +70,7 @@ function verifyValidator(validator, testSuite, excludeTests) {
 				JSON.stringify(givenResult);
 			if (excludeTests.indexOf(testName) === -1) {
 				passedAllTests = false;
-				message += ". This excludes this validator from performance tests"
+				message += '. This excludes this validator from performance tests'
 			}
 			console.warn(message);
 			validator.testsFailed.push({message: message});

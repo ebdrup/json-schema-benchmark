@@ -5,9 +5,9 @@ Benchmarks for Node.js JSON-schema validators
 
 |is-my-json-valid|themis|z-schema 3|jjv|jayschema|
 |-----|-----|-----|-----|-----|
-|fastest >100% (5603)|>29% (1618)|>9% (493)|>7% (404)|>0% (5)|
+|fastest >100% (5721)|>34% (1941)|>11% (608)|>9% (499)|>0% (6)|
 
-Generated on Wednesday, January 28, 2015 in 0.51 minutes
+Generated on Wednesday, January 28, 2015 in 0.5 minutes
 
 `is-my-json-valid` is currently by far the fastest JSON-schema validator out there.
 
@@ -82,9 +82,16 @@ themis failed the test &quot;change resolution scope, changed scope ref invalid&
 
 All other tests passed.
 
+## jsck
+
+jsck could not instantiate with schema for &quot;valid definition&quot;. This is multiple tests failing. This excludes this validator from performance tests (Unresolvable $ref values: [&quot;http:&#x2F;&#x2F;json-schema.org&#x2F;draft-04&#x2F;schema#&quot;])
+
+All other tests passed.
+
 ## json-model
 
-json-model could not instantiate with schema for &quot;valid definition&quot;. This is multiple tests failing.
+json-model could not instantiate with schema for &quot;valid definition&quot;. This is multiple tests failing. This excludes this validator from performance tests (Requests not enabled - try JsonModel.setRequestFunction(func):
+{&quot;method&quot;:&quot;GET&quot;,&quot;url&quot;:&quot;http:&#x2F;&#x2F;json-schema.org&#x2F;draft-04&#x2F;schema&quot;})
 
 All other tests passed.
 

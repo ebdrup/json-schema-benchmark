@@ -8,6 +8,7 @@ var tv4 = require('tv4');
 var JsonModel = require('json-model');
 var Themis = require('themis');
 var imjv = require('is-my-json-valid');
+var jsck = require('jsck');
 
 testRunner([
 	{
@@ -26,6 +27,15 @@ testRunner([
 		},
 		test: function (instance, json, schema) {
 			return instance(json, '0').valid === true;
+		}
+	},
+	{
+		name: "jsck",
+		setup: function (schema) {
+			return new jsck.draft4(schema);
+		},
+		test: function (instance, json, schema) {
+			return instance.validate(json).valid === true;
 		}
 	},
 	{
