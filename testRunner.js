@@ -141,6 +141,9 @@ function runBenchmark(validators, testSuites, excludeTests) {
 			};
 		}
 	});
+	for(var i=0; i<suiteResult.length-1; i++){
+		suiteResult[i].comma = true; //for template
+	}
 	return suiteResult;
 }
 

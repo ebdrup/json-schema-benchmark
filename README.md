@@ -3,9 +3,11 @@ Benchmarks for Node.js JSON-schema validators
 
 # Results
 
+![alt text](https://chart.googleapis.com/chart?chxt=x,y&cht=bvs&chco=76A4FB&chls=2.0&chs=600x300&chxl=0:|is-my-json-valid|themis|z-schema 3|jjv|skeemas|jayschema&chd=t2:100,26.4,7.6,6.7,1.2,0.1)
+
 |is-my-json-valid|themis|z-schema 3|jjv|skeemas|jayschema|
 |-----|-----|-----|-----|-----|-----|
-|100% (5045)|26.9% (1357)|9.1% (460)|8.2% (413)|1.7% (84)|0.1% (6)|
+|100% (5881)|26.4% (1555)|7.6% (448)|6.7% (392)|1.2% (72)|0.1% (5)|
 
 Validators tested: `is-my-json-valid`, `themis`, `z-schema 3`, `jjv`, `skeemas`, `jayschema`, `jsck`, `jassi`, `JSV`, `request-validator`, `json-model`, `tv4`, `jsonschema`, 
 (those not in the results above where excluded because of failing tests - see below for details)
