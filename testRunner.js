@@ -115,7 +115,7 @@ function runBenchmark(validators, testSuites, excludeTestSuites, excludeTests) {
 	var suite = new benchmark.Suite();
 	validators.forEach(function (validator) {
 		var testSuitesCopy = JSON.parse(JSON.stringify(testSuites))
-			.filter(function(testSuite){
+			.filter(function (testSuite) {
 				return excludeTestSuites.indexOf(testSuite.description) === -1;
 			});
 		testSuitesCopy.forEach(function (testSuite) {
@@ -162,12 +162,12 @@ function runBenchmark(validators, testSuites, excludeTestSuites, excludeTests) {
 		var result = _.find(suite, function (obj) {
 			return validator.name === obj.name;
 		});
-			return {
-				hz: result.hz,
-				fastest: result.hz === fastestTestResult.hz,
-				percentage: Math.round((result.hz || 0) / fastestTestResult.hz * 1000) / 10,
-				name: validator.name
-			};
+		return {
+			hz: result.hz,
+			fastest: result.hz === fastestTestResult.hz,
+			percentage: Math.round((result.hz || 0) / fastestTestResult.hz * 1000) / 10,
+			name: validator.name
+		};
 	});
 	return suiteResult;
 }
@@ -209,7 +209,7 @@ function saveResults(start, end, results, validators, testsThatAllValidatorsFail
 				count: validator.sideEffects.length
 			};
 		})
-		.filter(function(o){
+		.filter(function (o) {
 			return o.count !== 0;
 		})
 		.sort(function (a, b) {
@@ -223,21 +223,24 @@ function saveResults(start, end, results, validators, testsThatAllValidatorsFail
 			return testsThatAllValidatorsFail.indexOf(t.testName) === -1;
 		})
 	});
-	results.sort(function(a,b){
+	results.sort(function (a, b) {
 		return b.hz - a.hz
 	});
 	var html = mustache.render(
 		template,
 		{
+
 			validators: comma(validators),
 			fastestValidator: results[0].name,
 			testsThatAllValidatorsFail: comma(testsThatAllValidatorsFail.map(function (testName) {
 				return {name: testName};
 			})),
 			validatorsFailingTests: comma(validatorsFailingTests),
+			validatorsFailingTestsGraphHeight: 16 * validatorsFailingTests.length + 20,
 			maxFailingTests: maxFailingTests,
 			validatorsSideEffects: comma(validatorsSideEffects),
 			results: comma(results),
+			resultsGraphHeight: 24 * results.length + 20,
 			currentDate: currentDate,
 			totalTime: totalTimeInMinutes
 		}

@@ -6,11 +6,17 @@ for validation causing side-effects on schema or data.
 
 # Results
 
-![performance](https://chart.googleapis.com/chart?chxt=x,y&cht=bvs&chco=76A4FB&chls=2.0&chbh=80,4,1&chs=600x200&chxl=0:|is-my-json-valid|themis|jsck|z-schema 3|jjv|skeemas|jayschema&chd=t2:100,26,12.8,10.9,10.1,1.7,0.1)
+![performance](https://chart.googleapis.com/chart?chxt=x,y&cht=bhs&chco=76A4FB&chls=2.0&chbh=20,4,1&chs=600x188&chxl=-1:|is-my-json-valid|themis|jsck|z-schema 3|jjv|skeemas|jayschema&chd=t2:100,23.2,12.8,9.9,8.5,1.7,0.1)
 
-|is-my-json-valid|themis|jsck|z-schema 3|jjv|skeemas|jayschema|
-|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|
-|100% (5006)|26% (1301)|12.8% (639)|10.9% (544)|10.1% (507)|1.7% (84)|0.1% (5)|
+|Validator|Relative speed|Number of test runs per second|
+|---------|--------------|------------------------------|
+|`is-my-json-valid`|100|4985|
+|`themis`|23.2|1158|
+|`jsck`|12.8|640|
+|`z-schema 3`|9.9|492|
+|`jjv`|8.5|422|
+|`skeemas`|1.7|84|
+|`jayschema`|0.1|5|
 
 Validators tested: `is-my-json-valid`, `themis`, `z-schema 3`, `jjv`, `skeemas`, `jayschema`, `jsck`, `jassi`, `JSV`, `request-validator`, `json-model`, `tv4`, `jsonschema`, 
 (those not in the results above where excluded because of failing tests - see below for details)
@@ -37,7 +43,7 @@ Feel free to add more validators to the test suite in a pull request.
 
 Number of failed tests per validator (lower is better)
 
-![failing tests](https://chart.googleapis.com/chart?chxt=x,y&cht=bhs&chco=76A4FB&chls=2.0&chbh=12,4,1&chs=600x240&chxl=-1:|is-my-json-valid|jjv|jayschema|z-schema 3|skeemas|themis|jsonschema|jsck|tv4|jassi|json-model|JSV|request-validator&chd=t2:9,9,10,11,13,13,17,21,26,31,40,54,139&chxr=0,0,139)
+![failing tests](https://chart.googleapis.com/chart?chxt=x,y&cht=bhs&chco=76A4FB&chls=2.0&chbh=12,4,1&chs=600x228&chxl=-1:|is-my-json-valid|jjv|jayschema|z-schema 3|skeemas|themis|jsonschema|jsck|tv4|jassi|json-model|JSV|request-validator&chd=t2:9,9,10,11,13,13,17,21,26,31,40,54,139&chxr=0,0,139)
 
 |Validator|Number of failing tests|
 |---------|-----------------------|
