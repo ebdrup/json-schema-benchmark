@@ -3,6 +3,7 @@
   "main": "benchmark.js",
   "license": "MIT",
   "dependencies": {
+    "JSV": "^4.0.2",
     "benchmark": "^1.0.0",
     "fs-readdir-recursive": "^0.1.0",
     "is-my-json-valid": "^2.0.3",
