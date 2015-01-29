@@ -9,7 +9,7 @@ for validation causing side-effects on schema or data.
 ![alt text](https://chart.googleapis.com/chart?chxt=x,y&cht=bvs&chco=76A4FB&chls=2.0&chbh=80,4,1&chs=600x200&chxl=0:{{#goodValidators}}|{{name}}{{/goodValidators}}&chd=t2:{{#results}}{{percentage}}{{#comma}},{{/comma}}{{/results}})
 
 |{{#goodValidators}}{{name}}|{{/goodValidators}}
-|{{#goodValidators}}-----|{{/goodValidators}}
+|{{#goodValidators}}:-----:|{{/goodValidators}}
 |{{#results}}{{percentage}}% ({{hz}})|{{/results}}
 
 Validators tested: {{#validators}}`{{name}}`, {{/validators}}
@@ -38,7 +38,7 @@ Feel free to add more validators to the test suite in a pull request.
 Number of failed tests per validator
 
 |{{#validators}}{{name}}|{{/validators}}
-|{{#validators}}-----|{{/validators}}
+|{{#validators}}:-----:|{{/validators}}
 |{{#validators}}{{testsFailed.length}}|{{/validators}}
 
 # Side-effects summary
@@ -46,7 +46,7 @@ Number of failed tests per validator
 Number of tests that caused side-effects. The schema or data was altered by the validator.
 
 |{{#validators}}{{name}}|{{/validators}}
-|{{#validators}}-----|{{/validators}}
+|{{#validators}}:-----:|{{/validators}}
 |{{#validators}}{{sideEffects.length}}|{{/validators}}
 
 

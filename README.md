@@ -6,11 +6,11 @@ for validation causing side-effects on schema or data.
 
 # Results
 
-![alt text](https://chart.googleapis.com/chart?chxt=x,y&cht=bvs&chco=76A4FB&chls=2.0&chbh=80,4,1&chs=600x200&chxl=0:|is-my-json-valid|themis|z-schema 3|jjv|skeemas|jayschema&chd=t2:100,31,10.9,11.9,2.4,0.1)
+![alt text](https://chart.googleapis.com/chart?chxt=x,y&cht=bvs&chco=76A4FB&chls=2.0&chbh=80,4,1&chs=600x200&chxl=0:|is-my-json-valid|themis|z-schema 3|jjv|skeemas|jayschema&chd=t2:100,24.2,9,7.7,1.4,0.1)
 
 |is-my-json-valid|themis|z-schema 3|jjv|skeemas|jayschema|
-|-----|-----|-----|-----|-----|-----|
-|100% (4163)|31% (1292)|10.9% (453)|11.9% (494)|2.4% (98)|0.1% (5)|
+|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|
+|100% (5174)|24.2% (1252)|9% (468)|7.7% (398)|1.4% (74)|0.1% (5)|
 
 Validators tested: `is-my-json-valid`, `themis`, `z-schema 3`, `jjv`, `skeemas`, `jayschema`, `jsck`, `jassi`, `JSV`, `request-validator`, `json-model`, `tv4`, `jsonschema`, 
 (those not in the results above where excluded because of failing tests - see below for details)
@@ -38,7 +38,7 @@ Feel free to add more validators to the test suite in a pull request.
 Number of failed tests per validator
 
 |is-my-json-valid|themis|z-schema 3|jjv|skeemas|jayschema|jsck|jassi|JSV|request-validator|json-model|tv4|jsonschema|
-|:-----:|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|
+|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|
 |9|13|11|9|13|10|28|31|54|141|44|26|17|
 
 # Side-effects summary
@@ -46,7 +46,7 @@ Number of failed tests per validator
 Number of tests that caused side-effects. The schema or data was altered by the validator.
 
 |is-my-json-valid|themis|z-schema 3|jjv|skeemas|jayschema|jsck|jassi|JSV|request-validator|json-model|tv4|jsonschema|
-|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|
+|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|
 |2|0|290|0|0|0|0|0|0|172|283|2|5|
 
 
