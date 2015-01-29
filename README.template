@@ -6,16 +6,16 @@ for validation causing side-effects on schema or data.
 
 # Results
 
-![performance](https://chart.googleapis.com/chart?chxt=x,y&cht=bvs&chco=76A4FB&chls=2.0&chbh=80,4,1&chs=600x200&chxl=0:{{#goodValidators}}|{{name}}{{/goodValidators}}&chd=t2:{{#results}}{{percentage}}{{#comma}},{{/comma}}{{/results}})
+![performance](https://chart.googleapis.com/chart?chxt=x,y&cht=bvs&chco=76A4FB&chls=2.0&chbh=80,4,1&chs=600x200&chxl=0:{{#results}}|{{name}}{{/results}}&chd=t2:{{#results}}{{percentage}}{{#comma}},{{/comma}}{{/results}})
 
-|{{#goodValidators}}{{name}}|{{/goodValidators}}
-|{{#goodValidators}}:-----:|{{/goodValidators}}
+|{{#results}}{{name}}|{{/results}}
+|{{#results}}:-----:|{{/results}}
 |{{#results}}{{percentage}}% ({{hz}})|{{/results}}
 
 Validators tested: {{#validators}}`{{name}}`, {{/validators}}
 (those not in the results above where excluded because of failing tests - see below for details)
 
-`is-my-json-valid` is currently by far the fastest JSON-schema validator out there.
+`{{fastestValidator}}` is currently by far the fastest JSON-schema validator out there.
 
 The fastest validator has 100%, the rest a lower score relative to the fastest.
 If a validator has a score of 5% that means that it's speed is 5% of the fastest,
@@ -27,9 +27,7 @@ The number in parenthesis is the number of validations of the entire test suite 
 
 This test suite uses the official JSON-schema test suite, but it uses it to test the speed of validators.
 
-This also means, that if a validator does not pass the official test suite, it will show up in these results (below).
-A few of the tests have been disabled for speed testing, because almost none of the validators implement these more
-obscure parts of the spec.
+This also means, that if a validator does not pass a chosen subset of the official test suite, it will show up in these results (below).
 
 This benchmark is using  the `benchmark` module to gain statistically significant results.
 
@@ -39,7 +37,7 @@ Feel free to add more validators to the test suite in a pull request.
 
 Number of failed tests per validator (lower is better)
 
-![failing tests](https://chart.googleapis.com/chart?chxt=x,y&cht=bhs&chco=76A4FB&chls=2.0&chbh=12,4,1&chs=500x240&chxl=-1:{{#validatorsFailingTests}}|{{name}}{{/validatorsFailingTests}}&chd=t2:{{#validatorsFailingTests}}{{count}}{{#comma}},{{/comma}}{{/validatorsFailingTests}}&chxr=0,0,{{maxFailingTests}})
+![failing tests](https://chart.googleapis.com/chart?chxt=x,y&cht=bhs&chco=76A4FB&chls=2.0&chbh=12,4,1&chs=600x240&chxl=-1:{{#validatorsFailingTests}}|{{name}}{{/validatorsFailingTests}}&chd=t2:{{#validatorsFailingTests}}{{count}}{{#comma}},{{/comma}}{{/validatorsFailingTests}}&chxr=0,0,{{maxFailingTests}})
 
 |Validator|Number of failing tests|
 |---------|-----------------------|
@@ -51,8 +49,8 @@ Number of failed tests per validator (lower is better)
 
 Number of tests that caused side-effects. The schema or data was altered by the validator.
 
-|Validator|Number of side-effects|
-|---------|----------------------|
+|Validator|Number of side-effects (BAD)|
+|---------|----------------------------|
 {{#validatorsSideEffects}}
 |`{{name}}`|{{count}}|
 {{/validatorsSideEffects}}

@@ -6,11 +6,11 @@ for validation causing side-effects on schema or data.
 
 # Results
 
-![performance](https://chart.googleapis.com/chart?chxt=x,y&cht=bvs&chco=76A4FB&chls=2.0&chbh=80,4,1&chs=600x200&chxl=0:|is-my-json-valid|themis|z-schema 3|jjv|skeemas|jayschema&chd=t2:100,28,10.9,11.2,2.2,0.1)
+![performance](https://chart.googleapis.com/chart?chxt=x,y&cht=bvs&chco=76A4FB&chls=2.0&chbh=80,4,1&chs=600x200&chxl=0:|is-my-json-valid|themis|jsck|z-schema 3|jjv|skeemas|jayschema&chd=t2:100,26,12.8,10.9,10.1,1.7,0.1)
 
-|is-my-json-valid|themis|z-schema 3|jjv|skeemas|jayschema|
-|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|
-|100% (4338)|28% (1215)|10.9% (472)|11.2% (487)|2.2% (94)|0.1% (5)|
+|is-my-json-valid|themis|jsck|z-schema 3|jjv|skeemas|jayschema|
+|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|
+|100% (5006)|26% (1301)|12.8% (639)|10.9% (544)|10.1% (507)|1.7% (84)|0.1% (5)|
 
 Validators tested: `is-my-json-valid`, `themis`, `z-schema 3`, `jjv`, `skeemas`, `jayschema`, `jsck`, `jassi`, `JSV`, `request-validator`, `json-model`, `tv4`, `jsonschema`, 
 (those not in the results above where excluded because of failing tests - see below for details)
@@ -27,9 +27,7 @@ The number in parenthesis is the number of validations of the entire test suite 
 
 This test suite uses the official JSON-schema test suite, but it uses it to test the speed of validators.
 
-This also means, that if a validator does not pass the official test suite, it will show up in these results (below).
-A few of the tests have been disabled for speed testing, because almost none of the validators implement these more
-obscure parts of the spec.
+This also means, that if a validator does not pass a chosen subset of the official test suite, it will show up in these results (below).
 
 This benchmark is using  the `benchmark` module to gain statistically significant results.
 
@@ -39,7 +37,7 @@ Feel free to add more validators to the test suite in a pull request.
 
 Number of failed tests per validator (lower is better)
 
-![failing tests](https://chart.googleapis.com/chart?chxt=x,y&cht=bhs&chco=76A4FB&chls=2.0&chbh=12,4,1&chs=500x240&chxl=-1:|is-my-json-valid|jjv|jayschema|z-schema 3|skeemas|themis|jsonschema|tv4|jsck|jassi|json-model|JSV|request-validator&chd=t2:9,9,10,11,13,13,17,26,28,31,44,54,141&chxr=0,0,141)
+![failing tests](https://chart.googleapis.com/chart?chxt=x,y&cht=bhs&chco=76A4FB&chls=2.0&chbh=12,4,1&chs=600x240&chxl=-1:|is-my-json-valid|jjv|jayschema|z-schema 3|skeemas|themis|jsonschema|jsck|tv4|jassi|json-model|JSV|request-validator&chd=t2:9,9,10,11,13,13,17,21,26,31,40,54,139&chxr=0,0,139)
 
 |Validator|Number of failing tests|
 |---------|-----------------------|
@@ -50,19 +48,19 @@ Number of failed tests per validator (lower is better)
 |`skeemas`|13|
 |`themis`|13|
 |`jsonschema`|17|
+|`jsck`|21|
 |`tv4`|26|
-|`jsck`|28|
 |`jassi`|31|
-|`json-model`|44|
+|`json-model`|40|
 |`JSV`|54|
-|`request-validator`|141|
+|`request-validator`|139|
 
 # Side-effects summary
 
 Number of tests that caused side-effects. The schema or data was altered by the validator.
 
-|Validator|Number of side-effects|
-|---------|----------------------|
+|Validator|Number of side-effects (BAD)|
+|---------|----------------------------|
 |`tv4`|2|
 |`jsonschema`|4|
 |`request-validator`|149|
@@ -186,13 +184,9 @@ jayschema failed the test &quot;some languages do not distinguish between differ
 
 ## `jsck` failed tests
 
-jsck could not instantiate with schema for &quot;valid definition&quot;. This is multiple tests failing. **This excludes this validator from performance tests** (Unresolvable $ref values: [&quot;http:&#x2F;&#x2F;json-schema.org&#x2F;draft-04&#x2F;schema#&quot;])
+jsck failed the test &quot;valid definition, valid definition schema&quot;. Because the schema failed to load(Unresolvable $ref values: [&quot;http:&#x2F;&#x2F;json-schema.org&#x2F;draft-04&#x2F;schema#&quot;])
 
-jsck failed the test &quot;valid definition, valid definition schema&quot;. Because the schema failed to load
-
-jsck could not instantiate with schema for &quot;invalid definition&quot;. This is multiple tests failing. **This excludes this validator from performance tests** (Unresolvable $ref values: [&quot;http:&#x2F;&#x2F;json-schema.org&#x2F;draft-04&#x2F;schema#&quot;])
-
-jsck failed the test &quot;invalid definition, invalid definition schema&quot;. Because the schema failed to load
+jsck failed the test &quot;invalid definition, invalid definition schema&quot;. Because the schema failed to load(Unresolvable $ref values: [&quot;http:&#x2F;&#x2F;json-schema.org&#x2F;draft-04&#x2F;schema#&quot;])
 
 jsck failed the test &quot;maxLength validation, two supplementary Unicode code points is long enough&quot;. Expected result: true but validator returned: false
 
@@ -200,31 +194,21 @@ jsck failed the test &quot;minLength validation, one supplementary Unicode code 
 
 jsck failed the test &quot;some languages do not distinguish between different types of numeric value, a float is not an integer even without fractional part&quot;. Expected result: false but validator returned: true
 
-jsck could not instantiate with schema for &quot;remote ref, containing refs itself&quot;. This is multiple tests failing. **This excludes this validator from performance tests** (Unresolvable $ref values: [&quot;http:&#x2F;&#x2F;json-schema.org&#x2F;draft-04&#x2F;schema#&quot;])
+jsck failed the test &quot;remote ref, containing refs itself, remote ref valid&quot;. Because the schema failed to load(Unresolvable $ref values: [&quot;http:&#x2F;&#x2F;json-schema.org&#x2F;draft-04&#x2F;schema#&quot;])
 
-jsck failed the test &quot;remote ref, containing refs itself, remote ref valid&quot;. Because the schema failed to load
+jsck failed the test &quot;remote ref, containing refs itself, remote ref invalid&quot;. Because the schema failed to load(Unresolvable $ref values: [&quot;http:&#x2F;&#x2F;json-schema.org&#x2F;draft-04&#x2F;schema#&quot;])
 
-jsck failed the test &quot;remote ref, containing refs itself, remote ref invalid&quot;. Because the schema failed to load
+jsck failed the test &quot;uniqueItems validation, non-unique array of integers is invalid&quot;. Expected result: false but validator returned: true
 
-jsck could not instantiate with schema for &quot;remote ref&quot;. This is multiple tests failing. **This excludes this validator from performance tests** (Unresolvable $ref values: [&quot;http:&#x2F;&#x2F;localhost:1234&#x2F;integer.json&quot;])
+jsck failed the test &quot;uniqueItems validation, numbers are unique if mathematically unequal&quot;. Expected result: false but validator returned: true
 
-jsck could not instantiate with schema for &quot;fragment within remote ref&quot;. This is multiple tests failing. **This excludes this validator from performance tests** (Unresolvable $ref values: [&quot;http:&#x2F;&#x2F;localhost:1234&#x2F;subSchemas.json#&#x2F;integer&quot;])
+jsck failed the test &quot;uniqueItems validation, non-unique array of objects is invalid&quot;. Expected result: false but validator returned: true
 
-jsck could not instantiate with schema for &quot;ref within remote ref&quot;. This is multiple tests failing. **This excludes this validator from performance tests** (Unresolvable $ref values: [&quot;http:&#x2F;&#x2F;localhost:1234&#x2F;subSchemas.json#&#x2F;refToInteger&quot;])
+jsck failed the test &quot;uniqueItems validation, non-unique array of nested objects is invalid&quot;. Expected result: false but validator returned: true
 
-jsck could not instantiate with schema for &quot;change resolution scope&quot;. This is multiple tests failing. **This excludes this validator from performance tests** (Unresolvable $ref values: [&quot;http:&#x2F;&#x2F;localhost:1234&#x2F;&quot;])
+jsck failed the test &quot;uniqueItems validation, non-unique array of arrays is invalid&quot;. Expected result: false but validator returned: true
 
-jsck failed the test &quot;uniqueItems validation, non-unique array of integers is invalid&quot;. Expected result: false but validator returned: true. **This excludes this validator from performance tests**
-
-jsck failed the test &quot;uniqueItems validation, numbers are unique if mathematically unequal&quot;. Expected result: false but validator returned: true. **This excludes this validator from performance tests**
-
-jsck failed the test &quot;uniqueItems validation, non-unique array of objects is invalid&quot;. Expected result: false but validator returned: true. **This excludes this validator from performance tests**
-
-jsck failed the test &quot;uniqueItems validation, non-unique array of nested objects is invalid&quot;. Expected result: false but validator returned: true. **This excludes this validator from performance tests**
-
-jsck failed the test &quot;uniqueItems validation, non-unique array of arrays is invalid&quot;. Expected result: false but validator returned: true. **This excludes this validator from performance tests**
-
-jsck failed the test &quot;uniqueItems validation, non-unique heterogeneous types are invalid&quot;. Expected result: false but validator returned: true. **This excludes this validator from performance tests**
+jsck failed the test &quot;uniqueItems validation, non-unique heterogeneous types are invalid&quot;. Expected result: false but validator returned: true
 
 **All other tests passed**.
 
@@ -382,13 +366,13 @@ JSV failed the test &quot;remote ref, containing refs itself, remote ref valid&q
 
 JSV failed the test &quot;required validation, present required property is valid&quot;. Expected result: true but validator returned: false. **This excludes this validator from performance tests**
 
-JSV failed the test &quot;uniqueItems validation, non-unique array of objects is invalid&quot;. Expected result: false but validator returned: true. **This excludes this validator from performance tests**
+JSV failed the test &quot;uniqueItems validation, non-unique array of objects is invalid&quot;. Expected result: false but validator returned: true
 
-JSV failed the test &quot;uniqueItems validation, non-unique array of nested objects is invalid&quot;. Expected result: false but validator returned: true. **This excludes this validator from performance tests**
+JSV failed the test &quot;uniqueItems validation, non-unique array of nested objects is invalid&quot;. Expected result: false but validator returned: true
 
-JSV failed the test &quot;uniqueItems validation, non-unique array of arrays is invalid&quot;. Expected result: false but validator returned: true. **This excludes this validator from performance tests**
+JSV failed the test &quot;uniqueItems validation, non-unique array of arrays is invalid&quot;. Expected result: false but validator returned: true
 
-JSV failed the test &quot;uniqueItems validation, non-unique heterogeneous types are invalid&quot;. Expected result: false but validator returned: true. **This excludes this validator from performance tests**
+JSV failed the test &quot;uniqueItems validation, non-unique heterogeneous types are invalid&quot;. Expected result: false but validator returned: true
 
 **All other tests passed**.
 
@@ -623,10 +607,6 @@ request-validator failed the test &quot;nested refs, nested ref valid&quot;. Exp
 
 request-validator failed the test &quot;remote ref, containing refs itself, remote ref valid&quot;. Expected result: true but validator returned: false
 
-request-validator could not instantiate with schema for &quot;fragment within remote ref&quot;. This is multiple tests failing. **This excludes this validator from performance tests** (request-validator: invalid schema reference &#39;http:&#x2F;&#x2F;localhost:1234&#x2F;subSchemas.json#&#x2F;integer&#39;)
-
-request-validator could not instantiate with schema for &quot;ref within remote ref&quot;. This is multiple tests failing. **This excludes this validator from performance tests** (request-validator: invalid schema reference &#39;http:&#x2F;&#x2F;localhost:1234&#x2F;subSchemas.json#&#x2F;refToInteger&#39;)
-
 request-validator failed the test &quot;required validation, present required property is valid&quot;. Expected result: true but validator returned: false. **This excludes this validator from performance tests**
 
 request-validator failed the test &quot;required default validation, not required by default&quot;. Expected result: true but validator returned: false. **This excludes this validator from performance tests**
@@ -651,29 +631,27 @@ request-validator failed the test &quot;multiple types can be specified in an ar
 
 request-validator failed the test &quot;multiple types can be specified in an array, a string is valid&quot;. Expected result: true but validator returned: false. **This excludes this validator from performance tests**
 
-request-validator failed the test &quot;uniqueItems validation, unique array of integers is valid&quot;. Expected result: true but validator returned: false. **This excludes this validator from performance tests**
+request-validator failed the test &quot;uniqueItems validation, unique array of integers is valid&quot;. Expected result: true but validator returned: false
 
-request-validator failed the test &quot;uniqueItems validation, unique array of objects is valid&quot;. Expected result: true but validator returned: false. **This excludes this validator from performance tests**
+request-validator failed the test &quot;uniqueItems validation, unique array of objects is valid&quot;. Expected result: true but validator returned: false
 
-request-validator failed the test &quot;uniqueItems validation, unique array of nested objects is valid&quot;. Expected result: true but validator returned: false. **This excludes this validator from performance tests**
+request-validator failed the test &quot;uniqueItems validation, unique array of nested objects is valid&quot;. Expected result: true but validator returned: false
 
-request-validator failed the test &quot;uniqueItems validation, unique array of arrays is valid&quot;. Expected result: true but validator returned: false. **This excludes this validator from performance tests**
+request-validator failed the test &quot;uniqueItems validation, unique array of arrays is valid&quot;. Expected result: true but validator returned: false
 
-request-validator failed the test &quot;uniqueItems validation, 1 and true are unique&quot;. Expected result: true but validator returned: false. **This excludes this validator from performance tests**
+request-validator failed the test &quot;uniqueItems validation, 1 and true are unique&quot;. Expected result: true but validator returned: false
 
-request-validator failed the test &quot;uniqueItems validation, 0 and false are unique&quot;. Expected result: true but validator returned: false. **This excludes this validator from performance tests**
+request-validator failed the test &quot;uniqueItems validation, 0 and false are unique&quot;. Expected result: true but validator returned: false
 
-request-validator failed the test &quot;uniqueItems validation, unique heterogeneous types are valid&quot;. Expected result: true but validator returned: false. **This excludes this validator from performance tests**
+request-validator failed the test &quot;uniqueItems validation, unique heterogeneous types are valid&quot;. Expected result: true but validator returned: false
 
 **All other tests passed**.
 
 
 ## `json-model` failed tests
 
-json-model could not instantiate with schema for &quot;valid definition&quot;. This is multiple tests failing. **This excludes this validator from performance tests** (Requests not enabled - try JsonModel.setRequestFunction(func):
+json-model failed the test &quot;valid definition, valid definition schema&quot;. Because the schema failed to load(Requests not enabled - try JsonModel.setRequestFunction(func):
 {&quot;method&quot;:&quot;GET&quot;,&quot;url&quot;:&quot;http:&#x2F;&#x2F;json-schema.org&#x2F;draft-04&#x2F;schema&quot;})
-
-json-model failed the test &quot;valid definition, valid definition schema&quot;. Because the schema failed to load
 
 json-model failed the test &quot;invalid definition, invalid definition schema&quot;. Expected result: false but validator returned: true
 
@@ -727,26 +705,17 @@ json-model failed the test &quot;some languages do not distinguish between diffe
 
 json-model failed the test &quot;remote ref, containing refs itself, remote ref invalid&quot;. Expected result: false but validator returned: true
 
-json-model could not instantiate with schema for &quot;remote ref&quot;. This is multiple tests failing. **This excludes this validator from performance tests** (Requests not enabled - try JsonModel.setRequestFunction(func):
-{&quot;method&quot;:&quot;GET&quot;,&quot;url&quot;:&quot;http:&#x2F;&#x2F;localhost:1234&#x2F;integer.json&quot;})
+json-model failed the test &quot;uniqueItems validation, non-unique array of integers is invalid&quot;. Expected result: false but validator returned: true
 
-json-model could not instantiate with schema for &quot;fragment within remote ref&quot;. This is multiple tests failing. **This excludes this validator from performance tests** (Requests not enabled - try JsonModel.setRequestFunction(func):
-{&quot;method&quot;:&quot;GET&quot;,&quot;url&quot;:&quot;http:&#x2F;&#x2F;localhost:1234&#x2F;subSchemas.json&quot;})
+json-model failed the test &quot;uniqueItems validation, numbers are unique if mathematically unequal&quot;. Expected result: false but validator returned: true
 
-json-model could not instantiate with schema for &quot;change resolution scope&quot;. This is multiple tests failing. **This excludes this validator from performance tests** (Requests not enabled - try JsonModel.setRequestFunction(func):
-{&quot;method&quot;:&quot;GET&quot;,&quot;url&quot;:&quot;http:&#x2F;&#x2F;localhost:1234&#x2F;folder&#x2F;folderInteger.json&quot;})
+json-model failed the test &quot;uniqueItems validation, non-unique array of objects is invalid&quot;. Expected result: false but validator returned: true
 
-json-model failed the test &quot;uniqueItems validation, non-unique array of integers is invalid&quot;. Expected result: false but validator returned: true. **This excludes this validator from performance tests**
+json-model failed the test &quot;uniqueItems validation, non-unique array of nested objects is invalid&quot;. Expected result: false but validator returned: true
 
-json-model failed the test &quot;uniqueItems validation, numbers are unique if mathematically unequal&quot;. Expected result: false but validator returned: true. **This excludes this validator from performance tests**
+json-model failed the test &quot;uniqueItems validation, non-unique array of arrays is invalid&quot;. Expected result: false but validator returned: true
 
-json-model failed the test &quot;uniqueItems validation, non-unique array of objects is invalid&quot;. Expected result: false but validator returned: true. **This excludes this validator from performance tests**
-
-json-model failed the test &quot;uniqueItems validation, non-unique array of nested objects is invalid&quot;. Expected result: false but validator returned: true. **This excludes this validator from performance tests**
-
-json-model failed the test &quot;uniqueItems validation, non-unique array of arrays is invalid&quot;. Expected result: false but validator returned: true. **This excludes this validator from performance tests**
-
-json-model failed the test &quot;uniqueItems validation, non-unique heterogeneous types are invalid&quot;. Expected result: false but validator returned: true. **This excludes this validator from performance tests**
+json-model failed the test &quot;uniqueItems validation, non-unique heterogeneous types are invalid&quot;. Expected result: false but validator returned: true
 
 **All other tests passed**.
 
@@ -795,7 +764,7 @@ tv4 failed the test &quot;some languages do not distinguish between different ty
 
 tv4 failed the test &quot;remote ref, containing refs itself, remote ref invalid&quot;. Expected result: false but validator returned: true
 
-tv4 failed the test &quot;uniqueItems validation, unique heterogeneous types are valid&quot;. Expected result: true but validator returned: false. **This excludes this validator from performance tests**
+tv4 failed the test &quot;uniqueItems validation, unique heterogeneous types are valid&quot;. Expected result: true but validator returned: false
 
 **All other tests passed**.
 

@@ -8,23 +8,23 @@ var deepEqual = require('deep-equal');
 module.exports = function (validators) {
 	var start = process.hrtime();
 	var excludeTests = [
-		'valid definition, valid definition schema',
 		'invalid definition, invalid definition schema',
-		'remote ref, containing refs itself, remote ref valid',
-		'remote ref, containing refs itself, remote ref invalid',
-		'remote ref, remote ref valid',
-		'remote ref, remote ref invalid',
-		'fragment within remote ref, remote fragment valid',
-		'fragment within remote ref, remote fragment invalid',
-		'ref within remote ref, ref within ref valid',
-		'ref within remote ref, ref within ref invalid',
-		'change resolution scope, changed scope ref valid',
-		'change resolution scope, changed scope ref invalid',
 		'maxLength validation, two supplementary Unicode code points is long enough',
 		'minLength validation, one supplementary Unicode code point is not long enough',
 		'some languages do not distinguish between different types of numeric value, a float is not an integer even without fractional part',
 		'validation of URIs, an invalid URI',
 		'validation of URIs, an invalid URI though valid URI reference'
+	];
+	var excludeTestSuites = [
+		'remote ref',
+		'remote ref, containing refs itself',
+		'fragment within remote ref',
+		'ref within remote ref',
+		'change resolution scope',
+		// these below were added to get jsck in the benchmarks)
+		'uniqueItems validation',
+		'valid definition',
+		'invalid definition'
 	];
 	var testSuites = readTests(path.join(__dirname + '/JSON-Schema-Test-Suite/tests/draft4/'));
 	validators.forEach(function (validator) {
@@ -32,20 +32,18 @@ module.exports = function (validators) {
 		validator.sideEffects = [];
 		validator.timesFastest = 0;
 	});
-
 	var goodValidators = validators
 		.filter(function (validator) {
 			return testSuites.reduce(function (acc, testSuite) {
-				return verifyValidator(validator, testSuite, excludeTests) && acc;
+				return verifyValidator(validator, testSuite, excludeTestSuites, excludeTests) && acc;
 			}, true);
 		});
 	var testsThatAllValidatorsFail = validators.reduce(function (acc, validator) {
 		return _.intersection(acc, validAndInvalid(validator));
 	}, validAndInvalid(validators[0]));
-	excludeTests = excludeTests.concat(testsThatAllValidatorsFail);
-	var results = runBenchmark(goodValidators, testSuites, excludeTests);
+	var results = runBenchmark(goodValidators, testSuites, excludeTestSuites, excludeTests);
 	var end = process.hrtime();
-	saveResults(start, end, results, validators, goodValidators, testsThatAllValidatorsFail)
+	saveResults(start, end, results, validators, testsThatAllValidatorsFail)
 };
 
 function validAndInvalid(validator) {
@@ -57,7 +55,7 @@ function validAndInvalid(validator) {
 	}))
 }
 
-function verifyValidator(validator, testSuiteIn, excludeTests) {
+function verifyValidator(validator, testSuiteIn, excludeTestSuites, excludeTests) {
 	// verify that validator really works
 	var passedAllTests = true;
 	var schemaFailedToLoad = false;
@@ -65,19 +63,16 @@ function verifyValidator(validator, testSuiteIn, excludeTests) {
 	try {
 		var validatorInstance = validator.setup(testSuite.schema);
 	} catch (ex) {
-		var message = validator.name + ' could not instantiate with schema for "' + testSuite.description +
-			'". This is multiple tests failing. **This excludes this validator from performance tests** (' + ex.message + ')';
-		//console.warn(message + ex.stack);
-		validator.failingTests.push({message: message});
-		schemaFailedToLoad = true;
+		schemaFailedToLoad = ex.message;
 	}
 	testSuite.tests.forEach(function (test) {
 		var testName = [testSuite.description, test.description].join(', ');
 		var originalData = JSON.parse(JSON.stringify(test.data));
 		var givenResult;
 		if (schemaFailedToLoad) {
-			var message = validator.name + ' failed the test "' + testName + '". Because the schema failed to load';
-			if (excludeTests.indexOf(testName) === -1) {
+			var message = validator.name + ' failed the test "' + testName + '". Because the schema failed to load' +
+				'(' + schemaFailedToLoad + ')';
+			if (excludeTests.indexOf(testName) === -1 && excludeTestSuites.indexOf(testSuite.description) === -1) {
 				passedAllTests = false;
 				message += '. **This excludes this validator from performance tests**'
 			}
@@ -104,7 +99,7 @@ function verifyValidator(validator, testSuiteIn, excludeTests) {
 			var message = validator.name + ' failed the test "' + testName + '". Expected result: ' +
 				JSON.stringify(test.valid) + ' but validator returned: ' +
 				JSON.stringify(givenResult);
-			if (excludeTests.indexOf(testName) === -1) {
+			if (excludeTests.indexOf(testName) === -1 && excludeTestSuites.indexOf(testSuite.description) === -1) {
 				passedAllTests = false;
 				message += '. **This excludes this validator from performance tests**';
 			}
@@ -116,10 +111,13 @@ function verifyValidator(validator, testSuiteIn, excludeTests) {
 	return passedAllTests;
 }
 
-function runBenchmark(validators, testSuites, excludeTests) {
+function runBenchmark(validators, testSuites, excludeTestSuites, excludeTests) {
 	var suite = new benchmark.Suite();
 	validators.forEach(function (validator) {
-		var testSuitesCopy = JSON.parse(JSON.stringify(testSuites));
+		var testSuitesCopy = JSON.parse(JSON.stringify(testSuites))
+			.filter(function(testSuite){
+				return excludeTestSuites.indexOf(testSuite.description) === -1;
+			});
 		testSuitesCopy.forEach(function (testSuite) {
 			testSuite.validatorInstance = validator.setup(testSuite.schema);
 			testSuite.tests = testSuite.tests.filter(function (test) {
@@ -160,22 +158,16 @@ function runBenchmark(validators, testSuites, excludeTests) {
 	if (fastestValidator) { // if all fail, no-one is the fastest
 		fastestValidator.timesFastest += 1;
 	}
-	var suiteResult = validators.map(function (validatorObject) {
+	var suiteResult = validators.map(function (validator) {
 		var result = _.find(suite, function (obj) {
-			return validatorObject.name === obj.name;
+			return validator.name === obj.name;
 		});
-		if (result) {
 			return {
 				hz: result.hz,
 				fastest: result.hz === fastestTestResult.hz,
-				percentage: Math.round((result.hz || 0) / fastestTestResult.hz * 1000) / 10
+				percentage: Math.round((result.hz || 0) / fastestTestResult.hz * 1000) / 10,
+				name: validator.name
 			};
-		} else {
-			return {
-				hz: -1,
-				failed: true
-			};
-		}
 	});
 	return suiteResult;
 }
@@ -194,7 +186,7 @@ function comma(arr) {
 }
 
 
-function saveResults(start, end, results, validators, goodValidators, testsThatAllValidatorsFail) {
+function saveResults(start, end, results, validators, testsThatAllValidatorsFail) {
 	var readmePath = path.join(__dirname, 'README.md');
 	var template = fs.readFileSync(path.join(__dirname, 'README.template'), 'utf-8');
 	var totalTimeInMinutes = ((end[0] - start[0]) / 60);
@@ -231,14 +223,17 @@ function saveResults(start, end, results, validators, goodValidators, testsThatA
 			return testsThatAllValidatorsFail.indexOf(t.testName) === -1;
 		})
 	});
+	results.sort(function(a,b){
+		return b.hz - a.hz
+	});
 	var html = mustache.render(
 		template,
 		{
 			validators: comma(validators),
+			fastestValidator: results[0].name,
 			testsThatAllValidatorsFail: comma(testsThatAllValidatorsFail.map(function (testName) {
 				return {name: testName};
 			})),
-			goodValidators: comma(goodValidators),
 			validatorsFailingTests: comma(validatorsFailingTests),
 			maxFailingTests: maxFailingTests,
 			validatorsSideEffects: comma(validatorsSideEffects),
