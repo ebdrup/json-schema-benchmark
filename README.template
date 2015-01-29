@@ -36,18 +36,22 @@ Feel free to add more validators to the test suite in a pull request.
 # Compliance with official JSON-schema test suite
 {{#validators}}
 
-## {{name}} failed tests
+## `{{name}}` failed tests
 {{#testsFailed}}
 
 {{message}}
 {{/testsFailed}}
 
 **All other tests passed**.
+{{#sideEffects.length}}
 
+## `{{name}}` side-effects
 {{#sideEffects}}
 
 {{message}}
 {{/sideEffects}}
+
+{{/sideEffects.length}}
 
 {{/validators}}
 

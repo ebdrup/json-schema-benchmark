@@ -6,11 +6,11 @@ for validation causing side-effects on schema or data.
 
 # Results
 
-![alt text](https://chart.googleapis.com/chart?chxt=x,y&cht=bvs&chco=76A4FB&chls=2.0&chbh=80,4,1&chs=600x200&chxl=0:|is-my-json-valid|themis|z-schema 3|jjv|skeemas|jayschema&chd=t2:100,29.4,10.3,9.6,1.8,0.1)
+![alt text](https://chart.googleapis.com/chart?chxt=x,y&cht=bvs&chco=76A4FB&chls=2.0&chbh=80,4,1&chs=600x200&chxl=0:|is-my-json-valid|themis|z-schema 3|jjv|skeemas|jayschema&chd=t2:100,36,14.2,8.8,1.7,0.1)
 
 |is-my-json-valid|themis|z-schema 3|jjv|skeemas|jayschema|
 |-----|-----|-----|-----|-----|-----|
-|100% (4183)|29.4% (1231)|10.3% (431)|9.6% (402)|1.8% (77)|0.1% (6)|
+|100% (4415)|36% (1591)|14.2% (626)|8.8% (387)|1.7% (74)|0.1% (5)|
 
 Validators tested: `is-my-json-valid`, `themis`, `z-schema 3`, `jjv`, `skeemas`, `jayschema`, `jsck`, `jassi`, `JSV`, `request-validator`, `json-model`, `tv4`, `jsonschema`, 
 (those not in the results above where excluded because of failing tests - see below for details)
@@ -35,7 +35,7 @@ Feel free to add more validators to the test suite in a pull request.
 
 # Compliance with official JSON-schema test suite
 
-## is-my-json-valid failed tests
+## `is-my-json-valid` failed tests
 
 is-my-json-valid failed the test &quot;invalid definition, invalid definition schema&quot;. Expected result: false but validator returned: true
 
@@ -57,13 +57,15 @@ is-my-json-valid failed the test &quot;change resolution scope, changed scope re
 
 **All other tests passed**.
 
+## `is-my-json-valid` side-effects
 
 is-my-json-valid had a side-effect on (altered the original) the schema (or data) in the test &quot;invalid type for default, still valid when the invalid default is used&quot;
 
 is-my-json-valid had a side-effect on (altered the original) the schema (or data) in the test &quot;invalid string value for default, still valid when the invalid default is used&quot;
 
 
-## themis failed tests
+
+## `themis` failed tests
 
 themis failed the test &quot;valid definition, valid definition schema&quot;. Expected result: true but validator returned: &quot;Object #&lt;Object&gt; has no method &#39;http:&#x2F;&#x2F;json-schema.org&#x2F;draft-04&#x2F;schema#&#39;&quot;
 
@@ -94,8 +96,7 @@ themis failed the test &quot;change resolution scope, changed scope ref invalid&
 **All other tests passed**.
 
 
-
-## z-schema 3 failed tests
+## `z-schema 3` failed tests
 
 z-schema 3 failed the test &quot;valid definition, valid definition schema&quot;. Expected result: true but validator returned: false
 
@@ -121,6 +122,7 @@ z-schema 3 failed the test &quot;change resolution scope, changed scope ref vali
 
 **All other tests passed**.
 
+## `z-schema 3` side-effects
 
 z-schema 3 had a side-effect on (altered the original) the schema (or data) in the test &quot;additionalItems as schema, additional items match schema&quot;
 
@@ -703,7 +705,8 @@ z-schema 3 had a side-effect on (altered the original) the schema (or data) in t
 z-schema 3 had a side-effect on (altered the original) the schema (or data) in the test &quot;uniqueItems validation, non-unique heterogeneous types are invalid&quot;
 
 
-## jjv failed tests
+
+## `jjv` failed tests
 
 jjv failed the test &quot;valid definition, valid definition schema&quot;. Expected result: true but validator returned: false
 
@@ -726,8 +729,7 @@ jjv failed the test &quot;change resolution scope, changed scope ref valid&quot;
 **All other tests passed**.
 
 
-
-## skeemas failed tests
+## `skeemas` failed tests
 
 skeemas failed the test &quot;valid definition, valid definition schema&quot;. Expected result: true but validator returned: &quot;Unable to locate JSON Ref (http:&#x2F;&#x2F;json-schema.org&#x2F;draft-04&#x2F;schema)&quot;
 
@@ -758,8 +760,7 @@ skeemas failed the test &quot;change resolution scope, changed scope ref invalid
 **All other tests passed**.
 
 
-
-## jayschema failed tests
+## `jayschema` failed tests
 
 jayschema failed the test &quot;maxLength validation, two supplementary Unicode code points is long enough&quot;. Expected result: true but validator returned: false
 
@@ -784,8 +785,7 @@ jayschema failed the test &quot;change resolution scope, changed scope ref valid
 **All other tests passed**.
 
 
-
-## jsck failed tests
+## `jsck` failed tests
 
 jsck could not instantiate with schema for &quot;valid definition&quot;. This is multiple tests failing. **This excludes this validator from performance tests** (Unresolvable $ref values: [&quot;http:&#x2F;&#x2F;json-schema.org&#x2F;draft-04&#x2F;schema#&quot;])
 
@@ -846,8 +846,7 @@ jsck failed the test &quot;uniqueItems validation, non-unique heterogeneous type
 **All other tests passed**.
 
 
-
-## jassi failed tests
+## `jassi` failed tests
 
 jassi failed the test &quot;invalid definition, invalid definition schema&quot;. Expected result: false but validator returned: true
 
@@ -914,8 +913,7 @@ jassi failed the test &quot;change resolution scope, changed scope ref invalid&q
 **All other tests passed**.
 
 
-
-## JSV failed tests
+## `JSV` failed tests
 
 JSV failed the test &quot;additionalItems as false without items, items defaults to empty schema so everything is valid&quot;. Expected result: true but validator returned: false. **This excludes this validator from performance tests**
 
@@ -1028,8 +1026,7 @@ JSV failed the test &quot;uniqueItems validation, non-unique heterogeneous types
 **All other tests passed**.
 
 
-
-## request-validator failed tests
+## `request-validator` failed tests
 
 request-validator failed the test &quot;additionalItems as schema, additional items match schema&quot;. Expected result: true but validator returned: false. **This excludes this validator from performance tests**
 
@@ -1315,6 +1312,7 @@ request-validator failed the test &quot;uniqueItems validation, unique heterogen
 
 **All other tests passed**.
 
+## `request-validator` side-effects
 
 request-validator had a side-effect on (altered the original) the schema (or data) in the test &quot;additionalItems as schema, additional items match schema&quot;
 
@@ -1661,7 +1659,8 @@ request-validator had a side-effect on (altered the original) the schema (or dat
 request-validator had a side-effect on (altered the original) the schema (or data) in the test &quot;uniqueItems validation, non-unique heterogeneous types are invalid&quot;
 
 
-## json-model failed tests
+
+## `json-model` failed tests
 
 json-model could not instantiate with schema for &quot;valid definition&quot;. This is multiple tests failing. **This excludes this validator from performance tests** (Requests not enabled - try JsonModel.setRequestFunction(func):
 {&quot;method&quot;:&quot;GET&quot;,&quot;url&quot;:&quot;http:&#x2F;&#x2F;json-schema.org&#x2F;draft-04&#x2F;schema&quot;})
@@ -1757,6 +1756,7 @@ json-model failed the test &quot;uniqueItems validation, non-unique heterogeneou
 
 **All other tests passed**.
 
+## `json-model` side-effects
 
 json-model had a side-effect on (altered the original) the schema (or data) in the test &quot;additionalItems as schema, additional items match schema&quot;
 
@@ -2325,7 +2325,8 @@ json-model had a side-effect on (altered the original) the schema (or data) in t
 json-model had a side-effect on (altered the original) the schema (or data) in the test &quot;uniqueItems validation, non-unique heterogeneous types are invalid&quot;
 
 
-## tv4 failed tests
+
+## `tv4` failed tests
 
 tv4 failed the test &quot;invalid definition, invalid definition schema&quot;. Expected result: false but validator returned: true
 
@@ -2381,13 +2382,15 @@ tv4 failed the test &quot;uniqueItems validation, unique heterogeneous types are
 
 **All other tests passed**.
 
+## `tv4` side-effects
 
 tv4 had a side-effect on (altered the original) the schema (or data) in the test &quot;change resolution scope, changed scope ref valid&quot;
 
 tv4 had a side-effect on (altered the original) the schema (or data) in the test &quot;change resolution scope, changed scope ref invalid&quot;
 
 
-## jsonschema failed tests
+
+## `jsonschema` failed tests
 
 jsonschema failed the test &quot;valid definition, valid definition schema&quot;. Expected result: true but validator returned: &quot;no such schema &lt;http:&#x2F;&#x2F;json-schema.org&#x2F;draft-04&#x2F;schema#&gt;&quot;
 
@@ -2425,6 +2428,7 @@ jsonschema failed the test &quot;change resolution scope, changed scope ref inva
 
 **All other tests passed**.
 
+## `jsonschema` side-effects
 
 jsonschema had a side-effect on (altered the original) the schema (or data) in the test &quot;multiple dependencies subschema, valid&quot;
 
@@ -2435,6 +2439,7 @@ jsonschema had a side-effect on (altered the original) the schema (or data) in t
 jsonschema had a side-effect on (altered the original) the schema (or data) in the test &quot;multiple dependencies subschema, wrong type other&quot;
 
 jsonschema had a side-effect on (altered the original) the schema (or data) in the test &quot;multiple dependencies subschema, wrong type both&quot;
+
 
 
 # Thanks
