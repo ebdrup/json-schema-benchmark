@@ -3,7 +3,7 @@ Benchmarks for Node.js JSON-schema validators
 
 # Results
 
-![alt text](https://chart.googleapis.com/chart?chxt=x,y&cht=bvs&chco=76A4FB&chls=2.0&chs=600x300&chxl=0:{{#goodValidators}}|{{name}}{{/goodValidators}}&chd=t2:{{#results}}{{percentage}}{{#comma}},{{/comma}}{{/results}})
+![alt text](https://chart.googleapis.com/chart?chxt=x,y&cht=bvs&chco=76A4FB&chls=2.0&chbh=80,4,1&chs=600x200&chxl=0:{{#goodValidators}}|{{name}}{{/goodValidators}}&chd=t2:{{#results}}{{percentage}}{{#comma}},{{/comma}}{{/results}})
 
 |{{#goodValidators}}{{name}}|{{/goodValidators}}
 |{{#goodValidators}}-----|{{/goodValidators}}
