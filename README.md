@@ -6,17 +6,17 @@ for validation causing side-effects on schema or data.
 
 # Results
 
-![performance](https://chart.googleapis.com/chart?chxt=x,y&cht=bhs&chco=76A4FB&chls=2.0&chbh=20,4,1&chs=600x188&chxl=-1:|is-my-json-valid|themis|jsck|z-schema 3|jjv|skeemas|jayschema&chd=t2:100,23.2,12.8,9.9,8.5,1.7,0.1)
+![performance](https://chart.googleapis.com/chart?chxt=x,y&cht=bhs&chco=76A4FB&chls=2.0&chbh=53,4,1&chs=600x419&chxl=-1:|is-my-json-valid|themis|jsck|z-schema 3|jjv|skeemas|jayschema&chd=t2:100,19,10.4,6.7,5.8,1.1,0.1)
 
 |Validator|Relative speed|Number of test runs per second|
 |---------|--------------|------------------------------|
-|`is-my-json-valid`|100|4985|
-|`themis`|23.2|1158|
-|`jsck`|12.8|640|
-|`z-schema 3`|9.9|492|
-|`jjv`|8.5|422|
-|`skeemas`|1.7|84|
-|`jayschema`|0.1|5|
+|`is-my-json-valid`|100%|6849|
+|`themis`|19%|1301|
+|`jsck`|10.4%|714|
+|`z-schema 3`|6.7%|457|
+|`jjv`|5.8%|397|
+|`skeemas`|1.1%|78|
+|`jayschema`|0.1%|6|
 
 Validators tested: `is-my-json-valid`, `themis`, `z-schema 3`, `jjv`, `skeemas`, `jayschema`, `jsck`, `jassi`, `JSV`, `request-validator`, `json-model`, `tv4`, `jsonschema`, 
 (those not in the results above where excluded because of failing tests - see below for details)
@@ -43,7 +43,7 @@ Feel free to add more validators to the test suite in a pull request.
 
 Number of failed tests per validator (lower is better)
 
-![failing tests](https://chart.googleapis.com/chart?chxt=x,y&cht=bhs&chco=76A4FB&chls=2.0&chbh=12,4,1&chs=600x228&chxl=-1:|is-my-json-valid|jjv|jayschema|z-schema 3|skeemas|themis|jsonschema|jsck|tv4|jassi|json-model|JSV|request-validator&chd=t2:9,9,10,11,13,13,17,21,26,31,40,54,139&chxr=0,0,139)
+![failing tests](https://chart.googleapis.com/chart?chxt=x,y&cht=bhs&chco=76A4FB&chls=2.0&chbh=26,4,1&chs=600x410&chxl=-1:|is-my-json-valid|jjv|jayschema|z-schema 3|skeemas|themis|jsonschema|jsck|tv4|jassi|json-model|JSV|request-validator&chd=t2:9,9,10,11,13,13,17,21,26,31,40,54,139&chxr=0,0,139)
 
 |Validator|Number of failing tests|
 |---------|-----------------------|

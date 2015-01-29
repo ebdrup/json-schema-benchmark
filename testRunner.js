@@ -226,21 +226,28 @@ function saveResults(start, end, results, validators, testsThatAllValidatorsFail
 	results.sort(function (a, b) {
 		return b.hz - a.hz
 	});
+	var graphBarSpacing = 4;
+	var resultGraphBarHeight = Math.floor(400 / results.length) - graphBarSpacing;
+	var resultsGraphHeight = (resultGraphBarHeight + graphBarSpacing) * results.length + 20;
+	var validatorsFailingTestsGraphBarHeight = Math.floor(400 / validatorsFailingTests.length) - graphBarSpacing;
+	var validatorsFailingTestsGraphHeight = (validatorsFailingTestsGraphBarHeight + graphBarSpacing) * validatorsFailingTests.length + 20;
 	var html = mustache.render(
 		template,
 		{
-
+			graphBarSpacing: graphBarSpacing,
 			validators: comma(validators),
 			fastestValidator: results[0].name,
 			testsThatAllValidatorsFail: comma(testsThatAllValidatorsFail.map(function (testName) {
 				return {name: testName};
 			})),
 			validatorsFailingTests: comma(validatorsFailingTests),
-			validatorsFailingTestsGraphHeight: 16 * validatorsFailingTests.length + 20,
+			validatorsFailingTestsGraphHeight: validatorsFailingTestsGraphHeight,
+			validatorsFailingTestsGraphBarHeight: validatorsFailingTestsGraphBarHeight,
 			maxFailingTests: maxFailingTests,
 			validatorsSideEffects: comma(validatorsSideEffects),
 			results: comma(results),
-			resultsGraphHeight: 24 * results.length + 20,
+			resultsGraphHeight: resultsGraphHeight,
+			resultGraphBarHeight: resultGraphBarHeight,
 			currentDate: currentDate,
 			totalTime: totalTimeInMinutes
 		}
