@@ -33,7 +33,24 @@ This benchmark is using  the `benchmark` module to gain statistically significan
 
 Feel free to add more validators to the test suite in a pull request.
 
-# Compliance with official JSON-schema test suite
+# Test failure summary
+
+Number of failed tests per validator
+
+|{{#validators}}{{name}}|{{/validators}}
+|{{#validators}}-----|{{/validators}}
+|{{#validators}}{{testsFailed.length}}|{{/validators}}
+
+# Side-effects summary
+
+Number of tests that caused side-effects. The schema or data was altered by the validator.
+
+|{{#validators}}{{name}}|{{/validators}}
+|{{#validators}}-----|{{/validators}}
+|{{#validators}}{{sideEffects.length}}|{{/validators}}
+
+
+# Detailed list of failed tests and side-effects
 {{#validators}}
 
 ## `{{name}}` failed tests
