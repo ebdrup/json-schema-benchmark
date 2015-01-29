@@ -3,6 +3,7 @@ var path = require('path');
 var _ = require('lodash');
 var benchmark = require('benchmark');
 var mustache = require('mustache');
+var deepEqual = require('deep-equal');
 
 module.exports = function (validators) {
 	var start = process.hrtime();
@@ -28,6 +29,7 @@ module.exports = function (validators) {
 	var testSuites = readTests(path.join(__dirname + '/JSON-Schema-Test-Suite/tests/draft4/'));
 	validators.forEach(function (validator) {
 		validator.testsFailed = [];
+		validator.sideEffects = [];
 		validator.timesFastest = 0;
 	});
 
@@ -42,27 +44,46 @@ module.exports = function (validators) {
 	saveResults(start, end, results, validators, goodValidators)
 };
 
-function verifyValidator(validator, testSuite, excludeTests) {
+function verifyValidator(validator, testSuiteIn, excludeTests) {
 	// verify that validator really works
 	//process.exit();
 	var passedAllTests = true;
-	testSuite = JSON.parse(JSON.stringify(testSuite));
+	var schemaFailedToLoad = false;
+	var testSuite = JSON.parse(JSON.stringify(testSuiteIn));
 	try {
 		var validatorInstance = validator.setup(testSuite.schema);
 	} catch (ex) {
 		var message = validator.name + ' could not instantiate with schema for "' + testSuite.description +
-			'". This is multiple tests failing. **This excludes this validator from performance tests** (' + ex.message + ')' ;
+			'". This is multiple tests failing. **This excludes this validator from performance tests** (' + ex.message + ')';
 		//console.warn(message + ex.stack);
 		validator.testsFailed.push({message: message});
-		return false;
+		schemaFailedToLoad = true;
 	}
 	testSuite.tests.forEach(function (test) {
 		var testName = [testSuite.description, test.description].join(', ');
 		var givenResult;
+		if (schemaFailedToLoad) {
+			var message = validator.name + ' failed the test "' + testName + '". Because the schema failed to load';
+			if (excludeTests.indexOf(testName) === -1) {
+				passedAllTests = false;
+				message += '. **This excludes this validator from performance tests**'
+			}
+			//console.warn(message);
+			validator.testsFailed.push({message: message, test: test});
+			return;
+		}
 		try {
 			givenResult = validator.test(validatorInstance, test.data, testSuite.schema);
 		} catch (e) {
 			givenResult = e.message;
+		}
+		if (!deepEqual(testSuite, testSuiteIn)) {
+			var message = validator.name + ' had a side-effect on (altered the original) the schema (or data) in the test "' + testName + '"';
+			//console.warn(message);
+			//console.log(JSON.stringify(testSuite, null, '\t'));
+			//console.log(JSON.stringify(testSuiteIn, null, '\t'));
+			//process.exit();
+			validator.sideEffects.push({message: message, test: test});
 		}
 		if (givenResult !== test.valid) {
 			var message = validator.name + ' failed the test "' + testName + '". Expected result: ' +
@@ -73,7 +94,7 @@ function verifyValidator(validator, testSuite, excludeTests) {
 				message += '. **This excludes this validator from performance tests**'
 			}
 			//console.warn(message);
-			validator.testsFailed.push({message: message});
+			validator.testsFailed.push({message: message, test: test});
 		}
 	});
 	return passedAllTests;
@@ -82,13 +103,12 @@ function verifyValidator(validator, testSuite, excludeTests) {
 function runBenchmark(validators, testSuites, excludeTests) {
 	var suite = new benchmark.Suite();
 	validators.forEach(function (validator) {
-		// add it to benchmark
 		var testSuitesCopy = JSON.parse(JSON.stringify(testSuites));
 		testSuitesCopy.forEach(function (testSuite) {
 			testSuite.validatorInstance = validator.setup(testSuite.schema);
-			testSuite.tests = testSuite.tests.filter(function(test){
+			testSuite.tests = testSuite.tests.filter(function (test) {
 				var testName = [testSuite.description, test.description].join(', ');
-				return excludeTests.indexOf(testName)  === -1;
+				return excludeTests.indexOf(testName) === -1;
 			});
 		});
 		suite.add(validator.name, function () {
@@ -132,7 +152,7 @@ function runBenchmark(validators, testSuites, excludeTests) {
 			return {
 				hz: result.hz,
 				fastest: result.hz === fastestTestResult.hz,
-				percentage: Math.round((result.hz || 0) / fastestTestResult.hz * 1000)/10
+				percentage: Math.round((result.hz || 0) / fastestTestResult.hz * 1000) / 10
 			};
 		} else {
 			return {
@@ -141,7 +161,7 @@ function runBenchmark(validators, testSuites, excludeTests) {
 			};
 		}
 	});
-	for(var i=0; i<suiteResult.length-1; i++){
+	for (var i = 0; i < suiteResult.length - 1; i++) {
 		suiteResult[i].comma = true; //for template
 	}
 	return suiteResult;
