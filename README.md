@@ -3,11 +3,11 @@ Benchmarks for Node.js JSON-schema validators
 
 # Results
 
-|is-my-json-valid|themis|z-schema 3|jjv|jayschema|
-|-----|-----|-----|-----|-----|
-|fastest >100% (5358)|>31% (1666)|>11% (570)|>7% (388)|>0% (6)|
+|is-my-json-valid|themis|z-schema 3|jjv|skeemas|jayschema|
+|-----|-----|-----|-----|-----|-----|
+|fastest >100% (4364)|>34% (1471)|>12% (545)|>10% (444)|>2% (74)|>0% (5)|
 
-Validators tested: `is-my-json-valid`, `themis`, `z-schema 3`, `jjv`, `jayschema`, `jsck`, `jassi`, `JSV`, `request-validator`, `json-model`, `tv4`, `jsonschema`, 
+Validators tested: `is-my-json-valid`, `themis`, `z-schema 3`, `jjv`, `skeemas`, `jayschema`, `jsck`, `jassi`, `JSV`, `request-validator`, `json-model`, `tv4`, `jsonschema`, 
 (those not in the results above where excluded because of failing tests - see below for details)
 
 `is-my-json-valid` is currently by far the fastest JSON-schema validator out there.
@@ -129,6 +129,36 @@ jjv failed the test &quot;fragment within remote ref, remote fragment valid&quot
 jjv failed the test &quot;ref within remote ref, ref within ref valid&quot;. Expected result: true but validator returned: false
 
 jjv failed the test &quot;change resolution scope, changed scope ref valid&quot;. Expected result: true but validator returned: false
+
+All other tests passed.
+
+## skeemas
+
+skeemas failed the test &quot;valid definition, valid definition schema&quot;. Expected result: true but validator returned: &quot;Unable to locate JSON Ref (http:&#x2F;&#x2F;json-schema.org&#x2F;draft-04&#x2F;schema)&quot;
+
+skeemas failed the test &quot;invalid definition, invalid definition schema&quot;. Expected result: false but validator returned: &quot;Unable to locate JSON Ref (http:&#x2F;&#x2F;json-schema.org&#x2F;draft-04&#x2F;schema)&quot;
+
+skeemas failed the test &quot;some languages do not distinguish between different types of numeric value, a float is not an integer even without fractional part&quot;. Expected result: false but validator returned: true
+
+skeemas failed the test &quot;remote ref, containing refs itself, remote ref valid&quot;. Expected result: true but validator returned: &quot;Unable to locate JSON Ref (http:&#x2F;&#x2F;json-schema.org&#x2F;draft-04&#x2F;schema)&quot;
+
+skeemas failed the test &quot;remote ref, containing refs itself, remote ref invalid&quot;. Expected result: false but validator returned: &quot;Unable to locate JSON Ref (http:&#x2F;&#x2F;json-schema.org&#x2F;draft-04&#x2F;schema)&quot;
+
+skeemas failed the test &quot;remote ref, remote ref valid&quot;. Expected result: true but validator returned: &quot;Unable to locate JSON Ref (http:&#x2F;&#x2F;localhost:1234&#x2F;integer.json)&quot;
+
+skeemas failed the test &quot;remote ref, remote ref invalid&quot;. Expected result: false but validator returned: &quot;Unable to locate JSON Ref (http:&#x2F;&#x2F;localhost:1234&#x2F;integer.json)&quot;
+
+skeemas failed the test &quot;fragment within remote ref, remote fragment valid&quot;. Expected result: true but validator returned: &quot;Unable to locate JSON Ref (http:&#x2F;&#x2F;localhost:1234&#x2F;subSchemas.json)&quot;
+
+skeemas failed the test &quot;fragment within remote ref, remote fragment invalid&quot;. Expected result: false but validator returned: &quot;Unable to locate JSON Ref (http:&#x2F;&#x2F;localhost:1234&#x2F;subSchemas.json)&quot;
+
+skeemas failed the test &quot;ref within remote ref, ref within ref valid&quot;. Expected result: true but validator returned: &quot;Unable to locate JSON Ref (http:&#x2F;&#x2F;localhost:1234&#x2F;subSchemas.json)&quot;
+
+skeemas failed the test &quot;ref within remote ref, ref within ref invalid&quot;. Expected result: false but validator returned: &quot;Unable to locate JSON Ref (http:&#x2F;&#x2F;localhost:1234&#x2F;subSchemas.json)&quot;
+
+skeemas failed the test &quot;change resolution scope, changed scope ref valid&quot;. Expected result: true but validator returned: &quot;Unable to locate JSON Ref (http:&#x2F;&#x2F;localhost:1234&#x2F;folder&#x2F;folderInteger.json)&quot;
+
+skeemas failed the test &quot;change resolution scope, changed scope ref invalid&quot;. Expected result: false but validator returned: &quot;Unable to locate JSON Ref (http:&#x2F;&#x2F;localhost:1234&#x2F;folder&#x2F;folderInteger.json)&quot;
 
 All other tests passed.
 

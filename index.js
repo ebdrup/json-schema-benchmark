@@ -12,6 +12,7 @@ var Themis = require('themis');
 var imjv = require('is-my-json-valid');
 var jsck = require('jsck');
 var requestValidator = require('request-validator');
+var skeemas = require('skeemas');
 
 testRunner([
 	{
@@ -29,7 +30,7 @@ testRunner([
 			return Themis.validator(schema);
 		},
 		test: function (instance, json, schema) {
-			return instance(json, '0').valid === true;
+			return instance(json, '0').valid;
 		}
 	},
 	{
@@ -53,6 +54,15 @@ testRunner([
 		}
 	},
 	{
+		name: 'skeemas',
+		setup: function (schema) {
+			return skeemas;
+		},
+		test: function (instance, json, schema) {
+			return instance.validate(json, schema).valid;
+		}
+	},
+	{
 		name: 'jayschema',
 		setup: function () {
 			return new JaySchema();
@@ -67,7 +77,7 @@ testRunner([
 			return new jsck.draft4(schema);
 		},
 		test: function (instance, json, schema) {
-			return instance.validate(json).valid === true;
+			return instance.validate(json).valid;
 		}
 	},
 	{
@@ -110,7 +120,7 @@ testRunner([
 			return JsonModel.validator(schema);
 		},
 		test: function (instance, json, schema) {
-			return instance(json).valid === true;
+			return instance(json).valid;
 		}
 	},
 	{
@@ -119,7 +129,7 @@ testRunner([
 			return tv4;
 		},
 		test: function (instance, json, schema) {
-			return instance.validateResult(json, schema).valid === true;
+			return instance.validateResult(json, schema).valid;
 		}
 	},
 	{
