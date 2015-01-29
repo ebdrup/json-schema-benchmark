@@ -11,6 +11,7 @@ var JsonModel = require('json-model');
 var Themis = require('themis');
 var imjv = require('is-my-json-valid');
 var jsck = require('jsck');
+var requestValidator = require('request-validator');
 
 testRunner([
 	{
@@ -78,6 +79,7 @@ testRunner([
 			return instance(json, schema).length === 0;
 		}
 	},
+
 	{
 		name: 'JSV',
 		setup: function (schema) {
@@ -85,6 +87,21 @@ testRunner([
 		},
 		test: function (instance, json, schema) {
 			return instance.JSV.createEnvironment().validate(json, schema).errors.length === 0;
+		}
+	},
+	{
+		name: 'request-validator',
+		setup: function (schema) {
+			return requestValidator(schema);
+		},
+		test: function (instance, json, schema) {
+			try {
+				instance(json);
+				return true;
+			}
+			catch (e) {
+				return false;
+			}
 		}
 	},
 	{
