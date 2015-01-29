@@ -37,7 +37,7 @@ Feel free to add more validators to the test suite in a pull request.
 
 # Test failure summary
 
-Number of failed tests per validator
+Number of failed tests per validator (lower is better)
 
 ![failing tests](https://chart.googleapis.com/chart?chxt=x,y&cht=bhs&chco=76A4FB&chls=2.0&chbh=12,4,1&chs=500x240&chxl=-1:{{#validatorsFailingTests}}|{{name}}{{/validatorsFailingTests}}&chd=t2:{{#validatorsFailingTests}}{{count}}{{#comma}},{{/comma}}{{/validatorsFailingTests}}&chxr=0,0,{{maxFailingTests}})
 

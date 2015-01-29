@@ -37,7 +37,7 @@ Feel free to add more validators to the test suite in a pull request.
 
 # Test failure summary
 
-Number of failed tests per validator
+Number of failed tests per validator (lower is better)
 
 ![failing tests](https://chart.googleapis.com/chart?chxt=x,y&cht=bhs&chco=76A4FB&chls=2.0&chbh=12,4,1&chs=500x240&chxl=-1:|is-my-json-valid|jjv|jayschema|z-schema 3|skeemas|themis|jsonschema|tv4|jsck|jassi|json-model|JSV|request-validator&chd=t2:9,9,10,11,13,13,17,26,28,31,44,54,141&chxr=0,0,141)
 
