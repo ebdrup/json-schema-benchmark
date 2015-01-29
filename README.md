@@ -6,11 +6,11 @@ for validation causing side-effects on schema or data.
 
 # Results
 
-![performance](https://chart.googleapis.com/chart?chxt=x,y&cht=bvs&chco=76A4FB&chls=2.0&chbh=80,4,1&chs=600x200&chxl=0:|is-my-json-valid|themis|z-schema 3|jjv|skeemas|jayschema&chd=t2:100,23.8,6.9,6.9,1.3,0.1)
+![performance](https://chart.googleapis.com/chart?chxt=x,y&cht=bvs&chco=76A4FB&chls=2.0&chbh=80,4,1&chs=600x200&chxl=0:|is-my-json-valid|themis|z-schema 3|jjv|skeemas|jayschema&chd=t2:100,27.5,10.9,9.3,1.8,0.1)
 
 |is-my-json-valid|themis|z-schema 3|jjv|skeemas|jayschema|
 |:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|
-|100% (5578)|23.8% (1325)|6.9% (383)|6.9% (385)|1.3% (71)|0.1% (6)|
+|100% (4247)|27.5% (1170)|10.9% (462)|9.3% (397)|1.8% (76)|0.1% (6)|
 
 Validators tested: `is-my-json-valid`, `themis`, `z-schema 3`, `jjv`, `skeemas`, `jayschema`, `jsck`, `jassi`, `JSV`, `request-validator`, `json-model`, `tv4`, `jsonschema`, 
 (those not in the results above where excluded because of failing tests - see below for details)
@@ -80,6 +80,25 @@ Number of tests that caused side-effects. The schema or data was altered by the 
 
 # Detailed list of failed tests and side-effects
 
+## All validators fail these tests (not included under each validator)
+
+remote ref, remote ref invalid
+
+fragment within remote ref, remote fragment invalid
+
+ref within remote ref, ref within ref invalid
+
+change resolution scope, changed scope ref invalid
+
+remote ref, remote ref valid
+
+fragment within remote ref, remote fragment valid
+
+ref within remote ref, ref within ref valid
+
+change resolution scope, changed scope ref valid
+
+
 ## `is-my-json-valid` failed tests
 
 is-my-json-valid failed the test &quot;invalid definition, invalid definition schema&quot;. Expected result: false but validator returned: true
@@ -91,14 +110,6 @@ is-my-json-valid failed the test &quot;minLength validation, one supplementary U
 is-my-json-valid failed the test &quot;some languages do not distinguish between different types of numeric value, a float is not an integer even without fractional part&quot;. Expected result: false but validator returned: true
 
 is-my-json-valid failed the test &quot;remote ref, containing refs itself, remote ref invalid&quot;. Expected result: false but validator returned: true
-
-is-my-json-valid failed the test &quot;remote ref, remote ref invalid&quot;. Expected result: false but validator returned: true
-
-is-my-json-valid failed the test &quot;fragment within remote ref, remote fragment invalid&quot;. Expected result: false but validator returned: true
-
-is-my-json-valid failed the test &quot;ref within remote ref, ref within ref invalid&quot;. Expected result: false but validator returned: true
-
-is-my-json-valid failed the test &quot;change resolution scope, changed scope ref invalid&quot;. Expected result: false but validator returned: true
 
 **All other tests passed**.
 
@@ -114,22 +125,6 @@ themis failed the test &quot;some languages do not distinguish between different
 themis failed the test &quot;remote ref, containing refs itself, remote ref valid&quot;. Expected result: true but validator returned: &quot;Object #&lt;Object&gt; has no method &#39;http:&#x2F;&#x2F;json-schema.org&#x2F;draft-04&#x2F;schema#&#39;&quot;
 
 themis failed the test &quot;remote ref, containing refs itself, remote ref invalid&quot;. Expected result: false but validator returned: &quot;Object #&lt;Object&gt; has no method &#39;http:&#x2F;&#x2F;json-schema.org&#x2F;draft-04&#x2F;schema#&#39;&quot;
-
-themis failed the test &quot;remote ref, remote ref valid&quot;. Expected result: true but validator returned: &quot;Object #&lt;Object&gt; has no method &#39;http:&#x2F;&#x2F;localhost:1234&#x2F;integer.json&#39;&quot;
-
-themis failed the test &quot;remote ref, remote ref invalid&quot;. Expected result: false but validator returned: &quot;Object #&lt;Object&gt; has no method &#39;http:&#x2F;&#x2F;localhost:1234&#x2F;integer.json&#39;&quot;
-
-themis failed the test &quot;fragment within remote ref, remote fragment valid&quot;. Expected result: true but validator returned: &quot;Object #&lt;Object&gt; has no method &#39;http:&#x2F;&#x2F;localhost:1234&#x2F;subSchemas.json#&#x2F;integer&#39;&quot;
-
-themis failed the test &quot;fragment within remote ref, remote fragment invalid&quot;. Expected result: false but validator returned: &quot;Object #&lt;Object&gt; has no method &#39;http:&#x2F;&#x2F;localhost:1234&#x2F;subSchemas.json#&#x2F;integer&#39;&quot;
-
-themis failed the test &quot;ref within remote ref, ref within ref valid&quot;. Expected result: true but validator returned: &quot;Object #&lt;Object&gt; has no method &#39;http:&#x2F;&#x2F;localhost:1234&#x2F;subSchemas.json#&#x2F;refToInteger&#39;&quot;
-
-themis failed the test &quot;ref within remote ref, ref within ref invalid&quot;. Expected result: false but validator returned: &quot;Object #&lt;Object&gt; has no method &#39;http:&#x2F;&#x2F;localhost:1234&#x2F;subSchemas.json#&#x2F;refToInteger&#39;&quot;
-
-themis failed the test &quot;change resolution scope, changed scope ref valid&quot;. Expected result: true but validator returned: &quot;Object #&lt;Object&gt; has no method &#39;0&#39;&quot;
-
-themis failed the test &quot;change resolution scope, changed scope ref invalid&quot;. Expected result: false but validator returned: &quot;Object #&lt;Object&gt; has no method &#39;0&#39;&quot;
 
 **All other tests passed**.
 
@@ -149,14 +144,6 @@ z-schema 3 failed the test &quot;validation of URIs, an invalid URI though valid
 z-schema 3 failed the test &quot;some languages do not distinguish between different types of numeric value, a float is not an integer even without fractional part&quot;. Expected result: false but validator returned: true
 
 z-schema 3 failed the test &quot;remote ref, containing refs itself, remote ref valid&quot;. Expected result: true but validator returned: false
-
-z-schema 3 failed the test &quot;remote ref, remote ref valid&quot;. Expected result: true but validator returned: false
-
-z-schema 3 failed the test &quot;fragment within remote ref, remote fragment valid&quot;. Expected result: true but validator returned: false
-
-z-schema 3 failed the test &quot;ref within remote ref, ref within ref valid&quot;. Expected result: true but validator returned: false
-
-z-schema 3 failed the test &quot;change resolution scope, changed scope ref valid&quot;. Expected result: true but validator returned: false
 
 **All other tests passed**.
 
@@ -756,14 +743,6 @@ jjv failed the test &quot;some languages do not distinguish between different ty
 
 jjv failed the test &quot;remote ref, containing refs itself, remote ref valid&quot;. Expected result: true but validator returned: false
 
-jjv failed the test &quot;remote ref, remote ref valid&quot;. Expected result: true but validator returned: false
-
-jjv failed the test &quot;fragment within remote ref, remote fragment valid&quot;. Expected result: true but validator returned: false
-
-jjv failed the test &quot;ref within remote ref, ref within ref valid&quot;. Expected result: true but validator returned: false
-
-jjv failed the test &quot;change resolution scope, changed scope ref valid&quot;. Expected result: true but validator returned: false
-
 **All other tests passed**.
 
 
@@ -779,22 +758,6 @@ skeemas failed the test &quot;remote ref, containing refs itself, remote ref val
 
 skeemas failed the test &quot;remote ref, containing refs itself, remote ref invalid&quot;. Expected result: false but validator returned: &quot;Unable to locate JSON Ref (http:&#x2F;&#x2F;json-schema.org&#x2F;draft-04&#x2F;schema)&quot;
 
-skeemas failed the test &quot;remote ref, remote ref valid&quot;. Expected result: true but validator returned: &quot;Unable to locate JSON Ref (http:&#x2F;&#x2F;localhost:1234&#x2F;integer.json)&quot;
-
-skeemas failed the test &quot;remote ref, remote ref invalid&quot;. Expected result: false but validator returned: &quot;Unable to locate JSON Ref (http:&#x2F;&#x2F;localhost:1234&#x2F;integer.json)&quot;
-
-skeemas failed the test &quot;fragment within remote ref, remote fragment valid&quot;. Expected result: true but validator returned: &quot;Unable to locate JSON Ref (http:&#x2F;&#x2F;localhost:1234&#x2F;subSchemas.json)&quot;
-
-skeemas failed the test &quot;fragment within remote ref, remote fragment invalid&quot;. Expected result: false but validator returned: &quot;Unable to locate JSON Ref (http:&#x2F;&#x2F;localhost:1234&#x2F;subSchemas.json)&quot;
-
-skeemas failed the test &quot;ref within remote ref, ref within ref valid&quot;. Expected result: true but validator returned: &quot;Unable to locate JSON Ref (http:&#x2F;&#x2F;localhost:1234&#x2F;subSchemas.json)&quot;
-
-skeemas failed the test &quot;ref within remote ref, ref within ref invalid&quot;. Expected result: false but validator returned: &quot;Unable to locate JSON Ref (http:&#x2F;&#x2F;localhost:1234&#x2F;subSchemas.json)&quot;
-
-skeemas failed the test &quot;change resolution scope, changed scope ref valid&quot;. Expected result: true but validator returned: &quot;Unable to locate JSON Ref (http:&#x2F;&#x2F;localhost:1234&#x2F;folder&#x2F;folderInteger.json)&quot;
-
-skeemas failed the test &quot;change resolution scope, changed scope ref invalid&quot;. Expected result: false but validator returned: &quot;Unable to locate JSON Ref (http:&#x2F;&#x2F;localhost:1234&#x2F;folder&#x2F;folderInteger.json)&quot;
-
 **All other tests passed**.
 
 
@@ -807,18 +770,6 @@ jayschema failed the test &quot;minLength validation, one supplementary Unicode 
 jayschema failed the test &quot;validation of URIs, an invalid URI though valid URI reference&quot;. Expected result: false but validator returned: true
 
 jayschema failed the test &quot;some languages do not distinguish between different types of numeric value, a float is not an integer even without fractional part&quot;. Expected result: false but validator returned: true
-
-jayschema failed the test &quot;remote ref, remote ref valid&quot;. Expected result: true but validator returned: false
-
-jayschema failed the test &quot;fragment within remote ref, remote fragment valid&quot;. Expected result: true but validator returned: &quot;Cannot convert null to object&quot;
-
-jayschema failed the test &quot;fragment within remote ref, remote fragment invalid&quot;. Expected result: false but validator returned: &quot;Cannot convert null to object&quot;
-
-jayschema failed the test &quot;ref within remote ref, ref within ref valid&quot;. Expected result: true but validator returned: &quot;Cannot convert null to object&quot;
-
-jayschema failed the test &quot;ref within remote ref, ref within ref invalid&quot;. Expected result: false but validator returned: &quot;Cannot convert null to object&quot;
-
-jayschema failed the test &quot;change resolution scope, changed scope ref valid&quot;. Expected result: true but validator returned: false
 
 **All other tests passed**.
 
@@ -847,27 +798,11 @@ jsck failed the test &quot;remote ref, containing refs itself, remote ref invali
 
 jsck could not instantiate with schema for &quot;remote ref&quot;. This is multiple tests failing. **This excludes this validator from performance tests** (Unresolvable $ref values: [&quot;http:&#x2F;&#x2F;localhost:1234&#x2F;integer.json&quot;])
 
-jsck failed the test &quot;remote ref, remote ref valid&quot;. Because the schema failed to load
-
-jsck failed the test &quot;remote ref, remote ref invalid&quot;. Because the schema failed to load
-
 jsck could not instantiate with schema for &quot;fragment within remote ref&quot;. This is multiple tests failing. **This excludes this validator from performance tests** (Unresolvable $ref values: [&quot;http:&#x2F;&#x2F;localhost:1234&#x2F;subSchemas.json#&#x2F;integer&quot;])
-
-jsck failed the test &quot;fragment within remote ref, remote fragment valid&quot;. Because the schema failed to load
-
-jsck failed the test &quot;fragment within remote ref, remote fragment invalid&quot;. Because the schema failed to load
 
 jsck could not instantiate with schema for &quot;ref within remote ref&quot;. This is multiple tests failing. **This excludes this validator from performance tests** (Unresolvable $ref values: [&quot;http:&#x2F;&#x2F;localhost:1234&#x2F;subSchemas.json#&#x2F;refToInteger&quot;])
 
-jsck failed the test &quot;ref within remote ref, ref within ref valid&quot;. Because the schema failed to load
-
-jsck failed the test &quot;ref within remote ref, ref within ref invalid&quot;. Because the schema failed to load
-
 jsck could not instantiate with schema for &quot;change resolution scope&quot;. This is multiple tests failing. **This excludes this validator from performance tests** (Unresolvable $ref values: [&quot;http:&#x2F;&#x2F;localhost:1234&#x2F;&quot;])
-
-jsck failed the test &quot;change resolution scope, changed scope ref valid&quot;. Because the schema failed to load
-
-jsck failed the test &quot;change resolution scope, changed scope ref invalid&quot;. Because the schema failed to load
 
 jsck failed the test &quot;uniqueItems validation, non-unique array of integers is invalid&quot;. Expected result: false but validator returned: true. **This excludes this validator from performance tests**
 
@@ -939,14 +874,6 @@ jassi failed the test &quot;escaped pointer ref, percent&quot;. Expected result:
 jassi failed the test &quot;nested refs, nested ref invalid&quot;. Expected result: false but validator returned: true. **This excludes this validator from performance tests**
 
 jassi failed the test &quot;remote ref, containing refs itself, remote ref invalid&quot;. Expected result: false but validator returned: true
-
-jassi failed the test &quot;remote ref, remote ref invalid&quot;. Expected result: false but validator returned: true
-
-jassi failed the test &quot;fragment within remote ref, remote fragment invalid&quot;. Expected result: false but validator returned: true
-
-jassi failed the test &quot;ref within remote ref, ref within ref invalid&quot;. Expected result: false but validator returned: true
-
-jassi failed the test &quot;change resolution scope, changed scope ref invalid&quot;. Expected result: false but validator returned: true
 
 **All other tests passed**.
 
@@ -1042,14 +969,6 @@ JSV failed the test &quot;some languages do not distinguish between different ty
 JSV failed the test &quot;nested refs, nested ref valid&quot;. Expected result: true but validator returned: false. **This excludes this validator from performance tests**
 
 JSV failed the test &quot;remote ref, containing refs itself, remote ref valid&quot;. Expected result: true but validator returned: false
-
-JSV failed the test &quot;remote ref, remote ref valid&quot;. Expected result: true but validator returned: false
-
-JSV failed the test &quot;fragment within remote ref, remote fragment valid&quot;. Expected result: true but validator returned: false
-
-JSV failed the test &quot;ref within remote ref, ref within ref valid&quot;. Expected result: true but validator returned: false
-
-JSV failed the test &quot;change resolution scope, changed scope ref valid&quot;. Expected result: true but validator returned: false
 
 JSV failed the test &quot;required validation, present required property is valid&quot;. Expected result: true but validator returned: false. **This excludes this validator from performance tests**
 
@@ -1294,21 +1213,9 @@ request-validator failed the test &quot;nested refs, nested ref valid&quot;. Exp
 
 request-validator failed the test &quot;remote ref, containing refs itself, remote ref valid&quot;. Expected result: true but validator returned: false
 
-request-validator failed the test &quot;remote ref, remote ref valid&quot;. Expected result: true but validator returned: false
-
 request-validator could not instantiate with schema for &quot;fragment within remote ref&quot;. This is multiple tests failing. **This excludes this validator from performance tests** (request-validator: invalid schema reference &#39;http:&#x2F;&#x2F;localhost:1234&#x2F;subSchemas.json#&#x2F;integer&#39;)
 
-request-validator failed the test &quot;fragment within remote ref, remote fragment valid&quot;. Because the schema failed to load
-
-request-validator failed the test &quot;fragment within remote ref, remote fragment invalid&quot;. Because the schema failed to load
-
 request-validator could not instantiate with schema for &quot;ref within remote ref&quot;. This is multiple tests failing. **This excludes this validator from performance tests** (request-validator: invalid schema reference &#39;http:&#x2F;&#x2F;localhost:1234&#x2F;subSchemas.json#&#x2F;refToInteger&#39;)
-
-request-validator failed the test &quot;ref within remote ref, ref within ref valid&quot;. Because the schema failed to load
-
-request-validator failed the test &quot;ref within remote ref, ref within ref invalid&quot;. Because the schema failed to load
-
-request-validator failed the test &quot;change resolution scope, changed scope ref valid&quot;. Expected result: true but validator returned: false
 
 request-validator failed the test &quot;required validation, present required property is valid&quot;. Expected result: true but validator returned: false. **This excludes this validator from performance tests**
 
@@ -1714,25 +1621,11 @@ json-model failed the test &quot;remote ref, containing refs itself, remote ref 
 json-model could not instantiate with schema for &quot;remote ref&quot;. This is multiple tests failing. **This excludes this validator from performance tests** (Requests not enabled - try JsonModel.setRequestFunction(func):
 {&quot;method&quot;:&quot;GET&quot;,&quot;url&quot;:&quot;http:&#x2F;&#x2F;localhost:1234&#x2F;integer.json&quot;})
 
-json-model failed the test &quot;remote ref, remote ref valid&quot;. Because the schema failed to load
-
-json-model failed the test &quot;remote ref, remote ref invalid&quot;. Because the schema failed to load
-
 json-model could not instantiate with schema for &quot;fragment within remote ref&quot;. This is multiple tests failing. **This excludes this validator from performance tests** (Requests not enabled - try JsonModel.setRequestFunction(func):
 {&quot;method&quot;:&quot;GET&quot;,&quot;url&quot;:&quot;http:&#x2F;&#x2F;localhost:1234&#x2F;subSchemas.json&quot;})
 
-json-model failed the test &quot;fragment within remote ref, remote fragment valid&quot;. Because the schema failed to load
-
-json-model failed the test &quot;fragment within remote ref, remote fragment invalid&quot;. Because the schema failed to load
-
-json-model failed the test &quot;ref within remote ref, ref within ref invalid&quot;. Expected result: false but validator returned: true
-
 json-model could not instantiate with schema for &quot;change resolution scope&quot;. This is multiple tests failing. **This excludes this validator from performance tests** (Requests not enabled - try JsonModel.setRequestFunction(func):
 {&quot;method&quot;:&quot;GET&quot;,&quot;url&quot;:&quot;http:&#x2F;&#x2F;localhost:1234&#x2F;folder&#x2F;folderInteger.json&quot;})
-
-json-model failed the test &quot;change resolution scope, changed scope ref valid&quot;. Because the schema failed to load
-
-json-model failed the test &quot;change resolution scope, changed scope ref invalid&quot;. Because the schema failed to load
 
 json-model failed the test &quot;uniqueItems validation, non-unique array of integers is invalid&quot;. Expected result: false but validator returned: true. **This excludes this validator from performance tests**
 
@@ -2362,14 +2255,6 @@ tv4 failed the test &quot;some languages do not distinguish between different ty
 
 tv4 failed the test &quot;remote ref, containing refs itself, remote ref invalid&quot;. Expected result: false but validator returned: true
 
-tv4 failed the test &quot;remote ref, remote ref invalid&quot;. Expected result: false but validator returned: true
-
-tv4 failed the test &quot;fragment within remote ref, remote fragment invalid&quot;. Expected result: false but validator returned: true
-
-tv4 failed the test &quot;ref within remote ref, ref within ref invalid&quot;. Expected result: false but validator returned: true
-
-tv4 failed the test &quot;change resolution scope, changed scope ref invalid&quot;. Expected result: false but validator returned: true
-
 tv4 failed the test &quot;uniqueItems validation, unique heterogeneous types are valid&quot;. Expected result: true but validator returned: false. **This excludes this validator from performance tests**
 
 **All other tests passed**.
@@ -2401,22 +2286,6 @@ jsonschema failed the test &quot;some languages do not distinguish between diffe
 jsonschema failed the test &quot;remote ref, containing refs itself, remote ref valid&quot;. Expected result: true but validator returned: &quot;no such schema &lt;http:&#x2F;&#x2F;json-schema.org&#x2F;draft-04&#x2F;schema#&gt;&quot;
 
 jsonschema failed the test &quot;remote ref, containing refs itself, remote ref invalid&quot;. Expected result: false but validator returned: &quot;no such schema &lt;http:&#x2F;&#x2F;json-schema.org&#x2F;draft-04&#x2F;schema#&gt;&quot;
-
-jsonschema failed the test &quot;remote ref, remote ref valid&quot;. Expected result: true but validator returned: &quot;no such schema &lt;http:&#x2F;&#x2F;localhost:1234&#x2F;integer.json&gt;&quot;
-
-jsonschema failed the test &quot;remote ref, remote ref invalid&quot;. Expected result: false but validator returned: &quot;no such schema &lt;http:&#x2F;&#x2F;localhost:1234&#x2F;integer.json&gt;&quot;
-
-jsonschema failed the test &quot;fragment within remote ref, remote fragment valid&quot;. Expected result: true but validator returned: &quot;no such schema &lt;http:&#x2F;&#x2F;localhost:1234&#x2F;subSchemas.json#&#x2F;integer&gt;&quot;
-
-jsonschema failed the test &quot;fragment within remote ref, remote fragment invalid&quot;. Expected result: false but validator returned: &quot;no such schema &lt;http:&#x2F;&#x2F;localhost:1234&#x2F;subSchemas.json#&#x2F;integer&gt;&quot;
-
-jsonschema failed the test &quot;ref within remote ref, ref within ref valid&quot;. Expected result: true but validator returned: &quot;no such schema &lt;http:&#x2F;&#x2F;localhost:1234&#x2F;subSchemas.json#&#x2F;refToInteger&gt;&quot;
-
-jsonschema failed the test &quot;ref within remote ref, ref within ref invalid&quot;. Expected result: false but validator returned: &quot;no such schema &lt;http:&#x2F;&#x2F;localhost:1234&#x2F;subSchemas.json#&#x2F;refToInteger&gt;&quot;
-
-jsonschema failed the test &quot;change resolution scope, changed scope ref valid&quot;. Expected result: true but validator returned: &quot;no such schema &lt;http:&#x2F;&#x2F;localhost:1234&#x2F;folder&#x2F;folderInteger.json&gt;&quot;
-
-jsonschema failed the test &quot;change resolution scope, changed scope ref invalid&quot;. Expected result: false but validator returned: &quot;no such schema &lt;http:&#x2F;&#x2F;localhost:1234&#x2F;folder&#x2F;folderInteger.json&gt;&quot;
 
 **All other tests passed**.
 

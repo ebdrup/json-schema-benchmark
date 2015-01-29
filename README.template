@@ -59,13 +59,20 @@ Number of tests that caused side-effects. The schema or data was altered by the 
 
 
 # Detailed list of failed tests and side-effects
+
+## All validators fail these tests (not included under each validator)
+{{#testsThatAllValidatorsFail}}
+
+{{name}}
+{{/testsThatAllValidatorsFail}}
+
 {{#validators}}
 
 ## `{{name}}` failed tests
-{{#testsFailed}}
+{{#failingTests}}
 
 {{message}}
-{{/testsFailed}}
+{{/failingTests}}
 
 **All other tests passed**.
 {{#sideEffects.length}}

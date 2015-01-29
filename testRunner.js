@@ -28,7 +28,7 @@ module.exports = function (validators) {
 	];
 	var testSuites = readTests(path.join(__dirname + '/JSON-Schema-Test-Suite/tests/draft4/'));
 	validators.forEach(function (validator) {
-		validator.testsFailed = [];
+		validator.failingTests = [];
 		validator.sideEffects = [];
 		validator.timesFastest = 0;
 	});
@@ -39,10 +39,23 @@ module.exports = function (validators) {
 				return verifyValidator(validator, testSuite, excludeTests) && acc;
 			}, true);
 		});
+	var testsThatAllValidatorsFail = validators.reduce(function (acc, validator) {
+		return _.intersection(acc, validAndInvalid(validator));
+	}, validAndInvalid(validators[0]));
+	excludeTests = excludeTests.concat(testsThatAllValidatorsFail);
 	var results = runBenchmark(goodValidators, testSuites, excludeTests);
 	var end = process.hrtime();
-	saveResults(start, end, results, validators, goodValidators)
+	saveResults(start, end, results, validators, goodValidators, testsThatAllValidatorsFail)
 };
+
+function validAndInvalid(validator) {
+	var testNames = _.pluck(validator.failingTests, 'testName').filter(Boolean);
+	return testNames.concat(testNames.map(function (testName) {
+		return testName.indexOf('invalid') === -1 ?
+			testName.replace(/valid/g, 'invalid') :
+			testName.replace(/invalid/g, 'valid');
+	}))
+}
 
 function verifyValidator(validator, testSuiteIn, excludeTests) {
 	// verify that validator really works
@@ -55,7 +68,7 @@ function verifyValidator(validator, testSuiteIn, excludeTests) {
 		var message = validator.name + ' could not instantiate with schema for "' + testSuite.description +
 			'". This is multiple tests failing. **This excludes this validator from performance tests** (' + ex.message + ')';
 		//console.warn(message + ex.stack);
-		validator.testsFailed.push({message: message});
+		validator.failingTests.push({message: message});
 		schemaFailedToLoad = true;
 	}
 	testSuite.tests.forEach(function (test) {
@@ -69,7 +82,7 @@ function verifyValidator(validator, testSuiteIn, excludeTests) {
 				message += '. **This excludes this validator from performance tests**'
 			}
 			//console.warn(message);
-			validator.testsFailed.push({message: message, test: test});
+			validator.failingTests.push({message: message, testName: testName});
 			return;
 		}
 		try {
@@ -96,7 +109,7 @@ function verifyValidator(validator, testSuiteIn, excludeTests) {
 				message += '. **This excludes this validator from performance tests**';
 			}
 			//console.warn(message);
-			validator.testsFailed.push({message: message, testName: testName});
+			validator.failingTests.push({message: message, testName: testName});
 			return;
 		}
 	});
@@ -181,7 +194,7 @@ function comma(arr) {
 }
 
 
-function saveResults(start, end, results, validators, goodValidators) {
+function saveResults(start, end, results, validators, goodValidators, testsThatAllValidatorsFail) {
 	var readmePath = path.join(__dirname, 'README.md');
 	var template = fs.readFileSync(path.join(__dirname, 'README.template'), 'utf-8');
 	var totalTimeInMinutes = ((end[0] - start[0]) / 60);
@@ -191,7 +204,7 @@ function saveResults(start, end, results, validators, goodValidators) {
 		.map(function (validator) {
 			return {
 				name: validator.name,
-				count: validator.testsFailed.length
+				count: validator.failingTests.length
 			};
 		})
 		.sort(function (a, b) {
@@ -207,16 +220,24 @@ function saveResults(start, end, results, validators, goodValidators) {
 		.sort(function (a, b) {
 			return a.count - b.count;
 		});
-	var maxFailingTests = validatorsFailingTests.reduce(function(acc, v){
+	var maxFailingTests = validatorsFailingTests.reduce(function (acc, v) {
 		return Math.max(acc, v.count);
 	}, 0);
+	validators.forEach(function (validator) {
+		validator.failingTests = validator.failingTests.filter(function (t) {
+			return testsThatAllValidatorsFail.indexOf(t.testName) === -1;
+		})
+	});
 	var html = mustache.render(
 		template,
 		{
 			validators: comma(validators),
+			testsThatAllValidatorsFail: comma(testsThatAllValidatorsFail.map(function (testName) {
+				return {name: testName};
+			})),
 			goodValidators: comma(goodValidators),
 			validatorsFailingTests: comma(validatorsFailingTests),
-			maxFailingTests:maxFailingTests,
+			maxFailingTests: maxFailingTests,
 			validatorsSideEffects: comma(validatorsSideEffects),
 			results: comma(results),
 			currentDate: currentDate,
