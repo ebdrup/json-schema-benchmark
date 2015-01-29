@@ -6,11 +6,11 @@ for validation causing side-effects on schema or data.
 
 # Results
 
-![alt text](https://chart.googleapis.com/chart?chxt=x,y&cht=bvs&chco=76A4FB&chls=2.0&chbh=80,4,1&chs=600x200&chxl=0:|is-my-json-valid|themis|z-schema 3|jjv|skeemas|jayschema&chd=t2:100,27.2,10.3,7,1.4,0.1)
+![performance](https://chart.googleapis.com/chart?chxt=x,y&cht=bvs&chco=76A4FB&chls=2.0&chbh=80,4,1&chs=600x200&chxl=0:|is-my-json-valid|themis|z-schema 3|jjv|skeemas|jayschema&chd=t2:100,23.8,6.9,6.9,1.3,0.1)
 
 |is-my-json-valid|themis|z-schema 3|jjv|skeemas|jayschema|
 |:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|
-|100% (5716)|27.2% (1552)|10.3% (588)|7% (400)|1.4% (82)|0.1% (6)|
+|100% (5578)|23.8% (1325)|6.9% (383)|6.9% (385)|1.3% (71)|0.1% (6)|
 
 Validators tested: `is-my-json-valid`, `themis`, `z-schema 3`, `jjv`, `skeemas`, `jayschema`, `jsck`, `jassi`, `JSV`, `request-validator`, `json-model`, `tv4`, `jsonschema`, 
 (those not in the results above where excluded because of failing tests - see below for details)
@@ -18,6 +18,8 @@ Validators tested: `is-my-json-valid`, `themis`, `z-schema 3`, `jjv`, `skeemas`,
 `is-my-json-valid` is currently by far the fastest JSON-schema validator out there.
 
 The fastest validator has 100%, the rest a lower score relative to the fastest.
+If a validator has a score of 5% that means that it's speed is 5% of the fastest,
+meaning that it's 20 times slower than the fastest
 
 The number in parenthesis is the number of validations of the entire test suite per second.
 
@@ -37,17 +39,43 @@ Feel free to add more validators to the test suite in a pull request.
 
 Number of failed tests per validator
 
-|is-my-json-valid|themis|z-schema 3|jjv|skeemas|jayschema|jsck|jassi|JSV|request-validator|json-model|tv4|jsonschema|
-|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|
-|9|13|11|9|13|10|28|31|54|141|44|26|17|
+![failing tests](https://chart.googleapis.com/chart?chxt=x,y&cht=bhs&chco=76A4FB&chls=2.0&chbh=12,4,1&chs=500x240&chxl=-1:|is-my-json-valid|jjv|jayschema|z-schema 3|skeemas|themis|jsonschema|tv4|jsck|jassi|json-model|JSV|request-validator&chd=t2:9,9,10,11,13,13,17,26,28,31,44,54,141&chxr=0,0,141)
+
+|Validator|Number of failing tests|
+|---------|-----------------------|
+|`is-my-json-valid`|9|
+|`jjv`|9|
+|`jayschema`|10|
+|`z-schema 3`|11|
+|`skeemas`|13|
+|`themis`|13|
+|`jsonschema`|17|
+|`tv4`|26|
+|`jsck`|28|
+|`jassi`|31|
+|`json-model`|44|
+|`JSV`|54|
+|`request-validator`|141|
 
 # Side-effects summary
 
 Number of tests that caused side-effects. The schema or data was altered by the validator.
 
-|is-my-json-valid|themis|z-schema 3|jjv|skeemas|jayschema|jsck|jassi|JSV|request-validator|json-model|tv4|jsonschema|
-|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|
-|0|0|290|0|0|0|0|0|0|149|283|2|4|
+|Validator|Number of side-effects|
+|---------|----------------------|
+|`jsck`|0|
+|`is-my-json-valid`|0|
+|`JSV`|0|
+|`jjv`|0|
+|`skeemas`|0|
+|`jayschema`|0|
+|`themis`|0|
+|`jassi`|0|
+|`tv4`|2|
+|`jsonschema`|4|
+|`request-validator`|149|
+|`json-model`|283|
+|`z-schema 3`|290|
 
 
 # Detailed list of failed tests and side-effects

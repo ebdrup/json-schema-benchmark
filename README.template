@@ -6,7 +6,7 @@ for validation causing side-effects on schema or data.
 
 # Results
 
-![alt text](https://chart.googleapis.com/chart?chxt=x,y&cht=bvs&chco=76A4FB&chls=2.0&chbh=80,4,1&chs=600x200&chxl=0:{{#goodValidators}}|{{name}}{{/goodValidators}}&chd=t2:{{#results}}{{percentage}}{{#comma}},{{/comma}}{{/results}})
+![performance](https://chart.googleapis.com/chart?chxt=x,y&cht=bvs&chco=76A4FB&chls=2.0&chbh=80,4,1&chs=600x200&chxl=0:{{#goodValidators}}|{{name}}{{/goodValidators}}&chd=t2:{{#results}}{{percentage}}{{#comma}},{{/comma}}{{/results}})
 
 |{{#goodValidators}}{{name}}|{{/goodValidators}}
 |{{#goodValidators}}:-----:|{{/goodValidators}}
@@ -18,6 +18,8 @@ Validators tested: {{#validators}}`{{name}}`, {{/validators}}
 `is-my-json-valid` is currently by far the fastest JSON-schema validator out there.
 
 The fastest validator has 100%, the rest a lower score relative to the fastest.
+If a validator has a score of 5% that means that it's speed is 5% of the fastest,
+meaning that it's 20 times slower than the fastest
 
 The number in parenthesis is the number of validations of the entire test suite per second.
 
@@ -37,17 +39,23 @@ Feel free to add more validators to the test suite in a pull request.
 
 Number of failed tests per validator
 
-|{{#validators}}{{name}}|{{/validators}}
-|{{#validators}}:-----:|{{/validators}}
-|{{#validators}}{{testsFailed.length}}|{{/validators}}
+![failing tests](https://chart.googleapis.com/chart?chxt=x,y&cht=bhs&chco=76A4FB&chls=2.0&chbh=12,4,1&chs=500x240&chxl=-1:{{#validatorsFailingTests}}|{{name}}{{/validatorsFailingTests}}&chd=t2:{{#validatorsFailingTests}}{{count}}{{#comma}},{{/comma}}{{/validatorsFailingTests}}&chxr=0,0,{{maxFailingTests}})
+
+|Validator|Number of failing tests|
+|---------|-----------------------|
+{{#validatorsFailingTests}}
+|`{{name}}`|{{count}}|
+{{/validatorsFailingTests}}
 
 # Side-effects summary
 
 Number of tests that caused side-effects. The schema or data was altered by the validator.
 
-|{{#validators}}{{name}}|{{/validators}}
-|{{#validators}}:-----:|{{/validators}}
-|{{#validators}}{{sideEffects.length}}|{{/validators}}
+|Validator|Number of side-effects|
+|---------|----------------------|
+{{#validatorsSideEffects}}
+|`{{name}}`|{{count}}|
+{{/validatorsSideEffects}}
 
 
 # Detailed list of failed tests and side-effects

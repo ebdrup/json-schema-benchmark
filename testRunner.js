@@ -164,9 +164,6 @@ function runBenchmark(validators, testSuites, excludeTests) {
 			};
 		}
 	});
-	for (var i = 0; i < suiteResult.length - 1; i++) {
-		suiteResult[i].comma = true; //for template
-	}
 	return suiteResult;
 }
 
@@ -176,6 +173,13 @@ function readTests(dirpath) {
 	}, []);
 }
 
+function comma(arr) {
+	for (var i = 0; i < arr.length - 1; i++) {
+		arr[i].comma = true; //for template
+	}
+	return arr;
+}
+
 
 function saveResults(start, end, results, validators, goodValidators) {
 	var readmePath = path.join(__dirname, 'README.md');
@@ -183,12 +187,38 @@ function saveResults(start, end, results, validators, goodValidators) {
 	var totalTimeInMinutes = ((end[0] - start[0]) / 60);
 	totalTimeInMinutes = parseInt(totalTimeInMinutes * 100, 10) / 100;
 	var currentDate = new Date().toLocaleDateString();
+	var validatorsFailingTests = validators
+		.map(function (validator) {
+			return {
+				name: validator.name,
+				count: validator.testsFailed.length
+			};
+		})
+		.sort(function (a, b) {
+			return a.count - b.count;
+		});
+	var validatorsSideEffects = validators
+		.map(function (validator) {
+			return {
+				name: validator.name,
+				count: validator.sideEffects.length
+			};
+		})
+		.sort(function (a, b) {
+			return a.count - b.count;
+		});
+	var maxFailingTests = validatorsFailingTests.reduce(function(acc, v){
+		return Math.max(acc, v.count);
+	}, 0);
 	var html = mustache.render(
 		template,
 		{
-			validators: validators,
-			goodValidators: goodValidators,
-			results: results,
+			validators: comma(validators),
+			goodValidators: comma(goodValidators),
+			validatorsFailingTests: comma(validatorsFailingTests),
+			maxFailingTests:maxFailingTests,
+			validatorsSideEffects: comma(validatorsSideEffects),
+			results: comma(results),
 			currentDate: currentDate,
 			totalTime: totalTimeInMinutes
 		}
