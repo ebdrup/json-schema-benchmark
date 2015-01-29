@@ -3,6 +3,7 @@ var testRunner = require('./testRunner');
 var ZSchema = require('z-schema');
 var JaySchema = require('jayschema');
 var jjv = require('jjv');
+var jassi = require('jassi');
 var JsonSchema = require('jsonschema');
 var tv4 = require('tv4');
 var JsonModel = require('json-model');
@@ -39,12 +40,20 @@ testRunner([
 		}
 	},
 	{
+		name: 'jassi',
+		setup: function (schema) {
+			return jassi;
+		},
+		test: function (instance, json, schema) {
+			return (instance(json, schema).length) === 0;
+		}
+	},
+	{
 		name: 'json-model',
 		setup: function (schema) {
 			return JsonModel.validator(schema);
 		},
 		test: function (instance, json, schema) {
-			// If we're repeatedly testing the same schema, use the existing validator
 			return instance(json).valid === true;
 		}
 	},

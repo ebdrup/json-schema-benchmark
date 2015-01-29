@@ -6,6 +6,7 @@
     "benchmark": "^1.0.0",
     "fs-readdir-recursive": "^0.1.0",
     "is-my-json-valid": "^2.0.3",
+    "jassi": "^0.1.2",
     "jayschema": "^0.3.1",
     "jjv": "^1.0.2",
     "json-model": "^0.2.24",
