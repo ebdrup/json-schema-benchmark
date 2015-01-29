@@ -6,11 +6,11 @@ for validation causing side-effects on schema or data.
 
 # Results
 
-![alt text](https://chart.googleapis.com/chart?chxt=x,y&cht=bvs&chco=76A4FB&chls=2.0&chbh=80,4,1&chs=600x200&chxl=0:|is-my-json-valid|themis|z-schema 3|jjv|skeemas|jayschema&chd=t2:100,25.6,9.6,9,1.6,0.1)
+![alt text](https://chart.googleapis.com/chart?chxt=x,y&cht=bvs&chco=76A4FB&chls=2.0&chbh=80,4,1&chs=600x200&chxl=0:|is-my-json-valid|themis|z-schema 3|jjv|skeemas|jayschema&chd=t2:100,27.2,10.3,7,1.4,0.1)
 
 |is-my-json-valid|themis|z-schema 3|jjv|skeemas|jayschema|
 |:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|
-|100% (4190)|25.6% (1072)|9.6% (404)|9% (379)|1.6% (65)|0.1% (5)|
+|100% (5716)|27.2% (1552)|10.3% (588)|7% (400)|1.4% (82)|0.1% (6)|
 
 Validators tested: `is-my-json-valid`, `themis`, `z-schema 3`, `jjv`, `skeemas`, `jayschema`, `jsck`, `jassi`, `JSV`, `request-validator`, `json-model`, `tv4`, `jsonschema`, 
 (those not in the results above where excluded because of failing tests - see below for details)
@@ -47,7 +47,7 @@ Number of tests that caused side-effects. The schema or data was altered by the 
 
 |is-my-json-valid|themis|z-schema 3|jjv|skeemas|jayschema|jsck|jassi|JSV|request-validator|json-model|tv4|jsonschema|
 |:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|
-|0|0|288|0|0|0|0|0|0|147|281|2|4|
+|0|0|290|0|0|0|0|0|0|149|283|2|4|
 
 
 # Detailed list of failed tests and side-effects
@@ -208,7 +208,11 @@ z-schema 3 had a side-effect on (altered the original) schema in the test &quot;
 
 z-schema 3 had a side-effect on (altered the original) schema in the test &quot;invalid type for default, valid when property is specified&quot;
 
+z-schema 3 had a side-effect on (altered the original) schema in the test &quot;invalid type for default, still valid when the invalid default is used&quot;
+
 z-schema 3 had a side-effect on (altered the original) schema in the test &quot;invalid string value for default, valid when property is specified&quot;
+
+z-schema 3 had a side-effect on (altered the original) schema in the test &quot;invalid string value for default, still valid when the invalid default is used&quot;
 
 z-schema 3 had a side-effect on (altered the original) schema in the test &quot;valid definition, valid definition schema&quot;
 
@@ -1376,7 +1380,11 @@ request-validator had a side-effect on (altered the original) data in the test &
 
 request-validator had a side-effect on (altered the original) data in the test &quot;invalid type for default, valid when property is specified&quot;. **This excludes this validator from performance tests**
 
+request-validator had a side-effect on (altered the original) data in the test &quot;invalid type for default, still valid when the invalid default is used&quot;. **This excludes this validator from performance tests**
+
 request-validator had a side-effect on (altered the original) data in the test &quot;invalid string value for default, valid when property is specified&quot;. **This excludes this validator from performance tests**
+
+request-validator had a side-effect on (altered the original) data in the test &quot;invalid string value for default, still valid when the invalid default is used&quot;. **This excludes this validator from performance tests**
 
 request-validator had a side-effect on (altered the original) data in the test &quot;valid definition, valid definition schema&quot;. **This excludes this validator from performance tests**
 
@@ -1788,7 +1796,11 @@ json-model had a side-effect on (altered the original) schema in the test &quot;
 
 json-model had a side-effect on (altered the original) schema in the test &quot;invalid type for default, valid when property is specified&quot;
 
+json-model had a side-effect on (altered the original) schema in the test &quot;invalid type for default, still valid when the invalid default is used&quot;
+
 json-model had a side-effect on (altered the original) schema in the test &quot;invalid string value for default, valid when property is specified&quot;
+
+json-model had a side-effect on (altered the original) schema in the test &quot;invalid string value for default, still valid when the invalid default is used&quot;
 
 json-model had a side-effect on (altered the original) schema in the test &quot;invalid definition, invalid definition schema&quot;
 
