@@ -46,7 +46,10 @@ module.exports = function (validators) {
 
 function verifyValidator(validator, testSuiteIn, excludeTests) {
 	// verify that validator really works
-	//process.exit();
+	var testsThatShouldSetDefaultProperty = [
+		'invalid type for default, still valid when the invalid default is used',
+		'invalid string value for default, still valid when the invalid default is used'
+	];
 	var passedAllTests = true;
 	var schemaFailedToLoad = false;
 	var testSuite = JSON.parse(JSON.stringify(testSuiteIn));
@@ -61,6 +64,7 @@ function verifyValidator(validator, testSuiteIn, excludeTests) {
 	}
 	testSuite.tests.forEach(function (test) {
 		var testName = [testSuite.description, test.description].join(', ');
+		var originalData = JSON.parse(JSON.stringify(test.data));
 		var givenResult;
 		if (schemaFailedToLoad) {
 			var message = validator.name + ' failed the test "' + testName + '". Because the schema failed to load';
@@ -77,13 +81,17 @@ function verifyValidator(validator, testSuiteIn, excludeTests) {
 		} catch (e) {
 			givenResult = e.message;
 		}
-		if (!deepEqual(testSuite, testSuiteIn)) {
-			var message = validator.name + ' had a side-effect on (altered the original) the schema (or data) in the test "' + testName + '"';
-			//console.warn(message);
-			//console.log(JSON.stringify(testSuite, null, '\t'));
-			//console.log(JSON.stringify(testSuiteIn, null, '\t'));
-			//process.exit();
-			validator.sideEffects.push({message: message, test: test});
+		if (testsThatShouldSetDefaultProperty.indexOf(testName) === -1) {
+			if (!deepEqual(originalData, test.data)) {
+				var message = validator.name + ' had a side-effect on (altered the original) data in the test "' + testName + '"';
+				message += '. **This excludes this validator from performance tests**';
+				passedAllTests = false;
+				validator.sideEffects.push({message: message, testName: testName});
+			}
+			if (!deepEqual(testSuite.schema, testSuiteIn.schema)) {
+				var message = validator.name + ' had a side-effect on (altered the original) schema in the test "' + testName + '"';
+				validator.sideEffects.push({message: message, testName: testName});
+			}
 		}
 		if (givenResult !== test.valid) {
 			var message = validator.name + ' failed the test "' + testName + '". Expected result: ' +
@@ -91,10 +99,15 @@ function verifyValidator(validator, testSuiteIn, excludeTests) {
 				JSON.stringify(givenResult);
 			if (excludeTests.indexOf(testName) === -1) {
 				passedAllTests = false;
-				message += '. **This excludes this validator from performance tests**'
+				message += '. **This excludes this validator from performance tests**';
 			}
 			//console.warn(message);
-			validator.testsFailed.push({message: message, test: test});
+			validator.testsFailed.push({message: message, testName: testName});
+			return;
+		}
+		if (deepEqual(originalData, test.data) && testsThatShouldSetDefaultProperty.indexOf(testName) !== -1) {
+			var message = validator.name + ' did not set default property in test "' + testName + '"';
+			validator.testsFailed.push({message: message, testName: testName});
 		}
 	});
 	return passedAllTests;
