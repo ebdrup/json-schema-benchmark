@@ -217,6 +217,9 @@ function saveResults(start, end, results, validators, goodValidators, testsThatA
 				count: validator.sideEffects.length
 			};
 		})
+		.filter(function(o){
+			return o.count !== 0;
+		})
 		.sort(function (a, b) {
 			return a.count - b.count;
 		});

@@ -57,6 +57,7 @@ Number of tests that caused side-effects. The schema or data was altered by the 
 |`{{name}}`|{{count}}|
 {{/validatorsSideEffects}}
 
+Validators not in the list have no side-effects on data or schemas.
 
 # Detailed list of failed tests
 

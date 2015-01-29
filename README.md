@@ -6,11 +6,11 @@ for validation causing side-effects on schema or data.
 
 # Results
 
-![performance](https://chart.googleapis.com/chart?chxt=x,y&cht=bvs&chco=76A4FB&chls=2.0&chbh=80,4,1&chs=600x200&chxl=0:|is-my-json-valid|themis|z-schema 3|jjv|skeemas|jayschema&chd=t2:100,30.2,11.2,9.7,1.7,0.1)
+![performance](https://chart.googleapis.com/chart?chxt=x,y&cht=bvs&chco=76A4FB&chls=2.0&chbh=80,4,1&chs=600x200&chxl=0:|is-my-json-valid|themis|z-schema 3|jjv|skeemas|jayschema&chd=t2:100,28,10.9,11.2,2.2,0.1)
 
 |is-my-json-valid|themis|z-schema 3|jjv|skeemas|jayschema|
 |:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|
-|100% (4179)|30.2% (1260)|11.2% (467)|9.7% (404)|1.7% (73)|0.1% (5)|
+|100% (4338)|28% (1215)|10.9% (472)|11.2% (487)|2.2% (94)|0.1% (5)|
 
 Validators tested: `is-my-json-valid`, `themis`, `z-schema 3`, `jjv`, `skeemas`, `jayschema`, `jsck`, `jassi`, `JSV`, `request-validator`, `json-model`, `tv4`, `jsonschema`, 
 (those not in the results above where excluded because of failing tests - see below for details)
@@ -63,20 +63,13 @@ Number of tests that caused side-effects. The schema or data was altered by the 
 
 |Validator|Number of side-effects|
 |---------|----------------------|
-|`jsck`|0|
-|`is-my-json-valid`|0|
-|`JSV`|0|
-|`jjv`|0|
-|`skeemas`|0|
-|`jayschema`|0|
-|`themis`|0|
-|`jassi`|0|
 |`tv4`|2|
 |`jsonschema`|4|
 |`request-validator`|149|
 |`json-model`|283|
 |`z-schema 3`|290|
 
+Validators not in the list have no side-effects on data or schemas.
 
 # Detailed list of failed tests
 
