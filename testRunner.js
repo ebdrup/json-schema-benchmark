@@ -34,7 +34,7 @@ module.exports = function (validators) {
 	var goodValidators = validators
 		.filter(function (validator) {
 			return testSuites.reduce(function (acc, testSuite) {
-				return acc && verifyValidator(validator, testSuite, excludeTests);
+				return verifyValidator(validator, testSuite, excludeTests) && acc;
 			}, true);
 		});
 	var results = runBenchmark(goodValidators, testSuites, excludeTests);
