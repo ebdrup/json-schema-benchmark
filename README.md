@@ -38,7 +38,7 @@ Feel free to add more validators to the test suite in a pull request.
 Number of failed tests per validator
 
 |is-my-json-valid|themis|z-schema 3|jjv|skeemas|jayschema|jsck|jassi|JSV|request-validator|json-model|tv4|jsonschema|
-|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|
+|:-----:|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|
 |9|13|11|9|13|10|28|31|54|141|44|26|17|
 
 # Side-effects summary
