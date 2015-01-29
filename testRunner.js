@@ -130,9 +130,9 @@ function runBenchmark(validators, testSuites, excludeTests) {
 		});
 		if (result) {
 			return {
-				hz: parseInt(result.hz, 10),
+				hz: result.hz,
 				fastest: result.hz === fastestTestResult.hz,
-				percentage: Math.round((result.hz || 0) / fastestTestResult.hz * 100)
+				percentage: Math.round((result.hz || 0) / fastestTestResult.hz * 1000)/10
 			};
 		} else {
 			return {

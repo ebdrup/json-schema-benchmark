@@ -5,7 +5,7 @@ Benchmarks for Node.js JSON-schema validators
 
 |{{#goodValidators}}{{name}}|{{/goodValidators}}
 |{{#goodValidators}}-----|{{/goodValidators}}
-|{{#results}}{{#fastest}}fastest {{/fastest}}>{{percentage}}% ({{hz}}){{#failed}} failed{{/failed}}|{{/results}}
+|{{#results}}{{percentage}}% ({{hz}})|{{/results}}
 
 Validators tested: {{#validators}}`{{name}}`, {{/validators}}
 (those not in the results above where excluded because of failing tests - see below for details)
