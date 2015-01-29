@@ -105,10 +105,11 @@ function verifyValidator(validator, testSuiteIn, excludeTests) {
 			validator.testsFailed.push({message: message, testName: testName});
 			return;
 		}
-		if (deepEqual(originalData, test.data) && testsThatShouldSetDefaultProperty.indexOf(testName) !== -1) {
-			var message = validator.name + ' did not set default property in test "' + testName + '"';
-			validator.testsFailed.push({message: message, testName: testName});
-		}
+		//For now we disable this, since default values in the spec are weird
+		//if (deepEqual(originalData, test.data) && testsThatShouldSetDefaultProperty.indexOf(testName) !== -1) {
+		//	var message = validator.name + ' did not set default property in test "' + testName + '"';
+		//	validator.testsFailed.push({message: message, testName: testName});
+		//}
 	});
 	return passedAllTests;
 }

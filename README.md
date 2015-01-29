@@ -6,11 +6,11 @@ for validation causing side-effects on schema or data.
 
 # Results
 
-![alt text](https://chart.googleapis.com/chart?chxt=x,y&cht=bvs&chco=76A4FB&chls=2.0&chbh=80,4,1&chs=600x200&chxl=0:|is-my-json-valid|themis|z-schema 3|jjv|skeemas|jayschema&chd=t2:100,35.3,13.7,9.2,1.7,0.1)
+![alt text](https://chart.googleapis.com/chart?chxt=x,y&cht=bvs&chco=76A4FB&chls=2.0&chbh=80,4,1&chs=600x200&chxl=0:|is-my-json-valid|themis|z-schema 3|jjv|skeemas|jayschema&chd=t2:100,25.6,9.6,9,1.6,0.1)
 
 |is-my-json-valid|themis|z-schema 3|jjv|skeemas|jayschema|
 |:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|
-|100% (4252)|35.3% (1503)|13.7% (584)|9.2% (390)|1.7% (74)|0.1% (4)|
+|100% (4190)|25.6% (1072)|9.6% (404)|9% (379)|1.6% (65)|0.1% (5)|
 
 Validators tested: `is-my-json-valid`, `themis`, `z-schema 3`, `jjv`, `skeemas`, `jayschema`, `jsck`, `jassi`, `JSV`, `request-validator`, `json-model`, `tv4`, `jsonschema`, 
 (those not in the results above where excluded because of failing tests - see below for details)
@@ -39,7 +39,7 @@ Number of failed tests per validator
 
 |is-my-json-valid|themis|z-schema 3|jjv|skeemas|jayschema|jsck|jassi|JSV|request-validator|json-model|tv4|jsonschema|
 |:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|
-|9|15|13|11|15|12|30|33|56|141|46|28|19|
+|9|13|11|9|13|10|28|31|54|141|44|26|17|
 
 # Side-effects summary
 
@@ -77,10 +77,6 @@ is-my-json-valid failed the test &quot;change resolution scope, changed scope re
 
 ## `themis` failed tests
 
-themis did not set default property in test &quot;invalid type for default, still valid when the invalid default is used&quot;
-
-themis did not set default property in test &quot;invalid string value for default, still valid when the invalid default is used&quot;
-
 themis failed the test &quot;valid definition, valid definition schema&quot;. Expected result: true but validator returned: &quot;Object #&lt;Object&gt; has no method &#39;http:&#x2F;&#x2F;json-schema.org&#x2F;draft-04&#x2F;schema#&#39;&quot;
 
 themis failed the test &quot;invalid definition, invalid definition schema&quot;. Expected result: false but validator returned: &quot;Object #&lt;Object&gt; has no method &#39;http:&#x2F;&#x2F;json-schema.org&#x2F;draft-04&#x2F;schema#&#39;&quot;
@@ -111,10 +107,6 @@ themis failed the test &quot;change resolution scope, changed scope ref invalid&
 
 
 ## `z-schema 3` failed tests
-
-z-schema 3 did not set default property in test &quot;invalid type for default, still valid when the invalid default is used&quot;
-
-z-schema 3 did not set default property in test &quot;invalid string value for default, still valid when the invalid default is used&quot;
 
 z-schema 3 failed the test &quot;valid definition, valid definition schema&quot;. Expected result: true but validator returned: false
 
@@ -722,10 +714,6 @@ z-schema 3 had a side-effect on (altered the original) schema in the test &quot;
 
 ## `jjv` failed tests
 
-jjv did not set default property in test &quot;invalid type for default, still valid when the invalid default is used&quot;
-
-jjv did not set default property in test &quot;invalid string value for default, still valid when the invalid default is used&quot;
-
 jjv failed the test &quot;valid definition, valid definition schema&quot;. Expected result: true but validator returned: false
 
 jjv failed the test &quot;maxLength validation, two supplementary Unicode code points is long enough&quot;. Expected result: true but validator returned: false
@@ -748,10 +736,6 @@ jjv failed the test &quot;change resolution scope, changed scope ref valid&quot;
 
 
 ## `skeemas` failed tests
-
-skeemas did not set default property in test &quot;invalid type for default, still valid when the invalid default is used&quot;
-
-skeemas did not set default property in test &quot;invalid string value for default, still valid when the invalid default is used&quot;
 
 skeemas failed the test &quot;valid definition, valid definition schema&quot;. Expected result: true but validator returned: &quot;Unable to locate JSON Ref (http:&#x2F;&#x2F;json-schema.org&#x2F;draft-04&#x2F;schema)&quot;
 
@@ -784,10 +768,6 @@ skeemas failed the test &quot;change resolution scope, changed scope ref invalid
 
 ## `jayschema` failed tests
 
-jayschema did not set default property in test &quot;invalid type for default, still valid when the invalid default is used&quot;
-
-jayschema did not set default property in test &quot;invalid string value for default, still valid when the invalid default is used&quot;
-
 jayschema failed the test &quot;maxLength validation, two supplementary Unicode code points is long enough&quot;. Expected result: true but validator returned: false
 
 jayschema failed the test &quot;minLength validation, one supplementary Unicode code point is not long enough&quot;. Expected result: false but validator returned: true
@@ -812,10 +792,6 @@ jayschema failed the test &quot;change resolution scope, changed scope ref valid
 
 
 ## `jsck` failed tests
-
-jsck did not set default property in test &quot;invalid type for default, still valid when the invalid default is used&quot;
-
-jsck did not set default property in test &quot;invalid string value for default, still valid when the invalid default is used&quot;
 
 jsck could not instantiate with schema for &quot;valid definition&quot;. This is multiple tests failing. **This excludes this validator from performance tests** (Unresolvable $ref values: [&quot;http:&#x2F;&#x2F;json-schema.org&#x2F;draft-04&#x2F;schema#&quot;])
 
@@ -877,10 +853,6 @@ jsck failed the test &quot;uniqueItems validation, non-unique heterogeneous type
 
 
 ## `jassi` failed tests
-
-jassi did not set default property in test &quot;invalid type for default, still valid when the invalid default is used&quot;
-
-jassi did not set default property in test &quot;invalid string value for default, still valid when the invalid default is used&quot;
 
 jassi failed the test &quot;invalid definition, invalid definition schema&quot;. Expected result: false but validator returned: true
 
@@ -964,10 +936,6 @@ JSV failed the test &quot;allOf simple types, mismatch one&quot;. Expected resul
 JSV failed the test &quot;anyOf, neither anyOf valid&quot;. Expected result: false but validator returned: true. **This excludes this validator from performance tests**
 
 JSV failed the test &quot;anyOf with base schema, both anyOf invalid&quot;. Expected result: false but validator returned: true. **This excludes this validator from performance tests**
-
-JSV did not set default property in test &quot;invalid type for default, still valid when the invalid default is used&quot;
-
-JSV did not set default property in test &quot;invalid string value for default, still valid when the invalid default is used&quot;
 
 JSV failed the test &quot;valid definition, valid definition schema&quot;. Expected result: true but validator returned: false
 
@@ -1650,10 +1618,6 @@ request-validator had a side-effect on (altered the original) data in the test &
 
 ## `json-model` failed tests
 
-json-model did not set default property in test &quot;invalid type for default, still valid when the invalid default is used&quot;
-
-json-model did not set default property in test &quot;invalid string value for default, still valid when the invalid default is used&quot;
-
 json-model could not instantiate with schema for &quot;valid definition&quot;. This is multiple tests failing. **This excludes this validator from performance tests** (Requests not enabled - try JsonModel.setRequestFunction(func):
 {&quot;method&quot;:&quot;GET&quot;,&quot;url&quot;:&quot;http:&#x2F;&#x2F;json-schema.org&#x2F;draft-04&#x2F;schema&quot;})
 
@@ -2316,10 +2280,6 @@ json-model had a side-effect on (altered the original) schema in the test &quot;
 
 ## `tv4` failed tests
 
-tv4 did not set default property in test &quot;invalid type for default, still valid when the invalid default is used&quot;
-
-tv4 did not set default property in test &quot;invalid string value for default, still valid when the invalid default is used&quot;
-
 tv4 failed the test &quot;invalid definition, invalid definition schema&quot;. Expected result: false but validator returned: true
 
 tv4 failed the test &quot;heterogeneous enum validation, something else is invalid&quot;. Expected result: false but validator returned: &quot;Cannot read property &#39;foo&#39; of null&quot;. **This excludes this validator from performance tests**
@@ -2383,10 +2343,6 @@ tv4 had a side-effect on (altered the original) schema in the test &quot;change 
 
 
 ## `jsonschema` failed tests
-
-jsonschema did not set default property in test &quot;invalid type for default, still valid when the invalid default is used&quot;
-
-jsonschema did not set default property in test &quot;invalid string value for default, still valid when the invalid default is used&quot;
 
 jsonschema failed the test &quot;valid definition, valid definition schema&quot;. Expected result: true but validator returned: &quot;no such schema &lt;http:&#x2F;&#x2F;json-schema.org&#x2F;draft-04&#x2F;schema#&gt;&quot;
 
