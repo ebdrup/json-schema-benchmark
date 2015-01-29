@@ -9,7 +9,7 @@ for validation causing side-effects on schema or data.
 ![performance](https://chart.googleapis.com/chart?chxt=x,y&cht=bhs&chco=76A4FB&chls=2.0&chbh={{resultGraphBarHeight}},{{graphBarSpacing}},1&chs=600x{{resultsGraphHeight}}&chxl=-1:{{#results}}|{{name}}{{/results}}&chd=t2:{{#results}}{{percentage}}{{#comma}},{{/comma}}{{/results}})
 
 |Validator|Relative speed|Number of test runs per second|
-|---------|--------------|------------------------------|
+|---------|:------------:|:----------------------------:|
 {{#results}}
 |`{{name}}`|{{percentage}}%|{{hz}}|
 {{/results}}

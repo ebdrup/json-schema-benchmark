@@ -9,7 +9,7 @@ for validation causing side-effects on schema or data.
 ![performance](https://chart.googleapis.com/chart?chxt=x,y&cht=bhs&chco=76A4FB&chls=2.0&chbh=53,4,1&chs=600x419&chxl=-1:|is-my-json-valid|themis|jsck|z-schema 3|jjv|skeemas|jayschema&chd=t2:100,19,10.4,6.7,5.8,1.1,0.1)
 
 |Validator|Relative speed|Number of test runs per second|
-|---------|--------------|------------------------------|
+|---------|:------------:|:----------------------------:|
 |`is-my-json-valid`|100%|6849|
 |`themis`|19%|1301|
 |`jsck`|10.4%|714|
