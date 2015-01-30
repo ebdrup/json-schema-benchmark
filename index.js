@@ -140,6 +140,10 @@ testRunner([
 	{
 		name: 'tv4',
 		setup: function () {
+			Object.keys(refs).forEach(function(uri) {
+				tv4.addSchema(uri, refs[uri]);
+			});
+
 			return tv4;
 		},
 		test: function (instance, json, schema) {
