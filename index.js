@@ -149,7 +149,13 @@ testRunner([
 	{
 		name: 'jsonschema',
 		setup: function () {
-			return new JsonSchema.Validator();
+			var validator = new JsonSchema.Validator();
+
+			Object.keys(refs).forEach(function(uri) {
+				validator.addSchema(refs[uri], uri);
+			});
+
+			return validator;
 		},
 		test: function (instance, json, schema) {
 			return instance.validate(json, schema).errors.length === 0;
