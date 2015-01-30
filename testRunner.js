@@ -8,14 +8,13 @@ var deepEqual = require('deep-equal');
 module.exports = function (validators) {
 	var start = process.hrtime();
 	var excludeTests = [
+		//lots of validators fail these
 		'invalid definition, invalid definition schema',
 		'maxLength validation, two supplementary Unicode code points is long enough',
-		'minLength validation, one supplementary Unicode code point is not long enough',
-		'some languages do not distinguish between different types of numeric value, a float is not an integer even without fractional part',
-		'validation of URIs, an invalid URI',
-		'validation of URIs, an invalid URI though valid URI reference'
+		'minLength validation, one supplementary Unicode code point is not long enough'
 	];
 	var excludeTestSuites = [
+		//lost failing these tests
 		'remote ref',
 		'remote ref, containing refs itself',
 		'fragment within remote ref',
@@ -27,6 +26,13 @@ module.exports = function (validators) {
 		'invalid definition'
 	];
 	var testSuites = readTests(path.join(__dirname + '/JSON-Schema-Test-Suite/tests/draft4/'));
+	var optionalTests = readTests(path.join(__dirname + '/JSON-Schema-Test-Suite/tests/draft4/optional'))
+		.reduce(function (acc, testSuite) {
+			return acc.concat(testSuite.tests.map(function(test){
+				return [testSuite.description, test.description].join(', ')
+			}));
+		}, []);
+	excludeTests = excludeTests.concat(optionalTests);
 	validators.forEach(function (validator) {
 		validator.failingTests = [];
 		validator.sideEffects = [];
@@ -167,7 +173,7 @@ function runBenchmark(validators, testSuites, excludeTestSuites, excludeTests) {
 			fastest: result.hz === fastestTestResult.hz,
 			percentage: Math.round((result.hz || 0) / fastestTestResult.hz * 1000) / 10,
 			name: validator.name,
-			plusMinusPercent: Math.round(result.stats.rme * 100)/100
+			plusMinusPercent: Math.round(result.stats.rme * 100) / 100
 		};
 	});
 	return suiteResult;
@@ -253,10 +259,10 @@ function saveResults(start, end, results, validators, testsThatAllValidatorsFail
 	};
 	var html = mustache.render(readmeTemplate, data);
 	fs.writeFileSync(readmePath, html);
-	validators.forEach(function(validator){
+	validators.forEach(function (validator) {
 		var html = mustache.render(testsTemplate, {
 			name: validator.name,
-			failingTests:validator.failingTests,
+			failingTests: validator.failingTests,
 			testsThatAllValidatorsFail: comma(testsThatAllValidatorsFail.map(function (testName) {
 				return {name: testName};
 			}))

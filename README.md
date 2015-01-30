@@ -6,17 +6,18 @@ for validators that cause side-effects on schema or data.
 
 # Results
 
-![performance](https://chart.googleapis.com/chart?chxt=x,y&cht=bhs&chco=76A4FB&chls=2.0&chbh=53,4,1&chs=600x419&chxl=-1:|is-my-json-valid|themis|jsck|z-schema|jjv|skeemas|jayschema&chd=t:100,26.6,12.2,9,7.9,1.5,0.1)
+![performance](https://chart.googleapis.com/chart?chxt=x,y&cht=bhs&chco=76A4FB&chls=2.0&chbh=46,4,1&chs=600x420&chxl=-1:|is-my-json-valid|themis|jsck|z-schema|jjv|skeemas|request-validator|jayschema&chd=t:100,26.5,11.1,8.5,7.3,1.3,0.7,0.1)
 
 |Validator|Relative speed|Number of test runs per second|
 |---------|:------------:|:----------------------------:|
-|`is-my-json-valid`|100%|12232 (± 1.62%)|
-|`themis`|26.6%|3253 (± 2.51%)|
-|`jsck`|12.2%|1491 (± 0.88%)|
-|`z-schema`|9%|1101 (± 3.49%)|
-|`jjv`|7.9%|962 (± 0.86%)|
-|`skeemas`|1.5%|186 (± 1.18%)|
-|`jayschema`|0.1%|12 (± 2.66%)|
+|`is-my-json-valid`|100%|14825 (± 1%)|
+|`themis`|26.5%|3924 (± 3.82%)|
+|`jsck`|11.1%|1647 (± 0.83%)|
+|`z-schema`|8.5%|1255 (± 4.28%)|
+|`jjv`|7.3%|1086 (± 0.94%)|
+|`skeemas`|1.3%|198 (± 2.09%)|
+|`request-validator`|0.7%|102 (± 4.67%)|
+|`jayschema`|0.1%|13 (± 3.36%)|
 
 Validators tested: `is-my-json-valid`, `themis`, `z-schema`, `jjv`, `skeemas`, `jayschema`, `jsck`, `jassi`, `JSV`, `request-validator`, `json-model`, `tv4`, `jsonschema`, 
 (those not in the results above where excluded because of failing tests - see below for details)
