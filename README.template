@@ -18,7 +18,7 @@ Validators tested: {{#validators}}{{&link}}, {{/validators}}
 
 (validators not in the results above where excluded because of failing tests - see below for details)
 
-`{{fastestValidator}}` is currently the fastest JSON-schema validator out there.
+`{{&fastestValidator}}` is currently the fastest JSON-schema validator out there.
 
 The fastest validator has 100%, the rest a lower score relative to the fastest.
 If a validator has a score of 5% that means that it's speed is 5% of the fastest,
