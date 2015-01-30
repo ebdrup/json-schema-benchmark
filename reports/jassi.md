@@ -2,6 +2,8 @@
 
 # All validators fail these tests
 
+some languages do not distinguish between different types of numeric value, a float is not an integer even without fractional part
+
 remote ref, remote ref invalid
 
 fragment within remote ref, remote fragment invalid
@@ -56,8 +58,6 @@ jassi failed the test &quot;validation of host names, a host name starting with 
 jassi failed the test &quot;validation of host names, a host name containing illegal characters&quot;. Expected result: false but validator returned: true. **This excludes this validator from performance tests**
 
 jassi failed the test &quot;validation of host names, a host name with a component too long&quot;. Expected result: false but validator returned: true. **This excludes this validator from performance tests**
-
-jassi failed the test &quot;some languages do not distinguish between different types of numeric value, a float is not an integer even without fractional part&quot;. Expected result: false but validator returned: true
 
 jassi failed the test &quot;root pointer ref, recursive mismatch&quot;. Expected result: false but validator returned: true. **This excludes this validator from performance tests**
 

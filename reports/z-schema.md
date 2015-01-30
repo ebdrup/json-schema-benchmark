@@ -2,6 +2,8 @@
 
 # All validators fail these tests
 
+some languages do not distinguish between different types of numeric value, a float is not an integer even without fractional part
+
 remote ref, remote ref invalid
 
 fragment within remote ref, remote fragment invalid
@@ -30,8 +32,6 @@ z-schema failed the test &quot;minLength validation, one supplementary Unicode c
 z-schema failed the test &quot;validation of URIs, an invalid URI&quot;. Expected result: false but validator returned: true
 
 z-schema failed the test &quot;validation of URIs, an invalid URI though valid URI reference&quot;. Expected result: false but validator returned: true
-
-z-schema failed the test &quot;some languages do not distinguish between different types of numeric value, a float is not an integer even without fractional part&quot;. Expected result: false but validator returned: true
 
 z-schema failed the test &quot;remote ref, containing refs itself, remote ref valid&quot;. Expected result: true but validator returned: false
 

@@ -106,7 +106,7 @@ testRunner([
 		},
 		test: function (instance, json, schema) {
 			try {
-				instance(json);
+				instance.validate(json);
 				return true;
 			}
 			catch (e) {

@@ -2,6 +2,8 @@
 
 # All validators fail these tests
 
+some languages do not distinguish between different types of numeric value, a float is not an integer even without fractional part
+
 remote ref, remote ref invalid
 
 fragment within remote ref, remote fragment invalid
@@ -28,8 +30,6 @@ jsck failed the test &quot;invalid definition, invalid definition schema&quot;. 
 jsck failed the test &quot;maxLength validation, two supplementary Unicode code points is long enough&quot;. Expected result: true but validator returned: false
 
 jsck failed the test &quot;minLength validation, one supplementary Unicode code point is not long enough&quot;. Expected result: false but validator returned: true
-
-jsck failed the test &quot;some languages do not distinguish between different types of numeric value, a float is not an integer even without fractional part&quot;. Expected result: false but validator returned: true
 
 jsck failed the test &quot;remote ref, containing refs itself, remote ref valid&quot;. Because the schema failed to load(Unresolvable $ref values: [&quot;http:&#x2F;&#x2F;json-schema.org&#x2F;draft-04&#x2F;schema#&quot;])
 
