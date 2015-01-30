@@ -278,7 +278,7 @@ function saveResults(results, validators, allTestNames, testsThatAllValidatorsFa
 	var data = {
 		graphBarSpacing: graphBarSpacing,
 		validators: comma(validators),
-		fastestValidator: results[0].name,
+		fastestValidator: results[0].link,
 		testsThatAllValidatorsFail: comma(testsThatAllValidatorsFail.map(function (testName) {
 			return {name: testName};
 		})),

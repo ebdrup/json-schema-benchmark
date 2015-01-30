@@ -23,7 +23,7 @@ Validators tested: [`is-my-json-valid`](https://github.com/mafintosh/is-my-json-
 
 (validators not in the results above where excluded because of failing tests - see below for details)
 
-`is-my-json-valid` is currently the fastest JSON-schema validator out there.
+[`is-my-json-valid`](https://github.com/mafintosh/is-my-json-valid) is currently the fastest JSON-schema validator out there.
 
 The fastest validator has 100%, the rest a lower score relative to the fastest.
 If a validator has a score of 5% that means that it's speed is 5% of the fastest,
