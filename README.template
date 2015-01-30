@@ -4,7 +4,7 @@ Performance benchmark for Node.js JSON-schema validators.
 Also tests against official JSON-schema test suite and checking
 for validators that cause side-effects on schema or data.
 
-# Results
+# Performance
 
 ![performance](https://chart.googleapis.com/chart?chxt=x,y&cht=bhs&chco=76A4FB&chls=2.0&chbh={{resultGraphBarHeight}},{{graphBarSpacing}},1&chs=600x{{resultsGraphHeight}}&chxl=-1:{{#results}}|{{name}}{{/results}}&chd=t:{{#results}}{{percentage}}{{#comma}},{{/comma}}{{/results}})
 
