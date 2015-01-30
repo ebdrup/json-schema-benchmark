@@ -1,4 +1,4 @@
-# `[JSV](http://github.com/garycourt/JSV)` - test summary
+# [`JSV`](http://github.com/garycourt/JSV) - test summary
 
 # All validators fail these tests
 

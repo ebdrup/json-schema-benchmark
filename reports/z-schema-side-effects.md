@@ -1,4 +1,4 @@
-# `[z-schema](https://github.com/zaggino/z-schema)` side-effects in testrun
+# [`z-schema`](https://github.com/zaggino/z-schema) side-effects in testrun
 
 z-schema had a side-effect on (altered the original) schema in the test `additionalItems as schema, additional items match schema`
 

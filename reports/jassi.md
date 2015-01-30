@@ -1,4 +1,4 @@
-# `[jassi](https://github.com/iclanzan/jassi)` - test summary
+# [`jassi`](https://github.com/iclanzan/jassi) - test summary
 
 # All validators fail these tests
 

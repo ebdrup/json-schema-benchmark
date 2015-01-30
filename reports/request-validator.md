@@ -1,4 +1,4 @@
-# `[request-validator](https://github.com/bugventure/request-validator)` - test summary
+# [`request-validator`](https://github.com/bugventure/request-validator) - test summary
 
 # All validators fail these tests
 

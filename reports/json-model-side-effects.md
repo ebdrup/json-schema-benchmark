@@ -1,4 +1,4 @@
-# `[json-model](https://github.com/geraintluff/json-model)` side-effects in testrun
+# [`json-model`](https://github.com/geraintluff/json-model) side-effects in testrun
 
 json-model had a side-effect on (altered the original) schema in the test `additionalItems as schema, additional items match schema`
 

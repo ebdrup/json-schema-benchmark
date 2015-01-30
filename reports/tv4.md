@@ -1,4 +1,4 @@
-# `[tv4](https://github.com/geraintluff/tv4)` - test summary
+# [`tv4`](https://github.com/geraintluff/tv4) - test summary
 
 # All validators fail these tests
 

@@ -1,4 +1,4 @@
-# `[z-schema](https://github.com/zaggino/z-schema)` - test summary
+# [`z-schema`](https://github.com/zaggino/z-schema) - test summary
 
 # All validators fail these tests
 

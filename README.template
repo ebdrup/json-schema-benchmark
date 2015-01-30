@@ -11,10 +11,10 @@ for validators that cause side-effects on schema or data.
 |Validator|Relative speed|Number of test runs per second|
 |---------|:------------:|:----------------------------:|
 {{#results}}
-|`{{&link}}`|{{percentage}}%|{{hz}} (± {{plusMinusPercent}}%)|
+|{{&link}}|{{percentage}}%|{{hz}} (± {{plusMinusPercent}}%)|
 {{/results}}
 
-Validators tested: {{#validators}}`{{&link}}`, {{/validators}}
+Validators tested: {{#validators}}{{&link}}, {{/validators}}
 
 (validators not in the results above where excluded because of failing tests - see below for details)
 
@@ -35,7 +35,7 @@ If a validator does not pass a test in the official test suite, it will show up 
 |Validator|Number of failing tests (click for details)|
 |---------|-----------------------|
 {{#validatorsFailingTests}}
-|`{{&link}}`|[{{count}}](https://github.com/Muscula/json-schema-benchmark/blob/master/reports/{{name}}.md)|
+|{{&link}}|[{{count}}](https://github.com/Muscula/json-schema-benchmark/blob/master/reports/{{name}}.md)|
 {{/validatorsFailingTests}}
 
 # Side-effects summary
@@ -45,7 +45,7 @@ Number of tests that caused side-effects. The schema or data was altered by the 
 |Validator|Number of side-effects (BAD)|
 |---------|----------------------------|
 {{#validatorsSideEffects}}
-|`{{&link}}`|[{{count}}](https://github.com/Muscula/json-schema-benchmark/blob/master/reports/{{name}}-side-effects.md)|
+|{{&link}}|[{{count}}](https://github.com/Muscula/json-schema-benchmark/blob/master/reports/{{name}}-side-effects.md)|
 {{/validatorsSideEffects}}
 
 Validators not in the list have no side-effects on data or schemas.

@@ -1,4 +1,4 @@
-# `[jjv](https://github.com/acornejo/jjv)` - test summary
+# [`jjv`](https://github.com/acornejo/jjv) - test summary
 
 # All validators fail these tests
 

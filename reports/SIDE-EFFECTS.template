@@ -1,4 +1,4 @@
-# `{{&link}}` side-effects in testrun
+# {{&link}} side-effects in testrun
 {{#sideEffects}}
 
 {{message}}

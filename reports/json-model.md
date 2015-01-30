@@ -1,4 +1,4 @@
-# `[json-model](https://github.com/geraintluff/json-model)` - test summary
+# [`json-model`](https://github.com/geraintluff/json-model) - test summary
 
 # All validators fail these tests
 

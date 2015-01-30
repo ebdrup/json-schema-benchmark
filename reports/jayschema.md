@@ -1,4 +1,4 @@
-# `[jayschema](https://github.com/natesilva/jayschema)` - test summary
+# [`jayschema`](https://github.com/natesilva/jayschema) - test summary
 
 # All validators fail these tests
 

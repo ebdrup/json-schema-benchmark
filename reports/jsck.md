@@ -1,4 +1,4 @@
-# `[jsck](https://github.com/pandastrike/jsck)` - test summary
+# [`jsck`](https://github.com/pandastrike/jsck) - test summary
 
 # All validators fail these tests
 

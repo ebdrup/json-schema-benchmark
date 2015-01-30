@@ -1,4 +1,4 @@
-# `[is-my-json-valid](https://github.com/mafintosh/is-my-json-valid)` - test summary
+# [`is-my-json-valid`](https://github.com/mafintosh/is-my-json-valid) - test summary
 
 # All validators fail these tests
 

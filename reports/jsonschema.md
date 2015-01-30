@@ -1,4 +1,4 @@
-# `[jsonschema](https://github.com/tdegrunt/jsonschema)` - test summary
+# [`jsonschema`](https://github.com/tdegrunt/jsonschema) - test summary
 
 # All validators fail these tests
 

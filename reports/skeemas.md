@@ -1,4 +1,4 @@
-# `[skeemas](https://github.com/Prestaul/skeemas)` - test summary
+# [`skeemas`](https://github.com/Prestaul/skeemas) - test summary
 
 # All validators fail these tests
 

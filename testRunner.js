@@ -230,7 +230,7 @@ function saveResults(results, validators, allTestNames, testsThatAllValidatorsFa
 	var sideEffectsTemplate = fs.readFileSync(path.join(__dirname, 'reports/SIDE-EFFECTS.template'), 'utf-8');
 
 	validators.forEach(function (v) {
-		v.link = v.homepage ? '[' + v.name + '](' + v.homepage + ')' : v.name;
+		v.link = v.homepage ? '[`' + v.name + '`](' + v.homepage + ')' : v.name;
 	});
 
 	var validatorsFailingTests = validators

@@ -1,4 +1,4 @@
-# `themis` - test summary
+# themis - test summary
 
 # All validators fail these tests
 
