@@ -32,6 +32,9 @@ module.exports = function (validators) {
 				console.error(err.stack);
 				process.exit(1);
 			}
+			validators.forEach(function (v) {
+				v.link = v.homepage ? '[`' + v.name + '`](' + v.homepage + ')' : v.name;
+			});
 			var excludeTests = [
 				//lots of validators fail these
 				'invalid definition, invalid definition schema',
@@ -203,7 +206,8 @@ function runBenchmark(validators, testSuites, excludeTestSuites, excludeTests) {
 			fastest: result.hz === fastestTestResult.hz,
 			percentage: Math.round((result.hz || 0) / fastestTestResult.hz * 1000) / 10,
 			name: validator.name,
-			plusMinusPercent: Math.round(result.stats.rme * 100) / 100
+			plusMinusPercent: Math.round(result.stats.rme * 100) / 100,
+			link: validator.link
 		};
 	});
 	return suiteResult;
@@ -228,10 +232,6 @@ function saveResults(results, validators, allTestNames, testsThatAllValidatorsFa
 	var readmeTemplate = fs.readFileSync(path.join(__dirname, 'README.template'), 'utf-8');
 	var testsTemplate = fs.readFileSync(path.join(__dirname, 'reports/TESTS.template'), 'utf-8');
 	var sideEffectsTemplate = fs.readFileSync(path.join(__dirname, 'reports/SIDE-EFFECTS.template'), 'utf-8');
-
-	validators.forEach(function (v) {
-		v.link = v.homepage ? '[`' + v.name + '`](' + v.homepage + ')' : v.name;
-	});
 
 	var validatorsFailingTests = validators
 		.map(function (validator) {
