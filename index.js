@@ -44,9 +44,15 @@ testRunner([
 	{
 		name: 'z-schema',
 		setup: function () {
-			return new ZSchema({
+			var validator = new ZSchema({
 				ignoreUnresolvableReferences: true
 			});
+
+			Object.keys(refs).forEach(function(uri) {
+				validator.setRemoteReference(uri, refs[uri]);
+			});
+
+			return validator;
 		},
 		test: function (instance, json, schema) {
 			return instance.validate(json, schema);
