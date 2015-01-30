@@ -1,8 +1,8 @@
 # json-schema-benchmark
 Benchmarks for Node.js JSON-schema validators.
 
-Also test against official JSON-schema test suite and check
-for validation causing side-effects on schema or data.
+Plus tests against official JSON-schema test suite and checking
+for validators that cause side-effects on schema or data.
 
 # Results
 
