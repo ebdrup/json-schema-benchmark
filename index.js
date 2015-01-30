@@ -14,6 +14,14 @@ var jsck = require('jsck');
 var requestValidator = require('request-validator');
 var skeemas = require('skeemas');
 
+var refs = {
+	'http://localhost:1234/integer.json': require('./JSON-Schema-Test-Suite/remotes/integer.json'),
+	'http://localhost:1234/subSchemas.json': require('./JSON-Schema-Test-Suite/remotes/subSchemas.json'),
+	'http://localhost:1234/folder/folderInteger.json': require('./JSON-Schema-Test-Suite/remotes/folder/folderInteger.json'),
+	'http://json-schema.org/draft-03/schema': require('./refs/json-schema-draft-03.json'),
+	'http://json-schema.org/draft-04/schema': require('./refs/json-schema-draft-04.json')
+};
+
 testRunner([
 	{
 		name: 'is-my-json-valid',
@@ -56,7 +64,13 @@ testRunner([
 	{
 		name: 'skeemas',
 		setup: function (schema) {
-			return skeemas;
+			var validator = skeemas();
+
+			Object.keys(refs).forEach(function(uri) {
+				validator.addRef(uri, refs[uri]);
+			});
+
+			return validator;
 		},
 		test: function (instance, json, schema) {
 			return instance.validate(json, schema).valid;
