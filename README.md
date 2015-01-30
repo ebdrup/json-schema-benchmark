@@ -6,17 +6,17 @@ for validators that cause side-effects on schema or data.
 
 # Results
 
-![performance](https://chart.googleapis.com/chart?chxt=x,y&cht=bhs&chco=76A4FB&chls=2.0&chbh=53,4,1&chs=600x419&chxl=-1:|is-my-json-valid|themis|jsck|z-schema|jjv|skeemas|jayschema&chd=t2:100,27.5,11.8,8.2,7.2,1.4,0.1)
+![performance](https://chart.googleapis.com/chart?chxt=x,y&cht=bhs&chco=76A4FB&chls=2.0&chbh=53,4,1&chs=600x419&chxl=-1:|is-my-json-valid|themis|jsck|z-schema|jjv|skeemas|jayschema&chd=t:100,26.6,12.2,9,7.9,1.5,0.1)
 
 |Validator|Relative speed|Number of test runs per second|
 |---------|:------------:|:----------------------------:|
-|`is-my-json-valid`|100%|12028 (± 1.5%)|
-|`themis`|27.5%|3309 (± 3.01%)|
-|`jsck`|11.8%|1419 (± 1.06%)|
-|`z-schema`|8.2%|981 (± 3.66%)|
-|`jjv`|7.2%|866 (± 1.78%)|
-|`skeemas`|1.4%|170 (± 1.23%)|
-|`jayschema`|0.1%|11 (± 2.23%)|
+|`is-my-json-valid`|100%|12232 (± 1.62%)|
+|`themis`|26.6%|3253 (± 2.51%)|
+|`jsck`|12.2%|1491 (± 0.88%)|
+|`z-schema`|9%|1101 (± 3.49%)|
+|`jjv`|7.9%|962 (± 0.86%)|
+|`skeemas`|1.5%|186 (± 1.18%)|
+|`jayschema`|0.1%|12 (± 2.66%)|
 
 Validators tested: `is-my-json-valid`, `themis`, `z-schema`, `jjv`, `skeemas`, `jayschema`, `jsck`, `jassi`, `JSV`, `request-validator`, `json-model`, `tv4`, `jsonschema`, 
 (those not in the results above where excluded because of failing tests - see below for details)
@@ -43,7 +43,7 @@ Feel free to add more validators to the test suite in a pull request.
 
 Number of failed tests per validator (lower is better)
 
-![failing tests](https://chart.googleapis.com/chart?chxt=x,y&cht=bhs&chco=76A4FB&chls=2.0&chbh=26,4,1&chs=600x410&chxl=-1:|is-my-json-valid|jjv|jayschema|z-schema|skeemas|themis|jsonschema|jsck|request-validator|tv4|jassi|json-model|JSV&chd=t2:9,9,10,11,13,13,17,21,26,26,31,40,54&chxr=0,0,54)
+![failing tests](https://chart.googleapis.com/chart?chxt=x,y&cht=bhs&chco=76A4FB&chls=2.0&chbh=26,4,1&chs=600x410&chxl=-1:|is-my-json-valid|jjv|jayschema|z-schema|skeemas|themis|jsonschema|jsck|request-validator|tv4|jassi|json-model|JSV&chd=t:9,9,10,11,13,13,17,21,26,26,31,40,54&chxr=0,0,54&chds=0,54)
 
 |Validator|Number of failing tests (click for details)|
 |---------|-----------------------|

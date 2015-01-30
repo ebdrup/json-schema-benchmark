@@ -6,7 +6,7 @@ for validators that cause side-effects on schema or data.
 
 # Results
 
-![performance](https://chart.googleapis.com/chart?chxt=x,y&cht=bhs&chco=76A4FB&chls=2.0&chbh={{resultGraphBarHeight}},{{graphBarSpacing}},1&chs=600x{{resultsGraphHeight}}&chxl=-1:{{#results}}|{{name}}{{/results}}&chd=t2:{{#results}}{{percentage}}{{#comma}},{{/comma}}{{/results}})
+![performance](https://chart.googleapis.com/chart?chxt=x,y&cht=bhs&chco=76A4FB&chls=2.0&chbh={{resultGraphBarHeight}},{{graphBarSpacing}},1&chs=600x{{resultsGraphHeight}}&chxl=-1:{{#results}}|{{name}}{{/results}}&chd=t:{{#results}}{{percentage}}{{#comma}},{{/comma}}{{/results}})
 
 |Validator|Relative speed|Number of test runs per second|
 |---------|:------------:|:----------------------------:|
@@ -39,7 +39,7 @@ Feel free to add more validators to the test suite in a pull request.
 
 Number of failed tests per validator (lower is better)
 
-![failing tests](https://chart.googleapis.com/chart?chxt=x,y&cht=bhs&chco=76A4FB&chls=2.0&chbh={{validatorsFailingTestsGraphBarHeight}},{{graphBarSpacing}},1&chs=600x{{validatorsFailingTestsGraphHeight}}&chxl=-1:{{#validatorsFailingTests}}|{{name}}{{/validatorsFailingTests}}&chd=t2:{{#validatorsFailingTests}}{{count}}{{#comma}},{{/comma}}{{/validatorsFailingTests}}&chxr=0,0,{{maxFailingTests}})
+![failing tests](https://chart.googleapis.com/chart?chxt=x,y&cht=bhs&chco=76A4FB&chls=2.0&chbh={{validatorsFailingTestsGraphBarHeight}},{{graphBarSpacing}},1&chs=600x{{validatorsFailingTestsGraphHeight}}&chxl=-1:{{#validatorsFailingTests}}|{{name}}{{/validatorsFailingTests}}&chd=t:{{#validatorsFailingTests}}{{count}}{{#comma}},{{/comma}}{{/validatorsFailingTests}}&chxr=0,0,{{maxFailingTests}}&chds=0,{{maxFailingTests}})
 
 |Validator|Number of failing tests (click for details)|
 |---------|-----------------------|
