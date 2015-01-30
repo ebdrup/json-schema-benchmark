@@ -6,17 +6,17 @@ for validation causing side-effects on schema or data.
 
 # Results
 
-![performance](https://chart.googleapis.com/chart?chxt=x,y&cht=bhs&chco=76A4FB&chls=2.0&chbh=53,4,1&chs=600x419&chxl=-1:|is-my-json-valid|themis|jsck|z-schema|jjv|skeemas|jayschema&chd=t2:100,25.7,12.1,8.5,7.2,1.5,0.1)
+![performance](https://chart.googleapis.com/chart?chxt=x,y&cht=bhs&chco=76A4FB&chls=2.0&chbh=53,4,1&chs=600x419&chxl=-1:|is-my-json-valid|themis|jsck|z-schema|jjv|skeemas|jayschema&chd=t2:100,25.5,12,8.5,7.2,1.3,0.1)
 
 |Validator|Relative speed|Number of test runs per second|
 |---------|:------------:|:----------------------------:|
-|`is-my-json-valid`|100%|12372 ± 1.57%|
-|`themis`|25.7%|3174 ± 3.61%|
-|`jsck`|12.1%|1501 ± 0.93%|
-|`z-schema`|8.5%|1046 ± 3.71%|
-|`jjv`|7.2%|886 ± 1.36%|
-|`skeemas`|1.5%|180 ± 1.39%|
-|`jayschema`|0.1%|12 ± 2.87%|
+|`is-my-json-valid`|100%|12824 (± 1.31%)|
+|`themis`|25.5%|3269 (± 3.56%)|
+|`jsck`|12%|1541 (± 1.15%)|
+|`z-schema`|8.5%|1094 (± 3.89%)|
+|`jjv`|7.2%|926 (± 1.16%)|
+|`skeemas`|1.3%|173 (± 0.98%)|
+|`jayschema`|0.1%|12 (± 2.36%)|
 
 Validators tested: `is-my-json-valid`, `themis`, `z-schema`, `jjv`, `skeemas`, `jayschema`, `jsck`, `jassi`, `JSV`, `request-validator`, `json-model`, `tv4`, `jsonschema`, 
 (those not in the results above where excluded because of failing tests - see below for details)
@@ -45,7 +45,7 @@ Number of failed tests per validator (lower is better)
 
 ![failing tests](https://chart.googleapis.com/chart?chxt=x,y&cht=bhs&chco=76A4FB&chls=2.0&chbh=26,4,1&chs=600x410&chxl=-1:|is-my-json-valid|jjv|jayschema|z-schema|skeemas|themis|jsonschema|jsck|tv4|jassi|json-model|JSV|request-validator&chd=t2:9,9,10,11,13,13,17,21,26,31,40,54,139&chxr=0,0,139)
 
-|Validator|Number of failing tests|
+|Validator|Number of failing tests (click for details)|
 |---------|-----------------------|
 |`is-my-json-valid`|[9](https://github.com/Muscula/json-schema-benchmark/blob/master/reports/is-my-json-valid.md)|
 |`jjv`|[9](https://github.com/Muscula/json-schema-benchmark/blob/master/reports/jjv.md)|
@@ -74,34 +74,6 @@ Number of tests that caused side-effects. The schema or data was altered by the 
 |`z-schema`|290|
 
 Validators not in the list have no side-effects on data or schemas.
-
-# Detaild test reports
-
-[`is-my-json-valid`](https://github.com/Muscula/json-schema-benchmark/blob/master/reports/is-my-json-valid.md)
-
-[`themis`](https://github.com/Muscula/json-schema-benchmark/blob/master/reports/themis.md)
-
-[`z-schema`](https://github.com/Muscula/json-schema-benchmark/blob/master/reports/z-schema.md)
-
-[`jjv`](https://github.com/Muscula/json-schema-benchmark/blob/master/reports/jjv.md)
-
-[`skeemas`](https://github.com/Muscula/json-schema-benchmark/blob/master/reports/skeemas.md)
-
-[`jayschema`](https://github.com/Muscula/json-schema-benchmark/blob/master/reports/jayschema.md)
-
-[`jsck`](https://github.com/Muscula/json-schema-benchmark/blob/master/reports/jsck.md)
-
-[`jassi`](https://github.com/Muscula/json-schema-benchmark/blob/master/reports/jassi.md)
-
-[`JSV`](https://github.com/Muscula/json-schema-benchmark/blob/master/reports/JSV.md)
-
-[`request-validator`](https://github.com/Muscula/json-schema-benchmark/blob/master/reports/request-validator.md)
-
-[`json-model`](https://github.com/Muscula/json-schema-benchmark/blob/master/reports/json-model.md)
-
-[`tv4`](https://github.com/Muscula/json-schema-benchmark/blob/master/reports/tv4.md)
-
-[`jsonschema`](https://github.com/Muscula/json-schema-benchmark/blob/master/reports/jsonschema.md)
 
 # Thanks
 This code was originally pulled out from the benchmarks in the `themis` json-schema validator.

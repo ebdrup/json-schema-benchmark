@@ -11,7 +11,7 @@ for validation causing side-effects on schema or data.
 |Validator|Relative speed|Number of test runs per second|
 |---------|:------------:|:----------------------------:|
 {{#results}}
-|`{{name}}`|{{percentage}}%|{{hz}} ± {{plusMinusPercent}}%|
+|`{{name}}`|{{percentage}}%|{{hz}} (± {{plusMinusPercent}}%)|
 {{/results}}
 
 Validators tested: {{#validators}}`{{name}}`, {{/validators}}
@@ -41,7 +41,7 @@ Number of failed tests per validator (lower is better)
 
 ![failing tests](https://chart.googleapis.com/chart?chxt=x,y&cht=bhs&chco=76A4FB&chls=2.0&chbh={{validatorsFailingTestsGraphBarHeight}},{{graphBarSpacing}},1&chs=600x{{validatorsFailingTestsGraphHeight}}&chxl=-1:{{#validatorsFailingTests}}|{{name}}{{/validatorsFailingTests}}&chd=t2:{{#validatorsFailingTests}}{{count}}{{#comma}},{{/comma}}{{/validatorsFailingTests}}&chxr=0,0,{{maxFailingTests}})
 
-|Validator|Number of failing tests|
+|Validator|Number of failing tests (click for details)|
 |---------|-----------------------|
 {{#validatorsFailingTests}}
 |`{{name}}`|[{{count}}](https://github.com/Muscula/json-schema-benchmark/blob/master/reports/{{name}}.md)|
@@ -58,12 +58,6 @@ Number of tests that caused side-effects. The schema or data was altered by the 
 {{/validatorsSideEffects}}
 
 Validators not in the list have no side-effects on data or schemas.
-
-# Detaild test reports
-{{#validators}}
-
-[`{{name}}`](https://github.com/Muscula/json-schema-benchmark/blob/master/reports/{{name}}.md)
-{{/validators}}
 
 # Thanks
 This code was originally pulled out from the benchmarks in the `themis` json-schema validator.
