@@ -4,46 +4,74 @@ var _ = require('lodash');
 var benchmark = require('benchmark');
 var mustache = require('mustache');
 var deepEqual = require('deep-equal');
+var npm = require('npm');
+var async = require('async');
 
 module.exports = function (validators) {
-	var excludeTests = [
-		//lots of validators fail these
-		'invalid definition, invalid definition schema',
-		'maxLength validation, two supplementary Unicode code points is long enough',
-		'minLength validation, one supplementary Unicode code point is not long enough'
-	];
-	var excludeTestSuites = [
-		//lost failing these tests
-		'remote ref',
-		'remote ref, containing refs itself',
-		'fragment within remote ref',
-		'ref within remote ref',
-		'change resolution scope',
-		// these below were added to get jsck in the benchmarks)
-		'uniqueItems validation',
-		'valid definition',
-		'invalid definition'
-	];
-	var testSuites = readTests(path.join(__dirname + '/JSON-Schema-Test-Suite/tests/draft4/'));
-	var optionalTests = getTestNames(readTests(path.join(__dirname + '/JSON-Schema-Test-Suite/tests/draft4/optional')));
-	excludeTests = excludeTests.concat(optionalTests);
-	validators.forEach(function (validator) {
-		validator.failingTests = [];
-		validator.sideEffects = [];
-		validator.timesFastest = 0;
-	});
-	var goodValidators = validators
-		.filter(function (validator) {
-			return testSuites.reduce(function (acc, testSuite) {
-				return verifyValidator(validator, testSuite, excludeTestSuites, excludeTests) && acc;
-			}, true);
+	npm.load(npm.config, function (err) {
+		if (err) {
+			console.error(err.stack);
+			process.exit(1);
+		}
+		var tasks = validators.map(function (validator) {
+			return function (callback) {
+				npm.commands.view([validator.name + '@latest', 'homepage'], true, function (err, result) {
+					if (err) {
+						return callback(err);
+					}
+					var version = Object.keys(result)[0];
+					if (version) {
+						validator.homepage = result[version].homepage;
+					}
+					return callback(null);
+				});
+			};
 		});
-	var allTestNames = getTestNames(testSuites);
-	var testsThatAllValidatorsFail = validators.reduce(function (acc, validator) {
-		return _.intersection(acc, validAndInvalid(validator, allTestNames));
-	}, validAndInvalid(validators[0], allTestNames));
-	var results = runBenchmark(goodValidators, testSuites, excludeTestSuites, excludeTests);
-	saveResults(results, validators, allTestNames, testsThatAllValidatorsFail)
+		async.parallel(tasks, function (err) {
+			if (err) {
+				console.error(err.stack);
+				process.exit(1);
+			}
+			var excludeTests = [
+				//lots of validators fail these
+				'invalid definition, invalid definition schema',
+				'maxLength validation, two supplementary Unicode code points is long enough',
+				'minLength validation, one supplementary Unicode code point is not long enough'
+			];
+			var excludeTestSuites = [
+				//lost failing these tests
+				'remote ref',
+				'remote ref, containing refs itself',
+				'fragment within remote ref',
+				'ref within remote ref',
+				'change resolution scope',
+				// these below were added to get jsck in the benchmarks)
+				'uniqueItems validation',
+				'valid definition',
+				'invalid definition'
+			];
+			var testSuites = readTests(path.join(__dirname + '/JSON-Schema-Test-Suite/tests/draft4/'));
+			var optionalTests = getTestNames(readTests(path.join(__dirname + '/JSON-Schema-Test-Suite/tests/draft4/optional')));
+			excludeTests = excludeTests.concat(optionalTests);
+			validators.forEach(function (validator) {
+				validator.failingTests = [];
+				validator.sideEffects = [];
+				validator.timesFastest = 0;
+			});
+			var goodValidators = validators
+				.filter(function (validator) {
+					return testSuites.reduce(function (acc, testSuite) {
+						return verifyValidator(validator, testSuite, excludeTestSuites, excludeTests) && acc;
+					}, true);
+				});
+			var allTestNames = getTestNames(testSuites);
+			var testsThatAllValidatorsFail = validators.reduce(function (acc, validator) {
+				return _.intersection(acc, validAndInvalid(validator, allTestNames));
+			}, validAndInvalid(validators[0], allTestNames));
+			var results = runBenchmark(goodValidators, testSuites, excludeTestSuites, excludeTests);
+			saveResults(results, validators, allTestNames, testsThatAllValidatorsFail)
+		});
+	});
 };
 
 function getTestNames(testSuites) {
@@ -200,10 +228,16 @@ function saveResults(results, validators, allTestNames, testsThatAllValidatorsFa
 	var readmeTemplate = fs.readFileSync(path.join(__dirname, 'README.template'), 'utf-8');
 	var testsTemplate = fs.readFileSync(path.join(__dirname, 'reports/TESTS.template'), 'utf-8');
 	var sideEffectsTemplate = fs.readFileSync(path.join(__dirname, 'reports/SIDE-EFFECTS.template'), 'utf-8');
+
+	validators.forEach(function (v) {
+		v.link = v.homepage ? '[' + v.name + '](' + v.homepage + ')' : v.name;
+	});
+
 	var validatorsFailingTests = validators
 		.map(function (validator) {
 			return {
 				name: validator.name,
+				link: validator.link,
 				count: validator.failingTests.length
 			};
 		})
@@ -214,6 +248,7 @@ function saveResults(results, validators, allTestNames, testsThatAllValidatorsFa
 		.map(function (validator) {
 			return {
 				name: validator.name,
+				link: validator.link,
 				count: validator.sideEffects.length,
 				sideEffects: validator.sideEffects
 			};
@@ -260,7 +295,7 @@ function saveResults(results, validators, allTestNames, testsThatAllValidatorsFa
 	fs.writeFileSync(readmePath, html);
 	validators.forEach(function (validator) {
 		var html = mustache.render(testsTemplate, {
-			name: validator.name,
+			link: validator.link,
 			failingTests: validator.failingTests,
 			testsThatAllValidatorsFail: comma(testsThatAllValidatorsFail.map(function (testName) {
 				return {name: testName};

@@ -1,4 +1,4 @@
-# `skeemas` - test summary
+# `[skeemas](https://github.com/Prestaul/skeemas)` - test summary
 
 # All validators fail these tests
 
@@ -21,14 +21,14 @@ ref within remote ref, ref within ref valid
 change resolution scope, changed scope ref valid
 
 
-# `skeemas` failed tests
+# `` failed tests
 
-skeemas failed the test &quot;valid definition, valid definition schema&quot;. Expected result: true but validator returned: &quot;Unable to locate JSON Ref (http:&#x2F;&#x2F;json-schema.org&#x2F;draft-04&#x2F;schema)&quot;
+skeemas failed the test `valid definition, valid definition schema`. Expected result: `true` but validator returned: `&quot;Unable to locate JSON Ref (http:&#x2F;&#x2F;json-schema.org&#x2F;draft-04&#x2F;schema)&quot;`
 
-skeemas failed the test &quot;invalid definition, invalid definition schema&quot;. Expected result: false but validator returned: &quot;Unable to locate JSON Ref (http:&#x2F;&#x2F;json-schema.org&#x2F;draft-04&#x2F;schema)&quot;
+skeemas failed the test `invalid definition, invalid definition schema`. Expected result: `false` but validator returned: `&quot;Unable to locate JSON Ref (http:&#x2F;&#x2F;json-schema.org&#x2F;draft-04&#x2F;schema)&quot;`
 
-skeemas failed the test &quot;remote ref, containing refs itself, remote ref valid&quot;. Expected result: true but validator returned: &quot;Unable to locate JSON Ref (http:&#x2F;&#x2F;json-schema.org&#x2F;draft-04&#x2F;schema)&quot;
+skeemas failed the test `remote ref, containing refs itself, remote ref valid`. Expected result: `true` but validator returned: `&quot;Unable to locate JSON Ref (http:&#x2F;&#x2F;json-schema.org&#x2F;draft-04&#x2F;schema)&quot;`
 
-skeemas failed the test &quot;remote ref, containing refs itself, remote ref invalid&quot;. Expected result: false but validator returned: &quot;Unable to locate JSON Ref (http:&#x2F;&#x2F;json-schema.org&#x2F;draft-04&#x2F;schema)&quot;
+skeemas failed the test `remote ref, containing refs itself, remote ref invalid`. Expected result: `false` but validator returned: `&quot;Unable to locate JSON Ref (http:&#x2F;&#x2F;json-schema.org&#x2F;draft-04&#x2F;schema)&quot;`
 
 **All other tests passed**.

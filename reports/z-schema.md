@@ -1,4 +1,4 @@
-# `z-schema` - test summary
+# `[z-schema](https://github.com/zaggino/z-schema)` - test summary
 
 # All validators fail these tests
 
@@ -21,18 +21,18 @@ ref within remote ref, ref within ref valid
 change resolution scope, changed scope ref valid
 
 
-# `z-schema` failed tests
+# `` failed tests
 
-z-schema failed the test &quot;valid definition, valid definition schema&quot;. Expected result: true but validator returned: false
+z-schema failed the test `valid definition, valid definition schema`. Expected result: `true` but validator returned: `false`
 
-z-schema failed the test &quot;maxLength validation, two supplementary Unicode code points is long enough&quot;. Expected result: true but validator returned: false
+z-schema failed the test `maxLength validation, two supplementary Unicode code points is long enough`. Expected result: `true` but validator returned: `false`
 
-z-schema failed the test &quot;minLength validation, one supplementary Unicode code point is not long enough&quot;. Expected result: false but validator returned: true
+z-schema failed the test `minLength validation, one supplementary Unicode code point is not long enough`. Expected result: `false` but validator returned: `true`
 
-z-schema failed the test &quot;validation of URIs, an invalid URI&quot;. Expected result: false but validator returned: true
+z-schema failed the test `validation of URIs, an invalid URI`. Expected result: `false` but validator returned: `true`
 
-z-schema failed the test &quot;validation of URIs, an invalid URI though valid URI reference&quot;. Expected result: false but validator returned: true
+z-schema failed the test `validation of URIs, an invalid URI though valid URI reference`. Expected result: `false` but validator returned: `true`
 
-z-schema failed the test &quot;remote ref, containing refs itself, remote ref valid&quot;. Expected result: true but validator returned: false
+z-schema failed the test `remote ref, containing refs itself, remote ref valid`. Expected result: `true` but validator returned: `false`
 
 **All other tests passed**.

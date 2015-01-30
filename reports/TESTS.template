@@ -1,4 +1,4 @@
-# `{{name}}` - test summary
+# `{{&link}}` - test summary
 
 # All validators fail these tests
 {{#testsThatAllValidatorsFail}}

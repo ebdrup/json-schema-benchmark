@@ -1,4 +1,4 @@
-# `jsck` - test summary
+# `[jsck](https://github.com/pandastrike/jsck)` - test summary
 
 # All validators fail these tests
 
@@ -21,30 +21,30 @@ ref within remote ref, ref within ref valid
 change resolution scope, changed scope ref valid
 
 
-# `jsck` failed tests
+# `` failed tests
 
-jsck failed the test &quot;valid definition, valid definition schema&quot;. Because the schema failed to load(Unresolvable $ref values: [&quot;http:&#x2F;&#x2F;json-schema.org&#x2F;draft-04&#x2F;schema#&quot;])
+jsck failed the test `valid definition, valid definition schema`. Because the schema failed to load(`Unresolvable $ref values: [&quot;http:&#x2F;&#x2F;json-schema.org&#x2F;draft-04&#x2F;schema#&quot;]`)
 
-jsck failed the test &quot;invalid definition, invalid definition schema&quot;. Because the schema failed to load(Unresolvable $ref values: [&quot;http:&#x2F;&#x2F;json-schema.org&#x2F;draft-04&#x2F;schema#&quot;])
+jsck failed the test `invalid definition, invalid definition schema`. Because the schema failed to load(`Unresolvable $ref values: [&quot;http:&#x2F;&#x2F;json-schema.org&#x2F;draft-04&#x2F;schema#&quot;]`)
 
-jsck failed the test &quot;maxLength validation, two supplementary Unicode code points is long enough&quot;. Expected result: true but validator returned: false
+jsck failed the test `maxLength validation, two supplementary Unicode code points is long enough`. Expected result: `true` but validator returned: `false`
 
-jsck failed the test &quot;minLength validation, one supplementary Unicode code point is not long enough&quot;. Expected result: false but validator returned: true
+jsck failed the test `minLength validation, one supplementary Unicode code point is not long enough`. Expected result: `false` but validator returned: `true`
 
-jsck failed the test &quot;remote ref, containing refs itself, remote ref valid&quot;. Because the schema failed to load(Unresolvable $ref values: [&quot;http:&#x2F;&#x2F;json-schema.org&#x2F;draft-04&#x2F;schema#&quot;])
+jsck failed the test `remote ref, containing refs itself, remote ref valid`. Because the schema failed to load(`Unresolvable $ref values: [&quot;http:&#x2F;&#x2F;json-schema.org&#x2F;draft-04&#x2F;schema#&quot;]`)
 
-jsck failed the test &quot;remote ref, containing refs itself, remote ref invalid&quot;. Because the schema failed to load(Unresolvable $ref values: [&quot;http:&#x2F;&#x2F;json-schema.org&#x2F;draft-04&#x2F;schema#&quot;])
+jsck failed the test `remote ref, containing refs itself, remote ref invalid`. Because the schema failed to load(`Unresolvable $ref values: [&quot;http:&#x2F;&#x2F;json-schema.org&#x2F;draft-04&#x2F;schema#&quot;]`)
 
-jsck failed the test &quot;uniqueItems validation, non-unique array of integers is invalid&quot;. Expected result: false but validator returned: true
+jsck failed the test `uniqueItems validation, non-unique array of integers is invalid`. Expected result: `false` but validator returned: `true`
 
-jsck failed the test &quot;uniqueItems validation, numbers are unique if mathematically unequal&quot;. Expected result: false but validator returned: true
+jsck failed the test `uniqueItems validation, numbers are unique if mathematically unequal`. Expected result: `false` but validator returned: `true`
 
-jsck failed the test &quot;uniqueItems validation, non-unique array of objects is invalid&quot;. Expected result: false but validator returned: true
+jsck failed the test `uniqueItems validation, non-unique array of objects is invalid`. Expected result: `false` but validator returned: `true`
 
-jsck failed the test &quot;uniqueItems validation, non-unique array of nested objects is invalid&quot;. Expected result: false but validator returned: true
+jsck failed the test `uniqueItems validation, non-unique array of nested objects is invalid`. Expected result: `false` but validator returned: `true`
 
-jsck failed the test &quot;uniqueItems validation, non-unique array of arrays is invalid&quot;. Expected result: false but validator returned: true
+jsck failed the test `uniqueItems validation, non-unique array of arrays is invalid`. Expected result: `false` but validator returned: `true`
 
-jsck failed the test &quot;uniqueItems validation, non-unique heterogeneous types are invalid&quot;. Expected result: false but validator returned: true
+jsck failed the test `uniqueItems validation, non-unique heterogeneous types are invalid`. Expected result: `false` but validator returned: `true`
 
 **All other tests passed**.
