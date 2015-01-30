@@ -166,7 +166,8 @@ function runBenchmark(validators, testSuites, excludeTestSuites, excludeTests) {
 			hz: result.hz,
 			fastest: result.hz === fastestTestResult.hz,
 			percentage: Math.round((result.hz || 0) / fastestTestResult.hz * 1000) / 10,
-			name: validator.name
+			name: validator.name,
+			plusMinusPercent: Math.round(result.stats.rme * 100)/100
 		};
 	});
 	return suiteResult;
@@ -188,7 +189,8 @@ function comma(arr) {
 
 function saveResults(start, end, results, validators, testsThatAllValidatorsFail) {
 	var readmePath = path.join(__dirname, 'README.md');
-	var template = fs.readFileSync(path.join(__dirname, 'README.template'), 'utf-8');
+	var readmeTemplate = fs.readFileSync(path.join(__dirname, 'README.template'), 'utf-8');
+	var testsTemplate = fs.readFileSync(path.join(__dirname, 'reports/TESTS.template'), 'utf-8');
 	var totalTimeInMinutes = ((end[0] - start[0]) / 60);
 	totalTimeInMinutes = parseInt(totalTimeInMinutes * 100, 10) / 100;
 	var currentDate = new Date().toLocaleDateString();
@@ -231,27 +233,36 @@ function saveResults(start, end, results, validators, testsThatAllValidatorsFail
 	var resultsGraphHeight = (resultGraphBarHeight + graphBarSpacing) * results.length + 20;
 	var validatorsFailingTestsGraphBarHeight = Math.floor(400 / validatorsFailingTests.length) - graphBarSpacing;
 	var validatorsFailingTestsGraphHeight = (validatorsFailingTestsGraphBarHeight + graphBarSpacing) * validatorsFailingTests.length + 20;
-	var html = mustache.render(
-		template,
-		{
-			graphBarSpacing: graphBarSpacing,
-			validators: comma(validators),
-			fastestValidator: results[0].name,
+	var data = {
+		graphBarSpacing: graphBarSpacing,
+		validators: comma(validators),
+		fastestValidator: results[0].name,
+		testsThatAllValidatorsFail: comma(testsThatAllValidatorsFail.map(function (testName) {
+			return {name: testName};
+		})),
+		validatorsFailingTests: comma(validatorsFailingTests),
+		validatorsFailingTestsGraphHeight: validatorsFailingTestsGraphHeight,
+		validatorsFailingTestsGraphBarHeight: validatorsFailingTestsGraphBarHeight,
+		maxFailingTests: maxFailingTests,
+		validatorsSideEffects: comma(validatorsSideEffects),
+		results: comma(results),
+		resultsGraphHeight: resultsGraphHeight,
+		resultGraphBarHeight: resultGraphBarHeight,
+		currentDate: currentDate,
+		totalTime: totalTimeInMinutes
+	};
+	var html = mustache.render(readmeTemplate, data);
+	fs.writeFileSync(readmePath, html);
+	validators.forEach(function(validator){
+		var html = mustache.render(testsTemplate, {
+			name: validator.name,
+			failingTests:validator.failingTests,
 			testsThatAllValidatorsFail: comma(testsThatAllValidatorsFail.map(function (testName) {
 				return {name: testName};
-			})),
-			validatorsFailingTests: comma(validatorsFailingTests),
-			validatorsFailingTestsGraphHeight: validatorsFailingTestsGraphHeight,
-			validatorsFailingTestsGraphBarHeight: validatorsFailingTestsGraphBarHeight,
-			maxFailingTests: maxFailingTests,
-			validatorsSideEffects: comma(validatorsSideEffects),
-			results: comma(results),
-			resultsGraphHeight: resultsGraphHeight,
-			resultGraphBarHeight: resultGraphBarHeight,
-			currentDate: currentDate,
-			totalTime: totalTimeInMinutes
-		}
-	);
-	fs.writeFileSync(readmePath, html);
-	console.log(readmePath + ' created on ' + currentDate + ' in ' + totalTimeInMinutes + ' minutes');
+			}))
+		});
+		var testSummaryPath = path.join(__dirname, '/reports/', validator.name + '.md');
+		fs.writeFileSync(testSummaryPath, html);
+
+	})
 }

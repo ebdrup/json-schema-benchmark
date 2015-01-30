@@ -1,0 +1,16 @@
+# `{{name}}` - test summary
+
+# All validators fail these tests
+{{#testsThatAllValidatorsFail}}
+
+{{name}}
+{{/testsThatAllValidatorsFail}}
+
+
+# `{{name}}` failed tests
+{{#failingTests}}
+
+{{message}}
+{{/failingTests}}
+
+**All other tests passed**.

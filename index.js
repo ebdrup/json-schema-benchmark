@@ -34,7 +34,7 @@ testRunner([
 		}
 	},
 	{
-		name: 'z-schema 3',
+		name: 'z-schema',
 		setup: function () {
 			return new ZSchema({
 				ignoreUnresolvableReferences: true
