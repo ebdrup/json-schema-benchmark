@@ -21,7 +21,7 @@ ref within remote ref, ref within ref valid
 change resolution scope, changed scope ref valid
 
 
-# `` failed tests
+# [`json-model`](https://github.com/geraintluff/json-model) failed tests
 
 json-model failed the test `valid definition, valid definition schema`. Because the schema failed to load(`Requests not enabled - try JsonModel.setRequestFunction(func):
 {&quot;method&quot;:&quot;GET&quot;,&quot;url&quot;:&quot;http:&#x2F;&#x2F;json-schema.org&#x2F;draft-04&#x2F;schema&quot;}`)

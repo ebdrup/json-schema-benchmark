@@ -21,7 +21,7 @@ ref within remote ref, ref within ref valid
 change resolution scope, changed scope ref valid
 
 
-# `` failed tests
+# [`JSV`](http://github.com/garycourt/JSV) failed tests
 
 JSV failed the test `additionalItems as false without items, items defaults to empty schema so everything is valid`. Expected result: `true` but validator returned: `false`. **This excludes this validator from performance tests**
 

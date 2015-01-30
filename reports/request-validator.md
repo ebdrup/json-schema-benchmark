@@ -21,7 +21,7 @@ ref within remote ref, ref within ref valid
 change resolution scope, changed scope ref valid
 
 
-# `` failed tests
+# [`request-validator`](https://github.com/bugventure/request-validator) failed tests
 
 request-validator failed the test `maxLength validation, two supplementary Unicode code points is long enough`. Expected result: `true` but validator returned: `false`
 

@@ -6,24 +6,24 @@ for validators that cause side-effects on schema or data.
 
 # Performance
 
-![performance](https://chart.googleapis.com/chart?chxt=x,y&cht=bhs&chco=76A4FB&chls=2.0&chbh=46,4,1&chs=600x420&chxl=-1:|is-my-json-valid|themis|jsck|z-schema|jjv|skeemas|request-validator|jayschema&chd=t:100,25.1,11.5,9.6,7.8,1.4,0.7,0.1)
+![performance](https://chart.googleapis.com/chart?chxt=x,y&cht=bhs&chco=76A4FB&chls=2.0&chbh=46,4,1&chs=600x420&chxl=-1:|is-my-json-valid|themis|jsck|z-schema|jjv|skeemas|request-validator|jayschema&chd=t:100,25,12.1,8.6,7.7,1.4,0.7,0.1)
 
 |Validator|Relative speed|Number of test runs per second|
 |---------|:------------:|:----------------------------:|
-||100%|6196 (± 2.26%)|
-||25.1%|1558 (± 4.53%)|
-||11.5%|714 (± 1.61%)|
-||9.6%|594 (± 4.34%)|
-||7.8%|484 (± 1.64%)|
-||1.4%|85 (± 0.93%)|
-||0.7%|45 (± 7.08%)|
-||0.1%|5 (± 3.46%)|
+||100%|6086 (± 1.19%)|
+||25%|1523 (± 5.15%)|
+||12.1%|739 (± 0.48%)|
+||8.6%|522 (± 4.21%)|
+||7.7%|471 (± 0.82%)|
+||1.4%|83 (± 2.35%)|
+||0.7%|44 (± 6.95%)|
+||0.1%|5 (± 2.37%)|
 
 Validators tested: [`is-my-json-valid`](https://github.com/mafintosh/is-my-json-valid), themis, [`z-schema`](https://github.com/zaggino/z-schema), [`jjv`](https://github.com/acornejo/jjv), [`skeemas`](https://github.com/Prestaul/skeemas), [`jayschema`](https://github.com/natesilva/jayschema), [`jsck`](https://github.com/pandastrike/jsck), [`jassi`](https://github.com/iclanzan/jassi), [`JSV`](http://github.com/garycourt/JSV), [`request-validator`](https://github.com/bugventure/request-validator), [`json-model`](https://github.com/geraintluff/json-model), [`tv4`](https://github.com/geraintluff/tv4), [`jsonschema`](https://github.com/tdegrunt/jsonschema), 
 
 (validators not in the results above where excluded because of failing tests - see below for details)
 
-[`is-my-json-valid`](https://github.com/mafintosh/is-my-json-valid) is currently the fastest JSON-schema validator out there.
+`` is currently the fastest JSON-schema validator out there.
 
 The fastest validator has 100%, the rest a lower score relative to the fastest.
 If a validator has a score of 5% that means that it's speed is 5% of the fastest,

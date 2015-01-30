@@ -21,7 +21,7 @@ ref within remote ref, ref within ref valid
 change resolution scope, changed scope ref valid
 
 
-# `` failed tests
+# themis failed tests
 
 themis failed the test `valid definition, valid definition schema`. Expected result: `true` but validator returned: `&quot;Object #&lt;Object&gt; has no method &#39;http:&#x2F;&#x2F;json-schema.org&#x2F;draft-04&#x2F;schema#&#39;&quot;`
 

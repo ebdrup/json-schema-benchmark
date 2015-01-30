@@ -7,7 +7,7 @@
 {{/testsThatAllValidatorsFail}}
 
 
-# `{{name}}` failed tests
+# {{&link}} failed tests
 {{#failingTests}}
 
 {{message}}

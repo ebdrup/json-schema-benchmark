@@ -21,7 +21,7 @@ ref within remote ref, ref within ref valid
 change resolution scope, changed scope ref valid
 
 
-# `` failed tests
+# [`jassi`](https://github.com/iclanzan/jassi) failed tests
 
 jassi failed the test `invalid definition, invalid definition schema`. Expected result: `false` but validator returned: `true`
 

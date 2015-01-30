@@ -21,7 +21,7 @@ ref within remote ref, ref within ref valid
 change resolution scope, changed scope ref valid
 
 
-# `` failed tests
+# [`jsck`](https://github.com/pandastrike/jsck) failed tests
 
 jsck failed the test `valid definition, valid definition schema`. Because the schema failed to load(`Unresolvable $ref values: [&quot;http:&#x2F;&#x2F;json-schema.org&#x2F;draft-04&#x2F;schema#&quot;]`)
 

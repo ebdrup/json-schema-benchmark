@@ -21,7 +21,7 @@ ref within remote ref, ref within ref valid
 change resolution scope, changed scope ref valid
 
 
-# `` failed tests
+# [`jjv`](https://github.com/acornejo/jjv) failed tests
 
 jjv failed the test `valid definition, valid definition schema`. Expected result: `true` but validator returned: `false`
 

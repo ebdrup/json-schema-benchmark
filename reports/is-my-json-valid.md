@@ -21,7 +21,7 @@ ref within remote ref, ref within ref valid
 change resolution scope, changed scope ref valid
 
 
-# `` failed tests
+# [`is-my-json-valid`](https://github.com/mafintosh/is-my-json-valid) failed tests
 
 is-my-json-valid failed the test `invalid definition, invalid definition schema`. Expected result: `false` but validator returned: `true`
 

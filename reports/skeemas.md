@@ -21,7 +21,7 @@ ref within remote ref, ref within ref valid
 change resolution scope, changed scope ref valid
 
 
-# `` failed tests
+# [`skeemas`](https://github.com/Prestaul/skeemas) failed tests
 
 skeemas failed the test `valid definition, valid definition schema`. Expected result: `true` but validator returned: `&quot;Unable to locate JSON Ref (http:&#x2F;&#x2F;json-schema.org&#x2F;draft-04&#x2F;schema)&quot;`
 
