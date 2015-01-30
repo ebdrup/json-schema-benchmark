@@ -579,5 +579,3 @@ z-schema had a side-effect on (altered the original) schema in the test &quot;un
 z-schema had a side-effect on (altered the original) schema in the test &quot;uniqueItems validation, unique heterogeneous types are valid&quot;
 
 z-schema had a side-effect on (altered the original) schema in the test &quot;uniqueItems validation, non-unique heterogeneous types are invalid&quot;
-
-**All other tests passed**.

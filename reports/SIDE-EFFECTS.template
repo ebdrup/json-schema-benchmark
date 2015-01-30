@@ -3,5 +3,3 @@
 
 {{message}}
 {{/sideEffects}}
-
-**All other tests passed**.

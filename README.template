@@ -24,15 +24,11 @@ The fastest validator has 100%, the rest a lower score relative to the fastest.
 If a validator has a score of 5% that means that it's speed is 5% of the fastest,
 meaning that it's 20 times slower than the fastest.
 
-# What is this for?
+# Test failure summary
 
 This test suite uses the official JSON-schema test suite.
 
-This also means, that if a validator does not pass a test in the official test suite, it will show up in these results (below).
-
-# Test failure summary
-
-Number of failed tests per validator (lower is better)
+If a validator does not pass a test in the official test suite, it will show up in these results.
 
 ![failing tests](https://chart.googleapis.com/chart?chxt=x,y&cht=bhs&chco=76A4FB&chls=2.0&chbh={{validatorsFailingTestsGraphBarHeight}},{{graphBarSpacing}},1&chs=600x{{validatorsFailingTestsGraphHeight}}&chxl=-1:{{#validatorsFailingTests}}|{{name}}{{/validatorsFailingTests}}&chd=t:{{#validatorsFailingTests}}{{count}}{{#comma}},{{/comma}}{{/validatorsFailingTests}}&chxr=0,0,{{maxFailingTests}}&chds=0,{{maxFailingTests}})
 

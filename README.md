@@ -6,18 +6,18 @@ for validators that cause side-effects on schema or data.
 
 # Results
 
-![performance](https://chart.googleapis.com/chart?chxt=x,y&cht=bhs&chco=76A4FB&chls=2.0&chbh=46,4,1&chs=600x420&chxl=-1:|is-my-json-valid|themis|jsck|z-schema|jjv|skeemas|request-validator|jayschema&chd=t:100,26.3,11.1,7,6.4,1.2,0.8,0.1)
+![performance](https://chart.googleapis.com/chart?chxt=x,y&cht=bhs&chco=76A4FB&chls=2.0&chbh=46,4,1&chs=600x420&chxl=-1:|is-my-json-valid|themis|jsck|z-schema|jjv|skeemas|request-validator|jayschema&chd=t:100,27.5,12.4,9.3,7.9,1.4,0.7,0.1)
 
 |Validator|Relative speed|Number of test runs per second|
 |---------|:------------:|:----------------------------:|
-|`is-my-json-valid`|100%|7804 (± 6.33%)|
-|`themis`|26.3%|2050 (± 4.64%)|
-|`jsck`|11.1%|867 (± 2.05%)|
-|`z-schema`|7%|547 (± 3.55%)|
-|`jjv`|6.4%|501 (± 1.13%)|
-|`skeemas`|1.2%|93 (± 2.68%)|
-|`request-validator`|0.8%|61 (± 5.23%)|
-|`jayschema`|0.1%|7 (± 3.16%)|
+|`is-my-json-valid`|100%|6170 (± 3.9%)|
+|`themis`|27.5%|1696 (± 4.44%)|
+|`jsck`|12.4%|762 (± 1.03%)|
+|`z-schema`|9.3%|574 (± 4.34%)|
+|`jjv`|7.9%|490 (± 1.66%)|
+|`skeemas`|1.4%|88 (± 1.01%)|
+|`request-validator`|0.7%|44 (± 5.68%)|
+|`jayschema`|0.1%|5 (± 2.87%)|
 
 Validators tested: `is-my-json-valid`, `themis`, `z-schema`, `jjv`, `skeemas`, `jayschema`, `jsck`, `jassi`, `JSV`, `request-validator`, `json-model`, `tv4`, `jsonschema`, 
 
@@ -29,15 +29,11 @@ The fastest validator has 100%, the rest a lower score relative to the fastest.
 If a validator has a score of 5% that means that it's speed is 5% of the fastest,
 meaning that it's 20 times slower than the fastest.
 
-# What is this for?
+# Test failure summary
 
 This test suite uses the official JSON-schema test suite.
 
-This also means, that if a validator does not pass a test in the official test suite, it will show up in these results (below).
-
-# Test failure summary
-
-Number of failed tests per validator (lower is better)
+If a validator does not pass a test in the official test suite, it will show up in these results.
 
 ![failing tests](https://chart.googleapis.com/chart?chxt=x,y&cht=bhs&chco=76A4FB&chls=2.0&chbh=26,4,1&chs=600x410&chxl=-1:|is-my-json-valid|jjv|jayschema|z-schema|skeemas|themis|jsonschema|jsck|request-validator|tv4|jassi|json-model|JSV&chd=t:9,9,10,11,13,13,17,21,26,26,31,40,54&chxr=0,0,54&chds=0,54)
 
