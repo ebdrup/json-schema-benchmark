@@ -1,7 +1,7 @@
 # json-schema-benchmark
 Performance benchmark for Node.js JSON-schema validators.
 
-Also tests against official JSON-schema test suite and checking
+Also tests against [official JSON-schema test suite](https://github.com/json-schema/JSON-Schema-Test-Suite) and checks
 for validators that cause side-effects on schema or data.
 
 # Performance
@@ -31,7 +31,7 @@ meaning that it's 20 times slower than the fastest.
 
 # Test failure summary
 
-This test suite uses the official JSON-schema test suite.
+This test suite uses the [official JSON-schema test suite](https://github.com/json-schema/JSON-Schema-Test-Suite).
 
 If a validator does not pass a test in the official test suite, it will show up in these results.
 
