@@ -6,7 +6,6 @@ var mustache = require('mustache');
 var deepEqual = require('deep-equal');
 
 module.exports = function (validators) {
-	var start = process.hrtime();
 	var excludeTests = [
 		//lots of validators fail these
 		'invalid definition, invalid definition schema',
@@ -26,12 +25,7 @@ module.exports = function (validators) {
 		'invalid definition'
 	];
 	var testSuites = readTests(path.join(__dirname + '/JSON-Schema-Test-Suite/tests/draft4/'));
-	var optionalTests = readTests(path.join(__dirname + '/JSON-Schema-Test-Suite/tests/draft4/optional'))
-		.reduce(function (acc, testSuite) {
-			return acc.concat(testSuite.tests.map(function(test){
-				return [testSuite.description, test.description].join(', ')
-			}));
-		}, []);
+	var optionalTests = getTestNames(readTests(path.join(__dirname + '/JSON-Schema-Test-Suite/tests/draft4/optional')));
 	excludeTests = excludeTests.concat(optionalTests);
 	validators.forEach(function (validator) {
 		validator.failingTests = [];
@@ -44,21 +38,29 @@ module.exports = function (validators) {
 				return verifyValidator(validator, testSuite, excludeTestSuites, excludeTests) && acc;
 			}, true);
 		});
+	var allTestNames = getTestNames(testSuites);
 	var testsThatAllValidatorsFail = validators.reduce(function (acc, validator) {
-		return _.intersection(acc, validAndInvalid(validator));
-	}, validAndInvalid(validators[0]));
+		return _.intersection(acc, validAndInvalid(validator, allTestNames));
+	}, validAndInvalid(validators[0], allTestNames));
 	var results = runBenchmark(goodValidators, testSuites, excludeTestSuites, excludeTests);
-	var end = process.hrtime();
-	saveResults(start, end, results, validators, testsThatAllValidatorsFail)
+	saveResults(results, validators, allTestNames, testsThatAllValidatorsFail)
 };
 
-function validAndInvalid(validator) {
+function getTestNames(testSuites) {
+	return testSuites.reduce(function (acc, testSuite) {
+		return acc.concat(testSuite.tests.map(function (test) {
+			return [testSuite.description, test.description].join(', ')
+		}));
+	}, []);
+}
+
+function validAndInvalid(validator, allTestNames) {
 	var testNames = _.pluck(validator.failingTests, 'testName').filter(Boolean);
-	return testNames.concat(testNames.map(function (testName) {
+	return _.intersection(testNames.concat(testNames.map(function (testName) {
 		return testName.indexOf('invalid') === -1 ?
 			testName.replace(/valid/g, 'invalid') :
 			testName.replace(/invalid/g, 'valid');
-	}))
+	})), allTestNames);
 }
 
 function verifyValidator(validator, testSuiteIn, excludeTestSuites, excludeTests) {
@@ -193,13 +195,11 @@ function comma(arr) {
 }
 
 
-function saveResults(start, end, results, validators, testsThatAllValidatorsFail) {
+function saveResults(results, validators, allTestNames, testsThatAllValidatorsFail) {
 	var readmePath = path.join(__dirname, 'README.md');
 	var readmeTemplate = fs.readFileSync(path.join(__dirname, 'README.template'), 'utf-8');
 	var testsTemplate = fs.readFileSync(path.join(__dirname, 'reports/TESTS.template'), 'utf-8');
-	var totalTimeInMinutes = ((end[0] - start[0]) / 60);
-	totalTimeInMinutes = parseInt(totalTimeInMinutes * 100, 10) / 100;
-	var currentDate = new Date().toLocaleDateString();
+	var sideEffectsTemplate = fs.readFileSync(path.join(__dirname, 'reports/SIDE-EFFECTS.template'), 'utf-8');
 	var validatorsFailingTests = validators
 		.map(function (validator) {
 			return {
@@ -214,7 +214,8 @@ function saveResults(start, end, results, validators, testsThatAllValidatorsFail
 		.map(function (validator) {
 			return {
 				name: validator.name,
-				count: validator.sideEffects.length
+				count: validator.sideEffects.length,
+				sideEffects: validator.sideEffects
 			};
 		})
 		.filter(function (o) {
@@ -253,9 +254,7 @@ function saveResults(start, end, results, validators, testsThatAllValidatorsFail
 		validatorsSideEffects: comma(validatorsSideEffects),
 		results: comma(results),
 		resultsGraphHeight: resultsGraphHeight,
-		resultGraphBarHeight: resultGraphBarHeight,
-		currentDate: currentDate,
-		totalTime: totalTimeInMinutes
+		resultGraphBarHeight: resultGraphBarHeight
 	};
 	var html = mustache.render(readmeTemplate, data);
 	fs.writeFileSync(readmePath, html);
@@ -269,6 +268,10 @@ function saveResults(start, end, results, validators, testsThatAllValidatorsFail
 		});
 		var testSummaryPath = path.join(__dirname, '/reports/', validator.name + '.md');
 		fs.writeFileSync(testSummaryPath, html);
-
-	})
+	});
+	validatorsSideEffects.forEach(function (sideEffects) {
+		var html = mustache.render(sideEffectsTemplate, sideEffects);
+		var sideEffectsSummaryPath = path.join(__dirname, '/reports/', sideEffects.name + '-side-effects.md');
+		fs.writeFileSync(sideEffectsSummaryPath, html);
+	});
 }

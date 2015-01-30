@@ -1,0 +1,7 @@
+# `{{name}}` side-effects in testrun
+{{#sideEffects}}
+
+{{message}}
+{{/sideEffects}}
+
+**All other tests passed**.

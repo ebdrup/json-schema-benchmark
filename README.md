@@ -1,44 +1,39 @@
 # json-schema-benchmark
-Benchmarks for Node.js JSON-schema validators.
+Performance benchmark for Node.js JSON-schema validators.
 
-Plus tests against official JSON-schema test suite and checking
+Also tests against official JSON-schema test suite and checking
 for validators that cause side-effects on schema or data.
 
 # Results
 
-![performance](https://chart.googleapis.com/chart?chxt=x,y&cht=bhs&chco=76A4FB&chls=2.0&chbh=46,4,1&chs=600x420&chxl=-1:|is-my-json-valid|themis|jsck|z-schema|jjv|skeemas|request-validator|jayschema&chd=t:100,26.5,11.1,8.5,7.3,1.3,0.7,0.1)
+![performance](https://chart.googleapis.com/chart?chxt=x,y&cht=bhs&chco=76A4FB&chls=2.0&chbh=46,4,1&chs=600x420&chxl=-1:|is-my-json-valid|themis|jsck|z-schema|jjv|skeemas|request-validator|jayschema&chd=t:100,26.3,11.1,7,6.4,1.2,0.8,0.1)
 
 |Validator|Relative speed|Number of test runs per second|
 |---------|:------------:|:----------------------------:|
-|`is-my-json-valid`|100%|14825 (± 1%)|
-|`themis`|26.5%|3924 (± 3.82%)|
-|`jsck`|11.1%|1647 (± 0.83%)|
-|`z-schema`|8.5%|1255 (± 4.28%)|
-|`jjv`|7.3%|1086 (± 0.94%)|
-|`skeemas`|1.3%|198 (± 2.09%)|
-|`request-validator`|0.7%|102 (± 4.67%)|
-|`jayschema`|0.1%|13 (± 3.36%)|
+|`is-my-json-valid`|100%|7804 (± 6.33%)|
+|`themis`|26.3%|2050 (± 4.64%)|
+|`jsck`|11.1%|867 (± 2.05%)|
+|`z-schema`|7%|547 (± 3.55%)|
+|`jjv`|6.4%|501 (± 1.13%)|
+|`skeemas`|1.2%|93 (± 2.68%)|
+|`request-validator`|0.8%|61 (± 5.23%)|
+|`jayschema`|0.1%|7 (± 3.16%)|
 
 Validators tested: `is-my-json-valid`, `themis`, `z-schema`, `jjv`, `skeemas`, `jayschema`, `jsck`, `jassi`, `JSV`, `request-validator`, `json-model`, `tv4`, `jsonschema`, 
-(those not in the results above where excluded because of failing tests - see below for details)
 
-`is-my-json-valid` is currently by far the fastest JSON-schema validator out there.
+(validators not in the results above where excluded because of failing tests - see below for details)
+
+`is-my-json-valid` is currently the fastest JSON-schema validator out there.
 
 The fastest validator has 100%, the rest a lower score relative to the fastest.
 If a validator has a score of 5% that means that it's speed is 5% of the fastest,
-meaning that it's 20 times slower than the fastest
-
-The number in parenthesis is the number of validations of the entire test suite per second.
+meaning that it's 20 times slower than the fastest.
 
 # What is this for?
 
-This test suite uses the official JSON-schema test suite, but it uses it to test the speed of validators.
+This test suite uses the official JSON-schema test suite.
 
-This also means, that if a validator does not pass a chosen subset of the official test suite, it will show up in these results (below).
-
-This benchmark is using  the `benchmark` module to gain statistically significant results.
-
-Feel free to add more validators to the test suite in a pull request.
+This also means, that if a validator does not pass a test in the official test suite, it will show up in these results (below).
 
 # Test failure summary
 
@@ -68,10 +63,10 @@ Number of tests that caused side-effects. The schema or data was altered by the 
 
 |Validator|Number of side-effects (BAD)|
 |---------|----------------------------|
-|`tv4`|2|
-|`jsonschema`|4|
-|`json-model`|283|
-|`z-schema`|290|
+|`tv4`|[2](https://github.com/Muscula/json-schema-benchmark/blob/master/reports/tv4-side-effects.md)|
+|`jsonschema`|[4](https://github.com/Muscula/json-schema-benchmark/blob/master/reports/jsonschema-side-effects.md)|
+|`json-model`|[283](https://github.com/Muscula/json-schema-benchmark/blob/master/reports/json-model-side-effects.md)|
+|`z-schema`|[290](https://github.com/Muscula/json-schema-benchmark/blob/master/reports/z-schema-side-effects.md)|
 
 Validators not in the list have no side-effects on data or schemas.
 
