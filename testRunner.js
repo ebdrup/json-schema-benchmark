@@ -128,28 +128,28 @@ function verifyValidator(validator, testSuiteIn, excludeTestSuites, excludeTests
 			givenResult = e.message;
 		}
 		if (!deepEqual(originalData, test.data)) {
-			var message = validator.link + ' had a side-effect on (altered the original) data in the test `' + testName + '`' +
-				'\nschema' +
+			var message = '# Side-effect on data\n' + validator.link + ' had a side-effect on (altered the original) data in the test `' + testName + '`' +
+				'\n## Schema' +
 				'\n```js' +
 				'\n' + JSON.stringify(testSuite.schema, null, '\t') +
 				'\n```' +
-				'\nOriginal data' +
+				'\n## Original data' +
 				'\n```js' +
 				'\n' + JSON.stringify(originalData, null, '\t') +
 				'\n```' +
-				'\ndata after validating with schema' +
+				'\n## Data after validating with schema' +
 				'\n```js' +
 				'\n' + jsonStringifySafe(test.data, null, '\t') +
 				'\n```';
 			validator.sideEffects.push({message: message, testName: testName});
 		}
 		if (!deepEqual(testSuite.schema, testSuiteIn.schema)) {
-			var message = validator.link + ' had a side-effect on (altered the original) schema in the test `' + testName + '`' +
-				'\nschema' +
+			var message = '# Side-effect on schema\n' + validator.link + ' had a side-effect on (altered the original) schema in the test `' + testName + '`' +
+				'\n## Original schema' +
 				'\n```js' +
 				'\n' + JSON.stringify(testSuiteIn.schema, null, '\t') +
 				'\n```' +
-				'\nschema after validating' +
+				'\n## Schema after validating' +
 				'\n```js' +
 				'\n' + jsonStringifySafe(testSuite.schema, null, '\t') +
 				'\n```';

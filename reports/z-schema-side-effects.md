@@ -1,7 +1,11 @@
 # [`z-schema`](https://github.com/zaggino/z-schema) side-effects in testrun
 
+When running tests [`z-schema`](https://github.com/zaggino/z-schema) mutated either the original schema or the data being validated with the schema or both.
+
+
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `additionalItems as schema, additional items match schema`
-schema
+## Original schema
 ```js
 {
 	"items": [
@@ -12,7 +16,7 @@ schema
 	}
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"items": [
@@ -29,8 +33,9 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `additionalItems as schema, additional items do not match schema`
-schema
+## Original schema
 ```js
 {
 	"items": [
@@ -41,7 +46,7 @@ schema
 	}
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"items": [
@@ -58,15 +63,16 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `items is schema, no additionalItems, all items match schema`
-schema
+## Original schema
 ```js
 {
 	"items": {},
 	"additionalItems": false
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"items": {
@@ -78,8 +84,9 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `array of items with no additionalItems, no additional items present`
-schema
+## Original schema
 ```js
 {
 	"items": [
@@ -90,7 +97,7 @@ schema
 	"additionalItems": false
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"items": [
@@ -110,8 +117,9 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `array of items with no additionalItems, additional items are not permitted`
-schema
+## Original schema
 ```js
 {
 	"items": [
@@ -122,7 +130,7 @@ schema
 	"additionalItems": false
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"items": [
@@ -142,14 +150,15 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `additionalItems as false without items, items defaults to empty schema so everything is valid`
-schema
+## Original schema
 ```js
 {
 	"additionalItems": false
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"additionalItems": false,
@@ -158,14 +167,15 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `additionalItems as false without items, ignores non-arrays`
-schema
+## Original schema
 ```js
 {
 	"additionalItems": false
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"additionalItems": false,
@@ -174,8 +184,9 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `additionalItems are allowed by default, only the first item is validated`
-schema
+## Original schema
 ```js
 {
 	"items": [
@@ -185,7 +196,7 @@ schema
 	]
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"items": [
@@ -199,8 +210,9 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `additionalProperties being false does not allow other properties, no additional properties is valid`
-schema
+## Original schema
 ```js
 {
 	"properties": {
@@ -213,7 +225,7 @@ schema
 	"additionalProperties": false
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"properties": {
@@ -235,8 +247,9 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `additionalProperties being false does not allow other properties, an additional property is invalid`
-schema
+## Original schema
 ```js
 {
 	"properties": {
@@ -249,7 +262,7 @@ schema
 	"additionalProperties": false
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"properties": {
@@ -271,8 +284,9 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `additionalProperties being false does not allow other properties, ignores non-objects`
-schema
+## Original schema
 ```js
 {
 	"properties": {
@@ -285,7 +299,7 @@ schema
 	"additionalProperties": false
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"properties": {
@@ -307,8 +321,9 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `additionalProperties being false does not allow other properties, patternProperties are not additional properties`
-schema
+## Original schema
 ```js
 {
 	"properties": {
@@ -321,7 +336,7 @@ schema
 	"additionalProperties": false
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"properties": {
@@ -343,8 +358,9 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `additionalProperties allows a schema which should validate, no additional properties is valid`
-schema
+## Original schema
 ```js
 {
 	"properties": {
@@ -356,7 +372,7 @@ schema
 	}
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"properties": {
@@ -376,8 +392,9 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `additionalProperties allows a schema which should validate, an additional valid property is valid`
-schema
+## Original schema
 ```js
 {
 	"properties": {
@@ -389,7 +406,7 @@ schema
 	}
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"properties": {
@@ -409,8 +426,9 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `additionalProperties allows a schema which should validate, an additional invalid property is invalid`
-schema
+## Original schema
 ```js
 {
 	"properties": {
@@ -422,7 +440,7 @@ schema
 	}
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"properties": {
@@ -442,8 +460,9 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `additionalProperties can exist by itself, an additional valid property is valid`
-schema
+## Original schema
 ```js
 {
 	"additionalProperties": {
@@ -451,7 +470,7 @@ schema
 	}
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"additionalProperties": {
@@ -463,8 +482,9 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `additionalProperties can exist by itself, an additional invalid property is invalid`
-schema
+## Original schema
 ```js
 {
 	"additionalProperties": {
@@ -472,7 +492,7 @@ schema
 	}
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"additionalProperties": {
@@ -484,8 +504,9 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `additionalProperties are allowed by default, additional properties are allowed`
-schema
+## Original schema
 ```js
 {
 	"properties": {
@@ -494,7 +515,7 @@ schema
 	}
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"properties": {
@@ -510,8 +531,9 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `allOf, allOf`
-schema
+## Original schema
 ```js
 {
 	"allOf": [
@@ -538,7 +560,7 @@ schema
 	]
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"allOf": [
@@ -572,8 +594,9 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `allOf, mismatch second`
-schema
+## Original schema
 ```js
 {
 	"allOf": [
@@ -600,7 +623,7 @@ schema
 	]
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"allOf": [
@@ -634,8 +657,9 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `allOf, mismatch first`
-schema
+## Original schema
 ```js
 {
 	"allOf": [
@@ -662,7 +686,7 @@ schema
 	]
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"allOf": [
@@ -696,8 +720,9 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `allOf, wrong type`
-schema
+## Original schema
 ```js
 {
 	"allOf": [
@@ -724,7 +749,7 @@ schema
 	]
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"allOf": [
@@ -758,8 +783,9 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `allOf with base schema, valid`
-schema
+## Original schema
 ```js
 {
 	"properties": {
@@ -794,7 +820,7 @@ schema
 	]
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"properties": {
@@ -837,8 +863,9 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `allOf with base schema, mismatch base schema`
-schema
+## Original schema
 ```js
 {
 	"properties": {
@@ -873,7 +900,7 @@ schema
 	]
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"properties": {
@@ -916,8 +943,9 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `allOf with base schema, mismatch first allOf`
-schema
+## Original schema
 ```js
 {
 	"properties": {
@@ -952,7 +980,7 @@ schema
 	]
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"properties": {
@@ -995,8 +1023,9 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `allOf with base schema, mismatch second allOf`
-schema
+## Original schema
 ```js
 {
 	"properties": {
@@ -1031,7 +1060,7 @@ schema
 	]
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"properties": {
@@ -1074,8 +1103,9 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `allOf with base schema, mismatch both`
-schema
+## Original schema
 ```js
 {
 	"properties": {
@@ -1110,7 +1140,7 @@ schema
 	]
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"properties": {
@@ -1153,8 +1183,9 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `allOf simple types, valid`
-schema
+## Original schema
 ```js
 {
 	"allOf": [
@@ -1167,7 +1198,7 @@ schema
 	]
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"allOf": [
@@ -1185,8 +1216,9 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `allOf simple types, mismatch one`
-schema
+## Original schema
 ```js
 {
 	"allOf": [
@@ -1199,7 +1231,7 @@ schema
 	]
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"allOf": [
@@ -1217,8 +1249,9 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `anyOf, first anyOf valid`
-schema
+## Original schema
 ```js
 {
 	"anyOf": [
@@ -1231,7 +1264,7 @@ schema
 	]
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"anyOf": [
@@ -1249,8 +1282,9 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `anyOf, second anyOf valid`
-schema
+## Original schema
 ```js
 {
 	"anyOf": [
@@ -1263,7 +1297,7 @@ schema
 	]
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"anyOf": [
@@ -1281,8 +1315,9 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `anyOf, both anyOf valid`
-schema
+## Original schema
 ```js
 {
 	"anyOf": [
@@ -1295,7 +1330,7 @@ schema
 	]
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"anyOf": [
@@ -1313,8 +1348,9 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `anyOf, neither anyOf valid`
-schema
+## Original schema
 ```js
 {
 	"anyOf": [
@@ -1327,7 +1363,7 @@ schema
 	]
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"anyOf": [
@@ -1345,8 +1381,9 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `anyOf with base schema, mismatch base schema`
-schema
+## Original schema
 ```js
 {
 	"type": "string",
@@ -1360,7 +1397,7 @@ schema
 	]
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"type": "string",
@@ -1379,8 +1416,9 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `anyOf with base schema, one anyOf valid`
-schema
+## Original schema
 ```js
 {
 	"type": "string",
@@ -1394,7 +1432,7 @@ schema
 	]
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"type": "string",
@@ -1413,8 +1451,9 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `anyOf with base schema, both anyOf invalid`
-schema
+## Original schema
 ```js
 {
 	"type": "string",
@@ -1428,7 +1467,7 @@ schema
 	]
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"type": "string",
@@ -1447,8 +1486,9 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `invalid type for default, valid when property is specified`
-schema
+## Original schema
 ```js
 {
 	"properties": {
@@ -1459,7 +1499,7 @@ schema
 	}
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"properties": {
@@ -1474,8 +1514,9 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `invalid type for default, still valid when the invalid default is used`
-schema
+## Original schema
 ```js
 {
 	"properties": {
@@ -1486,7 +1527,7 @@ schema
 	}
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"properties": {
@@ -1501,8 +1542,9 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `invalid string value for default, valid when property is specified`
-schema
+## Original schema
 ```js
 {
 	"properties": {
@@ -1514,7 +1556,7 @@ schema
 	}
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"properties": {
@@ -1530,8 +1572,9 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `invalid string value for default, still valid when the invalid default is used`
-schema
+## Original schema
 ```js
 {
 	"properties": {
@@ -1543,7 +1586,7 @@ schema
 	}
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"properties": {
@@ -1559,14 +1602,15 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `valid definition, valid definition schema`
-schema
+## Original schema
 ```js
 {
 	"$ref": "http://json-schema.org/draft-04/schema#"
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"$ref": "http://json-schema.org/draft-04/schema#",
@@ -1880,14 +1924,15 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `invalid definition, invalid definition schema`
-schema
+## Original schema
 ```js
 {
 	"$ref": "http://json-schema.org/draft-04/schema#"
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"$ref": "http://json-schema.org/draft-04/schema#",
@@ -2201,8 +2246,9 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `dependencies, neither`
-schema
+## Original schema
 ```js
 {
 	"dependencies": {
@@ -2212,7 +2258,7 @@ schema
 	}
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"dependencies": {
@@ -2225,8 +2271,9 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `dependencies, nondependant`
-schema
+## Original schema
 ```js
 {
 	"dependencies": {
@@ -2236,7 +2283,7 @@ schema
 	}
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"dependencies": {
@@ -2249,8 +2296,9 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `dependencies, with dependency`
-schema
+## Original schema
 ```js
 {
 	"dependencies": {
@@ -2260,7 +2308,7 @@ schema
 	}
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"dependencies": {
@@ -2273,8 +2321,9 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `dependencies, missing dependency`
-schema
+## Original schema
 ```js
 {
 	"dependencies": {
@@ -2284,7 +2333,7 @@ schema
 	}
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"dependencies": {
@@ -2297,8 +2346,9 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `dependencies, ignores non-objects`
-schema
+## Original schema
 ```js
 {
 	"dependencies": {
@@ -2308,7 +2358,7 @@ schema
 	}
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"dependencies": {
@@ -2321,8 +2371,9 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `multiple dependencies, neither`
-schema
+## Original schema
 ```js
 {
 	"dependencies": {
@@ -2333,7 +2384,7 @@ schema
 	}
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"dependencies": {
@@ -2347,8 +2398,9 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `multiple dependencies, nondependants`
-schema
+## Original schema
 ```js
 {
 	"dependencies": {
@@ -2359,7 +2411,7 @@ schema
 	}
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"dependencies": {
@@ -2373,8 +2425,9 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `multiple dependencies, with dependencies`
-schema
+## Original schema
 ```js
 {
 	"dependencies": {
@@ -2385,7 +2438,7 @@ schema
 	}
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"dependencies": {
@@ -2399,8 +2452,9 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `multiple dependencies, missing dependency`
-schema
+## Original schema
 ```js
 {
 	"dependencies": {
@@ -2411,7 +2465,7 @@ schema
 	}
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"dependencies": {
@@ -2425,8 +2479,9 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `multiple dependencies, missing other dependency`
-schema
+## Original schema
 ```js
 {
 	"dependencies": {
@@ -2437,7 +2492,7 @@ schema
 	}
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"dependencies": {
@@ -2451,8 +2506,9 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `multiple dependencies, missing both dependencies`
-schema
+## Original schema
 ```js
 {
 	"dependencies": {
@@ -2463,7 +2519,7 @@ schema
 	}
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"dependencies": {
@@ -2477,8 +2533,9 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `multiple dependencies subschema, valid`
-schema
+## Original schema
 ```js
 {
 	"dependencies": {
@@ -2495,7 +2552,7 @@ schema
 	}
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"dependencies": {
@@ -2518,8 +2575,9 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `multiple dependencies subschema, no dependency`
-schema
+## Original schema
 ```js
 {
 	"dependencies": {
@@ -2536,7 +2594,7 @@ schema
 	}
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"dependencies": {
@@ -2559,8 +2617,9 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `multiple dependencies subschema, wrong type`
-schema
+## Original schema
 ```js
 {
 	"dependencies": {
@@ -2577,7 +2636,7 @@ schema
 	}
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"dependencies": {
@@ -2600,8 +2659,9 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `multiple dependencies subschema, wrong type other`
-schema
+## Original schema
 ```js
 {
 	"dependencies": {
@@ -2618,7 +2678,7 @@ schema
 	}
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"dependencies": {
@@ -2641,8 +2701,9 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `multiple dependencies subschema, wrong type both`
-schema
+## Original schema
 ```js
 {
 	"dependencies": {
@@ -2659,7 +2720,7 @@ schema
 	}
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"dependencies": {
@@ -2682,8 +2743,9 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `simple enum validation, one of the enum is valid`
-schema
+## Original schema
 ```js
 {
 	"enum": [
@@ -2693,7 +2755,7 @@ schema
 	]
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"enum": [
@@ -2706,8 +2768,9 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `simple enum validation, something else is invalid`
-schema
+## Original schema
 ```js
 {
 	"enum": [
@@ -2717,7 +2780,7 @@ schema
 	]
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"enum": [
@@ -2730,8 +2793,9 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `heterogeneous enum validation, one of the enum is valid`
-schema
+## Original schema
 ```js
 {
 	"enum": [
@@ -2745,7 +2809,7 @@ schema
 	]
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"enum": [
@@ -2762,8 +2826,9 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `heterogeneous enum validation, something else is invalid`
-schema
+## Original schema
 ```js
 {
 	"enum": [
@@ -2777,7 +2842,7 @@ schema
 	]
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"enum": [
@@ -2794,8 +2859,9 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `heterogeneous enum validation, objects are deep compared`
-schema
+## Original schema
 ```js
 {
 	"enum": [
@@ -2809,7 +2875,7 @@ schema
 	]
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"enum": [
@@ -2826,8 +2892,9 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `enums in properties, both properties are valid`
-schema
+## Original schema
 ```js
 {
 	"type": "object",
@@ -2848,7 +2915,7 @@ schema
 	]
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"type": "object",
@@ -2874,8 +2941,9 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `enums in properties, missing optional property is valid`
-schema
+## Original schema
 ```js
 {
 	"type": "object",
@@ -2896,7 +2964,7 @@ schema
 	]
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"type": "object",
@@ -2922,8 +2990,9 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `enums in properties, missing required property is invalid`
-schema
+## Original schema
 ```js
 {
 	"type": "object",
@@ -2944,7 +3013,7 @@ schema
 	]
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"type": "object",
@@ -2970,8 +3039,9 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `enums in properties, missing all properties is invalid`
-schema
+## Original schema
 ```js
 {
 	"type": "object",
@@ -2992,7 +3062,7 @@ schema
 	]
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"type": "object",
@@ -3018,8 +3088,9 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `a schema given for items, valid items`
-schema
+## Original schema
 ```js
 {
 	"items": {
@@ -3027,7 +3098,7 @@ schema
 	}
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"items": {
@@ -3039,8 +3110,9 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `a schema given for items, wrong type of items`
-schema
+## Original schema
 ```js
 {
 	"items": {
@@ -3048,7 +3120,7 @@ schema
 	}
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"items": {
@@ -3060,8 +3132,9 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `a schema given for items, ignores non-arrays`
-schema
+## Original schema
 ```js
 {
 	"items": {
@@ -3069,7 +3142,7 @@ schema
 	}
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"items": {
@@ -3081,8 +3154,9 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `an array of schemas for items, correct types`
-schema
+## Original schema
 ```js
 {
 	"items": [
@@ -3095,7 +3169,7 @@ schema
 	]
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"items": [
@@ -3113,8 +3187,9 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `an array of schemas for items, wrong types`
-schema
+## Original schema
 ```js
 {
 	"items": [
@@ -3127,7 +3202,7 @@ schema
 	]
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"items": [
@@ -3145,14 +3220,15 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `maxItems validation, shorter is valid`
-schema
+## Original schema
 ```js
 {
 	"maxItems": 2
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"maxItems": 2,
@@ -3161,14 +3237,15 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `maxItems validation, exact length is valid`
-schema
+## Original schema
 ```js
 {
 	"maxItems": 2
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"maxItems": 2,
@@ -3177,14 +3254,15 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `maxItems validation, too long is invalid`
-schema
+## Original schema
 ```js
 {
 	"maxItems": 2
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"maxItems": 2,
@@ -3193,14 +3271,15 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `maxItems validation, ignores non-arrays`
-schema
+## Original schema
 ```js
 {
 	"maxItems": 2
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"maxItems": 2,
@@ -3209,14 +3288,15 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `maxLength validation, shorter is valid`
-schema
+## Original schema
 ```js
 {
 	"maxLength": 2
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"maxLength": 2,
@@ -3225,14 +3305,15 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `maxLength validation, exact length is valid`
-schema
+## Original schema
 ```js
 {
 	"maxLength": 2
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"maxLength": 2,
@@ -3241,14 +3322,15 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `maxLength validation, too long is invalid`
-schema
+## Original schema
 ```js
 {
 	"maxLength": 2
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"maxLength": 2,
@@ -3257,14 +3339,15 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `maxLength validation, ignores non-strings`
-schema
+## Original schema
 ```js
 {
 	"maxLength": 2
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"maxLength": 2,
@@ -3273,14 +3356,15 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `maxLength validation, two supplementary Unicode code points is long enough`
-schema
+## Original schema
 ```js
 {
 	"maxLength": 2
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"maxLength": 2,
@@ -3289,14 +3373,15 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `maxProperties validation, shorter is valid`
-schema
+## Original schema
 ```js
 {
 	"maxProperties": 2
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"maxProperties": 2,
@@ -3305,14 +3390,15 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `maxProperties validation, exact length is valid`
-schema
+## Original schema
 ```js
 {
 	"maxProperties": 2
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"maxProperties": 2,
@@ -3321,14 +3407,15 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `maxProperties validation, too long is invalid`
-schema
+## Original schema
 ```js
 {
 	"maxProperties": 2
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"maxProperties": 2,
@@ -3337,14 +3424,15 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `maxProperties validation, ignores non-objects`
-schema
+## Original schema
 ```js
 {
 	"maxProperties": 2
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"maxProperties": 2,
@@ -3353,14 +3441,15 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `maximum validation, below the maximum is valid`
-schema
+## Original schema
 ```js
 {
 	"maximum": 3
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"maximum": 3,
@@ -3369,14 +3458,15 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `maximum validation, above the maximum is invalid`
-schema
+## Original schema
 ```js
 {
 	"maximum": 3
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"maximum": 3,
@@ -3385,14 +3475,15 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `maximum validation, ignores non-numbers`
-schema
+## Original schema
 ```js
 {
 	"maximum": 3
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"maximum": 3,
@@ -3401,15 +3492,16 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `exclusiveMaximum validation, below the maximum is still valid`
-schema
+## Original schema
 ```js
 {
 	"maximum": 3,
 	"exclusiveMaximum": true
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"maximum": 3,
@@ -3419,15 +3511,16 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `exclusiveMaximum validation, boundary point is invalid`
-schema
+## Original schema
 ```js
 {
 	"maximum": 3,
 	"exclusiveMaximum": true
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"maximum": 3,
@@ -3437,14 +3530,15 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `minItems validation, longer is valid`
-schema
+## Original schema
 ```js
 {
 	"minItems": 1
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"minItems": 1,
@@ -3453,14 +3547,15 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `minItems validation, exact length is valid`
-schema
+## Original schema
 ```js
 {
 	"minItems": 1
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"minItems": 1,
@@ -3469,14 +3564,15 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `minItems validation, too short is invalid`
-schema
+## Original schema
 ```js
 {
 	"minItems": 1
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"minItems": 1,
@@ -3485,14 +3581,15 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `minItems validation, ignores non-arrays`
-schema
+## Original schema
 ```js
 {
 	"minItems": 1
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"minItems": 1,
@@ -3501,14 +3598,15 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `minLength validation, longer is valid`
-schema
+## Original schema
 ```js
 {
 	"minLength": 2
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"minLength": 2,
@@ -3517,14 +3615,15 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `minLength validation, exact length is valid`
-schema
+## Original schema
 ```js
 {
 	"minLength": 2
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"minLength": 2,
@@ -3533,14 +3632,15 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `minLength validation, too short is invalid`
-schema
+## Original schema
 ```js
 {
 	"minLength": 2
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"minLength": 2,
@@ -3549,14 +3649,15 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `minLength validation, ignores non-strings`
-schema
+## Original schema
 ```js
 {
 	"minLength": 2
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"minLength": 2,
@@ -3565,14 +3666,15 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `minLength validation, one supplementary Unicode code point is not long enough`
-schema
+## Original schema
 ```js
 {
 	"minLength": 2
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"minLength": 2,
@@ -3581,14 +3683,15 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `minProperties validation, longer is valid`
-schema
+## Original schema
 ```js
 {
 	"minProperties": 1
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"minProperties": 1,
@@ -3597,14 +3700,15 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `minProperties validation, exact length is valid`
-schema
+## Original schema
 ```js
 {
 	"minProperties": 1
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"minProperties": 1,
@@ -3613,14 +3717,15 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `minProperties validation, too short is invalid`
-schema
+## Original schema
 ```js
 {
 	"minProperties": 1
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"minProperties": 1,
@@ -3629,14 +3734,15 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `minProperties validation, ignores non-objects`
-schema
+## Original schema
 ```js
 {
 	"minProperties": 1
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"minProperties": 1,
@@ -3645,14 +3751,15 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `minimum validation, above the minimum is valid`
-schema
+## Original schema
 ```js
 {
 	"minimum": 1.1
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"minimum": 1.1,
@@ -3661,14 +3768,15 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `minimum validation, below the minimum is invalid`
-schema
+## Original schema
 ```js
 {
 	"minimum": 1.1
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"minimum": 1.1,
@@ -3677,14 +3785,15 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `minimum validation, ignores non-numbers`
-schema
+## Original schema
 ```js
 {
 	"minimum": 1.1
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"minimum": 1.1,
@@ -3693,15 +3802,16 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `exclusiveMinimum validation, above the minimum is still valid`
-schema
+## Original schema
 ```js
 {
 	"minimum": 1.1,
 	"exclusiveMinimum": true
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"minimum": 1.1,
@@ -3711,15 +3821,16 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `exclusiveMinimum validation, boundary point is invalid`
-schema
+## Original schema
 ```js
 {
 	"minimum": 1.1,
 	"exclusiveMinimum": true
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"minimum": 1.1,
@@ -3729,14 +3840,15 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `by int, int by int`
-schema
+## Original schema
 ```js
 {
 	"multipleOf": 2
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"multipleOf": 2,
@@ -3745,14 +3857,15 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `by int, int by int fail`
-schema
+## Original schema
 ```js
 {
 	"multipleOf": 2
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"multipleOf": 2,
@@ -3761,14 +3874,15 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `by int, ignores non-numbers`
-schema
+## Original schema
 ```js
 {
 	"multipleOf": 2
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"multipleOf": 2,
@@ -3777,14 +3891,15 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `by number, zero is multiple of anything`
-schema
+## Original schema
 ```js
 {
 	"multipleOf": 1.5
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"multipleOf": 1.5,
@@ -3793,14 +3908,15 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `by number, 4.5 is multiple of 1.5`
-schema
+## Original schema
 ```js
 {
 	"multipleOf": 1.5
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"multipleOf": 1.5,
@@ -3809,14 +3925,15 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `by number, 35 is not multiple of 1.5`
-schema
+## Original schema
 ```js
 {
 	"multipleOf": 1.5
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"multipleOf": 1.5,
@@ -3825,14 +3942,15 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `by small number, 0.0075 is multiple of 0.0001`
-schema
+## Original schema
 ```js
 {
 	"multipleOf": 0.0001
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"multipleOf": 0.0001,
@@ -3841,14 +3959,15 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `by small number, 0.00751 is not multiple of 0.0001`
-schema
+## Original schema
 ```js
 {
 	"multipleOf": 0.0001
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"multipleOf": 0.0001,
@@ -3857,8 +3976,9 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `not, allowed`
-schema
+## Original schema
 ```js
 {
 	"not": {
@@ -3866,7 +3986,7 @@ schema
 	}
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"not": {
@@ -3878,8 +3998,9 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `not, disallowed`
-schema
+## Original schema
 ```js
 {
 	"not": {
@@ -3887,7 +4008,7 @@ schema
 	}
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"not": {
@@ -3899,8 +4020,9 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `not multiple types, valid`
-schema
+## Original schema
 ```js
 {
 	"not": {
@@ -3911,7 +4033,7 @@ schema
 	}
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"not": {
@@ -3926,8 +4048,9 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `not multiple types, mismatch`
-schema
+## Original schema
 ```js
 {
 	"not": {
@@ -3938,7 +4061,7 @@ schema
 	}
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"not": {
@@ -3953,8 +4076,9 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `not multiple types, other mismatch`
-schema
+## Original schema
 ```js
 {
 	"not": {
@@ -3965,7 +4089,7 @@ schema
 	}
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"not": {
@@ -3980,8 +4104,9 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `not more complex schema, match`
-schema
+## Original schema
 ```js
 {
 	"not": {
@@ -3994,7 +4119,7 @@ schema
 	}
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"not": {
@@ -4012,8 +4137,9 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `not more complex schema, other match`
-schema
+## Original schema
 ```js
 {
 	"not": {
@@ -4026,7 +4152,7 @@ schema
 	}
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"not": {
@@ -4044,8 +4170,9 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `not more complex schema, mismatch`
-schema
+## Original schema
 ```js
 {
 	"not": {
@@ -4058,7 +4185,7 @@ schema
 	}
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"not": {
@@ -4076,8 +4203,9 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `forbidden property, property present`
-schema
+## Original schema
 ```js
 {
 	"properties": {
@@ -4087,7 +4215,7 @@ schema
 	}
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"properties": {
@@ -4103,8 +4231,9 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `forbidden property, property absent`
-schema
+## Original schema
 ```js
 {
 	"properties": {
@@ -4114,7 +4243,7 @@ schema
 	}
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"properties": {
@@ -4130,8 +4259,9 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `oneOf, first oneOf valid`
-schema
+## Original schema
 ```js
 {
 	"oneOf": [
@@ -4144,7 +4274,7 @@ schema
 	]
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"oneOf": [
@@ -4162,8 +4292,9 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `oneOf, second oneOf valid`
-schema
+## Original schema
 ```js
 {
 	"oneOf": [
@@ -4176,7 +4307,7 @@ schema
 	]
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"oneOf": [
@@ -4194,8 +4325,9 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `oneOf, both oneOf valid`
-schema
+## Original schema
 ```js
 {
 	"oneOf": [
@@ -4208,7 +4340,7 @@ schema
 	]
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"oneOf": [
@@ -4226,8 +4358,9 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `oneOf, neither oneOf valid`
-schema
+## Original schema
 ```js
 {
 	"oneOf": [
@@ -4240,7 +4373,7 @@ schema
 	]
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"oneOf": [
@@ -4258,8 +4391,9 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `oneOf with base schema, mismatch base schema`
-schema
+## Original schema
 ```js
 {
 	"type": "string",
@@ -4273,7 +4407,7 @@ schema
 	]
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"type": "string",
@@ -4292,8 +4426,9 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `oneOf with base schema, one oneOf valid`
-schema
+## Original schema
 ```js
 {
 	"type": "string",
@@ -4307,7 +4442,7 @@ schema
 	]
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"type": "string",
@@ -4326,8 +4461,9 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `oneOf with base schema, both oneOf valid`
-schema
+## Original schema
 ```js
 {
 	"type": "string",
@@ -4341,7 +4477,7 @@ schema
 	]
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"type": "string",
@@ -4360,14 +4496,15 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `integer, a bignum is an integer`
-schema
+## Original schema
 ```js
 {
 	"type": "integer"
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"type": "integer",
@@ -4376,14 +4513,15 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `number, a bignum is a number`
-schema
+## Original schema
 ```js
 {
 	"type": "number"
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"type": "number",
@@ -4392,14 +4530,15 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `integer, a negative bignum is an integer`
-schema
+## Original schema
 ```js
 {
 	"type": "integer"
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"type": "integer",
@@ -4408,14 +4547,15 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `number, a negative bignum is a number`
-schema
+## Original schema
 ```js
 {
 	"type": "number"
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"type": "number",
@@ -4424,14 +4564,15 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `string, a bignum is not a string`
-schema
+## Original schema
 ```js
 {
 	"type": "string"
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"type": "string",
@@ -4440,14 +4581,15 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `integer comparison, comparison works for high numbers`
-schema
+## Original schema
 ```js
 {
 	"maximum": 18446744073709552000
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"maximum": 18446744073709552000,
@@ -4456,15 +4598,16 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `float comparison with high precision, comparison works for high numbers`
-schema
+## Original schema
 ```js
 {
 	"maximum": 9.727837981879871e+26,
 	"exclusiveMaximum": true
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"maximum": 9.727837981879871e+26,
@@ -4474,14 +4617,15 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `integer comparison, comparison works for very negative numbers`
-schema
+## Original schema
 ```js
 {
 	"minimum": -18446744073709552000
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"minimum": -18446744073709552000,
@@ -4490,15 +4634,16 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `float comparison with high precision on negative numbers, comparison works for very negative numbers`
-schema
+## Original schema
 ```js
 {
 	"minimum": -9.727837981879871e+26,
 	"exclusiveMinimum": true
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"minimum": -9.727837981879871e+26,
@@ -4508,14 +4653,15 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `validation of date-time strings, a valid date-time string`
-schema
+## Original schema
 ```js
 {
 	"format": "date-time"
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"format": "date-time",
@@ -4524,14 +4670,15 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `validation of date-time strings, an invalid date-time string`
-schema
+## Original schema
 ```js
 {
 	"format": "date-time"
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"format": "date-time",
@@ -4540,14 +4687,15 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `validation of date-time strings, only RFC3339 not all of ISO 8601 are valid`
-schema
+## Original schema
 ```js
 {
 	"format": "date-time"
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"format": "date-time",
@@ -4556,14 +4704,15 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `validation of URIs, a valid URI`
-schema
+## Original schema
 ```js
 {
 	"format": "uri"
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"format": "uri",
@@ -4572,14 +4721,15 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `validation of URIs, an invalid URI`
-schema
+## Original schema
 ```js
 {
 	"format": "uri"
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"format": "uri",
@@ -4588,14 +4738,15 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `validation of URIs, an invalid URI though valid URI reference`
-schema
+## Original schema
 ```js
 {
 	"format": "uri"
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"format": "uri",
@@ -4604,14 +4755,15 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `validation of e-mail addresses, a valid e-mail address`
-schema
+## Original schema
 ```js
 {
 	"format": "email"
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"format": "email",
@@ -4620,14 +4772,15 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `validation of e-mail addresses, an invalid e-mail address`
-schema
+## Original schema
 ```js
 {
 	"format": "email"
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"format": "email",
@@ -4636,14 +4789,15 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `validation of IP addresses, a valid IP address`
-schema
+## Original schema
 ```js
 {
 	"format": "ipv4"
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"format": "ipv4",
@@ -4652,14 +4806,15 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `validation of IP addresses, an IP address with too many components`
-schema
+## Original schema
 ```js
 {
 	"format": "ipv4"
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"format": "ipv4",
@@ -4668,14 +4823,15 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `validation of IP addresses, an IP address with out-of-range values`
-schema
+## Original schema
 ```js
 {
 	"format": "ipv4"
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"format": "ipv4",
@@ -4684,14 +4840,15 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `validation of IP addresses, an IP address without 4 components`
-schema
+## Original schema
 ```js
 {
 	"format": "ipv4"
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"format": "ipv4",
@@ -4700,14 +4857,15 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `validation of IP addresses, an IP address as an integer`
-schema
+## Original schema
 ```js
 {
 	"format": "ipv4"
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"format": "ipv4",
@@ -4716,14 +4874,15 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `validation of IPv6 addresses, a valid IPv6 address`
-schema
+## Original schema
 ```js
 {
 	"format": "ipv6"
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"format": "ipv6",
@@ -4732,14 +4891,15 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `validation of IPv6 addresses, an IPv6 address with out-of-range values`
-schema
+## Original schema
 ```js
 {
 	"format": "ipv6"
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"format": "ipv6",
@@ -4748,14 +4908,15 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `validation of IPv6 addresses, an IPv6 address with too many components`
-schema
+## Original schema
 ```js
 {
 	"format": "ipv6"
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"format": "ipv6",
@@ -4764,14 +4925,15 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `validation of IPv6 addresses, an IPv6 address containing illegal characters`
-schema
+## Original schema
 ```js
 {
 	"format": "ipv6"
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"format": "ipv6",
@@ -4780,14 +4942,15 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `validation of host names, a valid host name`
-schema
+## Original schema
 ```js
 {
 	"format": "hostname"
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"format": "hostname",
@@ -4796,14 +4959,15 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `validation of host names, a host name starting with an illegal character`
-schema
+## Original schema
 ```js
 {
 	"format": "hostname"
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"format": "hostname",
@@ -4812,14 +4976,15 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `validation of host names, a host name containing illegal characters`
-schema
+## Original schema
 ```js
 {
 	"format": "hostname"
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"format": "hostname",
@@ -4828,14 +4993,15 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `validation of host names, a host name with a component too long`
-schema
+## Original schema
 ```js
 {
 	"format": "hostname"
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"format": "hostname",
@@ -4844,14 +5010,15 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `some languages do not distinguish between different types of numeric value, a float is not an integer even without fractional part`
-schema
+## Original schema
 ```js
 {
 	"type": "integer"
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"type": "integer",
@@ -4860,14 +5027,15 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `pattern validation, a matching pattern is valid`
-schema
+## Original schema
 ```js
 {
 	"pattern": "^a*$"
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"pattern": "^a*$",
@@ -4876,14 +5044,15 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `pattern validation, a non-matching pattern is invalid`
-schema
+## Original schema
 ```js
 {
 	"pattern": "^a*$"
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"pattern": "^a*$",
@@ -4892,14 +5061,15 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `pattern validation, ignores non-strings`
-schema
+## Original schema
 ```js
 {
 	"pattern": "^a*$"
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"pattern": "^a*$",
@@ -4908,8 +5078,9 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `patternProperties validates properties matching a regex, a single valid match is valid`
-schema
+## Original schema
 ```js
 {
 	"patternProperties": {
@@ -4919,7 +5090,7 @@ schema
 	}
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"patternProperties": {
@@ -4933,8 +5104,9 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `patternProperties validates properties matching a regex, multiple valid matches is valid`
-schema
+## Original schema
 ```js
 {
 	"patternProperties": {
@@ -4944,7 +5116,7 @@ schema
 	}
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"patternProperties": {
@@ -4958,8 +5130,9 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `patternProperties validates properties matching a regex, a single invalid match is invalid`
-schema
+## Original schema
 ```js
 {
 	"patternProperties": {
@@ -4969,7 +5142,7 @@ schema
 	}
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"patternProperties": {
@@ -4983,8 +5156,9 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `patternProperties validates properties matching a regex, multiple invalid matches is invalid`
-schema
+## Original schema
 ```js
 {
 	"patternProperties": {
@@ -4994,7 +5168,7 @@ schema
 	}
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"patternProperties": {
@@ -5008,8 +5182,9 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `patternProperties validates properties matching a regex, ignores non-objects`
-schema
+## Original schema
 ```js
 {
 	"patternProperties": {
@@ -5019,7 +5194,7 @@ schema
 	}
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"patternProperties": {
@@ -5033,8 +5208,9 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `multiple simultaneous patternProperties are validated, a single valid match is valid`
-schema
+## Original schema
 ```js
 {
 	"patternProperties": {
@@ -5047,7 +5223,7 @@ schema
 	}
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"patternProperties": {
@@ -5065,8 +5241,9 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `multiple simultaneous patternProperties are validated, a simultaneous match is valid`
-schema
+## Original schema
 ```js
 {
 	"patternProperties": {
@@ -5079,7 +5256,7 @@ schema
 	}
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"patternProperties": {
@@ -5097,8 +5274,9 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `multiple simultaneous patternProperties are validated, multiple matches is valid`
-schema
+## Original schema
 ```js
 {
 	"patternProperties": {
@@ -5111,7 +5289,7 @@ schema
 	}
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"patternProperties": {
@@ -5129,8 +5307,9 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `multiple simultaneous patternProperties are validated, an invalid due to one is invalid`
-schema
+## Original schema
 ```js
 {
 	"patternProperties": {
@@ -5143,7 +5322,7 @@ schema
 	}
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"patternProperties": {
@@ -5161,8 +5340,9 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `multiple simultaneous patternProperties are validated, an invalid due to the other is invalid`
-schema
+## Original schema
 ```js
 {
 	"patternProperties": {
@@ -5175,7 +5355,7 @@ schema
 	}
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"patternProperties": {
@@ -5193,8 +5373,9 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `multiple simultaneous patternProperties are validated, an invalid due to both is invalid`
-schema
+## Original schema
 ```js
 {
 	"patternProperties": {
@@ -5207,7 +5388,7 @@ schema
 	}
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"patternProperties": {
@@ -5225,8 +5406,9 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `regexes are not anchored by default and are case sensitive, non recognized members are ignored`
-schema
+## Original schema
 ```js
 {
 	"patternProperties": {
@@ -5239,7 +5421,7 @@ schema
 	}
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"patternProperties": {
@@ -5257,8 +5439,9 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `regexes are not anchored by default and are case sensitive, recognized members are accounted for`
-schema
+## Original schema
 ```js
 {
 	"patternProperties": {
@@ -5271,7 +5454,7 @@ schema
 	}
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"patternProperties": {
@@ -5289,8 +5472,9 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `regexes are not anchored by default and are case sensitive, regexes are case sensitive`
-schema
+## Original schema
 ```js
 {
 	"patternProperties": {
@@ -5303,7 +5487,7 @@ schema
 	}
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"patternProperties": {
@@ -5321,8 +5505,9 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `regexes are not anchored by default and are case sensitive, regexes are case sensitive, 2`
-schema
+## Original schema
 ```js
 {
 	"patternProperties": {
@@ -5335,7 +5520,7 @@ schema
 	}
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"patternProperties": {
@@ -5353,8 +5538,9 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `object properties validation, both properties present and valid is valid`
-schema
+## Original schema
 ```js
 {
 	"properties": {
@@ -5367,7 +5553,7 @@ schema
 	}
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"properties": {
@@ -5385,8 +5571,9 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `object properties validation, one property invalid is invalid`
-schema
+## Original schema
 ```js
 {
 	"properties": {
@@ -5399,7 +5586,7 @@ schema
 	}
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"properties": {
@@ -5417,8 +5604,9 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `object properties validation, both properties invalid is invalid`
-schema
+## Original schema
 ```js
 {
 	"properties": {
@@ -5431,7 +5619,7 @@ schema
 	}
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"properties": {
@@ -5449,8 +5637,9 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `object properties validation, doesn't invalidate other properties`
-schema
+## Original schema
 ```js
 {
 	"properties": {
@@ -5463,7 +5652,7 @@ schema
 	}
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"properties": {
@@ -5481,8 +5670,9 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `object properties validation, ignores non-objects`
-schema
+## Original schema
 ```js
 {
 	"properties": {
@@ -5495,7 +5685,7 @@ schema
 	}
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"properties": {
@@ -5513,8 +5703,9 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `properties, patternProperties, additionalProperties interaction, property validates property`
-schema
+## Original schema
 ```js
 {
 	"properties": {
@@ -5536,7 +5727,7 @@ schema
 	}
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"properties": {
@@ -5565,8 +5756,9 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `properties, patternProperties, additionalProperties interaction, property invalidates property`
-schema
+## Original schema
 ```js
 {
 	"properties": {
@@ -5588,7 +5780,7 @@ schema
 	}
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"properties": {
@@ -5617,8 +5809,9 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `properties, patternProperties, additionalProperties interaction, patternProperty invalidates property`
-schema
+## Original schema
 ```js
 {
 	"properties": {
@@ -5640,7 +5833,7 @@ schema
 	}
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"properties": {
@@ -5669,8 +5862,9 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `properties, patternProperties, additionalProperties interaction, patternProperty validates nonproperty`
-schema
+## Original schema
 ```js
 {
 	"properties": {
@@ -5692,7 +5886,7 @@ schema
 	}
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"properties": {
@@ -5721,8 +5915,9 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `properties, patternProperties, additionalProperties interaction, patternProperty invalidates nonproperty`
-schema
+## Original schema
 ```js
 {
 	"properties": {
@@ -5744,7 +5939,7 @@ schema
 	}
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"properties": {
@@ -5773,8 +5968,9 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `properties, patternProperties, additionalProperties interaction, additionalProperty ignores property`
-schema
+## Original schema
 ```js
 {
 	"properties": {
@@ -5796,7 +5992,7 @@ schema
 	}
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"properties": {
@@ -5825,8 +6021,9 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `properties, patternProperties, additionalProperties interaction, additionalProperty validates others`
-schema
+## Original schema
 ```js
 {
 	"properties": {
@@ -5848,7 +6045,7 @@ schema
 	}
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"properties": {
@@ -5877,8 +6074,9 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `properties, patternProperties, additionalProperties interaction, additionalProperty invalidates others`
-schema
+## Original schema
 ```js
 {
 	"properties": {
@@ -5900,7 +6098,7 @@ schema
 	}
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"properties": {
@@ -5929,8 +6127,9 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `root pointer ref, match`
-schema
+## Original schema
 ```js
 {
 	"properties": {
@@ -5941,7 +6140,7 @@ schema
 	"additionalProperties": false
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"properties": {
@@ -5957,8 +6156,9 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `root pointer ref, recursive match`
-schema
+## Original schema
 ```js
 {
 	"properties": {
@@ -5969,7 +6169,7 @@ schema
 	"additionalProperties": false
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"properties": {
@@ -5985,8 +6185,9 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `root pointer ref, mismatch`
-schema
+## Original schema
 ```js
 {
 	"properties": {
@@ -5997,7 +6198,7 @@ schema
 	"additionalProperties": false
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"properties": {
@@ -6013,8 +6214,9 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `root pointer ref, recursive mismatch`
-schema
+## Original schema
 ```js
 {
 	"properties": {
@@ -6025,7 +6227,7 @@ schema
 	"additionalProperties": false
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"properties": {
@@ -6041,8 +6243,9 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `relative pointer ref to object, match`
-schema
+## Original schema
 ```js
 {
 	"properties": {
@@ -6055,7 +6258,7 @@ schema
 	}
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"properties": {
@@ -6074,8 +6277,9 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `relative pointer ref to object, mismatch`
-schema
+## Original schema
 ```js
 {
 	"properties": {
@@ -6088,7 +6292,7 @@ schema
 	}
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"properties": {
@@ -6107,8 +6311,9 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `relative pointer ref to array, match array`
-schema
+## Original schema
 ```js
 {
 	"items": [
@@ -6121,7 +6326,7 @@ schema
 	]
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"items": [
@@ -6140,8 +6345,9 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `relative pointer ref to array, mismatch array`
-schema
+## Original schema
 ```js
 {
 	"items": [
@@ -6154,7 +6360,7 @@ schema
 	]
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"items": [
@@ -6173,8 +6379,9 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `escaped pointer ref, slash`
-schema
+## Original schema
 ```js
 {
 	"tilda~field": {
@@ -6199,7 +6406,7 @@ schema
 	}
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"tilda~field": {
@@ -6233,8 +6440,9 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `escaped pointer ref, tilda`
-schema
+## Original schema
 ```js
 {
 	"tilda~field": {
@@ -6259,7 +6467,7 @@ schema
 	}
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"tilda~field": {
@@ -6293,8 +6501,9 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `escaped pointer ref, percent`
-schema
+## Original schema
 ```js
 {
 	"tilda~field": {
@@ -6319,7 +6528,7 @@ schema
 	}
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"tilda~field": {
@@ -6353,8 +6562,9 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `nested refs, nested ref valid`
-schema
+## Original schema
 ```js
 {
 	"definitions": {
@@ -6371,7 +6581,7 @@ schema
 	"$ref": "#/definitions/c"
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"definitions": {
@@ -6397,8 +6607,9 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `nested refs, nested ref invalid`
-schema
+## Original schema
 ```js
 {
 	"definitions": {
@@ -6415,7 +6626,7 @@ schema
 	"$ref": "#/definitions/c"
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"definitions": {
@@ -6441,14 +6652,15 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `remote ref, containing refs itself, remote ref valid`
-schema
+## Original schema
 ```js
 {
 	"$ref": "http://json-schema.org/draft-04/schema#"
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"$ref": "http://json-schema.org/draft-04/schema#",
@@ -6762,14 +6974,15 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `remote ref, containing refs itself, remote ref invalid`
-schema
+## Original schema
 ```js
 {
 	"$ref": "http://json-schema.org/draft-04/schema#"
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"$ref": "http://json-schema.org/draft-04/schema#",
@@ -7083,14 +7296,15 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `remote ref, remote ref valid`
-schema
+## Original schema
 ```js
 {
 	"$ref": "http://localhost:1234/integer.json"
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"$ref": "http://localhost:1234/integer.json",
@@ -7104,14 +7318,15 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `remote ref, remote ref invalid`
-schema
+## Original schema
 ```js
 {
 	"$ref": "http://localhost:1234/integer.json"
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"$ref": "http://localhost:1234/integer.json",
@@ -7125,14 +7340,15 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `fragment within remote ref, remote fragment valid`
-schema
+## Original schema
 ```js
 {
 	"$ref": "http://localhost:1234/subSchemas.json#/integer"
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"$ref": "http://localhost:1234/subSchemas.json#/integer",
@@ -7144,14 +7360,15 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `fragment within remote ref, remote fragment invalid`
-schema
+## Original schema
 ```js
 {
 	"$ref": "http://localhost:1234/subSchemas.json#/integer"
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"$ref": "http://localhost:1234/subSchemas.json#/integer",
@@ -7163,14 +7380,15 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `ref within remote ref, ref within ref valid`
-schema
+## Original schema
 ```js
 {
 	"$ref": "http://localhost:1234/subSchemas.json#/refToInteger"
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"$ref": "http://localhost:1234/subSchemas.json#/refToInteger",
@@ -7185,14 +7403,15 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `ref within remote ref, ref within ref invalid`
-schema
+## Original schema
 ```js
 {
 	"$ref": "http://localhost:1234/subSchemas.json#/refToInteger"
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"$ref": "http://localhost:1234/subSchemas.json#/refToInteger",
@@ -7207,8 +7426,9 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `change resolution scope, changed scope ref valid`
-schema
+## Original schema
 ```js
 {
 	"id": "http://localhost:1234/",
@@ -7220,7 +7440,7 @@ schema
 	}
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"id": "http://localhost:1234/",
@@ -7242,8 +7462,9 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `change resolution scope, changed scope ref invalid`
-schema
+## Original schema
 ```js
 {
 	"id": "http://localhost:1234/",
@@ -7255,7 +7476,7 @@ schema
 	}
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"id": "http://localhost:1234/",
@@ -7277,8 +7498,9 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `required validation, present required property is valid`
-schema
+## Original schema
 ```js
 {
 	"properties": {
@@ -7290,7 +7512,7 @@ schema
 	]
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"properties": {
@@ -7309,8 +7531,9 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `required validation, non-present required property is invalid`
-schema
+## Original schema
 ```js
 {
 	"properties": {
@@ -7322,7 +7545,7 @@ schema
 	]
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"properties": {
@@ -7341,8 +7564,9 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `required default validation, not required by default`
-schema
+## Original schema
 ```js
 {
 	"properties": {
@@ -7350,7 +7574,7 @@ schema
 	}
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"properties": {
@@ -7363,14 +7587,15 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `integer type matches integers, an integer is an integer`
-schema
+## Original schema
 ```js
 {
 	"type": "integer"
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"type": "integer",
@@ -7379,14 +7604,15 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `integer type matches integers, a float is not an integer`
-schema
+## Original schema
 ```js
 {
 	"type": "integer"
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"type": "integer",
@@ -7395,14 +7621,15 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `integer type matches integers, a string is not an integer`
-schema
+## Original schema
 ```js
 {
 	"type": "integer"
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"type": "integer",
@@ -7411,14 +7638,15 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `integer type matches integers, an object is not an integer`
-schema
+## Original schema
 ```js
 {
 	"type": "integer"
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"type": "integer",
@@ -7427,14 +7655,15 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `integer type matches integers, an array is not an integer`
-schema
+## Original schema
 ```js
 {
 	"type": "integer"
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"type": "integer",
@@ -7443,14 +7672,15 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `integer type matches integers, a boolean is not an integer`
-schema
+## Original schema
 ```js
 {
 	"type": "integer"
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"type": "integer",
@@ -7459,14 +7689,15 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `integer type matches integers, null is not an integer`
-schema
+## Original schema
 ```js
 {
 	"type": "integer"
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"type": "integer",
@@ -7475,14 +7706,15 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `number type matches numbers, an integer is a number`
-schema
+## Original schema
 ```js
 {
 	"type": "number"
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"type": "number",
@@ -7491,14 +7723,15 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `number type matches numbers, a float is a number`
-schema
+## Original schema
 ```js
 {
 	"type": "number"
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"type": "number",
@@ -7507,14 +7740,15 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `number type matches numbers, a string is not a number`
-schema
+## Original schema
 ```js
 {
 	"type": "number"
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"type": "number",
@@ -7523,14 +7757,15 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `number type matches numbers, an object is not a number`
-schema
+## Original schema
 ```js
 {
 	"type": "number"
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"type": "number",
@@ -7539,14 +7774,15 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `number type matches numbers, an array is not a number`
-schema
+## Original schema
 ```js
 {
 	"type": "number"
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"type": "number",
@@ -7555,14 +7791,15 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `number type matches numbers, a boolean is not a number`
-schema
+## Original schema
 ```js
 {
 	"type": "number"
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"type": "number",
@@ -7571,14 +7808,15 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `number type matches numbers, null is not a number`
-schema
+## Original schema
 ```js
 {
 	"type": "number"
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"type": "number",
@@ -7587,14 +7825,15 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `string type matches strings, 1 is not a string`
-schema
+## Original schema
 ```js
 {
 	"type": "string"
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"type": "string",
@@ -7603,14 +7842,15 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `string type matches strings, a float is not a string`
-schema
+## Original schema
 ```js
 {
 	"type": "string"
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"type": "string",
@@ -7619,14 +7859,15 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `string type matches strings, a string is a string`
-schema
+## Original schema
 ```js
 {
 	"type": "string"
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"type": "string",
@@ -7635,14 +7876,15 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `string type matches strings, an object is not a string`
-schema
+## Original schema
 ```js
 {
 	"type": "string"
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"type": "string",
@@ -7651,14 +7893,15 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `string type matches strings, an array is not a string`
-schema
+## Original schema
 ```js
 {
 	"type": "string"
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"type": "string",
@@ -7667,14 +7910,15 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `string type matches strings, a boolean is not a string`
-schema
+## Original schema
 ```js
 {
 	"type": "string"
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"type": "string",
@@ -7683,14 +7927,15 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `string type matches strings, null is not a string`
-schema
+## Original schema
 ```js
 {
 	"type": "string"
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"type": "string",
@@ -7699,14 +7944,15 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `object type matches objects, an integer is not an object`
-schema
+## Original schema
 ```js
 {
 	"type": "object"
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"type": "object",
@@ -7715,14 +7961,15 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `object type matches objects, a float is not an object`
-schema
+## Original schema
 ```js
 {
 	"type": "object"
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"type": "object",
@@ -7731,14 +7978,15 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `object type matches objects, a string is not an object`
-schema
+## Original schema
 ```js
 {
 	"type": "object"
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"type": "object",
@@ -7747,14 +7995,15 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `object type matches objects, an object is an object`
-schema
+## Original schema
 ```js
 {
 	"type": "object"
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"type": "object",
@@ -7763,14 +8012,15 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `object type matches objects, an array is not an object`
-schema
+## Original schema
 ```js
 {
 	"type": "object"
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"type": "object",
@@ -7779,14 +8029,15 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `object type matches objects, a boolean is not an object`
-schema
+## Original schema
 ```js
 {
 	"type": "object"
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"type": "object",
@@ -7795,14 +8046,15 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `object type matches objects, null is not an object`
-schema
+## Original schema
 ```js
 {
 	"type": "object"
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"type": "object",
@@ -7811,14 +8063,15 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `array type matches arrays, an integer is not an array`
-schema
+## Original schema
 ```js
 {
 	"type": "array"
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"type": "array",
@@ -7827,14 +8080,15 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `array type matches arrays, a float is not an array`
-schema
+## Original schema
 ```js
 {
 	"type": "array"
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"type": "array",
@@ -7843,14 +8097,15 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `array type matches arrays, a string is not an array`
-schema
+## Original schema
 ```js
 {
 	"type": "array"
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"type": "array",
@@ -7859,14 +8114,15 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `array type matches arrays, an object is not an array`
-schema
+## Original schema
 ```js
 {
 	"type": "array"
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"type": "array",
@@ -7875,14 +8131,15 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `array type matches arrays, an array is not an array`
-schema
+## Original schema
 ```js
 {
 	"type": "array"
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"type": "array",
@@ -7891,14 +8148,15 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `array type matches arrays, a boolean is not an array`
-schema
+## Original schema
 ```js
 {
 	"type": "array"
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"type": "array",
@@ -7907,14 +8165,15 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `array type matches arrays, null is not an array`
-schema
+## Original schema
 ```js
 {
 	"type": "array"
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"type": "array",
@@ -7923,14 +8182,15 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `boolean type matches booleans, an integer is not a boolean`
-schema
+## Original schema
 ```js
 {
 	"type": "boolean"
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"type": "boolean",
@@ -7939,14 +8199,15 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `boolean type matches booleans, a float is not a boolean`
-schema
+## Original schema
 ```js
 {
 	"type": "boolean"
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"type": "boolean",
@@ -7955,14 +8216,15 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `boolean type matches booleans, a string is not a boolean`
-schema
+## Original schema
 ```js
 {
 	"type": "boolean"
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"type": "boolean",
@@ -7971,14 +8233,15 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `boolean type matches booleans, an object is not a boolean`
-schema
+## Original schema
 ```js
 {
 	"type": "boolean"
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"type": "boolean",
@@ -7987,14 +8250,15 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `boolean type matches booleans, an array is not a boolean`
-schema
+## Original schema
 ```js
 {
 	"type": "boolean"
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"type": "boolean",
@@ -8003,14 +8267,15 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `boolean type matches booleans, a boolean is not a boolean`
-schema
+## Original schema
 ```js
 {
 	"type": "boolean"
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"type": "boolean",
@@ -8019,14 +8284,15 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `boolean type matches booleans, null is not a boolean`
-schema
+## Original schema
 ```js
 {
 	"type": "boolean"
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"type": "boolean",
@@ -8035,14 +8301,15 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `null type matches only the null object, an integer is not null`
-schema
+## Original schema
 ```js
 {
 	"type": "null"
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"type": "null",
@@ -8051,14 +8318,15 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `null type matches only the null object, a float is not null`
-schema
+## Original schema
 ```js
 {
 	"type": "null"
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"type": "null",
@@ -8067,14 +8335,15 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `null type matches only the null object, a string is not null`
-schema
+## Original schema
 ```js
 {
 	"type": "null"
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"type": "null",
@@ -8083,14 +8352,15 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `null type matches only the null object, an object is not null`
-schema
+## Original schema
 ```js
 {
 	"type": "null"
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"type": "null",
@@ -8099,14 +8369,15 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `null type matches only the null object, an array is not null`
-schema
+## Original schema
 ```js
 {
 	"type": "null"
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"type": "null",
@@ -8115,14 +8386,15 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `null type matches only the null object, a boolean is not null`
-schema
+## Original schema
 ```js
 {
 	"type": "null"
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"type": "null",
@@ -8131,14 +8403,15 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `null type matches only the null object, null is null`
-schema
+## Original schema
 ```js
 {
 	"type": "null"
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"type": "null",
@@ -8147,8 +8420,9 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `multiple types can be specified in an array, an integer is valid`
-schema
+## Original schema
 ```js
 {
 	"type": [
@@ -8157,7 +8431,7 @@ schema
 	]
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"type": [
@@ -8169,8 +8443,9 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `multiple types can be specified in an array, a string is valid`
-schema
+## Original schema
 ```js
 {
 	"type": [
@@ -8179,7 +8454,7 @@ schema
 	]
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"type": [
@@ -8191,8 +8466,9 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `multiple types can be specified in an array, a float is invalid`
-schema
+## Original schema
 ```js
 {
 	"type": [
@@ -8201,7 +8477,7 @@ schema
 	]
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"type": [
@@ -8213,8 +8489,9 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `multiple types can be specified in an array, an object is invalid`
-schema
+## Original schema
 ```js
 {
 	"type": [
@@ -8223,7 +8500,7 @@ schema
 	]
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"type": [
@@ -8235,8 +8512,9 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `multiple types can be specified in an array, an array is invalid`
-schema
+## Original schema
 ```js
 {
 	"type": [
@@ -8245,7 +8523,7 @@ schema
 	]
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"type": [
@@ -8257,8 +8535,9 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `multiple types can be specified in an array, a boolean is invalid`
-schema
+## Original schema
 ```js
 {
 	"type": [
@@ -8267,7 +8546,7 @@ schema
 	]
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"type": [
@@ -8279,8 +8558,9 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `multiple types can be specified in an array, null is invalid`
-schema
+## Original schema
 ```js
 {
 	"type": [
@@ -8289,7 +8569,7 @@ schema
 	]
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"type": [
@@ -8301,14 +8581,15 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `uniqueItems validation, unique array of integers is valid`
-schema
+## Original schema
 ```js
 {
 	"uniqueItems": true
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"uniqueItems": true,
@@ -8317,14 +8598,15 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `uniqueItems validation, non-unique array of integers is invalid`
-schema
+## Original schema
 ```js
 {
 	"uniqueItems": true
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"uniqueItems": true,
@@ -8333,14 +8615,15 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `uniqueItems validation, numbers are unique if mathematically unequal`
-schema
+## Original schema
 ```js
 {
 	"uniqueItems": true
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"uniqueItems": true,
@@ -8349,14 +8632,15 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `uniqueItems validation, unique array of objects is valid`
-schema
+## Original schema
 ```js
 {
 	"uniqueItems": true
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"uniqueItems": true,
@@ -8365,14 +8649,15 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `uniqueItems validation, non-unique array of objects is invalid`
-schema
+## Original schema
 ```js
 {
 	"uniqueItems": true
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"uniqueItems": true,
@@ -8381,14 +8666,15 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `uniqueItems validation, unique array of nested objects is valid`
-schema
+## Original schema
 ```js
 {
 	"uniqueItems": true
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"uniqueItems": true,
@@ -8397,14 +8683,15 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `uniqueItems validation, non-unique array of nested objects is invalid`
-schema
+## Original schema
 ```js
 {
 	"uniqueItems": true
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"uniqueItems": true,
@@ -8413,14 +8700,15 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `uniqueItems validation, unique array of arrays is valid`
-schema
+## Original schema
 ```js
 {
 	"uniqueItems": true
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"uniqueItems": true,
@@ -8429,14 +8717,15 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `uniqueItems validation, non-unique array of arrays is invalid`
-schema
+## Original schema
 ```js
 {
 	"uniqueItems": true
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"uniqueItems": true,
@@ -8445,14 +8734,15 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `uniqueItems validation, 1 and true are unique`
-schema
+## Original schema
 ```js
 {
 	"uniqueItems": true
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"uniqueItems": true,
@@ -8461,14 +8751,15 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `uniqueItems validation, 0 and false are unique`
-schema
+## Original schema
 ```js
 {
 	"uniqueItems": true
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"uniqueItems": true,
@@ -8477,14 +8768,15 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `uniqueItems validation, unique heterogeneous types are valid`
-schema
+## Original schema
 ```js
 {
 	"uniqueItems": true
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"uniqueItems": true,
@@ -8493,14 +8785,15 @@ schema after validating
 }
 ```
 
+# Side-effect on schema
 [`z-schema`](https://github.com/zaggino/z-schema) had a side-effect on (altered the original) schema in the test `uniqueItems validation, non-unique heterogeneous types are invalid`
-schema
+## Original schema
 ```js
 {
 	"uniqueItems": true
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"uniqueItems": true,

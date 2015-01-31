@@ -1,4 +1,7 @@
 # {{&link}} side-effects in testrun
+
+When running tests {{&link}} mutated either the original schema or the data being validated with the schema or both.
+
 {{#sideEffects}}
 
 {{&message}}

@@ -1,7 +1,11 @@
 # [`json-model`](https://github.com/geraintluff/json-model) side-effects in testrun
 
+When running tests [`json-model`](https://github.com/geraintluff/json-model) mutated either the original schema or the data being validated with the schema or both.
+
+
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `additionalItems as schema, additional items match schema`
-schema
+## Original schema
 ```js
 {
 	"items": [
@@ -12,7 +16,7 @@ schema
 	}
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"items": [
@@ -21,12 +25,13 @@ schema after validating
 	"additionalItems": {
 		"type": "integer"
 	},
-	"id": "9176232672762126anonymous"
+	"id": "6234208480454981anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `additionalItems as schema, additional items do not match schema`
-schema
+## Original schema
 ```js
 {
 	"items": [
@@ -37,7 +42,7 @@ schema
 	}
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"items": [
@@ -46,29 +51,31 @@ schema after validating
 	"additionalItems": {
 		"type": "integer"
 	},
-	"id": "9176232672762126anonymous"
+	"id": "6234208480454981anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `items is schema, no additionalItems, all items match schema`
-schema
+## Original schema
 ```js
 {
 	"items": {},
 	"additionalItems": false
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"items": {},
 	"additionalItems": false,
-	"id": "16789822792634368anonymous"
+	"id": "2589111349079758anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `array of items with no additionalItems, no additional items present`
-schema
+## Original schema
 ```js
 {
 	"items": [
@@ -79,7 +86,7 @@ schema
 	"additionalItems": false
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"items": [
@@ -88,12 +95,13 @@ schema after validating
 		{}
 	],
 	"additionalItems": false,
-	"id": "6667503973003477anonymous"
+	"id": "658413008088246anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `array of items with no additionalItems, additional items are not permitted`
-schema
+## Original schema
 ```js
 {
 	"items": [
@@ -104,7 +112,7 @@ schema
 	"additionalItems": false
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"items": [
@@ -113,42 +121,45 @@ schema after validating
 		{}
 	],
 	"additionalItems": false,
-	"id": "6667503973003477anonymous"
+	"id": "658413008088246anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `additionalItems as false without items, items defaults to empty schema so everything is valid`
-schema
+## Original schema
 ```js
 {
 	"additionalItems": false
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"additionalItems": false,
-	"id": "03390998556278646anonymous"
+	"id": "6123619072604924anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `additionalItems as false without items, ignores non-arrays`
-schema
+## Original schema
 ```js
 {
 	"additionalItems": false
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"additionalItems": false,
-	"id": "03390998556278646anonymous"
+	"id": "6123619072604924anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `additionalItems are allowed by default, only the first item is validated`
-schema
+## Original schema
 ```js
 {
 	"items": [
@@ -158,7 +169,7 @@ schema
 	]
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"items": [
@@ -166,12 +177,13 @@ schema after validating
 			"type": "integer"
 		}
 	],
-	"id": "8960438512731344anonymous"
+	"id": "18773958552628756anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `additionalProperties being false does not allow other properties, no additional properties is valid`
-schema
+## Original schema
 ```js
 {
 	"properties": {
@@ -184,7 +196,7 @@ schema
 	"additionalProperties": false
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"properties": {
@@ -195,12 +207,13 @@ schema after validating
 		"^v": {}
 	},
 	"additionalProperties": false,
-	"id": "49313599639572203anonymous"
+	"id": "2617695333901793anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `additionalProperties being false does not allow other properties, an additional property is invalid`
-schema
+## Original schema
 ```js
 {
 	"properties": {
@@ -213,7 +226,7 @@ schema
 	"additionalProperties": false
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"properties": {
@@ -224,12 +237,13 @@ schema after validating
 		"^v": {}
 	},
 	"additionalProperties": false,
-	"id": "49313599639572203anonymous"
+	"id": "2617695333901793anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `additionalProperties being false does not allow other properties, ignores non-objects`
-schema
+## Original schema
 ```js
 {
 	"properties": {
@@ -242,7 +256,7 @@ schema
 	"additionalProperties": false
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"properties": {
@@ -253,12 +267,13 @@ schema after validating
 		"^v": {}
 	},
 	"additionalProperties": false,
-	"id": "49313599639572203anonymous"
+	"id": "2617695333901793anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `additionalProperties being false does not allow other properties, patternProperties are not additional properties`
-schema
+## Original schema
 ```js
 {
 	"properties": {
@@ -271,7 +286,7 @@ schema
 	"additionalProperties": false
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"properties": {
@@ -282,12 +297,13 @@ schema after validating
 		"^v": {}
 	},
 	"additionalProperties": false,
-	"id": "49313599639572203anonymous"
+	"id": "2617695333901793anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `additionalProperties allows a schema which should validate, no additional properties is valid`
-schema
+## Original schema
 ```js
 {
 	"properties": {
@@ -299,7 +315,7 @@ schema
 	}
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"properties": {
@@ -309,12 +325,13 @@ schema after validating
 	"additionalProperties": {
 		"type": "boolean"
 	},
-	"id": "6109014444518834anonymous"
+	"id": "8861752452794462anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `additionalProperties allows a schema which should validate, an additional valid property is valid`
-schema
+## Original schema
 ```js
 {
 	"properties": {
@@ -326,7 +343,7 @@ schema
 	}
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"properties": {
@@ -336,12 +353,13 @@ schema after validating
 	"additionalProperties": {
 		"type": "boolean"
 	},
-	"id": "6109014444518834anonymous"
+	"id": "8861752452794462anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `additionalProperties allows a schema which should validate, an additional invalid property is invalid`
-schema
+## Original schema
 ```js
 {
 	"properties": {
@@ -353,7 +371,7 @@ schema
 	}
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"properties": {
@@ -363,12 +381,13 @@ schema after validating
 	"additionalProperties": {
 		"type": "boolean"
 	},
-	"id": "6109014444518834anonymous"
+	"id": "8861752452794462anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `additionalProperties can exist by itself, an additional valid property is valid`
-schema
+## Original schema
 ```js
 {
 	"additionalProperties": {
@@ -376,18 +395,19 @@ schema
 	}
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"additionalProperties": {
 		"type": "boolean"
 	},
-	"id": "8625368939246982anonymous"
+	"id": "32120928168296814anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `additionalProperties can exist by itself, an additional invalid property is invalid`
-schema
+## Original schema
 ```js
 {
 	"additionalProperties": {
@@ -395,18 +415,19 @@ schema
 	}
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"additionalProperties": {
 		"type": "boolean"
 	},
-	"id": "8625368939246982anonymous"
+	"id": "32120928168296814anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `additionalProperties are allowed by default, additional properties are allowed`
-schema
+## Original schema
 ```js
 {
 	"properties": {
@@ -415,19 +436,20 @@ schema
 	}
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"properties": {
 		"foo": {},
 		"bar": {}
 	},
-	"id": "5203989851288497anonymous"
+	"id": "3330018881242722anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `allOf, allOf`
-schema
+## Original schema
 ```js
 {
 	"allOf": [
@@ -454,7 +476,7 @@ schema
 	]
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"allOf": [
@@ -479,12 +501,13 @@ schema after validating
 			]
 		}
 	],
-	"id": "9127140243072063anonymous"
+	"id": "4730960594024509anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `allOf, mismatch second`
-schema
+## Original schema
 ```js
 {
 	"allOf": [
@@ -511,7 +534,7 @@ schema
 	]
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"allOf": [
@@ -536,12 +559,13 @@ schema after validating
 			]
 		}
 	],
-	"id": "9127140243072063anonymous"
+	"id": "4730960594024509anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `allOf, mismatch first`
-schema
+## Original schema
 ```js
 {
 	"allOf": [
@@ -568,7 +592,7 @@ schema
 	]
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"allOf": [
@@ -593,12 +617,13 @@ schema after validating
 			]
 		}
 	],
-	"id": "9127140243072063anonymous"
+	"id": "4730960594024509anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `allOf, wrong type`
-schema
+## Original schema
 ```js
 {
 	"allOf": [
@@ -625,7 +650,7 @@ schema
 	]
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"allOf": [
@@ -650,12 +675,13 @@ schema after validating
 			]
 		}
 	],
-	"id": "9127140243072063anonymous"
+	"id": "4730960594024509anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `allOf with base schema, valid`
-schema
+## Original schema
 ```js
 {
 	"properties": {
@@ -690,7 +716,7 @@ schema
 	]
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"properties": {
@@ -723,12 +749,13 @@ schema after validating
 			]
 		}
 	],
-	"id": "6165220669936389anonymous"
+	"id": "1490802802145481anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `allOf with base schema, mismatch base schema`
-schema
+## Original schema
 ```js
 {
 	"properties": {
@@ -763,7 +790,7 @@ schema
 	]
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"properties": {
@@ -796,12 +823,13 @@ schema after validating
 			]
 		}
 	],
-	"id": "6165220669936389anonymous"
+	"id": "1490802802145481anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `allOf with base schema, mismatch first allOf`
-schema
+## Original schema
 ```js
 {
 	"properties": {
@@ -836,7 +864,7 @@ schema
 	]
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"properties": {
@@ -869,12 +897,13 @@ schema after validating
 			]
 		}
 	],
-	"id": "6165220669936389anonymous"
+	"id": "1490802802145481anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `allOf with base schema, mismatch second allOf`
-schema
+## Original schema
 ```js
 {
 	"properties": {
@@ -909,7 +938,7 @@ schema
 	]
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"properties": {
@@ -942,12 +971,13 @@ schema after validating
 			]
 		}
 	],
-	"id": "6165220669936389anonymous"
+	"id": "1490802802145481anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `allOf with base schema, mismatch both`
-schema
+## Original schema
 ```js
 {
 	"properties": {
@@ -982,7 +1012,7 @@ schema
 	]
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"properties": {
@@ -1015,12 +1045,13 @@ schema after validating
 			]
 		}
 	],
-	"id": "6165220669936389anonymous"
+	"id": "1490802802145481anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `allOf simple types, valid`
-schema
+## Original schema
 ```js
 {
 	"allOf": [
@@ -1033,7 +1064,7 @@ schema
 	]
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"allOf": [
@@ -1044,12 +1075,13 @@ schema after validating
 			"minimum": 20
 		}
 	],
-	"id": "30783643992617726anonymous"
+	"id": "4044893658719957anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `allOf simple types, mismatch one`
-schema
+## Original schema
 ```js
 {
 	"allOf": [
@@ -1062,7 +1094,7 @@ schema
 	]
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"allOf": [
@@ -1073,12 +1105,13 @@ schema after validating
 			"minimum": 20
 		}
 	],
-	"id": "30783643992617726anonymous"
+	"id": "4044893658719957anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `anyOf, first anyOf valid`
-schema
+## Original schema
 ```js
 {
 	"anyOf": [
@@ -1091,7 +1124,7 @@ schema
 	]
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"anyOf": [
@@ -1102,12 +1135,13 @@ schema after validating
 			"minimum": 2
 		}
 	],
-	"id": "6355183781124651anonymous"
+	"id": "645137059269473anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `anyOf, second anyOf valid`
-schema
+## Original schema
 ```js
 {
 	"anyOf": [
@@ -1120,7 +1154,7 @@ schema
 	]
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"anyOf": [
@@ -1131,12 +1165,13 @@ schema after validating
 			"minimum": 2
 		}
 	],
-	"id": "6355183781124651anonymous"
+	"id": "645137059269473anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `anyOf, both anyOf valid`
-schema
+## Original schema
 ```js
 {
 	"anyOf": [
@@ -1149,7 +1184,7 @@ schema
 	]
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"anyOf": [
@@ -1160,12 +1195,13 @@ schema after validating
 			"minimum": 2
 		}
 	],
-	"id": "6355183781124651anonymous"
+	"id": "645137059269473anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `anyOf, neither anyOf valid`
-schema
+## Original schema
 ```js
 {
 	"anyOf": [
@@ -1178,7 +1214,7 @@ schema
 	]
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"anyOf": [
@@ -1189,12 +1225,13 @@ schema after validating
 			"minimum": 2
 		}
 	],
-	"id": "6355183781124651anonymous"
+	"id": "645137059269473anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `anyOf with base schema, mismatch base schema`
-schema
+## Original schema
 ```js
 {
 	"type": "string",
@@ -1208,7 +1245,7 @@ schema
 	]
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"type": "string",
@@ -1220,12 +1257,13 @@ schema after validating
 			"minLength": 4
 		}
 	],
-	"id": "34458191064186394anonymous"
+	"id": "7973729958757758anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `anyOf with base schema, one anyOf valid`
-schema
+## Original schema
 ```js
 {
 	"type": "string",
@@ -1239,7 +1277,7 @@ schema
 	]
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"type": "string",
@@ -1251,12 +1289,13 @@ schema after validating
 			"minLength": 4
 		}
 	],
-	"id": "34458191064186394anonymous"
+	"id": "7973729958757758anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `anyOf with base schema, both anyOf invalid`
-schema
+## Original schema
 ```js
 {
 	"type": "string",
@@ -1270,7 +1309,7 @@ schema
 	]
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"type": "string",
@@ -1282,12 +1321,13 @@ schema after validating
 			"minLength": 4
 		}
 	],
-	"id": "34458191064186394anonymous"
+	"id": "7973729958757758anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `invalid type for default, valid when property is specified`
-schema
+## Original schema
 ```js
 {
 	"properties": {
@@ -1298,7 +1338,7 @@ schema
 	}
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"properties": {
@@ -1307,12 +1347,13 @@ schema after validating
 			"default": []
 		}
 	},
-	"id": "2577362230513245anonymous"
+	"id": "6732400998007506anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `invalid type for default, still valid when the invalid default is used`
-schema
+## Original schema
 ```js
 {
 	"properties": {
@@ -1323,7 +1364,7 @@ schema
 	}
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"properties": {
@@ -1332,12 +1373,13 @@ schema after validating
 			"default": []
 		}
 	},
-	"id": "2577362230513245anonymous"
+	"id": "6732400998007506anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `invalid string value for default, valid when property is specified`
-schema
+## Original schema
 ```js
 {
 	"properties": {
@@ -1349,7 +1391,7 @@ schema
 	}
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"properties": {
@@ -1359,12 +1401,13 @@ schema after validating
 			"default": "bad"
 		}
 	},
-	"id": "97185641201213anonymous"
+	"id": "43071259441785514anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `invalid string value for default, still valid when the invalid default is used`
-schema
+## Original schema
 ```js
 {
 	"properties": {
@@ -1376,7 +1419,7 @@ schema
 	}
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"properties": {
@@ -1386,27 +1429,29 @@ schema after validating
 			"default": "bad"
 		}
 	},
-	"id": "97185641201213anonymous"
+	"id": "43071259441785514anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `invalid definition, invalid definition schema`
-schema
+## Original schema
 ```js
 {
 	"$ref": "http://json-schema.org/draft-04/schema#"
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"$ref": "http://json-schema.org/draft-04/schema#",
-	"id": "08600236987695098anonymous"
+	"id": "15111059392802417anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `dependencies, neither`
-schema
+## Original schema
 ```js
 {
 	"dependencies": {
@@ -1416,7 +1461,7 @@ schema
 	}
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"dependencies": {
@@ -1424,12 +1469,13 @@ schema after validating
 			"foo"
 		]
 	},
-	"id": "44389625592157245anonymous"
+	"id": "4039179286919534anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `dependencies, nondependant`
-schema
+## Original schema
 ```js
 {
 	"dependencies": {
@@ -1439,7 +1485,7 @@ schema
 	}
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"dependencies": {
@@ -1447,12 +1493,13 @@ schema after validating
 			"foo"
 		]
 	},
-	"id": "44389625592157245anonymous"
+	"id": "4039179286919534anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `dependencies, with dependency`
-schema
+## Original schema
 ```js
 {
 	"dependencies": {
@@ -1462,7 +1509,7 @@ schema
 	}
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"dependencies": {
@@ -1470,12 +1517,13 @@ schema after validating
 			"foo"
 		]
 	},
-	"id": "44389625592157245anonymous"
+	"id": "4039179286919534anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `dependencies, missing dependency`
-schema
+## Original schema
 ```js
 {
 	"dependencies": {
@@ -1485,7 +1533,7 @@ schema
 	}
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"dependencies": {
@@ -1493,12 +1541,13 @@ schema after validating
 			"foo"
 		]
 	},
-	"id": "44389625592157245anonymous"
+	"id": "4039179286919534anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `dependencies, ignores non-objects`
-schema
+## Original schema
 ```js
 {
 	"dependencies": {
@@ -1508,7 +1557,7 @@ schema
 	}
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"dependencies": {
@@ -1516,12 +1565,13 @@ schema after validating
 			"foo"
 		]
 	},
-	"id": "44389625592157245anonymous"
+	"id": "4039179286919534anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `multiple dependencies, neither`
-schema
+## Original schema
 ```js
 {
 	"dependencies": {
@@ -1532,7 +1582,7 @@ schema
 	}
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"dependencies": {
@@ -1541,12 +1591,13 @@ schema after validating
 			"bar"
 		]
 	},
-	"id": "6901830404531211anonymous"
+	"id": "9806990521028638anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `multiple dependencies, nondependants`
-schema
+## Original schema
 ```js
 {
 	"dependencies": {
@@ -1557,7 +1608,7 @@ schema
 	}
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"dependencies": {
@@ -1566,12 +1617,13 @@ schema after validating
 			"bar"
 		]
 	},
-	"id": "6901830404531211anonymous"
+	"id": "9806990521028638anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `multiple dependencies, with dependencies`
-schema
+## Original schema
 ```js
 {
 	"dependencies": {
@@ -1582,7 +1634,7 @@ schema
 	}
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"dependencies": {
@@ -1591,12 +1643,13 @@ schema after validating
 			"bar"
 		]
 	},
-	"id": "6901830404531211anonymous"
+	"id": "9806990521028638anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `multiple dependencies, missing dependency`
-schema
+## Original schema
 ```js
 {
 	"dependencies": {
@@ -1607,7 +1660,7 @@ schema
 	}
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"dependencies": {
@@ -1616,12 +1669,13 @@ schema after validating
 			"bar"
 		]
 	},
-	"id": "6901830404531211anonymous"
+	"id": "9806990521028638anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `multiple dependencies, missing other dependency`
-schema
+## Original schema
 ```js
 {
 	"dependencies": {
@@ -1632,7 +1686,7 @@ schema
 	}
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"dependencies": {
@@ -1641,12 +1695,13 @@ schema after validating
 			"bar"
 		]
 	},
-	"id": "6901830404531211anonymous"
+	"id": "9806990521028638anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `multiple dependencies, missing both dependencies`
-schema
+## Original schema
 ```js
 {
 	"dependencies": {
@@ -1657,7 +1712,7 @@ schema
 	}
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"dependencies": {
@@ -1666,12 +1721,13 @@ schema after validating
 			"bar"
 		]
 	},
-	"id": "6901830404531211anonymous"
+	"id": "9806990521028638anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `multiple dependencies subschema, valid`
-schema
+## Original schema
 ```js
 {
 	"dependencies": {
@@ -1688,7 +1744,7 @@ schema
 	}
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"dependencies": {
@@ -1703,12 +1759,13 @@ schema after validating
 			}
 		}
 	},
-	"id": "4780912094283849anonymous"
+	"id": "09284769487567246anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `multiple dependencies subschema, no dependency`
-schema
+## Original schema
 ```js
 {
 	"dependencies": {
@@ -1725,7 +1782,7 @@ schema
 	}
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"dependencies": {
@@ -1740,12 +1797,13 @@ schema after validating
 			}
 		}
 	},
-	"id": "4780912094283849anonymous"
+	"id": "09284769487567246anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `multiple dependencies subschema, wrong type`
-schema
+## Original schema
 ```js
 {
 	"dependencies": {
@@ -1762,7 +1820,7 @@ schema
 	}
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"dependencies": {
@@ -1777,12 +1835,13 @@ schema after validating
 			}
 		}
 	},
-	"id": "4780912094283849anonymous"
+	"id": "09284769487567246anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `multiple dependencies subschema, wrong type other`
-schema
+## Original schema
 ```js
 {
 	"dependencies": {
@@ -1799,7 +1858,7 @@ schema
 	}
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"dependencies": {
@@ -1814,12 +1873,13 @@ schema after validating
 			}
 		}
 	},
-	"id": "4780912094283849anonymous"
+	"id": "09284769487567246anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `multiple dependencies subschema, wrong type both`
-schema
+## Original schema
 ```js
 {
 	"dependencies": {
@@ -1836,7 +1896,7 @@ schema
 	}
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"dependencies": {
@@ -1851,12 +1911,13 @@ schema after validating
 			}
 		}
 	},
-	"id": "4780912094283849anonymous"
+	"id": "09284769487567246anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `simple enum validation, one of the enum is valid`
-schema
+## Original schema
 ```js
 {
 	"enum": [
@@ -1866,7 +1927,7 @@ schema
 	]
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"enum": [
@@ -1874,12 +1935,13 @@ schema after validating
 		2,
 		3
 	],
-	"id": "7725908134598285anonymous"
+	"id": "5922130411490798anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `simple enum validation, something else is invalid`
-schema
+## Original schema
 ```js
 {
 	"enum": [
@@ -1889,7 +1951,7 @@ schema
 	]
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"enum": [
@@ -1897,12 +1959,13 @@ schema after validating
 		2,
 		3
 	],
-	"id": "7725908134598285anonymous"
+	"id": "5922130411490798anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `heterogeneous enum validation, one of the enum is valid`
-schema
+## Original schema
 ```js
 {
 	"enum": [
@@ -1916,7 +1979,7 @@ schema
 	]
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"enum": [
@@ -1928,12 +1991,13 @@ schema after validating
 			"foo": 12
 		}
 	],
-	"id": "09557589772157371anonymous"
+	"id": "12195578939281404anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `heterogeneous enum validation, something else is invalid`
-schema
+## Original schema
 ```js
 {
 	"enum": [
@@ -1947,7 +2011,7 @@ schema
 	]
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"enum": [
@@ -1959,12 +2023,13 @@ schema after validating
 			"foo": 12
 		}
 	],
-	"id": "09557589772157371anonymous"
+	"id": "12195578939281404anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `heterogeneous enum validation, objects are deep compared`
-schema
+## Original schema
 ```js
 {
 	"enum": [
@@ -1978,7 +2043,7 @@ schema
 	]
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"enum": [
@@ -1990,12 +2055,13 @@ schema after validating
 			"foo": 12
 		}
 	],
-	"id": "09557589772157371anonymous"
+	"id": "12195578939281404anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `enums in properties, both properties are valid`
-schema
+## Original schema
 ```js
 {
 	"type": "object",
@@ -2016,7 +2082,7 @@ schema
 	]
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"type": "object",
@@ -2035,12 +2101,13 @@ schema after validating
 	"required": [
 		"bar"
 	],
-	"id": "8618794337380677anonymous"
+	"id": "24654428730718791anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `enums in properties, missing optional property is valid`
-schema
+## Original schema
 ```js
 {
 	"type": "object",
@@ -2061,7 +2128,7 @@ schema
 	]
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"type": "object",
@@ -2080,12 +2147,13 @@ schema after validating
 	"required": [
 		"bar"
 	],
-	"id": "8618794337380677anonymous"
+	"id": "24654428730718791anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `enums in properties, missing required property is invalid`
-schema
+## Original schema
 ```js
 {
 	"type": "object",
@@ -2106,7 +2174,7 @@ schema
 	]
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"type": "object",
@@ -2125,12 +2193,13 @@ schema after validating
 	"required": [
 		"bar"
 	],
-	"id": "8618794337380677anonymous"
+	"id": "24654428730718791anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `enums in properties, missing all properties is invalid`
-schema
+## Original schema
 ```js
 {
 	"type": "object",
@@ -2151,7 +2220,7 @@ schema
 	]
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"type": "object",
@@ -2170,12 +2239,13 @@ schema after validating
 	"required": [
 		"bar"
 	],
-	"id": "8618794337380677anonymous"
+	"id": "24654428730718791anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `a schema given for items, valid items`
-schema
+## Original schema
 ```js
 {
 	"items": {
@@ -2183,18 +2253,19 @@ schema
 	}
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"items": {
 		"type": "integer"
 	},
-	"id": "6661203566472977anonymous"
+	"id": "5727618702221662anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `a schema given for items, wrong type of items`
-schema
+## Original schema
 ```js
 {
 	"items": {
@@ -2202,18 +2273,19 @@ schema
 	}
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"items": {
 		"type": "integer"
 	},
-	"id": "6661203566472977anonymous"
+	"id": "5727618702221662anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `a schema given for items, ignores non-arrays`
-schema
+## Original schema
 ```js
 {
 	"items": {
@@ -2221,18 +2293,19 @@ schema
 	}
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"items": {
 		"type": "integer"
 	},
-	"id": "6661203566472977anonymous"
+	"id": "5727618702221662anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `an array of schemas for items, correct types`
-schema
+## Original schema
 ```js
 {
 	"items": [
@@ -2245,7 +2318,7 @@ schema
 	]
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"items": [
@@ -2256,12 +2329,13 @@ schema after validating
 			"type": "string"
 		}
 	],
-	"id": "5409352262504399anonymous"
+	"id": "3614903218112886anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `an array of schemas for items, wrong types`
-schema
+## Original schema
 ```js
 {
 	"items": [
@@ -2274,7 +2348,7 @@ schema
 	]
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"items": [
@@ -2285,680 +2359,725 @@ schema after validating
 			"type": "string"
 		}
 	],
-	"id": "5409352262504399anonymous"
+	"id": "3614903218112886anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `maxItems validation, shorter is valid`
-schema
+## Original schema
 ```js
 {
 	"maxItems": 2
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"maxItems": 2,
-	"id": "9457355479244143anonymous"
+	"id": "5497094579041004anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `maxItems validation, exact length is valid`
-schema
+## Original schema
 ```js
 {
 	"maxItems": 2
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"maxItems": 2,
-	"id": "9457355479244143anonymous"
+	"id": "5497094579041004anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `maxItems validation, too long is invalid`
-schema
+## Original schema
 ```js
 {
 	"maxItems": 2
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"maxItems": 2,
-	"id": "9457355479244143anonymous"
+	"id": "5497094579041004anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `maxItems validation, ignores non-arrays`
-schema
+## Original schema
 ```js
 {
 	"maxItems": 2
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"maxItems": 2,
-	"id": "9457355479244143anonymous"
+	"id": "5497094579041004anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `maxLength validation, shorter is valid`
-schema
+## Original schema
 ```js
 {
 	"maxLength": 2
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"maxLength": 2,
-	"id": "9970699630212039anonymous"
+	"id": "2301109880208969anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `maxLength validation, exact length is valid`
-schema
+## Original schema
 ```js
 {
 	"maxLength": 2
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"maxLength": 2,
-	"id": "9970699630212039anonymous"
+	"id": "2301109880208969anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `maxLength validation, too long is invalid`
-schema
+## Original schema
 ```js
 {
 	"maxLength": 2
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"maxLength": 2,
-	"id": "9970699630212039anonymous"
+	"id": "2301109880208969anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `maxLength validation, ignores non-strings`
-schema
+## Original schema
 ```js
 {
 	"maxLength": 2
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"maxLength": 2,
-	"id": "9970699630212039anonymous"
+	"id": "2301109880208969anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `maxLength validation, two supplementary Unicode code points is long enough`
-schema
+## Original schema
 ```js
 {
 	"maxLength": 2
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"maxLength": 2,
-	"id": "9970699630212039anonymous"
+	"id": "2301109880208969anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `maxProperties validation, shorter is valid`
-schema
+## Original schema
 ```js
 {
 	"maxProperties": 2
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"maxProperties": 2,
-	"id": "6551254349760711anonymous"
+	"id": "050207928288728anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `maxProperties validation, exact length is valid`
-schema
+## Original schema
 ```js
 {
 	"maxProperties": 2
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"maxProperties": 2,
-	"id": "6551254349760711anonymous"
+	"id": "050207928288728anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `maxProperties validation, too long is invalid`
-schema
+## Original schema
 ```js
 {
 	"maxProperties": 2
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"maxProperties": 2,
-	"id": "6551254349760711anonymous"
+	"id": "050207928288728anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `maxProperties validation, ignores non-objects`
-schema
+## Original schema
 ```js
 {
 	"maxProperties": 2
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"maxProperties": 2,
-	"id": "6551254349760711anonymous"
+	"id": "050207928288728anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `maximum validation, below the maximum is valid`
-schema
+## Original schema
 ```js
 {
 	"maximum": 3
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"maximum": 3,
-	"id": "9648052882403135anonymous"
+	"id": "3249266226775944anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `maximum validation, above the maximum is invalid`
-schema
+## Original schema
 ```js
 {
 	"maximum": 3
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"maximum": 3,
-	"id": "9648052882403135anonymous"
+	"id": "3249266226775944anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `maximum validation, ignores non-numbers`
-schema
+## Original schema
 ```js
 {
 	"maximum": 3
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"maximum": 3,
-	"id": "9648052882403135anonymous"
+	"id": "3249266226775944anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `exclusiveMaximum validation, below the maximum is still valid`
-schema
+## Original schema
 ```js
 {
 	"maximum": 3,
 	"exclusiveMaximum": true
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"maximum": 3,
 	"exclusiveMaximum": true,
-	"id": "11637717299163342anonymous"
+	"id": "9694492626003921anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `exclusiveMaximum validation, boundary point is invalid`
-schema
+## Original schema
 ```js
 {
 	"maximum": 3,
 	"exclusiveMaximum": true
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"maximum": 3,
 	"exclusiveMaximum": true,
-	"id": "11637717299163342anonymous"
+	"id": "9694492626003921anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `minItems validation, longer is valid`
-schema
+## Original schema
 ```js
 {
 	"minItems": 1
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"minItems": 1,
-	"id": "5341421866323799anonymous"
+	"id": "22907727677375078anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `minItems validation, exact length is valid`
-schema
+## Original schema
 ```js
 {
 	"minItems": 1
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"minItems": 1,
-	"id": "5341421866323799anonymous"
+	"id": "22907727677375078anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `minItems validation, too short is invalid`
-schema
+## Original schema
 ```js
 {
 	"minItems": 1
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"minItems": 1,
-	"id": "5341421866323799anonymous"
+	"id": "22907727677375078anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `minItems validation, ignores non-arrays`
-schema
+## Original schema
 ```js
 {
 	"minItems": 1
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"minItems": 1,
-	"id": "5341421866323799anonymous"
+	"id": "22907727677375078anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `minLength validation, longer is valid`
-schema
+## Original schema
 ```js
 {
 	"minLength": 2
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"minLength": 2,
-	"id": "48260327242314816anonymous"
+	"id": "6951995783019811anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `minLength validation, exact length is valid`
-schema
+## Original schema
 ```js
 {
 	"minLength": 2
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"minLength": 2,
-	"id": "48260327242314816anonymous"
+	"id": "6951995783019811anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `minLength validation, too short is invalid`
-schema
+## Original schema
 ```js
 {
 	"minLength": 2
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"minLength": 2,
-	"id": "48260327242314816anonymous"
+	"id": "6951995783019811anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `minLength validation, ignores non-strings`
-schema
+## Original schema
 ```js
 {
 	"minLength": 2
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"minLength": 2,
-	"id": "48260327242314816anonymous"
+	"id": "6951995783019811anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `minLength validation, one supplementary Unicode code point is not long enough`
-schema
+## Original schema
 ```js
 {
 	"minLength": 2
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"minLength": 2,
-	"id": "48260327242314816anonymous"
+	"id": "6951995783019811anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `minProperties validation, longer is valid`
-schema
+## Original schema
 ```js
 {
 	"minProperties": 1
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"minProperties": 1,
-	"id": "7032974609173834anonymous"
+	"id": "8724639834836125anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `minProperties validation, exact length is valid`
-schema
+## Original schema
 ```js
 {
 	"minProperties": 1
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"minProperties": 1,
-	"id": "7032974609173834anonymous"
+	"id": "8724639834836125anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `minProperties validation, too short is invalid`
-schema
+## Original schema
 ```js
 {
 	"minProperties": 1
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"minProperties": 1,
-	"id": "7032974609173834anonymous"
+	"id": "8724639834836125anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `minProperties validation, ignores non-objects`
-schema
+## Original schema
 ```js
 {
 	"minProperties": 1
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"minProperties": 1,
-	"id": "7032974609173834anonymous"
+	"id": "8724639834836125anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `minimum validation, above the minimum is valid`
-schema
+## Original schema
 ```js
 {
 	"minimum": 1.1
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"minimum": 1.1,
-	"id": "20770409796386957anonymous"
+	"id": "8491125411819667anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `minimum validation, below the minimum is invalid`
-schema
+## Original schema
 ```js
 {
 	"minimum": 1.1
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"minimum": 1.1,
-	"id": "20770409796386957anonymous"
+	"id": "8491125411819667anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `minimum validation, ignores non-numbers`
-schema
+## Original schema
 ```js
 {
 	"minimum": 1.1
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"minimum": 1.1,
-	"id": "20770409796386957anonymous"
+	"id": "8491125411819667anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `exclusiveMinimum validation, above the minimum is still valid`
-schema
+## Original schema
 ```js
 {
 	"minimum": 1.1,
 	"exclusiveMinimum": true
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"minimum": 1.1,
 	"exclusiveMinimum": true,
-	"id": "9190615362022072anonymous"
+	"id": "1585829914547503anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `exclusiveMinimum validation, boundary point is invalid`
-schema
+## Original schema
 ```js
 {
 	"minimum": 1.1,
 	"exclusiveMinimum": true
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"minimum": 1.1,
 	"exclusiveMinimum": true,
-	"id": "9190615362022072anonymous"
+	"id": "1585829914547503anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `by int, int by int`
-schema
+## Original schema
 ```js
 {
 	"multipleOf": 2
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"multipleOf": 2,
-	"id": "3806313695386052anonymous"
+	"id": "7742437799461186anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `by int, int by int fail`
-schema
+## Original schema
 ```js
 {
 	"multipleOf": 2
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"multipleOf": 2,
-	"id": "3806313695386052anonymous"
+	"id": "7742437799461186anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `by int, ignores non-numbers`
-schema
+## Original schema
 ```js
 {
 	"multipleOf": 2
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"multipleOf": 2,
-	"id": "3806313695386052anonymous"
+	"id": "7742437799461186anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `by number, zero is multiple of anything`
-schema
+## Original schema
 ```js
 {
 	"multipleOf": 1.5
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"multipleOf": 1.5,
-	"id": "5005300524644554anonymous"
+	"id": "4679747745394707anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `by number, 4.5 is multiple of 1.5`
-schema
+## Original schema
 ```js
 {
 	"multipleOf": 1.5
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"multipleOf": 1.5,
-	"id": "5005300524644554anonymous"
+	"id": "4679747745394707anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `by number, 35 is not multiple of 1.5`
-schema
+## Original schema
 ```js
 {
 	"multipleOf": 1.5
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"multipleOf": 1.5,
-	"id": "5005300524644554anonymous"
+	"id": "4679747745394707anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `by small number, 0.0075 is multiple of 0.0001`
-schema
+## Original schema
 ```js
 {
 	"multipleOf": 0.0001
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"multipleOf": 0.0001,
-	"id": "7497077456209809anonymous"
+	"id": "866115684621036anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `by small number, 0.00751 is not multiple of 0.0001`
-schema
+## Original schema
 ```js
 {
 	"multipleOf": 0.0001
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"multipleOf": 0.0001,
-	"id": "7497077456209809anonymous"
+	"id": "866115684621036anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `not, allowed`
-schema
+## Original schema
 ```js
 {
 	"not": {
@@ -2966,18 +3085,19 @@ schema
 	}
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"not": {
 		"type": "integer"
 	},
-	"id": "046352436766028404anonymous"
+	"id": "004141696495935321anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `not, disallowed`
-schema
+## Original schema
 ```js
 {
 	"not": {
@@ -2985,18 +3105,19 @@ schema
 	}
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"not": {
 		"type": "integer"
 	},
-	"id": "046352436766028404anonymous"
+	"id": "004141696495935321anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `not multiple types, valid`
-schema
+## Original schema
 ```js
 {
 	"not": {
@@ -3007,7 +3128,7 @@ schema
 	}
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"not": {
@@ -3016,12 +3137,13 @@ schema after validating
 			"boolean"
 		]
 	},
-	"id": "09092179383151233anonymous"
+	"id": "17541297897696495anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `not multiple types, mismatch`
-schema
+## Original schema
 ```js
 {
 	"not": {
@@ -3032,7 +3154,7 @@ schema
 	}
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"not": {
@@ -3041,12 +3163,13 @@ schema after validating
 			"boolean"
 		]
 	},
-	"id": "09092179383151233anonymous"
+	"id": "17541297897696495anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `not multiple types, other mismatch`
-schema
+## Original schema
 ```js
 {
 	"not": {
@@ -3057,7 +3180,7 @@ schema
 	}
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"not": {
@@ -3066,12 +3189,13 @@ schema after validating
 			"boolean"
 		]
 	},
-	"id": "09092179383151233anonymous"
+	"id": "17541297897696495anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `not more complex schema, match`
-schema
+## Original schema
 ```js
 {
 	"not": {
@@ -3084,7 +3208,7 @@ schema
 	}
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"not": {
@@ -3095,12 +3219,13 @@ schema after validating
 			}
 		}
 	},
-	"id": "7574965341482311anonymous"
+	"id": "9419456284958869anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `not more complex schema, other match`
-schema
+## Original schema
 ```js
 {
 	"not": {
@@ -3113,7 +3238,7 @@ schema
 	}
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"not": {
@@ -3124,12 +3249,13 @@ schema after validating
 			}
 		}
 	},
-	"id": "7574965341482311anonymous"
+	"id": "9419456284958869anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `not more complex schema, mismatch`
-schema
+## Original schema
 ```js
 {
 	"not": {
@@ -3142,7 +3268,7 @@ schema
 	}
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"not": {
@@ -3153,12 +3279,13 @@ schema after validating
 			}
 		}
 	},
-	"id": "7574965341482311anonymous"
+	"id": "9419456284958869anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `forbidden property, property present`
-schema
+## Original schema
 ```js
 {
 	"properties": {
@@ -3168,7 +3295,7 @@ schema
 	}
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"properties": {
@@ -3176,12 +3303,13 @@ schema after validating
 			"not": {}
 		}
 	},
-	"id": "7187467808835208anonymous"
+	"id": "9559079413302243anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `forbidden property, property absent`
-schema
+## Original schema
 ```js
 {
 	"properties": {
@@ -3191,7 +3319,7 @@ schema
 	}
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"properties": {
@@ -3199,12 +3327,13 @@ schema after validating
 			"not": {}
 		}
 	},
-	"id": "7187467808835208anonymous"
+	"id": "9559079413302243anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `oneOf, first oneOf valid`
-schema
+## Original schema
 ```js
 {
 	"oneOf": [
@@ -3217,7 +3346,7 @@ schema
 	]
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"oneOf": [
@@ -3228,12 +3357,13 @@ schema after validating
 			"minimum": 2
 		}
 	],
-	"id": "9420356373302639anonymous"
+	"id": "5723350872285664anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `oneOf, second oneOf valid`
-schema
+## Original schema
 ```js
 {
 	"oneOf": [
@@ -3246,7 +3376,7 @@ schema
 	]
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"oneOf": [
@@ -3257,12 +3387,13 @@ schema after validating
 			"minimum": 2
 		}
 	],
-	"id": "9420356373302639anonymous"
+	"id": "5723350872285664anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `oneOf, both oneOf valid`
-schema
+## Original schema
 ```js
 {
 	"oneOf": [
@@ -3275,7 +3406,7 @@ schema
 	]
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"oneOf": [
@@ -3286,12 +3417,13 @@ schema after validating
 			"minimum": 2
 		}
 	],
-	"id": "9420356373302639anonymous"
+	"id": "5723350872285664anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `oneOf, neither oneOf valid`
-schema
+## Original schema
 ```js
 {
 	"oneOf": [
@@ -3304,7 +3436,7 @@ schema
 	]
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"oneOf": [
@@ -3315,12 +3447,13 @@ schema after validating
 			"minimum": 2
 		}
 	],
-	"id": "9420356373302639anonymous"
+	"id": "5723350872285664anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `oneOf with base schema, mismatch base schema`
-schema
+## Original schema
 ```js
 {
 	"type": "string",
@@ -3334,7 +3467,7 @@ schema
 	]
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"type": "string",
@@ -3346,12 +3479,13 @@ schema after validating
 			"maxLength": 4
 		}
 	],
-	"id": "6409921345766634anonymous"
+	"id": "8460188137833029anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `oneOf with base schema, one oneOf valid`
-schema
+## Original schema
 ```js
 {
 	"type": "string",
@@ -3365,7 +3499,7 @@ schema
 	]
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"type": "string",
@@ -3377,12 +3511,13 @@ schema after validating
 			"maxLength": 4
 		}
 	],
-	"id": "6409921345766634anonymous"
+	"id": "8460188137833029anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `oneOf with base schema, both oneOf valid`
-schema
+## Original schema
 ```js
 {
 	"type": "string",
@@ -3396,7 +3531,7 @@ schema
 	]
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"type": "string",
@@ -3408,526 +3543,561 @@ schema after validating
 			"maxLength": 4
 		}
 	],
-	"id": "6409921345766634anonymous"
+	"id": "8460188137833029anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `integer, a bignum is an integer`
-schema
+## Original schema
 ```js
 {
 	"type": "integer"
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"type": "integer",
-	"id": "34035820001736283anonymous"
+	"id": "24046275252476335anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `number, a bignum is a number`
-schema
+## Original schema
 ```js
 {
 	"type": "number"
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"type": "number",
-	"id": "8856721012853086anonymous"
+	"id": "24510591570287943anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `integer, a negative bignum is an integer`
-schema
+## Original schema
 ```js
 {
 	"type": "integer"
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"type": "integer",
-	"id": "2115995252970606anonymous"
+	"id": "6054853827226907anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `number, a negative bignum is a number`
-schema
+## Original schema
 ```js
 {
 	"type": "number"
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"type": "number",
-	"id": "41850850568152964anonymous"
+	"id": "08974110847339034anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `string, a bignum is not a string`
-schema
+## Original schema
 ```js
 {
 	"type": "string"
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"type": "string",
-	"id": "4835034410934895anonymous"
+	"id": "8863303188700229anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `integer comparison, comparison works for high numbers`
-schema
+## Original schema
 ```js
 {
 	"maximum": 18446744073709552000
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"maximum": 18446744073709552000,
-	"id": "773107121232897anonymous"
+	"id": "6887962999753654anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `float comparison with high precision, comparison works for high numbers`
-schema
+## Original schema
 ```js
 {
 	"maximum": 9.727837981879871e+26,
 	"exclusiveMaximum": true
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"maximum": 9.727837981879871e+26,
 	"exclusiveMaximum": true,
-	"id": "995322318514809anonymous"
+	"id": "507294095819816anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `integer comparison, comparison works for very negative numbers`
-schema
+## Original schema
 ```js
 {
 	"minimum": -18446744073709552000
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"minimum": -18446744073709552000,
-	"id": "09990397491492331anonymous"
+	"id": "3304429545532912anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `float comparison with high precision on negative numbers, comparison works for very negative numbers`
-schema
+## Original schema
 ```js
 {
 	"minimum": -9.727837981879871e+26,
 	"exclusiveMinimum": true
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"minimum": -9.727837981879871e+26,
 	"exclusiveMinimum": true,
-	"id": "9008031792473048anonymous"
+	"id": "8219977782573551anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `validation of date-time strings, a valid date-time string`
-schema
+## Original schema
 ```js
 {
 	"format": "date-time"
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"format": "date-time",
-	"id": "5742744894232601anonymous"
+	"id": "16485275328159332anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `validation of date-time strings, an invalid date-time string`
-schema
+## Original schema
 ```js
 {
 	"format": "date-time"
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"format": "date-time",
-	"id": "5742744894232601anonymous"
+	"id": "16485275328159332anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `validation of date-time strings, only RFC3339 not all of ISO 8601 are valid`
-schema
+## Original schema
 ```js
 {
 	"format": "date-time"
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"format": "date-time",
-	"id": "5742744894232601anonymous"
+	"id": "16485275328159332anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `validation of URIs, a valid URI`
-schema
+## Original schema
 ```js
 {
 	"format": "uri"
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"format": "uri",
-	"id": "2171807566192001anonymous"
+	"id": "014775801682844758anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `validation of URIs, an invalid URI`
-schema
+## Original schema
 ```js
 {
 	"format": "uri"
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"format": "uri",
-	"id": "2171807566192001anonymous"
+	"id": "014775801682844758anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `validation of URIs, an invalid URI though valid URI reference`
-schema
+## Original schema
 ```js
 {
 	"format": "uri"
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"format": "uri",
-	"id": "2171807566192001anonymous"
+	"id": "014775801682844758anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `validation of e-mail addresses, a valid e-mail address`
-schema
+## Original schema
 ```js
 {
 	"format": "email"
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"format": "email",
-	"id": "9630069073755294anonymous"
+	"id": "250429606763646anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `validation of e-mail addresses, an invalid e-mail address`
-schema
+## Original schema
 ```js
 {
 	"format": "email"
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"format": "email",
-	"id": "9630069073755294anonymous"
+	"id": "250429606763646anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `validation of IP addresses, a valid IP address`
-schema
+## Original schema
 ```js
 {
 	"format": "ipv4"
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"format": "ipv4",
-	"id": "3262607306241989anonymous"
+	"id": "11412291997112334anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `validation of IP addresses, an IP address with too many components`
-schema
+## Original schema
 ```js
 {
 	"format": "ipv4"
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"format": "ipv4",
-	"id": "3262607306241989anonymous"
+	"id": "11412291997112334anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `validation of IP addresses, an IP address with out-of-range values`
-schema
+## Original schema
 ```js
 {
 	"format": "ipv4"
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"format": "ipv4",
-	"id": "3262607306241989anonymous"
+	"id": "11412291997112334anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `validation of IP addresses, an IP address without 4 components`
-schema
+## Original schema
 ```js
 {
 	"format": "ipv4"
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"format": "ipv4",
-	"id": "3262607306241989anonymous"
+	"id": "11412291997112334anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `validation of IP addresses, an IP address as an integer`
-schema
+## Original schema
 ```js
 {
 	"format": "ipv4"
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"format": "ipv4",
-	"id": "3262607306241989anonymous"
+	"id": "11412291997112334anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `validation of IPv6 addresses, a valid IPv6 address`
-schema
+## Original schema
 ```js
 {
 	"format": "ipv6"
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"format": "ipv6",
-	"id": "9936377038247883anonymous"
+	"id": "2540237207431346anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `validation of IPv6 addresses, an IPv6 address with out-of-range values`
-schema
+## Original schema
 ```js
 {
 	"format": "ipv6"
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"format": "ipv6",
-	"id": "9936377038247883anonymous"
+	"id": "2540237207431346anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `validation of IPv6 addresses, an IPv6 address with too many components`
-schema
+## Original schema
 ```js
 {
 	"format": "ipv6"
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"format": "ipv6",
-	"id": "9936377038247883anonymous"
+	"id": "2540237207431346anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `validation of IPv6 addresses, an IPv6 address containing illegal characters`
-schema
+## Original schema
 ```js
 {
 	"format": "ipv6"
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"format": "ipv6",
-	"id": "9936377038247883anonymous"
+	"id": "2540237207431346anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `validation of host names, a valid host name`
-schema
+## Original schema
 ```js
 {
 	"format": "hostname"
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"format": "hostname",
-	"id": "0017574294470250607anonymous"
+	"id": "014017374720424414anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `validation of host names, a host name starting with an illegal character`
-schema
+## Original schema
 ```js
 {
 	"format": "hostname"
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"format": "hostname",
-	"id": "0017574294470250607anonymous"
+	"id": "014017374720424414anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `validation of host names, a host name containing illegal characters`
-schema
+## Original schema
 ```js
 {
 	"format": "hostname"
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"format": "hostname",
-	"id": "0017574294470250607anonymous"
+	"id": "014017374720424414anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `validation of host names, a host name with a component too long`
-schema
+## Original schema
 ```js
 {
 	"format": "hostname"
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"format": "hostname",
-	"id": "0017574294470250607anonymous"
+	"id": "014017374720424414anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `some languages do not distinguish between different types of numeric value, a float is not an integer even without fractional part`
-schema
+## Original schema
 ```js
 {
 	"type": "integer"
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"type": "integer",
-	"id": "22649783291853964anonymous"
+	"id": "12499069818295538anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `pattern validation, a matching pattern is valid`
-schema
+## Original schema
 ```js
 {
 	"pattern": "^a*$"
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"pattern": "^a*$",
-	"id": "7920808393973857anonymous"
+	"id": "013609567657113075anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `pattern validation, a non-matching pattern is invalid`
-schema
+## Original schema
 ```js
 {
 	"pattern": "^a*$"
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"pattern": "^a*$",
-	"id": "7920808393973857anonymous"
+	"id": "013609567657113075anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `pattern validation, ignores non-strings`
-schema
+## Original schema
 ```js
 {
 	"pattern": "^a*$"
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"pattern": "^a*$",
-	"id": "7920808393973857anonymous"
+	"id": "013609567657113075anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `patternProperties validates properties matching a regex, a single valid match is valid`
-schema
+## Original schema
 ```js
 {
 	"patternProperties": {
@@ -3937,7 +4107,7 @@ schema
 	}
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"patternProperties": {
@@ -3945,12 +4115,13 @@ schema after validating
 			"type": "integer"
 		}
 	},
-	"id": "15319225750863552anonymous"
+	"id": "46693368442356586anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `patternProperties validates properties matching a regex, multiple valid matches is valid`
-schema
+## Original schema
 ```js
 {
 	"patternProperties": {
@@ -3960,7 +4131,7 @@ schema
 	}
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"patternProperties": {
@@ -3968,12 +4139,13 @@ schema after validating
 			"type": "integer"
 		}
 	},
-	"id": "15319225750863552anonymous"
+	"id": "46693368442356586anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `patternProperties validates properties matching a regex, a single invalid match is invalid`
-schema
+## Original schema
 ```js
 {
 	"patternProperties": {
@@ -3983,7 +4155,7 @@ schema
 	}
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"patternProperties": {
@@ -3991,12 +4163,13 @@ schema after validating
 			"type": "integer"
 		}
 	},
-	"id": "15319225750863552anonymous"
+	"id": "46693368442356586anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `patternProperties validates properties matching a regex, multiple invalid matches is invalid`
-schema
+## Original schema
 ```js
 {
 	"patternProperties": {
@@ -4006,7 +4179,7 @@ schema
 	}
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"patternProperties": {
@@ -4014,12 +4187,13 @@ schema after validating
 			"type": "integer"
 		}
 	},
-	"id": "15319225750863552anonymous"
+	"id": "46693368442356586anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `patternProperties validates properties matching a regex, ignores non-objects`
-schema
+## Original schema
 ```js
 {
 	"patternProperties": {
@@ -4029,7 +4203,7 @@ schema
 	}
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"patternProperties": {
@@ -4037,12 +4211,13 @@ schema after validating
 			"type": "integer"
 		}
 	},
-	"id": "15319225750863552anonymous"
+	"id": "46693368442356586anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `multiple simultaneous patternProperties are validated, a single valid match is valid`
-schema
+## Original schema
 ```js
 {
 	"patternProperties": {
@@ -4055,7 +4230,7 @@ schema
 	}
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"patternProperties": {
@@ -4066,12 +4241,13 @@ schema after validating
 			"maximum": 20
 		}
 	},
-	"id": "7061516041867435anonymous"
+	"id": "2060652314685285anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `multiple simultaneous patternProperties are validated, a simultaneous match is valid`
-schema
+## Original schema
 ```js
 {
 	"patternProperties": {
@@ -4084,7 +4260,7 @@ schema
 	}
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"patternProperties": {
@@ -4095,12 +4271,13 @@ schema after validating
 			"maximum": 20
 		}
 	},
-	"id": "7061516041867435anonymous"
+	"id": "2060652314685285anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `multiple simultaneous patternProperties are validated, multiple matches is valid`
-schema
+## Original schema
 ```js
 {
 	"patternProperties": {
@@ -4113,7 +4290,7 @@ schema
 	}
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"patternProperties": {
@@ -4124,12 +4301,13 @@ schema after validating
 			"maximum": 20
 		}
 	},
-	"id": "7061516041867435anonymous"
+	"id": "2060652314685285anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `multiple simultaneous patternProperties are validated, an invalid due to one is invalid`
-schema
+## Original schema
 ```js
 {
 	"patternProperties": {
@@ -4142,7 +4320,7 @@ schema
 	}
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"patternProperties": {
@@ -4153,12 +4331,13 @@ schema after validating
 			"maximum": 20
 		}
 	},
-	"id": "7061516041867435anonymous"
+	"id": "2060652314685285anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `multiple simultaneous patternProperties are validated, an invalid due to the other is invalid`
-schema
+## Original schema
 ```js
 {
 	"patternProperties": {
@@ -4171,7 +4350,7 @@ schema
 	}
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"patternProperties": {
@@ -4182,12 +4361,13 @@ schema after validating
 			"maximum": 20
 		}
 	},
-	"id": "7061516041867435anonymous"
+	"id": "2060652314685285anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `multiple simultaneous patternProperties are validated, an invalid due to both is invalid`
-schema
+## Original schema
 ```js
 {
 	"patternProperties": {
@@ -4200,7 +4380,7 @@ schema
 	}
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"patternProperties": {
@@ -4211,12 +4391,13 @@ schema after validating
 			"maximum": 20
 		}
 	},
-	"id": "7061516041867435anonymous"
+	"id": "2060652314685285anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `regexes are not anchored by default and are case sensitive, non recognized members are ignored`
-schema
+## Original schema
 ```js
 {
 	"patternProperties": {
@@ -4229,7 +4410,7 @@ schema
 	}
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"patternProperties": {
@@ -4240,12 +4421,13 @@ schema after validating
 			"type": "string"
 		}
 	},
-	"id": "8135428871028125anonymous"
+	"id": "8098369734361768anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `regexes are not anchored by default and are case sensitive, recognized members are accounted for`
-schema
+## Original schema
 ```js
 {
 	"patternProperties": {
@@ -4258,7 +4440,7 @@ schema
 	}
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"patternProperties": {
@@ -4269,12 +4451,13 @@ schema after validating
 			"type": "string"
 		}
 	},
-	"id": "8135428871028125anonymous"
+	"id": "8098369734361768anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `regexes are not anchored by default and are case sensitive, regexes are case sensitive`
-schema
+## Original schema
 ```js
 {
 	"patternProperties": {
@@ -4287,7 +4470,7 @@ schema
 	}
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"patternProperties": {
@@ -4298,12 +4481,13 @@ schema after validating
 			"type": "string"
 		}
 	},
-	"id": "8135428871028125anonymous"
+	"id": "8098369734361768anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `regexes are not anchored by default and are case sensitive, regexes are case sensitive, 2`
-schema
+## Original schema
 ```js
 {
 	"patternProperties": {
@@ -4316,7 +4500,7 @@ schema
 	}
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"patternProperties": {
@@ -4327,12 +4511,13 @@ schema after validating
 			"type": "string"
 		}
 	},
-	"id": "8135428871028125anonymous"
+	"id": "8098369734361768anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `object properties validation, both properties present and valid is valid`
-schema
+## Original schema
 ```js
 {
 	"properties": {
@@ -4345,7 +4530,7 @@ schema
 	}
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"properties": {
@@ -4356,12 +4541,13 @@ schema after validating
 			"type": "string"
 		}
 	},
-	"id": "08005529036745429anonymous"
+	"id": "3955263877287507anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `object properties validation, one property invalid is invalid`
-schema
+## Original schema
 ```js
 {
 	"properties": {
@@ -4374,7 +4560,7 @@ schema
 	}
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"properties": {
@@ -4385,12 +4571,13 @@ schema after validating
 			"type": "string"
 		}
 	},
-	"id": "08005529036745429anonymous"
+	"id": "3955263877287507anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `object properties validation, both properties invalid is invalid`
-schema
+## Original schema
 ```js
 {
 	"properties": {
@@ -4403,7 +4590,7 @@ schema
 	}
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"properties": {
@@ -4414,12 +4601,13 @@ schema after validating
 			"type": "string"
 		}
 	},
-	"id": "08005529036745429anonymous"
+	"id": "3955263877287507anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `object properties validation, doesn't invalidate other properties`
-schema
+## Original schema
 ```js
 {
 	"properties": {
@@ -4432,7 +4620,7 @@ schema
 	}
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"properties": {
@@ -4443,12 +4631,13 @@ schema after validating
 			"type": "string"
 		}
 	},
-	"id": "08005529036745429anonymous"
+	"id": "3955263877287507anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `object properties validation, ignores non-objects`
-schema
+## Original schema
 ```js
 {
 	"properties": {
@@ -4461,7 +4650,7 @@ schema
 	}
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"properties": {
@@ -4472,12 +4661,13 @@ schema after validating
 			"type": "string"
 		}
 	},
-	"id": "08005529036745429anonymous"
+	"id": "3955263877287507anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `properties, patternProperties, additionalProperties interaction, property validates property`
-schema
+## Original schema
 ```js
 {
 	"properties": {
@@ -4499,7 +4689,7 @@ schema
 	}
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"properties": {
@@ -4519,12 +4709,13 @@ schema after validating
 	"additionalProperties": {
 		"type": "integer"
 	},
-	"id": "8214788672048599anonymous"
+	"id": "3233405880164355anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `properties, patternProperties, additionalProperties interaction, property invalidates property`
-schema
+## Original schema
 ```js
 {
 	"properties": {
@@ -4546,7 +4737,7 @@ schema
 	}
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"properties": {
@@ -4566,12 +4757,13 @@ schema after validating
 	"additionalProperties": {
 		"type": "integer"
 	},
-	"id": "8214788672048599anonymous"
+	"id": "3233405880164355anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `properties, patternProperties, additionalProperties interaction, patternProperty invalidates property`
-schema
+## Original schema
 ```js
 {
 	"properties": {
@@ -4593,7 +4785,7 @@ schema
 	}
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"properties": {
@@ -4613,12 +4805,13 @@ schema after validating
 	"additionalProperties": {
 		"type": "integer"
 	},
-	"id": "8214788672048599anonymous"
+	"id": "3233405880164355anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `properties, patternProperties, additionalProperties interaction, patternProperty validates nonproperty`
-schema
+## Original schema
 ```js
 {
 	"properties": {
@@ -4640,7 +4833,7 @@ schema
 	}
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"properties": {
@@ -4660,12 +4853,13 @@ schema after validating
 	"additionalProperties": {
 		"type": "integer"
 	},
-	"id": "8214788672048599anonymous"
+	"id": "3233405880164355anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `properties, patternProperties, additionalProperties interaction, patternProperty invalidates nonproperty`
-schema
+## Original schema
 ```js
 {
 	"properties": {
@@ -4687,7 +4881,7 @@ schema
 	}
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"properties": {
@@ -4707,12 +4901,13 @@ schema after validating
 	"additionalProperties": {
 		"type": "integer"
 	},
-	"id": "8214788672048599anonymous"
+	"id": "3233405880164355anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `properties, patternProperties, additionalProperties interaction, additionalProperty ignores property`
-schema
+## Original schema
 ```js
 {
 	"properties": {
@@ -4734,7 +4929,7 @@ schema
 	}
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"properties": {
@@ -4754,12 +4949,13 @@ schema after validating
 	"additionalProperties": {
 		"type": "integer"
 	},
-	"id": "8214788672048599anonymous"
+	"id": "3233405880164355anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `properties, patternProperties, additionalProperties interaction, additionalProperty validates others`
-schema
+## Original schema
 ```js
 {
 	"properties": {
@@ -4781,7 +4977,7 @@ schema
 	}
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"properties": {
@@ -4801,12 +4997,13 @@ schema after validating
 	"additionalProperties": {
 		"type": "integer"
 	},
-	"id": "8214788672048599anonymous"
+	"id": "3233405880164355anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `properties, patternProperties, additionalProperties interaction, additionalProperty invalidates others`
-schema
+## Original schema
 ```js
 {
 	"properties": {
@@ -4828,7 +5025,7 @@ schema
 	}
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"properties": {
@@ -4848,12 +5045,13 @@ schema after validating
 	"additionalProperties": {
 		"type": "integer"
 	},
-	"id": "8214788672048599anonymous"
+	"id": "3233405880164355anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `root pointer ref, match`
-schema
+## Original schema
 ```js
 {
 	"properties": {
@@ -4864,21 +5062,22 @@ schema
 	"additionalProperties": false
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"properties": {
 		"foo": {
-			"$ref": "9635480784345418anonymous#"
+			"$ref": "30124178482219577anonymous#"
 		}
 	},
 	"additionalProperties": false,
-	"id": "9635480784345418anonymous"
+	"id": "30124178482219577anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `root pointer ref, recursive match`
-schema
+## Original schema
 ```js
 {
 	"properties": {
@@ -4889,21 +5088,22 @@ schema
 	"additionalProperties": false
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"properties": {
 		"foo": {
-			"$ref": "9635480784345418anonymous#"
+			"$ref": "30124178482219577anonymous#"
 		}
 	},
 	"additionalProperties": false,
-	"id": "9635480784345418anonymous"
+	"id": "30124178482219577anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `root pointer ref, mismatch`
-schema
+## Original schema
 ```js
 {
 	"properties": {
@@ -4914,21 +5114,22 @@ schema
 	"additionalProperties": false
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"properties": {
 		"foo": {
-			"$ref": "9635480784345418anonymous#"
+			"$ref": "30124178482219577anonymous#"
 		}
 	},
 	"additionalProperties": false,
-	"id": "9635480784345418anonymous"
+	"id": "30124178482219577anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `root pointer ref, recursive mismatch`
-schema
+## Original schema
 ```js
 {
 	"properties": {
@@ -4939,21 +5140,22 @@ schema
 	"additionalProperties": false
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"properties": {
 		"foo": {
-			"$ref": "9635480784345418anonymous#"
+			"$ref": "30124178482219577anonymous#"
 		}
 	},
 	"additionalProperties": false,
-	"id": "9635480784345418anonymous"
+	"id": "30124178482219577anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `relative pointer ref to object, match`
-schema
+## Original schema
 ```js
 {
 	"properties": {
@@ -4966,24 +5168,25 @@ schema
 	}
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"properties": {
 		"foo": {
 			"type": "integer",
-			"id": "741509587969631anonymous#/properties/foo"
+			"id": "17155923740938306anonymous#/properties/foo"
 		},
 		"bar": {
-			"$ref": "741509587969631anonymous#/properties/foo"
+			"$ref": "17155923740938306anonymous#/properties/foo"
 		}
 	},
-	"id": "741509587969631anonymous"
+	"id": "17155923740938306anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `relative pointer ref to object, mismatch`
-schema
+## Original schema
 ```js
 {
 	"properties": {
@@ -4996,24 +5199,25 @@ schema
 	}
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"properties": {
 		"foo": {
 			"type": "integer",
-			"id": "741509587969631anonymous#/properties/foo"
+			"id": "17155923740938306anonymous#/properties/foo"
 		},
 		"bar": {
-			"$ref": "741509587969631anonymous#/properties/foo"
+			"$ref": "17155923740938306anonymous#/properties/foo"
 		}
 	},
-	"id": "741509587969631anonymous"
+	"id": "17155923740938306anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `relative pointer ref to array, match array`
-schema
+## Original schema
 ```js
 {
 	"items": [
@@ -5026,24 +5230,25 @@ schema
 	]
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"items": [
 		{
 			"type": "integer",
-			"id": "07437596982344985anonymous#/items/0"
+			"id": "20353177934885025anonymous#/items/0"
 		},
 		{
-			"$ref": "07437596982344985anonymous#/items/0"
+			"$ref": "20353177934885025anonymous#/items/0"
 		}
 	],
-	"id": "07437596982344985anonymous"
+	"id": "20353177934885025anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `relative pointer ref to array, mismatch array`
-schema
+## Original schema
 ```js
 {
 	"items": [
@@ -5056,24 +5261,25 @@ schema
 	]
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"items": [
 		{
 			"type": "integer",
-			"id": "07437596982344985anonymous#/items/0"
+			"id": "20353177934885025anonymous#/items/0"
 		},
 		{
-			"$ref": "07437596982344985anonymous#/items/0"
+			"$ref": "20353177934885025anonymous#/items/0"
 		}
 	],
-	"id": "07437596982344985anonymous"
+	"id": "20353177934885025anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `escaped pointer ref, slash`
-schema
+## Original schema
 ```js
 {
 	"tilda~field": {
@@ -5098,38 +5304,39 @@ schema
 	}
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"tilda~field": {
 		"type": "integer",
-		"id": "7062748789321631anonymous#/tilda~0field"
+		"id": "6518627370242029anonymous#/tilda~0field"
 	},
 	"slash/field": {
 		"type": "integer",
-		"id": "7062748789321631anonymous#/slash~1field"
+		"id": "6518627370242029anonymous#/slash~1field"
 	},
 	"percent%field": {
 		"type": "integer",
-		"id": "7062748789321631anonymous#/percent%25field"
+		"id": "6518627370242029anonymous#/percent%25field"
 	},
 	"properties": {
 		"tilda": {
-			"$ref": "7062748789321631anonymous#/tilda~0field"
+			"$ref": "6518627370242029anonymous#/tilda~0field"
 		},
 		"slash": {
-			"$ref": "7062748789321631anonymous#/slash~1field"
+			"$ref": "6518627370242029anonymous#/slash~1field"
 		},
 		"percent": {
-			"$ref": "7062748789321631anonymous#/percent%25field"
+			"$ref": "6518627370242029anonymous#/percent%25field"
 		}
 	},
-	"id": "7062748789321631anonymous"
+	"id": "6518627370242029anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `escaped pointer ref, tilda`
-schema
+## Original schema
 ```js
 {
 	"tilda~field": {
@@ -5154,38 +5361,39 @@ schema
 	}
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"tilda~field": {
 		"type": "integer",
-		"id": "7062748789321631anonymous#/tilda~0field"
+		"id": "6518627370242029anonymous#/tilda~0field"
 	},
 	"slash/field": {
 		"type": "integer",
-		"id": "7062748789321631anonymous#/slash~1field"
+		"id": "6518627370242029anonymous#/slash~1field"
 	},
 	"percent%field": {
 		"type": "integer",
-		"id": "7062748789321631anonymous#/percent%25field"
+		"id": "6518627370242029anonymous#/percent%25field"
 	},
 	"properties": {
 		"tilda": {
-			"$ref": "7062748789321631anonymous#/tilda~0field"
+			"$ref": "6518627370242029anonymous#/tilda~0field"
 		},
 		"slash": {
-			"$ref": "7062748789321631anonymous#/slash~1field"
+			"$ref": "6518627370242029anonymous#/slash~1field"
 		},
 		"percent": {
-			"$ref": "7062748789321631anonymous#/percent%25field"
+			"$ref": "6518627370242029anonymous#/percent%25field"
 		}
 	},
-	"id": "7062748789321631anonymous"
+	"id": "6518627370242029anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `escaped pointer ref, percent`
-schema
+## Original schema
 ```js
 {
 	"tilda~field": {
@@ -5210,38 +5418,39 @@ schema
 	}
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"tilda~field": {
 		"type": "integer",
-		"id": "7062748789321631anonymous#/tilda~0field"
+		"id": "6518627370242029anonymous#/tilda~0field"
 	},
 	"slash/field": {
 		"type": "integer",
-		"id": "7062748789321631anonymous#/slash~1field"
+		"id": "6518627370242029anonymous#/slash~1field"
 	},
 	"percent%field": {
 		"type": "integer",
-		"id": "7062748789321631anonymous#/percent%25field"
+		"id": "6518627370242029anonymous#/percent%25field"
 	},
 	"properties": {
 		"tilda": {
-			"$ref": "7062748789321631anonymous#/tilda~0field"
+			"$ref": "6518627370242029anonymous#/tilda~0field"
 		},
 		"slash": {
-			"$ref": "7062748789321631anonymous#/slash~1field"
+			"$ref": "6518627370242029anonymous#/slash~1field"
 		},
 		"percent": {
-			"$ref": "7062748789321631anonymous#/percent%25field"
+			"$ref": "6518627370242029anonymous#/percent%25field"
 		}
 	},
-	"id": "7062748789321631anonymous"
+	"id": "6518627370242029anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `nested refs, nested ref valid`
-schema
+## Original schema
 ```js
 {
 	"definitions": {
@@ -5258,7 +5467,7 @@ schema
 	"$ref": "#/definitions/c"
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"definitions": {
@@ -5266,19 +5475,20 @@ schema after validating
 			"type": "integer"
 		},
 		"b": {
-			"$ref": "09186857077293098anonymous#/definitions/a"
+			"$ref": "5631956500001252anonymous#/definitions/a"
 		},
 		"c": {
-			"$ref": "09186857077293098anonymous#/definitions/b"
+			"$ref": "5631956500001252anonymous#/definitions/b"
 		}
 	},
-	"$ref": "09186857077293098anonymous#/definitions/c",
-	"id": "09186857077293098anonymous"
+	"$ref": "5631956500001252anonymous#/definitions/c",
+	"id": "5631956500001252anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `nested refs, nested ref invalid`
-schema
+## Original schema
 ```js
 {
 	"definitions": {
@@ -5295,7 +5505,7 @@ schema
 	"$ref": "#/definitions/c"
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"definitions": {
@@ -5303,79 +5513,84 @@ schema after validating
 			"type": "integer"
 		},
 		"b": {
-			"$ref": "09186857077293098anonymous#/definitions/a"
+			"$ref": "5631956500001252anonymous#/definitions/a"
 		},
 		"c": {
-			"$ref": "09186857077293098anonymous#/definitions/b"
+			"$ref": "5631956500001252anonymous#/definitions/b"
 		}
 	},
-	"$ref": "09186857077293098anonymous#/definitions/c",
-	"id": "09186857077293098anonymous"
+	"$ref": "5631956500001252anonymous#/definitions/c",
+	"id": "5631956500001252anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `remote ref, containing refs itself, remote ref valid`
-schema
+## Original schema
 ```js
 {
 	"$ref": "http://json-schema.org/draft-04/schema#"
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"$ref": "http://json-schema.org/draft-04/schema#",
-	"id": "6468495184089988anonymous"
+	"id": "7216491266153753anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `remote ref, containing refs itself, remote ref invalid`
-schema
+## Original schema
 ```js
 {
 	"$ref": "http://json-schema.org/draft-04/schema#"
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"$ref": "http://json-schema.org/draft-04/schema#",
-	"id": "6468495184089988anonymous"
+	"id": "7216491266153753anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `ref within remote ref, ref within ref valid`
-schema
+## Original schema
 ```js
 {
 	"$ref": "http://localhost:1234/subSchemas.json#/refToInteger"
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"$ref": "http://localhost:1234/subSchemas.json#/refToInteger",
-	"id": "7753169524949044anonymous"
+	"id": "7893550754524767anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `ref within remote ref, ref within ref invalid`
-schema
+## Original schema
 ```js
 {
 	"$ref": "http://localhost:1234/subSchemas.json#/refToInteger"
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"$ref": "http://localhost:1234/subSchemas.json#/refToInteger",
-	"id": "7753169524949044anonymous"
+	"id": "7893550754524767anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `required validation, present required property is valid`
-schema
+## Original schema
 ```js
 {
 	"properties": {
@@ -5387,7 +5602,7 @@ schema
 	]
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"properties": {
@@ -5397,12 +5612,13 @@ schema after validating
 	"required": [
 		"foo"
 	],
-	"id": "49034841055981815anonymous"
+	"id": "07785277115181088anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `required validation, non-present required property is invalid`
-schema
+## Original schema
 ```js
 {
 	"properties": {
@@ -5414,7 +5630,7 @@ schema
 	]
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"properties": {
@@ -5424,12 +5640,13 @@ schema after validating
 	"required": [
 		"foo"
 	],
-	"id": "49034841055981815anonymous"
+	"id": "07785277115181088anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `required default validation, not required by default`
-schema
+## Original schema
 ```js
 {
 	"properties": {
@@ -5437,753 +5654,803 @@ schema
 	}
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"properties": {
 		"foo": {}
 	},
-	"id": "8312687238212675anonymous"
+	"id": "5944226284045726anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `integer type matches integers, an integer is an integer`
-schema
+## Original schema
 ```js
 {
 	"type": "integer"
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"type": "integer",
-	"id": "9434685881715268anonymous"
+	"id": "686648998176679anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `integer type matches integers, a float is not an integer`
-schema
+## Original schema
 ```js
 {
 	"type": "integer"
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"type": "integer",
-	"id": "9434685881715268anonymous"
+	"id": "686648998176679anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `integer type matches integers, a string is not an integer`
-schema
+## Original schema
 ```js
 {
 	"type": "integer"
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"type": "integer",
-	"id": "9434685881715268anonymous"
+	"id": "686648998176679anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `integer type matches integers, an object is not an integer`
-schema
+## Original schema
 ```js
 {
 	"type": "integer"
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"type": "integer",
-	"id": "9434685881715268anonymous"
+	"id": "686648998176679anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `integer type matches integers, an array is not an integer`
-schema
+## Original schema
 ```js
 {
 	"type": "integer"
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"type": "integer",
-	"id": "9434685881715268anonymous"
+	"id": "686648998176679anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `integer type matches integers, a boolean is not an integer`
-schema
+## Original schema
 ```js
 {
 	"type": "integer"
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"type": "integer",
-	"id": "9434685881715268anonymous"
+	"id": "686648998176679anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `integer type matches integers, null is not an integer`
-schema
+## Original schema
 ```js
 {
 	"type": "integer"
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"type": "integer",
-	"id": "9434685881715268anonymous"
+	"id": "686648998176679anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `number type matches numbers, an integer is a number`
-schema
+## Original schema
 ```js
 {
 	"type": "number"
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"type": "number",
-	"id": "7423669621348381anonymous"
+	"id": "32086614426225424anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `number type matches numbers, a float is a number`
-schema
+## Original schema
 ```js
 {
 	"type": "number"
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"type": "number",
-	"id": "7423669621348381anonymous"
+	"id": "32086614426225424anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `number type matches numbers, a string is not a number`
-schema
+## Original schema
 ```js
 {
 	"type": "number"
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"type": "number",
-	"id": "7423669621348381anonymous"
+	"id": "32086614426225424anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `number type matches numbers, an object is not a number`
-schema
+## Original schema
 ```js
 {
 	"type": "number"
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"type": "number",
-	"id": "7423669621348381anonymous"
+	"id": "32086614426225424anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `number type matches numbers, an array is not a number`
-schema
+## Original schema
 ```js
 {
 	"type": "number"
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"type": "number",
-	"id": "7423669621348381anonymous"
+	"id": "32086614426225424anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `number type matches numbers, a boolean is not a number`
-schema
+## Original schema
 ```js
 {
 	"type": "number"
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"type": "number",
-	"id": "7423669621348381anonymous"
+	"id": "32086614426225424anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `number type matches numbers, null is not a number`
-schema
+## Original schema
 ```js
 {
 	"type": "number"
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"type": "number",
-	"id": "7423669621348381anonymous"
+	"id": "32086614426225424anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `string type matches strings, 1 is not a string`
-schema
+## Original schema
 ```js
 {
 	"type": "string"
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"type": "string",
-	"id": "33439546287991107anonymous"
+	"id": "7706285128369927anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `string type matches strings, a float is not a string`
-schema
+## Original schema
 ```js
 {
 	"type": "string"
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"type": "string",
-	"id": "33439546287991107anonymous"
+	"id": "7706285128369927anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `string type matches strings, a string is a string`
-schema
+## Original schema
 ```js
 {
 	"type": "string"
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"type": "string",
-	"id": "33439546287991107anonymous"
+	"id": "7706285128369927anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `string type matches strings, an object is not a string`
-schema
+## Original schema
 ```js
 {
 	"type": "string"
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"type": "string",
-	"id": "33439546287991107anonymous"
+	"id": "7706285128369927anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `string type matches strings, an array is not a string`
-schema
+## Original schema
 ```js
 {
 	"type": "string"
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"type": "string",
-	"id": "33439546287991107anonymous"
+	"id": "7706285128369927anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `string type matches strings, a boolean is not a string`
-schema
+## Original schema
 ```js
 {
 	"type": "string"
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"type": "string",
-	"id": "33439546287991107anonymous"
+	"id": "7706285128369927anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `string type matches strings, null is not a string`
-schema
+## Original schema
 ```js
 {
 	"type": "string"
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"type": "string",
-	"id": "33439546287991107anonymous"
+	"id": "7706285128369927anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `object type matches objects, an integer is not an object`
-schema
+## Original schema
 ```js
 {
 	"type": "object"
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"type": "object",
-	"id": "5452660021837801anonymous"
+	"id": "3623049142770469anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `object type matches objects, a float is not an object`
-schema
+## Original schema
 ```js
 {
 	"type": "object"
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"type": "object",
-	"id": "5452660021837801anonymous"
+	"id": "3623049142770469anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `object type matches objects, a string is not an object`
-schema
+## Original schema
 ```js
 {
 	"type": "object"
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"type": "object",
-	"id": "5452660021837801anonymous"
+	"id": "3623049142770469anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `object type matches objects, an object is an object`
-schema
+## Original schema
 ```js
 {
 	"type": "object"
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"type": "object",
-	"id": "5452660021837801anonymous"
+	"id": "3623049142770469anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `object type matches objects, an array is not an object`
-schema
+## Original schema
 ```js
 {
 	"type": "object"
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"type": "object",
-	"id": "5452660021837801anonymous"
+	"id": "3623049142770469anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `object type matches objects, a boolean is not an object`
-schema
+## Original schema
 ```js
 {
 	"type": "object"
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"type": "object",
-	"id": "5452660021837801anonymous"
+	"id": "3623049142770469anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `object type matches objects, null is not an object`
-schema
+## Original schema
 ```js
 {
 	"type": "object"
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"type": "object",
-	"id": "5452660021837801anonymous"
+	"id": "3623049142770469anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `array type matches arrays, an integer is not an array`
-schema
+## Original schema
 ```js
 {
 	"type": "array"
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"type": "array",
-	"id": "6665988434106112anonymous"
+	"id": "17344323568977416anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `array type matches arrays, a float is not an array`
-schema
+## Original schema
 ```js
 {
 	"type": "array"
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"type": "array",
-	"id": "6665988434106112anonymous"
+	"id": "17344323568977416anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `array type matches arrays, a string is not an array`
-schema
+## Original schema
 ```js
 {
 	"type": "array"
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"type": "array",
-	"id": "6665988434106112anonymous"
+	"id": "17344323568977416anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `array type matches arrays, an object is not an array`
-schema
+## Original schema
 ```js
 {
 	"type": "array"
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"type": "array",
-	"id": "6665988434106112anonymous"
+	"id": "17344323568977416anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `array type matches arrays, an array is not an array`
-schema
+## Original schema
 ```js
 {
 	"type": "array"
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"type": "array",
-	"id": "6665988434106112anonymous"
+	"id": "17344323568977416anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `array type matches arrays, a boolean is not an array`
-schema
+## Original schema
 ```js
 {
 	"type": "array"
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"type": "array",
-	"id": "6665988434106112anonymous"
+	"id": "17344323568977416anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `array type matches arrays, null is not an array`
-schema
+## Original schema
 ```js
 {
 	"type": "array"
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"type": "array",
-	"id": "6665988434106112anonymous"
+	"id": "17344323568977416anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `boolean type matches booleans, an integer is not a boolean`
-schema
+## Original schema
 ```js
 {
 	"type": "boolean"
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"type": "boolean",
-	"id": "16588961775414646anonymous"
+	"id": "7946979037951678anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `boolean type matches booleans, a float is not a boolean`
-schema
+## Original schema
 ```js
 {
 	"type": "boolean"
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"type": "boolean",
-	"id": "16588961775414646anonymous"
+	"id": "7946979037951678anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `boolean type matches booleans, a string is not a boolean`
-schema
+## Original schema
 ```js
 {
 	"type": "boolean"
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"type": "boolean",
-	"id": "16588961775414646anonymous"
+	"id": "7946979037951678anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `boolean type matches booleans, an object is not a boolean`
-schema
+## Original schema
 ```js
 {
 	"type": "boolean"
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"type": "boolean",
-	"id": "16588961775414646anonymous"
+	"id": "7946979037951678anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `boolean type matches booleans, an array is not a boolean`
-schema
+## Original schema
 ```js
 {
 	"type": "boolean"
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"type": "boolean",
-	"id": "16588961775414646anonymous"
+	"id": "7946979037951678anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `boolean type matches booleans, a boolean is not a boolean`
-schema
+## Original schema
 ```js
 {
 	"type": "boolean"
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"type": "boolean",
-	"id": "16588961775414646anonymous"
+	"id": "7946979037951678anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `boolean type matches booleans, null is not a boolean`
-schema
+## Original schema
 ```js
 {
 	"type": "boolean"
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"type": "boolean",
-	"id": "16588961775414646anonymous"
+	"id": "7946979037951678anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `null type matches only the null object, an integer is not null`
-schema
+## Original schema
 ```js
 {
 	"type": "null"
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"type": "null",
-	"id": "5132010581437498anonymous"
+	"id": "3749426808208227anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `null type matches only the null object, a float is not null`
-schema
+## Original schema
 ```js
 {
 	"type": "null"
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"type": "null",
-	"id": "5132010581437498anonymous"
+	"id": "3749426808208227anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `null type matches only the null object, a string is not null`
-schema
+## Original schema
 ```js
 {
 	"type": "null"
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"type": "null",
-	"id": "5132010581437498anonymous"
+	"id": "3749426808208227anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `null type matches only the null object, an object is not null`
-schema
+## Original schema
 ```js
 {
 	"type": "null"
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"type": "null",
-	"id": "5132010581437498anonymous"
+	"id": "3749426808208227anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `null type matches only the null object, an array is not null`
-schema
+## Original schema
 ```js
 {
 	"type": "null"
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"type": "null",
-	"id": "5132010581437498anonymous"
+	"id": "3749426808208227anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `null type matches only the null object, a boolean is not null`
-schema
+## Original schema
 ```js
 {
 	"type": "null"
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"type": "null",
-	"id": "5132010581437498anonymous"
+	"id": "3749426808208227anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `null type matches only the null object, null is null`
-schema
+## Original schema
 ```js
 {
 	"type": "null"
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"type": "null",
-	"id": "5132010581437498anonymous"
+	"id": "3749426808208227anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `multiple types can be specified in an array, an integer is valid`
-schema
+## Original schema
 ```js
 {
 	"type": [
@@ -6192,19 +6459,20 @@ schema
 	]
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"type": [
 		"integer",
 		"string"
 	],
-	"id": "8803832926787436anonymous"
+	"id": "04633549856953323anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `multiple types can be specified in an array, a string is valid`
-schema
+## Original schema
 ```js
 {
 	"type": [
@@ -6213,19 +6481,20 @@ schema
 	]
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"type": [
 		"integer",
 		"string"
 	],
-	"id": "8803832926787436anonymous"
+	"id": "04633549856953323anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `multiple types can be specified in an array, a float is invalid`
-schema
+## Original schema
 ```js
 {
 	"type": [
@@ -6234,19 +6503,20 @@ schema
 	]
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"type": [
 		"integer",
 		"string"
 	],
-	"id": "8803832926787436anonymous"
+	"id": "04633549856953323anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `multiple types can be specified in an array, an object is invalid`
-schema
+## Original schema
 ```js
 {
 	"type": [
@@ -6255,19 +6525,20 @@ schema
 	]
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"type": [
 		"integer",
 		"string"
 	],
-	"id": "8803832926787436anonymous"
+	"id": "04633549856953323anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `multiple types can be specified in an array, an array is invalid`
-schema
+## Original schema
 ```js
 {
 	"type": [
@@ -6276,19 +6547,20 @@ schema
 	]
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"type": [
 		"integer",
 		"string"
 	],
-	"id": "8803832926787436anonymous"
+	"id": "04633549856953323anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `multiple types can be specified in an array, a boolean is invalid`
-schema
+## Original schema
 ```js
 {
 	"type": [
@@ -6297,19 +6569,20 @@ schema
 	]
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"type": [
 		"integer",
 		"string"
 	],
-	"id": "8803832926787436anonymous"
+	"id": "04633549856953323anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `multiple types can be specified in an array, null is invalid`
-schema
+## Original schema
 ```js
 {
 	"type": [
@@ -6318,208 +6591,221 @@ schema
 	]
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"type": [
 		"integer",
 		"string"
 	],
-	"id": "8803832926787436anonymous"
+	"id": "04633549856953323anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `uniqueItems validation, unique array of integers is valid`
-schema
+## Original schema
 ```js
 {
 	"uniqueItems": true
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"uniqueItems": true,
-	"id": "7867514314129949anonymous"
+	"id": "6378959123976529anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `uniqueItems validation, non-unique array of integers is invalid`
-schema
+## Original schema
 ```js
 {
 	"uniqueItems": true
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"uniqueItems": true,
-	"id": "7867514314129949anonymous"
+	"id": "6378959123976529anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `uniqueItems validation, numbers are unique if mathematically unequal`
-schema
+## Original schema
 ```js
 {
 	"uniqueItems": true
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"uniqueItems": true,
-	"id": "7867514314129949anonymous"
+	"id": "6378959123976529anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `uniqueItems validation, unique array of objects is valid`
-schema
+## Original schema
 ```js
 {
 	"uniqueItems": true
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"uniqueItems": true,
-	"id": "7867514314129949anonymous"
+	"id": "6378959123976529anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `uniqueItems validation, non-unique array of objects is invalid`
-schema
+## Original schema
 ```js
 {
 	"uniqueItems": true
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"uniqueItems": true,
-	"id": "7867514314129949anonymous"
+	"id": "6378959123976529anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `uniqueItems validation, unique array of nested objects is valid`
-schema
+## Original schema
 ```js
 {
 	"uniqueItems": true
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"uniqueItems": true,
-	"id": "7867514314129949anonymous"
+	"id": "6378959123976529anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `uniqueItems validation, non-unique array of nested objects is invalid`
-schema
+## Original schema
 ```js
 {
 	"uniqueItems": true
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"uniqueItems": true,
-	"id": "7867514314129949anonymous"
+	"id": "6378959123976529anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `uniqueItems validation, unique array of arrays is valid`
-schema
+## Original schema
 ```js
 {
 	"uniqueItems": true
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"uniqueItems": true,
-	"id": "7867514314129949anonymous"
+	"id": "6378959123976529anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `uniqueItems validation, non-unique array of arrays is invalid`
-schema
+## Original schema
 ```js
 {
 	"uniqueItems": true
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"uniqueItems": true,
-	"id": "7867514314129949anonymous"
+	"id": "6378959123976529anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `uniqueItems validation, 1 and true are unique`
-schema
+## Original schema
 ```js
 {
 	"uniqueItems": true
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"uniqueItems": true,
-	"id": "7867514314129949anonymous"
+	"id": "6378959123976529anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `uniqueItems validation, 0 and false are unique`
-schema
+## Original schema
 ```js
 {
 	"uniqueItems": true
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"uniqueItems": true,
-	"id": "7867514314129949anonymous"
+	"id": "6378959123976529anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `uniqueItems validation, unique heterogeneous types are valid`
-schema
+## Original schema
 ```js
 {
 	"uniqueItems": true
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"uniqueItems": true,
-	"id": "7867514314129949anonymous"
+	"id": "6378959123976529anonymous"
 }
 ```
 
+# Side-effect on schema
 [`json-model`](https://github.com/geraintluff/json-model) had a side-effect on (altered the original) schema in the test `uniqueItems validation, non-unique heterogeneous types are invalid`
-schema
+## Original schema
 ```js
 {
 	"uniqueItems": true
 }
 ```
-schema after validating
+## Schema after validating
 ```js
 {
 	"uniqueItems": true,
-	"id": "7867514314129949anonymous"
+	"id": "6378959123976529anonymous"
 }
 ```

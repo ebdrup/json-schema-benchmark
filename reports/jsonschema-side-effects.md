@@ -1,7 +1,11 @@
 # [`jsonschema`](https://github.com/tdegrunt/jsonschema) side-effects in testrun
 
+When running tests [`jsonschema`](https://github.com/tdegrunt/jsonschema) mutated either the original schema or the data being validated with the schema or both.
+
+
+# Side-effect on data
 [`jsonschema`](https://github.com/tdegrunt/jsonschema) had a side-effect on (altered the original) data in the test `multiple dependencies subschema, valid`
-schema
+## Schema
 ```js
 {
 	"dependencies": {
@@ -18,14 +22,14 @@ schema
 	}
 }
 ```
-Original data
+## Original data
 ```js
 {
 	"foo": 1,
 	"bar": 2
 }
 ```
-data after validating with schema
+## Data after validating with schema
 ```js
 {
 	"foo": 1,
@@ -33,8 +37,9 @@ data after validating with schema
 }
 ```
 
+# Side-effect on data
 [`jsonschema`](https://github.com/tdegrunt/jsonschema) had a side-effect on (altered the original) data in the test `multiple dependencies subschema, wrong type`
-schema
+## Schema
 ```js
 {
 	"dependencies": {
@@ -51,14 +56,14 @@ schema
 	}
 }
 ```
-Original data
+## Original data
 ```js
 {
 	"foo": "quux",
 	"bar": 2
 }
 ```
-data after validating with schema
+## Data after validating with schema
 ```js
 {
 	"foo": "quux",
@@ -66,8 +71,9 @@ data after validating with schema
 }
 ```
 
+# Side-effect on data
 [`jsonschema`](https://github.com/tdegrunt/jsonschema) had a side-effect on (altered the original) data in the test `multiple dependencies subschema, wrong type other`
-schema
+## Schema
 ```js
 {
 	"dependencies": {
@@ -84,14 +90,14 @@ schema
 	}
 }
 ```
-Original data
+## Original data
 ```js
 {
 	"foo": 2,
 	"bar": "quux"
 }
 ```
-data after validating with schema
+## Data after validating with schema
 ```js
 {
 	"foo": 2,
@@ -99,8 +105,9 @@ data after validating with schema
 }
 ```
 
+# Side-effect on data
 [`jsonschema`](https://github.com/tdegrunt/jsonschema) had a side-effect on (altered the original) data in the test `multiple dependencies subschema, wrong type both`
-schema
+## Schema
 ```js
 {
 	"dependencies": {
@@ -117,14 +124,14 @@ schema
 	}
 }
 ```
-Original data
+## Original data
 ```js
 {
 	"foo": "quux",
 	"bar": "quux"
 }
 ```
-data after validating with schema
+## Data after validating with schema
 ```js
 {
 	"foo": "quux",
