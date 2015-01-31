@@ -1,8 +1,8 @@
 # [`is-my-json-valid`](https://github.com/mafintosh/is-my-json-valid) - test summary
 
-# All validators fail these tests
+# All validators fail this test
 
-some languages do not distinguish between different types of numeric value, a float is not an integer even without fractional part
+`some languages do not distinguish between different types of numeric value, a float is not an integer even without fractional part`
 
 
 # [`is-my-json-valid`](https://github.com/mafintosh/is-my-json-valid) failed tests

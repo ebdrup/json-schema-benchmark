@@ -1,8 +1,8 @@
 # [`json-model`](https://github.com/geraintluff/json-model) - test summary
 
-# All validators fail these tests
+# All validators fail this test
 
-some languages do not distinguish between different types of numeric value, a float is not an integer even without fractional part
+`some languages do not distinguish between different types of numeric value, a float is not an integer even without fractional part`
 
 
 # [`json-model`](https://github.com/geraintluff/json-model) failed tests

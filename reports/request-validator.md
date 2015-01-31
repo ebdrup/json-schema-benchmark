@@ -1,8 +1,8 @@
 # [`request-validator`](https://github.com/bugventure/request-validator) - test summary
 
-# All validators fail these tests
+# All validators fail this test
 
-some languages do not distinguish between different types of numeric value, a float is not an integer even without fractional part
+`some languages do not distinguish between different types of numeric value, a float is not an integer even without fractional part`
 
 
 # [`request-validator`](https://github.com/bugventure/request-validator) failed tests

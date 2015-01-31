@@ -1,8 +1,8 @@
 # [`tv4`](https://github.com/geraintluff/tv4) - test summary
 
-# All validators fail these tests
+# All validators fail this test
 
-some languages do not distinguish between different types of numeric value, a float is not an integer even without fractional part
+`some languages do not distinguish between different types of numeric value, a float is not an integer even without fractional part`
 
 
 # [`tv4`](https://github.com/geraintluff/tv4) failed tests

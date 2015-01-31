@@ -1,9 +1,9 @@
 # {{&link}} - test summary
 
-# All validators fail these tests
+# All validators fail this test
 {{#testsThatAllValidatorsFail}}
 
-{{name}}
+`{{name}}`
 {{/testsThatAllValidatorsFail}}
 
 

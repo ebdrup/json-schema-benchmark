@@ -1,8 +1,8 @@
 # [`jsck`](https://github.com/pandastrike/jsck) - test summary
 
-# All validators fail these tests
+# All validators fail this test
 
-some languages do not distinguish between different types of numeric value, a float is not an integer even without fractional part
+`some languages do not distinguish between different types of numeric value, a float is not an integer even without fractional part`
 
 
 # [`jsck`](https://github.com/pandastrike/jsck) failed tests
