@@ -6,25 +6,25 @@ for validators that cause side-effects on schema or data.
 
 # Performance
 
-![performance](https://chart.googleapis.com/chart?chxt=x,y&cht=bhs&chco=76A4FB&chls=2.0&chbh=40,4,1&chs=600x416&chxl=-1:|is-my-json-valid|themis|jsck|z-schema|jjv|skeemas|request-validator|jsonschema|jayschema&chd=t:100,27.4,11,8.4,7,1.3,0.7,0.6,0.1)
+![performance](https://chart.googleapis.com/chart?chxt=x,y&cht=bhs&chco=76A4FB&chls=2.0&chbh=40,4,1&chs=600x416&chxl=-1:|is-my-json-valid|themis|jsck|z-schema|jjv|skeemas|request-validator|jsonschema|jayschema&chd=t:100,27.1,11.1,8.8,7.6,1.5,0.7,0.6,0.1)
 
 |Validator|Relative speed|Number of test runs per second|
 |---------|:------------:|:----------------------------:|
-|[`is-my-json-valid`](https://github.com/mafintosh/is-my-json-valid)|100%|17093 (± 1.03%)|
-|themis|27.4%|4682 (± 2.48%)|
-|[`jsck`](https://github.com/pandastrike/jsck)|11%|1882 (± 0.19%)|
-|[`z-schema`](https://github.com/zaggino/z-schema)|8.4%|1438 (± 3.17%)|
-|[`jjv`](https://github.com/acornejo/jjv)|7%|1197 (± 0.93%)|
-|[`skeemas`](https://github.com/Prestaul/skeemas)|1.3%|217 (± 0.23%)|
-|[`request-validator`](https://github.com/bugventure/request-validator)|0.7%|122 (± 3.67%)|
-|[`jsonschema`](https://github.com/tdegrunt/jsonschema)|0.6%|101 (± 2.25%)|
-|[`jayschema`](https://github.com/natesilva/jayschema)|0.1%|14 (± 2.43%)|
+|[`is-my-json-valid`](https://github.com/mafintosh/is-my-json-valid)|100%|17015 (± 1.4%)|
+|themis|27.1%|4605 (± 3.12%)|
+|[`jsck`](https://github.com/pandastrike/jsck)|11.1%|1886 (± 0.21%)|
+|[`z-schema`](https://github.com/zaggino/z-schema)|8.8%|1495 (± 3.76%)|
+|[`jjv`](https://github.com/acornejo/jjv)|7.6%|1301 (± 0.25%)|
+|[`skeemas`](https://github.com/Prestaul/skeemas)|1.5%|250 (± 1.43%)|
+|[`request-validator`](https://github.com/bugventure/request-validator)|0.7%|120 (± 3.89%)|
+|[`jsonschema`](https://github.com/tdegrunt/jsonschema)|0.6%|98 (± 2.99%)|
+|[`jayschema`](https://github.com/natesilva/jayschema)|0.1%|15 (± 1.98%)|
 
 Validators tested: [`is-my-json-valid`](https://github.com/mafintosh/is-my-json-valid), themis, [`z-schema`](https://github.com/zaggino/z-schema), [`jjv`](https://github.com/acornejo/jjv), [`skeemas`](https://github.com/Prestaul/skeemas), [`jayschema`](https://github.com/natesilva/jayschema), [`jsck`](https://github.com/pandastrike/jsck), [`jassi`](https://github.com/iclanzan/jassi), [`JSV`](http://github.com/garycourt/JSV), [`request-validator`](https://github.com/bugventure/request-validator), [`json-model`](https://github.com/geraintluff/json-model), [`tv4`](https://github.com/geraintluff/tv4), [`jsonschema`](https://github.com/tdegrunt/jsonschema), 
 
 (validators not in the results above where excluded because of failing tests - see below for details)
 
-`[`is-my-json-valid`](https://github.com/mafintosh/is-my-json-valid)` is currently the fastest JSON-schema validator out there.
+[`is-my-json-valid`](https://github.com/mafintosh/is-my-json-valid) is currently the fastest JSON-schema validator out there.
 
 The fastest validator has 100%, the rest a lower score relative to the fastest.
 If a validator has a score of 5% that means that it's speed is 5% of the fastest,
