@@ -26,6 +26,7 @@ testRunner([
 	{
 		name: 'is-my-json-valid',
 		setup: function (schema) {
+			// no $refs supported
 			return imjv(schema);
 		},
 		test: function (instance, json, schema) {
@@ -35,6 +36,7 @@ testRunner([
 	{
 		name: 'themis',
 		setup: function (schema) {
+			// $refs only supported if they have id attributes and the test suite refs do not
 			return Themis.validator(schema);
 		},
 		test: function (instance, json, schema) {
@@ -91,6 +93,7 @@ testRunner([
 	{
 		name: 'jayschema',
 		setup: function () {
+			// $refs not supported with synchronous validation, only asyc
 			return new JaySchema();
 		},
 		test: function (instance, json, schema) {
@@ -100,6 +103,7 @@ testRunner([
 	{
 		name: 'jsck',
 		setup: function (schema) {
+			// no $refs supported
 			return new jsck.draft4(schema);
 		},
 		test: function (instance, json, schema) {
@@ -108,6 +112,7 @@ testRunner([
 	},
 	{
 		name: 'jassi',
+			// no $refs supported
 		setup: function (schema) {
 			return jassi;
 		},
@@ -119,6 +124,7 @@ testRunner([
 	{
 		name: 'JSV',
 		setup: function (schema) {
+			// no documented $refs supported
 			return jsv;
 		},
 		test: function (instance, json, schema) {
@@ -128,6 +134,7 @@ testRunner([
 	{
 		name: 'request-validator',
 		setup: function (schema) {
+			// no documented $refs supported
 			return requestValidator(schema);
 		},
 		test: function (instance, json, schema) {
@@ -143,6 +150,7 @@ testRunner([
 	{
 		name: 'json-model',
 		setup: function (schema) {
+			// no comprehensible documented $refs supported
 			return JsonModel.validator(schema);
 		},
 		test: function (instance, json, schema) {
