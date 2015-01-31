@@ -61,7 +61,13 @@ testRunner([
 	{
 		name: 'jjv',
 		setup: function () {
-			return jjv();
+			var validator = jjv();
+
+			Object.keys(refs).forEach(function(uri) {
+				validator.addSchema(uri, refs[uri]);
+			});
+
+			return validator;
 		},
 		test: function (instance, json, schema) {
 			return instance.validate(schema, json) === null;
