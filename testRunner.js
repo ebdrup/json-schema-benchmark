@@ -6,6 +6,7 @@ var mustache = require('mustache');
 var deepEqual = require('deep-equal');
 var npm = require('npm');
 var async = require('async');
+var jsonStringifySafe = require('json-stringify-safe');
 
 module.exports = function (validators) {
 	npm.load(npm.config, function (err) {
@@ -88,7 +89,7 @@ function getTestNames(testSuites) {
 }
 
 function validAndInvalid(validator, allTestNames) {
-	return  _.pluck(validator.failingTests, 'testName').filter(Boolean);
+	return _.pluck(validator.failingTests, 'testName').filter(Boolean);
 	return _.intersection(testNames.concat(testNames.map(function (testName) {
 		return testName.indexOf('invalid') === -1 ?
 			testName.replace(/valid(.*)$/, 'invalid$1') :
@@ -104,7 +105,7 @@ function verifyValidator(validator, testSuiteIn, excludeTestSuites, excludeTests
 	try {
 		var validatorInstance = validator.setup(testSuite.schema);
 	} catch (ex) {
-		schemaFailedToLoad = ex.message.replace(/\n/g, ' ' );
+		schemaFailedToLoad = ex.message.replace(/\n/g, ' ');
 	}
 	testSuite.tests.forEach(function (test) {
 		var testName = [testSuite.description, test.description].join(', ');
@@ -127,11 +128,31 @@ function verifyValidator(validator, testSuiteIn, excludeTestSuites, excludeTests
 			givenResult = e.message;
 		}
 		if (!deepEqual(originalData, test.data)) {
-			var message = validator.link + ' had a side-effect on (altered the original) data in the test `' + testName + '`';
+			var message = validator.link + ' had a side-effect on (altered the original) data in the test `' + testName + '`' +
+				'\nschema' +
+				'\n```js' +
+				'\n' + JSON.stringify(testSuite.schema, null, '\t') +
+				'\n```' +
+				'\nOriginal data' +
+				'\n```js' +
+				'\n' + JSON.stringify(originalData, null, '\t') +
+				'\n```' +
+				'\ndata after validating with schema' +
+				'\n```js' +
+				'\n' + jsonStringifySafe(test.data, null, '\t') +
+				'\n```';
 			validator.sideEffects.push({message: message, testName: testName});
 		}
 		if (!deepEqual(testSuite.schema, testSuiteIn.schema)) {
-			var message = validator.link + ' had a side-effect on (altered the original) schema in the test `' + testName + '`';
+			var message = validator.link + ' had a side-effect on (altered the original) schema in the test `' + testName + '`' +
+				'\nschema' +
+				'\n```js' +
+				'\n' + JSON.stringify(testSuiteIn.schema, null, '\t') +
+				'\n```' +
+				'\nschema after validating' +
+				'\n```js' +
+				'\n' + jsonStringifySafe(testSuite.schema, null, '\t') +
+				'\n```';
 			validator.sideEffects.push({message: message, testName: testName});
 		}
 		if (givenResult !== test.valid) {
