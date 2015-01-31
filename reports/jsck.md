@@ -4,7 +4,6 @@
 
 `some languages do not distinguish between different types of numeric value, a float is not an integer even without fractional part`
 
-
 # [`jsck`](https://github.com/pandastrike/jsck) failed tests
 
 Some validators have deliberately chosen not to support parts of the spec. Go to the [`jsck`](https://github.com/pandastrike/jsck) homepage to learn if

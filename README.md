@@ -6,20 +6,20 @@ for validators that cause side-effects on schema or data.
 
 # Performance
 
-![performance](https://chart.googleapis.com/chart?chxt=x,y&cht=bhs&chco=76A4FB&chls=2.0&chbh=36,4,1&chs=600x420&chxl=-1:|is-my-json-valid|themis|jsck|z-schema|jjv|skeemas|request-validator|jsonschema|tv4|jayschema&chd=t:100,28.2,11,8.4,7,1.4,0.7,0.6,0.3,0.1)
+![performance](https://chart.googleapis.com/chart?chxt=x,y&cht=bhs&chco=76A4FB&chls=2.0&chbh=36,4,1&chs=600x420&chxl=-1:|is-my-json-valid|themis|jsck|z-schema|jjv|skeemas|request-validator|jsonschema|tv4|jayschema&chd=t:100,28.9,10.8,8.9,7.4,1.4,0.7,0.6,0.3,0.1)
 
 |Validator|Relative speed|Number of test runs per second|
 |---------|:------------:|:----------------------------:|
-|[`is-my-json-valid`](https://github.com/mafintosh/is-my-json-valid)|100%|16340 (± 1.17%)|
-|themis|28.2%|4613 (± 2.34%)|
-|[`jsck`](https://github.com/pandastrike/jsck)|11%|1801 (± 1.78%)|
-|[`z-schema`](https://github.com/zaggino/z-schema)|8.4%|1371 (± 3.45%)|
-|[`jjv`](https://github.com/acornejo/jjv)|7%|1143 (± 0.3%)|
-|[`skeemas`](https://github.com/Prestaul/skeemas)|1.4%|235 (± 0.19%)|
-|[`request-validator`](https://github.com/bugventure/request-validator)|0.7%|115 (± 4.1%)|
-|[`jsonschema`](https://github.com/tdegrunt/jsonschema)|0.6%|94 (± 2.85%)|
-|[`tv4`](https://github.com/geraintluff/tv4)|0.3%|45 (± 2.7%)|
-|[`jayschema`](https://github.com/natesilva/jayschema)|0.1%|14 (± 3.12%)|
+|[`is-my-json-valid`](https://github.com/mafintosh/is-my-json-valid)|100%|15758 (± 1.14%)|
+|themis|28.9%|4558 (± 2.59%)|
+|[`jsck`](https://github.com/pandastrike/jsck)|10.8%|1707 (± 0.48%)|
+|[`z-schema`](https://github.com/zaggino/z-schema)|8.9%|1400 (± 3.83%)|
+|[`jjv`](https://github.com/acornejo/jjv)|7.4%|1161 (± 1.19%)|
+|[`skeemas`](https://github.com/Prestaul/skeemas)|1.4%|227 (± 0.93%)|
+|[`request-validator`](https://github.com/bugventure/request-validator)|0.7%|112 (± 4.28%)|
+|[`jsonschema`](https://github.com/tdegrunt/jsonschema)|0.6%|95 (± 2.74%)|
+|[`tv4`](https://github.com/geraintluff/tv4)|0.3%|44 (± 2.85%)|
+|[`jayschema`](https://github.com/natesilva/jayschema)|0.1%|14 (± 3.51%)|
 
 Validators tested: [`is-my-json-valid`](https://github.com/mafintosh/is-my-json-valid), themis, [`z-schema`](https://github.com/zaggino/z-schema), [`jjv`](https://github.com/acornejo/jjv), [`skeemas`](https://github.com/Prestaul/skeemas), [`jayschema`](https://github.com/natesilva/jayschema), [`jsck`](https://github.com/pandastrike/jsck), [`jassi`](https://github.com/iclanzan/jassi), [`JSV`](http://github.com/garycourt/JSV), [`request-validator`](https://github.com/bugventure/request-validator), [`json-model`](https://github.com/geraintluff/json-model), [`tv4`](https://github.com/geraintluff/tv4), [`jsonschema`](https://github.com/tdegrunt/jsonschema), 
 

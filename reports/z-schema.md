@@ -4,7 +4,6 @@
 
 `some languages do not distinguish between different types of numeric value, a float is not an integer even without fractional part`
 
-
 # [`z-schema`](https://github.com/zaggino/z-schema) failed tests
 
 Some validators have deliberately chosen not to support parts of the spec. Go to the [`z-schema`](https://github.com/zaggino/z-schema) homepage to learn if

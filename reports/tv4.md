@@ -4,7 +4,6 @@
 
 `some languages do not distinguish between different types of numeric value, a float is not an integer even without fractional part`
 
-
 # [`tv4`](https://github.com/geraintluff/tv4) failed tests
 
 Some validators have deliberately chosen not to support parts of the spec. Go to the [`tv4`](https://github.com/geraintluff/tv4) homepage to learn if

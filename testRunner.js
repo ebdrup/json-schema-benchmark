@@ -323,6 +323,7 @@ function saveResults(results, validators, allTestNames, testsThatAllValidatorsFa
 			var html = mustache.render(testsTemplate, {
 				link: validator.link,
 				failingTests: validator.failingTests,
+				hasFailingTests: !!validator.failingTests.length,
 				testsThatAllValidatorsFail: comma(testsThatAllValidatorsFail.map(function (testName) {
 					return {name: testName};
 				}))

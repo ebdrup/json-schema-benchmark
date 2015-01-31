@@ -4,7 +4,6 @@
 
 `some languages do not distinguish between different types of numeric value, a float is not an integer even without fractional part`
 
-
 # themis failed tests
 
 Some validators have deliberately chosen not to support parts of the spec. Go to the themis homepage to learn if
