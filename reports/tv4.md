@@ -13,7 +13,7 @@ that is the case for these tests.
 |test failed|reason
 |-----------|------
 |`invalid definition, invalid definition schema`|Expected result: `false` but validator returned: `true`
-|`heterogeneous enum validation, something else is invalid`|Expected result: `false` but validator returned: `"Cannot read property 'foo' of null"`. **This excludes this validator from performance tests**
+|`heterogeneous enum validation, something else is invalid`|Expected result: `false` but validator returned: `"Cannot read property 'foo' of null"`
 |`maxLength validation, two supplementary Unicode code points is long enough`|Expected result: `true` but validator returned: `false`
 |`minLength validation, one supplementary Unicode code point is not long enough`|Expected result: `false` but validator returned: `true`
 |`validation of date-time strings, an invalid date-time string`|Expected result: `false` but validator returned: `true`

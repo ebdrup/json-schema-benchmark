@@ -15,7 +15,7 @@ that is the case for these tests.
 |`valid definition, valid definition schema`|The schema failed to load(`Requests not enabled - try JsonModel.setRequestFunction(func): {"method":"GET","url":"http://json-schema.org/draft-04/schema"}`)
 |`invalid definition, invalid definition schema`|Expected result: `false` but validator returned: `true`
 |`simple enum validation, something else is invalid`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
-|`heterogeneous enum validation, something else is invalid`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
+|`heterogeneous enum validation, something else is invalid`|Expected result: `false` but validator returned: `true`
 |`heterogeneous enum validation, objects are deep compared`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
 |`not, disallowed`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
 |`not multiple types, mismatch`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**

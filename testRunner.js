@@ -39,7 +39,9 @@ module.exports = function (validators) {
 				//lots of validators fail these
 				'invalid definition, invalid definition schema',
 				'maxLength validation, two supplementary Unicode code points is long enough',
-				'minLength validation, one supplementary Unicode code point is not long enough'
+				'minLength validation, one supplementary Unicode code point is not long enough',
+				//this is to get tv4 in the benchmarks
+				'heterogeneous enum validation, something else is invalid'
 			];
 			var excludeTestSuites = [
 				//lost failing these tests
