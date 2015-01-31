@@ -86,11 +86,11 @@ function getTestNames(testSuites) {
 }
 
 function validAndInvalid(validator, allTestNames) {
-	var testNames = _.pluck(validator.failingTests, 'testName').filter(Boolean);
+	return  _.pluck(validator.failingTests, 'testName').filter(Boolean);
 	return _.intersection(testNames.concat(testNames.map(function (testName) {
 		return testName.indexOf('invalid') === -1 ?
-			testName.replace(/valid/g, 'invalid') :
-			testName.replace(/invalid/g, 'valid');
+			testName.replace(/valid.*$/, 'invalid') :
+			testName.replace(/invalid.*$/, 'valid');
 	})), allTestNames);
 }
 
@@ -109,7 +109,7 @@ function verifyValidator(validator, testSuiteIn, excludeTestSuites, excludeTests
 		var originalData = JSON.parse(JSON.stringify(test.data));
 		var givenResult;
 		if (schemaFailedToLoad) {
-			var message = validator.name + ' failed the test `' + testName + '`. Because the schema failed to load' +
+			var message = validator.link + ' failed the test `' + testName + '`. Because the schema failed to load' +
 				'(`' + schemaFailedToLoad + '`)';
 			if (excludeTests.indexOf(testName) === -1 && excludeTestSuites.indexOf(testSuite.description) === -1) {
 				passedAllTests = false;
@@ -125,17 +125,17 @@ function verifyValidator(validator, testSuiteIn, excludeTestSuites, excludeTests
 			givenResult = e.message;
 		}
 		if (!deepEqual(originalData, test.data)) {
-			var message = validator.name + ' had a side-effect on (altered the original) data in the test `' + testName + '`';
+			var message = validator.link + ' had a side-effect on (altered the original) data in the test `' + testName + '`';
 			message += '. **This excludes this validator from performance tests**';
 			passedAllTests = false;
 			validator.sideEffects.push({message: message, testName: testName});
 		}
 		if (!deepEqual(testSuite.schema, testSuiteIn.schema)) {
-			var message = validator.name + ' had a side-effect on (altered the original) schema in the test `' + testName + '`';
+			var message = validator.link + ' had a side-effect on (altered the original) schema in the test `' + testName + '`';
 			validator.sideEffects.push({message: message, testName: testName});
 		}
 		if (givenResult !== test.valid) {
-			var message = validator.name + ' failed the test `' + testName + '`. Expected result: `' +
+			var message = validator.link + ' failed the test `' + testName + '`. Expected result: `' +
 				JSON.stringify(test.valid) + '` but validator returned: `' +
 				JSON.stringify(givenResult) + '`';
 			if (excludeTests.indexOf(testName) === -1 && excludeTestSuites.indexOf(testSuite.description) === -1) {

@@ -10,7 +10,7 @@
 # {{&link}} failed tests
 {{#failingTests}}
 
-{{message}}
+{{&message}}
 {{/failingTests}}
 
 **All other tests passed**.
