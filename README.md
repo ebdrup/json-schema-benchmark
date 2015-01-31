@@ -6,19 +6,19 @@ for validators that cause side-effects on schema or data.
 
 # Performance
 
-![performance](https://chart.googleapis.com/chart?chxt=x,y&cht=bhs&chco=76A4FB&chls=2.0&chbh=40,4,1&chs=600x416&chxl=-1:|is-my-json-valid|themis|jsck|z-schema|jjv|skeemas|request-validator|jsonschema|jayschema&chd=t:100,27.5,11,8.1,7.6,1.5,0.7,0.6,0.1)
+![performance](https://chart.googleapis.com/chart?chxt=x,y&cht=bhs&chco=76A4FB&chls=2.0&chbh=40,4,1&chs=600x416&chxl=-1:|is-my-json-valid|themis|jsck|z-schema|jjv|skeemas|request-validator|jsonschema|jayschema&chd=t:100,28.4,10.9,8.4,7,1.5,0.7,0.6,0.1)
 
 |Validator|Relative speed|Number of test runs per second|
 |---------|:------------:|:----------------------------:|
-|[`is-my-json-valid`](https://github.com/mafintosh/is-my-json-valid)|100%|16454 (± 1.19%)|
-|themis|27.5%|4521 (± 2.53%)|
-|[`jsck`](https://github.com/pandastrike/jsck)|11%|1815 (± 0.2%)|
-|[`z-schema`](https://github.com/zaggino/z-schema)|8.1%|1328 (± 3.42%)|
-|[`jjv`](https://github.com/acornejo/jjv)|7.6%|1249 (± 0.37%)|
-|[`skeemas`](https://github.com/Prestaul/skeemas)|1.5%|239 (± 0.2%)|
-|[`request-validator`](https://github.com/bugventure/request-validator)|0.7%|119 (± 4.26%)|
-|[`jsonschema`](https://github.com/tdegrunt/jsonschema)|0.6%|102 (± 2.28%)|
-|[`jayschema`](https://github.com/natesilva/jayschema)|0.1%|15 (± 2.08%)|
+|[`is-my-json-valid`](https://github.com/mafintosh/is-my-json-valid)|100%|16517 (± 1.41%)|
+|themis|28.4%|4685 (± 2.42%)|
+|[`jsck`](https://github.com/pandastrike/jsck)|10.9%|1805 (± 1.21%)|
+|[`z-schema`](https://github.com/zaggino/z-schema)|8.4%|1381 (± 3.76%)|
+|[`jjv`](https://github.com/acornejo/jjv)|7%|1156 (± 1.36%)|
+|[`skeemas`](https://github.com/Prestaul/skeemas)|1.5%|242 (± 0.85%)|
+|[`request-validator`](https://github.com/bugventure/request-validator)|0.7%|121 (± 4.03%)|
+|[`jsonschema`](https://github.com/tdegrunt/jsonschema)|0.6%|105 (± 1.99%)|
+|[`jayschema`](https://github.com/natesilva/jayschema)|0.1%|15 (± 1.09%)|
 
 Validators tested: [`is-my-json-valid`](https://github.com/mafintosh/is-my-json-valid), themis, [`z-schema`](https://github.com/zaggino/z-schema), [`jjv`](https://github.com/acornejo/jjv), [`skeemas`](https://github.com/Prestaul/skeemas), [`jayschema`](https://github.com/natesilva/jayschema), [`jsck`](https://github.com/pandastrike/jsck), [`jassi`](https://github.com/iclanzan/jassi), [`JSV`](http://github.com/garycourt/JSV), [`request-validator`](https://github.com/bugventure/request-validator), [`json-model`](https://github.com/geraintluff/json-model), [`tv4`](https://github.com/geraintluff/tv4), [`jsonschema`](https://github.com/tdegrunt/jsonschema), 
 
@@ -53,6 +53,9 @@ If a validator does not pass a test in the official test suite, it will show up 
 |[`jassi`](https://github.com/iclanzan/jassi)|[31](https://github.com/Muscula/json-schema-benchmark/blob/master/reports/jassi.md)|
 |[`json-model`](https://github.com/geraintluff/json-model)|[40](https://github.com/Muscula/json-schema-benchmark/blob/master/reports/json-model.md)|
 |[`JSV`](http://github.com/garycourt/JSV)|[54](https://github.com/Muscula/json-schema-benchmark/blob/master/reports/JSV.md)|
+
+Some validators have deliberately chosen not to support parts of the spec. Go tho the homepage of the validator to learn if
+that is the case for these tests.
 
 # Side-effects summary
 

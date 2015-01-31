@@ -6,6 +6,10 @@
 
 
 # [`jayschema`](https://github.com/natesilva/jayschema) failed tests
+
+Some validators have deliberately chosen not to support parts of the spec. Go tho the [`jayschema`](https://github.com/natesilva/jayschema) homepage to learn if
+that is the case for these tests.
+
 |test failed|reason
 |-----------|------
 |`maxLength validation, two supplementary Unicode code points is long enough`|Expected result: `true` but validator returned: `false`

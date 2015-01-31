@@ -6,6 +6,10 @@
 
 
 # [`jsck`](https://github.com/pandastrike/jsck) failed tests
+
+Some validators have deliberately chosen not to support parts of the spec. Go tho the [`jsck`](https://github.com/pandastrike/jsck) homepage to learn if
+that is the case for these tests.
+
 |test failed|reason
 |-----------|------
 |`valid definition, valid definition schema`|The schema failed to load(`Unresolvable $ref values: ["http://json-schema.org/draft-04/schema#"]`)

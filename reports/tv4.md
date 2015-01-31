@@ -6,6 +6,10 @@
 
 
 # [`tv4`](https://github.com/geraintluff/tv4) failed tests
+
+Some validators have deliberately chosen not to support parts of the spec. Go tho the [`tv4`](https://github.com/geraintluff/tv4) homepage to learn if
+that is the case for these tests.
+
 |test failed|reason
 |-----------|------
 |`invalid definition, invalid definition schema`|Expected result: `false` but validator returned: `true`

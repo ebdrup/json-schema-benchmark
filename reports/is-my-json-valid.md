@@ -6,6 +6,10 @@
 
 
 # [`is-my-json-valid`](https://github.com/mafintosh/is-my-json-valid) failed tests
+
+Some validators have deliberately chosen not to support parts of the spec. Go tho the [`is-my-json-valid`](https://github.com/mafintosh/is-my-json-valid) homepage to learn if
+that is the case for these tests.
+
 |test failed|reason
 |-----------|------
 |`invalid definition, invalid definition schema`|Expected result: `false` but validator returned: `true`

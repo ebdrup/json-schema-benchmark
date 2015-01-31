@@ -6,6 +6,10 @@
 
 
 # themis failed tests
+
+Some validators have deliberately chosen not to support parts of the spec. Go tho the themis homepage to learn if
+that is the case for these tests.
+
 |test failed|reason
 |-----------|------
 |`valid definition, valid definition schema`|Expected result: `true` but validator returned: `"Object #<Object> has no method 'http://json-schema.org/draft-04/schema#'"`

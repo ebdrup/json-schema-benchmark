@@ -6,6 +6,10 @@
 
 
 # [`jjv`](https://github.com/acornejo/jjv) failed tests
+
+Some validators have deliberately chosen not to support parts of the spec. Go tho the [`jjv`](https://github.com/acornejo/jjv) homepage to learn if
+that is the case for these tests.
+
 |test failed|reason
 |-----------|------
 |`maxLength validation, two supplementary Unicode code points is long enough`|Expected result: `true` but validator returned: `false`

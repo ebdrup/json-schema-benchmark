@@ -6,6 +6,10 @@
 
 
 # [`jassi`](https://github.com/iclanzan/jassi) failed tests
+
+Some validators have deliberately chosen not to support parts of the spec. Go tho the [`jassi`](https://github.com/iclanzan/jassi) homepage to learn if
+that is the case for these tests.
+
 |test failed|reason
 |-----------|------
 |`invalid definition, invalid definition schema`|Expected result: `false` but validator returned: `true`
