@@ -49,11 +49,9 @@ testRunner([
 			var validator = new ZSchema({
 				ignoreUnresolvableReferences: true
 			});
-
-			Object.keys(refs).forEach(function(uri) {
+			Object.keys(refs).forEach(function (uri) {
 				validator.setRemoteReference(uri, refs[uri]);
 			});
-
 			return validator;
 		},
 		test: function (instance, json, schema) {
@@ -64,11 +62,9 @@ testRunner([
 		name: 'jjv',
 		setup: function () {
 			var validator = jjv();
-
-			Object.keys(refs).forEach(function(uri) {
+			Object.keys(refs).forEach(function (uri) {
 				validator.addSchema(uri, refs[uri]);
 			});
-
 			return validator;
 		},
 		test: function (instance, json, schema) {
@@ -79,11 +75,9 @@ testRunner([
 		name: 'skeemas',
 		setup: function (schema) {
 			var validator = skeemas();
-
-			Object.keys(refs).forEach(function(uri) {
+			Object.keys(refs).forEach(function (uri) {
 				validator.addRef(uri, refs[uri]);
 			});
-
 			return validator;
 		},
 		test: function (instance, json, schema) {
@@ -112,7 +106,7 @@ testRunner([
 	},
 	{
 		name: 'jassi',
-			// no $refs supported
+		// no $refs supported
 		setup: function (schema) {
 			return jassi;
 		},
@@ -160,10 +154,10 @@ testRunner([
 	{
 		name: 'tv4',
 		setup: function () {
-			Object.keys(refs).forEach(function(uri) {
-				tv4.addSchema(uri, refs[uri]);
-			});
-
+			//adding this actually makes tv4 fail all tests with "Maximum call stack size exceeded" on loading schemas
+			//Object.keys(refs).forEach(function (uri) {
+			//	tv4.addSchema(uri, refs[uri]);
+			//});
 			return tv4;
 		},
 		test: function (instance, json, schema) {
@@ -174,11 +168,9 @@ testRunner([
 		name: 'jsonschema',
 		setup: function () {
 			var validator = new JsonSchema.Validator();
-
-			Object.keys(refs).forEach(function(uri) {
+			Object.keys(refs).forEach(function (uri) {
 				validator.addSchema(refs[uri], uri);
 			});
-
 			return validator;
 		},
 		test: function (instance, json, schema) {
