@@ -6,18 +6,19 @@ for validators that cause side-effects on schema or data.
 
 # Performance
 
-![performance](https://chart.googleapis.com/chart?chxt=x,y&cht=bhs&chco=76A4FB&chls=2.0&chbh=46,4,1&chs=600x420&chxl=-1:|is-my-json-valid|themis|jsck|z-schema|jjv|skeemas|request-validator|jayschema&chd=t:100,28.7,11.6,8.8,7.6,1.4,0.7,0.1)
+![performance](https://chart.googleapis.com/chart?chxt=x,y&cht=bhs&chco=76A4FB&chls=2.0&chbh=40,4,1&chs=600x416&chxl=-1:|is-my-json-valid|themis|jsck|z-schema|jjv|skeemas|request-validator|jsonschema|jayschema&chd=t:100,27.4,11,8.4,7,1.3,0.7,0.6,0.1)
 
 |Validator|Relative speed|Number of test runs per second|
 |---------|:------------:|:----------------------------:|
-|[`is-my-json-valid`](https://github.com/mafintosh/is-my-json-valid)|100%|16013 (± 1.26%)|
-|themis|28.7%|4592 (± 2.35%)|
-|[`jsck`](https://github.com/pandastrike/jsck)|11.6%|1865 (± 0.31%)|
-|[`z-schema`](https://github.com/zaggino/z-schema)|8.8%|1409 (± 3.31%)|
-|[`jjv`](https://github.com/acornejo/jjv)|7.6%|1210 (± 0.23%)|
-|[`skeemas`](https://github.com/Prestaul/skeemas)|1.4%|220 (± 0.78%)|
-|[`request-validator`](https://github.com/bugventure/request-validator)|0.7%|119 (± 4.36%)|
-|[`jayschema`](https://github.com/natesilva/jayschema)|0.1%|14 (± 3.3%)|
+|[`is-my-json-valid`](https://github.com/mafintosh/is-my-json-valid)|100%|17093 (± 1.03%)|
+|themis|27.4%|4682 (± 2.48%)|
+|[`jsck`](https://github.com/pandastrike/jsck)|11%|1882 (± 0.19%)|
+|[`z-schema`](https://github.com/zaggino/z-schema)|8.4%|1438 (± 3.17%)|
+|[`jjv`](https://github.com/acornejo/jjv)|7%|1197 (± 0.93%)|
+|[`skeemas`](https://github.com/Prestaul/skeemas)|1.3%|217 (± 0.23%)|
+|[`request-validator`](https://github.com/bugventure/request-validator)|0.7%|122 (± 3.67%)|
+|[`jsonschema`](https://github.com/tdegrunt/jsonschema)|0.6%|101 (± 2.25%)|
+|[`jayschema`](https://github.com/natesilva/jayschema)|0.1%|14 (± 2.43%)|
 
 Validators tested: [`is-my-json-valid`](https://github.com/mafintosh/is-my-json-valid), themis, [`z-schema`](https://github.com/zaggino/z-schema), [`jjv`](https://github.com/acornejo/jjv), [`skeemas`](https://github.com/Prestaul/skeemas), [`jayschema`](https://github.com/natesilva/jayschema), [`jsck`](https://github.com/pandastrike/jsck), [`jassi`](https://github.com/iclanzan/jassi), [`JSV`](http://github.com/garycourt/JSV), [`request-validator`](https://github.com/bugventure/request-validator), [`json-model`](https://github.com/geraintluff/json-model), [`tv4`](https://github.com/geraintluff/tv4), [`jsonschema`](https://github.com/tdegrunt/jsonschema), 
 

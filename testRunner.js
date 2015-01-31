@@ -126,8 +126,6 @@ function verifyValidator(validator, testSuiteIn, excludeTestSuites, excludeTests
 		}
 		if (!deepEqual(originalData, test.data)) {
 			var message = validator.link + ' had a side-effect on (altered the original) data in the test `' + testName + '`';
-			message += '. **This excludes this validator from performance tests**';
-			passedAllTests = false;
 			validator.sideEffects.push({message: message, testName: testName});
 		}
 		if (!deepEqual(testSuite.schema, testSuiteIn.schema)) {
