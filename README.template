@@ -53,5 +53,10 @@ Number of tests that caused side-effects. The schema or data was altered by the 
 
 Validators not in the list have no side-effects on data or schemas.
 
+# Features of validators
+
+Note that these benchmarks and tests do not take into account other more advanced features of the validators. I encourage
+you to take a look at each validator if you are looking for special features.
+
 # License
 MIT

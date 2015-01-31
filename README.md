@@ -6,20 +6,20 @@ for validators that cause side-effects on schema or data.
 
 # Performance
 
-![performance](https://chart.googleapis.com/chart?chxt=x,y&cht=bhs&chco=76A4FB&chls=2.0&chbh=36,4,1&chs=600x420&chxl=-1:|is-my-json-valid|themis|jsck|z-schema|jjv|skeemas|request-validator|jsonschema|tv4|jayschema&chd=t:100,27.9,10.5,8.5,7.3,1.5,0.7,0.6,0.3,0.1)
+![performance](https://chart.googleapis.com/chart?chxt=x,y&cht=bhs&chco=76A4FB&chls=2.0&chbh=36,4,1&chs=600x420&chxl=-1:|is-my-json-valid|themis|jsck|z-schema|jjv|skeemas|request-validator|jsonschema|tv4|jayschema&chd=t:100,27.7,10.6,7.7,7.1,1.4,0.7,0.6,0.3,0.1)
 
 |Validator|Relative speed|Number of test runs per second|
 |---------|:------------:|:----------------------------:|
-|[`is-my-json-valid`](https://github.com/mafintosh/is-my-json-valid)|100%|16829 (± 1.27%)|
-|themis|27.9%|4700 (± 2.83%)|
-|[`jsck`](https://github.com/pandastrike/jsck)|10.5%|1773 (± 0.19%)|
-|[`z-schema`](https://github.com/zaggino/z-schema)|8.5%|1425 (± 3.49%)|
-|[`jjv`](https://github.com/acornejo/jjv)|7.3%|1228 (± 0.95%)|
-|[`skeemas`](https://github.com/Prestaul/skeemas)|1.5%|249 (± 0.63%)|
-|[`request-validator`](https://github.com/bugventure/request-validator)|0.7%|120 (± 4.35%)|
-|[`jsonschema`](https://github.com/tdegrunt/jsonschema)|0.6%|104 (± 2.66%)|
-|[`tv4`](https://github.com/geraintluff/tv4)|0.3%|48 (± 2.74%)|
-|[`jayschema`](https://github.com/natesilva/jayschema)|0.1%|15 (± 1.77%)|
+|[`is-my-json-valid`](https://github.com/mafintosh/is-my-json-valid)|100%|15770 (± 1.44%)|
+|themis|27.7%|4369 (± 2.58%)|
+|[`jsck`](https://github.com/pandastrike/jsck)|10.6%|1666 (± 2.45%)|
+|[`z-schema`](https://github.com/zaggino/z-schema)|7.7%|1207 (± 4.73%)|
+|[`jjv`](https://github.com/acornejo/jjv)|7.1%|1125 (± 1.61%)|
+|[`skeemas`](https://github.com/Prestaul/skeemas)|1.4%|217 (± 1.44%)|
+|[`request-validator`](https://github.com/bugventure/request-validator)|0.7%|111 (± 4.65%)|
+|[`jsonschema`](https://github.com/tdegrunt/jsonschema)|0.6%|95 (± 3.46%)|
+|[`tv4`](https://github.com/geraintluff/tv4)|0.3%|44 (± 3.17%)|
+|[`jayschema`](https://github.com/natesilva/jayschema)|0.1%|13 (± 2.29%)|
 
 Validators tested: [`is-my-json-valid`](https://github.com/mafintosh/is-my-json-valid), themis, [`z-schema`](https://github.com/zaggino/z-schema), [`jjv`](https://github.com/acornejo/jjv), [`skeemas`](https://github.com/Prestaul/skeemas), [`jayschema`](https://github.com/natesilva/jayschema), [`jsck`](https://github.com/pandastrike/jsck), [`jassi`](https://github.com/iclanzan/jassi), [`JSV`](http://github.com/garycourt/JSV), [`request-validator`](https://github.com/bugventure/request-validator), [`json-model`](https://github.com/geraintluff/json-model), [`tv4`](https://github.com/geraintluff/tv4), [`jsonschema`](https://github.com/tdegrunt/jsonschema), 
 
@@ -70,6 +70,11 @@ Number of tests that caused side-effects. The schema or data was altered by the 
 |[`z-schema`](https://github.com/zaggino/z-schema)|[290](https://github.com/Muscula/json-schema-benchmark/blob/master/reports/z-schema-side-effects.md)|
 
 Validators not in the list have no side-effects on data or schemas.
+
+# Features of validators
+
+Note that these benchmarks and tests do not take into account other more advanced features of the validators. I encourage
+you to take a look at each validator if you are looking for special features.
 
 # License
 MIT
