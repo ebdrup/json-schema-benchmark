@@ -138,3 +138,5 @@ When running tests [`jsonschema`](https://github.com/tdegrunt/jsonschema) mutate
 	"bar": "[Circular ~]"
 }
 ```
+
+[back to benchmarks](https://github.com/Muscula/json-schema-benchmark)

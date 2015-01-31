@@ -67,3 +67,5 @@ that is the case for these tests.
 |`uniqueItems validation, non-unique heterogeneous types are invalid`|Expected result: `false` but validator returned: `true`
 
 **All other tests passed**.
+
+[back to benchmarks](https://github.com/Muscula/json-schema-benchmark)

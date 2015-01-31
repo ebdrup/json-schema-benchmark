@@ -18,3 +18,5 @@ that is the case for these tests.
 |`validation of URIs, an invalid URI though valid URI reference`|Expected result: `false` but validator returned: `true`
 
 **All other tests passed**.
+
+[back to benchmarks](https://github.com/Muscula/json-schema-benchmark)

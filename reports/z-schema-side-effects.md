@@ -8801,3 +8801,5 @@ When running tests [`z-schema`](https://github.com/zaggino/z-schema) mutated eit
 	"__$validated": true
 }
 ```
+
+[back to benchmarks](https://github.com/Muscula/json-schema-benchmark)

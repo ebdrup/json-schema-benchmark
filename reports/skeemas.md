@@ -14,3 +14,5 @@ that is the case for these tests.
 |-----------|------
 
 **All other tests passed**.
+
+[back to benchmarks](https://github.com/Muscula/json-schema-benchmark)

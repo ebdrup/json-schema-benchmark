@@ -249,85 +249,91 @@ function comma(arr) {
 
 
 function saveResults(results, validators, allTestNames, testsThatAllValidatorsFail) {
-	var readmePath = path.join(__dirname, 'README.md');
-	var readmeTemplate = fs.readFileSync(path.join(__dirname, 'README.template'), 'utf-8');
-	var testsTemplate = fs.readFileSync(path.join(__dirname, 'reports/TESTS.template'), 'utf-8');
-	var sideEffectsTemplate = fs.readFileSync(path.join(__dirname, 'reports/SIDE-EFFECTS.template'), 'utf-8');
+	require('child_process').exec('rm -f ' + path.join(__dirname, '/reports/*.md'), function (err) {
+		if(err){
+			console.error('Error removing old reports');
+			console.error(err);
+		}
+		var readmePath = path.join(__dirname, 'README.md');
+		var readmeTemplate = fs.readFileSync(path.join(__dirname, 'README.template'), 'utf-8');
+		var testsTemplate = fs.readFileSync(path.join(__dirname, 'reports/TESTS.template'), 'utf-8');
+		var sideEffectsTemplate = fs.readFileSync(path.join(__dirname, 'reports/SIDE-EFFECTS.template'), 'utf-8');
 
-	var validatorsFailingTests = validators
-		.map(function (validator) {
-			return {
-				name: validator.name,
-				link: validator.link,
-				count: validator.failingTests.length
-			};
-		})
-		.sort(function (a, b) {
-			return a.count - b.count;
+		var validatorsFailingTests = validators
+			.map(function (validator) {
+				return {
+					name: validator.name,
+					link: validator.link,
+					count: validator.failingTests.length
+				};
+			})
+			.sort(function (a, b) {
+				return a.count - b.count;
+			});
+		var validatorsSideEffects = validators
+			.map(function (validator) {
+				return {
+					name: validator.name,
+					link: validator.link,
+					count: validator.sideEffects.length,
+					sideEffects: validator.sideEffects
+				};
+			})
+			.filter(function (o) {
+				return o.count !== 0;
+			})
+			.sort(function (a, b) {
+				return a.count - b.count;
+			});
+		var maxFailingTests = validatorsFailingTests.reduce(function (acc, v) {
+			return Math.max(acc, v.count);
+		}, 0);
+		validators.forEach(function (validator) {
+			validator.failingTests = validator.failingTests.filter(function (t) {
+				return testsThatAllValidatorsFail.indexOf(t.testName) === -1;
+			})
 		});
-	var validatorsSideEffects = validators
-		.map(function (validator) {
-			return {
-				name: validator.name,
-				link: validator.link,
-				count: validator.sideEffects.length,
-				sideEffects: validator.sideEffects
-			};
-		})
-		.filter(function (o) {
-			return o.count !== 0;
-		})
-		.sort(function (a, b) {
-			return a.count - b.count;
+		results.sort(function (a, b) {
+			return b.hz - a.hz
 		});
-	var maxFailingTests = validatorsFailingTests.reduce(function (acc, v) {
-		return Math.max(acc, v.count);
-	}, 0);
-	validators.forEach(function (validator) {
-		validator.failingTests = validator.failingTests.filter(function (t) {
-			return testsThatAllValidatorsFail.indexOf(t.testName) === -1;
-		})
-	});
-	results.sort(function (a, b) {
-		return b.hz - a.hz
-	});
-	var graphBarSpacing = 4;
-	var resultGraphBarHeight = Math.floor(400 / results.length) - graphBarSpacing;
-	var resultsGraphHeight = (resultGraphBarHeight + graphBarSpacing) * results.length + 20;
-	var validatorsFailingTestsGraphBarHeight = Math.floor(400 / validatorsFailingTests.length) - graphBarSpacing;
-	var validatorsFailingTestsGraphHeight = (validatorsFailingTestsGraphBarHeight + graphBarSpacing) * validatorsFailingTests.length + 20;
-	var data = {
-		graphBarSpacing: graphBarSpacing,
-		validators: comma(validators),
-		fastestValidator: results[0].link,
-		testsThatAllValidatorsFail: comma(testsThatAllValidatorsFail.map(function (testName) {
-			return {name: testName};
-		})),
-		validatorsFailingTests: comma(validatorsFailingTests),
-		validatorsFailingTestsGraphHeight: validatorsFailingTestsGraphHeight,
-		validatorsFailingTestsGraphBarHeight: validatorsFailingTestsGraphBarHeight,
-		maxFailingTests: maxFailingTests,
-		validatorsSideEffects: comma(validatorsSideEffects),
-		results: comma(results),
-		resultsGraphHeight: resultsGraphHeight,
-		resultGraphBarHeight: resultGraphBarHeight
-	};
-	var html = mustache.render(readmeTemplate, data);
-	fs.writeFileSync(readmePath, html);
-	validators.forEach(function (validator) {
-		var html = mustache.render(testsTemplate, {
-			link: validator.link,
-			failingTests: validator.failingTests,
+		var graphBarSpacing = 4;
+		var resultGraphBarHeight = Math.floor(400 / results.length) - graphBarSpacing;
+		var resultsGraphHeight = (resultGraphBarHeight + graphBarSpacing) * results.length + 20;
+		var validatorsFailingTestsGraphBarHeight = Math.floor(400 / validatorsFailingTests.length) - graphBarSpacing;
+		var validatorsFailingTestsGraphHeight = (validatorsFailingTestsGraphBarHeight + graphBarSpacing) * validatorsFailingTests.length + 20;
+		var data = {
+			graphBarSpacing: graphBarSpacing,
+			validators: comma(validators),
+			fastestValidator: results[0].link,
 			testsThatAllValidatorsFail: comma(testsThatAllValidatorsFail.map(function (testName) {
 				return {name: testName};
-			}))
+			})),
+			validatorsFailingTests: comma(validatorsFailingTests),
+			validatorsFailingTestsGraphHeight: validatorsFailingTestsGraphHeight,
+			validatorsFailingTestsGraphBarHeight: validatorsFailingTestsGraphBarHeight,
+			maxFailingTests: maxFailingTests,
+			validatorsSideEffects: comma(validatorsSideEffects),
+			results: comma(results),
+			resultsGraphHeight: resultsGraphHeight,
+			resultGraphBarHeight: resultGraphBarHeight
+		};
+		var html = mustache.render(readmeTemplate, data);
+		fs.writeFileSync(readmePath, html);
+		validators.forEach(function (validator) {
+			var html = mustache.render(testsTemplate, {
+				link: validator.link,
+				failingTests: validator.failingTests,
+				testsThatAllValidatorsFail: comma(testsThatAllValidatorsFail.map(function (testName) {
+					return {name: testName};
+				}))
+			});
+			var testSummaryPath = path.join(__dirname, '/reports/', validator.name + '.md');
+			fs.writeFileSync(testSummaryPath, html);
 		});
-		var testSummaryPath = path.join(__dirname, '/reports/', validator.name + '.md');
-		fs.writeFileSync(testSummaryPath, html);
-	});
-	validatorsSideEffects.forEach(function (sideEffects) {
-		var html = mustache.render(sideEffectsTemplate, sideEffects);
-		var sideEffectsSummaryPath = path.join(__dirname, '/reports/', sideEffects.name + '-side-effects.md');
-		fs.writeFileSync(sideEffectsSummaryPath, html);
+		validatorsSideEffects.forEach(function (sideEffects) {
+			var html = mustache.render(sideEffectsTemplate, sideEffects);
+			var sideEffectsSummaryPath = path.join(__dirname, '/reports/', sideEffects.name + '-side-effects.md');
+			fs.writeFileSync(sideEffectsSummaryPath, html);
+		});
 	});
 }

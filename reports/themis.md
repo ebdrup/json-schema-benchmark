@@ -26,3 +26,5 @@ that is the case for these tests.
 |`change resolution scope, changed scope ref invalid`|Expected result: `false` but validator returned: `"Object #<Object> has no method '0'"`
 
 **All other tests passed**.
+
+[back to benchmarks](https://github.com/Muscula/json-schema-benchmark)

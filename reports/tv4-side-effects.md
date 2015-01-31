@@ -56,3 +56,5 @@ When running tests [`tv4`](https://github.com/geraintluff/tv4) mutated either th
 	}
 }
 ```
+
+[back to benchmarks](https://github.com/Muscula/json-schema-benchmark)
