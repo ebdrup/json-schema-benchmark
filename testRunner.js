@@ -102,7 +102,7 @@ function verifyValidator(validator, testSuiteIn, excludeTestSuites, excludeTests
 	try {
 		var validatorInstance = validator.setup(testSuite.schema);
 	} catch (ex) {
-		schemaFailedToLoad = ex.message;
+		schemaFailedToLoad = ex.message.replace(/\n/g, ' ' );
 	}
 	testSuite.tests.forEach(function (test) {
 		var testName = [testSuite.description, test.description].join(', ');

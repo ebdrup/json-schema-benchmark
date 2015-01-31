@@ -12,8 +12,7 @@ that is the case for these tests.
 
 |test failed|reason
 |-----------|------
-|`valid definition, valid definition schema`|The schema failed to load(`Requests not enabled - try JsonModel.setRequestFunction(func):
-{"method":"GET","url":"http://json-schema.org/draft-04/schema"}`)
+|`valid definition, valid definition schema`|The schema failed to load(`Requests not enabled - try JsonModel.setRequestFunction(func): {"method":"GET","url":"http://json-schema.org/draft-04/schema"}`)
 |`invalid definition, invalid definition schema`|Expected result: `false` but validator returned: `true`
 |`simple enum validation, something else is invalid`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
 |`heterogeneous enum validation, something else is invalid`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
@@ -39,19 +38,13 @@ that is the case for these tests.
 |`validation of host names, a host name containing illegal characters`|Expected result: `false` but validator returned: `true`
 |`validation of host names, a host name with a component too long`|Expected result: `false` but validator returned: `true`
 |`remote ref, containing refs itself, remote ref invalid`|Expected result: `false` but validator returned: `true`
-|`remote ref, remote ref valid`|The schema failed to load(`Requests not enabled - try JsonModel.setRequestFunction(func):
-{"method":"GET","url":"http://localhost:1234/integer.json"}`)
-|`remote ref, remote ref invalid`|The schema failed to load(`Requests not enabled - try JsonModel.setRequestFunction(func):
-{"method":"GET","url":"http://localhost:1234/integer.json"}`)
-|`fragment within remote ref, remote fragment valid`|The schema failed to load(`Requests not enabled - try JsonModel.setRequestFunction(func):
-{"method":"GET","url":"http://localhost:1234/subSchemas.json"}`)
-|`fragment within remote ref, remote fragment invalid`|The schema failed to load(`Requests not enabled - try JsonModel.setRequestFunction(func):
-{"method":"GET","url":"http://localhost:1234/subSchemas.json"}`)
+|`remote ref, remote ref valid`|The schema failed to load(`Requests not enabled - try JsonModel.setRequestFunction(func): {"method":"GET","url":"http://localhost:1234/integer.json"}`)
+|`remote ref, remote ref invalid`|The schema failed to load(`Requests not enabled - try JsonModel.setRequestFunction(func): {"method":"GET","url":"http://localhost:1234/integer.json"}`)
+|`fragment within remote ref, remote fragment valid`|The schema failed to load(`Requests not enabled - try JsonModel.setRequestFunction(func): {"method":"GET","url":"http://localhost:1234/subSchemas.json"}`)
+|`fragment within remote ref, remote fragment invalid`|The schema failed to load(`Requests not enabled - try JsonModel.setRequestFunction(func): {"method":"GET","url":"http://localhost:1234/subSchemas.json"}`)
 |`ref within remote ref, ref within ref invalid`|Expected result: `false` but validator returned: `true`
-|`change resolution scope, changed scope ref valid`|The schema failed to load(`Requests not enabled - try JsonModel.setRequestFunction(func):
-{"method":"GET","url":"http://localhost:1234/folder/folderInteger.json"}`)
-|`change resolution scope, changed scope ref invalid`|The schema failed to load(`Requests not enabled - try JsonModel.setRequestFunction(func):
-{"method":"GET","url":"http://localhost:1234/folder/folderInteger.json"}`)
+|`change resolution scope, changed scope ref valid`|The schema failed to load(`Requests not enabled - try JsonModel.setRequestFunction(func): {"method":"GET","url":"http://localhost:1234/folder/folderInteger.json"}`)
+|`change resolution scope, changed scope ref invalid`|The schema failed to load(`Requests not enabled - try JsonModel.setRequestFunction(func): {"method":"GET","url":"http://localhost:1234/folder/folderInteger.json"}`)
 |`uniqueItems validation, non-unique array of integers is invalid`|Expected result: `false` but validator returned: `true`
 |`uniqueItems validation, numbers are unique if mathematically unequal`|Expected result: `false` but validator returned: `true`
 |`uniqueItems validation, non-unique array of objects is invalid`|Expected result: `false` but validator returned: `true`
