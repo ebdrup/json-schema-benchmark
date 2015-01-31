@@ -38,7 +38,7 @@ If a validator does not pass a test in the official test suite, it will show up 
 |{{&link}}|[{{count}}](https://github.com/Muscula/json-schema-benchmark/blob/master/reports/{{name}}.md)|
 {{/validatorsFailingTests}}
 
-Some validators have deliberately chosen not to support parts of the spec. Go tho the homepage of the validator to learn if
+Some validators have deliberately chosen not to support parts of the spec. Go to the homepage of the validator to learn if
 that is the case for these tests.
 
 # Side-effects summary

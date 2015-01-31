@@ -7,7 +7,7 @@
 
 # [`jsonschema`](https://github.com/tdegrunt/jsonschema) failed tests
 
-Some validators have deliberately chosen not to support parts of the spec. Go tho the [`jsonschema`](https://github.com/tdegrunt/jsonschema) homepage to learn if
+Some validators have deliberately chosen not to support parts of the spec. Go to the [`jsonschema`](https://github.com/tdegrunt/jsonschema) homepage to learn if
 that is the case for these tests.
 
 |test failed|reason

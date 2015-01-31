@@ -7,7 +7,7 @@
 
 # [`jjv`](https://github.com/acornejo/jjv) failed tests
 
-Some validators have deliberately chosen not to support parts of the spec. Go tho the [`jjv`](https://github.com/acornejo/jjv) homepage to learn if
+Some validators have deliberately chosen not to support parts of the spec. Go to the [`jjv`](https://github.com/acornejo/jjv) homepage to learn if
 that is the case for these tests.
 
 |test failed|reason

@@ -7,7 +7,7 @@
 
 # [`jsck`](https://github.com/pandastrike/jsck) failed tests
 
-Some validators have deliberately chosen not to support parts of the spec. Go tho the [`jsck`](https://github.com/pandastrike/jsck) homepage to learn if
+Some validators have deliberately chosen not to support parts of the spec. Go to the [`jsck`](https://github.com/pandastrike/jsck) homepage to learn if
 that is the case for these tests.
 
 |test failed|reason

@@ -7,7 +7,7 @@
 
 # [`json-model`](https://github.com/geraintluff/json-model) failed tests
 
-Some validators have deliberately chosen not to support parts of the spec. Go tho the [`json-model`](https://github.com/geraintluff/json-model) homepage to learn if
+Some validators have deliberately chosen not to support parts of the spec. Go to the [`json-model`](https://github.com/geraintluff/json-model) homepage to learn if
 that is the case for these tests.
 
 |test failed|reason

@@ -7,7 +7,7 @@
 
 # [`JSV`](http://github.com/garycourt/JSV) failed tests
 
-Some validators have deliberately chosen not to support parts of the spec. Go tho the [`JSV`](http://github.com/garycourt/JSV) homepage to learn if
+Some validators have deliberately chosen not to support parts of the spec. Go to the [`JSV`](http://github.com/garycourt/JSV) homepage to learn if
 that is the case for these tests.
 
 |test failed|reason

@@ -7,7 +7,7 @@
 
 # [`skeemas`](https://github.com/Prestaul/skeemas) failed tests
 
-Some validators have deliberately chosen not to support parts of the spec. Go tho the [`skeemas`](https://github.com/Prestaul/skeemas) homepage to learn if
+Some validators have deliberately chosen not to support parts of the spec. Go to the [`skeemas`](https://github.com/Prestaul/skeemas) homepage to learn if
 that is the case for these tests.
 
 |test failed|reason

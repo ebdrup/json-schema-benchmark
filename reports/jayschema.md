@@ -7,7 +7,7 @@
 
 # [`jayschema`](https://github.com/natesilva/jayschema) failed tests
 
-Some validators have deliberately chosen not to support parts of the spec. Go tho the [`jayschema`](https://github.com/natesilva/jayschema) homepage to learn if
+Some validators have deliberately chosen not to support parts of the spec. Go to the [`jayschema`](https://github.com/natesilva/jayschema) homepage to learn if
 that is the case for these tests.
 
 |test failed|reason

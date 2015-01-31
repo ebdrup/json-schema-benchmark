@@ -7,7 +7,7 @@
 
 # [`request-validator`](https://github.com/bugventure/request-validator) failed tests
 
-Some validators have deliberately chosen not to support parts of the spec. Go tho the [`request-validator`](https://github.com/bugventure/request-validator) homepage to learn if
+Some validators have deliberately chosen not to support parts of the spec. Go to the [`request-validator`](https://github.com/bugventure/request-validator) homepage to learn if
 that is the case for these tests.
 
 |test failed|reason
