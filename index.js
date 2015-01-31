@@ -14,10 +14,19 @@ var jsck = require('jsck');
 var requestValidator = require('request-validator');
 var skeemas = require('skeemas');
 
+var refs = {
+	'http://localhost:1234/integer.json': require('./JSON-Schema-Test-Suite/remotes/integer.json'),
+	'http://localhost:1234/subSchemas.json': require('./JSON-Schema-Test-Suite/remotes/subSchemas.json'),
+	'http://localhost:1234/folder/folderInteger.json': require('./JSON-Schema-Test-Suite/remotes/folder/folderInteger.json'),
+	'http://json-schema.org/draft-03/schema': require('./refs/json-schema-draft-03.json'),
+	'http://json-schema.org/draft-04/schema': require('./refs/json-schema-draft-04.json')
+};
+
 testRunner([
 	{
 		name: 'is-my-json-valid',
 		setup: function (schema) {
+			// no $refs supported
 			return imjv(schema);
 		},
 		test: function (instance, json, schema) {
@@ -27,6 +36,7 @@ testRunner([
 	{
 		name: 'themis',
 		setup: function (schema) {
+			// $refs only supported if they have id attributes and the test suite refs do not
 			return Themis.validator(schema);
 		},
 		test: function (instance, json, schema) {
@@ -36,9 +46,15 @@ testRunner([
 	{
 		name: 'z-schema',
 		setup: function () {
-			return new ZSchema({
+			var validator = new ZSchema({
 				ignoreUnresolvableReferences: true
 			});
+
+			Object.keys(refs).forEach(function(uri) {
+				validator.setRemoteReference(uri, refs[uri]);
+			});
+
+			return validator;
 		},
 		test: function (instance, json, schema) {
 			return instance.validate(json, schema);
@@ -47,7 +63,13 @@ testRunner([
 	{
 		name: 'jjv',
 		setup: function () {
-			return jjv();
+			var validator = jjv();
+
+			Object.keys(refs).forEach(function(uri) {
+				validator.addSchema(uri, refs[uri]);
+			});
+
+			return validator;
 		},
 		test: function (instance, json, schema) {
 			return instance.validate(schema, json) === null;
@@ -56,7 +78,13 @@ testRunner([
 	{
 		name: 'skeemas',
 		setup: function (schema) {
-			return skeemas;
+			var validator = skeemas();
+
+			Object.keys(refs).forEach(function(uri) {
+				validator.addRef(uri, refs[uri]);
+			});
+
+			return validator;
 		},
 		test: function (instance, json, schema) {
 			return instance.validate(json, schema).valid;
@@ -65,6 +93,7 @@ testRunner([
 	{
 		name: 'jayschema',
 		setup: function () {
+			// $refs not supported with synchronous validation, only asyc
 			return new JaySchema();
 		},
 		test: function (instance, json, schema) {
@@ -74,6 +103,7 @@ testRunner([
 	{
 		name: 'jsck',
 		setup: function (schema) {
+			// no $refs supported
 			return new jsck.draft4(schema);
 		},
 		test: function (instance, json, schema) {
@@ -82,6 +112,7 @@ testRunner([
 	},
 	{
 		name: 'jassi',
+			// no $refs supported
 		setup: function (schema) {
 			return jassi;
 		},
@@ -93,6 +124,7 @@ testRunner([
 	{
 		name: 'JSV',
 		setup: function (schema) {
+			// no documented $refs supported
 			return jsv;
 		},
 		test: function (instance, json, schema) {
@@ -102,6 +134,7 @@ testRunner([
 	{
 		name: 'request-validator',
 		setup: function (schema) {
+			// no documented $refs supported
 			return requestValidator(schema);
 		},
 		test: function (instance, json, schema) {
@@ -117,6 +150,7 @@ testRunner([
 	{
 		name: 'json-model',
 		setup: function (schema) {
+			// no comprehensible documented $refs supported
 			return JsonModel.validator(schema);
 		},
 		test: function (instance, json, schema) {
@@ -126,6 +160,10 @@ testRunner([
 	{
 		name: 'tv4',
 		setup: function () {
+			Object.keys(refs).forEach(function(uri) {
+				tv4.addSchema(uri, refs[uri]);
+			});
+
 			return tv4;
 		},
 		test: function (instance, json, schema) {
@@ -135,7 +173,13 @@ testRunner([
 	{
 		name: 'jsonschema',
 		setup: function () {
-			return new JsonSchema.Validator();
+			var validator = new JsonSchema.Validator();
+
+			Object.keys(refs).forEach(function(uri) {
+				validator.addSchema(refs[uri], uri);
+			});
+
+			return validator;
 		},
 		test: function (instance, json, schema) {
 			return instance.validate(json, schema).errors.length === 0;
