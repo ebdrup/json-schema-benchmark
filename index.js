@@ -81,7 +81,8 @@ testRunner([
 			return validator;
 		},
 		test: function (instance, json, schema) {
-			return instance.validate(json, schema).valid;
+			// third argument is `breakOnError` to halt validation at first error
+			return instance.validate(json, schema, true).valid;
 		}
 	},
 	{
