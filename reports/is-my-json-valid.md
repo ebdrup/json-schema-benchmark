@@ -6,21 +6,15 @@ some languages do not distinguish between different types of numeric value, a fl
 
 
 # [`is-my-json-valid`](https://github.com/mafintosh/is-my-json-valid) failed tests
-
-[`is-my-json-valid`](https://github.com/mafintosh/is-my-json-valid) failed the test `invalid definition, invalid definition schema`. Expected result: `false` but validator returned: `true`
-
-[`is-my-json-valid`](https://github.com/mafintosh/is-my-json-valid) failed the test `maxLength validation, two supplementary Unicode code points is long enough`. Expected result: `true` but validator returned: `false`
-
-[`is-my-json-valid`](https://github.com/mafintosh/is-my-json-valid) failed the test `minLength validation, one supplementary Unicode code point is not long enough`. Expected result: `false` but validator returned: `true`
-
-[`is-my-json-valid`](https://github.com/mafintosh/is-my-json-valid) failed the test `remote ref, containing refs itself, remote ref invalid`. Expected result: `false` but validator returned: `true`
-
-[`is-my-json-valid`](https://github.com/mafintosh/is-my-json-valid) failed the test `remote ref, remote ref invalid`. Expected result: `false` but validator returned: `true`
-
-[`is-my-json-valid`](https://github.com/mafintosh/is-my-json-valid) failed the test `fragment within remote ref, remote fragment invalid`. Expected result: `false` but validator returned: `true`
-
-[`is-my-json-valid`](https://github.com/mafintosh/is-my-json-valid) failed the test `ref within remote ref, ref within ref invalid`. Expected result: `false` but validator returned: `true`
-
-[`is-my-json-valid`](https://github.com/mafintosh/is-my-json-valid) failed the test `change resolution scope, changed scope ref invalid`. Expected result: `false` but validator returned: `true`
+|test failed|reason
+|-----------|------
+|`invalid definition, invalid definition schema`|Expected result: `false` but validator returned: `true`
+|`maxLength validation, two supplementary Unicode code points is long enough`|Expected result: `true` but validator returned: `false`
+|`minLength validation, one supplementary Unicode code point is not long enough`|Expected result: `false` but validator returned: `true`
+|`remote ref, containing refs itself, remote ref invalid`|Expected result: `false` but validator returned: `true`
+|`remote ref, remote ref invalid`|Expected result: `false` but validator returned: `true`
+|`fragment within remote ref, remote fragment invalid`|Expected result: `false` but validator returned: `true`
+|`ref within remote ref, ref within ref invalid`|Expected result: `false` but validator returned: `true`
+|`change resolution scope, changed scope ref invalid`|Expected result: `false` but validator returned: `true`
 
 **All other tests passed**.

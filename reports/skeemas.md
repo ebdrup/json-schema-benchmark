@@ -6,5 +6,7 @@ some languages do not distinguish between different types of numeric value, a fl
 
 
 # [`skeemas`](https://github.com/Prestaul/skeemas) failed tests
+|test failed|reason
+|-----------|------
 
 **All other tests passed**.

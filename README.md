@@ -6,18 +6,18 @@ for validators that cause side-effects on schema or data.
 
 # Performance
 
-![performance](https://chart.googleapis.com/chart?chxt=x,y&cht=bhs&chco=76A4FB&chls=2.0&chbh=46,4,1&chs=600x420&chxl=-1:|is-my-json-valid|themis|jsck|z-schema|jjv|skeemas|request-validator|jayschema&chd=t:100,28,11.2,8.8,7.2,1.4,0.7,0.1)
+![performance](https://chart.googleapis.com/chart?chxt=x,y&cht=bhs&chco=76A4FB&chls=2.0&chbh=46,4,1&chs=600x420&chxl=-1:|is-my-json-valid|themis|jsck|z-schema|jjv|skeemas|request-validator|jayschema&chd=t:100,27.8,10.7,9.2,7.6,1.5,0.7,0.1)
 
 |Validator|Relative speed|Number of test runs per second|
 |---------|:------------:|:----------------------------:|
-|[`is-my-json-valid`](https://github.com/mafintosh/is-my-json-valid)|100%|16790 (± 0.95%)|
-|themis|28%|4698 (± 2.62%)|
-|[`jsck`](https://github.com/pandastrike/jsck)|11.2%|1879 (± 1.05%)|
-|[`z-schema`](https://github.com/zaggino/z-schema)|8.8%|1472 (± 3.5%)|
-|[`jjv`](https://github.com/acornejo/jjv)|7.2%|1204 (± 0.87%)|
-|[`skeemas`](https://github.com/Prestaul/skeemas)|1.4%|236 (± 0.21%)|
-|[`request-validator`](https://github.com/bugventure/request-validator)|0.7%|119 (± 3.88%)|
-|[`jayschema`](https://github.com/natesilva/jayschema)|0.1%|14 (± 1.98%)|
+|[`is-my-json-valid`](https://github.com/mafintosh/is-my-json-valid)|100%|16565 (± 1.46%)|
+|themis|27.8%|4598 (± 2.69%)|
+|[`jsck`](https://github.com/pandastrike/jsck)|10.7%|1765 (± 0.33%)|
+|[`z-schema`](https://github.com/zaggino/z-schema)|9.2%|1516 (± 3.62%)|
+|[`jjv`](https://github.com/acornejo/jjv)|7.6%|1259 (± 0.43%)|
+|[`skeemas`](https://github.com/Prestaul/skeemas)|1.5%|251 (± 0.14%)|
+|[`request-validator`](https://github.com/bugventure/request-validator)|0.7%|118 (± 3.98%)|
+|[`jayschema`](https://github.com/natesilva/jayschema)|0.1%|14 (± 2.06%)|
 
 Validators tested: [`is-my-json-valid`](https://github.com/mafintosh/is-my-json-valid), themis, [`z-schema`](https://github.com/zaggino/z-schema), [`jjv`](https://github.com/acornejo/jjv), [`skeemas`](https://github.com/Prestaul/skeemas), [`jayschema`](https://github.com/natesilva/jayschema), [`jsck`](https://github.com/pandastrike/jsck), [`jassi`](https://github.com/iclanzan/jassi), [`JSV`](http://github.com/garycourt/JSV), [`request-validator`](https://github.com/bugventure/request-validator), [`json-model`](https://github.com/geraintluff/json-model), [`tv4`](https://github.com/geraintluff/tv4), [`jsonschema`](https://github.com/tdegrunt/jsonschema), 
 

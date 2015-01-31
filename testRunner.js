@@ -109,7 +109,7 @@ function verifyValidator(validator, testSuiteIn, excludeTestSuites, excludeTests
 		var originalData = JSON.parse(JSON.stringify(test.data));
 		var givenResult;
 		if (schemaFailedToLoad) {
-			var message = validator.link + ' failed the test `' + testName + '`. Because the schema failed to load' +
+			var message = '|`' + testName + '`|The schema failed to load' +
 				'(`' + schemaFailedToLoad + '`)';
 			if (excludeTests.indexOf(testName) === -1 && excludeTestSuites.indexOf(testSuite.description) === -1) {
 				passedAllTests = false;
@@ -135,7 +135,7 @@ function verifyValidator(validator, testSuiteIn, excludeTestSuites, excludeTests
 			validator.sideEffects.push({message: message, testName: testName});
 		}
 		if (givenResult !== test.valid) {
-			var message = validator.link + ' failed the test `' + testName + '`. Expected result: `' +
+			var message = '|`' + testName + '`|Expected result: `' +
 				JSON.stringify(test.valid) + '` but validator returned: `' +
 				JSON.stringify(givenResult) + '`';
 			if (excludeTests.indexOf(testName) === -1 && excludeTestSuites.indexOf(testSuite.description) === -1) {

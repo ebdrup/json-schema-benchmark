@@ -8,8 +8,9 @@
 
 
 # {{&link}} failed tests
+|test failed|reason
+|-----------|------
 {{#failingTests}}
-
 {{&message}}
 {{/failingTests}}
 
