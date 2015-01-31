@@ -66,9 +66,5 @@ Number of tests that caused side-effects. The schema or data was altered by the 
 
 Validators not in the list have no side-effects on data or schemas.
 
-# Thanks
-This code was originally pulled out from the benchmarks in the `themis` json-schema validator.
-Thanks goes to Johny Jose for his work there.
-
 # License
 MIT
