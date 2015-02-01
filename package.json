@@ -13,6 +13,7 @@
     "jayschema": "^0.3.1",
     "jjv": "^1.0.2",
     "jsck": "^0.2.4",
+    "json-gate": "^0.8.22",
     "json-model": "^0.2.24",
     "json-stringify-safe": "^5.0.0",
     "jsonschema": "^1.0.0",
