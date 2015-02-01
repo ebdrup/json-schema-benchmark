@@ -13,6 +13,7 @@ var imjv = require('is-my-json-valid');
 var jsck = require('jsck');
 var requestValidator = require('request-validator');
 var skeemas = require('skeemas');
+var revalidator = require ('revalidator');
 
 var refs = {
 	'http://localhost:1234/integer.json': require('./JSON-Schema-Test-Suite/remotes/integer.json'),
@@ -178,6 +179,15 @@ testRunner([
 		},
 		test: function (instance, json, schema) {
 			return instance.validate(json, schema).errors.length === 0;
+		}
+	},
+	{
+		name: 'revalidator',
+		setup: function () {
+			return revalidator;
+		},
+		test: function (instance, json, schema) {
+			return instance.validate(json, schema).valid;
 		}
 	}
 ]);
