@@ -20,6 +20,7 @@
     "mustache": "^1.0.0",
     "npm": "^2.4.1",
     "request-validator": "^0.3.2",
+    "revalidator": "^0.3.1",
     "skeemas": "^1.1.1",
     "themis": "^1.1.4",
     "tv4": "^1.1.9",
