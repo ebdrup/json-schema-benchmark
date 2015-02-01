@@ -6,20 +6,20 @@ for validators that cause side-effects on schema or data.
 
 # Performance
 
-![performance](https://chart.googleapis.com/chart?chxt=x,y&cht=bhs&chco=76A4FB&chls=2.0&chbh=36,4,1&chs=600x420&chxl=-1:|is-my-json-valid|themis|z-schema|jsck|jjv|skeemas|request-validator|jsonschema|tv4|jayschema&chd=t:100,27,9.2,7.8,7.7,1.4,0.5,0.5,0.2,0.1)
+![performance](https://chart.googleapis.com/chart?chxt=x,y&cht=bhs&chco=76A4FB&chls=2.0&chbh=36,4,1&chs=600x420&chxl=-1:|is-my-json-valid|themis|jsck|z-schema|jjv|skeemas|request-validator|jsonschema|tv4|jayschema&chd=t:100,27.4,12.1,9.6,7.7,1.4,0.7,0.6,0.3,0.1)
 
 |Validator|Relative speed|Number of test runs per second|
 |---------|:------------:|:----------------------------:|
-|[`is-my-json-valid`](https://github.com/mafintosh/is-my-json-valid)|100%|6097 (± 2.96%)|
-|[`themis`](https://github.com/playlyfe/themis)|27%|1647 (± 3.94%)|
-|[`z-schema`](https://github.com/zaggino/z-schema)|9.2%|560 (± 4.01%)|
-|[`jsck`](https://github.com/pandastrike/jsck)|7.8%|477 (± 3.16%)|
-|[`jjv`](https://github.com/acornejo/jjv)|7.7%|472 (± 1.65%)|
-|[`skeemas`](https://github.com/Prestaul/skeemas)|1.4%|87 (± 0.98%)|
-|[`request-validator`](https://github.com/bugventure/request-validator)|0.5%|32 (± 7.22%)|
-|[`jsonschema`](https://github.com/tdegrunt/jsonschema)|0.5%|32 (± 7.69%)|
-|[`tv4`](https://github.com/geraintluff/tv4)|0.2%|13 (± 5.44%)|
-|[`jayschema`](https://github.com/natesilva/jayschema)|0.1%|4 (± 15.63%)|
+|[`is-my-json-valid`](https://github.com/mafintosh/is-my-json-valid)|100%|6098 (± 1.9%)|
+|[`themis`](https://github.com/playlyfe/themis)|27.4%|1671 (± 3.06%)|
+|[`jsck`](https://github.com/pandastrike/jsck)|12.1%|735 (± 0.72%)|
+|[`z-schema`](https://github.com/zaggino/z-schema)|9.6%|584 (± 4.26%)|
+|[`jjv`](https://github.com/acornejo/jjv)|7.7%|468 (± 4.08%)|
+|[`skeemas`](https://github.com/Prestaul/skeemas)|1.4%|87 (± 2.58%)|
+|[`request-validator`](https://github.com/bugventure/request-validator)|0.7%|43 (± 4.97%)|
+|[`jsonschema`](https://github.com/tdegrunt/jsonschema)|0.6%|35 (± 3.2%)|
+|[`tv4`](https://github.com/geraintluff/tv4)|0.3%|17 (± 4.87%)|
+|[`jayschema`](https://github.com/natesilva/jayschema)|0.1%|5 (± 2.38%)|
 
 Validators tested: [`is-my-json-valid`](https://github.com/mafintosh/is-my-json-valid), [`themis`](https://github.com/playlyfe/themis), [`z-schema`](https://github.com/zaggino/z-schema), [`jjv`](https://github.com/acornejo/jjv), [`skeemas`](https://github.com/Prestaul/skeemas), [`jayschema`](https://github.com/natesilva/jayschema), [`jsck`](https://github.com/pandastrike/jsck), [`jassi`](https://github.com/iclanzan/jassi), [`JSV`](http://github.com/garycourt/JSV), [`request-validator`](https://github.com/bugventure/request-validator), [`json-gate`](https://github.com/oferei/json-gate), [`json-model`](https://github.com/geraintluff/json-model), [`tv4`](https://github.com/geraintluff/tv4), [`jsonschema`](https://github.com/tdegrunt/jsonschema), [`revalidator`](https://github.com/flatiron/revalidator), 
 
