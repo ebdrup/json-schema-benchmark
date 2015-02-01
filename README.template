@@ -58,5 +58,17 @@ Validators not in the list have no side-effects on data or schemas.
 Note that these benchmarks and tests do not take into account other more advanced features of the validators. I encourage
 you to take a look at each validator if you are looking for special features.
 
+# Benchmarks by validator authors and others
+
+Several of the validators have build benchmarks themselves. Several of them are
+a lot more detailed then the benchmarks provided above.
+{{#validatorBenchmarks}}
+
+{{&link}}
+{{/validatorBenchmarks}}
+
+There is also a [benchmark suite](https://github.com/Sembiance/cosmicrealms.com/tree/master/sandbox/benchmark-of-node-dot-js-json-validation-modules-part-3)
+by cosmicrealms.
+
 # License
 MIT

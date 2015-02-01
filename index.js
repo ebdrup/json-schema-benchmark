@@ -41,7 +41,8 @@ testRunner([
 		},
 		test: function (instance, json, schema) {
 			return instance(json, '0').valid;
-		}
+		},
+		benchmarks: 'https://cdn.rawgit.com/playlyfe/themis/master/benchmark/results.html'
 	},
 	{
 		name: 'z-schema',
@@ -56,7 +57,8 @@ testRunner([
 		},
 		test: function (instance, json, schema) {
 			return instance.validate(json, schema);
-		}
+		},
+		benchmarks: 'https://rawgit.com/zaggino/z-schema/master/benchmark/results.html'
 	},
 	{
 		name: 'jjv',
@@ -102,7 +104,8 @@ testRunner([
 		},
 		test: function (instance, json, schema) {
 			return instance.validate(json).valid;
-		}
+		},
+		benchmarks: 'https://github.com/pandastrike/jsck/blob/master/doc/benchmarks.md'
 	},
 	{
 		name: 'jassi',

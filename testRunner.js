@@ -7,6 +7,7 @@ var deepEqual = require('deep-equal');
 var npm = require('npm');
 var async = require('async');
 var jsonStringifySafe = require('json-stringify-safe');
+var format = require('util').format;
 
 module.exports = function (validators) {
 	npm.load(npm.config, function (err) {
@@ -296,6 +297,14 @@ function saveResults(results, validators, allTestNames, testsThatAllValidatorsFa
 		results.sort(function (a, b) {
 			return b.hz - a.hz
 		});
+		var validatorBenchmarks = validators
+			.filter(function(v){
+				return !!v.benchmarks;
+			}).map(function(v){
+				return {
+					link: format('[Benchmarks owned by %s](%s)', v.name, v.benchmarks)
+				};
+			});
 		var graphBarSpacing = 4;
 		var resultGraphBarHeight = Math.floor(400 / results.length) - graphBarSpacing;
 		var resultsGraphHeight = (resultGraphBarHeight + graphBarSpacing) * results.length + 20;
@@ -315,7 +324,8 @@ function saveResults(results, validators, allTestNames, testsThatAllValidatorsFa
 			validatorsSideEffects: comma(validatorsSideEffects),
 			results: comma(results),
 			resultsGraphHeight: resultsGraphHeight,
-			resultGraphBarHeight: resultGraphBarHeight
+			resultGraphBarHeight: resultGraphBarHeight,
+			validatorBenchmarks: validatorBenchmarks
 		};
 		var html = mustache.render(readmeTemplate, data);
 		fs.writeFileSync(readmePath, html);
