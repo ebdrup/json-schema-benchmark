@@ -60,8 +60,8 @@ you to take a look at each validator if you are looking for special features.
 
 # Benchmarks by validator authors and others
 
-Several of the validators have build benchmarks themselves. Several of them are
-a lot more detailed then the benchmarks provided above.
+Several of the validators have build benchmarks themselves. They are
+more detailed then the benchmarks provided above.
 {{#validatorBenchmarks}}
 
 {{&link}}
