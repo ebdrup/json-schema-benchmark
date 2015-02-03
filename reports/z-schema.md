@@ -11,8 +11,6 @@ that is the case for these tests.
 
 |test failed|reason
 |-----------|------
-|`maxLength validation, two supplementary Unicode code points is long enough`|Expected result: `true` but validator returned: `false`
-|`minLength validation, one supplementary Unicode code point is not long enough`|Expected result: `false` but validator returned: `true`
 |`validation of URIs, an invalid URI`|Expected result: `false` but validator returned: `true`
 |`validation of URIs, an invalid URI though valid URI reference`|Expected result: `false` but validator returned: `true`
 
