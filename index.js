@@ -13,7 +13,7 @@ var imjv = require('is-my-json-valid');
 var jsck = require('jsck');
 var requestValidator = require('request-validator');
 var skeemas = require('skeemas');
-var revalidator = require ('revalidator');
+var revalidator = require('revalidator');
 var jsonGate = require('json-gate');
 
 var refs = {
@@ -29,10 +29,10 @@ testRunner([
 		name: 'is-my-json-valid',
 		setup: function (schema) {
 			// no $refs supported
-			return imjv(schema);
+			return imjv(schema, {schemas: refs});
 		},
 		test: function (instance, json, schema) {
-			return !!instance(json);
+			return instance(json);
 		}
 	},
 	{

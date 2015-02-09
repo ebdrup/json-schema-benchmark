@@ -25,7 +25,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 	"additionalItems": {
 		"type": "integer"
 	},
-	"id": "7018269789405167anonymous"
+	"id": "12264732923358679anonymous"
 }
 ```
 
@@ -51,7 +51,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 	"additionalItems": {
 		"type": "integer"
 	},
-	"id": "7018269789405167anonymous"
+	"id": "12264732923358679anonymous"
 }
 ```
 
@@ -69,7 +69,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 {
 	"items": {},
 	"additionalItems": false,
-	"id": "8095533563755453anonymous"
+	"id": "23340451251715422anonymous"
 }
 ```
 
@@ -95,7 +95,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 		{}
 	],
 	"additionalItems": false,
-	"id": "6784489499405026anonymous"
+	"id": "2075655187945813anonymous"
 }
 ```
 
@@ -121,7 +121,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 		{}
 	],
 	"additionalItems": false,
-	"id": "6784489499405026anonymous"
+	"id": "2075655187945813anonymous"
 }
 ```
 
@@ -137,7 +137,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 ```js
 {
 	"additionalItems": false,
-	"id": "1645205463282764anonymous"
+	"id": "46671852516010404anonymous"
 }
 ```
 
@@ -153,7 +153,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 ```js
 {
 	"additionalItems": false,
-	"id": "1645205463282764anonymous"
+	"id": "46671852516010404anonymous"
 }
 ```
 
@@ -177,7 +177,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 			"type": "integer"
 		}
 	],
-	"id": "7708893800154328anonymous"
+	"id": "7540738771203905anonymous"
 }
 ```
 
@@ -207,7 +207,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 		"^v": {}
 	},
 	"additionalProperties": false,
-	"id": "47690862067975104anonymous"
+	"id": "8092428548261523anonymous"
 }
 ```
 
@@ -237,7 +237,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 		"^v": {}
 	},
 	"additionalProperties": false,
-	"id": "47690862067975104anonymous"
+	"id": "8092428548261523anonymous"
 }
 ```
 
@@ -267,7 +267,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 		"^v": {}
 	},
 	"additionalProperties": false,
-	"id": "47690862067975104anonymous"
+	"id": "8092428548261523anonymous"
 }
 ```
 
@@ -297,7 +297,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 		"^v": {}
 	},
 	"additionalProperties": false,
-	"id": "47690862067975104anonymous"
+	"id": "8092428548261523anonymous"
 }
 ```
 
@@ -325,7 +325,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 	"additionalProperties": {
 		"type": "boolean"
 	},
-	"id": "04682265338487923anonymous"
+	"id": "7076412665192038anonymous"
 }
 ```
 
@@ -353,7 +353,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 	"additionalProperties": {
 		"type": "boolean"
 	},
-	"id": "04682265338487923anonymous"
+	"id": "7076412665192038anonymous"
 }
 ```
 
@@ -381,7 +381,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 	"additionalProperties": {
 		"type": "boolean"
 	},
-	"id": "04682265338487923anonymous"
+	"id": "7076412665192038anonymous"
 }
 ```
 
@@ -401,7 +401,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 	"additionalProperties": {
 		"type": "boolean"
 	},
-	"id": "21606639539822936anonymous"
+	"id": "7255945042707026anonymous"
 }
 ```
 
@@ -421,7 +421,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 	"additionalProperties": {
 		"type": "boolean"
 	},
-	"id": "21606639539822936anonymous"
+	"id": "7255945042707026anonymous"
 }
 ```
 
@@ -443,7 +443,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 		"foo": {},
 		"bar": {}
 	},
-	"id": "32235811674036086anonymous"
+	"id": "5091266946401447anonymous"
 }
 ```
 
@@ -501,7 +501,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 			]
 		}
 	],
-	"id": "6853385295253247anonymous"
+	"id": "7189727097284049anonymous"
 }
 ```
 
@@ -559,7 +559,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 			]
 		}
 	],
-	"id": "6853385295253247anonymous"
+	"id": "7189727097284049anonymous"
 }
 ```
 
@@ -617,7 +617,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 			]
 		}
 	],
-	"id": "6853385295253247anonymous"
+	"id": "7189727097284049anonymous"
 }
 ```
 
@@ -675,7 +675,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 			]
 		}
 	],
-	"id": "6853385295253247anonymous"
+	"id": "7189727097284049anonymous"
 }
 ```
 
@@ -749,7 +749,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 			]
 		}
 	],
-	"id": "8479162394069135anonymous"
+	"id": "054188341833651066anonymous"
 }
 ```
 
@@ -823,7 +823,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 			]
 		}
 	],
-	"id": "8479162394069135anonymous"
+	"id": "054188341833651066anonymous"
 }
 ```
 
@@ -897,7 +897,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 			]
 		}
 	],
-	"id": "8479162394069135anonymous"
+	"id": "054188341833651066anonymous"
 }
 ```
 
@@ -971,7 +971,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 			]
 		}
 	],
-	"id": "8479162394069135anonymous"
+	"id": "054188341833651066anonymous"
 }
 ```
 
@@ -1045,7 +1045,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 			]
 		}
 	],
-	"id": "8479162394069135anonymous"
+	"id": "054188341833651066anonymous"
 }
 ```
 
@@ -1075,7 +1075,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 			"minimum": 20
 		}
 	],
-	"id": "1946752774529159anonymous"
+	"id": "13460905174724758anonymous"
 }
 ```
 
@@ -1105,7 +1105,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 			"minimum": 20
 		}
 	],
-	"id": "1946752774529159anonymous"
+	"id": "13460905174724758anonymous"
 }
 ```
 
@@ -1135,7 +1135,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 			"minimum": 2
 		}
 	],
-	"id": "28618058864958584anonymous"
+	"id": "812857438577339anonymous"
 }
 ```
 
@@ -1165,7 +1165,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 			"minimum": 2
 		}
 	],
-	"id": "28618058864958584anonymous"
+	"id": "812857438577339anonymous"
 }
 ```
 
@@ -1195,7 +1195,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 			"minimum": 2
 		}
 	],
-	"id": "28618058864958584anonymous"
+	"id": "812857438577339anonymous"
 }
 ```
 
@@ -1225,7 +1225,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 			"minimum": 2
 		}
 	],
-	"id": "28618058864958584anonymous"
+	"id": "812857438577339anonymous"
 }
 ```
 
@@ -1257,7 +1257,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 			"minLength": 4
 		}
 	],
-	"id": "16976532619446516anonymous"
+	"id": "7396963378414512anonymous"
 }
 ```
 
@@ -1289,7 +1289,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 			"minLength": 4
 		}
 	],
-	"id": "16976532619446516anonymous"
+	"id": "7396963378414512anonymous"
 }
 ```
 
@@ -1321,7 +1321,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 			"minLength": 4
 		}
 	],
-	"id": "16976532619446516anonymous"
+	"id": "7396963378414512anonymous"
 }
 ```
 
@@ -1347,7 +1347,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 			"default": []
 		}
 	},
-	"id": "576947781490162anonymous"
+	"id": "745233237510547anonymous"
 }
 ```
 
@@ -1373,7 +1373,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 			"default": []
 		}
 	},
-	"id": "576947781490162anonymous"
+	"id": "745233237510547anonymous"
 }
 ```
 
@@ -1401,7 +1401,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 			"default": "bad"
 		}
 	},
-	"id": "24987184163182974anonymous"
+	"id": "5922001204453409anonymous"
 }
 ```
 
@@ -1429,7 +1429,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 			"default": "bad"
 		}
 	},
-	"id": "24987184163182974anonymous"
+	"id": "5922001204453409anonymous"
 }
 ```
 
@@ -1445,7 +1445,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 ```js
 {
 	"$ref": "http://json-schema.org/draft-04/schema#",
-	"id": "12345360359176993anonymous"
+	"id": "22616570675745606anonymous"
 }
 ```
 
@@ -1469,7 +1469,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 			"foo"
 		]
 	},
-	"id": "9946222251746804anonymous"
+	"id": "6191176795400679anonymous"
 }
 ```
 
@@ -1493,7 +1493,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 			"foo"
 		]
 	},
-	"id": "9946222251746804anonymous"
+	"id": "6191176795400679anonymous"
 }
 ```
 
@@ -1517,7 +1517,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 			"foo"
 		]
 	},
-	"id": "9946222251746804anonymous"
+	"id": "6191176795400679anonymous"
 }
 ```
 
@@ -1541,7 +1541,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 			"foo"
 		]
 	},
-	"id": "9946222251746804anonymous"
+	"id": "6191176795400679anonymous"
 }
 ```
 
@@ -1565,7 +1565,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 			"foo"
 		]
 	},
-	"id": "9946222251746804anonymous"
+	"id": "6191176795400679anonymous"
 }
 ```
 
@@ -1591,7 +1591,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 			"bar"
 		]
 	},
-	"id": "9990223052445799anonymous"
+	"id": "6174513637088239anonymous"
 }
 ```
 
@@ -1617,7 +1617,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 			"bar"
 		]
 	},
-	"id": "9990223052445799anonymous"
+	"id": "6174513637088239anonymous"
 }
 ```
 
@@ -1643,7 +1643,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 			"bar"
 		]
 	},
-	"id": "9990223052445799anonymous"
+	"id": "6174513637088239anonymous"
 }
 ```
 
@@ -1669,7 +1669,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 			"bar"
 		]
 	},
-	"id": "9990223052445799anonymous"
+	"id": "6174513637088239anonymous"
 }
 ```
 
@@ -1695,7 +1695,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 			"bar"
 		]
 	},
-	"id": "9990223052445799anonymous"
+	"id": "6174513637088239anonymous"
 }
 ```
 
@@ -1721,7 +1721,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 			"bar"
 		]
 	},
-	"id": "9990223052445799anonymous"
+	"id": "6174513637088239anonymous"
 }
 ```
 
@@ -1759,7 +1759,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 			}
 		}
 	},
-	"id": "9855889310128987anonymous"
+	"id": "7379207611083984anonymous"
 }
 ```
 
@@ -1797,7 +1797,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 			}
 		}
 	},
-	"id": "9855889310128987anonymous"
+	"id": "7379207611083984anonymous"
 }
 ```
 
@@ -1835,7 +1835,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 			}
 		}
 	},
-	"id": "9855889310128987anonymous"
+	"id": "7379207611083984anonymous"
 }
 ```
 
@@ -1873,7 +1873,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 			}
 		}
 	},
-	"id": "9855889310128987anonymous"
+	"id": "7379207611083984anonymous"
 }
 ```
 
@@ -1911,7 +1911,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 			}
 		}
 	},
-	"id": "9855889310128987anonymous"
+	"id": "7379207611083984anonymous"
 }
 ```
 
@@ -1935,7 +1935,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 		2,
 		3
 	],
-	"id": "9944405427668244anonymous"
+	"id": "7780233770608902anonymous"
 }
 ```
 
@@ -1959,7 +1959,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 		2,
 		3
 	],
-	"id": "9944405427668244anonymous"
+	"id": "7780233770608902anonymous"
 }
 ```
 
@@ -1991,7 +1991,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 			"foo": 12
 		}
 	],
-	"id": "19644080149009824anonymous"
+	"id": "8159319402184337anonymous"
 }
 ```
 
@@ -2023,7 +2023,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 			"foo": 12
 		}
 	],
-	"id": "19644080149009824anonymous"
+	"id": "8159319402184337anonymous"
 }
 ```
 
@@ -2055,7 +2055,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 			"foo": 12
 		}
 	],
-	"id": "19644080149009824anonymous"
+	"id": "8159319402184337anonymous"
 }
 ```
 
@@ -2101,7 +2101,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 	"required": [
 		"bar"
 	],
-	"id": "5070159030146897anonymous"
+	"id": "21501745167188346anonymous"
 }
 ```
 
@@ -2147,7 +2147,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 	"required": [
 		"bar"
 	],
-	"id": "5070159030146897anonymous"
+	"id": "21501745167188346anonymous"
 }
 ```
 
@@ -2193,7 +2193,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 	"required": [
 		"bar"
 	],
-	"id": "5070159030146897anonymous"
+	"id": "21501745167188346anonymous"
 }
 ```
 
@@ -2239,7 +2239,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 	"required": [
 		"bar"
 	],
-	"id": "5070159030146897anonymous"
+	"id": "21501745167188346anonymous"
 }
 ```
 
@@ -2259,7 +2259,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 	"items": {
 		"type": "integer"
 	},
-	"id": "17435102490708232anonymous"
+	"id": "8835753456223756anonymous"
 }
 ```
 
@@ -2279,7 +2279,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 	"items": {
 		"type": "integer"
 	},
-	"id": "17435102490708232anonymous"
+	"id": "8835753456223756anonymous"
 }
 ```
 
@@ -2299,7 +2299,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 	"items": {
 		"type": "integer"
 	},
-	"id": "17435102490708232anonymous"
+	"id": "8835753456223756anonymous"
 }
 ```
 
@@ -2329,7 +2329,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 			"type": "string"
 		}
 	],
-	"id": "5644723761361092anonymous"
+	"id": "6492139170877635anonymous"
 }
 ```
 
@@ -2359,7 +2359,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 			"type": "string"
 		}
 	],
-	"id": "5644723761361092anonymous"
+	"id": "6492139170877635anonymous"
 }
 ```
 
@@ -2375,7 +2375,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 ```js
 {
 	"maxItems": 2,
-	"id": "07939623366110027anonymous"
+	"id": "3269985809456557anonymous"
 }
 ```
 
@@ -2391,7 +2391,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 ```js
 {
 	"maxItems": 2,
-	"id": "07939623366110027anonymous"
+	"id": "3269985809456557anonymous"
 }
 ```
 
@@ -2407,7 +2407,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 ```js
 {
 	"maxItems": 2,
-	"id": "07939623366110027anonymous"
+	"id": "3269985809456557anonymous"
 }
 ```
 
@@ -2423,7 +2423,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 ```js
 {
 	"maxItems": 2,
-	"id": "07939623366110027anonymous"
+	"id": "3269985809456557anonymous"
 }
 ```
 
@@ -2439,7 +2439,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 ```js
 {
 	"maxLength": 2,
-	"id": "5991142250131816anonymous"
+	"id": "9137875495944172anonymous"
 }
 ```
 
@@ -2455,7 +2455,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 ```js
 {
 	"maxLength": 2,
-	"id": "5991142250131816anonymous"
+	"id": "9137875495944172anonymous"
 }
 ```
 
@@ -2471,7 +2471,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 ```js
 {
 	"maxLength": 2,
-	"id": "5991142250131816anonymous"
+	"id": "9137875495944172anonymous"
 }
 ```
 
@@ -2487,7 +2487,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 ```js
 {
 	"maxLength": 2,
-	"id": "5991142250131816anonymous"
+	"id": "9137875495944172anonymous"
 }
 ```
 
@@ -2503,7 +2503,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 ```js
 {
 	"maxLength": 2,
-	"id": "5991142250131816anonymous"
+	"id": "9137875495944172anonymous"
 }
 ```
 
@@ -2519,7 +2519,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 ```js
 {
 	"maxProperties": 2,
-	"id": "2860470521263778anonymous"
+	"id": "4096245230175555anonymous"
 }
 ```
 
@@ -2535,7 +2535,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 ```js
 {
 	"maxProperties": 2,
-	"id": "2860470521263778anonymous"
+	"id": "4096245230175555anonymous"
 }
 ```
 
@@ -2551,7 +2551,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 ```js
 {
 	"maxProperties": 2,
-	"id": "2860470521263778anonymous"
+	"id": "4096245230175555anonymous"
 }
 ```
 
@@ -2567,7 +2567,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 ```js
 {
 	"maxProperties": 2,
-	"id": "2860470521263778anonymous"
+	"id": "4096245230175555anonymous"
 }
 ```
 
@@ -2583,7 +2583,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 ```js
 {
 	"maximum": 3,
-	"id": "7731172482017428anonymous"
+	"id": "739520508563146anonymous"
 }
 ```
 
@@ -2599,7 +2599,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 ```js
 {
 	"maximum": 3,
-	"id": "7731172482017428anonymous"
+	"id": "739520508563146anonymous"
 }
 ```
 
@@ -2615,7 +2615,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 ```js
 {
 	"maximum": 3,
-	"id": "7731172482017428anonymous"
+	"id": "739520508563146anonymous"
 }
 ```
 
@@ -2633,7 +2633,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 {
 	"maximum": 3,
 	"exclusiveMaximum": true,
-	"id": "9402585499919951anonymous"
+	"id": "6080201542936265anonymous"
 }
 ```
 
@@ -2651,7 +2651,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 {
 	"maximum": 3,
 	"exclusiveMaximum": true,
-	"id": "9402585499919951anonymous"
+	"id": "6080201542936265anonymous"
 }
 ```
 
@@ -2667,7 +2667,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 ```js
 {
 	"minItems": 1,
-	"id": "10341125051490963anonymous"
+	"id": "7493808625731617anonymous"
 }
 ```
 
@@ -2683,7 +2683,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 ```js
 {
 	"minItems": 1,
-	"id": "10341125051490963anonymous"
+	"id": "7493808625731617anonymous"
 }
 ```
 
@@ -2699,7 +2699,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 ```js
 {
 	"minItems": 1,
-	"id": "10341125051490963anonymous"
+	"id": "7493808625731617anonymous"
 }
 ```
 
@@ -2715,7 +2715,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 ```js
 {
 	"minItems": 1,
-	"id": "10341125051490963anonymous"
+	"id": "7493808625731617anonymous"
 }
 ```
 
@@ -2731,7 +2731,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 ```js
 {
 	"minLength": 2,
-	"id": "572630308335647anonymous"
+	"id": "38752322853542864anonymous"
 }
 ```
 
@@ -2747,7 +2747,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 ```js
 {
 	"minLength": 2,
-	"id": "572630308335647anonymous"
+	"id": "38752322853542864anonymous"
 }
 ```
 
@@ -2763,7 +2763,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 ```js
 {
 	"minLength": 2,
-	"id": "572630308335647anonymous"
+	"id": "38752322853542864anonymous"
 }
 ```
 
@@ -2779,7 +2779,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 ```js
 {
 	"minLength": 2,
-	"id": "572630308335647anonymous"
+	"id": "38752322853542864anonymous"
 }
 ```
 
@@ -2795,7 +2795,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 ```js
 {
 	"minLength": 2,
-	"id": "572630308335647anonymous"
+	"id": "38752322853542864anonymous"
 }
 ```
 
@@ -2811,7 +2811,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 ```js
 {
 	"minProperties": 1,
-	"id": "32421351270750165anonymous"
+	"id": "051256467355415225anonymous"
 }
 ```
 
@@ -2827,7 +2827,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 ```js
 {
 	"minProperties": 1,
-	"id": "32421351270750165anonymous"
+	"id": "051256467355415225anonymous"
 }
 ```
 
@@ -2843,7 +2843,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 ```js
 {
 	"minProperties": 1,
-	"id": "32421351270750165anonymous"
+	"id": "051256467355415225anonymous"
 }
 ```
 
@@ -2859,7 +2859,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 ```js
 {
 	"minProperties": 1,
-	"id": "32421351270750165anonymous"
+	"id": "051256467355415225anonymous"
 }
 ```
 
@@ -2875,7 +2875,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 ```js
 {
 	"minimum": 1.1,
-	"id": "7315432780887932anonymous"
+	"id": "22114866087213159anonymous"
 }
 ```
 
@@ -2891,7 +2891,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 ```js
 {
 	"minimum": 1.1,
-	"id": "7315432780887932anonymous"
+	"id": "22114866087213159anonymous"
 }
 ```
 
@@ -2907,7 +2907,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 ```js
 {
 	"minimum": 1.1,
-	"id": "7315432780887932anonymous"
+	"id": "22114866087213159anonymous"
 }
 ```
 
@@ -2925,7 +2925,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 {
 	"minimum": 1.1,
 	"exclusiveMinimum": true,
-	"id": "4756133360788226anonymous"
+	"id": "26981450244784355anonymous"
 }
 ```
 
@@ -2943,7 +2943,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 {
 	"minimum": 1.1,
 	"exclusiveMinimum": true,
-	"id": "4756133360788226anonymous"
+	"id": "26981450244784355anonymous"
 }
 ```
 
@@ -2959,7 +2959,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 ```js
 {
 	"multipleOf": 2,
-	"id": "1963967347983271anonymous"
+	"id": "6613655311521143anonymous"
 }
 ```
 
@@ -2975,7 +2975,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 ```js
 {
 	"multipleOf": 2,
-	"id": "1963967347983271anonymous"
+	"id": "6613655311521143anonymous"
 }
 ```
 
@@ -2991,7 +2991,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 ```js
 {
 	"multipleOf": 2,
-	"id": "1963967347983271anonymous"
+	"id": "6613655311521143anonymous"
 }
 ```
 
@@ -3007,7 +3007,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 ```js
 {
 	"multipleOf": 1.5,
-	"id": "5955953144002706anonymous"
+	"id": "4255700290668756anonymous"
 }
 ```
 
@@ -3023,7 +3023,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 ```js
 {
 	"multipleOf": 1.5,
-	"id": "5955953144002706anonymous"
+	"id": "4255700290668756anonymous"
 }
 ```
 
@@ -3039,7 +3039,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 ```js
 {
 	"multipleOf": 1.5,
-	"id": "5955953144002706anonymous"
+	"id": "4255700290668756anonymous"
 }
 ```
 
@@ -3055,7 +3055,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 ```js
 {
 	"multipleOf": 0.0001,
-	"id": "6771147532854229anonymous"
+	"id": "16627477970905602anonymous"
 }
 ```
 
@@ -3071,7 +3071,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 ```js
 {
 	"multipleOf": 0.0001,
-	"id": "6771147532854229anonymous"
+	"id": "16627477970905602anonymous"
 }
 ```
 
@@ -3091,7 +3091,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 	"not": {
 		"type": "integer"
 	},
-	"id": "7078118610661477anonymous"
+	"id": "7806582245975733anonymous"
 }
 ```
 
@@ -3111,7 +3111,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 	"not": {
 		"type": "integer"
 	},
-	"id": "7078118610661477anonymous"
+	"id": "7806582245975733anonymous"
 }
 ```
 
@@ -3137,7 +3137,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 			"boolean"
 		]
 	},
-	"id": "3058418766595423anonymous"
+	"id": "25372135639190674anonymous"
 }
 ```
 
@@ -3163,7 +3163,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 			"boolean"
 		]
 	},
-	"id": "3058418766595423anonymous"
+	"id": "25372135639190674anonymous"
 }
 ```
 
@@ -3189,7 +3189,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 			"boolean"
 		]
 	},
-	"id": "3058418766595423anonymous"
+	"id": "25372135639190674anonymous"
 }
 ```
 
@@ -3219,7 +3219,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 			}
 		}
 	},
-	"id": "20475732861086726anonymous"
+	"id": "5679598685819656anonymous"
 }
 ```
 
@@ -3249,7 +3249,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 			}
 		}
 	},
-	"id": "20475732861086726anonymous"
+	"id": "5679598685819656anonymous"
 }
 ```
 
@@ -3279,7 +3279,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 			}
 		}
 	},
-	"id": "20475732861086726anonymous"
+	"id": "5679598685819656anonymous"
 }
 ```
 
@@ -3303,7 +3303,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 			"not": {}
 		}
 	},
-	"id": "43755942885763943anonymous"
+	"id": "16119682253338397anonymous"
 }
 ```
 
@@ -3327,7 +3327,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 			"not": {}
 		}
 	},
-	"id": "43755942885763943anonymous"
+	"id": "16119682253338397anonymous"
 }
 ```
 
@@ -3357,7 +3357,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 			"minimum": 2
 		}
 	],
-	"id": "08107085921801627anonymous"
+	"id": "48133842274546623anonymous"
 }
 ```
 
@@ -3387,7 +3387,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 			"minimum": 2
 		}
 	],
-	"id": "08107085921801627anonymous"
+	"id": "48133842274546623anonymous"
 }
 ```
 
@@ -3417,7 +3417,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 			"minimum": 2
 		}
 	],
-	"id": "08107085921801627anonymous"
+	"id": "48133842274546623anonymous"
 }
 ```
 
@@ -3447,7 +3447,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 			"minimum": 2
 		}
 	],
-	"id": "08107085921801627anonymous"
+	"id": "48133842274546623anonymous"
 }
 ```
 
@@ -3479,7 +3479,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 			"maxLength": 4
 		}
 	],
-	"id": "9555259603075683anonymous"
+	"id": "3024074041750282anonymous"
 }
 ```
 
@@ -3511,7 +3511,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 			"maxLength": 4
 		}
 	],
-	"id": "9555259603075683anonymous"
+	"id": "3024074041750282anonymous"
 }
 ```
 
@@ -3543,7 +3543,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 			"maxLength": 4
 		}
 	],
-	"id": "9555259603075683anonymous"
+	"id": "3024074041750282anonymous"
 }
 ```
 
@@ -3559,7 +3559,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 ```js
 {
 	"type": "integer",
-	"id": "7343103329185396anonymous"
+	"id": "38065370032563806anonymous"
 }
 ```
 
@@ -3575,7 +3575,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 ```js
 {
 	"type": "number",
-	"id": "39756967523135245anonymous"
+	"id": "12610843568108976anonymous"
 }
 ```
 
@@ -3591,7 +3591,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 ```js
 {
 	"type": "integer",
-	"id": "15262599335983396anonymous"
+	"id": "6630811709910631anonymous"
 }
 ```
 
@@ -3607,7 +3607,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 ```js
 {
 	"type": "number",
-	"id": "9311931433621794anonymous"
+	"id": "19902134267613292anonymous"
 }
 ```
 
@@ -3623,7 +3623,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 ```js
 {
 	"type": "string",
-	"id": "8908155439421535anonymous"
+	"id": "5199866916518658anonymous"
 }
 ```
 
@@ -3639,7 +3639,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 ```js
 {
 	"maximum": 18446744073709552000,
-	"id": "6188233543653041anonymous"
+	"id": "1815528015140444anonymous"
 }
 ```
 
@@ -3657,7 +3657,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 {
 	"maximum": 9.727837981879871e+26,
 	"exclusiveMaximum": true,
-	"id": "47384096472524107anonymous"
+	"id": "4728348199278116anonymous"
 }
 ```
 
@@ -3673,7 +3673,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 ```js
 {
 	"minimum": -18446744073709552000,
-	"id": "030518818413838744anonymous"
+	"id": "06841167504899204anonymous"
 }
 ```
 
@@ -3691,7 +3691,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 {
 	"minimum": -9.727837981879871e+26,
 	"exclusiveMinimum": true,
-	"id": "4313121819868684anonymous"
+	"id": "47497520758770406anonymous"
 }
 ```
 
@@ -3707,7 +3707,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 ```js
 {
 	"format": "date-time",
-	"id": "7147283556405455anonymous"
+	"id": "5535213490948081anonymous"
 }
 ```
 
@@ -3723,7 +3723,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 ```js
 {
 	"format": "date-time",
-	"id": "7147283556405455anonymous"
+	"id": "5535213490948081anonymous"
 }
 ```
 
@@ -3739,7 +3739,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 ```js
 {
 	"format": "date-time",
-	"id": "7147283556405455anonymous"
+	"id": "5535213490948081anonymous"
 }
 ```
 
@@ -3755,7 +3755,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 ```js
 {
 	"format": "uri",
-	"id": "1718638555612415anonymous"
+	"id": "9623670838773251anonymous"
 }
 ```
 
@@ -3771,7 +3771,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 ```js
 {
 	"format": "uri",
-	"id": "1718638555612415anonymous"
+	"id": "9623670838773251anonymous"
 }
 ```
 
@@ -3787,7 +3787,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 ```js
 {
 	"format": "uri",
-	"id": "1718638555612415anonymous"
+	"id": "9623670838773251anonymous"
 }
 ```
 
@@ -3803,7 +3803,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 ```js
 {
 	"format": "email",
-	"id": "3832451670896262anonymous"
+	"id": "44118791772052646anonymous"
 }
 ```
 
@@ -3819,7 +3819,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 ```js
 {
 	"format": "email",
-	"id": "3832451670896262anonymous"
+	"id": "44118791772052646anonymous"
 }
 ```
 
@@ -3835,7 +3835,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 ```js
 {
 	"format": "ipv4",
-	"id": "11045126360841095anonymous"
+	"id": "6927163426298648anonymous"
 }
 ```
 
@@ -3851,7 +3851,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 ```js
 {
 	"format": "ipv4",
-	"id": "11045126360841095anonymous"
+	"id": "6927163426298648anonymous"
 }
 ```
 
@@ -3867,7 +3867,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 ```js
 {
 	"format": "ipv4",
-	"id": "11045126360841095anonymous"
+	"id": "6927163426298648anonymous"
 }
 ```
 
@@ -3883,7 +3883,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 ```js
 {
 	"format": "ipv4",
-	"id": "11045126360841095anonymous"
+	"id": "6927163426298648anonymous"
 }
 ```
 
@@ -3899,7 +3899,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 ```js
 {
 	"format": "ipv4",
-	"id": "11045126360841095anonymous"
+	"id": "6927163426298648anonymous"
 }
 ```
 
@@ -3915,7 +3915,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 ```js
 {
 	"format": "ipv6",
-	"id": "1642185237724334anonymous"
+	"id": "5609179185703397anonymous"
 }
 ```
 
@@ -3931,7 +3931,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 ```js
 {
 	"format": "ipv6",
-	"id": "1642185237724334anonymous"
+	"id": "5609179185703397anonymous"
 }
 ```
 
@@ -3947,7 +3947,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 ```js
 {
 	"format": "ipv6",
-	"id": "1642185237724334anonymous"
+	"id": "5609179185703397anonymous"
 }
 ```
 
@@ -3963,7 +3963,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 ```js
 {
 	"format": "ipv6",
-	"id": "1642185237724334anonymous"
+	"id": "5609179185703397anonymous"
 }
 ```
 
@@ -3979,7 +3979,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 ```js
 {
 	"format": "hostname",
-	"id": "1754571076016873anonymous"
+	"id": "45352155808359385anonymous"
 }
 ```
 
@@ -3995,7 +3995,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 ```js
 {
 	"format": "hostname",
-	"id": "1754571076016873anonymous"
+	"id": "45352155808359385anonymous"
 }
 ```
 
@@ -4011,7 +4011,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 ```js
 {
 	"format": "hostname",
-	"id": "1754571076016873anonymous"
+	"id": "45352155808359385anonymous"
 }
 ```
 
@@ -4027,7 +4027,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 ```js
 {
 	"format": "hostname",
-	"id": "1754571076016873anonymous"
+	"id": "45352155808359385anonymous"
 }
 ```
 
@@ -4043,7 +4043,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 ```js
 {
 	"type": "integer",
-	"id": "9624603257980198anonymous"
+	"id": "8759652078151703anonymous"
 }
 ```
 
@@ -4059,7 +4059,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 ```js
 {
 	"pattern": "^a*$",
-	"id": "8345963321626186anonymous"
+	"id": "7070682225748897anonymous"
 }
 ```
 
@@ -4075,7 +4075,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 ```js
 {
 	"pattern": "^a*$",
-	"id": "8345963321626186anonymous"
+	"id": "7070682225748897anonymous"
 }
 ```
 
@@ -4091,7 +4091,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 ```js
 {
 	"pattern": "^a*$",
-	"id": "8345963321626186anonymous"
+	"id": "7070682225748897anonymous"
 }
 ```
 
@@ -4115,7 +4115,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 			"type": "integer"
 		}
 	},
-	"id": "7889747591689229anonymous"
+	"id": "5646562648471445anonymous"
 }
 ```
 
@@ -4139,7 +4139,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 			"type": "integer"
 		}
 	},
-	"id": "7889747591689229anonymous"
+	"id": "5646562648471445anonymous"
 }
 ```
 
@@ -4163,7 +4163,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 			"type": "integer"
 		}
 	},
-	"id": "7889747591689229anonymous"
+	"id": "5646562648471445anonymous"
 }
 ```
 
@@ -4187,7 +4187,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 			"type": "integer"
 		}
 	},
-	"id": "7889747591689229anonymous"
+	"id": "5646562648471445anonymous"
 }
 ```
 
@@ -4211,7 +4211,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 			"type": "integer"
 		}
 	},
-	"id": "7889747591689229anonymous"
+	"id": "5646562648471445anonymous"
 }
 ```
 
@@ -4241,7 +4241,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 			"maximum": 20
 		}
 	},
-	"id": "00029649585485458374anonymous"
+	"id": "8608785751275718anonymous"
 }
 ```
 
@@ -4271,7 +4271,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 			"maximum": 20
 		}
 	},
-	"id": "00029649585485458374anonymous"
+	"id": "8608785751275718anonymous"
 }
 ```
 
@@ -4301,7 +4301,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 			"maximum": 20
 		}
 	},
-	"id": "00029649585485458374anonymous"
+	"id": "8608785751275718anonymous"
 }
 ```
 
@@ -4331,7 +4331,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 			"maximum": 20
 		}
 	},
-	"id": "00029649585485458374anonymous"
+	"id": "8608785751275718anonymous"
 }
 ```
 
@@ -4361,7 +4361,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 			"maximum": 20
 		}
 	},
-	"id": "00029649585485458374anonymous"
+	"id": "8608785751275718anonymous"
 }
 ```
 
@@ -4391,7 +4391,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 			"maximum": 20
 		}
 	},
-	"id": "00029649585485458374anonymous"
+	"id": "8608785751275718anonymous"
 }
 ```
 
@@ -4421,7 +4421,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 			"type": "string"
 		}
 	},
-	"id": "3782454524189234anonymous"
+	"id": "6479579620063305anonymous"
 }
 ```
 
@@ -4451,7 +4451,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 			"type": "string"
 		}
 	},
-	"id": "3782454524189234anonymous"
+	"id": "6479579620063305anonymous"
 }
 ```
 
@@ -4481,7 +4481,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 			"type": "string"
 		}
 	},
-	"id": "3782454524189234anonymous"
+	"id": "6479579620063305anonymous"
 }
 ```
 
@@ -4511,7 +4511,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 			"type": "string"
 		}
 	},
-	"id": "3782454524189234anonymous"
+	"id": "6479579620063305anonymous"
 }
 ```
 
@@ -4541,7 +4541,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 			"type": "string"
 		}
 	},
-	"id": "026637558126822114anonymous"
+	"id": "7612528754398227anonymous"
 }
 ```
 
@@ -4571,7 +4571,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 			"type": "string"
 		}
 	},
-	"id": "026637558126822114anonymous"
+	"id": "7612528754398227anonymous"
 }
 ```
 
@@ -4601,7 +4601,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 			"type": "string"
 		}
 	},
-	"id": "026637558126822114anonymous"
+	"id": "7612528754398227anonymous"
 }
 ```
 
@@ -4631,7 +4631,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 			"type": "string"
 		}
 	},
-	"id": "026637558126822114anonymous"
+	"id": "7612528754398227anonymous"
 }
 ```
 
@@ -4661,7 +4661,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 			"type": "string"
 		}
 	},
-	"id": "026637558126822114anonymous"
+	"id": "7612528754398227anonymous"
 }
 ```
 
@@ -4709,7 +4709,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 	"additionalProperties": {
 		"type": "integer"
 	},
-	"id": "4439744404517114anonymous"
+	"id": "43872466939501464anonymous"
 }
 ```
 
@@ -4757,7 +4757,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 	"additionalProperties": {
 		"type": "integer"
 	},
-	"id": "4439744404517114anonymous"
+	"id": "43872466939501464anonymous"
 }
 ```
 
@@ -4805,7 +4805,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 	"additionalProperties": {
 		"type": "integer"
 	},
-	"id": "4439744404517114anonymous"
+	"id": "43872466939501464anonymous"
 }
 ```
 
@@ -4853,7 +4853,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 	"additionalProperties": {
 		"type": "integer"
 	},
-	"id": "4439744404517114anonymous"
+	"id": "43872466939501464anonymous"
 }
 ```
 
@@ -4901,7 +4901,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 	"additionalProperties": {
 		"type": "integer"
 	},
-	"id": "4439744404517114anonymous"
+	"id": "43872466939501464anonymous"
 }
 ```
 
@@ -4949,7 +4949,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 	"additionalProperties": {
 		"type": "integer"
 	},
-	"id": "4439744404517114anonymous"
+	"id": "43872466939501464anonymous"
 }
 ```
 
@@ -4997,7 +4997,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 	"additionalProperties": {
 		"type": "integer"
 	},
-	"id": "4439744404517114anonymous"
+	"id": "43872466939501464anonymous"
 }
 ```
 
@@ -5045,7 +5045,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 	"additionalProperties": {
 		"type": "integer"
 	},
-	"id": "4439744404517114anonymous"
+	"id": "43872466939501464anonymous"
 }
 ```
 
@@ -5067,11 +5067,11 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 {
 	"properties": {
 		"foo": {
-			"$ref": "2768430500291288anonymous#"
+			"$ref": "3437155878636986anonymous#"
 		}
 	},
 	"additionalProperties": false,
-	"id": "2768430500291288anonymous"
+	"id": "3437155878636986anonymous"
 }
 ```
 
@@ -5093,11 +5093,11 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 {
 	"properties": {
 		"foo": {
-			"$ref": "2768430500291288anonymous#"
+			"$ref": "3437155878636986anonymous#"
 		}
 	},
 	"additionalProperties": false,
-	"id": "2768430500291288anonymous"
+	"id": "3437155878636986anonymous"
 }
 ```
 
@@ -5119,11 +5119,11 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 {
 	"properties": {
 		"foo": {
-			"$ref": "2768430500291288anonymous#"
+			"$ref": "3437155878636986anonymous#"
 		}
 	},
 	"additionalProperties": false,
-	"id": "2768430500291288anonymous"
+	"id": "3437155878636986anonymous"
 }
 ```
 
@@ -5145,11 +5145,11 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 {
 	"properties": {
 		"foo": {
-			"$ref": "2768430500291288anonymous#"
+			"$ref": "3437155878636986anonymous#"
 		}
 	},
 	"additionalProperties": false,
-	"id": "2768430500291288anonymous"
+	"id": "3437155878636986anonymous"
 }
 ```
 
@@ -5174,13 +5174,13 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 	"properties": {
 		"foo": {
 			"type": "integer",
-			"id": "15676307096146047anonymous#/properties/foo"
+			"id": "10785537073388696anonymous#/properties/foo"
 		},
 		"bar": {
-			"$ref": "15676307096146047anonymous#/properties/foo"
+			"$ref": "10785537073388696anonymous#/properties/foo"
 		}
 	},
-	"id": "15676307096146047anonymous"
+	"id": "10785537073388696anonymous"
 }
 ```
 
@@ -5205,13 +5205,13 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 	"properties": {
 		"foo": {
 			"type": "integer",
-			"id": "15676307096146047anonymous#/properties/foo"
+			"id": "10785537073388696anonymous#/properties/foo"
 		},
 		"bar": {
-			"$ref": "15676307096146047anonymous#/properties/foo"
+			"$ref": "10785537073388696anonymous#/properties/foo"
 		}
 	},
-	"id": "15676307096146047anonymous"
+	"id": "10785537073388696anonymous"
 }
 ```
 
@@ -5236,13 +5236,13 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 	"items": [
 		{
 			"type": "integer",
-			"id": "5284998849965632anonymous#/items/0"
+			"id": "6142128088977188anonymous#/items/0"
 		},
 		{
-			"$ref": "5284998849965632anonymous#/items/0"
+			"$ref": "6142128088977188anonymous#/items/0"
 		}
 	],
-	"id": "5284998849965632anonymous"
+	"id": "6142128088977188anonymous"
 }
 ```
 
@@ -5267,13 +5267,13 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 	"items": [
 		{
 			"type": "integer",
-			"id": "5284998849965632anonymous#/items/0"
+			"id": "6142128088977188anonymous#/items/0"
 		},
 		{
-			"$ref": "5284998849965632anonymous#/items/0"
+			"$ref": "6142128088977188anonymous#/items/0"
 		}
 	],
-	"id": "5284998849965632anonymous"
+	"id": "6142128088977188anonymous"
 }
 ```
 
@@ -5309,28 +5309,28 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 {
 	"tilda~field": {
 		"type": "integer",
-		"id": "7713800959754735anonymous#/tilda~0field"
+		"id": "27268197876401246anonymous#/tilda~0field"
 	},
 	"slash/field": {
 		"type": "integer",
-		"id": "7713800959754735anonymous#/slash~1field"
+		"id": "27268197876401246anonymous#/slash~1field"
 	},
 	"percent%field": {
 		"type": "integer",
-		"id": "7713800959754735anonymous#/percent%25field"
+		"id": "27268197876401246anonymous#/percent%25field"
 	},
 	"properties": {
 		"tilda": {
-			"$ref": "7713800959754735anonymous#/tilda~0field"
+			"$ref": "27268197876401246anonymous#/tilda~0field"
 		},
 		"slash": {
-			"$ref": "7713800959754735anonymous#/slash~1field"
+			"$ref": "27268197876401246anonymous#/slash~1field"
 		},
 		"percent": {
-			"$ref": "7713800959754735anonymous#/percent%25field"
+			"$ref": "27268197876401246anonymous#/percent%25field"
 		}
 	},
-	"id": "7713800959754735anonymous"
+	"id": "27268197876401246anonymous"
 }
 ```
 
@@ -5366,28 +5366,28 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 {
 	"tilda~field": {
 		"type": "integer",
-		"id": "7713800959754735anonymous#/tilda~0field"
+		"id": "27268197876401246anonymous#/tilda~0field"
 	},
 	"slash/field": {
 		"type": "integer",
-		"id": "7713800959754735anonymous#/slash~1field"
+		"id": "27268197876401246anonymous#/slash~1field"
 	},
 	"percent%field": {
 		"type": "integer",
-		"id": "7713800959754735anonymous#/percent%25field"
+		"id": "27268197876401246anonymous#/percent%25field"
 	},
 	"properties": {
 		"tilda": {
-			"$ref": "7713800959754735anonymous#/tilda~0field"
+			"$ref": "27268197876401246anonymous#/tilda~0field"
 		},
 		"slash": {
-			"$ref": "7713800959754735anonymous#/slash~1field"
+			"$ref": "27268197876401246anonymous#/slash~1field"
 		},
 		"percent": {
-			"$ref": "7713800959754735anonymous#/percent%25field"
+			"$ref": "27268197876401246anonymous#/percent%25field"
 		}
 	},
-	"id": "7713800959754735anonymous"
+	"id": "27268197876401246anonymous"
 }
 ```
 
@@ -5423,28 +5423,28 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 {
 	"tilda~field": {
 		"type": "integer",
-		"id": "7713800959754735anonymous#/tilda~0field"
+		"id": "27268197876401246anonymous#/tilda~0field"
 	},
 	"slash/field": {
 		"type": "integer",
-		"id": "7713800959754735anonymous#/slash~1field"
+		"id": "27268197876401246anonymous#/slash~1field"
 	},
 	"percent%field": {
 		"type": "integer",
-		"id": "7713800959754735anonymous#/percent%25field"
+		"id": "27268197876401246anonymous#/percent%25field"
 	},
 	"properties": {
 		"tilda": {
-			"$ref": "7713800959754735anonymous#/tilda~0field"
+			"$ref": "27268197876401246anonymous#/tilda~0field"
 		},
 		"slash": {
-			"$ref": "7713800959754735anonymous#/slash~1field"
+			"$ref": "27268197876401246anonymous#/slash~1field"
 		},
 		"percent": {
-			"$ref": "7713800959754735anonymous#/percent%25field"
+			"$ref": "27268197876401246anonymous#/percent%25field"
 		}
 	},
-	"id": "7713800959754735anonymous"
+	"id": "27268197876401246anonymous"
 }
 ```
 
@@ -5475,14 +5475,14 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 			"type": "integer"
 		},
 		"b": {
-			"$ref": "2219226504676044anonymous#/definitions/a"
+			"$ref": "4913160384166986anonymous#/definitions/a"
 		},
 		"c": {
-			"$ref": "2219226504676044anonymous#/definitions/b"
+			"$ref": "4913160384166986anonymous#/definitions/b"
 		}
 	},
-	"$ref": "2219226504676044anonymous#/definitions/c",
-	"id": "2219226504676044anonymous"
+	"$ref": "4913160384166986anonymous#/definitions/c",
+	"id": "4913160384166986anonymous"
 }
 ```
 
@@ -5513,14 +5513,14 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 			"type": "integer"
 		},
 		"b": {
-			"$ref": "2219226504676044anonymous#/definitions/a"
+			"$ref": "4913160384166986anonymous#/definitions/a"
 		},
 		"c": {
-			"$ref": "2219226504676044anonymous#/definitions/b"
+			"$ref": "4913160384166986anonymous#/definitions/b"
 		}
 	},
-	"$ref": "2219226504676044anonymous#/definitions/c",
-	"id": "2219226504676044anonymous"
+	"$ref": "4913160384166986anonymous#/definitions/c",
+	"id": "4913160384166986anonymous"
 }
 ```
 
@@ -5536,7 +5536,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 ```js
 {
 	"$ref": "http://json-schema.org/draft-04/schema#",
-	"id": "010973310563713312anonymous"
+	"id": "25892357737757266anonymous"
 }
 ```
 
@@ -5552,7 +5552,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 ```js
 {
 	"$ref": "http://json-schema.org/draft-04/schema#",
-	"id": "010973310563713312anonymous"
+	"id": "25892357737757266anonymous"
 }
 ```
 
@@ -5568,7 +5568,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 ```js
 {
 	"$ref": "http://localhost:1234/subSchemas.json#/refToInteger",
-	"id": "5519082921091467anonymous"
+	"id": "8194157732650638anonymous"
 }
 ```
 
@@ -5584,7 +5584,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 ```js
 {
 	"$ref": "http://localhost:1234/subSchemas.json#/refToInteger",
-	"id": "5519082921091467anonymous"
+	"id": "8194157732650638anonymous"
 }
 ```
 
@@ -5612,7 +5612,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 	"required": [
 		"foo"
 	],
-	"id": "588851879350841anonymous"
+	"id": "03641192824579775anonymous"
 }
 ```
 
@@ -5640,7 +5640,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 	"required": [
 		"foo"
 	],
-	"id": "588851879350841anonymous"
+	"id": "03641192824579775anonymous"
 }
 ```
 
@@ -5660,7 +5660,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 	"properties": {
 		"foo": {}
 	},
-	"id": "3269518194720149anonymous"
+	"id": "6521433568559587anonymous"
 }
 ```
 
@@ -5676,7 +5676,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 ```js
 {
 	"type": "integer",
-	"id": "7152798243332654anonymous"
+	"id": "9162075568456203anonymous"
 }
 ```
 
@@ -5692,7 +5692,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 ```js
 {
 	"type": "integer",
-	"id": "7152798243332654anonymous"
+	"id": "9162075568456203anonymous"
 }
 ```
 
@@ -5708,7 +5708,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 ```js
 {
 	"type": "integer",
-	"id": "7152798243332654anonymous"
+	"id": "9162075568456203anonymous"
 }
 ```
 
@@ -5724,7 +5724,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 ```js
 {
 	"type": "integer",
-	"id": "7152798243332654anonymous"
+	"id": "9162075568456203anonymous"
 }
 ```
 
@@ -5740,7 +5740,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 ```js
 {
 	"type": "integer",
-	"id": "7152798243332654anonymous"
+	"id": "9162075568456203anonymous"
 }
 ```
 
@@ -5756,7 +5756,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 ```js
 {
 	"type": "integer",
-	"id": "7152798243332654anonymous"
+	"id": "9162075568456203anonymous"
 }
 ```
 
@@ -5772,7 +5772,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 ```js
 {
 	"type": "integer",
-	"id": "7152798243332654anonymous"
+	"id": "9162075568456203anonymous"
 }
 ```
 
@@ -5788,7 +5788,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 ```js
 {
 	"type": "number",
-	"id": "7622361555695534anonymous"
+	"id": "24250851990655065anonymous"
 }
 ```
 
@@ -5804,7 +5804,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 ```js
 {
 	"type": "number",
-	"id": "7622361555695534anonymous"
+	"id": "24250851990655065anonymous"
 }
 ```
 
@@ -5820,7 +5820,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 ```js
 {
 	"type": "number",
-	"id": "7622361555695534anonymous"
+	"id": "24250851990655065anonymous"
 }
 ```
 
@@ -5836,7 +5836,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 ```js
 {
 	"type": "number",
-	"id": "7622361555695534anonymous"
+	"id": "24250851990655065anonymous"
 }
 ```
 
@@ -5852,7 +5852,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 ```js
 {
 	"type": "number",
-	"id": "7622361555695534anonymous"
+	"id": "24250851990655065anonymous"
 }
 ```
 
@@ -5868,7 +5868,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 ```js
 {
 	"type": "number",
-	"id": "7622361555695534anonymous"
+	"id": "24250851990655065anonymous"
 }
 ```
 
@@ -5884,7 +5884,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 ```js
 {
 	"type": "number",
-	"id": "7622361555695534anonymous"
+	"id": "24250851990655065anonymous"
 }
 ```
 
@@ -5900,7 +5900,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 ```js
 {
 	"type": "string",
-	"id": "6312046812381595anonymous"
+	"id": "6701275508385152anonymous"
 }
 ```
 
@@ -5916,7 +5916,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 ```js
 {
 	"type": "string",
-	"id": "6312046812381595anonymous"
+	"id": "6701275508385152anonymous"
 }
 ```
 
@@ -5932,7 +5932,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 ```js
 {
 	"type": "string",
-	"id": "6312046812381595anonymous"
+	"id": "6701275508385152anonymous"
 }
 ```
 
@@ -5948,7 +5948,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 ```js
 {
 	"type": "string",
-	"id": "6312046812381595anonymous"
+	"id": "6701275508385152anonymous"
 }
 ```
 
@@ -5964,7 +5964,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 ```js
 {
 	"type": "string",
-	"id": "6312046812381595anonymous"
+	"id": "6701275508385152anonymous"
 }
 ```
 
@@ -5980,7 +5980,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 ```js
 {
 	"type": "string",
-	"id": "6312046812381595anonymous"
+	"id": "6701275508385152anonymous"
 }
 ```
 
@@ -5996,7 +5996,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 ```js
 {
 	"type": "string",
-	"id": "6312046812381595anonymous"
+	"id": "6701275508385152anonymous"
 }
 ```
 
@@ -6012,7 +6012,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 ```js
 {
 	"type": "object",
-	"id": "4944451595656574anonymous"
+	"id": "3346332118380815anonymous"
 }
 ```
 
@@ -6028,7 +6028,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 ```js
 {
 	"type": "object",
-	"id": "4944451595656574anonymous"
+	"id": "3346332118380815anonymous"
 }
 ```
 
@@ -6044,7 +6044,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 ```js
 {
 	"type": "object",
-	"id": "4944451595656574anonymous"
+	"id": "3346332118380815anonymous"
 }
 ```
 
@@ -6060,7 +6060,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 ```js
 {
 	"type": "object",
-	"id": "4944451595656574anonymous"
+	"id": "3346332118380815anonymous"
 }
 ```
 
@@ -6076,7 +6076,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 ```js
 {
 	"type": "object",
-	"id": "4944451595656574anonymous"
+	"id": "3346332118380815anonymous"
 }
 ```
 
@@ -6092,7 +6092,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 ```js
 {
 	"type": "object",
-	"id": "4944451595656574anonymous"
+	"id": "3346332118380815anonymous"
 }
 ```
 
@@ -6108,7 +6108,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 ```js
 {
 	"type": "object",
-	"id": "4944451595656574anonymous"
+	"id": "3346332118380815anonymous"
 }
 ```
 
@@ -6124,7 +6124,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 ```js
 {
 	"type": "array",
-	"id": "09767254628241062anonymous"
+	"id": "4775148124899715anonymous"
 }
 ```
 
@@ -6140,7 +6140,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 ```js
 {
 	"type": "array",
-	"id": "09767254628241062anonymous"
+	"id": "4775148124899715anonymous"
 }
 ```
 
@@ -6156,7 +6156,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 ```js
 {
 	"type": "array",
-	"id": "09767254628241062anonymous"
+	"id": "4775148124899715anonymous"
 }
 ```
 
@@ -6172,7 +6172,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 ```js
 {
 	"type": "array",
-	"id": "09767254628241062anonymous"
+	"id": "4775148124899715anonymous"
 }
 ```
 
@@ -6188,7 +6188,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 ```js
 {
 	"type": "array",
-	"id": "09767254628241062anonymous"
+	"id": "4775148124899715anonymous"
 }
 ```
 
@@ -6204,7 +6204,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 ```js
 {
 	"type": "array",
-	"id": "09767254628241062anonymous"
+	"id": "4775148124899715anonymous"
 }
 ```
 
@@ -6220,7 +6220,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 ```js
 {
 	"type": "array",
-	"id": "09767254628241062anonymous"
+	"id": "4775148124899715anonymous"
 }
 ```
 
@@ -6236,7 +6236,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 ```js
 {
 	"type": "boolean",
-	"id": "9134505863767117anonymous"
+	"id": "5711267234291881anonymous"
 }
 ```
 
@@ -6252,7 +6252,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 ```js
 {
 	"type": "boolean",
-	"id": "9134505863767117anonymous"
+	"id": "5711267234291881anonymous"
 }
 ```
 
@@ -6268,7 +6268,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 ```js
 {
 	"type": "boolean",
-	"id": "9134505863767117anonymous"
+	"id": "5711267234291881anonymous"
 }
 ```
 
@@ -6284,7 +6284,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 ```js
 {
 	"type": "boolean",
-	"id": "9134505863767117anonymous"
+	"id": "5711267234291881anonymous"
 }
 ```
 
@@ -6300,7 +6300,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 ```js
 {
 	"type": "boolean",
-	"id": "9134505863767117anonymous"
+	"id": "5711267234291881anonymous"
 }
 ```
 
@@ -6316,7 +6316,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 ```js
 {
 	"type": "boolean",
-	"id": "9134505863767117anonymous"
+	"id": "5711267234291881anonymous"
 }
 ```
 
@@ -6332,7 +6332,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 ```js
 {
 	"type": "boolean",
-	"id": "9134505863767117anonymous"
+	"id": "5711267234291881anonymous"
 }
 ```
 
@@ -6348,7 +6348,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 ```js
 {
 	"type": "null",
-	"id": "7186488022562116anonymous"
+	"id": "44688520208001137anonymous"
 }
 ```
 
@@ -6364,7 +6364,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 ```js
 {
 	"type": "null",
-	"id": "7186488022562116anonymous"
+	"id": "44688520208001137anonymous"
 }
 ```
 
@@ -6380,7 +6380,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 ```js
 {
 	"type": "null",
-	"id": "7186488022562116anonymous"
+	"id": "44688520208001137anonymous"
 }
 ```
 
@@ -6396,7 +6396,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 ```js
 {
 	"type": "null",
-	"id": "7186488022562116anonymous"
+	"id": "44688520208001137anonymous"
 }
 ```
 
@@ -6412,7 +6412,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 ```js
 {
 	"type": "null",
-	"id": "7186488022562116anonymous"
+	"id": "44688520208001137anonymous"
 }
 ```
 
@@ -6428,7 +6428,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 ```js
 {
 	"type": "null",
-	"id": "7186488022562116anonymous"
+	"id": "44688520208001137anonymous"
 }
 ```
 
@@ -6444,7 +6444,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 ```js
 {
 	"type": "null",
-	"id": "7186488022562116anonymous"
+	"id": "44688520208001137anonymous"
 }
 ```
 
@@ -6466,7 +6466,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 		"integer",
 		"string"
 	],
-	"id": "894342815503478anonymous"
+	"id": "47844554111361504anonymous"
 }
 ```
 
@@ -6488,7 +6488,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 		"integer",
 		"string"
 	],
-	"id": "894342815503478anonymous"
+	"id": "47844554111361504anonymous"
 }
 ```
 
@@ -6510,7 +6510,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 		"integer",
 		"string"
 	],
-	"id": "894342815503478anonymous"
+	"id": "47844554111361504anonymous"
 }
 ```
 
@@ -6532,7 +6532,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 		"integer",
 		"string"
 	],
-	"id": "894342815503478anonymous"
+	"id": "47844554111361504anonymous"
 }
 ```
 
@@ -6554,7 +6554,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 		"integer",
 		"string"
 	],
-	"id": "894342815503478anonymous"
+	"id": "47844554111361504anonymous"
 }
 ```
 
@@ -6576,7 +6576,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 		"integer",
 		"string"
 	],
-	"id": "894342815503478anonymous"
+	"id": "47844554111361504anonymous"
 }
 ```
 
@@ -6598,7 +6598,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 		"integer",
 		"string"
 	],
-	"id": "894342815503478anonymous"
+	"id": "47844554111361504anonymous"
 }
 ```
 
@@ -6614,7 +6614,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 ```js
 {
 	"uniqueItems": true,
-	"id": "17698774789460003anonymous"
+	"id": "3840907569974661anonymous"
 }
 ```
 
@@ -6630,7 +6630,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 ```js
 {
 	"uniqueItems": true,
-	"id": "17698774789460003anonymous"
+	"id": "3840907569974661anonymous"
 }
 ```
 
@@ -6646,7 +6646,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 ```js
 {
 	"uniqueItems": true,
-	"id": "17698774789460003anonymous"
+	"id": "3840907569974661anonymous"
 }
 ```
 
@@ -6662,7 +6662,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 ```js
 {
 	"uniqueItems": true,
-	"id": "17698774789460003anonymous"
+	"id": "3840907569974661anonymous"
 }
 ```
 
@@ -6678,7 +6678,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 ```js
 {
 	"uniqueItems": true,
-	"id": "17698774789460003anonymous"
+	"id": "3840907569974661anonymous"
 }
 ```
 
@@ -6694,7 +6694,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 ```js
 {
 	"uniqueItems": true,
-	"id": "17698774789460003anonymous"
+	"id": "3840907569974661anonymous"
 }
 ```
 
@@ -6710,7 +6710,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 ```js
 {
 	"uniqueItems": true,
-	"id": "17698774789460003anonymous"
+	"id": "3840907569974661anonymous"
 }
 ```
 
@@ -6726,7 +6726,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 ```js
 {
 	"uniqueItems": true,
-	"id": "17698774789460003anonymous"
+	"id": "3840907569974661anonymous"
 }
 ```
 
@@ -6742,7 +6742,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 ```js
 {
 	"uniqueItems": true,
-	"id": "17698774789460003anonymous"
+	"id": "3840907569974661anonymous"
 }
 ```
 
@@ -6758,7 +6758,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 ```js
 {
 	"uniqueItems": true,
-	"id": "17698774789460003anonymous"
+	"id": "3840907569974661anonymous"
 }
 ```
 
@@ -6774,7 +6774,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 ```js
 {
 	"uniqueItems": true,
-	"id": "17698774789460003anonymous"
+	"id": "3840907569974661anonymous"
 }
 ```
 
@@ -6790,7 +6790,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 ```js
 {
 	"uniqueItems": true,
-	"id": "17698774789460003anonymous"
+	"id": "3840907569974661anonymous"
 }
 ```
 
@@ -6806,7 +6806,7 @@ When running tests [`json-model`](https://github.com/geraintluff/json-model) mut
 ```js
 {
 	"uniqueItems": true,
-	"id": "17698774789460003anonymous"
+	"id": "3840907569974661anonymous"
 }
 ```
 

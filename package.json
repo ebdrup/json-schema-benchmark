@@ -8,7 +8,7 @@
     "benchmark": "^1.0.0",
     "deep-equal": "^0.2.1",
     "fs-readdir-recursive": "^0.1.0",
-    "is-my-json-valid": "^2.2.1",
+    "is-my-json-valid": "^2.4.0",
     "jassi": "^0.1.2",
     "jayschema": "^0.3.1",
     "jjv": "^1.0.2",
