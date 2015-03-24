@@ -15,6 +15,7 @@ var requestValidator = require('request-validator');
 var skeemas = require('skeemas');
 var revalidator = require('revalidator');
 var jsonGate = require('json-gate');
+var jsen = require('jsen');
 
 var refs = {
 	'http://localhost:1234/integer.json': require('./JSON-Schema-Test-Suite/remotes/integer.json'),
@@ -30,6 +31,15 @@ testRunner([
 		setup: function (schema) {
 			// no $refs supported
 			return imjv(schema, {schemas: refs});
+		},
+		test: function (instance, json, schema) {
+			return instance(json);
+		}
+	},
+	{
+		name: 'jsen',
+		setup: function (schema) {
+			return jsen(schema);
 		},
 		test: function (instance, json, schema) {
 			return instance(json);
