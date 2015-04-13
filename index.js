@@ -16,6 +16,7 @@ var skeemas = require('skeemas');
 var revalidator = require('revalidator');
 var jsonGate = require('json-gate');
 var jsen = require('jsen');
+var newValidator = require('schemasaurus').newValidator;
 
 var refs = {
 	'http://localhost:1234/integer.json': require('./JSON-Schema-Test-Suite/remotes/integer.json'),
@@ -26,6 +27,15 @@ var refs = {
 };
 
 testRunner([
+	{
+		name: 'schemasaurus',
+		setup: function (schema) {
+			return newValidator(schema);
+		},
+		test: function (instance, json, schema) {
+			return instance(json).valid;
+		}
+	},
 	{
 		name: 'is-my-json-valid',
 		setup: function (schema) {

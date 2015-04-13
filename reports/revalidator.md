@@ -51,6 +51,11 @@ that is the case for these tests.
 |`enums in properties, missing all properties is invalid`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
 |`a schema given for items, wrong type of items`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
 |`an array of schemas for items, wrong types`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
+|`maximum validation, below the maximum is valid`|Expected result: `true` but validator returned: `"Object.keys called on non-object"`. **This excludes this validator from performance tests**
+|`maximum validation, above the maximum is invalid`|Expected result: `false` but validator returned: `"Object.keys called on non-object"`. **This excludes this validator from performance tests**
+|`maximum validation, ignores non-numbers`|Expected result: `true` but validator returned: `"Object.keys called on non-object"`. **This excludes this validator from performance tests**
+|`exclusiveMaximum validation, below the maximum is still valid`|Expected result: `true` but validator returned: `"Object.keys called on non-object"`. **This excludes this validator from performance tests**
+|`exclusiveMaximum validation, boundary point is invalid`|Expected result: `false` but validator returned: `"Object.keys called on non-object"`. **This excludes this validator from performance tests**
 |`maxItems validation, too long is invalid`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
 |`maxItems validation, ignores non-arrays`|Expected result: `true` but validator returned: `"Object.keys called on non-object"`. **This excludes this validator from performance tests**
 |`maxLength validation, shorter is valid`|Expected result: `true` but validator returned: `"Object.keys called on non-object"`. **This excludes this validator from performance tests**
@@ -60,11 +65,11 @@ that is the case for these tests.
 |`maxLength validation, two supplementary Unicode code points is long enough`|Expected result: `true` but validator returned: `"Object.keys called on non-object"`
 |`maxProperties validation, too long is invalid`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
 |`maxProperties validation, ignores non-objects`|Expected result: `true` but validator returned: `"Object.keys called on non-object"`. **This excludes this validator from performance tests**
-|`maximum validation, below the maximum is valid`|Expected result: `true` but validator returned: `"Object.keys called on non-object"`. **This excludes this validator from performance tests**
-|`maximum validation, above the maximum is invalid`|Expected result: `false` but validator returned: `"Object.keys called on non-object"`. **This excludes this validator from performance tests**
-|`maximum validation, ignores non-numbers`|Expected result: `true` but validator returned: `"Object.keys called on non-object"`. **This excludes this validator from performance tests**
-|`exclusiveMaximum validation, below the maximum is still valid`|Expected result: `true` but validator returned: `"Object.keys called on non-object"`. **This excludes this validator from performance tests**
-|`exclusiveMaximum validation, boundary point is invalid`|Expected result: `false` but validator returned: `"Object.keys called on non-object"`. **This excludes this validator from performance tests**
+|`minimum validation, above the minimum is valid`|Expected result: `true` but validator returned: `"Object.keys called on non-object"`. **This excludes this validator from performance tests**
+|`minimum validation, below the minimum is invalid`|Expected result: `false` but validator returned: `"Object.keys called on non-object"`. **This excludes this validator from performance tests**
+|`minimum validation, ignores non-numbers`|Expected result: `true` but validator returned: `"Object.keys called on non-object"`. **This excludes this validator from performance tests**
+|`exclusiveMinimum validation, above the minimum is still valid`|Expected result: `true` but validator returned: `"Object.keys called on non-object"`. **This excludes this validator from performance tests**
+|`exclusiveMinimum validation, boundary point is invalid`|Expected result: `false` but validator returned: `"Object.keys called on non-object"`. **This excludes this validator from performance tests**
 |`minItems validation, too short is invalid`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
 |`minItems validation, ignores non-arrays`|Expected result: `true` but validator returned: `"Object.keys called on non-object"`. **This excludes this validator from performance tests**
 |`minLength validation, longer is valid`|Expected result: `true` but validator returned: `"Object.keys called on non-object"`. **This excludes this validator from performance tests**
@@ -74,11 +79,6 @@ that is the case for these tests.
 |`minLength validation, one supplementary Unicode code point is not long enough`|Expected result: `false` but validator returned: `"Object.keys called on non-object"`
 |`minProperties validation, too short is invalid`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
 |`minProperties validation, ignores non-objects`|Expected result: `true` but validator returned: `"Object.keys called on non-object"`. **This excludes this validator from performance tests**
-|`minimum validation, above the minimum is valid`|Expected result: `true` but validator returned: `"Object.keys called on non-object"`. **This excludes this validator from performance tests**
-|`minimum validation, below the minimum is invalid`|Expected result: `false` but validator returned: `"Object.keys called on non-object"`. **This excludes this validator from performance tests**
-|`minimum validation, ignores non-numbers`|Expected result: `true` but validator returned: `"Object.keys called on non-object"`. **This excludes this validator from performance tests**
-|`exclusiveMinimum validation, above the minimum is still valid`|Expected result: `true` but validator returned: `"Object.keys called on non-object"`. **This excludes this validator from performance tests**
-|`exclusiveMinimum validation, boundary point is invalid`|Expected result: `false` but validator returned: `"Object.keys called on non-object"`. **This excludes this validator from performance tests**
 |`by int, int by int`|Expected result: `true` but validator returned: `"Object.keys called on non-object"`. **This excludes this validator from performance tests**
 |`by int, int by int fail`|Expected result: `false` but validator returned: `"Object.keys called on non-object"`. **This excludes this validator from performance tests**
 |`by int, ignores non-numbers`|Expected result: `true` but validator returned: `"Object.keys called on non-object"`. **This excludes this validator from performance tests**
