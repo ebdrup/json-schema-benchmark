@@ -13,11 +13,12 @@ that is the case for these tests.
 |-----------|------
 |`maxLength validation, two supplementary Unicode code points is long enough`|Expected result: `true` but validator returned: `false`
 |`minLength validation, one supplementary Unicode code point is not long enough`|Expected result: `false` but validator returned: `true`
-|`remote ref, remote ref invalid`|Expected result: `false` but validator returned: `true`
-|`fragment within remote ref, remote fragment valid`|The schema failed to load(`jsen: invalid schema reference 'http://localhost:1234/subSchemas.json#/integer'`)
-|`fragment within remote ref, remote fragment invalid`|The schema failed to load(`jsen: invalid schema reference 'http://localhost:1234/subSchemas.json#/integer'`)
-|`ref within remote ref, ref within ref valid`|The schema failed to load(`jsen: invalid schema reference 'http://localhost:1234/subSchemas.json#/refToInteger'`)
-|`ref within remote ref, ref within ref invalid`|The schema failed to load(`jsen: invalid schema reference 'http://localhost:1234/subSchemas.json#/refToInteger'`)
+|`remote ref, remote ref valid`|Expected result: `true` but validator returned: `"Maximum call stack size exceeded"`
+|`remote ref, remote ref invalid`|Expected result: `false` but validator returned: `"Maximum call stack size exceeded"`
+|`fragment within remote ref, remote fragment valid`|The schema failed to load(`jsen: invalid schema reference http://localhost:1234/subSchemas.json#/integer`)
+|`fragment within remote ref, remote fragment invalid`|The schema failed to load(`jsen: invalid schema reference http://localhost:1234/subSchemas.json#/integer`)
+|`ref within remote ref, ref within ref valid`|The schema failed to load(`jsen: invalid schema reference http://localhost:1234/subSchemas.json#/refToInteger`)
+|`ref within remote ref, ref within ref invalid`|The schema failed to load(`jsen: invalid schema reference http://localhost:1234/subSchemas.json#/refToInteger`)
 |`change resolution scope, changed scope ref invalid`|Expected result: `false` but validator returned: `true`
 
 **All other tests passed**.

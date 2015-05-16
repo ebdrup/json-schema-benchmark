@@ -27,7 +27,8 @@
     "tv4": "^1.1.9",
     "z-schema": "^3.3.2",
     "jsen": "^0.0.4",
-    "schemasaurus": "*"
+    "schemasaurus": "0.7.3",
+    "jsen": "^0.1.0"
   },
   "description": "Benchmarks for Node.js JSON-schema validators",
   "version": "1.0.0",
