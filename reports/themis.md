@@ -11,16 +11,16 @@ that is the case for these tests.
 
 |test failed|reason
 |-----------|------
-|`valid definition, valid definition schema`|Expected result: `true` but validator returned: `"Object #<Object> has no method 'http://json-schema.org/draft-04/schema#'"`
-|`invalid definition, invalid definition schema`|Expected result: `false` but validator returned: `"Object #<Object> has no method 'http://json-schema.org/draft-04/schema#'"`
-|`remote ref, containing refs itself, remote ref valid`|Expected result: `true` but validator returned: `"Object #<Object> has no method 'http://json-schema.org/draft-04/schema#'"`
-|`remote ref, containing refs itself, remote ref invalid`|Expected result: `false` but validator returned: `"Object #<Object> has no method 'http://json-schema.org/draft-04/schema#'"`
-|`remote ref, remote ref valid`|Expected result: `true` but validator returned: `"Object #<Object> has no method 'http://localhost:1234/integer.json'"`
-|`remote ref, remote ref invalid`|Expected result: `false` but validator returned: `"Object #<Object> has no method 'http://localhost:1234/integer.json'"`
-|`fragment within remote ref, remote fragment valid`|Expected result: `true` but validator returned: `"Object #<Object> has no method 'http://localhost:1234/subSchemas.json#/integer'"`
-|`fragment within remote ref, remote fragment invalid`|Expected result: `false` but validator returned: `"Object #<Object> has no method 'http://localhost:1234/subSchemas.json#/integer'"`
-|`ref within remote ref, ref within ref valid`|Expected result: `true` but validator returned: `"Object #<Object> has no method 'http://localhost:1234/subSchemas.json#/refToInteger'"`
-|`ref within remote ref, ref within ref invalid`|Expected result: `false` but validator returned: `"Object #<Object> has no method 'http://localhost:1234/subSchemas.json#/refToInteger'"`
+|`valid definition, valid definition schema`|Expected result: `true` but validator returned: `"undefined is not a function"`
+|`invalid definition, invalid definition schema`|Expected result: `false` but validator returned: `"undefined is not a function"`
+|`remote ref, containing refs itself, remote ref valid`|Expected result: `true` but validator returned: `"undefined is not a function"`
+|`remote ref, containing refs itself, remote ref invalid`|Expected result: `false` but validator returned: `"undefined is not a function"`
+|`remote ref, remote ref valid`|Expected result: `true` but validator returned: `"undefined is not a function"`
+|`remote ref, remote ref invalid`|Expected result: `false` but validator returned: `"undefined is not a function"`
+|`fragment within remote ref, remote fragment valid`|Expected result: `true` but validator returned: `"undefined is not a function"`
+|`fragment within remote ref, remote fragment invalid`|Expected result: `false` but validator returned: `"undefined is not a function"`
+|`ref within remote ref, ref within ref valid`|Expected result: `true` but validator returned: `"undefined is not a function"`
+|`ref within remote ref, ref within ref invalid`|Expected result: `false` but validator returned: `"undefined is not a function"`
 |`change resolution scope, changed scope ref valid`|The schema failed to load(`invalid ref: folderInteger.json in folder/`)
 |`change resolution scope, changed scope ref invalid`|The schema failed to load(`invalid ref: folderInteger.json in folder/`)
 
