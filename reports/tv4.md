@@ -39,4 +39,4 @@ that is the case for these tests.
 
 **All other tests passed**.
 
-[back to benchmarks](https://github.com/Muscula/json-schema-benchmark)
+[back to benchmarks](https://github.com/ebdrup/json-schema-benchmark)

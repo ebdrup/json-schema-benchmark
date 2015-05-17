@@ -7,4 +7,4 @@ When running tests {{&link}} mutated either the original schema or the data bein
 {{&message}}
 {{/sideEffects}}
 
-[back to benchmarks](https://github.com/Muscula/json-schema-benchmark)
+[back to benchmarks](https://github.com/ebdrup/json-schema-benchmark)

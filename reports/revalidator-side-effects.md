@@ -3871,4 +3871,4 @@ When running tests [`revalidator`](https://github.com/flatiron/revalidator) muta
 }
 ```
 
-[back to benchmarks](https://github.com/Muscula/json-schema-benchmark)
+[back to benchmarks](https://github.com/ebdrup/json-schema-benchmark)
