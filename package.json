@@ -13,6 +13,7 @@
     "jayschema": "^0.3.1",
     "jjv": "^1.0.2",
     "jsck": "^0.2.4",
+    "jsen": "^0.1.2",
     "json-gate": "^0.8.22",
     "json-model": "^0.2.24",
     "json-stringify-safe": "^5.0.0",
@@ -22,11 +23,11 @@
     "npm": "^2.4.1",
     "request-validator": "^0.3.2",
     "revalidator": "^0.3.1",
+    "schemasaurus": "^0.7.3",
     "skeemas": "^1.1.1",
     "themis": "^1.1.4",
     "tv4": "^1.1.9",
-    "z-schema": "^3.3.2",
-    "jsen": "^0.1.0"
+    "z-schema": "^3.3.2"
   },
   "description": "Benchmarks for Node.js JSON-schema validators",
   "version": "1.0.0",
@@ -36,7 +37,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/Muscula/json-schema-benchmark.git"
+    "url": "git://github.com/ebdrup/json-schema-benchmark.git"
   },
   "keywords": [
     "json-schema",
@@ -46,7 +47,7 @@
   ],
   "author": "Allan Ebdrup",
   "bugs": {
-    "url": "https://github.com/Muscula/json-schema-benchmark/issues"
+    "url": "https://github.com/ebdrup/json-schema-benchmark/issues"
   },
-  "homepage": "https://github.com/Muscula/json-schema-benchmark"
+  "homepage": "https://github.com/ebdrup/json-schema-benchmark"
 }
