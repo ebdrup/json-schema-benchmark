@@ -12,7 +12,6 @@ that is the case for these tests.
 |test failed|reason
 |-----------|------
 |`invalid definition, invalid definition schema`|Expected result: `false` but validator returned: `true`
-|`heterogeneous enum validation, something else is invalid`|Expected result: `false` but validator returned: `"Cannot read property 'foo' of null"`
 |`maxLength validation, two supplementary Unicode code points is long enough`|Expected result: `true` but validator returned: `false`
 |`minLength validation, one supplementary Unicode code point is not long enough`|Expected result: `false` but validator returned: `true`
 |`validation of date-time strings, an invalid date-time string`|Expected result: `false` but validator returned: `true`
@@ -35,7 +34,6 @@ that is the case for these tests.
 |`fragment within remote ref, remote fragment invalid`|Expected result: `false` but validator returned: `true`
 |`ref within remote ref, ref within ref invalid`|Expected result: `false` but validator returned: `true`
 |`change resolution scope, changed scope ref invalid`|Expected result: `false` but validator returned: `true`
-|`uniqueItems validation, unique heterogeneous types are valid`|Expected result: `true` but validator returned: `false`
 
 **All other tests passed**.
 
