@@ -16,7 +16,7 @@ for validators that cause side-effects on schema or data.
 |{{&link}}|{{percentage}}%|{{hz}} (± {{plusMinusPercent}}%)|
 {{/results}}
 
-Validators tested: {{#validators}}{{&link}}, {{/validators}}
+Validators tested: {{#validators}}{{&versionLink}}, {{/validators}}
 
 (validators not in the results above where excluded because of failing tests - see below for details)
 

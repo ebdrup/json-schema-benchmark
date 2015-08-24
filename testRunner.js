@@ -23,6 +23,7 @@ module.exports = function (validators) {
 					}
 					var version = Object.keys(result)[0];
 					if (version) {
+                        validator.version = version;
 						validator.homepage = result[version].homepage;
 					}
 					return callback(null);
@@ -35,7 +36,12 @@ module.exports = function (validators) {
 				process.exit(1);
 			}
 			validators.forEach(function (v) {
-				v.link = v.homepage ? '[`' + v.name + '`](' + v.homepage + ')' : v.name;
+                v.link = link(v.name);
+                v.versionLink = link(v.version ? v.name + ' (' + v.version + ')' : v.name);
+
+                function link(name) {
+                    return v.homepage ? '[`' + name + '`](' + v.homepage + ')' : name;
+                }
 			});
 			var excludeTests = [
 				//lots of validators fail these

@@ -15,6 +15,7 @@ that is the case for these tests.
 |`invalid definition, invalid definition schema`|The schema failed to load(`Unresolvable $ref values: ["http://json-schema.org/draft-04/schema#"]`)
 |`maxLength validation, two supplementary Unicode code points is long enough`|Expected result: `true` but validator returned: `false`
 |`minLength validation, one supplementary Unicode code point is not long enough`|Expected result: `false` but validator returned: `true`
+|`validation of URIs, a valid protocol-relative URI`|Expected result: `true` but validator returned: `false`
 |`remote ref, containing refs itself, remote ref valid`|The schema failed to load(`Unresolvable $ref values: ["http://json-schema.org/draft-04/schema#"]`)
 |`remote ref, containing refs itself, remote ref invalid`|The schema failed to load(`Unresolvable $ref values: ["http://json-schema.org/draft-04/schema#"]`)
 |`remote ref, remote ref valid`|The schema failed to load(`Unresolvable $ref values: ["http://localhost:1234/integer.json"]`)

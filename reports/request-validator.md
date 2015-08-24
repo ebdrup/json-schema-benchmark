@@ -30,6 +30,9 @@ that is the case for these tests.
 |`validation of host names, a host name starting with an illegal character`|Expected result: `false` but validator returned: `true`
 |`validation of host names, a host name containing illegal characters`|Expected result: `false` but validator returned: `true`
 |`validation of host names, a host name with a component too long`|Expected result: `false` but validator returned: `true`
+|`escaped pointer ref, slash valid`|Expected result: `true` but validator returned: `false`. **This excludes this validator from performance tests**
+|`escaped pointer ref, tilda valid`|Expected result: `true` but validator returned: `false`. **This excludes this validator from performance tests**
+|`escaped pointer ref, percent valid`|Expected result: `true` but validator returned: `false`. **This excludes this validator from performance tests**
 |`remote ref, remote ref invalid`|Expected result: `false` but validator returned: `true`
 |`fragment within remote ref, remote fragment valid`|The schema failed to load(`request-validator: invalid schema reference 'http://localhost:1234/subSchemas.json#/integer'`)
 |`fragment within remote ref, remote fragment invalid`|The schema failed to load(`request-validator: invalid schema reference 'http://localhost:1234/subSchemas.json#/integer'`)

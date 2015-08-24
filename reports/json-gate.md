@@ -51,6 +51,7 @@ that is the case for these tests.
 |`validation of date-time strings, an invalid date-time string`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'date-time' format`)
 |`validation of date-time strings, only RFC3339 not all of ISO 8601 are valid`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'date-time' format`)
 |`validation of URIs, a valid URI`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'uri' format`)
+|`validation of URIs, a valid protocol-relative URI`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'uri' format`)
 |`validation of URIs, an invalid URI`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'uri' format`)
 |`validation of URIs, an invalid URI though valid URI reference`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'uri' format`)
 |`validation of e-mail addresses, a valid e-mail address`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'email' format`)
@@ -69,9 +70,9 @@ that is the case for these tests.
 |`root pointer ref, recursive mismatch`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
 |`relative pointer ref to object, mismatch`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
 |`relative pointer ref to array, mismatch array`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
-|`escaped pointer ref, slash`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
-|`escaped pointer ref, tilda`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
-|`escaped pointer ref, percent`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
+|`escaped pointer ref, slash invalid`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
+|`escaped pointer ref, tilda invalid`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
+|`escaped pointer ref, percent invalid`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
 |`nested refs, nested ref invalid`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
 |`remote ref, containing refs itself, remote ref invalid`|Expected result: `false` but validator returned: `true`
 |`remote ref, remote ref invalid`|Expected result: `false` but validator returned: `true`

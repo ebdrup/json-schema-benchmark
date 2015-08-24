@@ -15,16 +15,17 @@ that is the case for these tests.
 |`invalid definition, invalid definition schema`|The schema failed to load(`Remote refs are not supported for now :(`)
 |`maxLength validation, two supplementary Unicode code points is long enough`|Expected result: `true` but validator returned: `false`
 |`minLength validation, one supplementary Unicode code point is not long enough`|Expected result: `false` but validator returned: `true`
+|`validation of URIs, a valid protocol-relative URI`|Expected result: `true` but validator returned: `false`
 |`remote ref, containing refs itself, remote ref valid`|The schema failed to load(`Remote refs are not supported for now :(`)
 |`remote ref, containing refs itself, remote ref invalid`|The schema failed to load(`Remote refs are not supported for now :(`)
-|`remote ref, remote ref valid`|The schema failed to load(`Cannot call method 'split' of undefined`)
-|`remote ref, remote ref invalid`|The schema failed to load(`Cannot call method 'split' of undefined`)
+|`remote ref, remote ref valid`|The schema failed to load(`Cannot read property 'split' of undefined`)
+|`remote ref, remote ref invalid`|The schema failed to load(`Cannot read property 'split' of undefined`)
 |`fragment within remote ref, remote fragment valid`|The schema failed to load(`Remote refs are not supported for now :(`)
 |`fragment within remote ref, remote fragment invalid`|The schema failed to load(`Remote refs are not supported for now :(`)
 |`ref within remote ref, ref within ref valid`|The schema failed to load(`Remote refs are not supported for now :(`)
 |`ref within remote ref, ref within ref invalid`|The schema failed to load(`Remote refs are not supported for now :(`)
-|`change resolution scope, changed scope ref valid`|The schema failed to load(`Cannot call method 'split' of undefined`)
-|`change resolution scope, changed scope ref invalid`|The schema failed to load(`Cannot call method 'split' of undefined`)
+|`change resolution scope, changed scope ref valid`|The schema failed to load(`Cannot read property 'split' of undefined`)
+|`change resolution scope, changed scope ref invalid`|The schema failed to load(`Cannot read property 'split' of undefined`)
 
 **All other tests passed**.
 
