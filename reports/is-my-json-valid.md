@@ -14,6 +14,7 @@ that is the case for these tests.
 |`invalid definition, invalid definition schema`|Expected result: `false` but validator returned: `true`
 |`maxLength validation, two supplementary Unicode code points is long enough`|Expected result: `true` but validator returned: `false`
 |`minLength validation, one supplementary Unicode code point is not long enough`|Expected result: `false` but validator returned: `true`
+|`validation of URIs, a valid protocol-relative URI`|Expected result: `true` but validator returned: `false`
 |`remote ref, containing refs itself, remote ref invalid`|Expected result: `false` but validator returned: `true`
 |`remote ref, remote ref invalid`|Expected result: `false` but validator returned: `true`
 |`fragment within remote ref, remote fragment invalid`|Expected result: `false` but validator returned: `true`

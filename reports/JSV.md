@@ -53,6 +53,9 @@ that is the case for these tests.
 |`validation of host names, a host name starting with an illegal character`|Expected result: `false` but validator returned: `true`
 |`validation of host names, a host name containing illegal characters`|Expected result: `false` but validator returned: `true`
 |`validation of host names, a host name with a component too long`|Expected result: `false` but validator returned: `true`
+|`escaped pointer ref, slash valid`|Expected result: `true` but validator returned: `false`. **This excludes this validator from performance tests**
+|`escaped pointer ref, tilda valid`|Expected result: `true` but validator returned: `false`. **This excludes this validator from performance tests**
+|`escaped pointer ref, percent valid`|Expected result: `true` but validator returned: `false`. **This excludes this validator from performance tests**
 |`nested refs, nested ref valid`|Expected result: `true` but validator returned: `false`. **This excludes this validator from performance tests**
 |`remote ref, containing refs itself, remote ref valid`|Expected result: `true` but validator returned: `false`
 |`remote ref, remote ref valid`|Expected result: `true` but validator returned: `false`

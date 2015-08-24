@@ -53,6 +53,15 @@ testRunner([
 		}
 	},
 	{
+        name: 'ajv',
+        setup: function(schema) {
+            return ajv.compile(schema);
+        },
+        test: function (instance, json, schema) {
+            return instance(json);
+        }
+    },
+	{
 		name: 'themis',
 		setup: function (schema) {
 			// $refs only supported if they have id attributes and the test suite refs do not
@@ -232,14 +241,5 @@ testRunner([
 		test: function (instance, json, schema) {
 			return instance.validate(json, schema).valid;
 		}
-	},
-    {
-        name: 'ajv',
-        setup: function(schema) {
-            return ajv.compile(schema);
-        },
-        test: function (instance, json, schema) {
-            return instance(json);
-        }
-    }
+	}
 ]);

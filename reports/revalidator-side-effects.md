@@ -2866,7 +2866,7 @@ When running tests [`revalidator`](https://github.com/flatiron/revalidator) muta
 ```
 
 # Side-effect on schema
-[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `escaped pointer ref, slash`
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `escaped pointer ref, slash invalid`
 ## Original schema
 ```js
 {
@@ -2920,7 +2920,7 @@ When running tests [`revalidator`](https://github.com/flatiron/revalidator) muta
 ```
 
 # Side-effect on schema
-[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `escaped pointer ref, tilda`
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `escaped pointer ref, tilda invalid`
 ## Original schema
 ```js
 {
@@ -2974,7 +2974,169 @@ When running tests [`revalidator`](https://github.com/flatiron/revalidator) muta
 ```
 
 # Side-effect on schema
-[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `escaped pointer ref, percent`
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `escaped pointer ref, percent invalid`
+## Original schema
+```js
+{
+	"tilda~field": {
+		"type": "integer"
+	},
+	"slash/field": {
+		"type": "integer"
+	},
+	"percent%field": {
+		"type": "integer"
+	},
+	"properties": {
+		"tilda": {
+			"$ref": "#/tilda~0field"
+		},
+		"slash": {
+			"$ref": "#/slash~1field"
+		},
+		"percent": {
+			"$ref": "#/percent%25field"
+		}
+	}
+}
+```
+## Schema after validating
+```js
+{
+	"tilda~field": {
+		"type": "integer"
+	},
+	"slash/field": {
+		"type": "integer"
+	},
+	"percent%field": {
+		"type": "integer"
+	},
+	"properties": {
+		"tilda": {
+			"$ref": "#/tilda~0field"
+		},
+		"slash": {
+			"$ref": "#/slash~1field"
+		},
+		"percent": {
+			"$ref": "#/percent%25field"
+		}
+	},
+	"additionalProperties": true
+}
+```
+
+# Side-effect on schema
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `escaped pointer ref, slash valid`
+## Original schema
+```js
+{
+	"tilda~field": {
+		"type": "integer"
+	},
+	"slash/field": {
+		"type": "integer"
+	},
+	"percent%field": {
+		"type": "integer"
+	},
+	"properties": {
+		"tilda": {
+			"$ref": "#/tilda~0field"
+		},
+		"slash": {
+			"$ref": "#/slash~1field"
+		},
+		"percent": {
+			"$ref": "#/percent%25field"
+		}
+	}
+}
+```
+## Schema after validating
+```js
+{
+	"tilda~field": {
+		"type": "integer"
+	},
+	"slash/field": {
+		"type": "integer"
+	},
+	"percent%field": {
+		"type": "integer"
+	},
+	"properties": {
+		"tilda": {
+			"$ref": "#/tilda~0field"
+		},
+		"slash": {
+			"$ref": "#/slash~1field"
+		},
+		"percent": {
+			"$ref": "#/percent%25field"
+		}
+	},
+	"additionalProperties": true
+}
+```
+
+# Side-effect on schema
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `escaped pointer ref, tilda valid`
+## Original schema
+```js
+{
+	"tilda~field": {
+		"type": "integer"
+	},
+	"slash/field": {
+		"type": "integer"
+	},
+	"percent%field": {
+		"type": "integer"
+	},
+	"properties": {
+		"tilda": {
+			"$ref": "#/tilda~0field"
+		},
+		"slash": {
+			"$ref": "#/slash~1field"
+		},
+		"percent": {
+			"$ref": "#/percent%25field"
+		}
+	}
+}
+```
+## Schema after validating
+```js
+{
+	"tilda~field": {
+		"type": "integer"
+	},
+	"slash/field": {
+		"type": "integer"
+	},
+	"percent%field": {
+		"type": "integer"
+	},
+	"properties": {
+		"tilda": {
+			"$ref": "#/tilda~0field"
+		},
+		"slash": {
+			"$ref": "#/slash~1field"
+		},
+		"percent": {
+			"$ref": "#/percent%25field"
+		}
+	},
+	"additionalProperties": true
+}
+```
+
+# Side-effect on schema
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `escaped pointer ref, percent valid`
 ## Original schema
 ```js
 {
@@ -3480,7 +3642,7 @@ When running tests [`revalidator`](https://github.com/flatiron/revalidator) muta
 ```
 
 # Side-effect on schema
-[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `boolean type matches booleans, a boolean is not a boolean`
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `boolean type matches booleans, a boolean is a boolean`
 ## Original schema
 ```js
 {

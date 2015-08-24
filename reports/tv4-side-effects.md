@@ -1,10 +1,10 @@
-# [`tv4`](https://github.com/geraintluff/tv4) side-effects in testrun
+# tv4 side-effects in testrun
 
-When running tests [`tv4`](https://github.com/geraintluff/tv4) mutated either the original schema or the data being validated with the schema or both.
+When running tests tv4 mutated either the original schema or the data being validated with the schema or both.
 
 
 # Side-effect on schema
-[`tv4`](https://github.com/geraintluff/tv4) had a side-effect on (altered the original) schema in the test `change resolution scope, changed scope ref valid`
+tv4 had a side-effect on (altered the original) schema in the test `change resolution scope, changed scope ref valid`
 ## Original schema
 ```js
 {
@@ -31,7 +31,7 @@ When running tests [`tv4`](https://github.com/geraintluff/tv4) mutated either th
 ```
 
 # Side-effect on schema
-[`tv4`](https://github.com/geraintluff/tv4) had a side-effect on (altered the original) schema in the test `change resolution scope, changed scope ref invalid`
+tv4 had a side-effect on (altered the original) schema in the test `change resolution scope, changed scope ref invalid`
 ## Original schema
 ```js
 {

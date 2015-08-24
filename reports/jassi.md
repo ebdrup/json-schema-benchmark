@@ -32,9 +32,9 @@ that is the case for these tests.
 |`root pointer ref, recursive mismatch`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
 |`relative pointer ref to object, mismatch`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
 |`relative pointer ref to array, mismatch array`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
-|`escaped pointer ref, slash`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
-|`escaped pointer ref, tilda`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
-|`escaped pointer ref, percent`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
+|`escaped pointer ref, slash invalid`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
+|`escaped pointer ref, tilda invalid`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
+|`escaped pointer ref, percent invalid`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
 |`nested refs, nested ref invalid`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
 |`remote ref, containing refs itself, remote ref invalid`|Expected result: `false` but validator returned: `true`
 |`remote ref, remote ref invalid`|Expected result: `false` but validator returned: `true`

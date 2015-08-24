@@ -115,6 +115,7 @@ that is the case for these tests.
 |`validation of date-time strings, an invalid date-time string`|Expected result: `false` but validator returned: `"Object.keys called on non-object"`
 |`validation of date-time strings, only RFC3339 not all of ISO 8601 are valid`|Expected result: `false` but validator returned: `"Object.keys called on non-object"`
 |`validation of URIs, a valid URI`|Expected result: `true` but validator returned: `"Object.keys called on non-object"`
+|`validation of URIs, a valid protocol-relative URI`|Expected result: `true` but validator returned: `"Object.keys called on non-object"`
 |`validation of URIs, an invalid URI`|Expected result: `false` but validator returned: `"Object.keys called on non-object"`
 |`validation of URIs, an invalid URI though valid URI reference`|Expected result: `false` but validator returned: `"Object.keys called on non-object"`
 |`validation of e-mail addresses, a valid e-mail address`|Expected result: `true` but validator returned: `"Object.keys called on non-object"`
@@ -135,15 +136,16 @@ that is the case for these tests.
 |`pattern validation, a matching pattern is valid`|Expected result: `true` but validator returned: `"Object.keys called on non-object"`. **This excludes this validator from performance tests**
 |`pattern validation, a non-matching pattern is invalid`|Expected result: `false` but validator returned: `"Object.keys called on non-object"`. **This excludes this validator from performance tests**
 |`pattern validation, ignores non-strings`|Expected result: `true` but validator returned: `"Object.keys called on non-object"`. **This excludes this validator from performance tests**
+|`pattern is not anchored, matches a substring`|Expected result: `true` but validator returned: `"Object.keys called on non-object"`. **This excludes this validator from performance tests**
 |`patternProperties validates properties matching a regex, ignores non-objects`|Expected result: `true` but validator returned: `"Object.keys called on non-object"`. **This excludes this validator from performance tests**
 |`properties, patternProperties, additionalProperties interaction, additionalProperty validates others`|Expected result: `true` but validator returned: `"Cannot read property 'format' of undefined"`. **This excludes this validator from performance tests**
 |`properties, patternProperties, additionalProperties interaction, additionalProperty invalidates others`|Expected result: `false` but validator returned: `"Cannot read property 'format' of undefined"`. **This excludes this validator from performance tests**
 |`root pointer ref, recursive mismatch`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
 |`relative pointer ref to object, mismatch`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
 |`relative pointer ref to array, mismatch array`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
-|`escaped pointer ref, slash`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
-|`escaped pointer ref, tilda`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
-|`escaped pointer ref, percent`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
+|`escaped pointer ref, slash invalid`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
+|`escaped pointer ref, tilda invalid`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
+|`escaped pointer ref, percent invalid`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
 |`nested refs, nested ref valid`|Expected result: `true` but validator returned: `"Object.keys called on non-object"`. **This excludes this validator from performance tests**
 |`nested refs, nested ref invalid`|Expected result: `false` but validator returned: `"Object.keys called on non-object"`. **This excludes this validator from performance tests**
 |`remote ref, containing refs itself, remote ref invalid`|Expected result: `false` but validator returned: `true`
@@ -187,7 +189,7 @@ that is the case for these tests.
 |`boolean type matches booleans, a string is not a boolean`|Expected result: `false` but validator returned: `"Object.keys called on non-object"`. **This excludes this validator from performance tests**
 |`boolean type matches booleans, an object is not a boolean`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
 |`boolean type matches booleans, an array is not a boolean`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
-|`boolean type matches booleans, a boolean is not a boolean`|Expected result: `true` but validator returned: `"Object.keys called on non-object"`. **This excludes this validator from performance tests**
+|`boolean type matches booleans, a boolean is a boolean`|Expected result: `true` but validator returned: `"Object.keys called on non-object"`. **This excludes this validator from performance tests**
 |`boolean type matches booleans, null is not a boolean`|Expected result: `false` but validator returned: `"Object.keys called on non-object"`. **This excludes this validator from performance tests**
 |`null type matches only the null object, an integer is not null`|Expected result: `false` but validator returned: `"Object.keys called on non-object"`. **This excludes this validator from performance tests**
 |`null type matches only the null object, a float is not null`|Expected result: `false` but validator returned: `"Object.keys called on non-object"`. **This excludes this validator from performance tests**
