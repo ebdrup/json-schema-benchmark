@@ -21,12 +21,12 @@ for validators that cause side-effects on schema or data.
 |[`jsck`](https://github.com/pandastrike/jsck#readme)|2.7%|522 (± 2.82%)|
 |[`jsonschema`](https://github.com/tdegrunt/jsonschema#readme)|0.9%|168 (± 1.01%)|
 |[`skeemas`](https://github.com/Prestaul/skeemas#readme)|0.7%|137 (± 1.24%)|
-|tv4|0.4%|80 (± 1.87%)|
+|[`tv4`](https://github.com/geraintluff/tv4)|0.4%|80 (± 1.87%)|
 |[`jayschema`](https://github.com/natesilva/jayschema)|0.1%|19 (± 0.87%)|
 
 235 tests are run in each test run.
 
-Validators tested: [`is-my-json-valid (2.12.4)`](https://github.com/mafintosh/is-my-json-valid), [`jsen (0.6.0)`](https://github.com/bugventure/jsen), [`ajv (3.5.3)`](https://github.com/epoberezkin/ajv), [`themis (1.1.6)`](https://github.com/playlyfe/themis), [`z-schema (3.16.1)`](https://github.com/zaggino/z-schema), [`jjv (1.0.2)`](https://github.com/acornejo/jjv), [`skeemas (1.2.2)`](https://github.com/Prestaul/skeemas#readme), [`jayschema (0.3.1)`](https://github.com/natesilva/jayschema), [`schemasaurus (0.7.8)`](https://github.com/AlexeyGrishin/schemasaurus), [`jsck (0.3.0)`](https://github.com/pandastrike/jsck#readme), [`jassi (0.1.2)`](https://github.com/iclanzan/jassi), [`JSV (4.0.2)`](http://github.com/garycourt/JSV), [`request-validator (0.3.3)`](https://github.com/bugventure/request-validator), [`json-gate (0.8.22)`](https://github.com/oferei/json-gate), [`json-model (0.2.24)`](https://github.com/geraintluff/json-model), tv4, [`jsonschema (1.0.3)`](https://github.com/tdegrunt/jsonschema#readme), [`revalidator (0.3.1)`](https://github.com/flatiron/revalidator), 
+Validators tested: [`is-my-json-valid (2.12.4)`](https://github.com/mafintosh/is-my-json-valid), [`jsen (0.6.0)`](https://github.com/bugventure/jsen), [`ajv (3.5.3)`](https://github.com/epoberezkin/ajv), [`themis (1.1.6)`](https://github.com/playlyfe/themis), [`z-schema (3.16.1)`](https://github.com/zaggino/z-schema), [`jjv (1.0.2)`](https://github.com/acornejo/jjv), [`skeemas (1.2.2)`](https://github.com/Prestaul/skeemas#readme), [`jayschema (0.3.1)`](https://github.com/natesilva/jayschema), [`schemasaurus (0.7.8)`](https://github.com/AlexeyGrishin/schemasaurus), [`jsck (0.3.0)`](https://github.com/pandastrike/jsck#readme), [`jassi (0.1.2)`](https://github.com/iclanzan/jassi), [`JSV (4.0.2)`](http://github.com/garycourt/JSV), [`request-validator (0.3.3)`](https://github.com/bugventure/request-validator), [`json-gate (0.8.22)`](https://github.com/oferei/json-gate), [`json-model (0.2.24)`](https://github.com/geraintluff/json-model), [`tv4 (1.2.7)`](https://github.com/geraintluff/tv4), [`jsonschema (1.0.3)`](https://github.com/tdegrunt/jsonschema#readme), [`revalidator (0.3.1)`](https://github.com/flatiron/revalidator), 
 
 (validators not in the results above where excluded because of failing tests - see below for details)
 
@@ -57,7 +57,7 @@ If a validator does not pass a test in the official test suite, it will show up 
 |[`themis`](https://github.com/playlyfe/themis)|[14](https://github.com/ebdrup/json-schema-benchmark/blob/master/reports/themis.md)|
 |[`schemasaurus`](https://github.com/AlexeyGrishin/schemasaurus)|[16](https://github.com/ebdrup/json-schema-benchmark/blob/master/reports/schemasaurus.md)|
 |[`jsck`](https://github.com/pandastrike/jsck#readme)|[18](https://github.com/ebdrup/json-schema-benchmark/blob/master/reports/jsck.md)|
-|tv4|[24](https://github.com/ebdrup/json-schema-benchmark/blob/master/reports/tv4.md)|
+|[`tv4`](https://github.com/geraintluff/tv4)|[24](https://github.com/ebdrup/json-schema-benchmark/blob/master/reports/tv4.md)|
 |[`request-validator`](https://github.com/bugventure/request-validator)|[29](https://github.com/ebdrup/json-schema-benchmark/blob/master/reports/request-validator.md)|
 |[`jassi`](https://github.com/iclanzan/jassi)|[31](https://github.com/ebdrup/json-schema-benchmark/blob/master/reports/jassi.md)|
 |[`json-model`](https://github.com/geraintluff/json-model)|[40](https://github.com/ebdrup/json-schema-benchmark/blob/master/reports/json-model.md)|
@@ -74,7 +74,7 @@ Number of tests that caused side-effects. The schema or data was altered by the 
 
 |Validator|Number of side-effects (BAD)|
 |---------|----------------------------|
-|tv4|[2](https://github.com/ebdrup/json-schema-benchmark/blob/master/reports/tv4-side-effects.md)|
+|[`tv4`](https://github.com/geraintluff/tv4)|[2](https://github.com/ebdrup/json-schema-benchmark/blob/master/reports/tv4-side-effects.md)|
 |[`revalidator`](https://github.com/flatiron/revalidator)|[267](https://github.com/ebdrup/json-schema-benchmark/blob/master/reports/revalidator-side-effects.md)|
 |[`json-model`](https://github.com/geraintluff/json-model)|[288](https://github.com/ebdrup/json-schema-benchmark/blob/master/reports/json-model-side-effects.md)|
 
