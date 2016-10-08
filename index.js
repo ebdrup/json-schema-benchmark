@@ -46,7 +46,7 @@ testRunner([
 	{
 		name: 'jsen',
 		setup: function (schema) {
-			return jsen(schema);
+			return jsen(schema, { schemas: refs });
 		},
 		test: function (instance, json, schema) {
 			return instance(json);
