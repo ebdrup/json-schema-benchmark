@@ -3,7 +3,6 @@ var testRunner = require('./testRunner');
 var ZSchema = require('z-schema');
 var JaySchema = require('jayschema');
 var jjv = require('jjv');
-var djv = require('djv');
 var jassi = require('jassi');
 var jsv = require('JSV');
 var JsonSchema = require('jsonschema');
@@ -19,6 +18,7 @@ var jsonGate = require('json-gate');
 var jsen = require('jsen');
 var schemasaurus = require('schemasaurus');
 var ajv = require('ajv')();
+var djv = require('djv')();
 
 var refs = {
 	'http://localhost:1234/integer.json': require('./JSON-Schema-Test-Suite/remotes/integer.json'),
@@ -30,8 +30,9 @@ var refs = {
 
 Object.keys(refs).slice(0,3).forEach(function (uri) {
     ajv.addSchema(refs[uri], uri);
+    djv.addSchema(uri, refs[uri]);
 });
-
+djv.addSchema('http://json-schema.org/draft-04/schema', refs['http://json-schema.org/draft-04/schema']);
 
 testRunner([
 	{
@@ -106,13 +107,7 @@ testRunner([
 	{
 		name: 'djv',
 		setup: function (schema) {
-			var validator = djv();
-			var schemas = Object.keys(refs);
-			schemas.splice(3, 1);
-			schemas.forEach(function (uri) {
-				validator.addSchema(uri, refs[uri]);
-			});
-			return validator.addSchema('test', schema).fn;
+			return djv.addSchema('test', schema).fn;
 		},
 		test: function (instance, json, schema) {
 			return instance(json) === undefined;
