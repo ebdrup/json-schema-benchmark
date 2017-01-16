@@ -8,6 +8,7 @@
     "async": "^1.5.2",
     "benchmark": "^2.1.0",
     "deep-equal": "^1.0.1",
+    "djv": "latest",
     "fs-readdir-recursive": "^1.0.0",
     "is-my-json-valid": "latest",
     "jassi": "latest",

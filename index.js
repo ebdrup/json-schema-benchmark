@@ -3,6 +3,7 @@ var testRunner = require('./testRunner');
 var ZSchema = require('z-schema');
 var JaySchema = require('jayschema');
 var jjv = require('jjv');
+var djv = require('djv');
 var jassi = require('jassi');
 var jsv = require('JSV');
 var JsonSchema = require('jsonschema');
@@ -95,10 +96,26 @@ testRunner([
 			Object.keys(refs).forEach(function (uri) {
 				validator.addSchema(uri, refs[uri]);
 			});
+
 			return validator;
 		},
 		test: function (instance, json, schema) {
 			return instance.validate(schema, json) === null;
+		}
+	},
+	{
+		name: 'djv',
+		setup: function (schema) {
+			var validator = djv();
+			var schemas = Object.keys(refs);
+			schemas.splice(3, 1);
+			schemas.forEach(function (uri) {
+				validator.addSchema(uri, refs[uri]);
+			});
+			return validator.addSchema('test', schema).fn;
+		},
+		test: function (instance, json, schema) {
+			return instance(json) === undefined;
 		}
 	},
 	{
