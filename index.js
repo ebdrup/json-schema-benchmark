@@ -18,6 +18,7 @@ var jsonGate = require('json-gate');
 var jsen = require('jsen');
 var schemasaurus = require('schemasaurus');
 var ajv = require('ajv')();
+var djv = require('djv')();
 
 var refs = {
 	'http://localhost:1234/integer.json': require('./JSON-Schema-Test-Suite/remotes/integer.json'),
@@ -29,8 +30,9 @@ var refs = {
 
 Object.keys(refs).slice(0,3).forEach(function (uri) {
     ajv.addSchema(refs[uri], uri);
+    djv.addSchema(uri, refs[uri]);
 });
-
+djv.addSchema('http://json-schema.org/draft-04/schema', refs['http://json-schema.org/draft-04/schema']);
 
 testRunner([
 	{
@@ -95,10 +97,20 @@ testRunner([
 			Object.keys(refs).forEach(function (uri) {
 				validator.addSchema(uri, refs[uri]);
 			});
+
 			return validator;
 		},
 		test: function (instance, json, schema) {
 			return instance.validate(schema, json) === null;
+		}
+	},
+	{
+		name: 'djv',
+		setup: function (schema) {
+			return djv.addSchema('test', schema).fn;
+		},
+		test: function (instance, json, schema) {
+			return instance(json) === undefined;
 		}
 	},
 	{
