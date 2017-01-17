@@ -1,12 +1,12 @@
-# [`json-gate`](https://github.com/oferei/json-gate) - test summary
+# [`json-gate`](https://github.com/oferei/json-gate#readme) - test summary
 
 # All validators fail this test
 
 `some languages do not distinguish between different types of numeric value, a float is not an integer even without fractional part`
 
-# [`json-gate`](https://github.com/oferei/json-gate) failed tests
+# [`json-gate`](https://github.com/oferei/json-gate#readme) failed tests
 
-Some validators have deliberately chosen not to support parts of the spec. Go to the [`json-gate`](https://github.com/oferei/json-gate) homepage to learn if
+Some validators have deliberately chosen not to support parts of the spec. Go to the [`json-gate`](https://github.com/oferei/json-gate#readme) homepage to learn if
 that is the case for these tests.
 
 |test failed|reason
