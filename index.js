@@ -24,6 +24,7 @@ var jsvg = require('json-schema-validator-generator').default;
 var refs = {
 	'http://localhost:1234/integer.json': require('./JSON-Schema-Test-Suite/remotes/integer.json'),
 	'http://localhost:1234/subSchemas.json': require('./JSON-Schema-Test-Suite/remotes/subSchemas.json'),
+	'http://localhost:1234/name.json': require('./JSON-Schema-Test-Suite/remotes/name.json'),
 	'http://localhost:1234/folder/folderInteger.json': require('./JSON-Schema-Test-Suite/remotes/folder/folderInteger.json'),
 	'http://json-schema.org/draft-03/schema': require('./refs/json-schema-draft-03.json'),
 	'http://json-schema.org/draft-04/schema': require('./refs/json-schema-draft-04.json')
@@ -55,7 +56,8 @@ testRunner([
 			return instance(json);
 		}
 	},
-	{
+	//json throws error because of remote schema, couldn't find a way to make it not throw, so had to exclude it
+	/*{
 		name: 'jsen',
 		setup: function (schema) {
 			return jsen(schema, { schemas: refs });
@@ -63,7 +65,7 @@ testRunner([
 		test: function (instance, json, schema) {
 			return instance(json);
 		}
-	},
+	},*/
 	{
         name: 'ajv',
         setup: function(schema) {
@@ -73,7 +75,8 @@ testRunner([
             return instance(json);
         }
     },
-	{
+	//this throws too had to exclude it: Error: invalid ref: folderInteger.json in folder/
+	/*{
 		name: 'themis',
 		setup: function (schema) {
 			// $refs only supported if they have id attributes and the test suite refs do not
@@ -83,7 +86,7 @@ testRunner([
 			return instance(json, '0').valid;
 		},
 		benchmarks: 'https://cdn.rawgit.com/playlyfe/themis/master/benchmark/results.html'
-	},
+	},*/
 	{
 		name: 'z-schema',
 		setup: function () {

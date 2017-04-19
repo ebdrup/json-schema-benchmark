@@ -8,26 +8,22 @@ for validators that cause side-effects on schema or data.
 
 # Performance
 
-![performance](https://chart.googleapis.com/chart?chxt=x,y&cht=bhs&chco=76A4FB&chls=2.0&chbh=29,4,1&chs=600x416&chxl=-1:|djv|ajv|is-my-json-valid|jsen|schemasaurus|themis|jsck|z-schema|skeemas|jsonschema|tv4|jayschema&chd=t:100,87.2,61.6,57.9,23.4,17.1,7.3,6.6,0.9,0.8,0.4,0.2)
+![performance](https://chart.googleapis.com/chart?chxt=x,y&cht=bhs&chco=76A4FB&chls=2.0&chbh=46,4,1&chs=600x420&chxl=-1:|djv|json-schema-validator-generator|is-my-json-valid|schemasaurus|jsck|z-schema|jsonschema|tv4&chd=t:100,92.2,58,23,7.1,5.9,0.8,0.4)
 
 |Validator|Relative speed|Number of test runs per second|
 |---------|:------------:|:----------------------------:|
-|[`djv`](https://github.com/korzio/djv#readme)|100%|19948 (± 2.5%)|
-|[`ajv`](https://github.com/epoberezkin/ajv)|87.2%|17385 (± 3.41%)|
-|[`is-my-json-valid`](https://github.com/mafintosh/is-my-json-valid)|61.6%|12291 (± 2.25%)|
-|[`jsen`](https://github.com/bugventure/jsen)|57.9%|11557 (± 3.39%)|
-|[`schemasaurus`](https://github.com/AlexeyGrishin/schemasaurus)|23.4%|4675 (± 3.81%)|
-|[`themis`](https://github.com/playlyfe/themis)|17.1%|3406 (± 4.78%)|
-|[`jsck`](https://github.com/pandastrike/jsck#readme)|7.3%|1453 (± 2.56%)|
-|[`z-schema`](https://github.com/zaggino/z-schema)|6.6%|1311 (± 2.34%)|
-|[`skeemas`](https://github.com/Prestaul/skeemas#readme)|0.9%|182 (± 2.16%)|
-|[`jsonschema`](https://github.com/tdegrunt/jsonschema#readme)|0.8%|168 (± 2.59%)|
-|tv4|0.4%|78 (± 2.44%)|
-|[`jayschema`](https://github.com/natesilva/jayschema)|0.2%|30 (± 3.99%)|
+|[`djv`](https://github.com/korzio/djv#readme)|100%|21579 (± 2.18%)|
+|json-schema-validator-generator|92.2%|19895 (± 0.92%)|
+|[`is-my-json-valid`](https://github.com/mafintosh/is-my-json-valid)|58%|12521 (± 3.63%)|
+|[`schemasaurus`](https://github.com/AlexeyGrishin/schemasaurus)|23%|4955 (± 3.75%)|
+|[`jsck`](https://github.com/pandastrike/jsck#readme)|7.1%|1538 (± 3.21%)|
+|[`z-schema`](https://github.com/zaggino/z-schema)|5.9%|1277 (± 3%)|
+|[`jsonschema`](https://github.com/tdegrunt/jsonschema#readme)|0.8%|177 (± 2.73%)|
+|[`tv4`](https://github.com/geraintluff/tv4)|0.4%|88 (± 2.42%)|
 
 235 tests are run in each test run.
 
-Validators tested: [`is-my-json-valid (2.15.0)`](https://github.com/mafintosh/is-my-json-valid), [`jsen (0.6.4)`](https://github.com/bugventure/jsen), [`ajv (4.10.4)`](https://github.com/epoberezkin/ajv), [`themis (1.1.6)`](https://github.com/playlyfe/themis), [`z-schema (3.18.2)`](https://github.com/zaggino/z-schema), [`jjv (1.0.2)`](https://github.com/acornejo/jjv), [`djv (1.0.0-beta)`](https://github.com/korzio/djv#readme), [`skeemas (1.2.2)`](https://github.com/Prestaul/skeemas#readme), [`jayschema (0.3.1)`](https://github.com/natesilva/jayschema), [`schemasaurus (0.7.8)`](https://github.com/AlexeyGrishin/schemasaurus), [`jsck (0.3.0)`](https://github.com/pandastrike/jsck#readme), [`jassi (0.1.2)`](https://github.com/iclanzan/jassi), [`JSV (4.0.2)`](http://github.com/garycourt/JSV), [`request-validator (0.3.3)`](https://github.com/bugventure/request-validator), [`json-gate (0.8.23)`](https://github.com/oferei/json-gate#readme), [`json-model (0.2.24)`](https://github.com/geraintluff/json-model), tv4, [`jsonschema (1.1.1)`](https://github.com/tdegrunt/jsonschema#readme), [`revalidator (0.3.1)`](https://github.com/flatiron/revalidator), 
+Validators tested: json-schema-validator-generator, [`is-my-json-valid (2.16.0)`](https://github.com/mafintosh/is-my-json-valid), [`ajv (5.0.0)`](https://github.com/epoberezkin/ajv), [`z-schema (3.18.2)`](https://github.com/zaggino/z-schema), [`jjv (1.0.2)`](https://github.com/acornejo/jjv), [`djv (1.0.0-beta.0)`](https://github.com/korzio/djv#readme), [`skeemas (1.2.2)`](https://github.com/Prestaul/skeemas#readme), [`jayschema (0.3.1)`](https://github.com/natesilva/jayschema), [`schemasaurus (0.7.8)`](https://github.com/AlexeyGrishin/schemasaurus), [`jsck (0.3.0)`](https://github.com/pandastrike/jsck#readme), [`jassi (0.1.2)`](https://github.com/iclanzan/jassi), [`JSV (4.0.2)`](http://github.com/garycourt/JSV), [`request-validator (0.3.3)`](https://github.com/bugventure/request-validator), [`json-gate (0.8.23)`](https://github.com/oferei/json-gate#readme), [`json-model (0.2.24)`](https://github.com/geraintluff/json-model), [`tv4 (1.3.0)`](https://github.com/geraintluff/tv4), [`jsonschema (1.1.1)`](https://github.com/tdegrunt/jsonschema#readme), [`revalidator (0.3.1)`](https://github.com/flatiron/revalidator), 
 
 (validators not in the results above where excluded because of failing tests - see below for details)
 
@@ -43,29 +39,28 @@ This test suite uses the [official JSON-schema test suite](https://github.com/js
 
 If a validator does not pass a test in the official test suite, it will show up in these results.
 
-![failing tests](https://chart.googleapis.com/chart?chxt=x,y&cht=bhs&chco=76A4FB&chls=2.0&chbh=17,4,1&chs=600x419&chxl=-1:|ajv|djv|jsen|skeemas|z-schema|jsonschema|jjv|is-my-json-valid|jayschema|themis|schemasaurus|jsck|tv4|request-validator|jassi|json-model|JSV|json-gate|revalidator&chd=t:1,1,1,2,3,4,7,8,10,14,16,18,24,29,31,40,57,71,138&chxr=0,0,138&chds=0,138)
+![failing tests](https://chart.googleapis.com/chart?chxt=x,y&cht=bhs&chco=76A4FB&chls=2.0&chbh=18,4,1&chs=600x416&chxl=-1:|z-schema|jsonschema|skeemas|is-my-json-valid|jjv|ajv|jayschema|djv|schemasaurus|jsck|tv4|json-schema-validator-generator|request-validator|jassi|json-model|JSV|json-gate|revalidator&chd=t:8,10,14,14,17,17,19,20,27,29,30,31,36,39,51,67,80,148&chxr=0,0,148&chds=0,148)
 
 |Validator|Number of failing tests (click for details)|
 |---------|-----------------------|
-|[`ajv`](https://github.com/epoberezkin/ajv)|[1](https://github.com/ebdrup/json-schema-benchmark/blob/master/reports/ajv.md)|
-|[`djv`](https://github.com/korzio/djv#readme)|[1](https://github.com/ebdrup/json-schema-benchmark/blob/master/reports/djv.md)|
-|[`jsen`](https://github.com/bugventure/jsen)|[1](https://github.com/ebdrup/json-schema-benchmark/blob/master/reports/jsen.md)|
-|[`skeemas`](https://github.com/Prestaul/skeemas#readme)|[2](https://github.com/ebdrup/json-schema-benchmark/blob/master/reports/skeemas.md)|
-|[`z-schema`](https://github.com/zaggino/z-schema)|[3](https://github.com/ebdrup/json-schema-benchmark/blob/master/reports/z-schema.md)|
-|[`jsonschema`](https://github.com/tdegrunt/jsonschema#readme)|[4](https://github.com/ebdrup/json-schema-benchmark/blob/master/reports/jsonschema.md)|
-|[`jjv`](https://github.com/acornejo/jjv)|[7](https://github.com/ebdrup/json-schema-benchmark/blob/master/reports/jjv.md)|
-|[`is-my-json-valid`](https://github.com/mafintosh/is-my-json-valid)|[8](https://github.com/ebdrup/json-schema-benchmark/blob/master/reports/is-my-json-valid.md)|
-|[`jayschema`](https://github.com/natesilva/jayschema)|[10](https://github.com/ebdrup/json-schema-benchmark/blob/master/reports/jayschema.md)|
-|[`themis`](https://github.com/playlyfe/themis)|[14](https://github.com/ebdrup/json-schema-benchmark/blob/master/reports/themis.md)|
-|[`schemasaurus`](https://github.com/AlexeyGrishin/schemasaurus)|[16](https://github.com/ebdrup/json-schema-benchmark/blob/master/reports/schemasaurus.md)|
-|[`jsck`](https://github.com/pandastrike/jsck#readme)|[18](https://github.com/ebdrup/json-schema-benchmark/blob/master/reports/jsck.md)|
-|tv4|[24](https://github.com/ebdrup/json-schema-benchmark/blob/master/reports/tv4.md)|
-|[`request-validator`](https://github.com/bugventure/request-validator)|[29](https://github.com/ebdrup/json-schema-benchmark/blob/master/reports/request-validator.md)|
-|[`jassi`](https://github.com/iclanzan/jassi)|[31](https://github.com/ebdrup/json-schema-benchmark/blob/master/reports/jassi.md)|
-|[`json-model`](https://github.com/geraintluff/json-model)|[40](https://github.com/ebdrup/json-schema-benchmark/blob/master/reports/json-model.md)|
-|[`JSV`](http://github.com/garycourt/JSV)|[57](https://github.com/ebdrup/json-schema-benchmark/blob/master/reports/JSV.md)|
-|[`json-gate`](https://github.com/oferei/json-gate#readme)|[71](https://github.com/ebdrup/json-schema-benchmark/blob/master/reports/json-gate.md)|
-|[`revalidator`](https://github.com/flatiron/revalidator)|[138](https://github.com/ebdrup/json-schema-benchmark/blob/master/reports/revalidator.md)|
+|[`z-schema`](https://github.com/zaggino/z-schema)|[8](https://github.com/ebdrup/json-schema-benchmark/blob/master/reports/z-schema.md)|
+|[`jsonschema`](https://github.com/tdegrunt/jsonschema#readme)|[10](https://github.com/ebdrup/json-schema-benchmark/blob/master/reports/jsonschema.md)|
+|[`skeemas`](https://github.com/Prestaul/skeemas#readme)|[14](https://github.com/ebdrup/json-schema-benchmark/blob/master/reports/skeemas.md)|
+|[`is-my-json-valid`](https://github.com/mafintosh/is-my-json-valid)|[14](https://github.com/ebdrup/json-schema-benchmark/blob/master/reports/is-my-json-valid.md)|
+|[`jjv`](https://github.com/acornejo/jjv)|[17](https://github.com/ebdrup/json-schema-benchmark/blob/master/reports/jjv.md)|
+|[`ajv`](https://github.com/epoberezkin/ajv)|[17](https://github.com/ebdrup/json-schema-benchmark/blob/master/reports/ajv.md)|
+|[`jayschema`](https://github.com/natesilva/jayschema)|[19](https://github.com/ebdrup/json-schema-benchmark/blob/master/reports/jayschema.md)|
+|[`djv`](https://github.com/korzio/djv#readme)|[20](https://github.com/ebdrup/json-schema-benchmark/blob/master/reports/djv.md)|
+|[`schemasaurus`](https://github.com/AlexeyGrishin/schemasaurus)|[27](https://github.com/ebdrup/json-schema-benchmark/blob/master/reports/schemasaurus.md)|
+|[`jsck`](https://github.com/pandastrike/jsck#readme)|[29](https://github.com/ebdrup/json-schema-benchmark/blob/master/reports/jsck.md)|
+|[`tv4`](https://github.com/geraintluff/tv4)|[30](https://github.com/ebdrup/json-schema-benchmark/blob/master/reports/tv4.md)|
+|json-schema-validator-generator|[31](https://github.com/ebdrup/json-schema-benchmark/blob/master/reports/json-schema-validator-generator.md)|
+|[`request-validator`](https://github.com/bugventure/request-validator)|[36](https://github.com/ebdrup/json-schema-benchmark/blob/master/reports/request-validator.md)|
+|[`jassi`](https://github.com/iclanzan/jassi)|[39](https://github.com/ebdrup/json-schema-benchmark/blob/master/reports/jassi.md)|
+|[`json-model`](https://github.com/geraintluff/json-model)|[51](https://github.com/ebdrup/json-schema-benchmark/blob/master/reports/json-model.md)|
+|[`JSV`](http://github.com/garycourt/JSV)|[67](https://github.com/ebdrup/json-schema-benchmark/blob/master/reports/JSV.md)|
+|[`json-gate`](https://github.com/oferei/json-gate#readme)|[80](https://github.com/ebdrup/json-schema-benchmark/blob/master/reports/json-gate.md)|
+|[`revalidator`](https://github.com/flatiron/revalidator)|[148](https://github.com/ebdrup/json-schema-benchmark/blob/master/reports/revalidator.md)|
 
 Some validators have deliberately chosen not to support parts of the spec. Go to the homepage of the validator to learn if
 that is the case for these tests.
@@ -76,9 +71,9 @@ Number of tests that caused side-effects. The schema or data was altered by the 
 
 |Validator|Number of side-effects (BAD)|
 |---------|----------------------------|
-|tv4|[2](https://github.com/ebdrup/json-schema-benchmark/blob/master/reports/tv4-side-effects.md)|
-|[`revalidator`](https://github.com/flatiron/revalidator)|[267](https://github.com/ebdrup/json-schema-benchmark/blob/master/reports/revalidator-side-effects.md)|
-|[`json-model`](https://github.com/geraintluff/json-model)|[288](https://github.com/ebdrup/json-schema-benchmark/blob/master/reports/json-model-side-effects.md)|
+|[`tv4`](https://github.com/geraintluff/tv4)|[11](https://github.com/ebdrup/json-schema-benchmark/blob/master/reports/tv4-side-effects.md)|
+|[`revalidator`](https://github.com/flatiron/revalidator)|[294](https://github.com/ebdrup/json-schema-benchmark/blob/master/reports/revalidator-side-effects.md)|
+|[`json-model`](https://github.com/geraintluff/json-model)|[310](https://github.com/ebdrup/json-schema-benchmark/blob/master/reports/json-model-side-effects.md)|
 
 Validators not in the list have no side-effects on data or schemas.
 
@@ -91,8 +86,6 @@ you to take a look at each validator if you are looking for special features.
 
 Several of the validators have build benchmarks themselves. They are
 more detailed then the benchmarks provided above.
-
-[Benchmarks owned by themis](https://cdn.rawgit.com/playlyfe/themis/master/benchmark/results.html)
 
 [Benchmarks owned by z-schema](https://rawgit.com/zaggino/z-schema/master/benchmark/results.html)
 

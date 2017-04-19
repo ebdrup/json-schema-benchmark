@@ -13,13 +13,22 @@ that is the case for these tests.
 |-----------|------
 |`maxLength validation, two supplementary Unicode code points is long enough`|Expected result: `true` but validator returned: `false`
 |`minLength validation, one supplementary Unicode code point is not long enough`|Expected result: `false` but validator returned: `true`
+|`ECMA 262 regex non-compliance, ECMA 262 has no support for \Z anchor from .NET`|Expected result: `false` but validator returned: `true`
+|`validation of URIs, an invalid protocol-relative URI Reference`|Expected result: `false` but validator returned: `true`
 |`validation of URIs, an invalid URI though valid URI reference`|Expected result: `false` but validator returned: `true`
+|`property named $ref that is not a reference, property named $ref valid`|Expected result: `true` but validator returned: `"uri.slice is not a function"`. **This excludes this validator from performance tests**
+|`property named $ref that is not a reference, property named $ref invalid`|Expected result: `false` but validator returned: `"uri.slice is not a function"`. **This excludes this validator from performance tests**
 |`remote ref, remote ref valid`|Expected result: `true` but validator returned: `false`
 |`fragment within remote ref, remote fragment valid`|Expected result: `true` but validator returned: `"Cannot convert undefined or null to object"`
 |`fragment within remote ref, remote fragment invalid`|Expected result: `false` but validator returned: `"Cannot convert undefined or null to object"`
 |`ref within remote ref, ref within ref valid`|Expected result: `true` but validator returned: `"Cannot convert undefined or null to object"`
 |`ref within remote ref, ref within ref invalid`|Expected result: `false` but validator returned: `"Cannot convert undefined or null to object"`
-|`change resolution scope, changed scope ref valid`|Expected result: `true` but validator returned: `false`
+|`base URI change, base URI change ref valid`|Expected result: `true` but validator returned: `false`
+|`base URI change - change folder, number is valid`|Expected result: `true` but validator returned: `false`
+|`base URI change - change folder in subschema, number is valid`|Expected result: `true` but validator returned: `false`
+|`root ref in remote ref, string is valid`|Expected result: `true` but validator returned: `"Cannot convert undefined or null to object"`
+|`root ref in remote ref, null is valid`|Expected result: `true` but validator returned: `"Cannot convert undefined or null to object"`
+|`root ref in remote ref, object is invalid`|Expected result: `false` but validator returned: `"Cannot convert undefined or null to object"`
 
 **All other tests passed**.
 

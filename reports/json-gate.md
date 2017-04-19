@@ -47,11 +47,12 @@ that is the case for these tests.
 |`oneOf, both oneOf valid`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
 |`oneOf, neither oneOf valid`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
 |`oneOf with base schema, both oneOf valid`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
+|`ECMA 262 regex non-compliance, ECMA 262 has no support for \Z anchor from .NET`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'regex' format`)
 |`validation of date-time strings, a valid date-time string`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'date-time' format`)
 |`validation of date-time strings, an invalid date-time string`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'date-time' format`)
 |`validation of date-time strings, only RFC3339 not all of ISO 8601 are valid`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'date-time' format`)
 |`validation of URIs, a valid URI`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'uri' format`)
-|`validation of URIs, a valid protocol-relative URI`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'uri' format`)
+|`validation of URIs, an invalid protocol-relative URI Reference`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'uri' format`)
 |`validation of URIs, an invalid URI`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'uri' format`)
 |`validation of URIs, an invalid URI though valid URI reference`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'uri' format`)
 |`validation of e-mail addresses, a valid e-mail address`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'email' format`)
@@ -74,13 +75,21 @@ that is the case for these tests.
 |`escaped pointer ref, tilda invalid`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
 |`escaped pointer ref, percent invalid`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
 |`nested refs, nested ref invalid`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
+|`ref overrides any sibling keywords, ref valid, maxItems ignored`|Expected result: `true` but validator returned: `false`
+|`ref overrides any sibling keywords, ref invalid`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
 |`remote ref, containing refs itself, remote ref invalid`|Expected result: `false` but validator returned: `true`
+|`Recursive references between schemas, valid tree`|The schema failed to load(`Schema: 'required' attribute is an array when it should be a boolean`)
+|`Recursive references between schemas, invalid tree`|The schema failed to load(`Schema: 'required' attribute is an array when it should be a boolean`)
 |`remote ref, remote ref invalid`|Expected result: `false` but validator returned: `true`
 |`fragment within remote ref, remote fragment invalid`|Expected result: `false` but validator returned: `true`
 |`ref within remote ref, ref within ref invalid`|Expected result: `false` but validator returned: `true`
-|`change resolution scope, changed scope ref invalid`|Expected result: `false` but validator returned: `true`
+|`base URI change, base URI change ref invalid`|Expected result: `false` but validator returned: `true`
+|`base URI change - change folder, string is invalid`|Expected result: `false` but validator returned: `true`
+|`base URI change - change folder in subschema, string is invalid`|Expected result: `false` but validator returned: `true`
+|`root ref in remote ref, object is invalid`|Expected result: `false` but validator returned: `true`
 |`required validation, present required property is valid`|The schema failed to load(`Schema: 'required' attribute is an array when it should be a boolean`). **This excludes this validator from performance tests**
 |`required validation, non-present required property is invalid`|The schema failed to load(`Schema: 'required' attribute is an array when it should be a boolean`). **This excludes this validator from performance tests**
+|`required validation, ignores non-objects`|The schema failed to load(`Schema: 'required' attribute is an array when it should be a boolean`)
 
 **All other tests passed**.
 

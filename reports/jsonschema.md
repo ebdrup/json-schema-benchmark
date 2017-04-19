@@ -13,7 +13,13 @@ that is the case for these tests.
 |-----------|------
 |`maxLength validation, two supplementary Unicode code points is long enough`|Expected result: `true` but validator returned: `false`
 |`minLength validation, one supplementary Unicode code point is not long enough`|Expected result: `false` but validator returned: `true`
-|`validation of URIs, a valid protocol-relative URI`|Expected result: `true` but validator returned: `false`
+|`ECMA 262 regex non-compliance, ECMA 262 has no support for \Z anchor from .NET`|Expected result: `false` but validator returned: `true`
+|`Recursive references between schemas, valid tree`|Expected result: `true` but validator returned: `"no such schema <http://localhost:1234/node>"`
+|`Recursive references between schemas, invalid tree`|Expected result: `false` but validator returned: `"no such schema <http://localhost:1234/node>"`
+|`base URI change - change folder, number is valid`|Expected result: `true` but validator returned: `"no such schema <http://localhost:1234/folderInteger.json>"`
+|`base URI change - change folder, string is invalid`|Expected result: `false` but validator returned: `"no such schema <http://localhost:1234/folderInteger.json>"`
+|`base URI change - change folder in subschema, number is valid`|Expected result: `true` but validator returned: `"no such schema <http://localhost:1234/folderInteger.json>"`
+|`base URI change - change folder in subschema, string is invalid`|Expected result: `false` but validator returned: `"no such schema <http://localhost:1234/folderInteger.json>"`
 
 **All other tests passed**.
 

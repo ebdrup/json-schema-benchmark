@@ -48,7 +48,7 @@ that is the case for these tests.
 |`maxLength validation, too long is invalid`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
 |`maxProperties validation, too long is invalid`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
 |`maximum validation, above the maximum is invalid`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
-|`exclusiveMaximum validation, boundary point is invalid`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
+|`exclusiveMaximum validation, boundary point is invalid`|Expected result: `false` but validator returned: `true`
 |`minItems validation, too short is invalid`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
 |`minLength validation, too short is invalid`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
 |`minLength validation, one supplementary Unicode code point is not long enough`|Expected result: `false` but validator returned: `true`
@@ -70,8 +70,10 @@ that is the case for these tests.
 |`string, a bignum is not a string`|Expected result: `false` but validator returned: `true`
 |`float comparison with high precision, comparison works for high numbers`|Expected result: `false` but validator returned: `true`
 |`float comparison with high precision on negative numbers, comparison works for very negative numbers`|Expected result: `false` but validator returned: `true`
+|`ECMA 262 regex non-compliance, ECMA 262 has no support for \Z anchor from .NET`|Expected result: `false` but validator returned: `true`
 |`validation of date-time strings, an invalid date-time string`|Expected result: `false` but validator returned: `true`
 |`validation of date-time strings, only RFC3339 not all of ISO 8601 are valid`|Expected result: `false` but validator returned: `true`
+|`validation of URIs, an invalid protocol-relative URI Reference`|Expected result: `false` but validator returned: `true`
 |`validation of URIs, an invalid URI`|Expected result: `false` but validator returned: `true`
 |`validation of URIs, an invalid URI though valid URI reference`|Expected result: `false` but validator returned: `true`
 |`validation of e-mail addresses, an invalid e-mail address`|Expected result: `false` but validator returned: `true`
@@ -95,19 +97,27 @@ that is the case for these tests.
 |`escaped pointer ref, tilda invalid`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
 |`escaped pointer ref, percent invalid`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
 |`nested refs, nested ref invalid`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
+|`ref overrides any sibling keywords, ref valid, maxItems ignored`|Expected result: `true` but validator returned: `false`
+|`ref overrides any sibling keywords, ref invalid`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
 |`remote ref, containing refs itself, remote ref invalid`|Expected result: `false` but validator returned: `true`
+|`Recursive references between schemas, invalid tree`|Expected result: `false` but validator returned: `true`
 |`remote ref, remote ref invalid`|Expected result: `false` but validator returned: `true`
 |`fragment within remote ref, remote fragment invalid`|Expected result: `false` but validator returned: `true`
 |`ref within remote ref, ref within ref invalid`|Expected result: `false` but validator returned: `true`
-|`change resolution scope, changed scope ref invalid`|Expected result: `false` but validator returned: `true`
+|`base URI change, base URI change ref invalid`|Expected result: `false` but validator returned: `true`
+|`base URI change - change folder, string is invalid`|Expected result: `false` but validator returned: `true`
+|`base URI change - change folder in subschema, string is invalid`|Expected result: `false` but validator returned: `true`
+|`root ref in remote ref, object is invalid`|Expected result: `false` but validator returned: `true`
 |`required validation, non-present required property is invalid`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
 |`integer type matches integers, a float is not an integer`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
 |`integer type matches integers, a string is not an integer`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
+|`integer type matches integers, a string is still not an integer, even if it looks like one`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
 |`integer type matches integers, an object is not an integer`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
 |`integer type matches integers, an array is not an integer`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
 |`integer type matches integers, a boolean is not an integer`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
 |`integer type matches integers, null is not an integer`|Expected result: `false` but validator returned: `"Cannot convert undefined or null to object"`. **This excludes this validator from performance tests**
 |`number type matches numbers, a string is not a number`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
+|`number type matches numbers, a string is still not a number, even if it looks like one`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
 |`number type matches numbers, an object is not a number`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
 |`number type matches numbers, an array is not a number`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
 |`number type matches numbers, a boolean is not a number`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**

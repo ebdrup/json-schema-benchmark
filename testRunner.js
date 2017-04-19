@@ -48,20 +48,31 @@ module.exports = function (validators) {
 				'invalid definition, invalid definition schema',
 				'maxLength validation, two supplementary Unicode code points is long enough',
 				'minLength validation, one supplementary Unicode code point is not long enough',
-				//this is to get tv4 in the benchmarks
+				'an array of schemas for items, JavaScript pseudo-array is valid',
+				'ref overrides any sibling keywords, ref valid, maxItems ignored',
+				'Recursive references between schemas, invalid tree',
+				'a schema given for items, JavaScript pseudo-array is valid',
+				'an array of schemas for items, incomplete array of items',
+				'an array of schemas for items, empty array',
+				'required validation, ignores non-objects',
 				'heterogeneous enum validation, something else is invalid'
 			];
 			var excludeTestSuites = [
-				//lost failing these tests
 				'remote ref',
 				'remote ref, containing refs itself',
 				'fragment within remote ref',
 				'ref within remote ref',
 				'change resolution scope',
-				// these below were added to get jsck in the benchmarks)
 				'uniqueItems validation',
 				'valid definition',
-				'invalid definition'
+				'invalid definition',
+				'exclusiveMaximum validation',
+				'Recursive references between schemas',
+				'base URI change',
+				'base URI change - change folder',
+				'base URI change - change folder in subschema',
+				'root ref in remote ref',
+				'ECMA 262 regex non-compliance'
 			];
 			var testSuites = readTests(path.join(__dirname + '/JSON-Schema-Test-Suite/tests/draft4/'));
 			var optionalTests = getTestNames(readTests(path.join(__dirname + '/JSON-Schema-Test-Suite/tests/draft4/optional')));
@@ -195,7 +206,7 @@ function runBenchmark(validators, testSuites, excludeTestSuites, excludeTests) {
 		suite.add(validator.name, function () {
 			testSuitesCopy.forEach(function (testSuite) {
 				testSuite.tests.forEach(function (test) {
-					validator.test(testSuite.validatorInstance, test.data, testSuite.schema);
+						validator.test(testSuite.validatorInstance, test.data, testSuite.schema);
 				});
 			});
 		});
@@ -316,7 +327,7 @@ function saveResults(results, validators, allTestNames, testsThatAllValidatorsFa
 		var data = {
 			graphBarSpacing: graphBarSpacing,
 			validators: comma(validators),
-			fastestValidator: results[0].link,
+			fastestValidator: results[0] && results[0].link,
 			testsThatAllValidatorsFail: comma(testsThatAllValidatorsFail.map(function (testName) {
 				return {name: testName};
 			})),

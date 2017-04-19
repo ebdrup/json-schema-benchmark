@@ -11,8 +11,13 @@ that is the case for these tests.
 
 |test failed|reason
 |-----------|------
+|`ECMA 262 regex non-compliance, ECMA 262 has no support for \Z anchor from .NET`|Expected result: `false` but validator returned: `true`
+|`validation of URIs, an invalid protocol-relative URI Reference`|Expected result: `false` but validator returned: `true`
 |`validation of URIs, an invalid URI`|Expected result: `false` but validator returned: `true`
 |`validation of URIs, an invalid URI though valid URI reference`|Expected result: `false` but validator returned: `true`
+|`Recursive references between schemas, valid tree`|Expected result: `true` but validator returned: `false`
+|`base URI change - change folder, number is valid`|Expected result: `true` but validator returned: `false`
+|`base URI change - change folder in subschema, number is valid`|Expected result: `true` but validator returned: `false`
 
 **All other tests passed**.
 

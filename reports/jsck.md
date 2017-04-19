@@ -11,17 +11,28 @@ that is the case for these tests.
 
 |test failed|reason
 |-----------|------
+|`a schema given for items, JavaScript pseudo-array is valid`|Expected result: `true` but validator returned: `false`
 |`maxLength validation, two supplementary Unicode code points is long enough`|Expected result: `true` but validator returned: `false`
 |`minLength validation, one supplementary Unicode code point is not long enough`|Expected result: `false` but validator returned: `true`
-|`validation of URIs, a valid protocol-relative URI`|Expected result: `true` but validator returned: `false`
+|`ECMA 262 regex non-compliance, ECMA 262 has no support for \Z anchor from .NET`|Expected result: `false` but validator returned: `true`
+|`ref overrides any sibling keywords, ref valid, maxItems ignored`|Expected result: `true` but validator returned: `false`
+|`Recursive references between schemas, valid tree`|The schema failed to load(`Unresolvable $ref values: ["http://localhost:1234/node","http://localhost:1234/tree"]`)
+|`Recursive references between schemas, invalid tree`|The schema failed to load(`Unresolvable $ref values: ["http://localhost:1234/node","http://localhost:1234/tree"]`)
 |`remote ref, remote ref valid`|The schema failed to load(`Unresolvable $ref values: ["http://localhost:1234/integer.json"]`)
 |`remote ref, remote ref invalid`|The schema failed to load(`Unresolvable $ref values: ["http://localhost:1234/integer.json"]`)
 |`fragment within remote ref, remote fragment valid`|The schema failed to load(`Unresolvable $ref values: ["http://localhost:1234/subSchemas.json#/integer"]`)
 |`fragment within remote ref, remote fragment invalid`|The schema failed to load(`Unresolvable $ref values: ["http://localhost:1234/subSchemas.json#/integer"]`)
 |`ref within remote ref, ref within ref valid`|The schema failed to load(`Unresolvable $ref values: ["http://localhost:1234/subSchemas.json#/refToInteger"]`)
 |`ref within remote ref, ref within ref invalid`|The schema failed to load(`Unresolvable $ref values: ["http://localhost:1234/subSchemas.json#/refToInteger"]`)
-|`change resolution scope, changed scope ref valid`|The schema failed to load(`Unresolvable $ref values: ["http://localhost:1234/"]`)
-|`change resolution scope, changed scope ref invalid`|The schema failed to load(`Unresolvable $ref values: ["http://localhost:1234/"]`)
+|`base URI change, base URI change ref valid`|The schema failed to load(`Unresolvable $ref values: ["http://localhost:1234/"]`)
+|`base URI change, base URI change ref invalid`|The schema failed to load(`Unresolvable $ref values: ["http://localhost:1234/"]`)
+|`base URI change - change folder, number is valid`|The schema failed to load(`Unresolvable $ref values: ["http://localhost:1234/folderInteger.json"]`)
+|`base URI change - change folder, string is invalid`|The schema failed to load(`Unresolvable $ref values: ["http://localhost:1234/folderInteger.json"]`)
+|`base URI change - change folder in subschema, number is valid`|The schema failed to load(`Unresolvable $ref values: ["http://localhost:1234/folderInteger.json"]`)
+|`base URI change - change folder in subschema, string is invalid`|The schema failed to load(`Unresolvable $ref values: ["http://localhost:1234/folderInteger.json"]`)
+|`root ref in remote ref, string is valid`|The schema failed to load(`Unresolvable $ref values: ["http://localhost:1234/name.json#/definitions/orNull"]`)
+|`root ref in remote ref, null is valid`|The schema failed to load(`Unresolvable $ref values: ["http://localhost:1234/name.json#/definitions/orNull"]`)
+|`root ref in remote ref, object is invalid`|The schema failed to load(`Unresolvable $ref values: ["http://localhost:1234/name.json#/definitions/orNull"]`)
 |`uniqueItems validation, non-unique array of integers is invalid`|Expected result: `false` but validator returned: `true`
 |`uniqueItems validation, numbers are unique if mathematically unequal`|Expected result: `false` but validator returned: `true`
 |`uniqueItems validation, non-unique array of objects is invalid`|Expected result: `false` but validator returned: `true`
