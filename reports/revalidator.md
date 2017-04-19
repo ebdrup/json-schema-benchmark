@@ -54,7 +54,7 @@ that is the case for these tests.
 |`minLength validation, one supplementary Unicode code point is not long enough`|Expected result: `false` but validator returned: `true`
 |`minProperties validation, too short is invalid`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
 |`minimum validation, below the minimum is invalid`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
-|`exclusiveMinimum validation, boundary point is invalid`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
+|`exclusiveMinimum validation, boundary point is invalid`|Expected result: `false` but validator returned: `true`
 |`by int, int by int fail`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
 |`by number, 35 is not multiple of 1.5`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
 |`by small number, 0.00751 is not multiple of 0.0001`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**

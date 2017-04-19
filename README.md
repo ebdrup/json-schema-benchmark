@@ -8,18 +8,19 @@ for validators that cause side-effects on schema or data.
 
 # Performance
 
-![performance](https://chart.googleapis.com/chart?chxt=x,y&cht=bhs&chco=76A4FB&chls=2.0&chbh=46,4,1&chs=600x420&chxl=-1:|djv|json-schema-validator-generator|is-my-json-valid|schemasaurus|jsck|z-schema|jsonschema|tv4&chd=t:100,92.2,58,23,7.1,5.9,0.8,0.4)
+![performance](https://chart.googleapis.com/chart?chxt=x,y&cht=bhs&chco=76A4FB&chls=2.0&chbh=40,4,1&chs=600x416&chxl=-1:|djv|json-schema-validator-generator|ajv|is-my-json-valid|schemasaurus|jsck|z-schema|jsonschema|tv4&chd=t:100,91.1,83,59.6,23.1,6.6,6.4,0.8,0.4)
 
 |Validator|Relative speed|Number of test runs per second|
 |---------|:------------:|:----------------------------:|
-|[`djv`](https://github.com/korzio/djv#readme)|100%|21579 (± 2.18%)|
-|json-schema-validator-generator|92.2%|19895 (± 0.92%)|
-|[`is-my-json-valid`](https://github.com/mafintosh/is-my-json-valid)|58%|12521 (± 3.63%)|
-|[`schemasaurus`](https://github.com/AlexeyGrishin/schemasaurus)|23%|4955 (± 3.75%)|
-|[`jsck`](https://github.com/pandastrike/jsck#readme)|7.1%|1538 (± 3.21%)|
-|[`z-schema`](https://github.com/zaggino/z-schema)|5.9%|1277 (± 3%)|
-|[`jsonschema`](https://github.com/tdegrunt/jsonschema#readme)|0.8%|177 (± 2.73%)|
-|[`tv4`](https://github.com/geraintluff/tv4)|0.4%|88 (± 2.42%)|
+|[`djv`](https://github.com/korzio/djv#readme)|100%|21374 (± 2.27%)|
+|json-schema-validator-generator|91.1%|19475 (± 1.88%)|
+|[`ajv`](https://github.com/epoberezkin/ajv)|83%|17744 (± 4.04%)|
+|[`is-my-json-valid`](https://github.com/mafintosh/is-my-json-valid)|59.6%|12745 (± 2.81%)|
+|[`schemasaurus`](https://github.com/AlexeyGrishin/schemasaurus)|23.1%|4929 (± 3.95%)|
+|[`jsck`](https://github.com/pandastrike/jsck#readme)|6.6%|1414 (± 2.83%)|
+|[`z-schema`](https://github.com/zaggino/z-schema)|6.4%|1371 (± 2.58%)|
+|[`jsonschema`](https://github.com/tdegrunt/jsonschema#readme)|0.8%|165 (± 2.9%)|
+|[`tv4`](https://github.com/geraintluff/tv4)|0.4%|87 (± 2.03%)|
 
 235 tests are run in each test run.
 

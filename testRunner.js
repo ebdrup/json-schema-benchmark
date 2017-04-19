@@ -23,7 +23,7 @@ module.exports = function (validators) {
 					}
 					var version = Object.keys(result)[0];
 					if (version) {
-                        validator.version = version;
+						validator.version = version;
 						validator.homepage = result[version].homepage;
 					}
 					return callback(null);
@@ -36,12 +36,12 @@ module.exports = function (validators) {
 				process.exit(1);
 			}
 			validators.forEach(function (v) {
-                v.link = link(v.name);
-                v.versionLink = link(v.version ? v.name + ' (' + v.version + ')' : v.name);
+				v.link = link(v.name);
+				v.versionLink = link(v.version ? v.name + ' (' + v.version + ')' : v.name);
 
-                function link(name) {
-                    return v.homepage ? '[`' + name + '`](' + v.homepage + ')' : name;
-                }
+				function link(name) {
+					return v.homepage ? '[`' + name + '`](' + v.homepage + ')' : name;
+				}
 			});
 			var excludeTests = [
 				//lots of validators fail these
@@ -67,11 +67,14 @@ module.exports = function (validators) {
 				'valid definition',
 				'invalid definition',
 				'exclusiveMaximum validation',
+				'exclusiveMinimum validation',
 				'Recursive references between schemas',
 				'base URI change',
 				'base URI change - change folder',
 				'base URI change - change folder in subschema',
 				'root ref in remote ref',
+				'float comparison with high precision',
+				'float comparison with high precision on negative numbers',
 				'ECMA 262 regex non-compliance'
 			];
 			var testSuites = readTests(path.join(__dirname + '/JSON-Schema-Test-Suite/tests/draft4/'));
@@ -206,7 +209,7 @@ function runBenchmark(validators, testSuites, excludeTestSuites, excludeTests) {
 		suite.add(validator.name, function () {
 			testSuitesCopy.forEach(function (testSuite) {
 				testSuite.tests.forEach(function (test) {
-						validator.test(testSuite.validatorInstance, test.data, testSuite.schema);
+					validator.test(testSuite.validatorInstance, test.data, testSuite.schema);
 				});
 			});
 		});
@@ -265,7 +268,7 @@ function comma(arr) {
 
 function saveResults(results, validators, allTestNames, testsThatAllValidatorsFail) {
 	require('child_process').exec('rm -f ' + path.join(__dirname, '/reports/*.md'), function (err) {
-		if(err){
+		if (err) {
 			console.error('Error removing old reports');
 			console.error(err);
 		}
@@ -312,9 +315,9 @@ function saveResults(results, validators, allTestNames, testsThatAllValidatorsFa
 			return b.hz - a.hz
 		});
 		var validatorBenchmarks = validators
-			.filter(function(v){
+			.filter(function (v) {
 				return !!v.benchmarks;
-			}).map(function(v){
+			}).map(function (v) {
 				return {
 					link: format('[Benchmarks owned by %s](%s)', v.name, v.benchmarks)
 				};
