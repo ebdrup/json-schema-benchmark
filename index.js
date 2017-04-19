@@ -19,6 +19,7 @@ var jsen = require('jsen');
 var schemasaurus = require('schemasaurus');
 var ajv = require('ajv')();
 var djv = require('djv')();
+var jsvg = require('json-schema-validator-generator').default;
 
 var refs = {
 	'http://localhost:1234/integer.json': require('./JSON-Schema-Test-Suite/remotes/integer.json'),
@@ -35,6 +36,15 @@ Object.keys(refs).slice(0,3).forEach(function (uri) {
 djv.addSchema('http://json-schema.org/draft-04/schema', refs['http://json-schema.org/draft-04/schema']);
 
 testRunner([
+	{
+		name: 'json-schema-validator-generator',
+		setup: function (schema) {
+			return eval(jsvg(schema).js);
+		},
+		test: function (instance, json, schema) {
+			return instance.root(json) === null;
+		}
+	},
 	{
 		name: 'is-my-json-valid',
 		setup: function (schema) {
