@@ -1,10 +1,12 @@
 # {{&link}} - test summary
 
+{{#testsThatAllValidatorsFail.length}}
 # All validators fail this test
 {{#testsThatAllValidatorsFail}}
 
 `{{name}}`
 {{/testsThatAllValidatorsFail}}
+{{/testsThatAllValidatorsFail.length}}
 
 {{#hasFailingTests}}
 # {{&link}} failed tests

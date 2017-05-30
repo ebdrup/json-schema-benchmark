@@ -45,15 +45,9 @@ module.exports = function (validators) {
 			});
 			var excludeTests = [
 				//lots of validators fail these
-				'invalid definition, invalid definition schema',
 				'maxLength validation, two supplementary Unicode code points is long enough',
 				'minLength validation, one supplementary Unicode code point is not long enough',
-				'an array of schemas for items, JavaScript pseudo-array is valid',
-				'ref overrides any sibling keywords, ref valid, maxItems ignored',
-				'Recursive references between schemas, invalid tree',
 				'a schema given for items, JavaScript pseudo-array is valid',
-				'an array of schemas for items, incomplete array of items',
-				'an array of schemas for items, empty array',
 				'required validation, ignores non-objects',
 				'heterogeneous enum validation, something else is invalid'
 			];
@@ -63,18 +57,16 @@ module.exports = function (validators) {
 				'fragment within remote ref',
 				'ref within remote ref',
 				'change resolution scope',
+				'ref overrides any sibling keywords',
+				'an array of schemas for items',
 				'uniqueItems validation',
 				'valid definition',
 				'invalid definition',
-				'exclusiveMaximum validation',
-				'exclusiveMinimum validation',
 				'Recursive references between schemas',
 				'base URI change',
 				'base URI change - change folder',
 				'base URI change - change folder in subschema',
 				'root ref in remote ref',
-				'float comparison with high precision',
-				'float comparison with high precision on negative numbers',
 				'ECMA 262 regex non-compliance'
 			];
 			var testSuites = readTests(path.join(__dirname + '/JSON-Schema-Test-Suite/tests/draft4/'));

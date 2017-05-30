@@ -1,8 +1,5 @@
 # [`jayschema`](https://github.com/natesilva/jayschema) - test summary
 
-# All validators fail this test
-
-`some languages do not distinguish between different types of numeric value, a float is not an integer even without fractional part`
 
 # [`jayschema`](https://github.com/natesilva/jayschema) failed tests
 
@@ -16,6 +13,7 @@ that is the case for these tests.
 |`ECMA 262 regex non-compliance, ECMA 262 has no support for \Z anchor from .NET`|Expected result: `false` but validator returned: `true`
 |`validation of URIs, an invalid protocol-relative URI Reference`|Expected result: `false` but validator returned: `true`
 |`validation of URIs, an invalid URI though valid URI reference`|Expected result: `false` but validator returned: `true`
+|`some languages do not distinguish between different types of numeric value, a float is not an integer even without fractional part`|Expected result: `false` but validator returned: `true`
 |`property named $ref that is not a reference, property named $ref valid`|Expected result: `true` but validator returned: `"uri.slice is not a function"`. **This excludes this validator from performance tests**
 |`property named $ref that is not a reference, property named $ref invalid`|Expected result: `false` but validator returned: `"uri.slice is not a function"`. **This excludes this validator from performance tests**
 |`remote ref, remote ref valid`|Expected result: `true` but validator returned: `false`

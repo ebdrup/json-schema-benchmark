@@ -1,8 +1,5 @@
 # [`jassi`](https://github.com/iclanzan/jassi) - test summary
 
-# All validators fail this test
-
-`some languages do not distinguish between different types of numeric value, a float is not an integer even without fractional part`
 
 # [`jassi`](https://github.com/iclanzan/jassi) failed tests
 
@@ -31,6 +28,7 @@ that is the case for these tests.
 |`validation of host names, a host name starting with an illegal character`|Expected result: `false` but validator returned: `true`
 |`validation of host names, a host name containing illegal characters`|Expected result: `false` but validator returned: `true`
 |`validation of host names, a host name with a component too long`|Expected result: `false` but validator returned: `true`
+|`some languages do not distinguish between different types of numeric value, a float is not an integer even without fractional part`|Expected result: `false` but validator returned: `true`
 |`root pointer ref, recursive mismatch`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
 |`relative pointer ref to object, mismatch`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
 |`relative pointer ref to array, mismatch array`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
@@ -39,7 +37,7 @@ that is the case for these tests.
 |`escaped pointer ref, percent invalid`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
 |`nested refs, nested ref invalid`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
 |`ref overrides any sibling keywords, ref valid, maxItems ignored`|Expected result: `true` but validator returned: `false`
-|`ref overrides any sibling keywords, ref invalid`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
+|`ref overrides any sibling keywords, ref invalid`|Expected result: `false` but validator returned: `true`
 |`remote ref, containing refs itself, remote ref invalid`|Expected result: `false` but validator returned: `true`
 |`Recursive references between schemas, invalid tree`|Expected result: `false` but validator returned: `true`
 |`remote ref, remote ref invalid`|Expected result: `false` but validator returned: `true`
