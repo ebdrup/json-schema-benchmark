@@ -41,7 +41,7 @@ testRunner([
 			return eval(jsvg(schema).js);
 		},
 		test: function (instance, json, schema) {
-			return instance.root(json) === null;
+			return instance.root(json) === 0;
 		}
 	},
 	{
