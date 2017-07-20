@@ -1,5 +1,8 @@
 # [`json-gate`](https://github.com/oferei/json-gate#readme) - test summary
 
+# All validators fail this test
+
+`some languages do not distinguish between different types of numeric value, a float is not an integer even without fractional part`
 
 # [`json-gate`](https://github.com/oferei/json-gate#readme) failed tests
 
@@ -65,7 +68,6 @@ that is the case for these tests.
 |`validation of host names, a host name starting with an illegal character`|Expected result: `false` but validator returned: `true`
 |`validation of host names, a host name containing illegal characters`|Expected result: `false` but validator returned: `true`
 |`validation of host names, a host name with a component too long`|Expected result: `false` but validator returned: `true`
-|`some languages do not distinguish between different types of numeric value, a float is not an integer even without fractional part`|Expected result: `false` but validator returned: `true`
 |`root pointer ref, recursive mismatch`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
 |`relative pointer ref to object, mismatch`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
 |`relative pointer ref to array, mismatch array`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**

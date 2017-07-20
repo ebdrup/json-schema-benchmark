@@ -1,5 +1,8 @@
 # [`themis`](https://github.com/playlyfe/themis) - test summary
 
+# All validators fail this test
+
+`some languages do not distinguish between different types of numeric value, a float is not an integer even without fractional part`
 
 # [`themis`](https://github.com/playlyfe/themis) failed tests
 
@@ -11,7 +14,6 @@ that is the case for these tests.
 |`valid definition, valid definition schema`|Expected result: `true` but validator returned: `"validators.http://json-schema.org/draft-04/schema# is not a function"`
 |`invalid definition, invalid definition schema`|Expected result: `false` but validator returned: `"validators.http://json-schema.org/draft-04/schema# is not a function"`
 |`ECMA 262 regex non-compliance, ECMA 262 has no support for \Z anchor from .NET`|Expected result: `false` but validator returned: `true`
-|`some languages do not distinguish between different types of numeric value, a float is not an integer even without fractional part`|Expected result: `false` but validator returned: `true`
 |`ref overrides any sibling keywords, ref valid, maxItems ignored`|Expected result: `true` but validator returned: `false`
 |`remote ref, containing refs itself, remote ref valid`|Expected result: `true` but validator returned: `"validators.http://json-schema.org/draft-04/schema# is not a function"`
 |`remote ref, containing refs itself, remote ref invalid`|Expected result: `false` but validator returned: `"validators.http://json-schema.org/draft-04/schema# is not a function"`

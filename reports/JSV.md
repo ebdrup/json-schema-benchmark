@@ -1,5 +1,8 @@
 # [`JSV`](http://github.com/garycourt/JSV) - test summary
 
+# All validators fail this test
+
+`some languages do not distinguish between different types of numeric value, a float is not an integer even without fractional part`
 
 # [`JSV`](http://github.com/garycourt/JSV) failed tests
 
@@ -52,7 +55,6 @@ that is the case for these tests.
 |`validation of host names, a host name starting with an illegal character`|Expected result: `false` but validator returned: `true`
 |`validation of host names, a host name containing illegal characters`|Expected result: `false` but validator returned: `true`
 |`validation of host names, a host name with a component too long`|Expected result: `false` but validator returned: `true`
-|`some languages do not distinguish between different types of numeric value, a float is not an integer even without fractional part`|Expected result: `false` but validator returned: `true`
 |`escaped pointer ref, slash valid`|Expected result: `true` but validator returned: `false`. **This excludes this validator from performance tests**
 |`escaped pointer ref, tilda valid`|Expected result: `true` but validator returned: `false`. **This excludes this validator from performance tests**
 |`escaped pointer ref, percent valid`|Expected result: `true` but validator returned: `false`. **This excludes this validator from performance tests**

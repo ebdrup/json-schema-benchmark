@@ -1,5 +1,8 @@
 # [`json-model`](https://github.com/geraintluff/json-model) - test summary
 
+# All validators fail this test
+
+`some languages do not distinguish between different types of numeric value, a float is not an integer even without fractional part`
 
 # [`json-model`](https://github.com/geraintluff/json-model) failed tests
 
@@ -37,7 +40,6 @@ that is the case for these tests.
 |`validation of host names, a host name starting with an illegal character`|Expected result: `false` but validator returned: `true`
 |`validation of host names, a host name containing illegal characters`|Expected result: `false` but validator returned: `true`
 |`validation of host names, a host name with a component too long`|Expected result: `false` but validator returned: `true`
-|`some languages do not distinguish between different types of numeric value, a float is not an integer even without fractional part`|Expected result: `false` but validator returned: `true`
 |`remote ref, containing refs itself, remote ref invalid`|Expected result: `false` but validator returned: `true`
 |`Recursive references between schemas, valid tree`|The schema failed to load(`Requests not enabled - try JsonModel.setRequestFunction(func): {"method":"GET","url":"http://localhost:1234/node"}`)
 |`Recursive references between schemas, invalid tree`|The schema failed to load(`Requests not enabled - try JsonModel.setRequestFunction(func): {"method":"GET","url":"http://localhost:1234/node"}`)

@@ -1,5 +1,8 @@
 # [`schemasaurus`](https://github.com/AlexeyGrishin/schemasaurus) - test summary
 
+# All validators fail this test
+
+`some languages do not distinguish between different types of numeric value, a float is not an integer even without fractional part`
 
 # [`schemasaurus`](https://github.com/AlexeyGrishin/schemasaurus) failed tests
 
@@ -15,7 +18,6 @@ that is the case for these tests.
 |`maxLength validation, two supplementary Unicode code points is long enough`|Expected result: `true` but validator returned: `false`
 |`minLength validation, one supplementary Unicode code point is not long enough`|Expected result: `false` but validator returned: `true`
 |`ECMA 262 regex non-compliance, ECMA 262 has no support for \Z anchor from .NET`|The schema failed to load(`Unknown format 'regex'. Did you forget to register it?`)
-|`some languages do not distinguish between different types of numeric value, a float is not an integer even without fractional part`|Expected result: `false` but validator returned: `true`
 |`remote ref, containing refs itself, remote ref valid`|The schema failed to load(`Remote refs are not supported for now :(`)
 |`remote ref, containing refs itself, remote ref invalid`|The schema failed to load(`Remote refs are not supported for now :(`)
 |`Recursive references between schemas, valid tree`|The schema failed to load(`Cannot read property 'split' of undefined`)

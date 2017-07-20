@@ -1,5 +1,8 @@
 # [`revalidator`](https://github.com/flatiron/revalidator) - test summary
 
+# All validators fail this test
+
+`some languages do not distinguish between different types of numeric value, a float is not an integer even without fractional part`
 
 # [`revalidator`](https://github.com/flatiron/revalidator) failed tests
 
@@ -84,7 +87,6 @@ that is the case for these tests.
 |`validation of host names, a host name starting with an illegal character`|Expected result: `false` but validator returned: `true`
 |`validation of host names, a host name containing illegal characters`|Expected result: `false` but validator returned: `true`
 |`validation of host names, a host name with a component too long`|Expected result: `false` but validator returned: `true`
-|`some languages do not distinguish between different types of numeric value, a float is not an integer even without fractional part`|Expected result: `false` but validator returned: `true`
 |`pattern validation, a non-matching pattern is invalid`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
 |`properties, patternProperties, additionalProperties interaction, additionalProperty validates others`|Expected result: `true` but validator returned: `"Cannot read property 'format' of undefined"`. **This excludes this validator from performance tests**
 |`properties, patternProperties, additionalProperties interaction, additionalProperty invalidates others`|Expected result: `false` but validator returned: `"Cannot read property 'format' of undefined"`. **This excludes this validator from performance tests**
