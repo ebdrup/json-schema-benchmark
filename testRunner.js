@@ -102,7 +102,7 @@ function getTestNames(testSuites) {
 }
 
 function validAndInvalid(validator, allTestNames) {
-	return _.pluck(validator.failingTests, 'testName').filter(Boolean);
+	return _.map(validator.failingTests, 'testName').filter(Boolean);
 	return _.intersection(testNames.concat(testNames.map(function (testName) {
 		return testName.indexOf('invalid') === -1 ?
 			testName.replace(/valid(.*)$/, 'invalid$1') :
