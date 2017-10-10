@@ -117,6 +117,7 @@ testRunner([
 	{
 		name: 'djv',
 		setup: function (schema) {
+			djv.useVersion('draft-04');
 			return djv.addSchema('test', schema).fn;
 		},
 		test: function (instance, json, schema) {
