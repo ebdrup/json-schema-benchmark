@@ -20,6 +20,7 @@ var schemasaurus = require('schemasaurus');
 var ajv = require('ajv')();
 var djv = require('djv')();
 var jsvg = require('json-schema-validator-generator').default;
+var jlib = require("json-schema-library");
 
 var refs = {
 	'http://json-schema.org/draft-04/schema': require('./refs/json-schema-draft-04.json'),
@@ -32,6 +33,7 @@ var refs = {
 Object.keys(refs).forEach(function (uri) {
     ajv.addSchema(refs[uri], uri);
     djv.addSchema(uri, refs[uri]);
+    jlib.addSchema(uri, refs[uri]);
 });
 
 testRunner([
@@ -263,6 +265,15 @@ testRunner([
 		},
 		test: function (instance, json, schema) {
 			return instance.validate(json, schema).valid;
+		}
+	},
+	{
+		name: 'json-schema-library',
+		setup: function (schema) {
+			return new jlib.cores.Draft04(schema);
+		},
+		test: function (instance, json, schema) {
+			return instance.isValid(schema, json);
 		}
 	}
 ]);

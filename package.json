@@ -18,6 +18,7 @@
     "jsen": "latest",
     "json-gate": "latest",
     "json-model": "latest",
+    "json-schema-library": "latest",
     "json-schema-validator-generator": "latest",
     "json-stringify-safe": "^5.0.1",
     "jsonschema": "latest",
