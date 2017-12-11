@@ -16,7 +16,9 @@ that is the case for these tests.
 |`a schema given for items, JavaScript pseudo-array is valid`|Expected result: `true` but validator returned: `false`
 |`an array of schemas for items, JavaScript pseudo-array is valid`|Expected result: `true` but validator returned: `false`
 |`maxLength validation, two supplementary Unicode code points is long enough`|Expected result: `true` but validator returned: `false`
+|`maxProperties validation, ignores arrays`|Expected result: `true` but validator returned: `false`. **This excludes this validator from performance tests**
 |`minLength validation, one supplementary Unicode code point is not long enough`|Expected result: `false` but validator returned: `true`
+|`minProperties validation, ignores arrays`|Expected result: `true` but validator returned: `false`. **This excludes this validator from performance tests**
 |`ECMA 262 regex non-compliance, ECMA 262 has no support for \Z anchor from .NET`|The schema failed to load(`Unknown format 'regex'. Did you forget to register it?`)
 |`remote ref, containing refs itself, remote ref valid`|The schema failed to load(`Remote refs are not supported for now :(`)
 |`remote ref, containing refs itself, remote ref invalid`|The schema failed to load(`Remote refs are not supported for now :(`)

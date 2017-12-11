@@ -19,8 +19,11 @@ that is the case for these tests.
 |`validation of date-time strings, an invalid date-time string`|Expected result: `false` but validator returned: `true`
 |`validation of date-time strings, only RFC3339 not all of ISO 8601 are valid`|Expected result: `false` but validator returned: `true`
 |`validation of URIs, an invalid protocol-relative URI Reference`|Expected result: `false` but validator returned: `true`
+|`validation of URIs, an invalid relative URI Reference`|Expected result: `false` but validator returned: `true`
 |`validation of URIs, an invalid URI`|Expected result: `false` but validator returned: `true`
 |`validation of URIs, an invalid URI though valid URI reference`|Expected result: `false` but validator returned: `true`
+|`validation of URIs, an invalid URI with spaces`|Expected result: `false` but validator returned: `true`
+|`validation of URIs, an invalid URI with spaces and missing scheme`|Expected result: `false` but validator returned: `true`
 |`validation of e-mail addresses, an invalid e-mail address`|Expected result: `false` but validator returned: `true`
 |`validation of IP addresses, an IP address with too many components`|Expected result: `false` but validator returned: `true`
 |`validation of IP addresses, an IP address with out-of-range values`|Expected result: `false` but validator returned: `true`

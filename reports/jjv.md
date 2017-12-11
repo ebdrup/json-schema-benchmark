@@ -11,12 +11,20 @@ that is the case for these tests.
 
 |test failed|reason
 |-----------|------
+|`additionalProperties being false does not allow other properties, ignores strings`|Expected result: `true` but validator returned: `false`. **This excludes this validator from performance tests**
 |`an array of schemas for items, incomplete array of items`|Expected result: `true` but validator returned: `false`
 |`an array of schemas for items, empty array`|Expected result: `true` but validator returned: `false`
 |`maxLength validation, two supplementary Unicode code points is long enough`|Expected result: `true` but validator returned: `false`
+|`maxProperties validation, ignores arrays`|Expected result: `true` but validator returned: `false`. **This excludes this validator from performance tests**
 |`minLength validation, one supplementary Unicode code point is not long enough`|Expected result: `false` but validator returned: `true`
+|`minProperties validation, ignores arrays`|Expected result: `true` but validator returned: `false`. **This excludes this validator from performance tests**
 |`ECMA 262 regex non-compliance, ECMA 262 has no support for \Z anchor from .NET`|Expected result: `false` but validator returned: `true`
+|`validation of URIs, a valid URL based on IPv4`|Expected result: `true` but validator returned: `false`
+|`validation of URIs, a valid URL `|Expected result: `true` but validator returned: `false`
+|`validation of URIs, a valid tel URI`|Expected result: `true` but validator returned: `false`
+|`validation of URIs, a valid URN`|Expected result: `true` but validator returned: `false`
 |`validation of URIs, an invalid protocol-relative URI Reference`|Expected result: `false` but validator returned: `true`
+|`validation of URIs, an invalid URI with spaces`|Expected result: `false` but validator returned: `true`
 |`escaped pointer ref, slash valid`|Expected result: `true` but validator returned: `false`. **This excludes this validator from performance tests**
 |`escaped pointer ref, tilda valid`|Expected result: `true` but validator returned: `false`. **This excludes this validator from performance tests**
 |`escaped pointer ref, percent valid`|Expected result: `true` but validator returned: `false`. **This excludes this validator from performance tests**
@@ -26,7 +34,8 @@ that is the case for these tests.
 |`base URI change - change folder in subschema, number is valid`|Expected result: `true` but validator returned: `false`
 |`root ref in remote ref, string is valid`|Expected result: `true` but validator returned: `false`
 |`root ref in remote ref, null is valid`|Expected result: `true` but validator returned: `false`
-|`required validation, ignores non-objects`|Expected result: `true` but validator returned: `false`
+|`required validation, ignores strings`|Expected result: `true` but validator returned: `false`. **This excludes this validator from performance tests**
+|`required validation, ignores other non-objects`|Expected result: `true` but validator returned: `false`. **This excludes this validator from performance tests**
 
 **All other tests passed**.
 

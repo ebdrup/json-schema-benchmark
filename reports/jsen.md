@@ -12,6 +12,10 @@ that is the case for these tests.
 |test failed|reason
 |-----------|------
 |`ECMA 262 regex non-compliance, ECMA 262 has no support for \Z anchor from .NET`|Expected result: `false` but validator returned: `true`
+|`validation of URIs, a valid mailto URI`|Expected result: `true` but validator returned: `false`
+|`validation of URIs, a valid newsgroup URI`|Expected result: `true` but validator returned: `false`
+|`validation of URIs, a valid tel URI`|Expected result: `true` but validator returned: `false`
+|`validation of URIs, a valid URN`|Expected result: `true` but validator returned: `false`
 |`validation of URIs, an invalid protocol-relative URI Reference`|Expected result: `false` but validator returned: `true`
 |`root ref in remote ref, string is valid`|Expected result: `true` but validator returned: `false`
 |`root ref in remote ref, object is invalid`|Expected result: `false` but validator returned: `true`

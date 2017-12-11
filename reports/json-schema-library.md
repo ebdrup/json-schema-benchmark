@@ -1,4 +1,4 @@
-# [`djv`](https://github.com/korzio/djv#readme) - test summary
+# [`json-schema-library`](https://github.com/sagold/json-schema-library) - test summary
 
 # All validators fail this test
 

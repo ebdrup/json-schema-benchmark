@@ -51,10 +51,25 @@ that is the case for these tests.
 |`validation of date-time strings, a valid date-time string`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'date-time' format`)
 |`validation of date-time strings, an invalid date-time string`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'date-time' format`)
 |`validation of date-time strings, only RFC3339 not all of ISO 8601 are valid`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'date-time' format`)
-|`validation of URIs, a valid URI`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'uri' format`)
+|`validation of URIs, a valid URL with anchor tag`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'uri' format`)
+|`validation of URIs, a valid URL with anchor tag and parantheses`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'uri' format`)
+|`validation of URIs, a valid URL with URL-encoded stuff`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'uri' format`)
+|`validation of URIs, a valid puny-coded URL `|The schema failed to load(`Schema: 'type' attribute does not conform to the 'uri' format`)
+|`validation of URIs, a valid URL with many special characters`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'uri' format`)
+|`validation of URIs, a valid URL based on IPv4`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'uri' format`)
+|`validation of URIs, a valid URL with ftp scheme`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'uri' format`)
+|`validation of URIs, a valid URL for a simple text file`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'uri' format`)
+|`validation of URIs, a valid URL `|The schema failed to load(`Schema: 'type' attribute does not conform to the 'uri' format`)
+|`validation of URIs, a valid mailto URI`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'uri' format`)
+|`validation of URIs, a valid newsgroup URI`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'uri' format`)
+|`validation of URIs, a valid tel URI`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'uri' format`)
+|`validation of URIs, a valid URN`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'uri' format`)
 |`validation of URIs, an invalid protocol-relative URI Reference`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'uri' format`)
+|`validation of URIs, an invalid relative URI Reference`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'uri' format`)
 |`validation of URIs, an invalid URI`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'uri' format`)
 |`validation of URIs, an invalid URI though valid URI reference`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'uri' format`)
+|`validation of URIs, an invalid URI with spaces`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'uri' format`)
+|`validation of URIs, an invalid URI with spaces and missing scheme`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'uri' format`)
 |`validation of e-mail addresses, a valid e-mail address`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'email' format`)
 |`validation of e-mail addresses, an invalid e-mail address`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'email' format`)
 |`validation of IP addresses, an IP address with too many components`|Expected result: `false` but validator returned: `true`
@@ -89,7 +104,9 @@ that is the case for these tests.
 |`root ref in remote ref, object is invalid`|Expected result: `false` but validator returned: `true`
 |`required validation, present required property is valid`|The schema failed to load(`Schema: 'required' attribute is an array when it should be a boolean`). **This excludes this validator from performance tests**
 |`required validation, non-present required property is invalid`|The schema failed to load(`Schema: 'required' attribute is an array when it should be a boolean`). **This excludes this validator from performance tests**
-|`required validation, ignores non-objects`|The schema failed to load(`Schema: 'required' attribute is an array when it should be a boolean`)
+|`required validation, ignores arrays`|The schema failed to load(`Schema: 'required' attribute is an array when it should be a boolean`). **This excludes this validator from performance tests**
+|`required validation, ignores strings`|The schema failed to load(`Schema: 'required' attribute is an array when it should be a boolean`). **This excludes this validator from performance tests**
+|`required validation, ignores other non-objects`|The schema failed to load(`Schema: 'required' attribute is an array when it should be a boolean`). **This excludes this validator from performance tests**
 
 **All other tests passed**.
 

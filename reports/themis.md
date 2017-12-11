@@ -14,6 +14,12 @@ that is the case for these tests.
 |`valid definition, valid definition schema`|Expected result: `true` but validator returned: `"validators.http://json-schema.org/draft-04/schema# is not a function"`
 |`invalid definition, invalid definition schema`|Expected result: `false` but validator returned: `"validators.http://json-schema.org/draft-04/schema# is not a function"`
 |`ECMA 262 regex non-compliance, ECMA 262 has no support for \Z anchor from .NET`|Expected result: `false` but validator returned: `true`
+|`validation of URIs, a valid puny-coded URL `|Expected result: `true` but validator returned: `false`
+|`validation of URIs, a valid URL `|Expected result: `true` but validator returned: `false`
+|`validation of URIs, a valid mailto URI`|Expected result: `true` but validator returned: `false`
+|`validation of URIs, a valid newsgroup URI`|Expected result: `true` but validator returned: `false`
+|`validation of URIs, a valid tel URI`|Expected result: `true` but validator returned: `false`
+|`validation of URIs, a valid URN`|Expected result: `true` but validator returned: `false`
 |`ref overrides any sibling keywords, ref valid, maxItems ignored`|Expected result: `true` but validator returned: `false`
 |`remote ref, containing refs itself, remote ref valid`|Expected result: `true` but validator returned: `"validators.http://json-schema.org/draft-04/schema# is not a function"`
 |`remote ref, containing refs itself, remote ref invalid`|Expected result: `false` but validator returned: `"validators.http://json-schema.org/draft-04/schema# is not a function"`

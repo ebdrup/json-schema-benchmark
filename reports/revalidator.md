@@ -13,7 +13,8 @@ that is the case for these tests.
 |-----------|------
 |`additionalItems as schema, additional items do not match schema`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
 |`array of items with no additionalItems, additional items are not permitted`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
-|`additionalProperties being false does not allow other properties, ignores non-objects`|Expected result: `true` but validator returned: `false`. **This excludes this validator from performance tests**
+|`additionalProperties being false does not allow other properties, ignores arrays`|Expected result: `true` but validator returned: `false`. **This excludes this validator from performance tests**
+|`additionalProperties being false does not allow other properties, ignores strings`|Expected result: `true` but validator returned: `false`. **This excludes this validator from performance tests**
 |`additionalProperties allows a schema which should validate, an additional valid property is valid`|Expected result: `true` but validator returned: `"Cannot read property 'format' of undefined"`. **This excludes this validator from performance tests**
 |`additionalProperties allows a schema which should validate, an additional invalid property is invalid`|Expected result: `false` but validator returned: `"Cannot read property 'format' of undefined"`. **This excludes this validator from performance tests**
 |`additionalProperties can exist by itself, an additional valid property is valid`|Expected result: `true` but validator returned: `"Cannot read property 'format' of undefined"`. **This excludes this validator from performance tests**
@@ -74,8 +75,11 @@ that is the case for these tests.
 |`validation of date-time strings, an invalid date-time string`|Expected result: `false` but validator returned: `true`
 |`validation of date-time strings, only RFC3339 not all of ISO 8601 are valid`|Expected result: `false` but validator returned: `true`
 |`validation of URIs, an invalid protocol-relative URI Reference`|Expected result: `false` but validator returned: `true`
+|`validation of URIs, an invalid relative URI Reference`|Expected result: `false` but validator returned: `true`
 |`validation of URIs, an invalid URI`|Expected result: `false` but validator returned: `true`
 |`validation of URIs, an invalid URI though valid URI reference`|Expected result: `false` but validator returned: `true`
+|`validation of URIs, an invalid URI with spaces`|Expected result: `false` but validator returned: `true`
+|`validation of URIs, an invalid URI with spaces and missing scheme`|Expected result: `false` but validator returned: `true`
 |`validation of e-mail addresses, an invalid e-mail address`|Expected result: `false` but validator returned: `true`
 |`validation of IP addresses, an IP address with too many components`|Expected result: `false` but validator returned: `true`
 |`validation of IP addresses, an IP address with out-of-range values`|Expected result: `false` but validator returned: `true`

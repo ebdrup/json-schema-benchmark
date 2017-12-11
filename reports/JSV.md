@@ -42,8 +42,11 @@ that is the case for these tests.
 |`validation of date-time strings, an invalid date-time string`|Expected result: `false` but validator returned: `true`
 |`validation of date-time strings, only RFC3339 not all of ISO 8601 are valid`|Expected result: `false` but validator returned: `true`
 |`validation of URIs, an invalid protocol-relative URI Reference`|Expected result: `false` but validator returned: `true`
+|`validation of URIs, an invalid relative URI Reference`|Expected result: `false` but validator returned: `true`
 |`validation of URIs, an invalid URI`|Expected result: `false` but validator returned: `true`
 |`validation of URIs, an invalid URI though valid URI reference`|Expected result: `false` but validator returned: `true`
+|`validation of URIs, an invalid URI with spaces`|Expected result: `false` but validator returned: `true`
+|`validation of URIs, an invalid URI with spaces and missing scheme`|Expected result: `false` but validator returned: `true`
 |`validation of e-mail addresses, an invalid e-mail address`|Expected result: `false` but validator returned: `true`
 |`validation of IP addresses, an IP address with too many components`|Expected result: `false` but validator returned: `true`
 |`validation of IP addresses, an IP address with out-of-range values`|Expected result: `false` but validator returned: `true`
@@ -72,7 +75,9 @@ that is the case for these tests.
 |`root ref in remote ref, string is valid`|Expected result: `true` but validator returned: `false`
 |`root ref in remote ref, null is valid`|Expected result: `true` but validator returned: `false`
 |`required validation, present required property is valid`|Expected result: `true` but validator returned: `false`. **This excludes this validator from performance tests**
-|`required validation, ignores non-objects`|Expected result: `true` but validator returned: `false`
+|`required validation, ignores arrays`|Expected result: `true` but validator returned: `false`. **This excludes this validator from performance tests**
+|`required validation, ignores strings`|Expected result: `true` but validator returned: `false`. **This excludes this validator from performance tests**
+|`required validation, ignores other non-objects`|Expected result: `true` but validator returned: `false`. **This excludes this validator from performance tests**
 |`uniqueItems validation, non-unique array of objects is invalid`|Expected result: `false` but validator returned: `true`
 |`uniqueItems validation, non-unique array of nested objects is invalid`|Expected result: `false` but validator returned: `true`
 |`uniqueItems validation, non-unique array of arrays is invalid`|Expected result: `false` but validator returned: `true`

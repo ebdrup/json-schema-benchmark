@@ -11,6 +11,7 @@ that is the case for these tests.
 
 |test failed|reason
 |-----------|------
+|`validation of URIs, a valid URL `|Expected result: `true` but validator returned: `false`
 |`Recursive references between schemas, valid tree`|Expected result: `true` but validator returned: `"Unable to locate JSON Ref (http://localhost:1234/node)"`
 |`Recursive references between schemas, invalid tree`|Expected result: `false` but validator returned: `"Unable to locate JSON Ref (http://localhost:1234/node)"`
 |`base URI change - change folder in subschema, number is valid`|Expected result: `true` but validator returned: `"Unable to locate JSON Ref (http://localhost:1234/folderInteger.json)"`
