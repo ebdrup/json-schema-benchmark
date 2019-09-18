@@ -1,12 +1,12 @@
-# [`ajv`](https://github.com/epoberezkin/jv) - test summary
+# [`ajv`](https://github.com/epoberezkin/ajv) - test summary
 
 # All validators fail this test
 
 `some languages do not distinguish between different types of numeric value, a float is not an integer even without fractional part`
 
-# [`ajv`](https://github.com/epoberezkin/jv) failed tests
+# [`ajv`](https://github.com/epoberezkin/ajv) failed tests
 
-Some validators have deliberately chosen not to support parts of the spec. Go to the [`ajv`](https://github.com/epoberezkin/jv) homepage to learn if
+Some validators have deliberately chosen not to support parts of the spec. Go to the [`ajv`](https://github.com/epoberezkin/ajv) homepage to learn if
 that is the case for these tests.
 
 |test failed|reason
