@@ -273,7 +273,7 @@ testRunner([
 			return new jlib.cores.Draft04(schema);
 		},
 		test: function (instance, json, schema) {
-			return instance.isValid(schema, json);
+			return instance.isValid(json);
 		}
 	}
 ]);
