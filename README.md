@@ -8,22 +8,22 @@ for validators that cause side-effects on schema or data.
 
 # Performance
 
-![performance](https://chart.googleapis.com/chart?chxt=x,y&cht=bhs&chco=76A4FB&chls=2.0&chbh=29,4,1&chs=600x416&chxl=-1:|ajv|jsen|json-schema-validator-generator|is-my-json-valid|themis|djv|jsck|z-schema|json-schema-library|jsonschema|skeemas|tv4&chd=t:100,59.1,44.6,42.9,9.6,8.6,3.2,1.7,0.8,0.6,0.6,0.1)
+![performance](https://chart.googleapis.com/chart?chxt=x,y&cht=bhs&chco=76A4FB&chls=2.0&chbh=29,4,1&chs=600x416&chxl=-1:|djv|ajv|jsen|json-schema-validator-generator|is-my-json-valid|themis|jsck|z-schema|json-schema-library|skeemas|jsonschema|tv4&chd=t:100,82.1,49.8,40.6,38.3,10.3,3.6,1.7,0.6,0.5,0.5,0.1)
 
 |Validator|Relative speed|Number of test runs per second|
 |---------|:------------:|:----------------------------:|
-|[`ajv`](https://github.com/epoberezkin/ajv)|100%|55649 (± 2.26%)|
-|[`jsen`](https://github.com/bugventure/jsen)|59.1%|32885 (± 1.72%)|
-|[`json-schema-validator-generator`](https://github.com/danwang/json-schema-validator-generator)|44.6%|24844 (± 2.15%)|
-|[`is-my-json-valid`](https://github.com/mafintosh/is-my-json-valid#readme)|42.9%|23861 (± 1.7%)|
-|[`themis`](https://github.com/playlyfe/themis)|9.6%|5362 (± 12.7%)|
-|[`djv`](https://github.com/korzio/djv#readme)|8.6%|4812 (± 1.87%)|
-|[`jsck`](https://github.com/pandastrike/jsck#readme)|3.2%|1793 (± 2.47%)|
-|[`z-schema`](https://github.com/zaggino/z-schema)|1.7%|937 (± 3.07%)|
-|[`json-schema-library`](https://github.com/sagold/json-schema-library)|0.8%|445 (± 1.83%)|
-|[`jsonschema`](https://github.com/tdegrunt/jsonschema#readme)|0.6%|340 (± 2.55%)|
-|[`skeemas`](https://github.com/Prestaul/skeemas#readme)|0.6%|319 (± 3.64%)|
-|[`tv4`](https://github.com/geraintluff/tv4)|0.1%|72 (± 2.29%)|
+|[`djv`](https://github.com/korzio/djv#readme)|100%|65627 (± 0.9%)|
+|[`ajv`](https://github.com/epoberezkin/ajv)|82.1%|53848 (± 1.9%)|
+|[`jsen`](https://github.com/bugventure/jsen)|49.8%|32671 (± 1.12%)|
+|[`json-schema-validator-generator`](https://github.com/danwang/json-schema-validator-generator)|40.6%|26622 (± 0.98%)|
+|[`is-my-json-valid`](https://github.com/mafintosh/is-my-json-valid#readme)|38.3%|25138 (± 1.25%)|
+|[`themis`](https://github.com/playlyfe/themis)|10.3%|6736 (± 10.12%)|
+|[`jsck`](https://github.com/pandastrike/jsck#readme)|3.6%|2354 (± 1.28%)|
+|[`z-schema`](https://github.com/zaggino/z-schema)|1.7%|1130 (± 2.12%)|
+|[`json-schema-library`](https://github.com/sagold/json-schema-library)|0.6%|410 (± 2.08%)|
+|[`skeemas`](https://github.com/Prestaul/skeemas#readme)|0.5%|354 (± 2.06%)|
+|[`jsonschema`](https://github.com/tdegrunt/jsonschema#readme)|0.5%|341 (± 2.78%)|
+|[`tv4`](https://github.com/geraintluff/tv4)|0.1%|75 (± 3.27%)|
 
 235 tests are run in each test run.
 
@@ -31,7 +31,7 @@ Validators tested: [`json-schema-validator-generator (1.1.11)`](https://github.c
 
 (validators not in the results above where excluded because of failing tests - see below for details)
 
-[`ajv`](https://github.com/epoberezkin/ajv) is currently the fastest JSON-schema validator out there.
+[`djv`](https://github.com/korzio/djv#readme) is currently the fastest JSON-schema validator out there.
 
 The fastest validator has 100%, the rest a lower score relative to the fastest.
 If a validator has a score of 5% that means that it's speed is 5% of the fastest,
