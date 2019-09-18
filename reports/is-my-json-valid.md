@@ -1,12 +1,12 @@
-# [`is-my-json-valid`](https://github.com/mafintosh/is-my-json-valid) - test summary
+# [`is-my-json-valid`](https://github.com/mafintosh/is-my-json-valid#readme) - test summary
 
 # All validators fail this test
 
 `some languages do not distinguish between different types of numeric value, a float is not an integer even without fractional part`
 
-# [`is-my-json-valid`](https://github.com/mafintosh/is-my-json-valid) failed tests
+# [`is-my-json-valid`](https://github.com/mafintosh/is-my-json-valid#readme) failed tests
 
-Some validators have deliberately chosen not to support parts of the spec. Go to the [`is-my-json-valid`](https://github.com/mafintosh/is-my-json-valid) homepage to learn if
+Some validators have deliberately chosen not to support parts of the spec. Go to the [`is-my-json-valid`](https://github.com/mafintosh/is-my-json-valid#readme) homepage to learn if
 that is the case for these tests.
 
 |test failed|reason
