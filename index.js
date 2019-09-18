@@ -1,7 +1,6 @@
 var testRunner = require('./testRunner');
 
 var ZSchema = require('z-schema');
-var JaySchema = require('jayschema');
 var jjv = require('jjv');
 var jassi = require('jassi');
 var jsv = require('JSV');
@@ -137,16 +136,6 @@ testRunner([
 		},
 		test: function (instance, json, schema) {
 			return instance.validate(json, schema).valid;
-		}
-	},
-	{
-		name: 'jayschema',
-		setup: function () {
-			// $refs not supported with synchronous validation, only asyc
-			return new JaySchema();
-		},
-		test: function (instance, json, schema) {
-			return instance.validate(json, schema).length === 0;
 		}
 	},
 	{
