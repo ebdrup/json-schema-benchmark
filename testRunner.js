@@ -390,7 +390,14 @@ function saveResults(results, validators, allTestNames, testsThatAllValidatorsFa
           })
         )
       });
-      var testSummaryPath = path.join(__dirname, "/reports/", validator.name.replace('/', '--') + ".md");
+      var testSummaryPath = path.join(__dirname, "/reports/", validator.name + ".md");
+      if (validator.name.startsWith('@')) {
+        const scope = validator.name.substr(0, validator.name.indexOf('/'));
+        const scopeDir = path.join(__dirname, "/reports/", scope);
+        if (!fs.existsSync(scopeDir)) {
+          fs.mkdirSync(scopeDir);
+        }
+      }
       fs.writeFileSync(testSummaryPath, html);
     });
     validatorsSideEffects.forEach(function(sideEffects) {
