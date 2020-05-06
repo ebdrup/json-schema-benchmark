@@ -390,7 +390,7 @@ function saveResults(results, validators, allTestNames, testsThatAllValidatorsFa
           })
         )
       });
-      var testSummaryPath = path.join(__dirname, "/reports/", validator.name + ".md");
+      var testSummaryPath = path.join(__dirname, "/reports/", validator.name.replace('/', '--') + ".md");
       fs.writeFileSync(testSummaryPath, html);
     });
     validatorsSideEffects.forEach(function(sideEffects) {
