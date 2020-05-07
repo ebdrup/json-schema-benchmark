@@ -174,6 +174,100 @@ When running tests [`tv4`](https://github.com/geraintluff/tv4) mutated either th
 ```
 
 # Side-effect on schema
+[`tv4`](https://github.com/geraintluff/tv4) had a side-effect on (altered the original) schema in the test `Location-independent identifier with base URI change in subschema, match`
+## Original schema
+```js
+{
+	"id": "http://localhost:1234/root",
+	"allOf": [
+		{
+			"$ref": "http://localhost:1234/nested.json#foo"
+		}
+	],
+	"definitions": {
+		"A": {
+			"id": "nested.json",
+			"definitions": {
+				"B": {
+					"id": "#foo",
+					"type": "integer"
+				}
+			}
+		}
+	}
+}
+```
+## Schema after validating
+```js
+{
+	"id": "http://localhost:1234/root",
+	"allOf": [
+		{
+			"$ref": "http://localhost:1234/nested.json#foo"
+		}
+	],
+	"definitions": {
+		"A": {
+			"id": "http://localhost:1234/nested.json",
+			"definitions": {
+				"B": {
+					"id": "http://localhost:1234/nested.json#foo",
+					"type": "integer"
+				}
+			}
+		}
+	}
+}
+```
+
+# Side-effect on schema
+[`tv4`](https://github.com/geraintluff/tv4) had a side-effect on (altered the original) schema in the test `Location-independent identifier with base URI change in subschema, mismatch`
+## Original schema
+```js
+{
+	"id": "http://localhost:1234/root",
+	"allOf": [
+		{
+			"$ref": "http://localhost:1234/nested.json#foo"
+		}
+	],
+	"definitions": {
+		"A": {
+			"id": "nested.json",
+			"definitions": {
+				"B": {
+					"id": "#foo",
+					"type": "integer"
+				}
+			}
+		}
+	}
+}
+```
+## Schema after validating
+```js
+{
+	"id": "http://localhost:1234/root",
+	"allOf": [
+		{
+			"$ref": "http://localhost:1234/nested.json#foo"
+		}
+	],
+	"definitions": {
+		"A": {
+			"id": "http://localhost:1234/nested.json",
+			"definitions": {
+				"B": {
+					"id": "http://localhost:1234/nested.json#foo",
+					"type": "integer"
+				}
+			}
+		}
+	}
+}
+```
+
+# Side-effect on schema
 [`tv4`](https://github.com/geraintluff/tv4) had a side-effect on (altered the original) schema in the test `base URI change, base URI change ref valid`
 ## Original schema
 ```js

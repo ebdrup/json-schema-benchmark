@@ -17,7 +17,10 @@ module.exports = function(validators) {
     }
     var tasks = validators.map(function(validator) {
       return function(callback) {
-        npm.commands.view([validator.name + "@*", "homepage"], true, function(err, result) {
+        npm.commands.view([validator.name + "@*", "homepage"], true, function(
+          err,
+          result
+        ) {
           if (err) {
             return callback(err);
           }
@@ -39,7 +42,9 @@ module.exports = function(validators) {
       }
       validators.forEach(function(v) {
         v.link = link(v.name);
-        v.versionLink = link(v.version ? v.name + " (" + v.version + ")" : v.name);
+        v.versionLink = link(
+          v.version ? v.name + " (" + v.version + ")" : v.name
+        );
 
         function link(name) {
           return v.homepage ? "[`" + name + "`](" + v.homepage + ")" : name;
@@ -51,9 +56,11 @@ module.exports = function(validators) {
         "minLength validation, one supplementary Unicode code point is not long enough",
         "a schema given for items, JavaScript pseudo-array is valid",
         "required validation, ignores non-objects",
-        "heterogeneous enum validation, something else is invalid"
+        "heterogeneous enum validation, something else is invalid",
       ];
       var excludeTestSuites = [
+        `Location-independent identifier`,
+        `Location-independent identifier with base URI change in subschema`,
         "remote ref",
         "remote ref, containing refs itself",
         "fragment within remote ref",
@@ -69,11 +76,15 @@ module.exports = function(validators) {
         "base URI change - change folder",
         "base URI change - change folder in subschema",
         "root ref in remote ref",
-        "ECMA 262 regex non-compliance"
+        "ECMA 262 regex non-compliance",
       ];
-      var testSuites = readTests(path.join(__dirname + "/JSON-Schema-Test-Suite/tests/draft4/"));
+      var testSuites = readTests(
+        path.join(__dirname + "/JSON-Schema-Test-Suite/tests/draft4/")
+      );
       var optionalTests = getTestNames(
-        readTests(path.join(__dirname + "/JSON-Schema-Test-Suite/tests/draft4/optional"))
+        readTests(
+          path.join(__dirname + "/JSON-Schema-Test-Suite/tests/draft4/optional")
+        )
       );
       excludeTests = excludeTests.concat(optionalTests);
       validators.forEach(function(validator) {
@@ -83,15 +94,36 @@ module.exports = function(validators) {
       });
       var goodValidators = validators.filter(function(validator) {
         return testSuites.reduce(function(acc, testSuite) {
-          return verifyValidator(validator, testSuite, excludeTestSuites, excludeTests) && acc;
+          return (
+            verifyValidator(
+              validator,
+              testSuite,
+              excludeTestSuites,
+              excludeTests
+            ) && acc
+          );
         }, true);
       });
       var allTestNames = getTestNames(testSuites);
-      var testsThatAllValidatorsFail = validators.reduce(function(acc, validator) {
+      var testsThatAllValidatorsFail = validators.reduce(function(
+        acc,
+        validator
+      ) {
         return _.intersection(acc, validAndInvalid(validator, allTestNames));
-      }, validAndInvalid(validators[0], allTestNames));
-      var results = runBenchmark(goodValidators, testSuites, excludeTestSuites, excludeTests);
-      saveResults(results, validators, allTestNames, testsThatAllValidatorsFail);
+      },
+      validAndInvalid(validators[0], allTestNames));
+      var results = runBenchmark(
+        goodValidators,
+        testSuites,
+        excludeTestSuites,
+        excludeTests
+      );
+      saveResults(
+        results,
+        validators,
+        allTestNames,
+        testsThatAllValidatorsFail
+      );
     });
   });
 };
@@ -120,7 +152,12 @@ function validAndInvalid(validator, allTestNames) {
   );
 }
 
-function verifyValidator(validator, testSuiteIn, excludeTestSuites, excludeTests) {
+function verifyValidator(
+  validator,
+  testSuiteIn,
+  excludeTestSuites,
+  excludeTests
+) {
   // verify that validator really works
   var passedAllTests = true;
   var schemaFailedToLoad = false;
@@ -136,7 +173,12 @@ function verifyValidator(validator, testSuiteIn, excludeTestSuites, excludeTests
     var givenResult;
     if (schemaFailedToLoad) {
       var message =
-        "|`" + testName + "`|The schema failed to load" + "(`" + schemaFailedToLoad + "`)";
+        "`" +
+        testName +
+        "`|The schema failed to load" +
+        "(`" +
+        schemaFailedToLoad +
+        "`)";
       if (
         excludeTests.indexOf(testName) === -1 &&
         excludeTestSuites.indexOf(testSuite.description) === -1
@@ -149,7 +191,11 @@ function verifyValidator(validator, testSuiteIn, excludeTestSuites, excludeTests
       return;
     }
     try {
-      givenResult = validator.test(validatorInstance, test.data, testSuite.schema);
+      givenResult = validator.test(
+        validatorInstance,
+        test.data,
+        testSuite.schema
+      );
     } catch (e) {
       givenResult = e.message;
     }
@@ -198,7 +244,7 @@ function verifyValidator(validator, testSuiteIn, excludeTestSuites, excludeTests
     }
     if (givenResult !== test.valid) {
       var message =
-        "|`" +
+        "`" +
         testName +
         "`|Expected result: `" +
         JSON.stringify(test.valid) +
@@ -223,7 +269,9 @@ function verifyValidator(validator, testSuiteIn, excludeTestSuites, excludeTests
 function runBenchmark(validators, testSuites, excludeTestSuites, excludeTests) {
   var suite = new benchmark.Suite();
   validators.forEach(function(validator) {
-    var testSuitesCopy = JSON.parse(JSON.stringify(testSuites)).filter(function(testSuite) {
+    var testSuitesCopy = JSON.parse(JSON.stringify(testSuites)).filter(function(
+      testSuite
+    ) {
       return excludeTestSuites.indexOf(testSuite.description) === -1;
     });
     testSuitesCopy.forEach(function(testSuite) {
@@ -236,7 +284,11 @@ function runBenchmark(validators, testSuites, excludeTestSuites, excludeTests) {
     suite.add(validator.name, function() {
       testSuitesCopy.forEach(function(testSuite) {
         testSuite.tests.forEach(function(test) {
-          validator.test(testSuite.validatorInstance, test.data, testSuite.schema);
+          validator.test(
+            testSuite.validatorInstance,
+            test.data,
+            testSuite.schema
+          );
         });
       });
     });
@@ -247,7 +299,7 @@ function runBenchmark(validators, testSuites, excludeTestSuites, excludeTests) {
       console.log(String(event.target));
     })
     .run({
-      async: false
+      async: false,
     });
 
   var fastestTestResult = suite.reduce(function(acc, testResult) {
@@ -269,10 +321,11 @@ function runBenchmark(validators, testSuites, excludeTestSuites, excludeTests) {
     return {
       hz: result.hz,
       fastest: result.hz === fastestTestResult.hz,
-      percentage: Math.round(((result.hz || 0) / fastestTestResult.hz) * 1000) / 10,
+      percentage:
+        Math.round(((result.hz || 0) / fastestTestResult.hz) * 1000) / 10,
       name: validator.name,
       plusMinusPercent: Math.round(result.stats.rme * 100) / 100,
-      link: validator.link
+      link: validator.link,
     };
   });
   return suiteResult;
@@ -291,123 +344,145 @@ function comma(arr) {
   return arr;
 }
 
-function saveResults(results, validators, allTestNames, testsThatAllValidatorsFail) {
-  require("child_process").exec("rm -f " + path.join(__dirname, "/reports/*.md"), function(err) {
-    if (err) {
-      console.error("Error removing old reports");
-      console.error(err);
-    }
-    var readmePath = path.join(__dirname, "README.md");
-    var readmeTemplate = fs.readFileSync(path.join(__dirname, "README.template"), "utf-8");
-    var testsTemplate = fs.readFileSync(path.join(__dirname, "reports/TESTS.template"), "utf-8");
-    var sideEffectsTemplate = fs.readFileSync(
-      path.join(__dirname, "reports/SIDE-EFFECTS.template"),
-      "utf-8"
-    );
+function saveResults(
+  results,
+  validators,
+  allTestNames,
+  testsThatAllValidatorsFail
+) {
+  require("child_process").exec(
+    "rm -f " + path.join(__dirname, "/reports/*.md"),
+    function(err) {
+      if (err) {
+        console.error("Error removing old reports");
+        console.error(err);
+      }
+      var readmePath = path.join(__dirname, "README.md");
+      var readmeTemplate = fs.readFileSync(
+        path.join(__dirname, "README.template"),
+        "utf-8"
+      );
+      var testsTemplate = fs.readFileSync(
+        path.join(__dirname, "reports/TESTS.template"),
+        "utf-8"
+      );
+      var sideEffectsTemplate = fs.readFileSync(
+        path.join(__dirname, "reports/SIDE-EFFECTS.template"),
+        "utf-8"
+      );
 
-    var validatorsFailingTests = validators
-      .map(function(validator) {
-        return {
-          name: validator.name,
-          link: validator.link,
-          count: validator.failingTests.length
-        };
-      })
-      .sort(function(a, b) {
-        return a.count - b.count;
-      });
-    var validatorsSideEffects = validators
-      .map(function(validator) {
-        return {
-          name: validator.name,
-          link: validator.link,
-          count: validator.sideEffects.length,
-          sideEffects: validator.sideEffects
-        };
-      })
-      .filter(function(o) {
-        return o.count !== 0;
-      })
-      .sort(function(a, b) {
-        return a.count - b.count;
-      });
-    var maxFailingTests = validatorsFailingTests.reduce(function(acc, v) {
-      return Math.max(acc, v.count);
-    }, 0);
-    validators.forEach(function(validator) {
-      validator.failingTests = validator.failingTests.filter(function(t) {
-        return testsThatAllValidatorsFail.indexOf(t.testName) === -1;
-      });
-    });
-    results.sort(function(a, b) {
-      return b.hz - a.hz;
-    });
-    var validatorBenchmarks = validators
-      .filter(function(v) {
-        return !!v.benchmarks;
-      })
-      .map(function(v) {
-        return {
-          link: format("[Benchmarks owned by %s](%s)", v.name, v.benchmarks)
-        };
-      });
-    var graphBarSpacing = 4;
-    var resultGraphBarHeight = Math.floor(400 / results.length) - graphBarSpacing;
-    var resultsGraphHeight = (resultGraphBarHeight + graphBarSpacing) * results.length + 20;
-    var validatorsFailingTestsGraphBarHeight =
-      Math.floor(400 / validatorsFailingTests.length) - graphBarSpacing;
-    var validatorsFailingTestsGraphHeight =
-      (validatorsFailingTestsGraphBarHeight + graphBarSpacing) * validatorsFailingTests.length + 20;
-    var data = {
-      graphBarSpacing: graphBarSpacing,
-      validators: comma(validators),
-      fastestValidator: results[0] && results[0].link,
-      testsThatAllValidatorsFail: comma(
-        testsThatAllValidatorsFail.map(function(testName) {
-          return { name: testName };
+      var validatorsFailingTests = validators
+        .map(function(validator) {
+          return {
+            name: validator.name,
+            link: validator.link,
+            count: validator.failingTests.length,
+          };
         })
-      ),
-      validatorsFailingTests: comma(validatorsFailingTests),
-      validatorsFailingTestsGraphHeight: validatorsFailingTestsGraphHeight,
-      validatorsFailingTestsGraphBarHeight: validatorsFailingTestsGraphBarHeight,
-      maxFailingTests: maxFailingTests,
-      validatorsSideEffects: comma(validatorsSideEffects),
-      results: comma(results),
-      resultsGraphHeight: resultsGraphHeight,
-      resultGraphBarHeight: resultGraphBarHeight,
-      validatorBenchmarks: validatorBenchmarks
-    };
-    var html = mustache.render(readmeTemplate, data);
-    fs.writeFileSync(readmePath, html);
-    validators.forEach(function(validator) {
-      var html = mustache.render(testsTemplate, {
-        link: validator.link,
-        failingTests: validator.failingTests,
-        hasFailingTests: !!validator.failingTests.length,
+        .sort(function(a, b) {
+          return a.count - b.count;
+        });
+      var validatorsSideEffects = validators
+        .map(function(validator) {
+          return {
+            name: validator.name,
+            link: validator.link,
+            count: validator.sideEffects.length,
+            sideEffects: validator.sideEffects,
+          };
+        })
+        .filter(function(o) {
+          return o.count !== 0;
+        })
+        .sort(function(a, b) {
+          return a.count - b.count;
+        });
+      var maxFailingTests = validatorsFailingTests.reduce(function(acc, v) {
+        return Math.max(acc, v.count);
+      }, 0);
+      validators.forEach(function(validator) {
+        validator.failingTests = validator.failingTests.filter(function(t) {
+          return testsThatAllValidatorsFail.indexOf(t.testName) === -1;
+        });
+      });
+      results.sort(function(a, b) {
+        return b.hz - a.hz;
+      });
+      var validatorBenchmarks = validators
+        .filter(function(v) {
+          return !!v.benchmarks;
+        })
+        .map(function(v) {
+          return {
+            link: format("[Benchmarks owned by %s](%s)", v.name, v.benchmarks),
+          };
+        });
+      var graphBarSpacing = 4;
+      var resultGraphBarHeight =
+        Math.floor(400 / results.length) - graphBarSpacing;
+      var resultsGraphHeight =
+        (resultGraphBarHeight + graphBarSpacing) * results.length + 20;
+      var validatorsFailingTestsGraphBarHeight =
+        Math.floor(400 / validatorsFailingTests.length) - graphBarSpacing;
+      var validatorsFailingTestsGraphHeight =
+        (validatorsFailingTestsGraphBarHeight + graphBarSpacing) *
+          validatorsFailingTests.length +
+        20;
+      var data = {
+        graphBarSpacing: graphBarSpacing,
+        validators: comma(validators),
+        fastestValidator: results[0] && results[0].link,
         testsThatAllValidatorsFail: comma(
           testsThatAllValidatorsFail.map(function(testName) {
             return { name: testName };
           })
-        )
-      });
-      var testSummaryPath = path.join(__dirname, "/reports/", validator.name + ".md");
-      if (validator.name.startsWith('@')) {
-        const scope = validator.name.substr(0, validator.name.indexOf('/'));
-        const scopeDir = path.join(__dirname, "/reports/", scope);
-        if (!fs.existsSync(scopeDir)) {
-          fs.mkdirSync(scopeDir);
+        ),
+        validatorsFailingTests: comma(validatorsFailingTests),
+        validatorsFailingTestsGraphHeight: validatorsFailingTestsGraphHeight,
+        validatorsFailingTestsGraphBarHeight: validatorsFailingTestsGraphBarHeight,
+        maxFailingTests: maxFailingTests,
+        validatorsSideEffects: comma(validatorsSideEffects),
+        results: comma(results),
+        resultsGraphHeight: resultsGraphHeight,
+        resultGraphBarHeight: resultGraphBarHeight,
+        validatorBenchmarks: validatorBenchmarks,
+      };
+      var html = mustache.render(readmeTemplate, data);
+      fs.writeFileSync(readmePath, html);
+      validators.forEach(function(validator) {
+        var html = mustache.render(testsTemplate, {
+          link: validator.link,
+          failingTests: validator.failingTests,
+          hasFailingTests: !!validator.failingTests.length,
+          testsThatAllValidatorsFail: comma(
+            testsThatAllValidatorsFail.map(function(testName) {
+              return { name: testName };
+            })
+          ),
+        });
+        var testSummaryPath = path.join(
+          __dirname,
+          "/reports/",
+          validator.name + ".md"
+        );
+        if (validator.name.startsWith("@")) {
+          const scope = validator.name.substr(0, validator.name.indexOf("/"));
+          const scopeDir = path.join(__dirname, "/reports/", scope);
+          if (!fs.existsSync(scopeDir)) {
+            fs.mkdirSync(scopeDir);
+          }
         }
-      }
-      fs.writeFileSync(testSummaryPath, html);
-    });
-    validatorsSideEffects.forEach(function(sideEffects) {
-      var html = mustache.render(sideEffectsTemplate, sideEffects);
-      var sideEffectsSummaryPath = path.join(
-        __dirname,
-        "/reports/",
-        sideEffects.name + "-side-effects.md"
-      );
-      fs.writeFileSync(sideEffectsSummaryPath, html);
-    });
-  });
+        fs.writeFileSync(testSummaryPath, html);
+      });
+      validatorsSideEffects.forEach(function(sideEffects) {
+        var html = mustache.render(sideEffectsTemplate, sideEffects);
+        var sideEffectsSummaryPath = path.join(
+          __dirname,
+          "/reports/",
+          sideEffects.name + "-side-effects.md"
+        );
+        fs.writeFileSync(sideEffectsSummaryPath, html);
+      });
+    }
+  );
 }
