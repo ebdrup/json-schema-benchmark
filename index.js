@@ -20,6 +20,7 @@ var ajv = require('ajv')({schemaId: 'auto'});
 var djv = require('djv')();
 var jsvg = require('json-schema-validator-generator').default;
 var jlib = require("json-schema-library");
+var cfworker;
 
 var refs = {
 	'http://json-schema.org/draft-04/schema': require('./refs/json-schema-draft-04.json'),
@@ -35,7 +36,8 @@ Object.keys(refs).forEach(function (uri) {
     jlib.addSchema(uri, refs[uri]);
 });
 
-testRunner([
+
+var validators = [
 	{
 		name: 'json-schema-validator-generator',
 		setup: function (schema) {
@@ -264,5 +266,19 @@ testRunner([
 		test: function (instance, json, schema) {
 			return instance.isValid(json);
 		}
-	}
-]);
+	},
+	{
+		name: '@cfworker/json-schema',
+		setup: schema => {
+			const validator = new cfworker.Validator(schema, '4');
+			Object.keys(refs).forEach(id => validator.addSchema(refs[id], id));
+			return validator;
+		},
+		test: (validator, json) => validator.validate(json).valid
+	},
+];
+
+import('@cfworker/json-schema').then(cfw => {
+	cfworker = cfw;
+	testRunner(validators);
+});

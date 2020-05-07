@@ -3,6 +3,7 @@
   "main": "benchmark.js",
   "license": "MIT",
   "dependencies": {
+    "@cfworker/json-schema": "*",
     "JSV": "*",
     "ajv": "*",
     "async": "^2.6.1",
