@@ -54,15 +54,15 @@ that is the case for these tests.
 `escaped pointer ref, percent invalid`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
 `nested refs, nested ref invalid`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
 `ref overrides any sibling keywords, ref valid, maxItems ignored`|Expected result: `true` but validator returned: `false`
-`ref overrides any sibling keywords, ref invalid`|Expected result: `false` but validator returned: `true`
+`ref overrides any sibling keywords, ref invalid`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
 `remote ref, containing refs itself, remote ref invalid`|Expected result: `false` but validator returned: `true`
 `Recursive references between schemas, invalid tree`|Expected result: `false` but validator returned: `true`
 `refs with quote, object with strings is invalid`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
 `Location-independent identifier, mismatch`|Expected result: `false` but validator returned: `true`
 `Location-independent identifier with absolute URI, mismatch`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
 `Location-independent identifier with base URI change in subschema, mismatch`|Expected result: `false` but validator returned: `true`
-`remote ref, remote ref invalid`|Expected result: `false` but validator returned: `true`
-`fragment within remote ref, remote fragment invalid`|Expected result: `false` but validator returned: `true`
+`remote ref, remote ref invalid`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
+`fragment within remote ref, remote fragment invalid`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
 `ref within remote ref, ref within ref invalid`|Expected result: `false` but validator returned: `true`
 `base URI change, base URI change ref invalid`|Expected result: `false` but validator returned: `true`
 `base URI change - change folder, string is invalid`|Expected result: `false` but validator returned: `true`

@@ -29,7 +29,7 @@ that is the case for these tests.
 `Proper UTF-16 surrogate pair handling: pattern, matches empty`|Expected result: `true` but validator returned: `false`
 `Proper UTF-16 surrogate pair handling: pattern, matches two`|Expected result: `true` but validator returned: `false`
 `ref overrides any sibling keywords, ref valid, maxItems ignored`|Expected result: `true` but validator returned: `false`
-`Recursive references between schemas, valid tree`|The schema failed to load(`Unresolvable $ref values: ["http://localhost:1234/node","http://localhost:1234/tree"]`)
+`Recursive references between schemas, valid tree`|The schema failed to load(`Unresolvable $ref values: ["http://localhost:1234/node","http://localhost:1234/tree"]`). **This excludes this validator from performance tests**
 `Recursive references between schemas, invalid tree`|The schema failed to load(`Unresolvable $ref values: ["http://localhost:1234/node","http://localhost:1234/tree"]`)
 `refs with quote, object with numbers is valid`|The schema failed to load(`Unresolvable $ref values: ["#/definitions/foo%22bar"]`). **This excludes this validator from performance tests**
 `refs with quote, object with strings is invalid`|The schema failed to load(`Unresolvable $ref values: ["#/definitions/foo%22bar"]`). **This excludes this validator from performance tests**
@@ -37,11 +37,11 @@ that is the case for these tests.
 `Location-independent identifier with absolute URI, mismatch`|The schema failed to load(`Unresolvable $ref values: ["http://localhost:1234/bar#foo"]`). **This excludes this validator from performance tests**
 `Location-independent identifier with base URI change in subschema, match`|The schema failed to load(`Unresolvable $ref values: ["http://localhost:1234/nested.json#foo"]`)
 `Location-independent identifier with base URI change in subschema, mismatch`|The schema failed to load(`Unresolvable $ref values: ["http://localhost:1234/nested.json#foo"]`)
-`remote ref, remote ref valid`|The schema failed to load(`Unresolvable $ref values: ["http://localhost:1234/integer.json"]`)
-`remote ref, remote ref invalid`|The schema failed to load(`Unresolvable $ref values: ["http://localhost:1234/integer.json"]`)
-`fragment within remote ref, remote fragment valid`|The schema failed to load(`Unresolvable $ref values: ["http://localhost:1234/subSchemas.json#/integer"]`)
-`fragment within remote ref, remote fragment invalid`|The schema failed to load(`Unresolvable $ref values: ["http://localhost:1234/subSchemas.json#/integer"]`)
-`ref within remote ref, ref within ref valid`|The schema failed to load(`Unresolvable $ref values: ["http://localhost:1234/subSchemas.json#/refToInteger"]`)
+`remote ref, remote ref valid`|The schema failed to load(`Unresolvable $ref values: ["http://localhost:1234/integer.json"]`). **This excludes this validator from performance tests**
+`remote ref, remote ref invalid`|The schema failed to load(`Unresolvable $ref values: ["http://localhost:1234/integer.json"]`). **This excludes this validator from performance tests**
+`fragment within remote ref, remote fragment valid`|The schema failed to load(`Unresolvable $ref values: ["http://localhost:1234/subSchemas.json#/integer"]`). **This excludes this validator from performance tests**
+`fragment within remote ref, remote fragment invalid`|The schema failed to load(`Unresolvable $ref values: ["http://localhost:1234/subSchemas.json#/integer"]`). **This excludes this validator from performance tests**
+`ref within remote ref, ref within ref valid`|The schema failed to load(`Unresolvable $ref values: ["http://localhost:1234/subSchemas.json#/refToInteger"]`). **This excludes this validator from performance tests**
 `ref within remote ref, ref within ref invalid`|The schema failed to load(`Unresolvable $ref values: ["http://localhost:1234/subSchemas.json#/refToInteger"]`)
 `base URI change, base URI change ref valid`|The schema failed to load(`Unresolvable $ref values: ["http://localhost:1234/"]`)
 `base URI change, base URI change ref invalid`|The schema failed to load(`Unresolvable $ref values: ["http://localhost:1234/"]`)
@@ -49,15 +49,15 @@ that is the case for these tests.
 `base URI change - change folder, string is invalid`|The schema failed to load(`Unresolvable $ref values: ["http://localhost:1234/folderInteger.json"]`)
 `base URI change - change folder in subschema, number is valid`|The schema failed to load(`Unresolvable $ref values: ["http://localhost:1234/folderInteger.json"]`)
 `base URI change - change folder in subschema, string is invalid`|The schema failed to load(`Unresolvable $ref values: ["http://localhost:1234/folderInteger.json"]`)
-`root ref in remote ref, string is valid`|The schema failed to load(`Unresolvable $ref values: ["http://localhost:1234/name.json#/definitions/orNull"]`)
-`root ref in remote ref, null is valid`|The schema failed to load(`Unresolvable $ref values: ["http://localhost:1234/name.json#/definitions/orNull"]`)
+`root ref in remote ref, string is valid`|The schema failed to load(`Unresolvable $ref values: ["http://localhost:1234/name.json#/definitions/orNull"]`). **This excludes this validator from performance tests**
+`root ref in remote ref, null is valid`|The schema failed to load(`Unresolvable $ref values: ["http://localhost:1234/name.json#/definitions/orNull"]`). **This excludes this validator from performance tests**
 `root ref in remote ref, object is invalid`|The schema failed to load(`Unresolvable $ref values: ["http://localhost:1234/name.json#/definitions/orNull"]`)
-`uniqueItems validation, non-unique array of integers is invalid`|Expected result: `false` but validator returned: `true`
-`uniqueItems validation, numbers are unique if mathematically unequal`|Expected result: `false` but validator returned: `true`
-`uniqueItems validation, non-unique array of objects is invalid`|Expected result: `false` but validator returned: `true`
-`uniqueItems validation, non-unique array of nested objects is invalid`|Expected result: `false` but validator returned: `true`
-`uniqueItems validation, non-unique array of arrays is invalid`|Expected result: `false` but validator returned: `true`
-`uniqueItems validation, non-unique heterogeneous types are invalid`|Expected result: `false` but validator returned: `true`
+`uniqueItems validation, non-unique array of integers is invalid`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
+`uniqueItems validation, numbers are unique if mathematically unequal`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
+`uniqueItems validation, non-unique array of objects is invalid`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
+`uniqueItems validation, non-unique array of nested objects is invalid`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
+`uniqueItems validation, non-unique array of arrays is invalid`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
+`uniqueItems validation, non-unique heterogeneous types are invalid`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
 `uniqueItems with an array of items, [false, false] from items array is not valid`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
 `uniqueItems with an array of items, [true, true] from items array is not valid`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
 `uniqueItems with an array of items, non-unique array extended from [false, true] is not valid`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**

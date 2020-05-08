@@ -8,13 +8,13 @@ for validators that cause side-effects on schema or data.
 
 # Performance
 
-![performance](https://chart.googleapis.com/chart?chxt=x,y&cht=bhs&chco=76A4FB&chls=2.0&chbh=129,4,1&chs=600x419&chxl=-1:|ajv|is-my-json-valid|@cfworker&#x2F;json-schema&chd=t:100,42.3,3.6)
+![performance](https://chart.googleapis.com/chart?chxt=x,y&cht=bhs&chco=76A4FB&chls=2.0&chbh=129,4,1&chs=600x419&chxl=-1:|ajv|is-my-json-valid|@cfworker&#x2F;json-schema&chd=t:100,44.3,3.8)
 
 |Validator|Relative speed|Number of test runs per second|
 |---------|:------------:|:----------------------------:|
-|[`ajv`](https://github.com/epoberezkin/ajv)|100%|44016 (± 0.67%)|
-|[`is-my-json-valid`](https://github.com/mafintosh/is-my-json-valid)|42.3%|18638 (± 0.46%)|
-|[`@cfworker/json-schema`](https://github.com/cfworker/cfworker/tree/master/packages/json-schema/README.md)|3.6%|1567 (± 0.86%)|
+|[`ajv`](https://github.com/epoberezkin/ajv)|100%|35960 (± 0.28%)|
+|[`is-my-json-valid`](https://github.com/mafintosh/is-my-json-valid)|44.3%|15947 (± 0.67%)|
+|[`@cfworker/json-schema`](https://github.com/cfworker/cfworker/tree/master/packages/json-schema/README.md)|3.8%|1362 (± 0.83%)|
 
 235 tests are run in each test run.
 

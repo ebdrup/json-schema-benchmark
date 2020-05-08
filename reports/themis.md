@@ -15,7 +15,7 @@ that is the case for these tests.
 
 |test failed|reason
 |-----------|------
-`valid definition, valid definition schema`|Expected result: `true` but validator returned: `"validators.http://json-schema.org/draft-04/schema# is not a function"`
+`valid definition, valid definition schema`|Expected result: `true` but validator returned: `"validators.http://json-schema.org/draft-04/schema# is not a function"`. **This excludes this validator from performance tests**
 `invalid definition, invalid definition schema`|Expected result: `false` but validator returned: `"validators.http://json-schema.org/draft-04/schema# is not a function"`
 `dependencies with escaped characters, valid object 1`|The schema failed to load(`Invalid or unexpected token`). **This excludes this validator from performance tests**
 `dependencies with escaped characters, valid object 2`|The schema failed to load(`Invalid or unexpected token`). **This excludes this validator from performance tests**
@@ -44,19 +44,19 @@ that is the case for these tests.
 `properties with escaped characters, object with all numbers is valid`|The schema failed to load(`Invalid or unexpected token`). **This excludes this validator from performance tests**
 `properties with escaped characters, object with strings is invalid`|The schema failed to load(`Invalid or unexpected token`). **This excludes this validator from performance tests**
 `ref overrides any sibling keywords, ref valid, maxItems ignored`|Expected result: `true` but validator returned: `false`
-`remote ref, containing refs itself, remote ref valid`|Expected result: `true` but validator returned: `"validators.http://json-schema.org/draft-04/schema# is not a function"`
+`remote ref, containing refs itself, remote ref valid`|Expected result: `true` but validator returned: `"validators.http://json-schema.org/draft-04/schema# is not a function"`. **This excludes this validator from performance tests**
 `remote ref, containing refs itself, remote ref invalid`|Expected result: `false` but validator returned: `"validators.http://json-schema.org/draft-04/schema# is not a function"`
-`Recursive references between schemas, valid tree`|The schema failed to load(`Cannot read property '0' of undefined`)
+`Recursive references between schemas, valid tree`|The schema failed to load(`Cannot read property '0' of undefined`). **This excludes this validator from performance tests**
 `Recursive references between schemas, invalid tree`|The schema failed to load(`Cannot read property '0' of undefined`)
 `refs with quote, object with numbers is valid`|The schema failed to load(`Unexpected identifier`). **This excludes this validator from performance tests**
 `refs with quote, object with strings is invalid`|The schema failed to load(`Unexpected identifier`). **This excludes this validator from performance tests**
 `Location-independent identifier with base URI change in subschema, match`|The schema failed to load(`Cannot read property 'oo' of undefined`)
 `Location-independent identifier with base URI change in subschema, mismatch`|The schema failed to load(`Cannot read property 'oo' of undefined`)
-`remote ref, remote ref valid`|Expected result: `true` but validator returned: `"validators.http://localhost:1234/integer.json is not a function"`
-`remote ref, remote ref invalid`|Expected result: `false` but validator returned: `"validators.http://localhost:1234/integer.json is not a function"`
-`fragment within remote ref, remote fragment valid`|Expected result: `true` but validator returned: `"validators.http://localhost:1234/subSchemas.json#/integer is not a function"`
-`fragment within remote ref, remote fragment invalid`|Expected result: `false` but validator returned: `"validators.http://localhost:1234/subSchemas.json#/integer is not a function"`
-`ref within remote ref, ref within ref valid`|Expected result: `true` but validator returned: `"validators.http://localhost:1234/subSchemas.json#/refToInteger is not a function"`
+`remote ref, remote ref valid`|Expected result: `true` but validator returned: `"validators.http://localhost:1234/integer.json is not a function"`. **This excludes this validator from performance tests**
+`remote ref, remote ref invalid`|Expected result: `false` but validator returned: `"validators.http://localhost:1234/integer.json is not a function"`. **This excludes this validator from performance tests**
+`fragment within remote ref, remote fragment valid`|Expected result: `true` but validator returned: `"validators.http://localhost:1234/subSchemas.json#/integer is not a function"`. **This excludes this validator from performance tests**
+`fragment within remote ref, remote fragment invalid`|Expected result: `false` but validator returned: `"validators.http://localhost:1234/subSchemas.json#/integer is not a function"`. **This excludes this validator from performance tests**
+`ref within remote ref, ref within ref valid`|Expected result: `true` but validator returned: `"validators.http://localhost:1234/subSchemas.json#/refToInteger is not a function"`. **This excludes this validator from performance tests**
 `ref within remote ref, ref within ref invalid`|Expected result: `false` but validator returned: `"validators.http://localhost:1234/subSchemas.json#/refToInteger is not a function"`
 `base URI change, base URI change ref valid`|The schema failed to load(`invalid ref: folderInteger.json in folder/`)
 `base URI change, base URI change ref invalid`|The schema failed to load(`invalid ref: folderInteger.json in folder/`)
@@ -64,8 +64,8 @@ that is the case for these tests.
 `base URI change - change folder, string is invalid`|The schema failed to load(`invalid ref: folderInteger.json in folder/`)
 `base URI change - change folder in subschema, number is valid`|The schema failed to load(`invalid ref: folderInteger.json in folder/`)
 `base URI change - change folder in subschema, string is invalid`|The schema failed to load(`invalid ref: folderInteger.json in folder/`)
-`root ref in remote ref, string is valid`|The schema failed to load(`Cannot read property 'definitions' of undefined`)
-`root ref in remote ref, null is valid`|The schema failed to load(`Cannot read property 'definitions' of undefined`)
+`root ref in remote ref, string is valid`|The schema failed to load(`Cannot read property 'definitions' of undefined`). **This excludes this validator from performance tests**
+`root ref in remote ref, null is valid`|The schema failed to load(`Cannot read property 'definitions' of undefined`). **This excludes this validator from performance tests**
 `root ref in remote ref, object is invalid`|The schema failed to load(`Cannot read property 'definitions' of undefined`)
 `required with escaped characters, object with all properties present is valid`|The schema failed to load(`Invalid or unexpected token`). **This excludes this validator from performance tests**
 `required with escaped characters, object with some properties missing is invalid`|The schema failed to load(`Invalid or unexpected token`). **This excludes this validator from performance tests**

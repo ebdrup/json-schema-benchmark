@@ -67,8 +67,8 @@ that is the case for these tests.
 `Location-independent identifier, mismatch`|The schema failed to load(`Invalid JSON pointer: foo`)
 `Location-independent identifier with absolute URI, mismatch`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
 `Location-independent identifier with base URI change in subschema, mismatch`|Expected result: `false` but validator returned: `true`
-`remote ref, remote ref invalid`|Expected result: `false` but validator returned: `true`
-`fragment within remote ref, remote fragment invalid`|Expected result: `false` but validator returned: `true`
+`remote ref, remote ref invalid`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
+`fragment within remote ref, remote fragment invalid`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
 `ref within remote ref, ref within ref invalid`|Expected result: `false` but validator returned: `true`
 `base URI change, base URI change ref invalid`|Expected result: `false` but validator returned: `true`
 `base URI change - change folder, string is invalid`|Expected result: `false` but validator returned: `true`

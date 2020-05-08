@@ -25,13 +25,13 @@ that is the case for these tests.
 `validation of URIs, an invalid URI with spaces and missing scheme`|Expected result: `false` but validator returned: `true`
 `Proper UTF-16 surrogate pair handling: pattern, matches empty`|Expected result: `true` but validator returned: `false`
 `Proper UTF-16 surrogate pair handling: pattern, matches two`|Expected result: `true` but validator returned: `false`
-`Recursive references between schemas, valid tree`|Expected result: `true` but validator returned: `false`
+`Recursive references between schemas, valid tree`|Expected result: `true` but validator returned: `false`. **This excludes this validator from performance tests**
 `Location-independent identifier with absolute URI, match`|Expected result: `true` but validator returned: `false`. **This excludes this validator from performance tests**
 `Location-independent identifier with base URI change in subschema, match`|Expected result: `true` but validator returned: `false`
-`ref within remote ref, ref within ref valid`|Expected result: `true` but validator returned: `false`
+`ref within remote ref, ref within ref valid`|Expected result: `true` but validator returned: `false`. **This excludes this validator from performance tests**
 `base URI change - change folder, number is valid`|Expected result: `true` but validator returned: `false`
 `base URI change - change folder in subschema, number is valid`|Expected result: `true` but validator returned: `false`
-`root ref in remote ref, string is valid`|Expected result: `true` but validator returned: `false`
+`root ref in remote ref, string is valid`|Expected result: `true` but validator returned: `false`. **This excludes this validator from performance tests**
 
 **All other tests passed**.
 
