@@ -892,6 +892,184 @@ When running tests [`revalidator`](https://github.com/flatiron/revalidator) muta
 ```
 
 # Side-effect on schema
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `allOf with one empty schema, any data is valid`
+## Original schema
+```js
+{
+	"allOf": [
+		{}
+	]
+}
+```
+## Schema after validating
+```js
+{
+	"allOf": [
+		{}
+	],
+	"additionalProperties": true
+}
+```
+
+# Side-effect on schema
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `allOf with two empty schemas, any data is valid`
+## Original schema
+```js
+{
+	"allOf": [
+		{},
+		{}
+	]
+}
+```
+## Schema after validating
+```js
+{
+	"allOf": [
+		{},
+		{}
+	],
+	"additionalProperties": true
+}
+```
+
+# Side-effect on schema
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `allOf with the first empty schema, number is valid`
+## Original schema
+```js
+{
+	"allOf": [
+		{},
+		{
+			"type": "number"
+		}
+	]
+}
+```
+## Schema after validating
+```js
+{
+	"allOf": [
+		{},
+		{
+			"type": "number"
+		}
+	],
+	"additionalProperties": true
+}
+```
+
+# Side-effect on schema
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `allOf with the first empty schema, string is invalid`
+## Original schema
+```js
+{
+	"allOf": [
+		{},
+		{
+			"type": "number"
+		}
+	]
+}
+```
+## Schema after validating
+```js
+{
+	"allOf": [
+		{},
+		{
+			"type": "number"
+		}
+	],
+	"additionalProperties": true
+}
+```
+
+# Side-effect on schema
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `allOf with the last empty schema, number is valid`
+## Original schema
+```js
+{
+	"allOf": [
+		{
+			"type": "number"
+		},
+		{}
+	]
+}
+```
+## Schema after validating
+```js
+{
+	"allOf": [
+		{
+			"type": "number"
+		},
+		{}
+	],
+	"additionalProperties": true
+}
+```
+
+# Side-effect on schema
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `allOf with the last empty schema, string is invalid`
+## Original schema
+```js
+{
+	"allOf": [
+		{
+			"type": "number"
+		},
+		{}
+	]
+}
+```
+## Schema after validating
+```js
+{
+	"allOf": [
+		{
+			"type": "number"
+		},
+		{}
+	],
+	"additionalProperties": true
+}
+```
+
+# Side-effect on schema
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `nested allOf, to check validation semantics, anything non-null is invalid`
+## Original schema
+```js
+{
+	"allOf": [
+		{
+			"allOf": [
+				{
+					"type": "null"
+				}
+			]
+		}
+	]
+}
+```
+## Schema after validating
+```js
+{
+	"allOf": [
+		{
+			"allOf": [
+				{
+					"type": "null"
+				}
+			]
+		}
+	],
+	"additionalProperties": true
+}
+```
+
+# Side-effect on schema
 [`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `anyOf, first anyOf valid`
 ## Original schema
 ```js
@@ -1101,6 +1279,354 @@ When running tests [`revalidator`](https://github.com/flatiron/revalidator) muta
 		},
 		{
 			"minLength": 4
+		}
+	],
+	"additionalProperties": true
+}
+```
+
+# Side-effect on schema
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `anyOf complex types, first anyOf valid (complex)`
+## Original schema
+```js
+{
+	"anyOf": [
+		{
+			"properties": {
+				"bar": {
+					"type": "integer"
+				}
+			},
+			"required": [
+				"bar"
+			]
+		},
+		{
+			"properties": {
+				"foo": {
+					"type": "string"
+				}
+			},
+			"required": [
+				"foo"
+			]
+		}
+	]
+}
+```
+## Schema after validating
+```js
+{
+	"anyOf": [
+		{
+			"properties": {
+				"bar": {
+					"type": "integer"
+				}
+			},
+			"required": [
+				"bar"
+			]
+		},
+		{
+			"properties": {
+				"foo": {
+					"type": "string"
+				}
+			},
+			"required": [
+				"foo"
+			]
+		}
+	],
+	"additionalProperties": true
+}
+```
+
+# Side-effect on schema
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `anyOf complex types, second anyOf valid (complex)`
+## Original schema
+```js
+{
+	"anyOf": [
+		{
+			"properties": {
+				"bar": {
+					"type": "integer"
+				}
+			},
+			"required": [
+				"bar"
+			]
+		},
+		{
+			"properties": {
+				"foo": {
+					"type": "string"
+				}
+			},
+			"required": [
+				"foo"
+			]
+		}
+	]
+}
+```
+## Schema after validating
+```js
+{
+	"anyOf": [
+		{
+			"properties": {
+				"bar": {
+					"type": "integer"
+				}
+			},
+			"required": [
+				"bar"
+			]
+		},
+		{
+			"properties": {
+				"foo": {
+					"type": "string"
+				}
+			},
+			"required": [
+				"foo"
+			]
+		}
+	],
+	"additionalProperties": true
+}
+```
+
+# Side-effect on schema
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `anyOf complex types, both anyOf valid (complex)`
+## Original schema
+```js
+{
+	"anyOf": [
+		{
+			"properties": {
+				"bar": {
+					"type": "integer"
+				}
+			},
+			"required": [
+				"bar"
+			]
+		},
+		{
+			"properties": {
+				"foo": {
+					"type": "string"
+				}
+			},
+			"required": [
+				"foo"
+			]
+		}
+	]
+}
+```
+## Schema after validating
+```js
+{
+	"anyOf": [
+		{
+			"properties": {
+				"bar": {
+					"type": "integer"
+				}
+			},
+			"required": [
+				"bar"
+			]
+		},
+		{
+			"properties": {
+				"foo": {
+					"type": "string"
+				}
+			},
+			"required": [
+				"foo"
+			]
+		}
+	],
+	"additionalProperties": true
+}
+```
+
+# Side-effect on schema
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `anyOf complex types, neither anyOf valid (complex)`
+## Original schema
+```js
+{
+	"anyOf": [
+		{
+			"properties": {
+				"bar": {
+					"type": "integer"
+				}
+			},
+			"required": [
+				"bar"
+			]
+		},
+		{
+			"properties": {
+				"foo": {
+					"type": "string"
+				}
+			},
+			"required": [
+				"foo"
+			]
+		}
+	]
+}
+```
+## Schema after validating
+```js
+{
+	"anyOf": [
+		{
+			"properties": {
+				"bar": {
+					"type": "integer"
+				}
+			},
+			"required": [
+				"bar"
+			]
+		},
+		{
+			"properties": {
+				"foo": {
+					"type": "string"
+				}
+			},
+			"required": [
+				"foo"
+			]
+		}
+	],
+	"additionalProperties": true
+}
+```
+
+# Side-effect on schema
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `anyOf with one empty schema, string is valid`
+## Original schema
+```js
+{
+	"anyOf": [
+		{
+			"type": "number"
+		},
+		{}
+	]
+}
+```
+## Schema after validating
+```js
+{
+	"anyOf": [
+		{
+			"type": "number"
+		},
+		{}
+	],
+	"additionalProperties": true
+}
+```
+
+# Side-effect on schema
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `anyOf with one empty schema, number is valid`
+## Original schema
+```js
+{
+	"anyOf": [
+		{
+			"type": "number"
+		},
+		{}
+	]
+}
+```
+## Schema after validating
+```js
+{
+	"anyOf": [
+		{
+			"type": "number"
+		},
+		{}
+	],
+	"additionalProperties": true
+}
+```
+
+# Side-effect on schema
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `nested anyOf, to check validation semantics, anything non-null is invalid`
+## Original schema
+```js
+{
+	"anyOf": [
+		{
+			"anyOf": [
+				{
+					"type": "null"
+				}
+			]
+		}
+	]
+}
+```
+## Schema after validating
+```js
+{
+	"anyOf": [
+		{
+			"anyOf": [
+				{
+					"type": "null"
+				}
+			]
+		}
+	],
+	"additionalProperties": true
+}
+```
+
+# Side-effect on schema
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `nested anyOf, to check validation semantics, anything non-null is invalid`
+## Original schema
+```js
+{
+	"anyOf": [
+		{
+			"anyOf": [
+				{
+					"type": "null"
+				}
+			]
+		}
+	]
+}
+```
+## Schema after validating
+```js
+{
+	"anyOf": [
+		{
+			"anyOf": [
+				{
+					"type": "null"
+				}
+			]
 		}
 	],
 	"additionalProperties": true
@@ -1762,6 +2288,328 @@ When running tests [`revalidator`](https://github.com/flatiron/revalidator) muta
 ```
 
 # Side-effect on schema
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `dependencies with escaped characters, valid object 1`
+## Original schema
+```js
+{
+	"dependencies": {
+		"foo\nbar": [
+			"foo\rbar"
+		],
+		"foo\tbar": {
+			"minProperties": 4
+		},
+		"foo'bar": {
+			"required": [
+				"foo\"bar"
+			]
+		},
+		"foo\"bar": [
+			"foo'bar"
+		]
+	}
+}
+```
+## Schema after validating
+```js
+{
+	"dependencies": {
+		"foo\nbar": [
+			"foo\rbar"
+		],
+		"foo\tbar": {
+			"minProperties": 4
+		},
+		"foo'bar": {
+			"required": [
+				"foo\"bar"
+			]
+		},
+		"foo\"bar": [
+			"foo'bar"
+		]
+	},
+	"additionalProperties": true
+}
+```
+
+# Side-effect on schema
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `dependencies with escaped characters, valid object 2`
+## Original schema
+```js
+{
+	"dependencies": {
+		"foo\nbar": [
+			"foo\rbar"
+		],
+		"foo\tbar": {
+			"minProperties": 4
+		},
+		"foo'bar": {
+			"required": [
+				"foo\"bar"
+			]
+		},
+		"foo\"bar": [
+			"foo'bar"
+		]
+	}
+}
+```
+## Schema after validating
+```js
+{
+	"dependencies": {
+		"foo\nbar": [
+			"foo\rbar"
+		],
+		"foo\tbar": {
+			"minProperties": 4
+		},
+		"foo'bar": {
+			"required": [
+				"foo\"bar"
+			]
+		},
+		"foo\"bar": [
+			"foo'bar"
+		]
+	},
+	"additionalProperties": true
+}
+```
+
+# Side-effect on schema
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `dependencies with escaped characters, valid object 3`
+## Original schema
+```js
+{
+	"dependencies": {
+		"foo\nbar": [
+			"foo\rbar"
+		],
+		"foo\tbar": {
+			"minProperties": 4
+		},
+		"foo'bar": {
+			"required": [
+				"foo\"bar"
+			]
+		},
+		"foo\"bar": [
+			"foo'bar"
+		]
+	}
+}
+```
+## Schema after validating
+```js
+{
+	"dependencies": {
+		"foo\nbar": [
+			"foo\rbar"
+		],
+		"foo\tbar": {
+			"minProperties": 4
+		},
+		"foo'bar": {
+			"required": [
+				"foo\"bar"
+			]
+		},
+		"foo\"bar": [
+			"foo'bar"
+		]
+	},
+	"additionalProperties": true
+}
+```
+
+# Side-effect on schema
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `dependencies with escaped characters, invalid object 1`
+## Original schema
+```js
+{
+	"dependencies": {
+		"foo\nbar": [
+			"foo\rbar"
+		],
+		"foo\tbar": {
+			"minProperties": 4
+		},
+		"foo'bar": {
+			"required": [
+				"foo\"bar"
+			]
+		},
+		"foo\"bar": [
+			"foo'bar"
+		]
+	}
+}
+```
+## Schema after validating
+```js
+{
+	"dependencies": {
+		"foo\nbar": [
+			"foo\rbar"
+		],
+		"foo\tbar": {
+			"minProperties": 4
+		},
+		"foo'bar": {
+			"required": [
+				"foo\"bar"
+			]
+		},
+		"foo\"bar": [
+			"foo'bar"
+		]
+	},
+	"additionalProperties": true
+}
+```
+
+# Side-effect on schema
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `dependencies with escaped characters, invalid object 2`
+## Original schema
+```js
+{
+	"dependencies": {
+		"foo\nbar": [
+			"foo\rbar"
+		],
+		"foo\tbar": {
+			"minProperties": 4
+		},
+		"foo'bar": {
+			"required": [
+				"foo\"bar"
+			]
+		},
+		"foo\"bar": [
+			"foo'bar"
+		]
+	}
+}
+```
+## Schema after validating
+```js
+{
+	"dependencies": {
+		"foo\nbar": [
+			"foo\rbar"
+		],
+		"foo\tbar": {
+			"minProperties": 4
+		},
+		"foo'bar": {
+			"required": [
+				"foo\"bar"
+			]
+		},
+		"foo\"bar": [
+			"foo'bar"
+		]
+	},
+	"additionalProperties": true
+}
+```
+
+# Side-effect on schema
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `dependencies with escaped characters, invalid object 3`
+## Original schema
+```js
+{
+	"dependencies": {
+		"foo\nbar": [
+			"foo\rbar"
+		],
+		"foo\tbar": {
+			"minProperties": 4
+		},
+		"foo'bar": {
+			"required": [
+				"foo\"bar"
+			]
+		},
+		"foo\"bar": [
+			"foo'bar"
+		]
+	}
+}
+```
+## Schema after validating
+```js
+{
+	"dependencies": {
+		"foo\nbar": [
+			"foo\rbar"
+		],
+		"foo\tbar": {
+			"minProperties": 4
+		},
+		"foo'bar": {
+			"required": [
+				"foo\"bar"
+			]
+		},
+		"foo\"bar": [
+			"foo'bar"
+		]
+	},
+	"additionalProperties": true
+}
+```
+
+# Side-effect on schema
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `dependencies with escaped characters, invalid object 4`
+## Original schema
+```js
+{
+	"dependencies": {
+		"foo\nbar": [
+			"foo\rbar"
+		],
+		"foo\tbar": {
+			"minProperties": 4
+		},
+		"foo'bar": {
+			"required": [
+				"foo\"bar"
+			]
+		},
+		"foo\"bar": [
+			"foo'bar"
+		]
+	}
+}
+```
+## Schema after validating
+```js
+{
+	"dependencies": {
+		"foo\nbar": [
+			"foo\rbar"
+		],
+		"foo\tbar": {
+			"minProperties": 4
+		},
+		"foo'bar": {
+			"required": [
+				"foo\"bar"
+			]
+		},
+		"foo\"bar": [
+			"foo'bar"
+		]
+	},
+	"additionalProperties": true
+}
+```
+
+# Side-effect on schema
 [`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `simple enum validation, one of the enum is valid`
 ## Original schema
 ```js
@@ -1906,7 +2754,143 @@ When running tests [`revalidator`](https://github.com/flatiron/revalidator) muta
 ```
 
 # Side-effect on schema
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `heterogeneous enum-with-null validation, number is valid`
+## Original schema
+```js
+{
+	"enum": [
+		6,
+		null
+	]
+}
+```
+## Schema after validating
+```js
+{
+	"enum": [
+		6,
+		null
+	],
+	"additionalProperties": true
+}
+```
+
+# Side-effect on schema
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `heterogeneous enum-with-null validation, something else is invalid`
+## Original schema
+```js
+{
+	"enum": [
+		6,
+		null
+	]
+}
+```
+## Schema after validating
+```js
+{
+	"enum": [
+		6,
+		null
+	],
+	"additionalProperties": true
+}
+```
+
+# Side-effect on schema
 [`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `enums in properties, both properties are valid`
+## Original schema
+```js
+{
+	"type": "object",
+	"properties": {
+		"foo": {
+			"enum": [
+				"foo"
+			]
+		},
+		"bar": {
+			"enum": [
+				"bar"
+			]
+		}
+	},
+	"required": [
+		"bar"
+	]
+}
+```
+## Schema after validating
+```js
+{
+	"type": "object",
+	"properties": {
+		"foo": {
+			"enum": [
+				"foo"
+			]
+		},
+		"bar": {
+			"enum": [
+				"bar"
+			]
+		}
+	},
+	"required": [
+		"bar"
+	],
+	"additionalProperties": true
+}
+```
+
+# Side-effect on schema
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `enums in properties, wrong foo value`
+## Original schema
+```js
+{
+	"type": "object",
+	"properties": {
+		"foo": {
+			"enum": [
+				"foo"
+			]
+		},
+		"bar": {
+			"enum": [
+				"bar"
+			]
+		}
+	},
+	"required": [
+		"bar"
+	]
+}
+```
+## Schema after validating
+```js
+{
+	"type": "object",
+	"properties": {
+		"foo": {
+			"enum": [
+				"foo"
+			]
+		},
+		"bar": {
+			"enum": [
+				"bar"
+			]
+		}
+	},
+	"required": [
+		"bar"
+	],
+	"additionalProperties": true
+}
+```
+
+# Side-effect on schema
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `enums in properties, wrong bar value`
 ## Original schema
 ```js
 {
@@ -2085,6 +3069,888 @@ When running tests [`revalidator`](https://github.com/flatiron/revalidator) muta
 	"required": [
 		"bar"
 	],
+	"additionalProperties": true
+}
+```
+
+# Side-effect on schema
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `enum with escaped characters, member 1 is valid`
+## Original schema
+```js
+{
+	"enum": [
+		"foo\nbar",
+		"foo\rbar"
+	]
+}
+```
+## Schema after validating
+```js
+{
+	"enum": [
+		"foo\nbar",
+		"foo\rbar"
+	],
+	"additionalProperties": true
+}
+```
+
+# Side-effect on schema
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `enum with escaped characters, member 2 is valid`
+## Original schema
+```js
+{
+	"enum": [
+		"foo\nbar",
+		"foo\rbar"
+	]
+}
+```
+## Schema after validating
+```js
+{
+	"enum": [
+		"foo\nbar",
+		"foo\rbar"
+	],
+	"additionalProperties": true
+}
+```
+
+# Side-effect on schema
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `enum with escaped characters, another string is invalid`
+## Original schema
+```js
+{
+	"enum": [
+		"foo\nbar",
+		"foo\rbar"
+	]
+}
+```
+## Schema after validating
+```js
+{
+	"enum": [
+		"foo\nbar",
+		"foo\rbar"
+	],
+	"additionalProperties": true
+}
+```
+
+# Side-effect on schema
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `enum with false does not match 0, false is valid`
+## Original schema
+```js
+{
+	"enum": [
+		false
+	]
+}
+```
+## Schema after validating
+```js
+{
+	"enum": [
+		false
+	],
+	"additionalProperties": true
+}
+```
+
+# Side-effect on schema
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `enum with false does not match 0, integer zero is invalid`
+## Original schema
+```js
+{
+	"enum": [
+		false
+	]
+}
+```
+## Schema after validating
+```js
+{
+	"enum": [
+		false
+	],
+	"additionalProperties": true
+}
+```
+
+# Side-effect on schema
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `enum with false does not match 0, float zero is invalid`
+## Original schema
+```js
+{
+	"enum": [
+		false
+	]
+}
+```
+## Schema after validating
+```js
+{
+	"enum": [
+		false
+	],
+	"additionalProperties": true
+}
+```
+
+# Side-effect on schema
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `enum with true does not match 1, true is valid`
+## Original schema
+```js
+{
+	"enum": [
+		true
+	]
+}
+```
+## Schema after validating
+```js
+{
+	"enum": [
+		true
+	],
+	"additionalProperties": true
+}
+```
+
+# Side-effect on schema
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `enum with true does not match 1, integer one is invalid`
+## Original schema
+```js
+{
+	"enum": [
+		true
+	]
+}
+```
+## Schema after validating
+```js
+{
+	"enum": [
+		true
+	],
+	"additionalProperties": true
+}
+```
+
+# Side-effect on schema
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `enum with true does not match 1, float one is invalid`
+## Original schema
+```js
+{
+	"enum": [
+		true
+	]
+}
+```
+## Schema after validating
+```js
+{
+	"enum": [
+		true
+	],
+	"additionalProperties": true
+}
+```
+
+# Side-effect on schema
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `enum with 0 does not match false, false is invalid`
+## Original schema
+```js
+{
+	"enum": [
+		0
+	]
+}
+```
+## Schema after validating
+```js
+{
+	"enum": [
+		0
+	],
+	"additionalProperties": true
+}
+```
+
+# Side-effect on schema
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `enum with 0 does not match false, integer zero is valid`
+## Original schema
+```js
+{
+	"enum": [
+		0
+	]
+}
+```
+## Schema after validating
+```js
+{
+	"enum": [
+		0
+	],
+	"additionalProperties": true
+}
+```
+
+# Side-effect on schema
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `enum with 0 does not match false, float zero is valid`
+## Original schema
+```js
+{
+	"enum": [
+		0
+	]
+}
+```
+## Schema after validating
+```js
+{
+	"enum": [
+		0
+	],
+	"additionalProperties": true
+}
+```
+
+# Side-effect on schema
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `enum with 1 does not match true, true is invalid`
+## Original schema
+```js
+{
+	"enum": [
+		1
+	]
+}
+```
+## Schema after validating
+```js
+{
+	"enum": [
+		1
+	],
+	"additionalProperties": true
+}
+```
+
+# Side-effect on schema
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `enum with 1 does not match true, integer one is valid`
+## Original schema
+```js
+{
+	"enum": [
+		1
+	]
+}
+```
+## Schema after validating
+```js
+{
+	"enum": [
+		1
+	],
+	"additionalProperties": true
+}
+```
+
+# Side-effect on schema
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `enum with 1 does not match true, float one is valid`
+## Original schema
+```js
+{
+	"enum": [
+		1
+	]
+}
+```
+## Schema after validating
+```js
+{
+	"enum": [
+		1
+	],
+	"additionalProperties": true
+}
+```
+
+# Side-effect on schema
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `validation of e-mail addresses, ignores integers`
+## Original schema
+```js
+{
+	"format": "email"
+}
+```
+## Schema after validating
+```js
+{
+	"format": "email",
+	"additionalProperties": true
+}
+```
+
+# Side-effect on schema
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `validation of e-mail addresses, ignores floats`
+## Original schema
+```js
+{
+	"format": "email"
+}
+```
+## Schema after validating
+```js
+{
+	"format": "email",
+	"additionalProperties": true
+}
+```
+
+# Side-effect on schema
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `validation of e-mail addresses, ignores objects`
+## Original schema
+```js
+{
+	"format": "email"
+}
+```
+## Schema after validating
+```js
+{
+	"format": "email",
+	"additionalProperties": true
+}
+```
+
+# Side-effect on schema
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `validation of e-mail addresses, ignores arrays`
+## Original schema
+```js
+{
+	"format": "email"
+}
+```
+## Schema after validating
+```js
+{
+	"format": "email",
+	"additionalProperties": true
+}
+```
+
+# Side-effect on schema
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `validation of e-mail addresses, ignores booleans`
+## Original schema
+```js
+{
+	"format": "email"
+}
+```
+## Schema after validating
+```js
+{
+	"format": "email",
+	"additionalProperties": true
+}
+```
+
+# Side-effect on schema
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `validation of e-mail addresses, ignores null`
+## Original schema
+```js
+{
+	"format": "email"
+}
+```
+## Schema after validating
+```js
+{
+	"format": "email",
+	"additionalProperties": true
+}
+```
+
+# Side-effect on schema
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `validation of IP addresses, ignores integers`
+## Original schema
+```js
+{
+	"format": "ipv4"
+}
+```
+## Schema after validating
+```js
+{
+	"format": "ipv4",
+	"additionalProperties": true
+}
+```
+
+# Side-effect on schema
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `validation of IP addresses, ignores floats`
+## Original schema
+```js
+{
+	"format": "ipv4"
+}
+```
+## Schema after validating
+```js
+{
+	"format": "ipv4",
+	"additionalProperties": true
+}
+```
+
+# Side-effect on schema
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `validation of IP addresses, ignores objects`
+## Original schema
+```js
+{
+	"format": "ipv4"
+}
+```
+## Schema after validating
+```js
+{
+	"format": "ipv4",
+	"additionalProperties": true
+}
+```
+
+# Side-effect on schema
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `validation of IP addresses, ignores arrays`
+## Original schema
+```js
+{
+	"format": "ipv4"
+}
+```
+## Schema after validating
+```js
+{
+	"format": "ipv4",
+	"additionalProperties": true
+}
+```
+
+# Side-effect on schema
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `validation of IP addresses, ignores booleans`
+## Original schema
+```js
+{
+	"format": "ipv4"
+}
+```
+## Schema after validating
+```js
+{
+	"format": "ipv4",
+	"additionalProperties": true
+}
+```
+
+# Side-effect on schema
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `validation of IP addresses, ignores null`
+## Original schema
+```js
+{
+	"format": "ipv4"
+}
+```
+## Schema after validating
+```js
+{
+	"format": "ipv4",
+	"additionalProperties": true
+}
+```
+
+# Side-effect on schema
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `validation of IPv6 addresses, ignores integers`
+## Original schema
+```js
+{
+	"format": "ipv6"
+}
+```
+## Schema after validating
+```js
+{
+	"format": "ipv6",
+	"additionalProperties": true
+}
+```
+
+# Side-effect on schema
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `validation of IPv6 addresses, ignores floats`
+## Original schema
+```js
+{
+	"format": "ipv6"
+}
+```
+## Schema after validating
+```js
+{
+	"format": "ipv6",
+	"additionalProperties": true
+}
+```
+
+# Side-effect on schema
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `validation of IPv6 addresses, ignores objects`
+## Original schema
+```js
+{
+	"format": "ipv6"
+}
+```
+## Schema after validating
+```js
+{
+	"format": "ipv6",
+	"additionalProperties": true
+}
+```
+
+# Side-effect on schema
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `validation of IPv6 addresses, ignores arrays`
+## Original schema
+```js
+{
+	"format": "ipv6"
+}
+```
+## Schema after validating
+```js
+{
+	"format": "ipv6",
+	"additionalProperties": true
+}
+```
+
+# Side-effect on schema
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `validation of IPv6 addresses, ignores booleans`
+## Original schema
+```js
+{
+	"format": "ipv6"
+}
+```
+## Schema after validating
+```js
+{
+	"format": "ipv6",
+	"additionalProperties": true
+}
+```
+
+# Side-effect on schema
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `validation of IPv6 addresses, ignores null`
+## Original schema
+```js
+{
+	"format": "ipv6"
+}
+```
+## Schema after validating
+```js
+{
+	"format": "ipv6",
+	"additionalProperties": true
+}
+```
+
+# Side-effect on schema
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `validation of hostnames, ignores integers`
+## Original schema
+```js
+{
+	"format": "hostname"
+}
+```
+## Schema after validating
+```js
+{
+	"format": "hostname",
+	"additionalProperties": true
+}
+```
+
+# Side-effect on schema
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `validation of hostnames, ignores floats`
+## Original schema
+```js
+{
+	"format": "hostname"
+}
+```
+## Schema after validating
+```js
+{
+	"format": "hostname",
+	"additionalProperties": true
+}
+```
+
+# Side-effect on schema
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `validation of hostnames, ignores objects`
+## Original schema
+```js
+{
+	"format": "hostname"
+}
+```
+## Schema after validating
+```js
+{
+	"format": "hostname",
+	"additionalProperties": true
+}
+```
+
+# Side-effect on schema
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `validation of hostnames, ignores arrays`
+## Original schema
+```js
+{
+	"format": "hostname"
+}
+```
+## Schema after validating
+```js
+{
+	"format": "hostname",
+	"additionalProperties": true
+}
+```
+
+# Side-effect on schema
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `validation of hostnames, ignores booleans`
+## Original schema
+```js
+{
+	"format": "hostname"
+}
+```
+## Schema after validating
+```js
+{
+	"format": "hostname",
+	"additionalProperties": true
+}
+```
+
+# Side-effect on schema
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `validation of hostnames, ignores null`
+## Original schema
+```js
+{
+	"format": "hostname"
+}
+```
+## Schema after validating
+```js
+{
+	"format": "hostname",
+	"additionalProperties": true
+}
+```
+
+# Side-effect on schema
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `validation of date-time strings, ignores integers`
+## Original schema
+```js
+{
+	"format": "date-time"
+}
+```
+## Schema after validating
+```js
+{
+	"format": "date-time",
+	"additionalProperties": true
+}
+```
+
+# Side-effect on schema
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `validation of date-time strings, ignores floats`
+## Original schema
+```js
+{
+	"format": "date-time"
+}
+```
+## Schema after validating
+```js
+{
+	"format": "date-time",
+	"additionalProperties": true
+}
+```
+
+# Side-effect on schema
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `validation of date-time strings, ignores objects`
+## Original schema
+```js
+{
+	"format": "date-time"
+}
+```
+## Schema after validating
+```js
+{
+	"format": "date-time",
+	"additionalProperties": true
+}
+```
+
+# Side-effect on schema
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `validation of date-time strings, ignores arrays`
+## Original schema
+```js
+{
+	"format": "date-time"
+}
+```
+## Schema after validating
+```js
+{
+	"format": "date-time",
+	"additionalProperties": true
+}
+```
+
+# Side-effect on schema
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `validation of date-time strings, ignores booleans`
+## Original schema
+```js
+{
+	"format": "date-time"
+}
+```
+## Schema after validating
+```js
+{
+	"format": "date-time",
+	"additionalProperties": true
+}
+```
+
+# Side-effect on schema
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `validation of date-time strings, ignores null`
+## Original schema
+```js
+{
+	"format": "date-time"
+}
+```
+## Schema after validating
+```js
+{
+	"format": "date-time",
+	"additionalProperties": true
+}
+```
+
+# Side-effect on schema
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `validation of URIs, ignores integers`
+## Original schema
+```js
+{
+	"format": "uri"
+}
+```
+## Schema after validating
+```js
+{
+	"format": "uri",
+	"additionalProperties": true
+}
+```
+
+# Side-effect on schema
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `validation of URIs, ignores floats`
+## Original schema
+```js
+{
+	"format": "uri"
+}
+```
+## Schema after validating
+```js
+{
+	"format": "uri",
+	"additionalProperties": true
+}
+```
+
+# Side-effect on schema
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `validation of URIs, ignores objects`
+## Original schema
+```js
+{
+	"format": "uri"
+}
+```
+## Schema after validating
+```js
+{
+	"format": "uri",
+	"additionalProperties": true
+}
+```
+
+# Side-effect on schema
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `validation of URIs, ignores arrays`
+## Original schema
+```js
+{
+	"format": "uri"
+}
+```
+## Schema after validating
+```js
+{
+	"format": "uri",
+	"additionalProperties": true
+}
+```
+
+# Side-effect on schema
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `validation of URIs, ignores booleans`
+## Original schema
+```js
+{
+	"format": "uri"
+}
+```
+## Schema after validating
+```js
+{
+	"format": "uri",
+	"additionalProperties": true
+}
+```
+
+# Side-effect on schema
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `validation of URIs, ignores null`
+## Original schema
+```js
+{
+	"format": "uri"
+}
+```
+## Schema after validating
+```js
+{
+	"format": "uri",
 	"additionalProperties": true
 }
 ```
@@ -2654,6 +4520,142 @@ When running tests [`revalidator`](https://github.com/flatiron/revalidator) muta
 ```
 
 # Side-effect on schema
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `maximum validation with unsigned integer, below the maximum is invalid`
+## Original schema
+```js
+{
+	"maximum": 300
+}
+```
+## Schema after validating
+```js
+{
+	"maximum": 300,
+	"additionalProperties": true
+}
+```
+
+# Side-effect on schema
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `maximum validation with unsigned integer, boundary point integer is valid`
+## Original schema
+```js
+{
+	"maximum": 300
+}
+```
+## Schema after validating
+```js
+{
+	"maximum": 300,
+	"additionalProperties": true
+}
+```
+
+# Side-effect on schema
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `maximum validation with unsigned integer, boundary point float is valid`
+## Original schema
+```js
+{
+	"maximum": 300
+}
+```
+## Schema after validating
+```js
+{
+	"maximum": 300,
+	"additionalProperties": true
+}
+```
+
+# Side-effect on schema
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `maximum validation with unsigned integer, above the maximum is invalid`
+## Original schema
+```js
+{
+	"maximum": 300
+}
+```
+## Schema after validating
+```js
+{
+	"maximum": 300,
+	"additionalProperties": true
+}
+```
+
+# Side-effect on schema
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `maximum validation (explicit false exclusivity), below the maximum is valid`
+## Original schema
+```js
+{
+	"maximum": 3,
+	"exclusiveMaximum": false
+}
+```
+## Schema after validating
+```js
+{
+	"maximum": 3,
+	"exclusiveMaximum": false,
+	"additionalProperties": true
+}
+```
+
+# Side-effect on schema
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `maximum validation (explicit false exclusivity), boundary point is valid`
+## Original schema
+```js
+{
+	"maximum": 3,
+	"exclusiveMaximum": false
+}
+```
+## Schema after validating
+```js
+{
+	"maximum": 3,
+	"exclusiveMaximum": false,
+	"additionalProperties": true
+}
+```
+
+# Side-effect on schema
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `maximum validation (explicit false exclusivity), above the maximum is invalid`
+## Original schema
+```js
+{
+	"maximum": 3,
+	"exclusiveMaximum": false
+}
+```
+## Schema after validating
+```js
+{
+	"maximum": 3,
+	"exclusiveMaximum": false,
+	"additionalProperties": true
+}
+```
+
+# Side-effect on schema
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `maximum validation (explicit false exclusivity), ignores non-numbers`
+## Original schema
+```js
+{
+	"maximum": 3,
+	"exclusiveMaximum": false
+}
+```
+## Schema after validating
+```js
+{
+	"maximum": 3,
+	"exclusiveMaximum": false,
+	"additionalProperties": true
+}
+```
+
+# Side-effect on schema
 [`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `exclusiveMaximum validation, below the maximum is still valid`
 ## Original schema
 ```js
@@ -2994,6 +4996,78 @@ When running tests [`revalidator`](https://github.com/flatiron/revalidator) muta
 ```
 
 # Side-effect on schema
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `minimum validation (explicit false exclusivity), above the minimum is valid`
+## Original schema
+```js
+{
+	"minimum": 1.1,
+	"exclusiveMinimum": false
+}
+```
+## Schema after validating
+```js
+{
+	"minimum": 1.1,
+	"exclusiveMinimum": false,
+	"additionalProperties": true
+}
+```
+
+# Side-effect on schema
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `minimum validation (explicit false exclusivity), boundary point is valid`
+## Original schema
+```js
+{
+	"minimum": 1.1,
+	"exclusiveMinimum": false
+}
+```
+## Schema after validating
+```js
+{
+	"minimum": 1.1,
+	"exclusiveMinimum": false,
+	"additionalProperties": true
+}
+```
+
+# Side-effect on schema
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `minimum validation (explicit false exclusivity), below the minimum is invalid`
+## Original schema
+```js
+{
+	"minimum": 1.1,
+	"exclusiveMinimum": false
+}
+```
+## Schema after validating
+```js
+{
+	"minimum": 1.1,
+	"exclusiveMinimum": false,
+	"additionalProperties": true
+}
+```
+
+# Side-effect on schema
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `minimum validation (explicit false exclusivity), ignores non-numbers`
+## Original schema
+```js
+{
+	"minimum": 1.1,
+	"exclusiveMinimum": false
+}
+```
+## Schema after validating
+```js
+{
+	"minimum": 1.1,
+	"exclusiveMinimum": false,
+	"additionalProperties": true
+}
+```
+
+# Side-effect on schema
 [`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `exclusiveMinimum validation, above the minimum is still valid`
 ## Original schema
 ```js
@@ -3025,6 +5099,118 @@ When running tests [`revalidator`](https://github.com/flatiron/revalidator) muta
 {
 	"minimum": 1.1,
 	"exclusiveMinimum": true,
+	"additionalProperties": true
+}
+```
+
+# Side-effect on schema
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `minimum validation with signed integer, negative above the minimum is valid`
+## Original schema
+```js
+{
+	"minimum": -2
+}
+```
+## Schema after validating
+```js
+{
+	"minimum": -2,
+	"additionalProperties": true
+}
+```
+
+# Side-effect on schema
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `minimum validation with signed integer, positive above the minimum is valid`
+## Original schema
+```js
+{
+	"minimum": -2
+}
+```
+## Schema after validating
+```js
+{
+	"minimum": -2,
+	"additionalProperties": true
+}
+```
+
+# Side-effect on schema
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `minimum validation with signed integer, boundary point is valid`
+## Original schema
+```js
+{
+	"minimum": -2
+}
+```
+## Schema after validating
+```js
+{
+	"minimum": -2,
+	"additionalProperties": true
+}
+```
+
+# Side-effect on schema
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `minimum validation with signed integer, boundary point with float is valid`
+## Original schema
+```js
+{
+	"minimum": -2
+}
+```
+## Schema after validating
+```js
+{
+	"minimum": -2,
+	"additionalProperties": true
+}
+```
+
+# Side-effect on schema
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `minimum validation with signed integer, float below the minimum is invalid`
+## Original schema
+```js
+{
+	"minimum": -2
+}
+```
+## Schema after validating
+```js
+{
+	"minimum": -2,
+	"additionalProperties": true
+}
+```
+
+# Side-effect on schema
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `minimum validation with signed integer, int below the minimum is invalid`
+## Original schema
+```js
+{
+	"minimum": -2
+}
+```
+## Schema after validating
+```js
+{
+	"minimum": -2,
+	"additionalProperties": true
+}
+```
+
+# Side-effect on schema
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `minimum validation with signed integer, ignores non-numbers`
+## Original schema
+```js
+{
+	"minimum": -2
+}
+```
+## Schema after validating
+```js
+{
+	"minimum": -2,
 	"additionalProperties": true
 }
 ```
@@ -3630,6 +5816,706 @@ When running tests [`revalidator`](https://github.com/flatiron/revalidator) muta
 ```
 
 # Side-effect on schema
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `oneOf complex types, first oneOf valid (complex)`
+## Original schema
+```js
+{
+	"oneOf": [
+		{
+			"properties": {
+				"bar": {
+					"type": "integer"
+				}
+			},
+			"required": [
+				"bar"
+			]
+		},
+		{
+			"properties": {
+				"foo": {
+					"type": "string"
+				}
+			},
+			"required": [
+				"foo"
+			]
+		}
+	]
+}
+```
+## Schema after validating
+```js
+{
+	"oneOf": [
+		{
+			"properties": {
+				"bar": {
+					"type": "integer"
+				}
+			},
+			"required": [
+				"bar"
+			]
+		},
+		{
+			"properties": {
+				"foo": {
+					"type": "string"
+				}
+			},
+			"required": [
+				"foo"
+			]
+		}
+	],
+	"additionalProperties": true
+}
+```
+
+# Side-effect on schema
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `oneOf complex types, second oneOf valid (complex)`
+## Original schema
+```js
+{
+	"oneOf": [
+		{
+			"properties": {
+				"bar": {
+					"type": "integer"
+				}
+			},
+			"required": [
+				"bar"
+			]
+		},
+		{
+			"properties": {
+				"foo": {
+					"type": "string"
+				}
+			},
+			"required": [
+				"foo"
+			]
+		}
+	]
+}
+```
+## Schema after validating
+```js
+{
+	"oneOf": [
+		{
+			"properties": {
+				"bar": {
+					"type": "integer"
+				}
+			},
+			"required": [
+				"bar"
+			]
+		},
+		{
+			"properties": {
+				"foo": {
+					"type": "string"
+				}
+			},
+			"required": [
+				"foo"
+			]
+		}
+	],
+	"additionalProperties": true
+}
+```
+
+# Side-effect on schema
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `oneOf complex types, both oneOf valid (complex)`
+## Original schema
+```js
+{
+	"oneOf": [
+		{
+			"properties": {
+				"bar": {
+					"type": "integer"
+				}
+			},
+			"required": [
+				"bar"
+			]
+		},
+		{
+			"properties": {
+				"foo": {
+					"type": "string"
+				}
+			},
+			"required": [
+				"foo"
+			]
+		}
+	]
+}
+```
+## Schema after validating
+```js
+{
+	"oneOf": [
+		{
+			"properties": {
+				"bar": {
+					"type": "integer"
+				}
+			},
+			"required": [
+				"bar"
+			]
+		},
+		{
+			"properties": {
+				"foo": {
+					"type": "string"
+				}
+			},
+			"required": [
+				"foo"
+			]
+		}
+	],
+	"additionalProperties": true
+}
+```
+
+# Side-effect on schema
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `oneOf complex types, neither oneOf valid (complex)`
+## Original schema
+```js
+{
+	"oneOf": [
+		{
+			"properties": {
+				"bar": {
+					"type": "integer"
+				}
+			},
+			"required": [
+				"bar"
+			]
+		},
+		{
+			"properties": {
+				"foo": {
+					"type": "string"
+				}
+			},
+			"required": [
+				"foo"
+			]
+		}
+	]
+}
+```
+## Schema after validating
+```js
+{
+	"oneOf": [
+		{
+			"properties": {
+				"bar": {
+					"type": "integer"
+				}
+			},
+			"required": [
+				"bar"
+			]
+		},
+		{
+			"properties": {
+				"foo": {
+					"type": "string"
+				}
+			},
+			"required": [
+				"foo"
+			]
+		}
+	],
+	"additionalProperties": true
+}
+```
+
+# Side-effect on schema
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `oneOf with empty schema, one valid - valid`
+## Original schema
+```js
+{
+	"oneOf": [
+		{
+			"type": "number"
+		},
+		{}
+	]
+}
+```
+## Schema after validating
+```js
+{
+	"oneOf": [
+		{
+			"type": "number"
+		},
+		{}
+	],
+	"additionalProperties": true
+}
+```
+
+# Side-effect on schema
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `oneOf with empty schema, both valid - invalid`
+## Original schema
+```js
+{
+	"oneOf": [
+		{
+			"type": "number"
+		},
+		{}
+	]
+}
+```
+## Schema after validating
+```js
+{
+	"oneOf": [
+		{
+			"type": "number"
+		},
+		{}
+	],
+	"additionalProperties": true
+}
+```
+
+# Side-effect on schema
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `oneOf with required, both invalid - invalid`
+## Original schema
+```js
+{
+	"type": "object",
+	"oneOf": [
+		{
+			"required": [
+				"foo",
+				"bar"
+			]
+		},
+		{
+			"required": [
+				"foo",
+				"baz"
+			]
+		}
+	]
+}
+```
+## Schema after validating
+```js
+{
+	"type": "object",
+	"oneOf": [
+		{
+			"required": [
+				"foo",
+				"bar"
+			]
+		},
+		{
+			"required": [
+				"foo",
+				"baz"
+			]
+		}
+	],
+	"additionalProperties": true
+}
+```
+
+# Side-effect on schema
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `oneOf with required, first valid - valid`
+## Original schema
+```js
+{
+	"type": "object",
+	"oneOf": [
+		{
+			"required": [
+				"foo",
+				"bar"
+			]
+		},
+		{
+			"required": [
+				"foo",
+				"baz"
+			]
+		}
+	]
+}
+```
+## Schema after validating
+```js
+{
+	"type": "object",
+	"oneOf": [
+		{
+			"required": [
+				"foo",
+				"bar"
+			]
+		},
+		{
+			"required": [
+				"foo",
+				"baz"
+			]
+		}
+	],
+	"additionalProperties": true
+}
+```
+
+# Side-effect on schema
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `oneOf with required, second valid - valid`
+## Original schema
+```js
+{
+	"type": "object",
+	"oneOf": [
+		{
+			"required": [
+				"foo",
+				"bar"
+			]
+		},
+		{
+			"required": [
+				"foo",
+				"baz"
+			]
+		}
+	]
+}
+```
+## Schema after validating
+```js
+{
+	"type": "object",
+	"oneOf": [
+		{
+			"required": [
+				"foo",
+				"bar"
+			]
+		},
+		{
+			"required": [
+				"foo",
+				"baz"
+			]
+		}
+	],
+	"additionalProperties": true
+}
+```
+
+# Side-effect on schema
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `oneOf with required, both valid - invalid`
+## Original schema
+```js
+{
+	"type": "object",
+	"oneOf": [
+		{
+			"required": [
+				"foo",
+				"bar"
+			]
+		},
+		{
+			"required": [
+				"foo",
+				"baz"
+			]
+		}
+	]
+}
+```
+## Schema after validating
+```js
+{
+	"type": "object",
+	"oneOf": [
+		{
+			"required": [
+				"foo",
+				"bar"
+			]
+		},
+		{
+			"required": [
+				"foo",
+				"baz"
+			]
+		}
+	],
+	"additionalProperties": true
+}
+```
+
+# Side-effect on schema
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `oneOf with missing optional property, first oneOf valid`
+## Original schema
+```js
+{
+	"oneOf": [
+		{
+			"properties": {
+				"bar": {},
+				"baz": {}
+			},
+			"required": [
+				"bar"
+			]
+		},
+		{
+			"properties": {
+				"foo": {}
+			},
+			"required": [
+				"foo"
+			]
+		}
+	]
+}
+```
+## Schema after validating
+```js
+{
+	"oneOf": [
+		{
+			"properties": {
+				"bar": {},
+				"baz": {}
+			},
+			"required": [
+				"bar"
+			]
+		},
+		{
+			"properties": {
+				"foo": {}
+			},
+			"required": [
+				"foo"
+			]
+		}
+	],
+	"additionalProperties": true
+}
+```
+
+# Side-effect on schema
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `oneOf with missing optional property, second oneOf valid`
+## Original schema
+```js
+{
+	"oneOf": [
+		{
+			"properties": {
+				"bar": {},
+				"baz": {}
+			},
+			"required": [
+				"bar"
+			]
+		},
+		{
+			"properties": {
+				"foo": {}
+			},
+			"required": [
+				"foo"
+			]
+		}
+	]
+}
+```
+## Schema after validating
+```js
+{
+	"oneOf": [
+		{
+			"properties": {
+				"bar": {},
+				"baz": {}
+			},
+			"required": [
+				"bar"
+			]
+		},
+		{
+			"properties": {
+				"foo": {}
+			},
+			"required": [
+				"foo"
+			]
+		}
+	],
+	"additionalProperties": true
+}
+```
+
+# Side-effect on schema
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `oneOf with missing optional property, both oneOf valid`
+## Original schema
+```js
+{
+	"oneOf": [
+		{
+			"properties": {
+				"bar": {},
+				"baz": {}
+			},
+			"required": [
+				"bar"
+			]
+		},
+		{
+			"properties": {
+				"foo": {}
+			},
+			"required": [
+				"foo"
+			]
+		}
+	]
+}
+```
+## Schema after validating
+```js
+{
+	"oneOf": [
+		{
+			"properties": {
+				"bar": {},
+				"baz": {}
+			},
+			"required": [
+				"bar"
+			]
+		},
+		{
+			"properties": {
+				"foo": {}
+			},
+			"required": [
+				"foo"
+			]
+		}
+	],
+	"additionalProperties": true
+}
+```
+
+# Side-effect on schema
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `oneOf with missing optional property, neither oneOf valid`
+## Original schema
+```js
+{
+	"oneOf": [
+		{
+			"properties": {
+				"bar": {},
+				"baz": {}
+			},
+			"required": [
+				"bar"
+			]
+		},
+		{
+			"properties": {
+				"foo": {}
+			},
+			"required": [
+				"foo"
+			]
+		}
+	]
+}
+```
+## Schema after validating
+```js
+{
+	"oneOf": [
+		{
+			"properties": {
+				"bar": {},
+				"baz": {}
+			},
+			"required": [
+				"bar"
+			]
+		},
+		{
+			"properties": {
+				"foo": {}
+			},
+			"required": [
+				"foo"
+			]
+		}
+	],
+	"additionalProperties": true
+}
+```
+
+# Side-effect on schema
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `nested oneOf, to check validation semantics, anything non-null is invalid`
+## Original schema
+```js
+{
+	"oneOf": [
+		{
+			"oneOf": [
+				{
+					"type": "null"
+				}
+			]
+		}
+	]
+}
+```
+## Schema after validating
+```js
+{
+	"oneOf": [
+		{
+			"oneOf": [
+				{
+					"type": "null"
+				}
+			]
+		}
+	],
+	"additionalProperties": true
+}
+```
+
+# Side-effect on schema
 [`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `integer, a bignum is an integer`
 ## Original schema
 ```js
@@ -3794,6 +6680,402 @@ When running tests [`revalidator`](https://github.com/flatiron/revalidator) muta
 ```
 
 # Side-effect on schema
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `ECMA 262 regex $ does not match trailing newline, matches in Python, but should not in jsonschema`
+## Original schema
+```js
+{
+	"type": "string",
+	"pattern": "^abc$"
+}
+```
+## Schema after validating
+```js
+{
+	"type": "string",
+	"pattern": "^abc$",
+	"additionalProperties": true
+}
+```
+
+# Side-effect on schema
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `ECMA 262 regex $ does not match trailing newline, should match`
+## Original schema
+```js
+{
+	"type": "string",
+	"pattern": "^abc$"
+}
+```
+## Schema after validating
+```js
+{
+	"type": "string",
+	"pattern": "^abc$",
+	"additionalProperties": true
+}
+```
+
+# Side-effect on schema
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `ECMA 262 regex converts \t to horizontal tab, does not match`
+## Original schema
+```js
+{
+	"type": "string",
+	"pattern": "^\\t$"
+}
+```
+## Schema after validating
+```js
+{
+	"type": "string",
+	"pattern": "^\\t$",
+	"additionalProperties": true
+}
+```
+
+# Side-effect on schema
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `ECMA 262 regex converts \t to horizontal tab, matches`
+## Original schema
+```js
+{
+	"type": "string",
+	"pattern": "^\\t$"
+}
+```
+## Schema after validating
+```js
+{
+	"type": "string",
+	"pattern": "^\\t$",
+	"additionalProperties": true
+}
+```
+
+# Side-effect on schema
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `ECMA 262 regex escapes control codes with \c and upper letter, does not match`
+## Original schema
+```js
+{
+	"type": "string",
+	"pattern": "^\\cC$"
+}
+```
+## Schema after validating
+```js
+{
+	"type": "string",
+	"pattern": "^\\cC$",
+	"additionalProperties": true
+}
+```
+
+# Side-effect on schema
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `ECMA 262 regex escapes control codes with \c and upper letter, matches`
+## Original schema
+```js
+{
+	"type": "string",
+	"pattern": "^\\cC$"
+}
+```
+## Schema after validating
+```js
+{
+	"type": "string",
+	"pattern": "^\\cC$",
+	"additionalProperties": true
+}
+```
+
+# Side-effect on schema
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `ECMA 262 regex escapes control codes with \c and lower letter, does not match`
+## Original schema
+```js
+{
+	"type": "string",
+	"pattern": "^\\cc$"
+}
+```
+## Schema after validating
+```js
+{
+	"type": "string",
+	"pattern": "^\\cc$",
+	"additionalProperties": true
+}
+```
+
+# Side-effect on schema
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `ECMA 262 regex escapes control codes with \c and lower letter, matches`
+## Original schema
+```js
+{
+	"type": "string",
+	"pattern": "^\\cc$"
+}
+```
+## Schema after validating
+```js
+{
+	"type": "string",
+	"pattern": "^\\cc$",
+	"additionalProperties": true
+}
+```
+
+# Side-effect on schema
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `ECMA 262 \d matches ascii digits only, ASCII zero matches`
+## Original schema
+```js
+{
+	"type": "string",
+	"pattern": "^\\d$"
+}
+```
+## Schema after validating
+```js
+{
+	"type": "string",
+	"pattern": "^\\d$",
+	"additionalProperties": true
+}
+```
+
+# Side-effect on schema
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `ECMA 262 \d matches ascii digits only, NKO DIGIT ZERO does not match (unlike e.g. Python)`
+## Original schema
+```js
+{
+	"type": "string",
+	"pattern": "^\\d$"
+}
+```
+## Schema after validating
+```js
+{
+	"type": "string",
+	"pattern": "^\\d$",
+	"additionalProperties": true
+}
+```
+
+# Side-effect on schema
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `ECMA 262 \d matches ascii digits only, NKO DIGIT ZERO (as \u escape) does not match`
+## Original schema
+```js
+{
+	"type": "string",
+	"pattern": "^\\d$"
+}
+```
+## Schema after validating
+```js
+{
+	"type": "string",
+	"pattern": "^\\d$",
+	"additionalProperties": true
+}
+```
+
+# Side-effect on schema
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `ECMA 262 \D matches everything but ascii digits, ASCII zero does not match`
+## Original schema
+```js
+{
+	"type": "string",
+	"pattern": "^\\D$"
+}
+```
+## Schema after validating
+```js
+{
+	"type": "string",
+	"pattern": "^\\D$",
+	"additionalProperties": true
+}
+```
+
+# Side-effect on schema
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `ECMA 262 \D matches everything but ascii digits, NKO DIGIT ZERO matches (unlike e.g. Python)`
+## Original schema
+```js
+{
+	"type": "string",
+	"pattern": "^\\D$"
+}
+```
+## Schema after validating
+```js
+{
+	"type": "string",
+	"pattern": "^\\D$",
+	"additionalProperties": true
+}
+```
+
+# Side-effect on schema
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `ECMA 262 \D matches everything but ascii digits, NKO DIGIT ZERO (as \u escape) matches`
+## Original schema
+```js
+{
+	"type": "string",
+	"pattern": "^\\D$"
+}
+```
+## Schema after validating
+```js
+{
+	"type": "string",
+	"pattern": "^\\D$",
+	"additionalProperties": true
+}
+```
+
+# Side-effect on schema
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `ECMA 262 \w matches ascii letters only, ASCII 'a' matches`
+## Original schema
+```js
+{
+	"type": "string",
+	"pattern": "^\\w$"
+}
+```
+## Schema after validating
+```js
+{
+	"type": "string",
+	"pattern": "^\\w$",
+	"additionalProperties": true
+}
+```
+
+# Side-effect on schema
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `ECMA 262 \w matches ascii letters only, latin-1 e-acute does not match (unlike e.g. Python)`
+## Original schema
+```js
+{
+	"type": "string",
+	"pattern": "^\\w$"
+}
+```
+## Schema after validating
+```js
+{
+	"type": "string",
+	"pattern": "^\\w$",
+	"additionalProperties": true
+}
+```
+
+# Side-effect on schema
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `ECMA 262 \w matches everything but ascii letters, ASCII 'a' does not match`
+## Original schema
+```js
+{
+	"type": "string",
+	"pattern": "^\\W$"
+}
+```
+## Schema after validating
+```js
+{
+	"type": "string",
+	"pattern": "^\\W$",
+	"additionalProperties": true
+}
+```
+
+# Side-effect on schema
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `ECMA 262 \w matches everything but ascii letters, latin-1 e-acute matches (unlike e.g. Python)`
+## Original schema
+```js
+{
+	"type": "string",
+	"pattern": "^\\W$"
+}
+```
+## Schema after validating
+```js
+{
+	"type": "string",
+	"pattern": "^\\W$",
+	"additionalProperties": true
+}
+```
+
+# Side-effect on schema
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `ECMA 262 \s matches ascii whitespace only, ASCII space matches`
+## Original schema
+```js
+{
+	"type": "string",
+	"pattern": "^\\s$"
+}
+```
+## Schema after validating
+```js
+{
+	"type": "string",
+	"pattern": "^\\s$",
+	"additionalProperties": true
+}
+```
+
+# Side-effect on schema
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `ECMA 262 \s matches ascii whitespace only, latin-1 non-breaking-space does not match (unlike e.g. Python)`
+## Original schema
+```js
+{
+	"type": "string",
+	"pattern": "^\\s$"
+}
+```
+## Schema after validating
+```js
+{
+	"type": "string",
+	"pattern": "^\\s$",
+	"additionalProperties": true
+}
+```
+
+# Side-effect on schema
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `ECMA 262 \S matches everything but ascii whitespace, ASCII space does not match`
+## Original schema
+```js
+{
+	"type": "string",
+	"pattern": "^\\S$"
+}
+```
+## Schema after validating
+```js
+{
+	"type": "string",
+	"pattern": "^\\S$",
+	"additionalProperties": true
+}
+```
+
+# Side-effect on schema
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `ECMA 262 \S matches everything but ascii whitespace, latin-1 non-breaking-space matches (unlike e.g. Python)`
+## Original schema
+```js
+{
+	"type": "string",
+	"pattern": "^\\S$"
+}
+```
+## Schema after validating
+```js
+{
+	"type": "string",
+	"pattern": "^\\S$",
+	"additionalProperties": true
+}
+```
+
+# Side-effect on schema
 [`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `validation of date-time strings, a valid date-time string`
 ## Original schema
 ```js
@@ -3810,7 +7092,103 @@ When running tests [`revalidator`](https://github.com/flatiron/revalidator) muta
 ```
 
 # Side-effect on schema
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `validation of date-time strings, a valid date-time string without second fraction`
+## Original schema
+```js
+{
+	"format": "date-time"
+}
+```
+## Schema after validating
+```js
+{
+	"format": "date-time",
+	"additionalProperties": true
+}
+```
+
+# Side-effect on schema
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `validation of date-time strings, a valid date-time string with plus offset`
+## Original schema
+```js
+{
+	"format": "date-time"
+}
+```
+## Schema after validating
+```js
+{
+	"format": "date-time",
+	"additionalProperties": true
+}
+```
+
+# Side-effect on schema
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `validation of date-time strings, a valid date-time string with minus offset`
+## Original schema
+```js
+{
+	"format": "date-time"
+}
+```
+## Schema after validating
+```js
+{
+	"format": "date-time",
+	"additionalProperties": true
+}
+```
+
+# Side-effect on schema
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `validation of date-time strings, a invalid day in date-time string`
+## Original schema
+```js
+{
+	"format": "date-time"
+}
+```
+## Schema after validating
+```js
+{
+	"format": "date-time",
+	"additionalProperties": true
+}
+```
+
+# Side-effect on schema
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `validation of date-time strings, an invalid offset in date-time string`
+## Original schema
+```js
+{
+	"format": "date-time"
+}
+```
+## Schema after validating
+```js
+{
+	"format": "date-time",
+	"additionalProperties": true
+}
+```
+
+# Side-effect on schema
 [`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `validation of date-time strings, an invalid date-time string`
+## Original schema
+```js
+{
+	"format": "date-time"
+}
+```
+## Schema after validating
+```js
+{
+	"format": "date-time",
+	"additionalProperties": true
+}
+```
+
+# Side-effect on schema
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `validation of date-time strings, case-insensitive T and Z`
 ## Original schema
 ```js
 {
@@ -4386,6 +7764,238 @@ When running tests [`revalidator`](https://github.com/flatiron/revalidator) muta
 ```
 
 # Side-effect on schema
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `Proper UTF-16 surrogate pair handling: pattern, matches empty`
+## Original schema
+```js
+{
+	"pattern": "^🐲*$"
+}
+```
+## Schema after validating
+```js
+{
+	"pattern": "^🐲*$",
+	"additionalProperties": true
+}
+```
+
+# Side-effect on schema
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `Proper UTF-16 surrogate pair handling: pattern, matches single`
+## Original schema
+```js
+{
+	"pattern": "^🐲*$"
+}
+```
+## Schema after validating
+```js
+{
+	"pattern": "^🐲*$",
+	"additionalProperties": true
+}
+```
+
+# Side-effect on schema
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `Proper UTF-16 surrogate pair handling: pattern, matches two`
+## Original schema
+```js
+{
+	"pattern": "^🐲*$"
+}
+```
+## Schema after validating
+```js
+{
+	"pattern": "^🐲*$",
+	"additionalProperties": true
+}
+```
+
+# Side-effect on schema
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `Proper UTF-16 surrogate pair handling: pattern, doesn't match one`
+## Original schema
+```js
+{
+	"pattern": "^🐲*$"
+}
+```
+## Schema after validating
+```js
+{
+	"pattern": "^🐲*$",
+	"additionalProperties": true
+}
+```
+
+# Side-effect on schema
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `Proper UTF-16 surrogate pair handling: pattern, doesn't match two`
+## Original schema
+```js
+{
+	"pattern": "^🐲*$"
+}
+```
+## Schema after validating
+```js
+{
+	"pattern": "^🐲*$",
+	"additionalProperties": true
+}
+```
+
+# Side-effect on schema
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `Proper UTF-16 surrogate pair handling: pattern, doesn't match one ASCII`
+## Original schema
+```js
+{
+	"pattern": "^🐲*$"
+}
+```
+## Schema after validating
+```js
+{
+	"pattern": "^🐲*$",
+	"additionalProperties": true
+}
+```
+
+# Side-effect on schema
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `Proper UTF-16 surrogate pair handling: pattern, doesn't match two ASCII`
+## Original schema
+```js
+{
+	"pattern": "^🐲*$"
+}
+```
+## Schema after validating
+```js
+{
+	"pattern": "^🐲*$",
+	"additionalProperties": true
+}
+```
+
+# Side-effect on schema
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `Proper UTF-16 surrogate pair handling: patternProperties, matches empty`
+## Original schema
+```js
+{
+	"patternProperties": {
+		"^🐲*$": {
+			"type": "integer"
+		}
+	}
+}
+```
+## Schema after validating
+```js
+{
+	"patternProperties": {
+		"^🐲*$": {
+			"type": "integer"
+		}
+	},
+	"additionalProperties": true
+}
+```
+
+# Side-effect on schema
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `Proper UTF-16 surrogate pair handling: patternProperties, matches single`
+## Original schema
+```js
+{
+	"patternProperties": {
+		"^🐲*$": {
+			"type": "integer"
+		}
+	}
+}
+```
+## Schema after validating
+```js
+{
+	"patternProperties": {
+		"^🐲*$": {
+			"type": "integer"
+		}
+	},
+	"additionalProperties": true
+}
+```
+
+# Side-effect on schema
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `Proper UTF-16 surrogate pair handling: patternProperties, matches two`
+## Original schema
+```js
+{
+	"patternProperties": {
+		"^🐲*$": {
+			"type": "integer"
+		}
+	}
+}
+```
+## Schema after validating
+```js
+{
+	"patternProperties": {
+		"^🐲*$": {
+			"type": "integer"
+		}
+	},
+	"additionalProperties": true
+}
+```
+
+# Side-effect on schema
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `Proper UTF-16 surrogate pair handling: patternProperties, doesn't match one`
+## Original schema
+```js
+{
+	"patternProperties": {
+		"^🐲*$": {
+			"type": "integer"
+		}
+	}
+}
+```
+## Schema after validating
+```js
+{
+	"patternProperties": {
+		"^🐲*$": {
+			"type": "integer"
+		}
+	},
+	"additionalProperties": true
+}
+```
+
+# Side-effect on schema
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `Proper UTF-16 surrogate pair handling: patternProperties, doesn't match two`
+## Original schema
+```js
+{
+	"patternProperties": {
+		"^🐲*$": {
+			"type": "integer"
+		}
+	}
+}
+```
+## Schema after validating
+```js
+{
+	"patternProperties": {
+		"^🐲*$": {
+			"type": "integer"
+		}
+	},
+	"additionalProperties": true
+}
+```
+
+# Side-effect on schema
 [`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `some languages do not distinguish between different types of numeric value, a float is not an integer even without fractional part`
 ## Original schema
 ```js
@@ -4434,7 +8044,87 @@ When running tests [`revalidator`](https://github.com/flatiron/revalidator) muta
 ```
 
 # Side-effect on schema
-[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `pattern validation, ignores non-strings`
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `pattern validation, ignores booleans`
+## Original schema
+```js
+{
+	"pattern": "^a*$"
+}
+```
+## Schema after validating
+```js
+{
+	"pattern": "^a*$",
+	"additionalProperties": true
+}
+```
+
+# Side-effect on schema
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `pattern validation, ignores integers`
+## Original schema
+```js
+{
+	"pattern": "^a*$"
+}
+```
+## Schema after validating
+```js
+{
+	"pattern": "^a*$",
+	"additionalProperties": true
+}
+```
+
+# Side-effect on schema
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `pattern validation, ignores floats`
+## Original schema
+```js
+{
+	"pattern": "^a*$"
+}
+```
+## Schema after validating
+```js
+{
+	"pattern": "^a*$",
+	"additionalProperties": true
+}
+```
+
+# Side-effect on schema
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `pattern validation, ignores objects`
+## Original schema
+```js
+{
+	"pattern": "^a*$"
+}
+```
+## Schema after validating
+```js
+{
+	"pattern": "^a*$",
+	"additionalProperties": true
+}
+```
+
+# Side-effect on schema
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `pattern validation, ignores arrays`
+## Original schema
+```js
+{
+	"pattern": "^a*$"
+}
+```
+## Schema after validating
+```js
+{
+	"pattern": "^a*$",
+	"additionalProperties": true
+}
+```
+
+# Side-effect on schema
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `pattern validation, ignores null`
 ## Original schema
 ```js
 {
@@ -5107,6 +8797,114 @@ When running tests [`revalidator`](https://github.com/flatiron/revalidator) muta
 		},
 		"bar": {
 			"type": "string"
+		}
+	},
+	"additionalProperties": true
+}
+```
+
+# Side-effect on schema
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `properties with escaped characters, object with all numbers is valid`
+## Original schema
+```js
+{
+	"properties": {
+		"foo\nbar": {
+			"type": "number"
+		},
+		"foo\"bar": {
+			"type": "number"
+		},
+		"foo\\bar": {
+			"type": "number"
+		},
+		"foo\rbar": {
+			"type": "number"
+		},
+		"foo\tbar": {
+			"type": "number"
+		},
+		"foo\fbar": {
+			"type": "number"
+		}
+	}
+}
+```
+## Schema after validating
+```js
+{
+	"properties": {
+		"foo\nbar": {
+			"type": "number"
+		},
+		"foo\"bar": {
+			"type": "number"
+		},
+		"foo\\bar": {
+			"type": "number"
+		},
+		"foo\rbar": {
+			"type": "number"
+		},
+		"foo\tbar": {
+			"type": "number"
+		},
+		"foo\fbar": {
+			"type": "number"
+		}
+	},
+	"additionalProperties": true
+}
+```
+
+# Side-effect on schema
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `properties with escaped characters, object with strings is invalid`
+## Original schema
+```js
+{
+	"properties": {
+		"foo\nbar": {
+			"type": "number"
+		},
+		"foo\"bar": {
+			"type": "number"
+		},
+		"foo\\bar": {
+			"type": "number"
+		},
+		"foo\rbar": {
+			"type": "number"
+		},
+		"foo\tbar": {
+			"type": "number"
+		},
+		"foo\fbar": {
+			"type": "number"
+		}
+	}
+}
+```
+## Schema after validating
+```js
+{
+	"properties": {
+		"foo\nbar": {
+			"type": "number"
+		},
+		"foo\"bar": {
+			"type": "number"
+		},
+		"foo\\bar": {
+			"type": "number"
+		},
+		"foo\rbar": {
+			"type": "number"
+		},
+		"foo\tbar": {
+			"type": "number"
+		},
+		"foo\fbar": {
+			"type": "number"
 		}
 	},
 	"additionalProperties": true
@@ -5994,6 +9792,314 @@ When running tests [`revalidator`](https://github.com/flatiron/revalidator) muta
 ```
 
 # Side-effect on schema
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `refs with quote, object with numbers is valid`
+## Original schema
+```js
+{
+	"properties": {
+		"foo\"bar": {
+			"$ref": "#/definitions/foo%22bar"
+		}
+	},
+	"definitions": {
+		"foo\"bar": {
+			"type": "number"
+		}
+	}
+}
+```
+## Schema after validating
+```js
+{
+	"properties": {
+		"foo\"bar": {
+			"$ref": "#/definitions/foo%22bar"
+		}
+	},
+	"definitions": {
+		"foo\"bar": {
+			"type": "number"
+		}
+	},
+	"additionalProperties": true
+}
+```
+
+# Side-effect on schema
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `refs with quote, object with strings is invalid`
+## Original schema
+```js
+{
+	"properties": {
+		"foo\"bar": {
+			"$ref": "#/definitions/foo%22bar"
+		}
+	},
+	"definitions": {
+		"foo\"bar": {
+			"type": "number"
+		}
+	}
+}
+```
+## Schema after validating
+```js
+{
+	"properties": {
+		"foo\"bar": {
+			"$ref": "#/definitions/foo%22bar"
+		}
+	},
+	"definitions": {
+		"foo\"bar": {
+			"type": "number"
+		}
+	},
+	"additionalProperties": true
+}
+```
+
+# Side-effect on schema
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `Location-independent identifier, match`
+## Original schema
+```js
+{
+	"allOf": [
+		{
+			"$ref": "#foo"
+		}
+	],
+	"definitions": {
+		"A": {
+			"id": "#foo",
+			"type": "integer"
+		}
+	}
+}
+```
+## Schema after validating
+```js
+{
+	"allOf": [
+		{
+			"$ref": "#foo"
+		}
+	],
+	"definitions": {
+		"A": {
+			"id": "#foo",
+			"type": "integer"
+		}
+	},
+	"additionalProperties": true
+}
+```
+
+# Side-effect on schema
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `Location-independent identifier, mismatch`
+## Original schema
+```js
+{
+	"allOf": [
+		{
+			"$ref": "#foo"
+		}
+	],
+	"definitions": {
+		"A": {
+			"id": "#foo",
+			"type": "integer"
+		}
+	}
+}
+```
+## Schema after validating
+```js
+{
+	"allOf": [
+		{
+			"$ref": "#foo"
+		}
+	],
+	"definitions": {
+		"A": {
+			"id": "#foo",
+			"type": "integer"
+		}
+	},
+	"additionalProperties": true
+}
+```
+
+# Side-effect on schema
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `Location-independent identifier with absolute URI, match`
+## Original schema
+```js
+{
+	"allOf": [
+		{
+			"$ref": "http://localhost:1234/bar#foo"
+		}
+	],
+	"definitions": {
+		"A": {
+			"id": "http://localhost:1234/bar#foo",
+			"type": "integer"
+		}
+	}
+}
+```
+## Schema after validating
+```js
+{
+	"allOf": [
+		{
+			"$ref": "http://localhost:1234/bar#foo"
+		}
+	],
+	"definitions": {
+		"A": {
+			"id": "http://localhost:1234/bar#foo",
+			"type": "integer"
+		}
+	},
+	"additionalProperties": true
+}
+```
+
+# Side-effect on schema
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `Location-independent identifier with absolute URI, mismatch`
+## Original schema
+```js
+{
+	"allOf": [
+		{
+			"$ref": "http://localhost:1234/bar#foo"
+		}
+	],
+	"definitions": {
+		"A": {
+			"id": "http://localhost:1234/bar#foo",
+			"type": "integer"
+		}
+	}
+}
+```
+## Schema after validating
+```js
+{
+	"allOf": [
+		{
+			"$ref": "http://localhost:1234/bar#foo"
+		}
+	],
+	"definitions": {
+		"A": {
+			"id": "http://localhost:1234/bar#foo",
+			"type": "integer"
+		}
+	},
+	"additionalProperties": true
+}
+```
+
+# Side-effect on schema
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `Location-independent identifier with base URI change in subschema, match`
+## Original schema
+```js
+{
+	"id": "http://localhost:1234/root",
+	"allOf": [
+		{
+			"$ref": "http://localhost:1234/nested.json#foo"
+		}
+	],
+	"definitions": {
+		"A": {
+			"id": "nested.json",
+			"definitions": {
+				"B": {
+					"id": "#foo",
+					"type": "integer"
+				}
+			}
+		}
+	}
+}
+```
+## Schema after validating
+```js
+{
+	"id": "http://localhost:1234/root",
+	"allOf": [
+		{
+			"$ref": "http://localhost:1234/nested.json#foo"
+		}
+	],
+	"definitions": {
+		"A": {
+			"id": "nested.json",
+			"definitions": {
+				"B": {
+					"id": "#foo",
+					"type": "integer"
+				}
+			}
+		}
+	},
+	"additionalProperties": true
+}
+```
+
+# Side-effect on schema
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `Location-independent identifier with base URI change in subschema, mismatch`
+## Original schema
+```js
+{
+	"id": "http://localhost:1234/root",
+	"allOf": [
+		{
+			"$ref": "http://localhost:1234/nested.json#foo"
+		}
+	],
+	"definitions": {
+		"A": {
+			"id": "nested.json",
+			"definitions": {
+				"B": {
+					"id": "#foo",
+					"type": "integer"
+				}
+			}
+		}
+	}
+}
+```
+## Schema after validating
+```js
+{
+	"id": "http://localhost:1234/root",
+	"allOf": [
+		{
+			"$ref": "http://localhost:1234/nested.json#foo"
+		}
+	],
+	"definitions": {
+		"A": {
+			"id": "nested.json",
+			"definitions": {
+				"B": {
+					"id": "#foo",
+					"type": "integer"
+				}
+			}
+		}
+	},
+	"additionalProperties": true
+}
+```
+
+# Side-effect on schema
 [`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `remote ref, remote ref valid`
 ## Original schema
 ```js
@@ -6590,6 +10696,66 @@ When running tests [`revalidator`](https://github.com/flatiron/revalidator) muta
 ```
 
 # Side-effect on schema
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `required with escaped characters, object with all properties present is valid`
+## Original schema
+```js
+{
+	"required": [
+		"foo\nbar",
+		"foo\"bar",
+		"foo\\bar",
+		"foo\rbar",
+		"foo\tbar",
+		"foo\fbar"
+	]
+}
+```
+## Schema after validating
+```js
+{
+	"required": [
+		"foo\nbar",
+		"foo\"bar",
+		"foo\\bar",
+		"foo\rbar",
+		"foo\tbar",
+		"foo\fbar"
+	],
+	"additionalProperties": true
+}
+```
+
+# Side-effect on schema
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `required with escaped characters, object with some properties missing is invalid`
+## Original schema
+```js
+{
+	"required": [
+		"foo\nbar",
+		"foo\"bar",
+		"foo\\bar",
+		"foo\rbar",
+		"foo\tbar",
+		"foo\fbar"
+	]
+}
+```
+## Schema after validating
+```js
+{
+	"required": [
+		"foo\nbar",
+		"foo\"bar",
+		"foo\\bar",
+		"foo\rbar",
+		"foo\tbar",
+		"foo\fbar"
+	],
+	"additionalProperties": true
+}
+```
+
+# Side-effect on schema
 [`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `integer type matches integers, an integer is an integer`
 ## Original schema
 ```js
@@ -6719,6 +10885,22 @@ When running tests [`revalidator`](https://github.com/flatiron/revalidator) muta
 
 # Side-effect on schema
 [`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `number type matches numbers, an integer is a number`
+## Original schema
+```js
+{
+	"type": "number"
+}
+```
+## Schema after validating
+```js
+{
+	"type": "number",
+	"additionalProperties": true
+}
+```
+
+# Side-effect on schema
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `number type matches numbers, a float with zero fractional part is a number`
 ## Original schema
 ```js
 {
@@ -6895,6 +11077,22 @@ When running tests [`revalidator`](https://github.com/flatiron/revalidator) muta
 
 # Side-effect on schema
 [`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `string type matches strings, a string is still a string, even if it looks like a number`
+## Original schema
+```js
+{
+	"type": "string"
+}
+```
+## Schema after validating
+```js
+{
+	"type": "string",
+	"additionalProperties": true
+}
+```
+
+# Side-effect on schema
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `string type matches strings, an empty string is still a string`
 ## Original schema
 ```js
 {
@@ -7102,6 +11300,22 @@ When running tests [`revalidator`](https://github.com/flatiron/revalidator) muta
 ```
 
 # Side-effect on schema
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `boolean type matches booleans, zero is not a boolean`
+## Original schema
+```js
+{
+	"type": "boolean"
+}
+```
+## Schema after validating
+```js
+{
+	"type": "boolean",
+	"additionalProperties": true
+}
+```
+
+# Side-effect on schema
 [`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `boolean type matches booleans, a float is not a boolean`
 ## Original schema
 ```js
@@ -7119,6 +11333,22 @@ When running tests [`revalidator`](https://github.com/flatiron/revalidator) muta
 
 # Side-effect on schema
 [`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `boolean type matches booleans, a string is not a boolean`
+## Original schema
+```js
+{
+	"type": "boolean"
+}
+```
+## Schema after validating
+```js
+{
+	"type": "boolean",
+	"additionalProperties": true
+}
+```
+
+# Side-effect on schema
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `boolean type matches booleans, an empty string is not a boolean`
 ## Original schema
 ```js
 {
@@ -7166,7 +11396,23 @@ When running tests [`revalidator`](https://github.com/flatiron/revalidator) muta
 ```
 
 # Side-effect on schema
-[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `boolean type matches booleans, a boolean is a boolean`
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `boolean type matches booleans, true is a boolean`
+## Original schema
+```js
+{
+	"type": "boolean"
+}
+```
+## Schema after validating
+```js
+{
+	"type": "boolean",
+	"additionalProperties": true
+}
+```
+
+# Side-effect on schema
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `boolean type matches booleans, false is a boolean`
 ## Original schema
 ```js
 {
@@ -7230,7 +11476,39 @@ When running tests [`revalidator`](https://github.com/flatiron/revalidator) muta
 ```
 
 # Side-effect on schema
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `null type matches only the null object, zero is not null`
+## Original schema
+```js
+{
+	"type": "null"
+}
+```
+## Schema after validating
+```js
+{
+	"type": "null",
+	"additionalProperties": true
+}
+```
+
+# Side-effect on schema
 [`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `null type matches only the null object, a string is not null`
+## Original schema
+```js
+{
+	"type": "null"
+}
+```
+## Schema after validating
+```js
+{
+	"type": "null",
+	"additionalProperties": true
+}
+```
+
+# Side-effect on schema
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `null type matches only the null object, an empty string is not null`
 ## Original schema
 ```js
 {
@@ -7278,7 +11556,23 @@ When running tests [`revalidator`](https://github.com/flatiron/revalidator) muta
 ```
 
 # Side-effect on schema
-[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `null type matches only the null object, a boolean is not null`
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `null type matches only the null object, true is not null`
+## Original schema
+```js
+{
+	"type": "null"
+}
+```
+## Schema after validating
+```js
+{
+	"type": "null",
+	"additionalProperties": true
+}
+```
+
+# Side-effect on schema
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `null type matches only the null object, false is not null`
 ## Original schema
 ```js
 {
@@ -7464,6 +11758,276 @@ When running tests [`revalidator`](https://github.com/flatiron/revalidator) muta
 ```
 
 # Side-effect on schema
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `type as array with one item, string is valid`
+## Original schema
+```js
+{
+	"type": [
+		"string"
+	]
+}
+```
+## Schema after validating
+```js
+{
+	"type": [
+		"string"
+	],
+	"additionalProperties": true
+}
+```
+
+# Side-effect on schema
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `type as array with one item, number is invalid`
+## Original schema
+```js
+{
+	"type": [
+		"string"
+	]
+}
+```
+## Schema after validating
+```js
+{
+	"type": [
+		"string"
+	],
+	"additionalProperties": true
+}
+```
+
+# Side-effect on schema
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `type: array or object, array is valid`
+## Original schema
+```js
+{
+	"type": [
+		"array",
+		"object"
+	]
+}
+```
+## Schema after validating
+```js
+{
+	"type": [
+		"array",
+		"object"
+	],
+	"additionalProperties": true
+}
+```
+
+# Side-effect on schema
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `type: array or object, object is valid`
+## Original schema
+```js
+{
+	"type": [
+		"array",
+		"object"
+	]
+}
+```
+## Schema after validating
+```js
+{
+	"type": [
+		"array",
+		"object"
+	],
+	"additionalProperties": true
+}
+```
+
+# Side-effect on schema
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `type: array or object, number is invalid`
+## Original schema
+```js
+{
+	"type": [
+		"array",
+		"object"
+	]
+}
+```
+## Schema after validating
+```js
+{
+	"type": [
+		"array",
+		"object"
+	],
+	"additionalProperties": true
+}
+```
+
+# Side-effect on schema
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `type: array or object, string is invalid`
+## Original schema
+```js
+{
+	"type": [
+		"array",
+		"object"
+	]
+}
+```
+## Schema after validating
+```js
+{
+	"type": [
+		"array",
+		"object"
+	],
+	"additionalProperties": true
+}
+```
+
+# Side-effect on schema
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `type: array or object, null is invalid`
+## Original schema
+```js
+{
+	"type": [
+		"array",
+		"object"
+	]
+}
+```
+## Schema after validating
+```js
+{
+	"type": [
+		"array",
+		"object"
+	],
+	"additionalProperties": true
+}
+```
+
+# Side-effect on schema
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `type: array, object or null, array is valid`
+## Original schema
+```js
+{
+	"type": [
+		"array",
+		"object",
+		"null"
+	]
+}
+```
+## Schema after validating
+```js
+{
+	"type": [
+		"array",
+		"object",
+		"null"
+	],
+	"additionalProperties": true
+}
+```
+
+# Side-effect on schema
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `type: array, object or null, object is valid`
+## Original schema
+```js
+{
+	"type": [
+		"array",
+		"object",
+		"null"
+	]
+}
+```
+## Schema after validating
+```js
+{
+	"type": [
+		"array",
+		"object",
+		"null"
+	],
+	"additionalProperties": true
+}
+```
+
+# Side-effect on schema
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `type: array, object or null, null is valid`
+## Original schema
+```js
+{
+	"type": [
+		"array",
+		"object",
+		"null"
+	]
+}
+```
+## Schema after validating
+```js
+{
+	"type": [
+		"array",
+		"object",
+		"null"
+	],
+	"additionalProperties": true
+}
+```
+
+# Side-effect on schema
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `type: array, object or null, number is invalid`
+## Original schema
+```js
+{
+	"type": [
+		"array",
+		"object",
+		"null"
+	]
+}
+```
+## Schema after validating
+```js
+{
+	"type": [
+		"array",
+		"object",
+		"null"
+	],
+	"additionalProperties": true
+}
+```
+
+# Side-effect on schema
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `type: array, object or null, string is invalid`
+## Original schema
+```js
+{
+	"type": [
+		"array",
+		"object",
+		"null"
+	]
+}
+```
+## Schema after validating
+```js
+{
+	"type": [
+		"array",
+		"object",
+		"null"
+	],
+	"additionalProperties": true
+}
+```
+
+# Side-effect on schema
 [`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `uniqueItems validation, unique array of integers is valid`
 ## Original schema
 ```js
@@ -7497,6 +12061,38 @@ When running tests [`revalidator`](https://github.com/flatiron/revalidator) muta
 
 # Side-effect on schema
 [`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `uniqueItems validation, numbers are unique if mathematically unequal`
+## Original schema
+```js
+{
+	"uniqueItems": true
+}
+```
+## Schema after validating
+```js
+{
+	"uniqueItems": true,
+	"additionalProperties": true
+}
+```
+
+# Side-effect on schema
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `uniqueItems validation, false is not equal to zero`
+## Original schema
+```js
+{
+	"uniqueItems": true
+}
+```
+## Schema after validating
+```js
+{
+	"uniqueItems": true,
+	"additionalProperties": true
+}
+```
+
+# Side-effect on schema
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `uniqueItems validation, true is not equal to one`
 ## Original schema
 ```js
 {
@@ -7667,6 +12263,1098 @@ When running tests [`revalidator`](https://github.com/flatiron/revalidator) muta
 ```js
 {
 	"uniqueItems": true,
+	"additionalProperties": true
+}
+```
+
+# Side-effect on schema
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `uniqueItems with an array of items, [false, true] from items array is valid`
+## Original schema
+```js
+{
+	"items": [
+		{
+			"type": "boolean"
+		},
+		{
+			"type": "boolean"
+		}
+	],
+	"uniqueItems": true
+}
+```
+## Schema after validating
+```js
+{
+	"items": [
+		{
+			"type": "boolean"
+		},
+		{
+			"type": "boolean"
+		}
+	],
+	"uniqueItems": true,
+	"additionalProperties": true
+}
+```
+
+# Side-effect on schema
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `uniqueItems with an array of items, [true, false] from items array is valid`
+## Original schema
+```js
+{
+	"items": [
+		{
+			"type": "boolean"
+		},
+		{
+			"type": "boolean"
+		}
+	],
+	"uniqueItems": true
+}
+```
+## Schema after validating
+```js
+{
+	"items": [
+		{
+			"type": "boolean"
+		},
+		{
+			"type": "boolean"
+		}
+	],
+	"uniqueItems": true,
+	"additionalProperties": true
+}
+```
+
+# Side-effect on schema
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `uniqueItems with an array of items, [false, false] from items array is not valid`
+## Original schema
+```js
+{
+	"items": [
+		{
+			"type": "boolean"
+		},
+		{
+			"type": "boolean"
+		}
+	],
+	"uniqueItems": true
+}
+```
+## Schema after validating
+```js
+{
+	"items": [
+		{
+			"type": "boolean"
+		},
+		{
+			"type": "boolean"
+		}
+	],
+	"uniqueItems": true,
+	"additionalProperties": true
+}
+```
+
+# Side-effect on schema
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `uniqueItems with an array of items, [true, true] from items array is not valid`
+## Original schema
+```js
+{
+	"items": [
+		{
+			"type": "boolean"
+		},
+		{
+			"type": "boolean"
+		}
+	],
+	"uniqueItems": true
+}
+```
+## Schema after validating
+```js
+{
+	"items": [
+		{
+			"type": "boolean"
+		},
+		{
+			"type": "boolean"
+		}
+	],
+	"uniqueItems": true,
+	"additionalProperties": true
+}
+```
+
+# Side-effect on schema
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `uniqueItems with an array of items, unique array extended from [false, true] is valid`
+## Original schema
+```js
+{
+	"items": [
+		{
+			"type": "boolean"
+		},
+		{
+			"type": "boolean"
+		}
+	],
+	"uniqueItems": true
+}
+```
+## Schema after validating
+```js
+{
+	"items": [
+		{
+			"type": "boolean"
+		},
+		{
+			"type": "boolean"
+		}
+	],
+	"uniqueItems": true,
+	"additionalProperties": true
+}
+```
+
+# Side-effect on schema
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `uniqueItems with an array of items, unique array extended from [true, false] is valid`
+## Original schema
+```js
+{
+	"items": [
+		{
+			"type": "boolean"
+		},
+		{
+			"type": "boolean"
+		}
+	],
+	"uniqueItems": true
+}
+```
+## Schema after validating
+```js
+{
+	"items": [
+		{
+			"type": "boolean"
+		},
+		{
+			"type": "boolean"
+		}
+	],
+	"uniqueItems": true,
+	"additionalProperties": true
+}
+```
+
+# Side-effect on schema
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `uniqueItems with an array of items, non-unique array extended from [false, true] is not valid`
+## Original schema
+```js
+{
+	"items": [
+		{
+			"type": "boolean"
+		},
+		{
+			"type": "boolean"
+		}
+	],
+	"uniqueItems": true
+}
+```
+## Schema after validating
+```js
+{
+	"items": [
+		{
+			"type": "boolean"
+		},
+		{
+			"type": "boolean"
+		}
+	],
+	"uniqueItems": true,
+	"additionalProperties": true
+}
+```
+
+# Side-effect on schema
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `uniqueItems with an array of items, non-unique array extended from [true, false] is not valid`
+## Original schema
+```js
+{
+	"items": [
+		{
+			"type": "boolean"
+		},
+		{
+			"type": "boolean"
+		}
+	],
+	"uniqueItems": true
+}
+```
+## Schema after validating
+```js
+{
+	"items": [
+		{
+			"type": "boolean"
+		},
+		{
+			"type": "boolean"
+		}
+	],
+	"uniqueItems": true,
+	"additionalProperties": true
+}
+```
+
+# Side-effect on schema
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `uniqueItems with an array of items and additionalItems=false, [false, true] from items array is valid`
+## Original schema
+```js
+{
+	"items": [
+		{
+			"type": "boolean"
+		},
+		{
+			"type": "boolean"
+		}
+	],
+	"uniqueItems": true,
+	"additionalItems": false
+}
+```
+## Schema after validating
+```js
+{
+	"items": [
+		{
+			"type": "boolean"
+		},
+		{
+			"type": "boolean"
+		}
+	],
+	"uniqueItems": true,
+	"additionalItems": false,
+	"additionalProperties": true
+}
+```
+
+# Side-effect on schema
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `uniqueItems with an array of items and additionalItems=false, [true, false] from items array is valid`
+## Original schema
+```js
+{
+	"items": [
+		{
+			"type": "boolean"
+		},
+		{
+			"type": "boolean"
+		}
+	],
+	"uniqueItems": true,
+	"additionalItems": false
+}
+```
+## Schema after validating
+```js
+{
+	"items": [
+		{
+			"type": "boolean"
+		},
+		{
+			"type": "boolean"
+		}
+	],
+	"uniqueItems": true,
+	"additionalItems": false,
+	"additionalProperties": true
+}
+```
+
+# Side-effect on schema
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `uniqueItems with an array of items and additionalItems=false, [false, false] from items array is not valid`
+## Original schema
+```js
+{
+	"items": [
+		{
+			"type": "boolean"
+		},
+		{
+			"type": "boolean"
+		}
+	],
+	"uniqueItems": true,
+	"additionalItems": false
+}
+```
+## Schema after validating
+```js
+{
+	"items": [
+		{
+			"type": "boolean"
+		},
+		{
+			"type": "boolean"
+		}
+	],
+	"uniqueItems": true,
+	"additionalItems": false,
+	"additionalProperties": true
+}
+```
+
+# Side-effect on schema
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `uniqueItems with an array of items and additionalItems=false, [true, true] from items array is not valid`
+## Original schema
+```js
+{
+	"items": [
+		{
+			"type": "boolean"
+		},
+		{
+			"type": "boolean"
+		}
+	],
+	"uniqueItems": true,
+	"additionalItems": false
+}
+```
+## Schema after validating
+```js
+{
+	"items": [
+		{
+			"type": "boolean"
+		},
+		{
+			"type": "boolean"
+		}
+	],
+	"uniqueItems": true,
+	"additionalItems": false,
+	"additionalProperties": true
+}
+```
+
+# Side-effect on schema
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `uniqueItems with an array of items and additionalItems=false, extra items are invalid even if unique`
+## Original schema
+```js
+{
+	"items": [
+		{
+			"type": "boolean"
+		},
+		{
+			"type": "boolean"
+		}
+	],
+	"uniqueItems": true,
+	"additionalItems": false
+}
+```
+## Schema after validating
+```js
+{
+	"items": [
+		{
+			"type": "boolean"
+		},
+		{
+			"type": "boolean"
+		}
+	],
+	"uniqueItems": true,
+	"additionalItems": false,
+	"additionalProperties": true
+}
+```
+
+# Side-effect on schema
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `uniqueItems=false validation, unique array of integers is valid`
+## Original schema
+```js
+{
+	"uniqueItems": false
+}
+```
+## Schema after validating
+```js
+{
+	"uniqueItems": false,
+	"additionalProperties": true
+}
+```
+
+# Side-effect on schema
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `uniqueItems=false validation, non-unique array of integers is valid`
+## Original schema
+```js
+{
+	"uniqueItems": false
+}
+```
+## Schema after validating
+```js
+{
+	"uniqueItems": false,
+	"additionalProperties": true
+}
+```
+
+# Side-effect on schema
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `uniqueItems=false validation, numbers are unique if mathematically unequal`
+## Original schema
+```js
+{
+	"uniqueItems": false
+}
+```
+## Schema after validating
+```js
+{
+	"uniqueItems": false,
+	"additionalProperties": true
+}
+```
+
+# Side-effect on schema
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `uniqueItems=false validation, false is not equal to zero`
+## Original schema
+```js
+{
+	"uniqueItems": false
+}
+```
+## Schema after validating
+```js
+{
+	"uniqueItems": false,
+	"additionalProperties": true
+}
+```
+
+# Side-effect on schema
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `uniqueItems=false validation, true is not equal to one`
+## Original schema
+```js
+{
+	"uniqueItems": false
+}
+```
+## Schema after validating
+```js
+{
+	"uniqueItems": false,
+	"additionalProperties": true
+}
+```
+
+# Side-effect on schema
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `uniqueItems=false validation, unique array of objects is valid`
+## Original schema
+```js
+{
+	"uniqueItems": false
+}
+```
+## Schema after validating
+```js
+{
+	"uniqueItems": false,
+	"additionalProperties": true
+}
+```
+
+# Side-effect on schema
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `uniqueItems=false validation, non-unique array of objects is valid`
+## Original schema
+```js
+{
+	"uniqueItems": false
+}
+```
+## Schema after validating
+```js
+{
+	"uniqueItems": false,
+	"additionalProperties": true
+}
+```
+
+# Side-effect on schema
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `uniqueItems=false validation, unique array of nested objects is valid`
+## Original schema
+```js
+{
+	"uniqueItems": false
+}
+```
+## Schema after validating
+```js
+{
+	"uniqueItems": false,
+	"additionalProperties": true
+}
+```
+
+# Side-effect on schema
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `uniqueItems=false validation, non-unique array of nested objects is valid`
+## Original schema
+```js
+{
+	"uniqueItems": false
+}
+```
+## Schema after validating
+```js
+{
+	"uniqueItems": false,
+	"additionalProperties": true
+}
+```
+
+# Side-effect on schema
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `uniqueItems=false validation, unique array of arrays is valid`
+## Original schema
+```js
+{
+	"uniqueItems": false
+}
+```
+## Schema after validating
+```js
+{
+	"uniqueItems": false,
+	"additionalProperties": true
+}
+```
+
+# Side-effect on schema
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `uniqueItems=false validation, non-unique array of arrays is valid`
+## Original schema
+```js
+{
+	"uniqueItems": false
+}
+```
+## Schema after validating
+```js
+{
+	"uniqueItems": false,
+	"additionalProperties": true
+}
+```
+
+# Side-effect on schema
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `uniqueItems=false validation, 1 and true are unique`
+## Original schema
+```js
+{
+	"uniqueItems": false
+}
+```
+## Schema after validating
+```js
+{
+	"uniqueItems": false,
+	"additionalProperties": true
+}
+```
+
+# Side-effect on schema
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `uniqueItems=false validation, 0 and false are unique`
+## Original schema
+```js
+{
+	"uniqueItems": false
+}
+```
+## Schema after validating
+```js
+{
+	"uniqueItems": false,
+	"additionalProperties": true
+}
+```
+
+# Side-effect on schema
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `uniqueItems=false validation, unique heterogeneous types are valid`
+## Original schema
+```js
+{
+	"uniqueItems": false
+}
+```
+## Schema after validating
+```js
+{
+	"uniqueItems": false,
+	"additionalProperties": true
+}
+```
+
+# Side-effect on schema
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `uniqueItems=false validation, non-unique heterogeneous types are valid`
+## Original schema
+```js
+{
+	"uniqueItems": false
+}
+```
+## Schema after validating
+```js
+{
+	"uniqueItems": false,
+	"additionalProperties": true
+}
+```
+
+# Side-effect on schema
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `uniqueItems=false with an array of items, [false, true] from items array is valid`
+## Original schema
+```js
+{
+	"items": [
+		{
+			"type": "boolean"
+		},
+		{
+			"type": "boolean"
+		}
+	],
+	"uniqueItems": false
+}
+```
+## Schema after validating
+```js
+{
+	"items": [
+		{
+			"type": "boolean"
+		},
+		{
+			"type": "boolean"
+		}
+	],
+	"uniqueItems": false,
+	"additionalProperties": true
+}
+```
+
+# Side-effect on schema
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `uniqueItems=false with an array of items, [true, false] from items array is valid`
+## Original schema
+```js
+{
+	"items": [
+		{
+			"type": "boolean"
+		},
+		{
+			"type": "boolean"
+		}
+	],
+	"uniqueItems": false
+}
+```
+## Schema after validating
+```js
+{
+	"items": [
+		{
+			"type": "boolean"
+		},
+		{
+			"type": "boolean"
+		}
+	],
+	"uniqueItems": false,
+	"additionalProperties": true
+}
+```
+
+# Side-effect on schema
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `uniqueItems=false with an array of items, [false, false] from items array is valid`
+## Original schema
+```js
+{
+	"items": [
+		{
+			"type": "boolean"
+		},
+		{
+			"type": "boolean"
+		}
+	],
+	"uniqueItems": false
+}
+```
+## Schema after validating
+```js
+{
+	"items": [
+		{
+			"type": "boolean"
+		},
+		{
+			"type": "boolean"
+		}
+	],
+	"uniqueItems": false,
+	"additionalProperties": true
+}
+```
+
+# Side-effect on schema
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `uniqueItems=false with an array of items, [true, true] from items array is valid`
+## Original schema
+```js
+{
+	"items": [
+		{
+			"type": "boolean"
+		},
+		{
+			"type": "boolean"
+		}
+	],
+	"uniqueItems": false
+}
+```
+## Schema after validating
+```js
+{
+	"items": [
+		{
+			"type": "boolean"
+		},
+		{
+			"type": "boolean"
+		}
+	],
+	"uniqueItems": false,
+	"additionalProperties": true
+}
+```
+
+# Side-effect on schema
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `uniqueItems=false with an array of items, unique array extended from [false, true] is valid`
+## Original schema
+```js
+{
+	"items": [
+		{
+			"type": "boolean"
+		},
+		{
+			"type": "boolean"
+		}
+	],
+	"uniqueItems": false
+}
+```
+## Schema after validating
+```js
+{
+	"items": [
+		{
+			"type": "boolean"
+		},
+		{
+			"type": "boolean"
+		}
+	],
+	"uniqueItems": false,
+	"additionalProperties": true
+}
+```
+
+# Side-effect on schema
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `uniqueItems=false with an array of items, unique array extended from [true, false] is valid`
+## Original schema
+```js
+{
+	"items": [
+		{
+			"type": "boolean"
+		},
+		{
+			"type": "boolean"
+		}
+	],
+	"uniqueItems": false
+}
+```
+## Schema after validating
+```js
+{
+	"items": [
+		{
+			"type": "boolean"
+		},
+		{
+			"type": "boolean"
+		}
+	],
+	"uniqueItems": false,
+	"additionalProperties": true
+}
+```
+
+# Side-effect on schema
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `uniqueItems=false with an array of items, non-unique array extended from [false, true] is valid`
+## Original schema
+```js
+{
+	"items": [
+		{
+			"type": "boolean"
+		},
+		{
+			"type": "boolean"
+		}
+	],
+	"uniqueItems": false
+}
+```
+## Schema after validating
+```js
+{
+	"items": [
+		{
+			"type": "boolean"
+		},
+		{
+			"type": "boolean"
+		}
+	],
+	"uniqueItems": false,
+	"additionalProperties": true
+}
+```
+
+# Side-effect on schema
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `uniqueItems=false with an array of items, non-unique array extended from [true, false] is valid`
+## Original schema
+```js
+{
+	"items": [
+		{
+			"type": "boolean"
+		},
+		{
+			"type": "boolean"
+		}
+	],
+	"uniqueItems": false
+}
+```
+## Schema after validating
+```js
+{
+	"items": [
+		{
+			"type": "boolean"
+		},
+		{
+			"type": "boolean"
+		}
+	],
+	"uniqueItems": false,
+	"additionalProperties": true
+}
+```
+
+# Side-effect on schema
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `uniqueItems=false with an array of items and additionalItems=false, [false, true] from items array is valid`
+## Original schema
+```js
+{
+	"items": [
+		{
+			"type": "boolean"
+		},
+		{
+			"type": "boolean"
+		}
+	],
+	"uniqueItems": false,
+	"additionalItems": false
+}
+```
+## Schema after validating
+```js
+{
+	"items": [
+		{
+			"type": "boolean"
+		},
+		{
+			"type": "boolean"
+		}
+	],
+	"uniqueItems": false,
+	"additionalItems": false,
+	"additionalProperties": true
+}
+```
+
+# Side-effect on schema
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `uniqueItems=false with an array of items and additionalItems=false, [true, false] from items array is valid`
+## Original schema
+```js
+{
+	"items": [
+		{
+			"type": "boolean"
+		},
+		{
+			"type": "boolean"
+		}
+	],
+	"uniqueItems": false,
+	"additionalItems": false
+}
+```
+## Schema after validating
+```js
+{
+	"items": [
+		{
+			"type": "boolean"
+		},
+		{
+			"type": "boolean"
+		}
+	],
+	"uniqueItems": false,
+	"additionalItems": false,
+	"additionalProperties": true
+}
+```
+
+# Side-effect on schema
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `uniqueItems=false with an array of items and additionalItems=false, [false, false] from items array is valid`
+## Original schema
+```js
+{
+	"items": [
+		{
+			"type": "boolean"
+		},
+		{
+			"type": "boolean"
+		}
+	],
+	"uniqueItems": false,
+	"additionalItems": false
+}
+```
+## Schema after validating
+```js
+{
+	"items": [
+		{
+			"type": "boolean"
+		},
+		{
+			"type": "boolean"
+		}
+	],
+	"uniqueItems": false,
+	"additionalItems": false,
+	"additionalProperties": true
+}
+```
+
+# Side-effect on schema
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `uniqueItems=false with an array of items and additionalItems=false, [true, true] from items array is valid`
+## Original schema
+```js
+{
+	"items": [
+		{
+			"type": "boolean"
+		},
+		{
+			"type": "boolean"
+		}
+	],
+	"uniqueItems": false,
+	"additionalItems": false
+}
+```
+## Schema after validating
+```js
+{
+	"items": [
+		{
+			"type": "boolean"
+		},
+		{
+			"type": "boolean"
+		}
+	],
+	"uniqueItems": false,
+	"additionalItems": false,
+	"additionalProperties": true
+}
+```
+
+# Side-effect on schema
+[`revalidator`](https://github.com/flatiron/revalidator) had a side-effect on (altered the original) schema in the test `uniqueItems=false with an array of items and additionalItems=false, extra items are invalid even if unique`
+## Original schema
+```js
+{
+	"items": [
+		{
+			"type": "boolean"
+		},
+		{
+			"type": "boolean"
+		}
+	],
+	"uniqueItems": false,
+	"additionalItems": false
+}
+```
+## Schema after validating
+```js
+{
+	"items": [
+		{
+			"type": "boolean"
+		},
+		{
+			"type": "boolean"
+		}
+	],
+	"uniqueItems": false,
+	"additionalItems": false,
 	"additionalProperties": true
 }
 ```
