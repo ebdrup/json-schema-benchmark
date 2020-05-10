@@ -72,15 +72,15 @@ that is the case for these tests.
 `escaped pointer ref, slash valid`|Expected result: `true` but validator returned: `false`. **This excludes this validator from performance tests**
 `escaped pointer ref, tilda valid`|Expected result: `true` but validator returned: `false`. **This excludes this validator from performance tests**
 `escaped pointer ref, percent valid`|Expected result: `true` but validator returned: `false`. **This excludes this validator from performance tests**
-`Recursive references between schemas, valid tree`|Expected result: `true` but validator returned: `false`. **This excludes this validator from performance tests**
+`Recursive references between schemas, valid tree`|Expected result: `true` but validator returned: `false`
 `refs with quote, object with numbers is valid`|Expected result: `true` but validator returned: `false`. **This excludes this validator from performance tests**
 `Location-independent identifier, match`|Expected result: `true` but validator returned: `false`
-`Location-independent identifier with absolute URI, match`|Expected result: `true` but validator returned: `false`. **This excludes this validator from performance tests**
+`Location-independent identifier with absolute URI, match`|Expected result: `true` but validator returned: `false`
 `Location-independent identifier with base URI change in subschema, match`|Expected result: `true` but validator returned: `false`
 `base URI change, base URI change ref valid`|Expected result: `true` but validator returned: `false`
 `base URI change - change folder, number is valid`|Expected result: `true` but validator returned: `false`
 `base URI change - change folder in subschema, number is valid`|Expected result: `true` but validator returned: `false`
-`root ref in remote ref, string is valid`|Expected result: `true` but validator returned: `false`. **This excludes this validator from performance tests**
+`root ref in remote ref, string is valid`|Expected result: `true` but validator returned: `false`
 `root ref in remote ref, null is valid`|Expected result: `true` but validator returned: `false`. **This excludes this validator from performance tests**
 `required validation, ignores strings`|Expected result: `true` but validator returned: `false`. **This excludes this validator from performance tests**
 `required validation, ignores other non-objects`|Expected result: `true` but validator returned: `false`. **This excludes this validator from performance tests**

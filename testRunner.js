@@ -64,6 +64,10 @@ module.exports = function(validators) {
         `Recursive references between schemas, invalid tree`,
         `ref within remote ref, ref within ref invalid`,
         `root ref in remote ref, object is invalid`,
+        `Recursive references between schemas, valid tree`,
+        `Location-independent identifier with absolute URI, match`,
+        `ref within remote ref, ref within ref valid`,
+        `root ref in remote ref, string is valid`,
       ];
       var excludeTestSuites = [
         `Location-independent identifier`,
