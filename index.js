@@ -20,6 +20,7 @@ const ajv = require("ajv")({ schemaId: "auto" });
 const djv = require("djv")();
 const jsvg = require("json-schema-validator-generator").default;
 const jlib = require("json-schema-library");
+const turboJsonParse = require("turbo-json-parse");
 let cfworker;
 
 const refs = {
@@ -43,7 +44,7 @@ const validators = [
       return eval(jsvg(schema).js);
     },
     test: function(instance, json, schema) {
-      return instance.root(json) === 0;
+      return instance.root(JSON.parse(json)) === 0;
     },
   },
   {
@@ -53,7 +54,7 @@ const validators = [
       return imjv(schema, { schemas: refs });
     },
     test: function(instance, json, schema) {
-      return instance(json);
+      return instance(JSON.parse(json));
     },
   },
   {
@@ -62,7 +63,7 @@ const validators = [
       return jsen(schema, { schemas: refs });
     },
     test: function(instance, json, schema) {
-      return instance(json);
+      return instance(JSON.parse(json));
     },
   },
   {
@@ -72,7 +73,7 @@ const validators = [
       return ajv.compile(schema);
     },
     test: function(instance, json, schema) {
-      return instance(json);
+      return instance(JSON.parse(json));
     },
   },
   {
@@ -82,7 +83,7 @@ const validators = [
       return Themis.validator(schema);
     },
     test: function(instance, json, schema) {
-      return instance(json, "0").valid;
+      return instance(JSON.parse(json), "0").valid;
     },
     benchmarks:
       "https://cdn.rawgit.com/playlyfe/themis/master/benchmark/results.html",
@@ -99,7 +100,7 @@ const validators = [
       return validator;
     },
     test: function(instance, json, schema) {
-      return instance.validate(json, schema);
+      return instance.validate(JSON.parse(json), schema);
     },
     benchmarks:
       "https://rawgit.com/zaggino/z-schema/master/benchmark/results.html",
@@ -115,7 +116,7 @@ const validators = [
       return validator;
     },
     test: function(instance, json, schema) {
-      return instance.validate(schema, json) === null;
+      return instance.validate(schema, JSON.parse(json)) === null;
     },
   },
   {
@@ -125,7 +126,7 @@ const validators = [
       return djv.addSchema("test", schema).fn;
     },
     test: function(instance, json, schema) {
-      return instance(json) === undefined;
+      return instance(JSON.parse(json)) === undefined;
     },
   },
   {
@@ -138,7 +139,7 @@ const validators = [
       return validator;
     },
     test: function(instance, json, schema) {
-      return instance.validate(json, schema).valid;
+      return instance.validate(JSON.parse(json), schema).valid;
     },
   },
   {
@@ -147,7 +148,7 @@ const validators = [
       return schemasaurus.newValidator(schema);
     },
     test: function(instance, json) {
-      return instance(json).valid;
+      return instance(JSON.parse(json)).valid;
     },
   },
   {
@@ -157,7 +158,7 @@ const validators = [
       return new jsck.draft4(schema);
     },
     test: function(instance, json, schema) {
-      return instance.validate(json).valid;
+      return instance.validate(JSON.parse(json)).valid;
     },
     benchmarks:
       "https://github.com/pandastrike/jsck/blob/master/doc/benchmarks.md",
@@ -169,7 +170,7 @@ const validators = [
       return jassi;
     },
     test: function(instance, json, schema) {
-      return instance(json, schema).length === 0;
+      return instance(JSON.parse(json), schema).length === 0;
     },
   },
 
@@ -181,8 +182,8 @@ const validators = [
     },
     test: function(instance, json, schema) {
       return (
-        instance.JSV.createEnvironment().validate(json, schema).errors
-          .length === 0
+        instance.JSV.createEnvironment().validate(JSON.parse(json), schema)
+          .errors.length === 0
       );
     },
   },
@@ -194,7 +195,7 @@ const validators = [
     },
     test: function(instance, json, schema) {
       try {
-        instance.validate(json);
+        instance.validate(JSON.parse(json));
         return true;
       } catch (e) {
         return false;
@@ -209,7 +210,7 @@ const validators = [
     },
     test: function(instance, json, schema) {
       try {
-        instance.validate(json);
+        instance.validate(JSON.parse(json));
         return true;
       } catch (e) {
         return false;
@@ -223,7 +224,7 @@ const validators = [
       return JsonModel.validator(schema);
     },
     test: function(instance, json, schema) {
-      return instance(json).valid;
+      return instance(JSON.parse(json)).valid;
     },
   },
   {
@@ -236,7 +237,7 @@ const validators = [
       return tv4;
     },
     test: function(instance, json, schema) {
-      return instance.validateResult(json, schema).valid;
+      return instance.validateResult(JSON.parse(json), schema).valid;
     },
   },
   {
@@ -249,7 +250,7 @@ const validators = [
       return validator;
     },
     test: function(instance, json, schema) {
-      return instance.validate(json, schema).errors.length === 0;
+      return instance.validate(JSON.parse(json), schema).errors.length === 0;
     },
   },
   {
@@ -258,7 +259,7 @@ const validators = [
       return revalidator;
     },
     test: function(instance, json, schema) {
-      return instance.validate(json, schema).valid;
+      return instance.validate(JSON.parse(json), schema).valid;
     },
   },
   {
@@ -267,7 +268,7 @@ const validators = [
       return new jlib.cores.Draft04(schema);
     },
     test: function(instance, json, schema) {
-      return instance.isValid(json);
+      return instance.isValid(JSON.parse(json));
     },
   },
   {
@@ -277,7 +278,14 @@ const validators = [
       Object.keys(refs).forEach((id) => validator.addSchema(refs[id], id));
       return validator;
     },
-    test: (validator, json) => validator.validate(json).valid,
+    test: (validator, json) => validator.validate(JSON.parse(json)).valid,
+  },
+  {
+    name: "turbo-json-parse",
+    setup: (schema) => {
+      return turboJsonParse(schema);
+    },
+    test: (validator, json) => validator(json),
   },
 ];
 

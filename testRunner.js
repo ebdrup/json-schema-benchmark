@@ -138,16 +138,6 @@ function getTestNames(testSuites) {
 
 function validAndInvalid(validator, allTestNames) {
   return _.map(validator.failingTests, "testName").filter(Boolean);
-  return _.intersection(
-    testNames.concat(
-      testNames.map(function(testName) {
-        return testName.indexOf("invalid") === -1
-          ? testName.replace(/valid(.*)$/, "invalid$1")
-          : testName.replace(/invalid(.*)$/, "valid$1");
-      })
-    ),
-    allTestNames
-  );
 }
 
 function verifyValidator(
@@ -191,7 +181,7 @@ function verifyValidator(
     try {
       givenResult = validator.test(
         validatorInstance,
-        test.data,
+        JSON.stringify(test.data),
         testSuite.schema
       );
     } catch (e) {
@@ -277,6 +267,9 @@ function runBenchmark(validators, testSuites, excludeTestSuites, excludeTests) {
       testSuite.tests = testSuite.tests.filter(function(test) {
         var testName = [testSuite.description, test.description].join(", ");
         return excludeTests.indexOf(testName) === -1;
+      });
+      testSuite.tests.forEach(function(test) {
+        test.data = JSON.stringify(test.data);
       });
     });
     suite.add(validator.name, function() {
