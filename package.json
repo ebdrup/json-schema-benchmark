@@ -31,7 +31,7 @@
     "schemasaurus": "*",
     "skeemas": "*",
     "themis": "*",
-    "turbo-json-parse": "^2.3.0",
+    "turbo-json-parse": "*",
     "tv4": "*",
     "z-schema": "*"
   },
