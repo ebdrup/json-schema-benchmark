@@ -20,6 +20,7 @@ const ajv = require("ajv")({ schemaId: "auto" });
 const djv = require("djv")();
 const jsvg = require("json-schema-validator-generator").default;
 const jlib = require("json-schema-library");
+const schemasafe = require("@exodus/schemasafe");
 let cfworker;
 
 const refs = {
@@ -269,6 +270,19 @@ const validators = [
     test: function(instance, json, schema) {
       return instance.isValid(json);
     },
+  },
+  {
+    name: "@exodus/schemasafe",
+    setup: function(schema) {
+      return schemasafe.validator(schema, {
+        allowUnusedKeywords: true,
+        schemas: refs,
+        $schemaDefault: "https://json-schema.org/draft-06/schema",
+      });
+    },
+    test: function(instance, json, schema) {
+      return instance(json);
+    }
   },
   {
     name: "@cfworker/json-schema",
