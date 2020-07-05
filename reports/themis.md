@@ -2,8 +2,6 @@
 
 # All validators fail this test
 
-`ECMA 262 \s matches ascii whitespace only, latin-1 non-breaking-space does not match (unlike e.g. Python)`
-
 `Proper UTF-16 surrogate pair handling: patternProperties, doesn&#39;t match two`
 
 `some languages do not distinguish between different types of numeric value, a float is not an integer even without fractional part`
@@ -32,7 +30,6 @@ that is the case for these tests.
 `oneOf with required, first valid - valid`|Expected result: `true` but validator returned: `false`. **This excludes this validator from performance tests**
 `oneOf with required, second valid - valid`|Expected result: `true` but validator returned: `false`. **This excludes this validator from performance tests**
 `ECMA 262 regex non-compliance, ECMA 262 has no support for \Z anchor from .NET`|Expected result: `false` but validator returned: `true`
-`ECMA 262 \S matches everything but ascii whitespace, latin-1 non-breaking-space matches (unlike e.g. Python)`|Expected result: `true` but validator returned: `false`
 `validation of URIs, a valid puny-coded URL `|Expected result: `true` but validator returned: `false`
 `validation of URIs, a valid URL `|Expected result: `true` but validator returned: `false`
 `validation of URIs, a valid mailto URI`|Expected result: `true` but validator returned: `false`
@@ -69,6 +66,7 @@ that is the case for these tests.
 `root ref in remote ref, object is invalid`|The schema failed to load(`Cannot read property 'definitions' of undefined`)
 `required with escaped characters, object with all properties present is valid`|The schema failed to load(`Invalid or unexpected token`). **This excludes this validator from performance tests**
 `required with escaped characters, object with some properties missing is invalid`|The schema failed to load(`Invalid or unexpected token`). **This excludes this validator from performance tests**
+`uniqueItems validation, objects are non-unique despite key order`|Expected result: `false` but validator returned: `true`
 
 **All other tests passed**.
 

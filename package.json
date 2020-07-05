@@ -39,7 +39,7 @@
   "devDependencies": {},
   "scripts": {
     "test": "node --experimental-modules --es-module-specifier-resolution=node index.js",
-    "update": "rm -rf node_modules/* && rm package-lock.json && npm i && npm audit fix && node ."
+    "update": "rm -rf node_modules/* && rm package-lock.json && npm i && npm audit fix && git submodule foreach git pull origin master && npm test"
   },
   "repository": {
     "type": "git",

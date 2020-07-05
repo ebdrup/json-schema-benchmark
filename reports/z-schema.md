@@ -2,8 +2,6 @@
 
 # All validators fail this test
 
-`ECMA 262 \s matches ascii whitespace only, latin-1 non-breaking-space does not match (unlike e.g. Python)`
-
 `Proper UTF-16 surrogate pair handling: patternProperties, doesn&#39;t match two`
 
 `some languages do not distinguish between different types of numeric value, a float is not an integer even without fractional part`
@@ -16,7 +14,6 @@ that is the case for these tests.
 |test failed|reason
 |-----------|------
 `ECMA 262 regex non-compliance, ECMA 262 has no support for \Z anchor from .NET`|Expected result: `false` but validator returned: `true`
-`ECMA 262 \S matches everything but ascii whitespace, latin-1 non-breaking-space matches (unlike e.g. Python)`|Expected result: `true` but validator returned: `false`
 `validation of URIs, an invalid protocol-relative URI Reference`|Expected result: `false` but validator returned: `true`
 `validation of URIs, an invalid relative URI Reference`|Expected result: `false` but validator returned: `true`
 `validation of URIs, an invalid URI`|Expected result: `false` but validator returned: `true`

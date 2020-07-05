@@ -2,8 +2,6 @@
 
 # All validators fail this test
 
-`ECMA 262 \s matches ascii whitespace only, latin-1 non-breaking-space does not match (unlike e.g. Python)`
-
 `Proper UTF-16 surrogate pair handling: patternProperties, doesn&#39;t match two`
 
 `some languages do not distinguish between different types of numeric value, a float is not an integer even without fractional part`
@@ -27,6 +25,13 @@ that is the case for these tests.
 `allOf with the first empty schema, string is invalid`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
 `allOf with the last empty schema, string is invalid`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
 `nested allOf, to check validation semantics, anything non-null is invalid`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
+`allOf combined with anyOf, oneOf, allOf: false, anyOf: false, oneOf: false`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
+`allOf combined with anyOf, oneOf, allOf: false, anyOf: false, oneOf: true`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
+`allOf combined with anyOf, oneOf, allOf: false, anyOf: true, oneOf: false`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
+`allOf combined with anyOf, oneOf, allOf: false, anyOf: true, oneOf: true`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
+`allOf combined with anyOf, oneOf, allOf: true, anyOf: false, oneOf: false`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
+`allOf combined with anyOf, oneOf, allOf: true, anyOf: false, oneOf: true`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
+`allOf combined with anyOf, oneOf, allOf: true, anyOf: true, oneOf: false`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
 `anyOf, neither anyOf valid`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
 `anyOf with base schema, both anyOf invalid`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
 `anyOf complex types, neither anyOf valid (complex)`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
@@ -81,6 +86,7 @@ that is the case for these tests.
 `items and subitems, wrong sub-item`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
 `maxLength validation, two supplementary Unicode code points is long enough`|Expected result: `true` but validator returned: `false`
 `maxProperties validation, too long is invalid`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
+`maxProperties = 0 means the object is empty, one property is invalid`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
 `minLength validation, one supplementary Unicode code point is not long enough`|Expected result: `false` but validator returned: `true`
 `minProperties validation, too short is invalid`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
 `by int, int by int fail`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
@@ -103,7 +109,6 @@ that is the case for these tests.
 `oneOf with missing optional property, neither oneOf valid`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
 `nested oneOf, to check validation semantics, anything non-null is invalid`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
 `ECMA 262 regex non-compliance, ECMA 262 has no support for \Z anchor from .NET`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'regex' format`)
-`ECMA 262 \S matches everything but ascii whitespace, latin-1 non-breaking-space matches (unlike e.g. Python)`|Expected result: `true` but validator returned: `false`
 `validation of date-time strings, a valid date-time string`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'date-time' format`)
 `validation of date-time strings, a valid date-time string without second fraction`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'date-time' format`)
 `validation of date-time strings, a valid date-time string with plus offset`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'date-time' format`)
@@ -113,6 +118,41 @@ that is the case for these tests.
 `validation of date-time strings, an invalid date-time string`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'date-time' format`)
 `validation of date-time strings, case-insensitive T and Z`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'date-time' format`)
 `validation of date-time strings, only RFC3339 not all of ISO 8601 are valid`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'date-time' format`)
+`validation of e-mail addresses, a valid e-mail address`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'email' format`)
+`validation of e-mail addresses, an invalid e-mail address`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'email' format`)
+`validation of e-mail addresses, tilde in local part is valid`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'email' format`)
+`validation of e-mail addresses, tilde before local part is valid`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'email' format`)
+`validation of e-mail addresses, tilde after local part is valid`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'email' format`)
+`validation of e-mail addresses, dot before local part is not valid`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'email' format`)
+`validation of e-mail addresses, dot after local part is not valid`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'email' format`)
+`validation of e-mail addresses, two separated dots inside local part are valid`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'email' format`)
+`validation of e-mail addresses, two subsequent dots inside local part are not valid`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'email' format`)
+`validation of host names, a host name starting with an illegal character`|Expected result: `false` but validator returned: `true`
+`validation of host names, a host name containing illegal characters`|Expected result: `false` but validator returned: `true`
+`validation of host names, a host name with a component too long`|Expected result: `false` but validator returned: `true`
+`validation of host names, starts with hyphen`|Expected result: `false` but validator returned: `true`
+`validation of host names, ends with hyphen`|Expected result: `false` but validator returned: `true`
+`validation of host names, starts with underscore`|Expected result: `false` but validator returned: `true`
+`validation of host names, ends with underscore`|Expected result: `false` but validator returned: `true`
+`validation of host names, contains underscore`|Expected result: `false` but validator returned: `true`
+`validation of host names, exceeds maximum label length`|Expected result: `false` but validator returned: `true`
+`validation of IP addresses, an IP address with too many components`|Expected result: `false` but validator returned: `true`
+`validation of IP addresses, an IP address with out-of-range values`|Expected result: `false` but validator returned: `true`
+`validation of IP addresses, an IP address without 4 components`|Expected result: `false` but validator returned: `true`
+`validation of IP addresses, an IP address as an integer`|Expected result: `false` but validator returned: `true`
+`validation of IP addresses, an IP address as an integer (decimal)`|Expected result: `false` but validator returned: `true`
+`validation of IPv6 addresses, a valid IPv6 address`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'ipv6' format`)
+`validation of IPv6 addresses, an IPv6 address with out-of-range values`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'ipv6' format`)
+`validation of IPv6 addresses, an IPv6 address with too many components`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'ipv6' format`)
+`validation of IPv6 addresses, an IPv6 address containing illegal characters`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'ipv6' format`)
+`validation of IPv6 addresses, no digits is valid`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'ipv6' format`)
+`validation of IPv6 addresses, leading colons is valid`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'ipv6' format`)
+`validation of IPv6 addresses, trailing colons is valid`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'ipv6' format`)
+`validation of IPv6 addresses, two sets of double colons is invalid`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'ipv6' format`)
+`validation of IPv6 addresses, mixed format with the ipv4 section as decimal octets`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'ipv6' format`)
+`validation of IPv6 addresses, mixed format with double colons between the sections`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'ipv6' format`)
+`validation of IPv6 addresses, mixed format with ipv4 section with octet out of range`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'ipv6' format`)
+`validation of IPv6 addresses, mixed format with ipv4 section with a hex octet`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'ipv6' format`)
 `validation of URIs, a valid URL with anchor tag`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'uri' format`)
 `validation of URIs, a valid URL with anchor tag and parantheses`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'uri' format`)
 `validation of URIs, a valid URL with URL-encoded stuff`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'uri' format`)
@@ -132,31 +172,19 @@ that is the case for these tests.
 `validation of URIs, an invalid URI though valid URI reference`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'uri' format`)
 `validation of URIs, an invalid URI with spaces`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'uri' format`)
 `validation of URIs, an invalid URI with spaces and missing scheme`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'uri' format`)
-`validation of e-mail addresses, a valid e-mail address`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'email' format`)
-`validation of e-mail addresses, an invalid e-mail address`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'email' format`)
-`validation of IP addresses, an IP address with too many components`|Expected result: `false` but validator returned: `true`
-`validation of IP addresses, an IP address with out-of-range values`|Expected result: `false` but validator returned: `true`
-`validation of IP addresses, an IP address without 4 components`|Expected result: `false` but validator returned: `true`
-`validation of IP addresses, an IP address as an integer`|Expected result: `false` but validator returned: `true`
-`validation of IPv6 addresses, a valid IPv6 address`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'ipv6' format`)
-`validation of IPv6 addresses, an IPv6 address with out-of-range values`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'ipv6' format`)
-`validation of IPv6 addresses, an IPv6 address with too many components`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'ipv6' format`)
-`validation of IPv6 addresses, an IPv6 address containing illegal characters`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'ipv6' format`)
-`validation of host names, a host name starting with an illegal character`|Expected result: `false` but validator returned: `true`
-`validation of host names, a host name containing illegal characters`|Expected result: `false` but validator returned: `true`
-`validation of host names, a host name with a component too long`|Expected result: `false` but validator returned: `true`
 `Proper UTF-16 surrogate pair handling: pattern, matches empty`|Expected result: `true` but validator returned: `false`
 `Proper UTF-16 surrogate pair handling: pattern, matches two`|Expected result: `true` but validator returned: `false`
 `root pointer ref, recursive mismatch`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
 `relative pointer ref to object, mismatch`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
 `relative pointer ref to array, mismatch array`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
 `escaped pointer ref, slash invalid`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
-`escaped pointer ref, tilda invalid`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
+`escaped pointer ref, tilde invalid`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
 `escaped pointer ref, percent invalid`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
 `nested refs, nested ref invalid`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
 `ref overrides any sibling keywords, ref valid, maxItems ignored`|Expected result: `true` but validator returned: `false`
 `ref overrides any sibling keywords, ref invalid`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
 `remote ref, containing refs itself, remote ref invalid`|Expected result: `false` but validator returned: `true`
+`property named $ref, containing an actual $ref, property named $ref invalid`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
 `Recursive references between schemas, valid tree`|The schema failed to load(`Schema: 'required' attribute is an array when it should be a boolean`)
 `Recursive references between schemas, invalid tree`|The schema failed to load(`Schema: 'required' attribute is an array when it should be a boolean`)
 `refs with quote, object with strings is invalid`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**

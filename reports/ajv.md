@@ -2,8 +2,6 @@
 
 # All validators fail this test
 
-`ECMA 262 \s matches ascii whitespace only, latin-1 non-breaking-space does not match (unlike e.g. Python)`
-
 `Proper UTF-16 surrogate pair handling: patternProperties, doesn&#39;t match two`
 
 `some languages do not distinguish between different types of numeric value, a float is not an integer even without fractional part`
@@ -15,7 +13,9 @@ that is the case for these tests.
 
 |test failed|reason
 |-----------|------
-`ECMA 262 \S matches everything but ascii whitespace, latin-1 non-breaking-space matches (unlike e.g. Python)`|Expected result: `true` but validator returned: `false`
+`validation of e-mail addresses, dot before local part is not valid`|Expected result: `false` but validator returned: `true`
+`validation of e-mail addresses, dot after local part is not valid`|Expected result: `false` but validator returned: `true`
+`validation of e-mail addresses, two subsequent dots inside local part are not valid`|Expected result: `false` but validator returned: `true`
 `Proper UTF-16 surrogate pair handling: pattern, matches empty`|Expected result: `true` but validator returned: `false`
 `Proper UTF-16 surrogate pair handling: pattern, matches two`|Expected result: `true` but validator returned: `false`
 `Location-independent identifier, match`|The schema failed to load(`schema is invalid: data.definitions['A'].id should match format "uri"`)

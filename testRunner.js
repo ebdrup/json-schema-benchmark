@@ -75,6 +75,7 @@ module.exports = function(validators) {
         `base URI change`,
         `base URI change - change folder`,
         `base URI change - change folder in subschema`,
+        `uniqueItems validation`,
       ];
       var testSuites = readTests(
         path.join(__dirname + "/JSON-Schema-Test-Suite/tests/draft4/")

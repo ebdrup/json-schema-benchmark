@@ -2,8 +2,6 @@
 
 # All validators fail this test
 
-`ECMA 262 \s matches ascii whitespace only, latin-1 non-breaking-space does not match (unlike e.g. Python)`
-
 `Proper UTF-16 surrogate pair handling: patternProperties, doesn&#39;t match two`
 
 `some languages do not distinguish between different types of numeric value, a float is not an integer even without fractional part`
@@ -16,6 +14,7 @@ that is the case for these tests.
 |test failed|reason
 |-----------|------
 `additionalItems as false without items, items defaults to empty schema so everything is valid`|Expected result: `true` but validator returned: `false`. **This excludes this validator from performance tests**
+`additionalItems should not look in applicators, valid case, items defined in allOf are not examined`|Expected result: `true` but validator returned: `false`. **This excludes this validator from performance tests**
 `allOf, mismatch second`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
 `allOf, mismatch first`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
 `allOf, wrong type`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
@@ -24,6 +23,13 @@ that is the case for these tests.
 `allOf with the first empty schema, string is invalid`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
 `allOf with the last empty schema, string is invalid`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
 `nested allOf, to check validation semantics, anything non-null is invalid`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
+`allOf combined with anyOf, oneOf, allOf: false, anyOf: false, oneOf: false`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
+`allOf combined with anyOf, oneOf, allOf: false, anyOf: false, oneOf: true`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
+`allOf combined with anyOf, oneOf, allOf: false, anyOf: true, oneOf: false`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
+`allOf combined with anyOf, oneOf, allOf: false, anyOf: true, oneOf: true`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
+`allOf combined with anyOf, oneOf, allOf: true, anyOf: false, oneOf: false`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
+`allOf combined with anyOf, oneOf, allOf: true, anyOf: false, oneOf: true`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
+`allOf combined with anyOf, oneOf, allOf: true, anyOf: true, oneOf: false`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
 `anyOf, neither anyOf valid`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
 `anyOf with base schema, both anyOf invalid`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
 `anyOf complex types, neither anyOf valid (complex)`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
@@ -40,6 +46,7 @@ that is the case for these tests.
 `items and subitems, fewer items is valid`|Expected result: `true` but validator returned: `false`. **This excludes this validator from performance tests**
 `maxLength validation, two supplementary Unicode code points is long enough`|Expected result: `true` but validator returned: `false`
 `maxProperties validation, too long is invalid`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
+`maxProperties = 0 means the object is empty, one property is invalid`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
 `minLength validation, one supplementary Unicode code point is not long enough`|Expected result: `false` but validator returned: `true`
 `minProperties validation, too short is invalid`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
 `by int, int by int fail`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
@@ -62,37 +69,50 @@ that is the case for these tests.
 `oneOf with missing optional property, neither oneOf valid`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
 `nested oneOf, to check validation semantics, anything non-null is invalid`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
 `ECMA 262 regex non-compliance, ECMA 262 has no support for \Z anchor from .NET`|Expected result: `false` but validator returned: `true`
-`ECMA 262 \S matches everything but ascii whitespace, latin-1 non-breaking-space matches (unlike e.g. Python)`|Expected result: `true` but validator returned: `false`
 `validation of date-time strings, a invalid day in date-time string`|Expected result: `false` but validator returned: `true`
 `validation of date-time strings, an invalid offset in date-time string`|Expected result: `false` but validator returned: `true`
 `validation of date-time strings, an invalid date-time string`|Expected result: `false` but validator returned: `true`
 `validation of date-time strings, only RFC3339 not all of ISO 8601 are valid`|Expected result: `false` but validator returned: `true`
+`validation of e-mail addresses, an invalid e-mail address`|Expected result: `false` but validator returned: `true`
+`validation of e-mail addresses, dot before local part is not valid`|Expected result: `false` but validator returned: `true`
+`validation of e-mail addresses, dot after local part is not valid`|Expected result: `false` but validator returned: `true`
+`validation of e-mail addresses, two subsequent dots inside local part are not valid`|Expected result: `false` but validator returned: `true`
+`validation of host names, a host name starting with an illegal character`|Expected result: `false` but validator returned: `true`
+`validation of host names, a host name containing illegal characters`|Expected result: `false` but validator returned: `true`
+`validation of host names, a host name with a component too long`|Expected result: `false` but validator returned: `true`
+`validation of host names, starts with hyphen`|Expected result: `false` but validator returned: `true`
+`validation of host names, ends with hyphen`|Expected result: `false` but validator returned: `true`
+`validation of host names, starts with underscore`|Expected result: `false` but validator returned: `true`
+`validation of host names, ends with underscore`|Expected result: `false` but validator returned: `true`
+`validation of host names, contains underscore`|Expected result: `false` but validator returned: `true`
+`validation of host names, exceeds maximum label length`|Expected result: `false` but validator returned: `true`
+`validation of IP addresses, an IP address with too many components`|Expected result: `false` but validator returned: `true`
+`validation of IP addresses, an IP address with out-of-range values`|Expected result: `false` but validator returned: `true`
+`validation of IP addresses, an IP address without 4 components`|Expected result: `false` but validator returned: `true`
+`validation of IP addresses, an IP address as an integer`|Expected result: `false` but validator returned: `true`
+`validation of IP addresses, an IP address as an integer (decimal)`|Expected result: `false` but validator returned: `true`
+`validation of IPv6 addresses, an IPv6 address with out-of-range values`|Expected result: `false` but validator returned: `true`
+`validation of IPv6 addresses, an IPv6 address with too many components`|Expected result: `false` but validator returned: `true`
+`validation of IPv6 addresses, an IPv6 address containing illegal characters`|Expected result: `false` but validator returned: `true`
+`validation of IPv6 addresses, two sets of double colons is invalid`|Expected result: `false` but validator returned: `true`
+`validation of IPv6 addresses, mixed format with ipv4 section with octet out of range`|Expected result: `false` but validator returned: `true`
+`validation of IPv6 addresses, mixed format with ipv4 section with a hex octet`|Expected result: `false` but validator returned: `true`
 `validation of URIs, an invalid protocol-relative URI Reference`|Expected result: `false` but validator returned: `true`
 `validation of URIs, an invalid relative URI Reference`|Expected result: `false` but validator returned: `true`
 `validation of URIs, an invalid URI`|Expected result: `false` but validator returned: `true`
 `validation of URIs, an invalid URI though valid URI reference`|Expected result: `false` but validator returned: `true`
 `validation of URIs, an invalid URI with spaces`|Expected result: `false` but validator returned: `true`
 `validation of URIs, an invalid URI with spaces and missing scheme`|Expected result: `false` but validator returned: `true`
-`validation of e-mail addresses, an invalid e-mail address`|Expected result: `false` but validator returned: `true`
-`validation of IP addresses, an IP address with too many components`|Expected result: `false` but validator returned: `true`
-`validation of IP addresses, an IP address with out-of-range values`|Expected result: `false` but validator returned: `true`
-`validation of IP addresses, an IP address without 4 components`|Expected result: `false` but validator returned: `true`
-`validation of IP addresses, an IP address as an integer`|Expected result: `false` but validator returned: `true`
-`validation of IPv6 addresses, an IPv6 address with out-of-range values`|Expected result: `false` but validator returned: `true`
-`validation of IPv6 addresses, an IPv6 address with too many components`|Expected result: `false` but validator returned: `true`
-`validation of IPv6 addresses, an IPv6 address containing illegal characters`|Expected result: `false` but validator returned: `true`
-`validation of host names, a host name starting with an illegal character`|Expected result: `false` but validator returned: `true`
-`validation of host names, a host name containing illegal characters`|Expected result: `false` but validator returned: `true`
-`validation of host names, a host name with a component too long`|Expected result: `false` but validator returned: `true`
 `Proper UTF-16 surrogate pair handling: pattern, matches empty`|Expected result: `true` but validator returned: `false`
 `Proper UTF-16 surrogate pair handling: pattern, matches two`|Expected result: `true` but validator returned: `false`
 `escaped pointer ref, slash valid`|Expected result: `true` but validator returned: `false`. **This excludes this validator from performance tests**
-`escaped pointer ref, tilda valid`|Expected result: `true` but validator returned: `false`. **This excludes this validator from performance tests**
+`escaped pointer ref, tilde valid`|Expected result: `true` but validator returned: `false`. **This excludes this validator from performance tests**
 `escaped pointer ref, percent valid`|Expected result: `true` but validator returned: `false`. **This excludes this validator from performance tests**
 `nested refs, nested ref valid`|Expected result: `true` but validator returned: `false`. **This excludes this validator from performance tests**
 `ref overrides any sibling keywords, ref valid`|Expected result: `true` but validator returned: `false`. **This excludes this validator from performance tests**
 `ref overrides any sibling keywords, ref valid, maxItems ignored`|Expected result: `true` but validator returned: `false`
 `remote ref, containing refs itself, remote ref valid`|Expected result: `true` but validator returned: `false`. **This excludes this validator from performance tests**
+`property named $ref, containing an actual $ref, property named $ref valid`|Expected result: `true` but validator returned: `false`. **This excludes this validator from performance tests**
 `Recursive references between schemas, valid tree`|Expected result: `true` but validator returned: `false`
 `refs with quote, object with numbers is valid`|Expected result: `true` but validator returned: `false`. **This excludes this validator from performance tests**
 `Location-independent identifier, mismatch`|Expected result: `false` but validator returned: `true`
@@ -111,10 +131,11 @@ that is the case for these tests.
 `required validation, ignores strings`|Expected result: `true` but validator returned: `false`. **This excludes this validator from performance tests**
 `required validation, ignores other non-objects`|Expected result: `true` but validator returned: `false`. **This excludes this validator from performance tests**
 `required with escaped characters, object with all properties present is valid`|Expected result: `true` but validator returned: `false`. **This excludes this validator from performance tests**
-`uniqueItems validation, non-unique array of objects is invalid`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
-`uniqueItems validation, non-unique array of nested objects is invalid`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
-`uniqueItems validation, non-unique array of arrays is invalid`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
-`uniqueItems validation, non-unique heterogeneous types are invalid`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
+`uniqueItems validation, non-unique array of objects is invalid`|Expected result: `false` but validator returned: `true`
+`uniqueItems validation, non-unique array of nested objects is invalid`|Expected result: `false` but validator returned: `true`
+`uniqueItems validation, non-unique array of arrays is invalid`|Expected result: `false` but validator returned: `true`
+`uniqueItems validation, non-unique heterogeneous types are invalid`|Expected result: `false` but validator returned: `true`
+`uniqueItems validation, objects are non-unique despite key order`|Expected result: `false` but validator returned: `true`
 
 **All other tests passed**.
 
