@@ -17,7 +17,7 @@ module.exports = function(validators) {
     }
     var tasks = validators.map(function(validator) {
       return function(callback) {
-        npm.commands.view([validator.name + "@*", "homepage"], true, function(
+        npm.commands.view([validator.name, "homepage"], true, function(
           err,
           result
         ) {

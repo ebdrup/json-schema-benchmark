@@ -1,4 +1,4 @@
-# @exodus/schemasafe - test summary
+# [`@exodus/schemasafe`](https://github.com/ExodusMovement/schemasafe) - test summary
 
 # All validators fail this test
 
