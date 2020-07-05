@@ -2,8 +2,6 @@
 
 # All validators fail this test
 
-`Proper UTF-16 surrogate pair handling: patternProperties, doesn&#39;t match two`
-
 `some languages do not distinguish between different types of numeric value, a float is not an integer even without fractional part`
 
 # [`json-schema-validator-generator`](https://github.com/danwang/json-schema-validator-generator) failed tests
@@ -67,6 +65,7 @@ that is the case for these tests.
 `validation of URIs, an invalid URI with spaces and missing scheme`|Expected result: `false` but validator returned: `true`
 `Proper UTF-16 surrogate pair handling: pattern, matches empty`|Expected result: `true` but validator returned: `false`
 `Proper UTF-16 surrogate pair handling: pattern, matches two`|Expected result: `true` but validator returned: `false`
+`Proper UTF-16 surrogate pair handling: patternProperties, doesn't match two`|Expected result: `false` but validator returned: `true`
 `properties with escaped characters, object with all numbers is valid`|The schema failed to load(`Unexpected token ILLEGAL (15:17) [0m [90m 13 | [39m}[0m [0m [90m 14 | [39m}[0m [0m[31m[1m>[22m[39m[90m 15 | [39mv2 [33m=[39m v0[33m.[39mfoo[32m"bar;[39m[0m [0m [90m    | [39m                [31m[1m^[22m[39m[0m [0m [90m 16 | [39m[36mif[39m (v2 [33m!==[39m undefined) {[0m [0m [90m 17 | [39mv1 [33m=[39m f1(v2)[33m;[39m[0m [0m [90m 18 | [39m[36mif[39m (v1 [33m!==[39m [35m0[39m) {[0m`). **This excludes this validator from performance tests**
 `properties with escaped characters, object with strings is invalid`|The schema failed to load(`Unexpected token ILLEGAL (15:17) [0m [90m 13 | [39m}[0m [0m [90m 14 | [39m}[0m [0m[31m[1m>[22m[39m[90m 15 | [39mv2 [33m=[39m v0[33m.[39mfoo[32m"bar;[39m[0m [0m [90m    | [39m                [31m[1m^[22m[39m[0m [0m [90m 16 | [39m[36mif[39m (v2 [33m!==[39m undefined) {[0m [0m [90m 17 | [39mv1 [33m=[39m f1(v2)[33m;[39m[0m [0m [90m 18 | [39m[36mif[39m (v1 [33m!==[39m [35m0[39m) {[0m`). **This excludes this validator from performance tests**
 `remote ref, containing refs itself, remote ref invalid`|Expected result: `false` but validator returned: `true`

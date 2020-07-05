@@ -2,8 +2,6 @@
 
 # All validators fail this test
 
-`Proper UTF-16 surrogate pair handling: patternProperties, doesn&#39;t match two`
-
 `some languages do not distinguish between different types of numeric value, a float is not an integer even without fractional part`
 
 # [`jsonschema`](https://github.com/tdegrunt/jsonschema#readme) failed tests
@@ -18,6 +16,7 @@ that is the case for these tests.
 `validation of date-time strings, an invalid offset in date-time string`|Expected result: `false` but validator returned: `true`
 `Proper UTF-16 surrogate pair handling: pattern, matches empty`|Expected result: `true` but validator returned: `false`
 `Proper UTF-16 surrogate pair handling: pattern, matches two`|Expected result: `true` but validator returned: `false`
+`Proper UTF-16 surrogate pair handling: patternProperties, doesn't match two`|Expected result: `false` but validator returned: `true`
 `base URI change - change folder, number is valid`|Expected result: `true` but validator returned: `"no such schema <http://localhost:1234/folderInteger.json>"`
 `base URI change - change folder, string is invalid`|Expected result: `false` but validator returned: `"no such schema <http://localhost:1234/folderInteger.json>"`
 `base URI change - change folder in subschema, number is valid`|Expected result: `true` but validator returned: `"no such schema <http://localhost:1234/folderInteger.json>"`

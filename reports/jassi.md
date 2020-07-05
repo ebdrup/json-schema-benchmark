@@ -2,8 +2,6 @@
 
 # All validators fail this test
 
-`Proper UTF-16 surrogate pair handling: patternProperties, doesn&#39;t match two`
-
 `some languages do not distinguish between different types of numeric value, a float is not an integer even without fractional part`
 
 # [`jassi`](https://github.com/iclanzan/jassi) failed tests
@@ -57,6 +55,7 @@ that is the case for these tests.
 `validation of URIs, an invalid URI with spaces and missing scheme`|Expected result: `false` but validator returned: `true`
 `Proper UTF-16 surrogate pair handling: pattern, matches empty`|Expected result: `true` but validator returned: `false`
 `Proper UTF-16 surrogate pair handling: pattern, matches two`|Expected result: `true` but validator returned: `false`
+`Proper UTF-16 surrogate pair handling: patternProperties, doesn't match two`|Expected result: `false` but validator returned: `true`
 `root pointer ref, recursive mismatch`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
 `relative pointer ref to object, mismatch`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
 `relative pointer ref to array, mismatch array`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**

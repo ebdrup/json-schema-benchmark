@@ -2,8 +2,6 @@
 
 # All validators fail this test
 
-`Proper UTF-16 surrogate pair handling: patternProperties, doesn&#39;t match two`
-
 `some languages do not distinguish between different types of numeric value, a float is not an integer even without fractional part`
 
 # [`@cfworker/json-schema`](https://github.com/cfworker/cfworker/tree/master/packages/json-schema/README.md) failed tests
@@ -18,6 +16,7 @@ that is the case for these tests.
 `validation of e-mail addresses, two subsequent dots inside local part are not valid`|Expected result: `false` but validator returned: `true`
 `Proper UTF-16 surrogate pair handling: pattern, matches empty`|Expected result: `true` but validator returned: `false`
 `Proper UTF-16 surrogate pair handling: pattern, matches two`|Expected result: `true` but validator returned: `false`
+`Proper UTF-16 surrogate pair handling: patternProperties, doesn't match two`|Expected result: `false` but validator returned: `true`
 
 **All other tests passed**.
 

@@ -2,8 +2,6 @@
 
 # All validators fail this test
 
-`Proper UTF-16 surrogate pair handling: patternProperties, doesn&#39;t match two`
-
 `some languages do not distinguish between different types of numeric value, a float is not an integer even without fractional part`
 
 # [`jsck`](https://github.com/pandastrike/jsck#readme) failed tests
@@ -25,6 +23,7 @@ that is the case for these tests.
 `validation of date-time strings, case-insensitive T and Z`|Expected result: `true` but validator returned: `false`
 `Proper UTF-16 surrogate pair handling: pattern, matches empty`|Expected result: `true` but validator returned: `false`
 `Proper UTF-16 surrogate pair handling: pattern, matches two`|Expected result: `true` but validator returned: `false`
+`Proper UTF-16 surrogate pair handling: patternProperties, doesn't match two`|Expected result: `false` but validator returned: `true`
 `ref overrides any sibling keywords, ref valid, maxItems ignored`|Expected result: `true` but validator returned: `false`
 `Recursive references between schemas, valid tree`|The schema failed to load(`Unresolvable $ref values: ["http://localhost:1234/node","http://localhost:1234/tree"]`)
 `Recursive references between schemas, invalid tree`|The schema failed to load(`Unresolvable $ref values: ["http://localhost:1234/node","http://localhost:1234/tree"]`)

@@ -2,8 +2,6 @@
 
 # All validators fail this test
 
-`Proper UTF-16 surrogate pair handling: patternProperties, doesn&#39;t match two`
-
 `some languages do not distinguish between different types of numeric value, a float is not an integer even without fractional part`
 
 # [`revalidator`](https://github.com/flatiron/revalidator) failed tests
@@ -189,6 +187,7 @@ that is the case for these tests.
 `Proper UTF-16 surrogate pair handling: pattern, doesn't match two`|Expected result: `false` but validator returned: `true`
 `Proper UTF-16 surrogate pair handling: pattern, doesn't match one ASCII`|Expected result: `false` but validator returned: `true`
 `Proper UTF-16 surrogate pair handling: pattern, doesn't match two ASCII`|Expected result: `false` but validator returned: `true`
+`Proper UTF-16 surrogate pair handling: patternProperties, doesn't match two`|Expected result: `false` but validator returned: `true`
 `pattern validation, a non-matching pattern is invalid`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
 `pattern validation, ignores null`|Expected result: `true` but validator returned: `"Cannot convert undefined or null to object"`. **This excludes this validator from performance tests**
 `properties, patternProperties, additionalProperties interaction, additionalProperty validates others`|Expected result: `true` but validator returned: `"Cannot read property 'format' of undefined"`. **This excludes this validator from performance tests**
