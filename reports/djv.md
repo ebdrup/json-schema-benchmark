@@ -1,8 +1,5 @@
 # [`djv`](https://github.com/korzio/djv#readme) - test summary
 
-# All validators fail this test
-
-`some languages do not distinguish between different types of numeric value, a float is not an integer even without fractional part`
 
 # [`djv`](https://github.com/korzio/djv#readme) failed tests
 
@@ -11,6 +8,7 @@ that is the case for these tests.
 
 |test failed|reason
 |-----------|------
+`items + contains, matches items, does not match contains`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
 `dependencies with escaped characters, valid object 1`|The schema failed to load(`Invalid or unexpected token`). **This excludes this validator from performance tests**
 `dependencies with escaped characters, valid object 2`|The schema failed to load(`Invalid or unexpected token`). **This excludes this validator from performance tests**
 `dependencies with escaped characters, valid object 3`|The schema failed to load(`Invalid or unexpected token`). **This excludes this validator from performance tests**
@@ -48,12 +46,19 @@ that is the case for these tests.
 `validation of date-time strings, ignores arrays`|Expected result: `true` but validator returned: `false`. **This excludes this validator from performance tests**
 `validation of date-time strings, ignores booleans`|Expected result: `true` but validator returned: `false`. **This excludes this validator from performance tests**
 `validation of date-time strings, ignores null`|Expected result: `true` but validator returned: `false`. **This excludes this validator from performance tests**
+`validation of JSON pointers, ignores integers`|Expected result: `true` but validator returned: `false`. **This excludes this validator from performance tests**
+`validation of JSON pointers, ignores floats`|Expected result: `true` but validator returned: `false`. **This excludes this validator from performance tests**
+`validation of JSON pointers, ignores objects`|Expected result: `true` but validator returned: `false`. **This excludes this validator from performance tests**
+`validation of JSON pointers, ignores booleans`|Expected result: `true` but validator returned: `false`. **This excludes this validator from performance tests**
+`validation of JSON pointers, ignores null`|Expected result: `true` but validator returned: `false`. **This excludes this validator from performance tests**
 `validation of URIs, ignores integers`|Expected result: `true` but validator returned: `false`. **This excludes this validator from performance tests**
 `validation of URIs, ignores floats`|Expected result: `true` but validator returned: `false`. **This excludes this validator from performance tests**
 `validation of URIs, ignores objects`|Expected result: `true` but validator returned: `false`. **This excludes this validator from performance tests**
 `validation of URIs, ignores arrays`|Expected result: `true` but validator returned: `false`. **This excludes this validator from performance tests**
 `validation of URIs, ignores booleans`|Expected result: `true` but validator returned: `false`. **This excludes this validator from performance tests**
 `validation of URIs, ignores null`|Expected result: `true` but validator returned: `false`. **This excludes this validator from performance tests**
+`validation of URI references, ignores objects`|Expected result: `true` but validator returned: `false`. **This excludes this validator from performance tests**
+`validation of URI templates, ignores objects`|Expected result: `true` but validator returned: `false`. **This excludes this validator from performance tests**
 `validation of e-mail addresses, dot before local part is not valid`|Expected result: `false` but validator returned: `true`
 `validation of e-mail addresses, dot after local part is not valid`|Expected result: `false` but validator returned: `true`
 `validation of e-mail addresses, two subsequent dots inside local part are not valid`|Expected result: `false` but validator returned: `true`
