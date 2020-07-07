@@ -24,6 +24,7 @@ const schemasafe = require("@exodus/schemasafe");
 let cfworker;
 
 const refs = {
+  "http://json-schema.org/draft-06/schema": require("./refs/json-schema-draft-06.json"),
   "http://json-schema.org/draft-04/schema": require("./refs/json-schema-draft-04.json"),
   "http://localhost:1234/integer.json": require("./JSON-Schema-Test-Suite/remotes/integer.json"),
   "http://localhost:1234/subSchemas.json": require("./JSON-Schema-Test-Suite/remotes/subSchemas.json"),
@@ -69,7 +70,7 @@ const validators = [
   {
     name: "ajv",
     setup: function(schema) {
-      ajv._opts.defaultMeta = "http://json-schema.org/draft-04/schema";
+      ajv._opts.defaultMeta = "http://json-schema.org/draft-06/schema";
       return ajv.compile(schema);
     },
     test: function(instance, json, schema) {
@@ -122,7 +123,7 @@ const validators = [
   {
     name: "djv",
     setup: function(schema) {
-      djv.useVersion("draft-04");
+      djv.useVersion("draft-06");
       return djv.addSchema("test", schema).fn;
     },
     test: function(instance, json, schema) {
@@ -155,7 +156,7 @@ const validators = [
     name: "jsck",
     setup: function(schema) {
       // no $refs supported
-      return new jsck.draft4(schema);
+      return new jsck.draft4(schema); // draft-04 is max supported version
     },
     test: function(instance, json, schema) {
       return instance.validate(json).valid;
@@ -265,7 +266,7 @@ const validators = [
   {
     name: "json-schema-library",
     setup: function(schema) {
-      return new jlib.cores.Draft04(schema);
+      return new jlib.cores.Draft04(schema); // draft-04 is max supported version
     },
     test: function(instance, json, schema) {
       return instance.isValid(json);
@@ -287,7 +288,7 @@ const validators = [
   {
     name: "@cfworker/json-schema",
     setup: (schema) => {
-      const validator = new cfworker.Validator(schema, "4");
+      const validator = new cfworker.Validator(schema, "6");
       Object.keys(refs).forEach((id) => validator.addSchema(refs[id], id));
       return validator;
     },

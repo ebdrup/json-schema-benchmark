@@ -78,11 +78,11 @@ module.exports = function(validators) {
         `uniqueItems validation`,
       ];
       var testSuites = readTests(
-        path.join(__dirname + "/JSON-Schema-Test-Suite/tests/draft4/")
+        path.join(__dirname + "/JSON-Schema-Test-Suite/tests/draft6/")
       );
       var optionalTests = getTestNames(
         readTests(
-          path.join(__dirname + "/JSON-Schema-Test-Suite/tests/draft4/optional")
+          path.join(__dirname + "/JSON-Schema-Test-Suite/tests/draft6/optional")
         )
       );
       excludeTests = excludeTests.concat(optionalTests);
