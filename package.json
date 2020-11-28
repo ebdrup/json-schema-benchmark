@@ -13,7 +13,6 @@
     "fs-readdir-recursive": "^1.1.0",
     "is-my-json-valid": "*",
     "jassi": "*",
-    "jayschema": "*",
     "jjv": "*",
     "jsck": "*",
     "jsen": "*",
@@ -40,7 +39,7 @@
   "devDependencies": {},
   "scripts": {
     "test": "node --experimental-modules --es-module-specifier-resolution=node index.js",
-    "update": "rm -rf node_modules/* && rm package-lock.json && npm i && npm audit fix && git submodule foreach git pull origin master && npm test"
+    "update": "rm -rf node_modules/* && rm package-lock.json && npm i && npm audit fix -audit-level=critical && git submodule foreach git pull origin master && npm test"
   },
   "repository": {
     "type": "git",

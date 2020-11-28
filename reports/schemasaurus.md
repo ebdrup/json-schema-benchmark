@@ -21,6 +21,8 @@ that is the case for these tests.
 `dependencies with escaped characters, invalid object 2`|The schema failed to load(`Unexpected identifier`). **This excludes this validator from performance tests**
 `dependencies with escaped characters, invalid object 3`|The schema failed to load(`Unexpected identifier`). **This excludes this validator from performance tests**
 `dependencies with escaped characters, invalid object 4`|The schema failed to load(`Unexpected identifier`). **This excludes this validator from performance tests**
+`evaluating the same schema location against the same data location twice is not a sign of an infinite loop, passing case`|The schema failed to load(`Cannot find ref '#/definitions/int' in schema`). **This excludes this validator from performance tests**
+`evaluating the same schema location against the same data location twice is not a sign of an infinite loop, failing case`|The schema failed to load(`Cannot find ref '#/definitions/int' in schema`). **This excludes this validator from performance tests**
 `a schema given for items, JavaScript pseudo-array is valid`|Expected result: `true` but validator returned: `false`
 `an array of schemas for items, JavaScript pseudo-array is valid`|Expected result: `true` but validator returned: `false`
 `items and subitems, valid items`|Expected result: `true` but validator returned: `false`. **This excludes this validator from performance tests**
@@ -29,12 +31,16 @@ that is the case for these tests.
 `maxProperties validation, ignores arrays`|Expected result: `true` but validator returned: `false`. **This excludes this validator from performance tests**
 `minLength validation, one supplementary Unicode code point is not long enough`|Expected result: `false` but validator returned: `true`
 `minProperties validation, ignores arrays`|Expected result: `true` but validator returned: `false`. **This excludes this validator from performance tests**
-`ECMA 262 regex non-compliance, ECMA 262 has no support for \Z anchor from .NET`|The schema failed to load(`Unknown format 'regex'. Did you forget to register it?`)
+`all integers are multiples of 0.5, if overflow is handled, valid if optional overflow handling is implemented`|Expected result: `true` but validator returned: `false`
 `validation of date-time strings, a invalid day in date-time string`|Expected result: `false` but validator returned: `true`
 `validation of date-time strings, an invalid offset in date-time string`|Expected result: `false` but validator returned: `true`
 `validation of e-mail addresses, dot before local part is not valid`|Expected result: `false` but validator returned: `true`
 `validation of e-mail addresses, dot after local part is not valid`|Expected result: `false` but validator returned: `true`
 `validation of e-mail addresses, two subsequent dots inside local part are not valid`|Expected result: `false` but validator returned: `true`
+`validation of IPv6 addresses, leading whitespace is invalid`|Expected result: `false` but validator returned: `true`
+`validation of IPv6 addresses, trailing whitespace is invalid`|Expected result: `false` but validator returned: `true`
+`validation of IPv6 addresses, zone id is not a part of ipv6 address`|Expected result: `false` but validator returned: `true`
+`validation of URIs, an invalid URI with comma in scheme`|Expected result: `false` but validator returned: `true`
 `Proper UTF-16 surrogate pair handling: pattern, matches empty`|Expected result: `true` but validator returned: `false`
 `Proper UTF-16 surrogate pair handling: pattern, matches two`|Expected result: `true` but validator returned: `false`
 `Proper UTF-16 surrogate pair handling: patternProperties, doesn't match two`|Expected result: `false` but validator returned: `true`

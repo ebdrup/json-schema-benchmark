@@ -63,6 +63,7 @@ that is the case for these tests.
 `simple enum validation, something else is invalid`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
 `heterogeneous enum validation, something else is invalid`|Expected result: `false` but validator returned: `"Cannot convert undefined or null to object"`
 `heterogeneous enum validation, objects are deep compared`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
+`heterogeneous enum validation, extra properties in object is invalid`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
 `heterogeneous enum-with-null validation, null is valid`|Expected result: `true` but validator returned: `"Cannot convert undefined or null to object"`. **This excludes this validator from performance tests**
 `heterogeneous enum-with-null validation, something else is invalid`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
 `enums in properties, missing required property is invalid`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
@@ -81,6 +82,7 @@ that is the case for these tests.
 `validation of hostnames, ignores null`|Expected result: `true` but validator returned: `"Cannot convert undefined or null to object"`. **This excludes this validator from performance tests**
 `validation of date-time strings, ignores null`|Expected result: `true` but validator returned: `"Cannot convert undefined or null to object"`. **This excludes this validator from performance tests**
 `validation of URIs, ignores null`|Expected result: `true` but validator returned: `"Cannot convert undefined or null to object"`. **This excludes this validator from performance tests**
+`evaluating the same schema location against the same data location twice is not a sign of an infinite loop, failing case`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
 `a schema given for items, wrong type of items`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
 `an array of schemas for items, wrong types`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
 `items and subitems, too many items`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
@@ -107,6 +109,7 @@ that is the case for these tests.
 `by int, int by int fail`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
 `by number, 35 is not multiple of 1.5`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
 `by small number, 0.00751 is not multiple of 0.0001`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
+`invalid instance should not raise error when float division = inf, always invalid, but naive implementations may raise an overflow error`|Expected result: `false` but validator returned: `true`
 `not, disallowed`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
 `not multiple types, mismatch`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
 `not multiple types, other mismatch`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
@@ -128,7 +131,6 @@ that is the case for these tests.
 `string, a bignum is not a string`|Expected result: `false` but validator returned: `true`
 `float comparison with high precision, comparison works for high numbers`|Expected result: `false` but validator returned: `true`
 `float comparison with high precision on negative numbers, comparison works for very negative numbers`|Expected result: `false` but validator returned: `true`
-`ECMA 262 regex non-compliance, ECMA 262 has no support for \Z anchor from .NET`|Expected result: `false` but validator returned: `true`
 `ECMA 262 regex $ does not match trailing newline, matches in Python, but should not in jsonschema`|Expected result: `false` but validator returned: `true`
 `ECMA 262 regex converts \t to horizontal tab, does not match`|Expected result: `false` but validator returned: `true`
 `ECMA 262 regex escapes control codes with \c and upper letter, does not match`|Expected result: `false` but validator returned: `true`
@@ -153,6 +155,8 @@ that is the case for these tests.
 `validation of date-time strings, an invalid offset in date-time string`|Expected result: `false` but validator returned: `true`
 `validation of date-time strings, an invalid date-time string`|Expected result: `false` but validator returned: `true`
 `validation of date-time strings, only RFC3339 not all of ISO 8601 are valid`|Expected result: `false` but validator returned: `true`
+`validation of date-time strings, invalid non-padded month dates`|Expected result: `false` but validator returned: `true`
+`validation of date-time strings, invalid non-padded day dates`|Expected result: `false` but validator returned: `true`
 `validation of e-mail addresses, an invalid e-mail address`|Expected result: `false` but validator returned: `true`
 `validation of e-mail addresses, dot before local part is not valid`|Expected result: `false` but validator returned: `true`
 `validation of e-mail addresses, dot after local part is not valid`|Expected result: `false` but validator returned: `true`
@@ -174,15 +178,30 @@ that is the case for these tests.
 `validation of IPv6 addresses, an IPv6 address with out-of-range values`|Expected result: `false` but validator returned: `true`
 `validation of IPv6 addresses, an IPv6 address with too many components`|Expected result: `false` but validator returned: `true`
 `validation of IPv6 addresses, an IPv6 address containing illegal characters`|Expected result: `false` but validator returned: `true`
+`validation of IPv6 addresses, missing leading octet is invalid`|Expected result: `false` but validator returned: `true`
+`validation of IPv6 addresses, missing trailing octet is invalid`|Expected result: `false` but validator returned: `true`
+`validation of IPv6 addresses, missing leading octet with omitted octets later`|Expected result: `false` but validator returned: `true`
 `validation of IPv6 addresses, two sets of double colons is invalid`|Expected result: `false` but validator returned: `true`
 `validation of IPv6 addresses, mixed format with ipv4 section with octet out of range`|Expected result: `false` but validator returned: `true`
 `validation of IPv6 addresses, mixed format with ipv4 section with a hex octet`|Expected result: `false` but validator returned: `true`
+`validation of IPv6 addresses, triple colons is invalid`|Expected result: `false` but validator returned: `true`
+`validation of IPv6 addresses, insufficient octets without double colons`|Expected result: `false` but validator returned: `true`
+`validation of IPv6 addresses, no colons is invalid`|Expected result: `false` but validator returned: `true`
+`validation of IPv6 addresses, ipv4 is not ipv6`|Expected result: `false` but validator returned: `true`
+`validation of IPv6 addresses, ipv4 segment must have 4 octets`|Expected result: `false` but validator returned: `true`
+`validation of IPv6 addresses, leading whitespace is invalid`|Expected result: `false` but validator returned: `true`
+`validation of IPv6 addresses, trailing whitespace is invalid`|Expected result: `false` but validator returned: `true`
+`validation of IPv6 addresses, netmask is not a part of ipv6 address`|Expected result: `false` but validator returned: `true`
+`validation of IPv6 addresses, zone id is not a part of ipv6 address`|Expected result: `false` but validator returned: `true`
+`validation of IPv6 addresses, a long invalid ipv6, below length limit, first`|Expected result: `false` but validator returned: `true`
+`validation of IPv6 addresses, a long invalid ipv6, below length limit, second`|Expected result: `false` but validator returned: `true`
 `validation of URIs, an invalid protocol-relative URI Reference`|Expected result: `false` but validator returned: `true`
 `validation of URIs, an invalid relative URI Reference`|Expected result: `false` but validator returned: `true`
 `validation of URIs, an invalid URI`|Expected result: `false` but validator returned: `true`
 `validation of URIs, an invalid URI though valid URI reference`|Expected result: `false` but validator returned: `true`
 `validation of URIs, an invalid URI with spaces`|Expected result: `false` but validator returned: `true`
 `validation of URIs, an invalid URI with spaces and missing scheme`|Expected result: `false` but validator returned: `true`
+`validation of URIs, an invalid URI with comma in scheme`|Expected result: `false` but validator returned: `true`
 `Proper UTF-16 surrogate pair handling: pattern, doesn't match one`|Expected result: `false` but validator returned: `true`
 `Proper UTF-16 surrogate pair handling: pattern, doesn't match two`|Expected result: `false` but validator returned: `true`
 `Proper UTF-16 surrogate pair handling: pattern, doesn't match one ASCII`|Expected result: `false` but validator returned: `true`
@@ -208,6 +227,7 @@ that is the case for these tests.
 `Location-independent identifier, mismatch`|Expected result: `false` but validator returned: `true`
 `Location-independent identifier with absolute URI, mismatch`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
 `Location-independent identifier with base URI change in subschema, mismatch`|Expected result: `false` but validator returned: `true`
+`naive replacement of $ref with its destination is not correct, do not evaluate the $ref inside the enum`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
 `remote ref, remote ref invalid`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
 `fragment within remote ref, remote fragment invalid`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
 `ref within remote ref, ref within ref invalid`|Expected result: `false` but validator returned: `true`

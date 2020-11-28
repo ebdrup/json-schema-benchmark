@@ -18,7 +18,7 @@ that is the case for these tests.
 `dependencies with escaped characters, invalid object 2`|The schema failed to load(`Invalid or unexpected token`). **This excludes this validator from performance tests**
 `dependencies with escaped characters, invalid object 3`|The schema failed to load(`Invalid or unexpected token`). **This excludes this validator from performance tests**
 `dependencies with escaped characters, invalid object 4`|The schema failed to load(`Invalid or unexpected token`). **This excludes this validator from performance tests**
-`ECMA 262 regex non-compliance, ECMA 262 has no support for \Z anchor from .NET`|Expected result: `false` but validator returned: `true`
+`all integers are multiples of 0.5, if overflow is handled, valid if optional overflow handling is implemented`|Expected result: `true` but validator returned: `false`
 `validation of date-time strings, a invalid day in date-time string`|Expected result: `false` but validator returned: `true`
 `validation of date-time strings, an invalid offset in date-time string`|Expected result: `false` but validator returned: `true`
 `validation of date-time strings, case-insensitive T and Z`|Expected result: `true` but validator returned: `false`
@@ -26,6 +26,8 @@ that is the case for these tests.
 `validation of e-mail addresses, dot after local part is not valid`|Expected result: `false` but validator returned: `true`
 `validation of e-mail addresses, two subsequent dots inside local part are not valid`|Expected result: `false` but validator returned: `true`
 `validation of IPv6 addresses, mixed format with the ipv4 section as decimal octets`|Expected result: `true` but validator returned: `false`
+`validation of IPv6 addresses, zone id is not a part of ipv6 address`|Expected result: `false` but validator returned: `true`
+`validation of IPv6 addresses, a long valid ipv6`|Expected result: `true` but validator returned: `false`
 `validation of URIs, a valid mailto URI`|Expected result: `true` but validator returned: `false`
 `validation of URIs, a valid newsgroup URI`|Expected result: `true` but validator returned: `false`
 `validation of URIs, a valid tel URI`|Expected result: `true` but validator returned: `false`
@@ -36,6 +38,12 @@ that is the case for these tests.
 `Proper UTF-16 surrogate pair handling: patternProperties, doesn't match two`|Expected result: `false` but validator returned: `true`
 `properties with escaped characters, object with all numbers is valid`|The schema failed to load(`Invalid or unexpected token`). **This excludes this validator from performance tests**
 `properties with escaped characters, object with strings is invalid`|The schema failed to load(`Invalid or unexpected token`). **This excludes this validator from performance tests**
+`base URI change, base URI change ref valid`|The schema failed to load(`jsen: invalid schema reference http://localhost:1234/baseUriChange/folderInteger.json`)
+`base URI change, base URI change ref invalid`|The schema failed to load(`jsen: invalid schema reference http://localhost:1234/baseUriChange/folderInteger.json`)
+`base URI change - change folder, number is valid`|The schema failed to load(`jsen: invalid schema reference http://localhost:1234/baseUriChangeFolder/folderInteger.json`)
+`base URI change - change folder, string is invalid`|The schema failed to load(`jsen: invalid schema reference http://localhost:1234/baseUriChangeFolder/folderInteger.json`)
+`base URI change - change folder in subschema, number is valid`|The schema failed to load(`jsen: invalid schema reference http://localhost:1234/baseUriChangeFolderInSubschema/folderInteger.json`)
+`base URI change - change folder in subschema, string is invalid`|The schema failed to load(`jsen: invalid schema reference http://localhost:1234/baseUriChangeFolderInSubschema/folderInteger.json`)
 `root ref in remote ref, string is valid`|Expected result: `true` but validator returned: `false`
 `root ref in remote ref, object is invalid`|Expected result: `false` but validator returned: `true`
 `required with escaped characters, object with all properties present is valid`|The schema failed to load(`Invalid or unexpected token`). **This excludes this validator from performance tests**

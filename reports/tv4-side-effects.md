@@ -274,7 +274,7 @@ When running tests [`tv4`](https://github.com/geraintluff/tv4) mutated either th
 {
 	"id": "http://localhost:1234/",
 	"items": {
-		"id": "folder/",
+		"id": "baseUriChange/",
 		"items": {
 			"$ref": "folderInteger.json"
 		}
@@ -286,9 +286,9 @@ When running tests [`tv4`](https://github.com/geraintluff/tv4) mutated either th
 {
 	"id": "http://localhost:1234/",
 	"items": {
-		"id": "http://localhost:1234/folder/",
+		"id": "http://localhost:1234/baseUriChange/",
 		"items": {
-			"$ref": "http://localhost:1234/folder/folderInteger.json"
+			"$ref": "http://localhost:1234/baseUriChange/folderInteger.json"
 		}
 	}
 }
@@ -301,7 +301,7 @@ When running tests [`tv4`](https://github.com/geraintluff/tv4) mutated either th
 {
 	"id": "http://localhost:1234/",
 	"items": {
-		"id": "folder/",
+		"id": "baseUriChange/",
 		"items": {
 			"$ref": "folderInteger.json"
 		}
@@ -313,9 +313,9 @@ When running tests [`tv4`](https://github.com/geraintluff/tv4) mutated either th
 {
 	"id": "http://localhost:1234/",
 	"items": {
-		"id": "http://localhost:1234/folder/",
+		"id": "http://localhost:1234/baseUriChange/",
 		"items": {
-			"$ref": "http://localhost:1234/folder/folderInteger.json"
+			"$ref": "http://localhost:1234/baseUriChange/folderInteger.json"
 		}
 	}
 }
@@ -335,7 +335,7 @@ When running tests [`tv4`](https://github.com/geraintluff/tv4) mutated either th
 	},
 	"definitions": {
 		"baz": {
-			"id": "folder/",
+			"id": "baseUriChangeFolder/",
 			"type": "array",
 			"items": {
 				"$ref": "folderInteger.json"
@@ -356,10 +356,10 @@ When running tests [`tv4`](https://github.com/geraintluff/tv4) mutated either th
 	},
 	"definitions": {
 		"baz": {
-			"id": "http://localhost:1234/folder/",
+			"id": "http://localhost:1234/baseUriChangeFolder/",
 			"type": "array",
 			"items": {
-				"$ref": "http://localhost:1234/folder/folderInteger.json"
+				"$ref": "http://localhost:1234/baseUriChangeFolder/folderInteger.json"
 			}
 		}
 	}
@@ -380,7 +380,7 @@ When running tests [`tv4`](https://github.com/geraintluff/tv4) mutated either th
 	},
 	"definitions": {
 		"baz": {
-			"id": "folder/",
+			"id": "baseUriChangeFolder/",
 			"type": "array",
 			"items": {
 				"$ref": "folderInteger.json"
@@ -401,10 +401,10 @@ When running tests [`tv4`](https://github.com/geraintluff/tv4) mutated either th
 	},
 	"definitions": {
 		"baz": {
-			"id": "http://localhost:1234/folder/",
+			"id": "http://localhost:1234/baseUriChangeFolder/",
 			"type": "array",
 			"items": {
-				"$ref": "http://localhost:1234/folder/folderInteger.json"
+				"$ref": "http://localhost:1234/baseUriChangeFolder/folderInteger.json"
 			}
 		}
 	}
@@ -425,7 +425,7 @@ When running tests [`tv4`](https://github.com/geraintluff/tv4) mutated either th
 	},
 	"definitions": {
 		"baz": {
-			"id": "folder/",
+			"id": "baseUriChangeFolderInSubschema/",
 			"definitions": {
 				"bar": {
 					"type": "array",
@@ -450,12 +450,12 @@ When running tests [`tv4`](https://github.com/geraintluff/tv4) mutated either th
 	},
 	"definitions": {
 		"baz": {
-			"id": "http://localhost:1234/folder/",
+			"id": "http://localhost:1234/baseUriChangeFolderInSubschema/",
 			"definitions": {
 				"bar": {
 					"type": "array",
 					"items": {
-						"$ref": "http://localhost:1234/folder/folderInteger.json"
+						"$ref": "http://localhost:1234/baseUriChangeFolderInSubschema/folderInteger.json"
 					}
 				}
 			}
@@ -478,7 +478,7 @@ When running tests [`tv4`](https://github.com/geraintluff/tv4) mutated either th
 	},
 	"definitions": {
 		"baz": {
-			"id": "folder/",
+			"id": "baseUriChangeFolderInSubschema/",
 			"definitions": {
 				"bar": {
 					"type": "array",
@@ -503,12 +503,12 @@ When running tests [`tv4`](https://github.com/geraintluff/tv4) mutated either th
 	},
 	"definitions": {
 		"baz": {
-			"id": "http://localhost:1234/folder/",
+			"id": "http://localhost:1234/baseUriChangeFolderInSubschema/",
 			"definitions": {
 				"bar": {
 					"type": "array",
 					"items": {
-						"$ref": "http://localhost:1234/folder/folderInteger.json"
+						"$ref": "http://localhost:1234/baseUriChangeFolderInSubschema/folderInteger.json"
 					}
 				}
 			}

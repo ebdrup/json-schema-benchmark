@@ -28,7 +28,6 @@ const refs = {
   "http://localhost:1234/integer.json": require("./JSON-Schema-Test-Suite/remotes/integer.json"),
   "http://localhost:1234/subSchemas.json": require("./JSON-Schema-Test-Suite/remotes/subSchemas.json"),
   "http://localhost:1234/name.json": require("./JSON-Schema-Test-Suite/remotes/name.json"),
-  "http://localhost:1234/folder/folderInteger.json": require("./JSON-Schema-Test-Suite/remotes/folder/folderInteger.json"),
 };
 
 Object.keys(refs).forEach(function(uri) {

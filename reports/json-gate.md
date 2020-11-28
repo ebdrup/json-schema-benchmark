@@ -79,6 +79,7 @@ that is the case for these tests.
 `validation of URIs, ignores arrays`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'uri' format`). **This excludes this validator from performance tests**
 `validation of URIs, ignores booleans`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'uri' format`). **This excludes this validator from performance tests**
 `validation of URIs, ignores null`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'uri' format`). **This excludes this validator from performance tests**
+`evaluating the same schema location against the same data location twice is not a sign of an infinite loop, failing case`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
 `items and subitems, too many sub-items`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
 `items and subitems, wrong item`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
 `items and subitems, wrong sub-item`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
@@ -90,6 +91,7 @@ that is the case for these tests.
 `by int, int by int fail`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
 `by number, 35 is not multiple of 1.5`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
 `by small number, 0.00751 is not multiple of 0.0001`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
+`invalid instance should not raise error when float division = inf, always invalid, but naive implementations may raise an overflow error`|Expected result: `false` but validator returned: `true`
 `not, disallowed`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
 `not multiple types, mismatch`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
 `not multiple types, other mismatch`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
@@ -106,7 +108,6 @@ that is the case for these tests.
 `oneOf with missing optional property, both oneOf valid`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
 `oneOf with missing optional property, neither oneOf valid`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
 `nested oneOf, to check validation semantics, anything non-null is invalid`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
-`ECMA 262 regex non-compliance, ECMA 262 has no support for \Z anchor from .NET`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'regex' format`)
 `validation of date-time strings, a valid date-time string`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'date-time' format`)
 `validation of date-time strings, a valid date-time string without second fraction`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'date-time' format`)
 `validation of date-time strings, a valid date-time string with plus offset`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'date-time' format`)
@@ -116,6 +117,8 @@ that is the case for these tests.
 `validation of date-time strings, an invalid date-time string`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'date-time' format`)
 `validation of date-time strings, case-insensitive T and Z`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'date-time' format`)
 `validation of date-time strings, only RFC3339 not all of ISO 8601 are valid`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'date-time' format`)
+`validation of date-time strings, invalid non-padded month dates`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'date-time' format`)
+`validation of date-time strings, invalid non-padded day dates`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'date-time' format`)
 `validation of e-mail addresses, a valid e-mail address`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'email' format`)
 `validation of e-mail addresses, an invalid e-mail address`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'email' format`)
 `validation of e-mail addresses, tilde in local part is valid`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'email' format`)
@@ -146,11 +149,28 @@ that is the case for these tests.
 `validation of IPv6 addresses, no digits is valid`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'ipv6' format`)
 `validation of IPv6 addresses, leading colons is valid`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'ipv6' format`)
 `validation of IPv6 addresses, trailing colons is valid`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'ipv6' format`)
+`validation of IPv6 addresses, missing leading octet is invalid`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'ipv6' format`)
+`validation of IPv6 addresses, missing trailing octet is invalid`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'ipv6' format`)
+`validation of IPv6 addresses, missing leading octet with omitted octets later`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'ipv6' format`)
 `validation of IPv6 addresses, two sets of double colons is invalid`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'ipv6' format`)
 `validation of IPv6 addresses, mixed format with the ipv4 section as decimal octets`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'ipv6' format`)
 `validation of IPv6 addresses, mixed format with double colons between the sections`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'ipv6' format`)
 `validation of IPv6 addresses, mixed format with ipv4 section with octet out of range`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'ipv6' format`)
 `validation of IPv6 addresses, mixed format with ipv4 section with a hex octet`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'ipv6' format`)
+`validation of IPv6 addresses, mixed format with leading double colons (ipv4-mapped ipv6 address)`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'ipv6' format`)
+`validation of IPv6 addresses, triple colons is invalid`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'ipv6' format`)
+`validation of IPv6 addresses, 8 octets`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'ipv6' format`)
+`validation of IPv6 addresses, insufficient octets without double colons`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'ipv6' format`)
+`validation of IPv6 addresses, no colons is invalid`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'ipv6' format`)
+`validation of IPv6 addresses, ipv4 is not ipv6`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'ipv6' format`)
+`validation of IPv6 addresses, ipv4 segment must have 4 octets`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'ipv6' format`)
+`validation of IPv6 addresses, leading whitespace is invalid`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'ipv6' format`)
+`validation of IPv6 addresses, trailing whitespace is invalid`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'ipv6' format`)
+`validation of IPv6 addresses, netmask is not a part of ipv6 address`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'ipv6' format`)
+`validation of IPv6 addresses, zone id is not a part of ipv6 address`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'ipv6' format`)
+`validation of IPv6 addresses, a long valid ipv6`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'ipv6' format`)
+`validation of IPv6 addresses, a long invalid ipv6, below length limit, first`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'ipv6' format`)
+`validation of IPv6 addresses, a long invalid ipv6, below length limit, second`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'ipv6' format`)
 `validation of URIs, a valid URL with anchor tag`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'uri' format`)
 `validation of URIs, a valid URL with anchor tag and parantheses`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'uri' format`)
 `validation of URIs, a valid URL with URL-encoded stuff`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'uri' format`)
@@ -170,6 +190,7 @@ that is the case for these tests.
 `validation of URIs, an invalid URI though valid URI reference`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'uri' format`)
 `validation of URIs, an invalid URI with spaces`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'uri' format`)
 `validation of URIs, an invalid URI with spaces and missing scheme`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'uri' format`)
+`validation of URIs, an invalid URI with comma in scheme`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'uri' format`)
 `Proper UTF-16 surrogate pair handling: pattern, matches empty`|Expected result: `true` but validator returned: `false`
 `Proper UTF-16 surrogate pair handling: pattern, matches two`|Expected result: `true` but validator returned: `false`
 `Proper UTF-16 surrogate pair handling: patternProperties, doesn't match two`|Expected result: `false` but validator returned: `true`

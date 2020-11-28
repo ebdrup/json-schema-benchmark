@@ -27,7 +27,10 @@ that is the case for these tests.
 `items and subitems, fewer items is valid`|Expected result: `true` but validator returned: `false`. **This excludes this validator from performance tests**
 `oneOf with required, first valid - valid`|Expected result: `true` but validator returned: `false`. **This excludes this validator from performance tests**
 `oneOf with required, second valid - valid`|Expected result: `true` but validator returned: `false`. **This excludes this validator from performance tests**
-`ECMA 262 regex non-compliance, ECMA 262 has no support for \Z anchor from .NET`|Expected result: `false` but validator returned: `true`
+`all integers are multiples of 0.5, if overflow is handled, valid if optional overflow handling is implemented`|Expected result: `true` but validator returned: `false`
+`validation of IPv6 addresses, leading whitespace is invalid`|Expected result: `false` but validator returned: `true`
+`validation of IPv6 addresses, trailing whitespace is invalid`|Expected result: `false` but validator returned: `true`
+`validation of IPv6 addresses, zone id is not a part of ipv6 address`|Expected result: `false` but validator returned: `true`
 `validation of URIs, a valid puny-coded URL `|Expected result: `true` but validator returned: `false`
 `validation of URIs, a valid URL `|Expected result: `true` but validator returned: `false`
 `validation of URIs, a valid mailto URI`|Expected result: `true` but validator returned: `false`
@@ -54,12 +57,12 @@ that is the case for these tests.
 `fragment within remote ref, remote fragment invalid`|Expected result: `false` but validator returned: `"validators.http://localhost:1234/subSchemas.json#/integer is not a function"`. **This excludes this validator from performance tests**
 `ref within remote ref, ref within ref valid`|Expected result: `true` but validator returned: `"validators.http://localhost:1234/subSchemas.json#/refToInteger is not a function"`
 `ref within remote ref, ref within ref invalid`|Expected result: `false` but validator returned: `"validators.http://localhost:1234/subSchemas.json#/refToInteger is not a function"`
-`base URI change, base URI change ref valid`|The schema failed to load(`invalid ref: folderInteger.json in folder/`)
-`base URI change, base URI change ref invalid`|The schema failed to load(`invalid ref: folderInteger.json in folder/`)
-`base URI change - change folder, number is valid`|The schema failed to load(`invalid ref: folderInteger.json in folder/`)
-`base URI change - change folder, string is invalid`|The schema failed to load(`invalid ref: folderInteger.json in folder/`)
-`base URI change - change folder in subschema, number is valid`|The schema failed to load(`invalid ref: folderInteger.json in folder/`)
-`base URI change - change folder in subschema, string is invalid`|The schema failed to load(`invalid ref: folderInteger.json in folder/`)
+`base URI change, base URI change ref valid`|The schema failed to load(`invalid ref: folderInteger.json in baseUriChange/`)
+`base URI change, base URI change ref invalid`|The schema failed to load(`invalid ref: folderInteger.json in baseUriChange/`)
+`base URI change - change folder, number is valid`|The schema failed to load(`invalid ref: folderInteger.json in baseUriChangeFolder/`)
+`base URI change - change folder, string is invalid`|The schema failed to load(`invalid ref: folderInteger.json in baseUriChangeFolder/`)
+`base URI change - change folder in subschema, number is valid`|The schema failed to load(`invalid ref: folderInteger.json in baseUriChangeFolderInSubschema/`)
+`base URI change - change folder in subschema, string is invalid`|The schema failed to load(`invalid ref: folderInteger.json in baseUriChangeFolderInSubschema/`)
 `root ref in remote ref, string is valid`|The schema failed to load(`Cannot read property 'definitions' of undefined`)
 `root ref in remote ref, null is valid`|The schema failed to load(`Cannot read property 'definitions' of undefined`). **This excludes this validator from performance tests**
 `root ref in remote ref, object is invalid`|The schema failed to load(`Cannot read property 'definitions' of undefined`)

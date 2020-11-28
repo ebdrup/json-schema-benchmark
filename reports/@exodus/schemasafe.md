@@ -13,6 +13,12 @@ that is the case for these tests.
 |-----------|------
 `anyOf with one empty schema, string is valid`|The schema failed to load(`some checks are never reachable at #`)
 `anyOf with one empty schema, number is valid`|The schema failed to load(`some checks are never reachable at #`)
+`base URI change, base URI change ref valid`|The schema failed to load(`failed to resolve $ref: "folderInteger.json" at #/items/items`)
+`base URI change, base URI change ref invalid`|The schema failed to load(`failed to resolve $ref: "folderInteger.json" at #/items/items`)
+`base URI change - change folder, number is valid`|The schema failed to load(`failed to resolve $ref: "folderInteger.json" at http://localhost:1234/scope_change_defs1.json#/items`)
+`base URI change - change folder, string is invalid`|The schema failed to load(`failed to resolve $ref: "folderInteger.json" at http://localhost:1234/scope_change_defs1.json#/items`)
+`base URI change - change folder in subschema, number is valid`|The schema failed to load(`failed to resolve $ref: "folderInteger.json" at http://localhost:1234/baseUriChangeFolderInSubschema/#/items`)
+`base URI change - change folder in subschema, string is invalid`|The schema failed to load(`failed to resolve $ref: "folderInteger.json" at http://localhost:1234/baseUriChangeFolderInSubschema/#/items`)
 
 **All other tests passed**.
 

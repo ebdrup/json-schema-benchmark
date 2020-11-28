@@ -68,6 +68,8 @@ module.exports = function(validators) {
         `Location-independent identifier with absolute URI, match`,
         `ref within remote ref, ref within ref valid`,
         `root ref in remote ref, string is valid`,
+        `invalid instance should not raise error when float division = inf, always invalid, but naive implementations may raise an overflow error`,
+        `naive replacement of $ref with its destination is not correct, match the enum exactly`,
       ];
       var excludeTestSuites = [
         `anyOf with one empty schema`,

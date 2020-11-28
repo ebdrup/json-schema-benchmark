@@ -16,6 +16,7 @@ that is the case for these tests.
 `simple enum validation, something else is invalid`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
 `heterogeneous enum validation, something else is invalid`|Expected result: `false` but validator returned: `true`
 `heterogeneous enum validation, objects are deep compared`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
+`heterogeneous enum validation, extra properties in object is invalid`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
 `heterogeneous enum-with-null validation, something else is invalid`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
 `enums in properties, wrong foo value`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
 `enums in properties, wrong bar value`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
@@ -38,11 +39,13 @@ that is the case for these tests.
 `not multiple types, other mismatch`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
 `not more complex schema, mismatch`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
 `forbidden property, property present`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
-`ECMA 262 regex non-compliance, ECMA 262 has no support for \Z anchor from .NET`|Expected result: `false` but validator returned: `true`
+`all integers are multiples of 0.5, if overflow is handled, valid if optional overflow handling is implemented`|Expected result: `true` but validator returned: `false`
 `validation of date-time strings, a invalid day in date-time string`|Expected result: `false` but validator returned: `true`
 `validation of date-time strings, an invalid offset in date-time string`|Expected result: `false` but validator returned: `true`
 `validation of date-time strings, an invalid date-time string`|Expected result: `false` but validator returned: `true`
 `validation of date-time strings, only RFC3339 not all of ISO 8601 are valid`|Expected result: `false` but validator returned: `true`
+`validation of date-time strings, invalid non-padded month dates`|Expected result: `false` but validator returned: `true`
+`validation of date-time strings, invalid non-padded day dates`|Expected result: `false` but validator returned: `true`
 `validation of e-mail addresses, an invalid e-mail address`|Expected result: `false` but validator returned: `true`
 `validation of e-mail addresses, dot before local part is not valid`|Expected result: `false` but validator returned: `true`
 `validation of e-mail addresses, dot after local part is not valid`|Expected result: `false` but validator returned: `true`
@@ -64,15 +67,30 @@ that is the case for these tests.
 `validation of IPv6 addresses, an IPv6 address with out-of-range values`|Expected result: `false` but validator returned: `true`
 `validation of IPv6 addresses, an IPv6 address with too many components`|Expected result: `false` but validator returned: `true`
 `validation of IPv6 addresses, an IPv6 address containing illegal characters`|Expected result: `false` but validator returned: `true`
+`validation of IPv6 addresses, missing leading octet is invalid`|Expected result: `false` but validator returned: `true`
+`validation of IPv6 addresses, missing trailing octet is invalid`|Expected result: `false` but validator returned: `true`
+`validation of IPv6 addresses, missing leading octet with omitted octets later`|Expected result: `false` but validator returned: `true`
 `validation of IPv6 addresses, two sets of double colons is invalid`|Expected result: `false` but validator returned: `true`
 `validation of IPv6 addresses, mixed format with ipv4 section with octet out of range`|Expected result: `false` but validator returned: `true`
 `validation of IPv6 addresses, mixed format with ipv4 section with a hex octet`|Expected result: `false` but validator returned: `true`
+`validation of IPv6 addresses, triple colons is invalid`|Expected result: `false` but validator returned: `true`
+`validation of IPv6 addresses, insufficient octets without double colons`|Expected result: `false` but validator returned: `true`
+`validation of IPv6 addresses, no colons is invalid`|Expected result: `false` but validator returned: `true`
+`validation of IPv6 addresses, ipv4 is not ipv6`|Expected result: `false` but validator returned: `true`
+`validation of IPv6 addresses, ipv4 segment must have 4 octets`|Expected result: `false` but validator returned: `true`
+`validation of IPv6 addresses, leading whitespace is invalid`|Expected result: `false` but validator returned: `true`
+`validation of IPv6 addresses, trailing whitespace is invalid`|Expected result: `false` but validator returned: `true`
+`validation of IPv6 addresses, netmask is not a part of ipv6 address`|Expected result: `false` but validator returned: `true`
+`validation of IPv6 addresses, zone id is not a part of ipv6 address`|Expected result: `false` but validator returned: `true`
+`validation of IPv6 addresses, a long invalid ipv6, below length limit, first`|Expected result: `false` but validator returned: `true`
+`validation of IPv6 addresses, a long invalid ipv6, below length limit, second`|Expected result: `false` but validator returned: `true`
 `validation of URIs, an invalid protocol-relative URI Reference`|Expected result: `false` but validator returned: `true`
 `validation of URIs, an invalid relative URI Reference`|Expected result: `false` but validator returned: `true`
 `validation of URIs, an invalid URI`|Expected result: `false` but validator returned: `true`
 `validation of URIs, an invalid URI though valid URI reference`|Expected result: `false` but validator returned: `true`
 `validation of URIs, an invalid URI with spaces`|Expected result: `false` but validator returned: `true`
 `validation of URIs, an invalid URI with spaces and missing scheme`|Expected result: `false` but validator returned: `true`
+`validation of URIs, an invalid URI with comma in scheme`|Expected result: `false` but validator returned: `true`
 `Proper UTF-16 surrogate pair handling: pattern, matches empty`|Expected result: `true` but validator returned: `false`
 `Proper UTF-16 surrogate pair handling: pattern, matches two`|Expected result: `true` but validator returned: `false`
 `Proper UTF-16 surrogate pair handling: patternProperties, doesn't match two`|Expected result: `false` but validator returned: `true`
@@ -88,15 +106,18 @@ that is the case for these tests.
 `Location-independent identifier with absolute URI, mismatch`|The schema failed to load(`Requests not enabled - try JsonModel.setRequestFunction(func): {"method":"GET","url":"http://localhost:1234/bar"}`). **This excludes this validator from performance tests**
 `Location-independent identifier with base URI change in subschema, match`|The schema failed to load(`Requests not enabled - try JsonModel.setRequestFunction(func): {"method":"GET","url":"http://localhost:1234/nested.json"}`)
 `Location-independent identifier with base URI change in subschema, mismatch`|The schema failed to load(`Requests not enabled - try JsonModel.setRequestFunction(func): {"method":"GET","url":"http://localhost:1234/nested.json"}`)
+`naive replacement of $ref with its destination is not correct, do not evaluate the $ref inside the enum`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
 `remote ref, remote ref valid`|The schema failed to load(`Requests not enabled - try JsonModel.setRequestFunction(func): {"method":"GET","url":"http://localhost:1234/integer.json"}`). **This excludes this validator from performance tests**
 `remote ref, remote ref invalid`|The schema failed to load(`Requests not enabled - try JsonModel.setRequestFunction(func): {"method":"GET","url":"http://localhost:1234/integer.json"}`). **This excludes this validator from performance tests**
 `fragment within remote ref, remote fragment valid`|The schema failed to load(`Requests not enabled - try JsonModel.setRequestFunction(func): {"method":"GET","url":"http://localhost:1234/subSchemas.json"}`). **This excludes this validator from performance tests**
 `fragment within remote ref, remote fragment invalid`|The schema failed to load(`Requests not enabled - try JsonModel.setRequestFunction(func): {"method":"GET","url":"http://localhost:1234/subSchemas.json"}`). **This excludes this validator from performance tests**
 `ref within remote ref, ref within ref invalid`|Expected result: `false` but validator returned: `true`
-`base URI change, base URI change ref valid`|The schema failed to load(`Requests not enabled - try JsonModel.setRequestFunction(func): {"method":"GET","url":"http://localhost:1234/folder/folderInteger.json"}`)
-`base URI change, base URI change ref invalid`|The schema failed to load(`Requests not enabled - try JsonModel.setRequestFunction(func): {"method":"GET","url":"http://localhost:1234/folder/folderInteger.json"}`)
-`base URI change - change folder, string is invalid`|Expected result: `false` but validator returned: `true`
-`base URI change - change folder in subschema, string is invalid`|Expected result: `false` but validator returned: `true`
+`base URI change, base URI change ref valid`|The schema failed to load(`Requests not enabled - try JsonModel.setRequestFunction(func): {"method":"GET","url":"http://localhost:1234/baseUriChange/folderInteger.json"}`)
+`base URI change, base URI change ref invalid`|The schema failed to load(`Requests not enabled - try JsonModel.setRequestFunction(func): {"method":"GET","url":"http://localhost:1234/baseUriChange/folderInteger.json"}`)
+`base URI change - change folder, number is valid`|The schema failed to load(`Requests not enabled - try JsonModel.setRequestFunction(func): {"method":"GET","url":"http://localhost:1234/baseUriChangeFolder/folderInteger.json"}`)
+`base URI change - change folder, string is invalid`|The schema failed to load(`Requests not enabled - try JsonModel.setRequestFunction(func): {"method":"GET","url":"http://localhost:1234/baseUriChangeFolder/folderInteger.json"}`)
+`base URI change - change folder in subschema, number is valid`|The schema failed to load(`Requests not enabled - try JsonModel.setRequestFunction(func): {"method":"GET","url":"http://localhost:1234/baseUriChangeFolderInSubschema/folderInteger.json"}`)
+`base URI change - change folder in subschema, string is invalid`|The schema failed to load(`Requests not enabled - try JsonModel.setRequestFunction(func): {"method":"GET","url":"http://localhost:1234/baseUriChangeFolderInSubschema/folderInteger.json"}`)
 `root ref in remote ref, string is valid`|The schema failed to load(`Requests not enabled - try JsonModel.setRequestFunction(func): {"method":"GET","url":"http://localhost:1234/name.json"}`)
 `root ref in remote ref, null is valid`|The schema failed to load(`Requests not enabled - try JsonModel.setRequestFunction(func): {"method":"GET","url":"http://localhost:1234/name.json"}`). **This excludes this validator from performance tests**
 `root ref in remote ref, object is invalid`|The schema failed to load(`Requests not enabled - try JsonModel.setRequestFunction(func): {"method":"GET","url":"http://localhost:1234/name.json"}`)

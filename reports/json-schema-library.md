@@ -32,13 +32,21 @@ that is the case for these tests.
 `validation of URIs, ignores floats`|Expected result: `true` but validator returned: `"uri.match is not a function"`. **This excludes this validator from performance tests**
 `validation of URIs, ignores objects`|Expected result: `true` but validator returned: `false`. **This excludes this validator from performance tests**
 `validation of URIs, ignores null`|Expected result: `true` but validator returned: `false`. **This excludes this validator from performance tests**
+`all integers are multiples of 0.5, if overflow is handled, valid if optional overflow handling is implemented`|Expected result: `true` but validator returned: `false`
 `validation of e-mail addresses, dot before local part is not valid`|Expected result: `false` but validator returned: `true`
 `validation of e-mail addresses, dot after local part is not valid`|Expected result: `false` but validator returned: `true`
 `validation of e-mail addresses, two subsequent dots inside local part are not valid`|Expected result: `false` but validator returned: `true`
 `validation of host names, exceeds maximum label length`|Expected result: `false` but validator returned: `true`
+`validation of IPv6 addresses, ipv4 is not ipv6`|Expected result: `false` but validator returned: `true`
+`validation of IPv6 addresses, leading whitespace is invalid`|Expected result: `false` but validator returned: `true`
+`validation of IPv6 addresses, trailing whitespace is invalid`|Expected result: `false` but validator returned: `true`
+`validation of IPv6 addresses, zone id is not a part of ipv6 address`|Expected result: `false` but validator returned: `true`
 `Proper UTF-16 surrogate pair handling: pattern, matches empty`|Expected result: `true` but validator returned: `false`
 `Proper UTF-16 surrogate pair handling: pattern, matches two`|Expected result: `true` but validator returned: `false`
 `Proper UTF-16 surrogate pair handling: patternProperties, doesn't match two`|Expected result: `false` but validator returned: `true`
+`base URI change, base URI change ref invalid`|Expected result: `false` but validator returned: `true`
+`base URI change - change folder, number is valid`|Expected result: `true` but validator returned: `false`
+`base URI change - change folder in subschema, number is valid`|Expected result: `true` but validator returned: `false`
 `uniqueItems validation, objects are non-unique despite key order`|Expected result: `false` but validator returned: `true`
 
 **All other tests passed**.

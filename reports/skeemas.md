@@ -43,6 +43,8 @@ that is the case for these tests.
 `validation of URIs, ignores arrays`|Expected result: `true` but validator returned: `false`. **This excludes this validator from performance tests**
 `validation of URIs, ignores booleans`|Expected result: `true` but validator returned: `false`. **This excludes this validator from performance tests**
 `validation of URIs, ignores null`|Expected result: `true` but validator returned: `false`. **This excludes this validator from performance tests**
+`evaluating the same schema location against the same data location twice is not a sign of an infinite loop, passing case`|Expected result: `true` but validator returned: `false`. **This excludes this validator from performance tests**
+`all integers are multiples of 0.5, if overflow is handled, valid if optional overflow handling is implemented`|Expected result: `true` but validator returned: `false`
 `validation of date-time strings, a invalid day in date-time string`|Expected result: `false` but validator returned: `true`
 `validation of date-time strings, an invalid offset in date-time string`|Expected result: `false` but validator returned: `true`
 `validation of e-mail addresses, tilde in local part is valid`|Expected result: `true` but validator returned: `false`
@@ -51,6 +53,9 @@ that is the case for these tests.
 `validation of e-mail addresses, dot before local part is not valid`|Expected result: `false` but validator returned: `true`
 `validation of e-mail addresses, dot after local part is not valid`|Expected result: `false` but validator returned: `true`
 `validation of e-mail addresses, two subsequent dots inside local part are not valid`|Expected result: `false` but validator returned: `true`
+`validation of IPv6 addresses, leading whitespace is invalid`|Expected result: `false` but validator returned: `true`
+`validation of IPv6 addresses, trailing whitespace is invalid`|Expected result: `false` but validator returned: `true`
+`validation of IPv6 addresses, zone id is not a part of ipv6 address`|Expected result: `false` but validator returned: `true`
 `validation of URIs, a valid URL `|Expected result: `true` but validator returned: `false`
 `Proper UTF-16 surrogate pair handling: pattern, matches empty`|Expected result: `true` but validator returned: `false`
 `Proper UTF-16 surrogate pair handling: pattern, matches two`|Expected result: `true` but validator returned: `false`
@@ -63,6 +68,10 @@ that is the case for these tests.
 `Location-independent identifier with absolute URI, mismatch`|Expected result: `false` but validator returned: `"Unable to locate JSON Ref (http://localhost:1234/bar)"`. **This excludes this validator from performance tests**
 `Location-independent identifier with base URI change in subschema, match`|Expected result: `true` but validator returned: `"Unable to locate JSON Ref (http://localhost:1234/http://localhost:1234/nested.json)"`
 `Location-independent identifier with base URI change in subschema, mismatch`|Expected result: `false` but validator returned: `"Unable to locate JSON Ref (http://localhost:1234/http://localhost:1234/nested.json)"`
+`base URI change, base URI change ref valid`|Expected result: `true` but validator returned: `"Unable to locate JSON Ref (http://localhost:1234/baseUriChange/folderInteger.json)"`
+`base URI change, base URI change ref invalid`|Expected result: `false` but validator returned: `"Unable to locate JSON Ref (http://localhost:1234/baseUriChange/folderInteger.json)"`
+`base URI change - change folder, number is valid`|Expected result: `true` but validator returned: `"Unable to locate JSON Ref (http://localhost:1234/baseUriChangeFolder/folderInteger.json)"`
+`base URI change - change folder, string is invalid`|Expected result: `false` but validator returned: `"Unable to locate JSON Ref (http://localhost:1234/baseUriChangeFolder/folderInteger.json)"`
 `base URI change - change folder in subschema, number is valid`|Expected result: `true` but validator returned: `"Unable to locate JSON Ref (http://localhost:1234/folderInteger.json)"`
 `base URI change - change folder in subschema, string is invalid`|Expected result: `false` but validator returned: `"Unable to locate JSON Ref (http://localhost:1234/folderInteger.json)"`
 `uniqueItems=false validation, non-unique array of integers is valid`|Expected result: `true` but validator returned: `false`. **This excludes this validator from performance tests**
