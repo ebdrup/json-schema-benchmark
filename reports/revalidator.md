@@ -61,7 +61,7 @@ that is the case for these tests.
 `dependencies with escaped characters, invalid object 3`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
 `dependencies with escaped characters, invalid object 4`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
 `simple enum validation, something else is invalid`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
-`heterogeneous enum validation, something else is invalid`|Expected result: `false` but validator returned: `"Cannot convert undefined or null to object"`
+`heterogeneous enum validation, something else is invalid`|Expected result: `false` but validator returned: `"Cannot convert undefined or null to object"`. **This excludes this validator from performance tests**
 `heterogeneous enum validation, objects are deep compared`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
 `heterogeneous enum validation, extra properties in object is invalid`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
 `heterogeneous enum-with-null validation, null is valid`|Expected result: `true` but validator returned: `"Cannot convert undefined or null to object"`. **This excludes this validator from performance tests**
@@ -128,73 +128,73 @@ that is the case for these tests.
 `oneOf with missing optional property, neither oneOf valid`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
 `nested oneOf, to check validation semantics, null is valid`|Expected result: `true` but validator returned: `"Cannot convert undefined or null to object"`. **This excludes this validator from performance tests**
 `nested oneOf, to check validation semantics, anything non-null is invalid`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
-`string, a bignum is not a string`|Expected result: `false` but validator returned: `true`
-`float comparison with high precision, comparison works for high numbers`|Expected result: `false` but validator returned: `true`
-`float comparison with high precision on negative numbers, comparison works for very negative numbers`|Expected result: `false` but validator returned: `true`
-`ECMA 262 regex $ does not match trailing newline, matches in Python, but should not in jsonschema`|Expected result: `false` but validator returned: `true`
-`ECMA 262 regex converts \t to horizontal tab, does not match`|Expected result: `false` but validator returned: `true`
-`ECMA 262 regex escapes control codes with \c and upper letter, does not match`|Expected result: `false` but validator returned: `true`
-`ECMA 262 regex escapes control codes with \c and lower letter, does not match`|Expected result: `false` but validator returned: `true`
-`ECMA 262 \d matches ascii digits only, NKO DIGIT ZERO does not match (unlike e.g. Python)`|Expected result: `false` but validator returned: `true`
-`ECMA 262 \d matches ascii digits only, NKO DIGIT ZERO (as \u escape) does not match`|Expected result: `false` but validator returned: `true`
-`ECMA 262 \D matches everything but ascii digits, ASCII zero does not match`|Expected result: `false` but validator returned: `true`
-`ECMA 262 \w matches ascii letters only, latin-1 e-acute does not match (unlike e.g. Python)`|Expected result: `false` but validator returned: `true`
-`ECMA 262 \W matches everything but ascii letters, ASCII 'a' does not match`|Expected result: `false` but validator returned: `true`
-`ECMA 262 \s matches whitespace, Non-whitespace control does not match`|Expected result: `false` but validator returned: `true`
-`ECMA 262 \s matches whitespace, Non-whitespace does not match`|Expected result: `false` but validator returned: `true`
-`ECMA 262 \S matches everything but whitespace, ASCII space does not match`|Expected result: `false` but validator returned: `true`
-`ECMA 262 \S matches everything but whitespace, Character tabulation does not match`|Expected result: `false` but validator returned: `true`
-`ECMA 262 \S matches everything but whitespace, Line tabulation does not match`|Expected result: `false` but validator returned: `true`
-`ECMA 262 \S matches everything but whitespace, Form feed does not match`|Expected result: `false` but validator returned: `true`
-`ECMA 262 \S matches everything but whitespace, latin-1 non-breaking-space does not match`|Expected result: `false` but validator returned: `true`
-`ECMA 262 \S matches everything but whitespace, zero-width whitespace does not match`|Expected result: `false` but validator returned: `true`
-`ECMA 262 \S matches everything but whitespace, line feed does not match (line terminator)`|Expected result: `false` but validator returned: `true`
-`ECMA 262 \S matches everything but whitespace, paragraph separator does not match (line terminator)`|Expected result: `false` but validator returned: `true`
-`ECMA 262 \S matches everything but whitespace, EM SPACE does not match (Space_Separator)`|Expected result: `false` but validator returned: `true`
+`string, a bignum is not a string`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
+`float comparison with high precision, comparison works for high numbers`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
+`float comparison with high precision on negative numbers, comparison works for very negative numbers`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
+`ECMA 262 regex $ does not match trailing newline, matches in Python, but should not in jsonschema`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
+`ECMA 262 regex converts \t to horizontal tab, does not match`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
+`ECMA 262 regex escapes control codes with \c and upper letter, does not match`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
+`ECMA 262 regex escapes control codes with \c and lower letter, does not match`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
+`ECMA 262 \d matches ascii digits only, NKO DIGIT ZERO does not match (unlike e.g. Python)`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
+`ECMA 262 \d matches ascii digits only, NKO DIGIT ZERO (as \u escape) does not match`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
+`ECMA 262 \D matches everything but ascii digits, ASCII zero does not match`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
+`ECMA 262 \w matches ascii letters only, latin-1 e-acute does not match (unlike e.g. Python)`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
+`ECMA 262 \W matches everything but ascii letters, ASCII 'a' does not match`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
+`ECMA 262 \s matches whitespace, Non-whitespace control does not match`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
+`ECMA 262 \s matches whitespace, Non-whitespace does not match`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
+`ECMA 262 \S matches everything but whitespace, ASCII space does not match`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
+`ECMA 262 \S matches everything but whitespace, Character tabulation does not match`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
+`ECMA 262 \S matches everything but whitespace, Line tabulation does not match`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
+`ECMA 262 \S matches everything but whitespace, Form feed does not match`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
+`ECMA 262 \S matches everything but whitespace, latin-1 non-breaking-space does not match`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
+`ECMA 262 \S matches everything but whitespace, zero-width whitespace does not match`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
+`ECMA 262 \S matches everything but whitespace, line feed does not match (line terminator)`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
+`ECMA 262 \S matches everything but whitespace, paragraph separator does not match (line terminator)`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
+`ECMA 262 \S matches everything but whitespace, EM SPACE does not match (Space_Separator)`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
 `validation of date-time strings, a invalid day in date-time string`|Expected result: `false` but validator returned: `true`
 `validation of date-time strings, an invalid offset in date-time string`|Expected result: `false` but validator returned: `true`
-`validation of date-time strings, an invalid date-time string`|Expected result: `false` but validator returned: `true`
-`validation of date-time strings, only RFC3339 not all of ISO 8601 are valid`|Expected result: `false` but validator returned: `true`
-`validation of date-time strings, invalid non-padded month dates`|Expected result: `false` but validator returned: `true`
-`validation of date-time strings, invalid non-padded day dates`|Expected result: `false` but validator returned: `true`
-`validation of e-mail addresses, an invalid e-mail address`|Expected result: `false` but validator returned: `true`
+`validation of date-time strings, an invalid date-time string`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
+`validation of date-time strings, only RFC3339 not all of ISO 8601 are valid`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
+`validation of date-time strings, invalid non-padded month dates`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
+`validation of date-time strings, invalid non-padded day dates`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
+`validation of e-mail addresses, an invalid e-mail address`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
 `validation of e-mail addresses, dot before local part is not valid`|Expected result: `false` but validator returned: `true`
 `validation of e-mail addresses, dot after local part is not valid`|Expected result: `false` but validator returned: `true`
 `validation of e-mail addresses, two subsequent dots inside local part are not valid`|Expected result: `false` but validator returned: `true`
-`validation of host names, a host name starting with an illegal character`|Expected result: `false` but validator returned: `true`
-`validation of host names, a host name containing illegal characters`|Expected result: `false` but validator returned: `true`
-`validation of host names, a host name with a component too long`|Expected result: `false` but validator returned: `true`
-`validation of host names, starts with hyphen`|Expected result: `false` but validator returned: `true`
-`validation of host names, ends with hyphen`|Expected result: `false` but validator returned: `true`
-`validation of host names, starts with underscore`|Expected result: `false` but validator returned: `true`
-`validation of host names, ends with underscore`|Expected result: `false` but validator returned: `true`
-`validation of host names, contains underscore`|Expected result: `false` but validator returned: `true`
-`validation of host names, exceeds maximum label length`|Expected result: `false` but validator returned: `true`
-`validation of IP addresses, an IP address with too many components`|Expected result: `false` but validator returned: `true`
-`validation of IP addresses, an IP address with out-of-range values`|Expected result: `false` but validator returned: `true`
-`validation of IP addresses, an IP address without 4 components`|Expected result: `false` but validator returned: `true`
-`validation of IP addresses, an IP address as an integer`|Expected result: `false` but validator returned: `true`
-`validation of IP addresses, an IP address as an integer (decimal)`|Expected result: `false` but validator returned: `true`
-`validation of IPv6 addresses, an IPv6 address with out-of-range values`|Expected result: `false` but validator returned: `true`
-`validation of IPv6 addresses, an IPv6 address with too many components`|Expected result: `false` but validator returned: `true`
-`validation of IPv6 addresses, an IPv6 address containing illegal characters`|Expected result: `false` but validator returned: `true`
-`validation of IPv6 addresses, missing leading octet is invalid`|Expected result: `false` but validator returned: `true`
-`validation of IPv6 addresses, missing trailing octet is invalid`|Expected result: `false` but validator returned: `true`
-`validation of IPv6 addresses, missing leading octet with omitted octets later`|Expected result: `false` but validator returned: `true`
-`validation of IPv6 addresses, two sets of double colons is invalid`|Expected result: `false` but validator returned: `true`
-`validation of IPv6 addresses, mixed format with ipv4 section with octet out of range`|Expected result: `false` but validator returned: `true`
-`validation of IPv6 addresses, mixed format with ipv4 section with a hex octet`|Expected result: `false` but validator returned: `true`
-`validation of IPv6 addresses, triple colons is invalid`|Expected result: `false` but validator returned: `true`
-`validation of IPv6 addresses, insufficient octets without double colons`|Expected result: `false` but validator returned: `true`
-`validation of IPv6 addresses, no colons is invalid`|Expected result: `false` but validator returned: `true`
-`validation of IPv6 addresses, ipv4 is not ipv6`|Expected result: `false` but validator returned: `true`
-`validation of IPv6 addresses, ipv4 segment must have 4 octets`|Expected result: `false` but validator returned: `true`
+`validation of host names, a host name starting with an illegal character`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
+`validation of host names, a host name containing illegal characters`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
+`validation of host names, a host name with a component too long`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
+`validation of host names, starts with hyphen`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
+`validation of host names, ends with hyphen`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
+`validation of host names, starts with underscore`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
+`validation of host names, ends with underscore`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
+`validation of host names, contains underscore`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
+`validation of host names, exceeds maximum label length`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
+`validation of IP addresses, an IP address with too many components`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
+`validation of IP addresses, an IP address with out-of-range values`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
+`validation of IP addresses, an IP address without 4 components`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
+`validation of IP addresses, an IP address as an integer`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
+`validation of IP addresses, an IP address as an integer (decimal)`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
+`validation of IPv6 addresses, an IPv6 address with out-of-range values`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
+`validation of IPv6 addresses, an IPv6 address with too many components`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
+`validation of IPv6 addresses, an IPv6 address containing illegal characters`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
+`validation of IPv6 addresses, missing leading octet is invalid`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
+`validation of IPv6 addresses, missing trailing octet is invalid`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
+`validation of IPv6 addresses, missing leading octet with omitted octets later`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
+`validation of IPv6 addresses, two sets of double colons is invalid`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
+`validation of IPv6 addresses, mixed format with ipv4 section with octet out of range`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
+`validation of IPv6 addresses, mixed format with ipv4 section with a hex octet`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
+`validation of IPv6 addresses, triple colons is invalid`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
+`validation of IPv6 addresses, insufficient octets without double colons`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
+`validation of IPv6 addresses, no colons is invalid`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
+`validation of IPv6 addresses, ipv4 is not ipv6`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
+`validation of IPv6 addresses, ipv4 segment must have 4 octets`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
 `validation of IPv6 addresses, leading whitespace is invalid`|Expected result: `false` but validator returned: `true`
 `validation of IPv6 addresses, trailing whitespace is invalid`|Expected result: `false` but validator returned: `true`
-`validation of IPv6 addresses, netmask is not a part of ipv6 address`|Expected result: `false` but validator returned: `true`
+`validation of IPv6 addresses, netmask is not a part of ipv6 address`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
 `validation of IPv6 addresses, zone id is not a part of ipv6 address`|Expected result: `false` but validator returned: `true`
-`validation of IPv6 addresses, a long invalid ipv6, below length limit, first`|Expected result: `false` but validator returned: `true`
-`validation of IPv6 addresses, a long invalid ipv6, below length limit, second`|Expected result: `false` but validator returned: `true`
+`validation of IPv6 addresses, a long invalid ipv6, below length limit, first`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
+`validation of IPv6 addresses, a long invalid ipv6, below length limit, second`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
 `validation of URIs, an invalid protocol-relative URI Reference`|Expected result: `false` but validator returned: `true`
 `validation of URIs, an invalid relative URI Reference`|Expected result: `false` but validator returned: `true`
 `validation of URIs, an invalid URI`|Expected result: `false` but validator returned: `true`
@@ -202,10 +202,10 @@ that is the case for these tests.
 `validation of URIs, an invalid URI with spaces`|Expected result: `false` but validator returned: `true`
 `validation of URIs, an invalid URI with spaces and missing scheme`|Expected result: `false` but validator returned: `true`
 `validation of URIs, an invalid URI with comma in scheme`|Expected result: `false` but validator returned: `true`
-`Proper UTF-16 surrogate pair handling: pattern, doesn't match one`|Expected result: `false` but validator returned: `true`
-`Proper UTF-16 surrogate pair handling: pattern, doesn't match two`|Expected result: `false` but validator returned: `true`
-`Proper UTF-16 surrogate pair handling: pattern, doesn't match one ASCII`|Expected result: `false` but validator returned: `true`
-`Proper UTF-16 surrogate pair handling: pattern, doesn't match two ASCII`|Expected result: `false` but validator returned: `true`
+`Proper UTF-16 surrogate pair handling: pattern, doesn't match one`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
+`Proper UTF-16 surrogate pair handling: pattern, doesn't match two`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
+`Proper UTF-16 surrogate pair handling: pattern, doesn't match one ASCII`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
+`Proper UTF-16 surrogate pair handling: pattern, doesn't match two ASCII`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
 `Proper UTF-16 surrogate pair handling: patternProperties, doesn't match two`|Expected result: `false` but validator returned: `true`
 `pattern validation, a non-matching pattern is invalid`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
 `pattern validation, ignores null`|Expected result: `true` but validator returned: `"Cannot convert undefined or null to object"`. **This excludes this validator from performance tests**
@@ -292,12 +292,12 @@ that is the case for these tests.
 `type: array, object or null, null is valid`|Expected result: `true` but validator returned: `"Cannot convert undefined or null to object"`. **This excludes this validator from performance tests**
 `type: array, object or null, number is invalid`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
 `type: array, object or null, string is invalid`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
-`uniqueItems validation, non-unique array of integers is invalid`|Expected result: `false` but validator returned: `true`
-`uniqueItems validation, numbers are unique if mathematically unequal`|Expected result: `false` but validator returned: `true`
-`uniqueItems validation, non-unique array of objects is invalid`|Expected result: `false` but validator returned: `true`
-`uniqueItems validation, non-unique array of nested objects is invalid`|Expected result: `false` but validator returned: `true`
-`uniqueItems validation, non-unique array of arrays is invalid`|Expected result: `false` but validator returned: `true`
-`uniqueItems validation, non-unique heterogeneous types are invalid`|Expected result: `false` but validator returned: `true`
+`uniqueItems validation, non-unique array of integers is invalid`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
+`uniqueItems validation, numbers are unique if mathematically unequal`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
+`uniqueItems validation, non-unique array of objects is invalid`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
+`uniqueItems validation, non-unique array of nested objects is invalid`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
+`uniqueItems validation, non-unique array of arrays is invalid`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
+`uniqueItems validation, non-unique heterogeneous types are invalid`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
 `uniqueItems validation, objects are non-unique despite key order`|Expected result: `false` but validator returned: `true`
 `uniqueItems with an array of items, [false, false] from items array is not valid`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
 `uniqueItems with an array of items, [true, true] from items array is not valid`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**

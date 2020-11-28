@@ -52,10 +52,10 @@ that is the case for these tests.
 `validation of e-mail addresses, dot before local part is not valid`|Expected result: `false` but validator returned: `true`
 `validation of e-mail addresses, dot after local part is not valid`|Expected result: `false` but validator returned: `true`
 `validation of e-mail addresses, two subsequent dots inside local part are not valid`|Expected result: `false` but validator returned: `true`
-`validation of IPv6 addresses, leading colons is valid`|Expected result: `true` but validator returned: `false`
-`validation of IPv6 addresses, trailing colons is valid`|Expected result: `true` but validator returned: `false`
-`validation of IPv6 addresses, mixed format with the ipv4 section as decimal octets`|Expected result: `true` but validator returned: `false`
-`validation of IPv6 addresses, mixed format with leading double colons (ipv4-mapped ipv6 address)`|Expected result: `true` but validator returned: `false`
+`validation of IPv6 addresses, leading colons is valid`|Expected result: `true` but validator returned: `false`. **This excludes this validator from performance tests**
+`validation of IPv6 addresses, trailing colons is valid`|Expected result: `true` but validator returned: `false`. **This excludes this validator from performance tests**
+`validation of IPv6 addresses, mixed format with the ipv4 section as decimal octets`|Expected result: `true` but validator returned: `false`. **This excludes this validator from performance tests**
+`validation of IPv6 addresses, mixed format with leading double colons (ipv4-mapped ipv6 address)`|Expected result: `true` but validator returned: `false`. **This excludes this validator from performance tests**
 `Proper UTF-16 surrogate pair handling: pattern, matches empty`|Expected result: `true` but validator returned: `false`
 `Proper UTF-16 surrogate pair handling: pattern, matches two`|Expected result: `true` but validator returned: `false`
 `Proper UTF-16 surrogate pair handling: patternProperties, doesn't match two`|Expected result: `false` but validator returned: `true`

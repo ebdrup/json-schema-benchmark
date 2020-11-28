@@ -23,7 +23,7 @@ that is the case for these tests.
 `dependencies with escaped characters, invalid object 4`|The schema failed to load(`Unexpected identifier`). **This excludes this validator from performance tests**
 `evaluating the same schema location against the same data location twice is not a sign of an infinite loop, passing case`|The schema failed to load(`Cannot find ref '#/definitions/int' in schema`). **This excludes this validator from performance tests**
 `evaluating the same schema location against the same data location twice is not a sign of an infinite loop, failing case`|The schema failed to load(`Cannot find ref '#/definitions/int' in schema`). **This excludes this validator from performance tests**
-`a schema given for items, JavaScript pseudo-array is valid`|Expected result: `true` but validator returned: `false`
+`a schema given for items, JavaScript pseudo-array is valid`|Expected result: `true` but validator returned: `false`. **This excludes this validator from performance tests**
 `an array of schemas for items, JavaScript pseudo-array is valid`|Expected result: `true` but validator returned: `false`
 `items and subitems, valid items`|Expected result: `true` but validator returned: `false`. **This excludes this validator from performance tests**
 `items and subitems, fewer items is valid`|Expected result: `true` but validator returned: `false`. **This excludes this validator from performance tests**

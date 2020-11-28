@@ -71,48 +71,48 @@ that is the case for these tests.
 `nested oneOf, to check validation semantics, anything non-null is invalid`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
 `validation of date-time strings, a invalid day in date-time string`|Expected result: `false` but validator returned: `true`
 `validation of date-time strings, an invalid offset in date-time string`|Expected result: `false` but validator returned: `true`
-`validation of date-time strings, an invalid date-time string`|Expected result: `false` but validator returned: `true`
-`validation of date-time strings, only RFC3339 not all of ISO 8601 are valid`|Expected result: `false` but validator returned: `true`
-`validation of date-time strings, invalid non-padded month dates`|Expected result: `false` but validator returned: `true`
-`validation of date-time strings, invalid non-padded day dates`|Expected result: `false` but validator returned: `true`
-`validation of e-mail addresses, an invalid e-mail address`|Expected result: `false` but validator returned: `true`
+`validation of date-time strings, an invalid date-time string`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
+`validation of date-time strings, only RFC3339 not all of ISO 8601 are valid`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
+`validation of date-time strings, invalid non-padded month dates`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
+`validation of date-time strings, invalid non-padded day dates`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
+`validation of e-mail addresses, an invalid e-mail address`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
 `validation of e-mail addresses, dot before local part is not valid`|Expected result: `false` but validator returned: `true`
 `validation of e-mail addresses, dot after local part is not valid`|Expected result: `false` but validator returned: `true`
 `validation of e-mail addresses, two subsequent dots inside local part are not valid`|Expected result: `false` but validator returned: `true`
-`validation of host names, a host name starting with an illegal character`|Expected result: `false` but validator returned: `true`
-`validation of host names, a host name containing illegal characters`|Expected result: `false` but validator returned: `true`
-`validation of host names, a host name with a component too long`|Expected result: `false` but validator returned: `true`
-`validation of host names, starts with hyphen`|Expected result: `false` but validator returned: `true`
-`validation of host names, ends with hyphen`|Expected result: `false` but validator returned: `true`
-`validation of host names, starts with underscore`|Expected result: `false` but validator returned: `true`
-`validation of host names, ends with underscore`|Expected result: `false` but validator returned: `true`
-`validation of host names, contains underscore`|Expected result: `false` but validator returned: `true`
-`validation of host names, exceeds maximum label length`|Expected result: `false` but validator returned: `true`
-`validation of IP addresses, an IP address with too many components`|Expected result: `false` but validator returned: `true`
-`validation of IP addresses, an IP address with out-of-range values`|Expected result: `false` but validator returned: `true`
-`validation of IP addresses, an IP address without 4 components`|Expected result: `false` but validator returned: `true`
-`validation of IP addresses, an IP address as an integer`|Expected result: `false` but validator returned: `true`
-`validation of IP addresses, an IP address as an integer (decimal)`|Expected result: `false` but validator returned: `true`
-`validation of IPv6 addresses, an IPv6 address with out-of-range values`|Expected result: `false` but validator returned: `true`
-`validation of IPv6 addresses, an IPv6 address with too many components`|Expected result: `false` but validator returned: `true`
-`validation of IPv6 addresses, an IPv6 address containing illegal characters`|Expected result: `false` but validator returned: `true`
-`validation of IPv6 addresses, missing leading octet is invalid`|Expected result: `false` but validator returned: `true`
-`validation of IPv6 addresses, missing trailing octet is invalid`|Expected result: `false` but validator returned: `true`
-`validation of IPv6 addresses, missing leading octet with omitted octets later`|Expected result: `false` but validator returned: `true`
-`validation of IPv6 addresses, two sets of double colons is invalid`|Expected result: `false` but validator returned: `true`
-`validation of IPv6 addresses, mixed format with ipv4 section with octet out of range`|Expected result: `false` but validator returned: `true`
-`validation of IPv6 addresses, mixed format with ipv4 section with a hex octet`|Expected result: `false` but validator returned: `true`
-`validation of IPv6 addresses, triple colons is invalid`|Expected result: `false` but validator returned: `true`
-`validation of IPv6 addresses, insufficient octets without double colons`|Expected result: `false` but validator returned: `true`
-`validation of IPv6 addresses, no colons is invalid`|Expected result: `false` but validator returned: `true`
-`validation of IPv6 addresses, ipv4 is not ipv6`|Expected result: `false` but validator returned: `true`
-`validation of IPv6 addresses, ipv4 segment must have 4 octets`|Expected result: `false` but validator returned: `true`
+`validation of host names, a host name starting with an illegal character`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
+`validation of host names, a host name containing illegal characters`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
+`validation of host names, a host name with a component too long`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
+`validation of host names, starts with hyphen`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
+`validation of host names, ends with hyphen`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
+`validation of host names, starts with underscore`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
+`validation of host names, ends with underscore`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
+`validation of host names, contains underscore`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
+`validation of host names, exceeds maximum label length`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
+`validation of IP addresses, an IP address with too many components`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
+`validation of IP addresses, an IP address with out-of-range values`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
+`validation of IP addresses, an IP address without 4 components`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
+`validation of IP addresses, an IP address as an integer`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
+`validation of IP addresses, an IP address as an integer (decimal)`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
+`validation of IPv6 addresses, an IPv6 address with out-of-range values`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
+`validation of IPv6 addresses, an IPv6 address with too many components`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
+`validation of IPv6 addresses, an IPv6 address containing illegal characters`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
+`validation of IPv6 addresses, missing leading octet is invalid`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
+`validation of IPv6 addresses, missing trailing octet is invalid`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
+`validation of IPv6 addresses, missing leading octet with omitted octets later`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
+`validation of IPv6 addresses, two sets of double colons is invalid`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
+`validation of IPv6 addresses, mixed format with ipv4 section with octet out of range`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
+`validation of IPv6 addresses, mixed format with ipv4 section with a hex octet`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
+`validation of IPv6 addresses, triple colons is invalid`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
+`validation of IPv6 addresses, insufficient octets without double colons`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
+`validation of IPv6 addresses, no colons is invalid`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
+`validation of IPv6 addresses, ipv4 is not ipv6`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
+`validation of IPv6 addresses, ipv4 segment must have 4 octets`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
 `validation of IPv6 addresses, leading whitespace is invalid`|Expected result: `false` but validator returned: `true`
 `validation of IPv6 addresses, trailing whitespace is invalid`|Expected result: `false` but validator returned: `true`
-`validation of IPv6 addresses, netmask is not a part of ipv6 address`|Expected result: `false` but validator returned: `true`
+`validation of IPv6 addresses, netmask is not a part of ipv6 address`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
 `validation of IPv6 addresses, zone id is not a part of ipv6 address`|Expected result: `false` but validator returned: `true`
-`validation of IPv6 addresses, a long invalid ipv6, below length limit, first`|Expected result: `false` but validator returned: `true`
-`validation of IPv6 addresses, a long invalid ipv6, below length limit, second`|Expected result: `false` but validator returned: `true`
+`validation of IPv6 addresses, a long invalid ipv6, below length limit, first`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
+`validation of IPv6 addresses, a long invalid ipv6, below length limit, second`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
 `validation of URIs, an invalid protocol-relative URI Reference`|Expected result: `false` but validator returned: `true`
 `validation of URIs, an invalid relative URI Reference`|Expected result: `false` but validator returned: `true`
 `validation of URIs, an invalid URI`|Expected result: `false` but validator returned: `true`
@@ -150,10 +150,10 @@ that is the case for these tests.
 `required validation, ignores strings`|Expected result: `true` but validator returned: `false`. **This excludes this validator from performance tests**
 `required validation, ignores other non-objects`|Expected result: `true` but validator returned: `false`. **This excludes this validator from performance tests**
 `required with escaped characters, object with all properties present is valid`|Expected result: `true` but validator returned: `false`. **This excludes this validator from performance tests**
-`uniqueItems validation, non-unique array of objects is invalid`|Expected result: `false` but validator returned: `true`
-`uniqueItems validation, non-unique array of nested objects is invalid`|Expected result: `false` but validator returned: `true`
-`uniqueItems validation, non-unique array of arrays is invalid`|Expected result: `false` but validator returned: `true`
-`uniqueItems validation, non-unique heterogeneous types are invalid`|Expected result: `false` but validator returned: `true`
+`uniqueItems validation, non-unique array of objects is invalid`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
+`uniqueItems validation, non-unique array of nested objects is invalid`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
+`uniqueItems validation, non-unique array of arrays is invalid`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
+`uniqueItems validation, non-unique heterogeneous types are invalid`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
 `uniqueItems validation, objects are non-unique despite key order`|Expected result: `false` but validator returned: `true`
 
 **All other tests passed**.

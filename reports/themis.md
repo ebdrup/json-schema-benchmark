@@ -31,12 +31,12 @@ that is the case for these tests.
 `validation of IPv6 addresses, leading whitespace is invalid`|Expected result: `false` but validator returned: `true`
 `validation of IPv6 addresses, trailing whitespace is invalid`|Expected result: `false` but validator returned: `true`
 `validation of IPv6 addresses, zone id is not a part of ipv6 address`|Expected result: `false` but validator returned: `true`
-`validation of URIs, a valid puny-coded URL `|Expected result: `true` but validator returned: `false`
-`validation of URIs, a valid URL `|Expected result: `true` but validator returned: `false`
-`validation of URIs, a valid mailto URI`|Expected result: `true` but validator returned: `false`
-`validation of URIs, a valid newsgroup URI`|Expected result: `true` but validator returned: `false`
-`validation of URIs, a valid tel URI`|Expected result: `true` but validator returned: `false`
-`validation of URIs, a valid URN`|Expected result: `true` but validator returned: `false`
+`validation of URIs, a valid puny-coded URL `|Expected result: `true` but validator returned: `false`. **This excludes this validator from performance tests**
+`validation of URIs, a valid URL `|Expected result: `true` but validator returned: `false`. **This excludes this validator from performance tests**
+`validation of URIs, a valid mailto URI`|Expected result: `true` but validator returned: `false`. **This excludes this validator from performance tests**
+`validation of URIs, a valid newsgroup URI`|Expected result: `true` but validator returned: `false`. **This excludes this validator from performance tests**
+`validation of URIs, a valid tel URI`|Expected result: `true` but validator returned: `false`. **This excludes this validator from performance tests**
+`validation of URIs, a valid URN`|Expected result: `true` but validator returned: `false`. **This excludes this validator from performance tests**
 `Proper UTF-16 surrogate pair handling: pattern, matches empty`|Expected result: `true` but validator returned: `false`
 `Proper UTF-16 surrogate pair handling: pattern, matches two`|Expected result: `true` but validator returned: `false`
 `Proper UTF-16 surrogate pair handling: patternProperties, doesn't match two`|Expected result: `false` but validator returned: `true`

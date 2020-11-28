@@ -57,14 +57,14 @@ that is the case for these tests.
 `minLength validation, one supplementary Unicode code point is not long enough`|Expected result: `false` but validator returned: `true`
 `minProperties validation, ignores arrays`|Expected result: `true` but validator returned: `false`. **This excludes this validator from performance tests**
 `all integers are multiples of 0.5, if overflow is handled, valid if optional overflow handling is implemented`|Expected result: `true` but validator returned: `false`
-`validation of IPv6 addresses, leading colons is valid`|Expected result: `true` but validator returned: `false`
-`validation of IPv6 addresses, trailing colons is valid`|Expected result: `true` but validator returned: `false`
-`validation of IPv6 addresses, mixed format with the ipv4 section as decimal octets`|Expected result: `true` but validator returned: `false`
-`validation of IPv6 addresses, mixed format with leading double colons (ipv4-mapped ipv6 address)`|Expected result: `true` but validator returned: `false`
-`validation of URIs, a valid URL based on IPv4`|Expected result: `true` but validator returned: `false`
-`validation of URIs, a valid URL `|Expected result: `true` but validator returned: `false`
-`validation of URIs, a valid tel URI`|Expected result: `true` but validator returned: `false`
-`validation of URIs, a valid URN`|Expected result: `true` but validator returned: `false`
+`validation of IPv6 addresses, leading colons is valid`|Expected result: `true` but validator returned: `false`. **This excludes this validator from performance tests**
+`validation of IPv6 addresses, trailing colons is valid`|Expected result: `true` but validator returned: `false`. **This excludes this validator from performance tests**
+`validation of IPv6 addresses, mixed format with the ipv4 section as decimal octets`|Expected result: `true` but validator returned: `false`. **This excludes this validator from performance tests**
+`validation of IPv6 addresses, mixed format with leading double colons (ipv4-mapped ipv6 address)`|Expected result: `true` but validator returned: `false`. **This excludes this validator from performance tests**
+`validation of URIs, a valid URL based on IPv4`|Expected result: `true` but validator returned: `false`. **This excludes this validator from performance tests**
+`validation of URIs, a valid URL `|Expected result: `true` but validator returned: `false`. **This excludes this validator from performance tests**
+`validation of URIs, a valid tel URI`|Expected result: `true` but validator returned: `false`. **This excludes this validator from performance tests**
+`validation of URIs, a valid URN`|Expected result: `true` but validator returned: `false`. **This excludes this validator from performance tests**
 `validation of URIs, an invalid protocol-relative URI Reference`|Expected result: `false` but validator returned: `true`
 `validation of URIs, an invalid URI with spaces`|Expected result: `false` but validator returned: `true`
 `Proper UTF-16 surrogate pair handling: pattern, matches empty`|Expected result: `true` but validator returned: `false`

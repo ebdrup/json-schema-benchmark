@@ -2,7 +2,7 @@
 Performance benchmark for Node.js JSON-schema validators.
 
 Also tests against [official JSON-schema test suite](https://github.com/json-schema/JSON-Schema-Test-Suite) and checks
-for validators that cause side-effects on schema or data.
+for validators that cause side-effects on schema or data. The top 6 validators that fail the least tests are included in the benchmark.
 
 [Contribute to these benchmarks](https://github.com/ebdrup/json-schema-benchmark/blob/master/CONTRIBUTING.md)
 
@@ -23,10 +23,6 @@ Validators tested: {{#validators}}{{&versionLink}}, {{/validators}}
 (validators not in the results above where excluded because of failing tests - see below for details)
 
 {{&fastestValidator}} is currently the fastest JSON-schema validator out there.
-
-The fastest validator has 100%, the rest a lower score relative to the fastest.
-If a validator has a score of 5% that means that it's speed is 5% of the fastest,
-meaning that it's 20 times slower than the fastest.
 
 # Test failure summary
 

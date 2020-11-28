@@ -108,82 +108,82 @@ that is the case for these tests.
 `oneOf with missing optional property, both oneOf valid`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
 `oneOf with missing optional property, neither oneOf valid`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
 `nested oneOf, to check validation semantics, anything non-null is invalid`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
-`validation of date-time strings, a valid date-time string`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'date-time' format`)
-`validation of date-time strings, a valid date-time string without second fraction`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'date-time' format`)
-`validation of date-time strings, a valid date-time string with plus offset`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'date-time' format`)
-`validation of date-time strings, a valid date-time string with minus offset`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'date-time' format`)
+`validation of date-time strings, a valid date-time string`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'date-time' format`). **This excludes this validator from performance tests**
+`validation of date-time strings, a valid date-time string without second fraction`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'date-time' format`). **This excludes this validator from performance tests**
+`validation of date-time strings, a valid date-time string with plus offset`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'date-time' format`). **This excludes this validator from performance tests**
+`validation of date-time strings, a valid date-time string with minus offset`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'date-time' format`). **This excludes this validator from performance tests**
 `validation of date-time strings, a invalid day in date-time string`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'date-time' format`)
 `validation of date-time strings, an invalid offset in date-time string`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'date-time' format`)
-`validation of date-time strings, an invalid date-time string`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'date-time' format`)
-`validation of date-time strings, case-insensitive T and Z`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'date-time' format`)
-`validation of date-time strings, only RFC3339 not all of ISO 8601 are valid`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'date-time' format`)
-`validation of date-time strings, invalid non-padded month dates`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'date-time' format`)
-`validation of date-time strings, invalid non-padded day dates`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'date-time' format`)
-`validation of e-mail addresses, a valid e-mail address`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'email' format`)
-`validation of e-mail addresses, an invalid e-mail address`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'email' format`)
-`validation of e-mail addresses, tilde in local part is valid`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'email' format`)
-`validation of e-mail addresses, tilde before local part is valid`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'email' format`)
-`validation of e-mail addresses, tilde after local part is valid`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'email' format`)
+`validation of date-time strings, an invalid date-time string`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'date-time' format`). **This excludes this validator from performance tests**
+`validation of date-time strings, case-insensitive T and Z`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'date-time' format`). **This excludes this validator from performance tests**
+`validation of date-time strings, only RFC3339 not all of ISO 8601 are valid`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'date-time' format`). **This excludes this validator from performance tests**
+`validation of date-time strings, invalid non-padded month dates`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'date-time' format`). **This excludes this validator from performance tests**
+`validation of date-time strings, invalid non-padded day dates`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'date-time' format`). **This excludes this validator from performance tests**
+`validation of e-mail addresses, a valid e-mail address`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'email' format`). **This excludes this validator from performance tests**
+`validation of e-mail addresses, an invalid e-mail address`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'email' format`). **This excludes this validator from performance tests**
+`validation of e-mail addresses, tilde in local part is valid`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'email' format`). **This excludes this validator from performance tests**
+`validation of e-mail addresses, tilde before local part is valid`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'email' format`). **This excludes this validator from performance tests**
+`validation of e-mail addresses, tilde after local part is valid`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'email' format`). **This excludes this validator from performance tests**
 `validation of e-mail addresses, dot before local part is not valid`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'email' format`)
 `validation of e-mail addresses, dot after local part is not valid`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'email' format`)
-`validation of e-mail addresses, two separated dots inside local part are valid`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'email' format`)
+`validation of e-mail addresses, two separated dots inside local part are valid`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'email' format`). **This excludes this validator from performance tests**
 `validation of e-mail addresses, two subsequent dots inside local part are not valid`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'email' format`)
-`validation of host names, a host name starting with an illegal character`|Expected result: `false` but validator returned: `true`
-`validation of host names, a host name containing illegal characters`|Expected result: `false` but validator returned: `true`
-`validation of host names, a host name with a component too long`|Expected result: `false` but validator returned: `true`
-`validation of host names, starts with hyphen`|Expected result: `false` but validator returned: `true`
-`validation of host names, ends with hyphen`|Expected result: `false` but validator returned: `true`
-`validation of host names, starts with underscore`|Expected result: `false` but validator returned: `true`
-`validation of host names, ends with underscore`|Expected result: `false` but validator returned: `true`
-`validation of host names, contains underscore`|Expected result: `false` but validator returned: `true`
-`validation of host names, exceeds maximum label length`|Expected result: `false` but validator returned: `true`
-`validation of IP addresses, an IP address with too many components`|Expected result: `false` but validator returned: `true`
-`validation of IP addresses, an IP address with out-of-range values`|Expected result: `false` but validator returned: `true`
-`validation of IP addresses, an IP address without 4 components`|Expected result: `false` but validator returned: `true`
-`validation of IP addresses, an IP address as an integer`|Expected result: `false` but validator returned: `true`
-`validation of IP addresses, an IP address as an integer (decimal)`|Expected result: `false` but validator returned: `true`
-`validation of IPv6 addresses, a valid IPv6 address`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'ipv6' format`)
-`validation of IPv6 addresses, an IPv6 address with out-of-range values`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'ipv6' format`)
-`validation of IPv6 addresses, an IPv6 address with too many components`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'ipv6' format`)
-`validation of IPv6 addresses, an IPv6 address containing illegal characters`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'ipv6' format`)
-`validation of IPv6 addresses, no digits is valid`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'ipv6' format`)
-`validation of IPv6 addresses, leading colons is valid`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'ipv6' format`)
-`validation of IPv6 addresses, trailing colons is valid`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'ipv6' format`)
-`validation of IPv6 addresses, missing leading octet is invalid`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'ipv6' format`)
-`validation of IPv6 addresses, missing trailing octet is invalid`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'ipv6' format`)
-`validation of IPv6 addresses, missing leading octet with omitted octets later`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'ipv6' format`)
-`validation of IPv6 addresses, two sets of double colons is invalid`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'ipv6' format`)
-`validation of IPv6 addresses, mixed format with the ipv4 section as decimal octets`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'ipv6' format`)
-`validation of IPv6 addresses, mixed format with double colons between the sections`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'ipv6' format`)
-`validation of IPv6 addresses, mixed format with ipv4 section with octet out of range`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'ipv6' format`)
-`validation of IPv6 addresses, mixed format with ipv4 section with a hex octet`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'ipv6' format`)
-`validation of IPv6 addresses, mixed format with leading double colons (ipv4-mapped ipv6 address)`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'ipv6' format`)
-`validation of IPv6 addresses, triple colons is invalid`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'ipv6' format`)
-`validation of IPv6 addresses, 8 octets`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'ipv6' format`)
-`validation of IPv6 addresses, insufficient octets without double colons`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'ipv6' format`)
-`validation of IPv6 addresses, no colons is invalid`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'ipv6' format`)
-`validation of IPv6 addresses, ipv4 is not ipv6`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'ipv6' format`)
-`validation of IPv6 addresses, ipv4 segment must have 4 octets`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'ipv6' format`)
+`validation of host names, a host name starting with an illegal character`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
+`validation of host names, a host name containing illegal characters`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
+`validation of host names, a host name with a component too long`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
+`validation of host names, starts with hyphen`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
+`validation of host names, ends with hyphen`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
+`validation of host names, starts with underscore`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
+`validation of host names, ends with underscore`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
+`validation of host names, contains underscore`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
+`validation of host names, exceeds maximum label length`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
+`validation of IP addresses, an IP address with too many components`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
+`validation of IP addresses, an IP address with out-of-range values`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
+`validation of IP addresses, an IP address without 4 components`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
+`validation of IP addresses, an IP address as an integer`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
+`validation of IP addresses, an IP address as an integer (decimal)`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
+`validation of IPv6 addresses, a valid IPv6 address`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'ipv6' format`). **This excludes this validator from performance tests**
+`validation of IPv6 addresses, an IPv6 address with out-of-range values`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'ipv6' format`). **This excludes this validator from performance tests**
+`validation of IPv6 addresses, an IPv6 address with too many components`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'ipv6' format`). **This excludes this validator from performance tests**
+`validation of IPv6 addresses, an IPv6 address containing illegal characters`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'ipv6' format`). **This excludes this validator from performance tests**
+`validation of IPv6 addresses, no digits is valid`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'ipv6' format`). **This excludes this validator from performance tests**
+`validation of IPv6 addresses, leading colons is valid`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'ipv6' format`). **This excludes this validator from performance tests**
+`validation of IPv6 addresses, trailing colons is valid`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'ipv6' format`). **This excludes this validator from performance tests**
+`validation of IPv6 addresses, missing leading octet is invalid`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'ipv6' format`). **This excludes this validator from performance tests**
+`validation of IPv6 addresses, missing trailing octet is invalid`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'ipv6' format`). **This excludes this validator from performance tests**
+`validation of IPv6 addresses, missing leading octet with omitted octets later`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'ipv6' format`). **This excludes this validator from performance tests**
+`validation of IPv6 addresses, two sets of double colons is invalid`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'ipv6' format`). **This excludes this validator from performance tests**
+`validation of IPv6 addresses, mixed format with the ipv4 section as decimal octets`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'ipv6' format`). **This excludes this validator from performance tests**
+`validation of IPv6 addresses, mixed format with double colons between the sections`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'ipv6' format`). **This excludes this validator from performance tests**
+`validation of IPv6 addresses, mixed format with ipv4 section with octet out of range`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'ipv6' format`). **This excludes this validator from performance tests**
+`validation of IPv6 addresses, mixed format with ipv4 section with a hex octet`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'ipv6' format`). **This excludes this validator from performance tests**
+`validation of IPv6 addresses, mixed format with leading double colons (ipv4-mapped ipv6 address)`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'ipv6' format`). **This excludes this validator from performance tests**
+`validation of IPv6 addresses, triple colons is invalid`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'ipv6' format`). **This excludes this validator from performance tests**
+`validation of IPv6 addresses, 8 octets`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'ipv6' format`). **This excludes this validator from performance tests**
+`validation of IPv6 addresses, insufficient octets without double colons`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'ipv6' format`). **This excludes this validator from performance tests**
+`validation of IPv6 addresses, no colons is invalid`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'ipv6' format`). **This excludes this validator from performance tests**
+`validation of IPv6 addresses, ipv4 is not ipv6`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'ipv6' format`). **This excludes this validator from performance tests**
+`validation of IPv6 addresses, ipv4 segment must have 4 octets`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'ipv6' format`). **This excludes this validator from performance tests**
 `validation of IPv6 addresses, leading whitespace is invalid`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'ipv6' format`)
 `validation of IPv6 addresses, trailing whitespace is invalid`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'ipv6' format`)
-`validation of IPv6 addresses, netmask is not a part of ipv6 address`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'ipv6' format`)
+`validation of IPv6 addresses, netmask is not a part of ipv6 address`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'ipv6' format`). **This excludes this validator from performance tests**
 `validation of IPv6 addresses, zone id is not a part of ipv6 address`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'ipv6' format`)
-`validation of IPv6 addresses, a long valid ipv6`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'ipv6' format`)
-`validation of IPv6 addresses, a long invalid ipv6, below length limit, first`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'ipv6' format`)
-`validation of IPv6 addresses, a long invalid ipv6, below length limit, second`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'ipv6' format`)
-`validation of URIs, a valid URL with anchor tag`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'uri' format`)
-`validation of URIs, a valid URL with anchor tag and parantheses`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'uri' format`)
-`validation of URIs, a valid URL with URL-encoded stuff`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'uri' format`)
-`validation of URIs, a valid puny-coded URL `|The schema failed to load(`Schema: 'type' attribute does not conform to the 'uri' format`)
-`validation of URIs, a valid URL with many special characters`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'uri' format`)
-`validation of URIs, a valid URL based on IPv4`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'uri' format`)
-`validation of URIs, a valid URL with ftp scheme`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'uri' format`)
-`validation of URIs, a valid URL for a simple text file`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'uri' format`)
-`validation of URIs, a valid URL `|The schema failed to load(`Schema: 'type' attribute does not conform to the 'uri' format`)
-`validation of URIs, a valid mailto URI`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'uri' format`)
-`validation of URIs, a valid newsgroup URI`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'uri' format`)
-`validation of URIs, a valid tel URI`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'uri' format`)
-`validation of URIs, a valid URN`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'uri' format`)
+`validation of IPv6 addresses, a long valid ipv6`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'ipv6' format`). **This excludes this validator from performance tests**
+`validation of IPv6 addresses, a long invalid ipv6, below length limit, first`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'ipv6' format`). **This excludes this validator from performance tests**
+`validation of IPv6 addresses, a long invalid ipv6, below length limit, second`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'ipv6' format`). **This excludes this validator from performance tests**
+`validation of URIs, a valid URL with anchor tag`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'uri' format`). **This excludes this validator from performance tests**
+`validation of URIs, a valid URL with anchor tag and parantheses`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'uri' format`). **This excludes this validator from performance tests**
+`validation of URIs, a valid URL with URL-encoded stuff`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'uri' format`). **This excludes this validator from performance tests**
+`validation of URIs, a valid puny-coded URL `|The schema failed to load(`Schema: 'type' attribute does not conform to the 'uri' format`). **This excludes this validator from performance tests**
+`validation of URIs, a valid URL with many special characters`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'uri' format`). **This excludes this validator from performance tests**
+`validation of URIs, a valid URL based on IPv4`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'uri' format`). **This excludes this validator from performance tests**
+`validation of URIs, a valid URL with ftp scheme`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'uri' format`). **This excludes this validator from performance tests**
+`validation of URIs, a valid URL for a simple text file`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'uri' format`). **This excludes this validator from performance tests**
+`validation of URIs, a valid URL `|The schema failed to load(`Schema: 'type' attribute does not conform to the 'uri' format`). **This excludes this validator from performance tests**
+`validation of URIs, a valid mailto URI`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'uri' format`). **This excludes this validator from performance tests**
+`validation of URIs, a valid newsgroup URI`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'uri' format`). **This excludes this validator from performance tests**
+`validation of URIs, a valid tel URI`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'uri' format`). **This excludes this validator from performance tests**
+`validation of URIs, a valid URN`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'uri' format`). **This excludes this validator from performance tests**
 `validation of URIs, an invalid protocol-relative URI Reference`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'uri' format`)
 `validation of URIs, an invalid relative URI Reference`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'uri' format`)
 `validation of URIs, an invalid URI`|The schema failed to load(`Schema: 'type' attribute does not conform to the 'uri' format`)

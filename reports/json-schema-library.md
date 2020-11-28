@@ -36,8 +36,8 @@ that is the case for these tests.
 `validation of e-mail addresses, dot before local part is not valid`|Expected result: `false` but validator returned: `true`
 `validation of e-mail addresses, dot after local part is not valid`|Expected result: `false` but validator returned: `true`
 `validation of e-mail addresses, two subsequent dots inside local part are not valid`|Expected result: `false` but validator returned: `true`
-`validation of host names, exceeds maximum label length`|Expected result: `false` but validator returned: `true`
-`validation of IPv6 addresses, ipv4 is not ipv6`|Expected result: `false` but validator returned: `true`
+`validation of host names, exceeds maximum label length`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
+`validation of IPv6 addresses, ipv4 is not ipv6`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
 `validation of IPv6 addresses, leading whitespace is invalid`|Expected result: `false` but validator returned: `true`
 `validation of IPv6 addresses, trailing whitespace is invalid`|Expected result: `false` but validator returned: `true`
 `validation of IPv6 addresses, zone id is not a part of ipv6 address`|Expected result: `false` but validator returned: `true`

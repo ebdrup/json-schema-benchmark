@@ -21,17 +21,17 @@ that is the case for these tests.
 `all integers are multiples of 0.5, if overflow is handled, valid if optional overflow handling is implemented`|Expected result: `true` but validator returned: `false`
 `validation of date-time strings, a invalid day in date-time string`|Expected result: `false` but validator returned: `true`
 `validation of date-time strings, an invalid offset in date-time string`|Expected result: `false` but validator returned: `true`
-`validation of date-time strings, case-insensitive T and Z`|Expected result: `true` but validator returned: `false`
+`validation of date-time strings, case-insensitive T and Z`|Expected result: `true` but validator returned: `false`. **This excludes this validator from performance tests**
 `validation of e-mail addresses, dot before local part is not valid`|Expected result: `false` but validator returned: `true`
 `validation of e-mail addresses, dot after local part is not valid`|Expected result: `false` but validator returned: `true`
 `validation of e-mail addresses, two subsequent dots inside local part are not valid`|Expected result: `false` but validator returned: `true`
-`validation of IPv6 addresses, mixed format with the ipv4 section as decimal octets`|Expected result: `true` but validator returned: `false`
+`validation of IPv6 addresses, mixed format with the ipv4 section as decimal octets`|Expected result: `true` but validator returned: `false`. **This excludes this validator from performance tests**
 `validation of IPv6 addresses, zone id is not a part of ipv6 address`|Expected result: `false` but validator returned: `true`
-`validation of IPv6 addresses, a long valid ipv6`|Expected result: `true` but validator returned: `false`
-`validation of URIs, a valid mailto URI`|Expected result: `true` but validator returned: `false`
-`validation of URIs, a valid newsgroup URI`|Expected result: `true` but validator returned: `false`
-`validation of URIs, a valid tel URI`|Expected result: `true` but validator returned: `false`
-`validation of URIs, a valid URN`|Expected result: `true` but validator returned: `false`
+`validation of IPv6 addresses, a long valid ipv6`|Expected result: `true` but validator returned: `false`. **This excludes this validator from performance tests**
+`validation of URIs, a valid mailto URI`|Expected result: `true` but validator returned: `false`. **This excludes this validator from performance tests**
+`validation of URIs, a valid newsgroup URI`|Expected result: `true` but validator returned: `false`. **This excludes this validator from performance tests**
+`validation of URIs, a valid tel URI`|Expected result: `true` but validator returned: `false`. **This excludes this validator from performance tests**
+`validation of URIs, a valid URN`|Expected result: `true` but validator returned: `false`. **This excludes this validator from performance tests**
 `validation of URIs, an invalid protocol-relative URI Reference`|Expected result: `false` but validator returned: `true`
 `Proper UTF-16 surrogate pair handling: pattern, matches empty`|Expected result: `true` but validator returned: `false`
 `Proper UTF-16 surrogate pair handling: pattern, matches two`|Expected result: `true` but validator returned: `false`

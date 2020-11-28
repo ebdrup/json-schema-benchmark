@@ -2,34 +2,30 @@
 Performance benchmark for Node.js JSON-schema validators.
 
 Also tests against [official JSON-schema test suite](https://github.com/json-schema/JSON-Schema-Test-Suite) and checks
-for validators that cause side-effects on schema or data.
+for validators that cause side-effects on schema or data. The top 6 validators that fail the least tests are included in the benchmark.
 
 [Contribute to these benchmarks](https://github.com/ebdrup/json-schema-benchmark/blob/master/CONTRIBUTING.md)
 
 # Performance
 
-![performance](https://chart.googleapis.com/chart?chxt=x,y&cht=bhs&chco=76A4FB&chls=2.0&chbh=62,4,1&chs=600x416&chxl=-1:|@exodus&#x2F;schemasafe|ajv|is-my-json-valid|z-schema|@cfworker&#x2F;json-schema|jsonschema&chd=t:100,82.3,53,4.3,2.3,0.7)
+![performance](https://chart.googleapis.com/chart?chxt=x,y&cht=bhs&chco=76A4FB&chls=2.0&chbh=62,4,1&chs=600x416&chxl=-1:|@exodus&#x2F;schemasafe|ajv|is-my-json-valid|z-schema|@cfworker&#x2F;json-schema|jsonschema&chd=t:100,98.3,50.7,6.6,4.6,1.3)
 
 |Validator|Relative speed|Number of test runs per second|
 |---------|:------------:|:----------------------------:|
-|[`@exodus/schemasafe`](https://github.com/ExodusMovement/schemasafe)|100%|40604 (± 0.1%)|
-|[`ajv`](https://github.com/ajv-validator/ajv)|82.3%|33428 (± 0.56%)|
-|[`is-my-json-valid`](https://github.com/mafintosh/is-my-json-valid#readme)|53%|21527 (± 0.11%)|
-|[`z-schema`](https://github.com/zaggino/z-schema)|4.3%|1752 (± 0.72%)|
-|[`@cfworker/json-schema`](https://github.com/cfworker/cfworker/tree/master/packages/json-schema/README.md)|2.3%|929 (± 1.5%)|
-|[`jsonschema`](https://github.com/tdegrunt/jsonschema#readme)|0.7%|294 (± 1.09%)|
+|[`@exodus/schemasafe`](https://github.com/ExodusMovement/schemasafe)|100%|21153 (± 0.28%)|
+|[`ajv`](https://github.com/ajv-validator/ajv)|98.3%|20798 (± 0.66%)|
+|[`is-my-json-valid`](https://github.com/mafintosh/is-my-json-valid#readme)|50.7%|10729 (± 0.72%)|
+|[`z-schema`](https://github.com/zaggino/z-schema)|6.6%|1399 (± 0.33%)|
+|[`@cfworker/json-schema`](https://github.com/cfworker/cfworker/tree/master/packages/json-schema/README.md)|4.6%|979 (± 1.81%)|
+|[`jsonschema`](https://github.com/tdegrunt/jsonschema#readme)|1.3%|277 (± 1.15%)|
 
 235 tests are run in each test run.
 
-Validators tested: [`json-schema-validator-generator (1.1.11)`](https://github.com/danwang/json-schema-validator-generator), [`is-my-json-valid (2.20.5)`](https://github.com/mafintosh/is-my-json-valid#readme), [`jsen (0.6.6)`](https://github.com/bugventure/jsen), [`ajv (6.12.6)`](https://github.com/ajv-validator/ajv), [`themis (1.1.6)`](https://github.com/playlyfe/themis), [`z-schema (5.0.0)`](https://github.com/zaggino/z-schema), [`jjv (1.0.2)`](https://github.com/acornejo/jjv), [`djv (2.1.3-alpha.0)`](https://github.com/korzio/djv#readme), [`skeemas (1.2.5)`](https://github.com/Prestaul/skeemas#readme), [`schemasaurus (0.7.8)`](https://github.com/AlexeyGrishin/schemasaurus), [`jsck (0.3.2)`](https://github.com/pandastrike/jsck#readme), [`jassi (0.1.2)`](https://github.com/iclanzan/jassi), [`JSV (4.0.2)`](http://github.com/garycourt/JSV), [`request-validator (0.3.3)`](https://github.com/bugventure/request-validator), [`json-gate (0.8.23)`](https://github.com/oferei/json-gate#readme), [`json-model (0.2.24)`](https://github.com/geraintluff/json-model), [`tv4 (1.3.0)`](https://github.com/geraintluff/tv4), [`jsonschema (1.4.0)`](https://github.com/tdegrunt/jsonschema#readme), [`revalidator (0.3.1)`](https://github.com/flatiron/revalidator), [`json-schema-library (4.1.4)`](https://github.com/sagold/json-schema-library), [`@exodus/schemasafe (1.0.0-rc.3)`](https://github.com/ExodusMovement/schemasafe), [`@cfworker/json-schema (1.6.3)`](https://github.com/cfworker/cfworker/tree/master/packages/json-schema/README.md), 
+Validators tested: [`@exodus/schemasafe (1.0.0-rc.3)`](https://github.com/ExodusMovement/schemasafe), [`jsonschema (1.4.0)`](https://github.com/tdegrunt/jsonschema#readme), [`@cfworker/json-schema (1.6.3)`](https://github.com/cfworker/cfworker/tree/master/packages/json-schema/README.md), [`ajv (6.12.6)`](https://github.com/ajv-validator/ajv), [`z-schema (5.0.0)`](https://github.com/zaggino/z-schema), [`is-my-json-valid (2.20.5)`](https://github.com/mafintosh/is-my-json-valid#readme), [`jsen (0.6.6)`](https://github.com/bugventure/jsen), [`json-schema-library (4.1.4)`](https://github.com/sagold/json-schema-library), [`jsck (0.3.2)`](https://github.com/pandastrike/jsck#readme), [`themis (1.1.6)`](https://github.com/playlyfe/themis), [`tv4 (1.3.0)`](https://github.com/geraintluff/tv4), [`skeemas (1.2.5)`](https://github.com/Prestaul/skeemas#readme), [`schemasaurus (0.7.8)`](https://github.com/AlexeyGrishin/schemasaurus), [`request-validator (0.3.3)`](https://github.com/bugventure/request-validator), [`djv (2.1.3-alpha.0)`](https://github.com/korzio/djv#readme), [`jassi (0.1.2)`](https://github.com/iclanzan/jassi), [`jjv (1.0.2)`](https://github.com/acornejo/jjv), [`json-schema-validator-generator (1.1.11)`](https://github.com/danwang/json-schema-validator-generator), [`json-model (0.2.24)`](https://github.com/geraintluff/json-model), [`JSV (4.0.2)`](http://github.com/garycourt/JSV), [`json-gate (0.8.23)`](https://github.com/oferei/json-gate#readme), [`revalidator (0.3.1)`](https://github.com/flatiron/revalidator), 
 
 (validators not in the results above where excluded because of failing tests - see below for details)
 
 [`@exodus/schemasafe`](https://github.com/ExodusMovement/schemasafe) is currently the fastest JSON-schema validator out there.
-
-The fastest validator has 100%, the rest a lower score relative to the fastest.
-If a validator has a score of 5% that means that it's speed is 5% of the fastest,
-meaning that it's 20 times slower than the fastest.
 
 # Test failure summary
 
@@ -89,11 +85,11 @@ you to take a look at each validator if you are looking for special features.
 Several of the validators have build benchmarks themselves. They are
 more detailed then the benchmarks provided above.
 
-[Benchmarks owned by themis](https://cdn.rawgit.com/playlyfe/themis/master/benchmark/results.html)
-
 [Benchmarks owned by z-schema](https://rawgit.com/zaggino/z-schema/master/benchmark/results.html)
 
 [Benchmarks owned by jsck](https://github.com/pandastrike/jsck/blob/master/doc/benchmarks.md)
+
+[Benchmarks owned by themis](https://cdn.rawgit.com/playlyfe/themis/master/benchmark/results.html)
 
 There is also a [benchmark suite](https://github.com/Sembiance/cosmicrealms.com/tree/master/sandbox/benchmark-of-node-dot-js-json-validation-modules-part-3)
 by cosmicrealms.
