@@ -70,6 +70,7 @@ module.exports = function(validators) {
         `root ref in remote ref, string is valid`,
       ];
       var excludeTestSuites = [
+        `anyOf with one empty schema`,
         `Location-independent identifier`,
         `Location-independent identifier with base URI change in subschema`,
         `base URI change`,
