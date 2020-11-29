@@ -28,7 +28,6 @@ that is the case for these tests.
 `Location-independent identifier with base URI change in subschema, match`|Expected result: `true` but validator returned: `false`
 `naive replacement of $ref with its destination is not correct, match the enum exactly`|Expected result: `true` but validator returned: `false`
 `ref within remote ref, ref within ref valid`|Expected result: `true` but validator returned: `false`
-`base URI change, base URI change ref valid`|Expected result: `true` but validator returned: `false`
 `base URI change - change folder, number is valid`|Expected result: `true` but validator returned: `false`
 `base URI change - change folder in subschema, number is valid`|Expected result: `true` but validator returned: `false`
 `root ref in remote ref, string is valid`|Expected result: `true` but validator returned: `false`

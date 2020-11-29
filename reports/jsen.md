@@ -38,12 +38,6 @@ that is the case for these tests.
 `Proper UTF-16 surrogate pair handling: patternProperties, doesn't match two`|Expected result: `false` but validator returned: `true`
 `properties with escaped characters, object with all numbers is valid`|The schema failed to load(`Invalid or unexpected token`). **This excludes this validator from performance tests**
 `properties with escaped characters, object with strings is invalid`|The schema failed to load(`Invalid or unexpected token`). **This excludes this validator from performance tests**
-`base URI change, base URI change ref valid`|The schema failed to load(`jsen: invalid schema reference http://localhost:1234/baseUriChange/folderInteger.json`)
-`base URI change, base URI change ref invalid`|The schema failed to load(`jsen: invalid schema reference http://localhost:1234/baseUriChange/folderInteger.json`)
-`base URI change - change folder, number is valid`|The schema failed to load(`jsen: invalid schema reference http://localhost:1234/baseUriChangeFolder/folderInteger.json`)
-`base URI change - change folder, string is invalid`|The schema failed to load(`jsen: invalid schema reference http://localhost:1234/baseUriChangeFolder/folderInteger.json`)
-`base URI change - change folder in subschema, number is valid`|The schema failed to load(`jsen: invalid schema reference http://localhost:1234/baseUriChangeFolderInSubschema/folderInteger.json`)
-`base URI change - change folder in subschema, string is invalid`|The schema failed to load(`jsen: invalid schema reference http://localhost:1234/baseUriChangeFolderInSubschema/folderInteger.json`)
 `root ref in remote ref, string is valid`|Expected result: `true` but validator returned: `false`
 `root ref in remote ref, object is invalid`|Expected result: `false` but validator returned: `true`
 `required with escaped characters, object with all properties present is valid`|The schema failed to load(`Invalid or unexpected token`). **This excludes this validator from performance tests**

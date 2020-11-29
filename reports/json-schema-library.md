@@ -44,9 +44,6 @@ that is the case for these tests.
 `Proper UTF-16 surrogate pair handling: pattern, matches empty`|Expected result: `true` but validator returned: `false`
 `Proper UTF-16 surrogate pair handling: pattern, matches two`|Expected result: `true` but validator returned: `false`
 `Proper UTF-16 surrogate pair handling: patternProperties, doesn't match two`|Expected result: `false` but validator returned: `true`
-`base URI change, base URI change ref invalid`|Expected result: `false` but validator returned: `true`
-`base URI change - change folder, number is valid`|Expected result: `true` but validator returned: `false`
-`base URI change - change folder in subschema, number is valid`|Expected result: `true` but validator returned: `false`
 `uniqueItems validation, objects are non-unique despite key order`|Expected result: `false` but validator returned: `true`
 
 **All other tests passed**.

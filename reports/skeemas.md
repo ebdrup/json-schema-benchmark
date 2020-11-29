@@ -68,10 +68,6 @@ that is the case for these tests.
 `Location-independent identifier with absolute URI, mismatch`|Expected result: `false` but validator returned: `"Unable to locate JSON Ref (http://localhost:1234/bar)"`. **This excludes this validator from performance tests**
 `Location-independent identifier with base URI change in subschema, match`|Expected result: `true` but validator returned: `"Unable to locate JSON Ref (http://localhost:1234/http://localhost:1234/nested.json)"`
 `Location-independent identifier with base URI change in subschema, mismatch`|Expected result: `false` but validator returned: `"Unable to locate JSON Ref (http://localhost:1234/http://localhost:1234/nested.json)"`
-`base URI change, base URI change ref valid`|Expected result: `true` but validator returned: `"Unable to locate JSON Ref (http://localhost:1234/baseUriChange/folderInteger.json)"`
-`base URI change, base URI change ref invalid`|Expected result: `false` but validator returned: `"Unable to locate JSON Ref (http://localhost:1234/baseUriChange/folderInteger.json)"`
-`base URI change - change folder, number is valid`|Expected result: `true` but validator returned: `"Unable to locate JSON Ref (http://localhost:1234/baseUriChangeFolder/folderInteger.json)"`
-`base URI change - change folder, string is invalid`|Expected result: `false` but validator returned: `"Unable to locate JSON Ref (http://localhost:1234/baseUriChangeFolder/folderInteger.json)"`
 `base URI change - change folder in subschema, number is valid`|Expected result: `true` but validator returned: `"Unable to locate JSON Ref (http://localhost:1234/folderInteger.json)"`
 `base URI change - change folder in subschema, string is invalid`|Expected result: `false` but validator returned: `"Unable to locate JSON Ref (http://localhost:1234/folderInteger.json)"`
 `uniqueItems=false validation, non-unique array of integers is valid`|Expected result: `true` but validator returned: `false`. **This excludes this validator from performance tests**

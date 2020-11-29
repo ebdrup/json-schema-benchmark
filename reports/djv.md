@@ -65,9 +65,6 @@ that is the case for these tests.
 `Location-independent identifier with absolute URI, mismatch`|Expected result: `false` but validator returned: `"Maximum call stack size exceeded"`. **This excludes this validator from performance tests**
 `Location-independent identifier with base URI change in subschema, match`|Expected result: `true` but validator returned: `"Maximum call stack size exceeded"`
 `Location-independent identifier with base URI change in subschema, mismatch`|Expected result: `false` but validator returned: `"Maximum call stack size exceeded"`
-`base URI change, base URI change ref invalid`|Expected result: `false` but validator returned: `true`
-`base URI change - change folder, number is valid`|Expected result: `true` but validator returned: `false`
-`base URI change - change folder in subschema, number is valid`|Expected result: `true` but validator returned: `false`
 `uniqueItems validation, unique heterogeneous types are valid`|Expected result: `true` but validator returned: `false`
 `uniqueItems validation, objects are non-unique despite key order`|Expected result: `false` but validator returned: `true`
 `uniqueItems=false validation, unique array of integers is valid`|Expected result: `true` but validator returned: `false`. **This excludes this validator from performance tests**

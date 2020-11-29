@@ -11,6 +11,7 @@
     "deep-equal": "^2.0.4",
     "djv": "*",
     "fs-readdir-recursive": "^1.1.0",
+    "glob": "^7.1.6",
     "is-my-json-valid": "*",
     "jassi": "*",
     "jjv": "*",
@@ -36,7 +37,6 @@
   },
   "description": "Benchmarks for Node.js JSON-schema validators",
   "version": "1.0.3",
-  "devDependencies": {},
   "scripts": {
     "test": "node --experimental-modules --es-module-specifier-resolution=node index.js",
     "update": "rm -rf node_modules/* && rm package-lock.json && npm i && npm audit fix -audit-level=critical && git submodule foreach git pull origin master && npm test"
