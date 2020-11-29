@@ -384,7 +384,8 @@ function saveResults(
         results: comma(results),
         resultsGraphHeight: resultsGraphHeight,
         resultGraphBarHeight: resultGraphBarHeight,
-        validatorBenchmarks: validatorBenchmarks
+        validatorBenchmarks: validatorBenchmarks,
+        testCount: allTestNames.length
       };
       var html = mustache.render(readmeTemplate, data);
       fs.writeFileSync(readmePath, html);
