@@ -289,6 +289,7 @@ glob("JSON-Schema-Test-Suite/remotes/**/*.json", function(err, files) {
       setup: function(schema) {
         return schemasafe.validator(schema, {
           allowUnusedKeywords: true,
+          includeErrors: true,
           schemas: refs,
           $schemaDefault: "https://json-schema.org/draft-06/schema"
         });

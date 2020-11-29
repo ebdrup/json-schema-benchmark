@@ -8,16 +8,16 @@ for validators that cause side-effects on schema or data. The top 6 validators t
 
 # Performance
 
-![performance](https://chart.googleapis.com/chart?chxt=x,y&cht=bhs&chco=76A4FB&chls=2.0&chbh=62,4,1&chs=600x416&chxl=-1:|@exodus&#x2F;schemasafe|ajv|is-my-json-valid|z-schema|@cfworker&#x2F;json-schema|jsonschema&chd=t:100,96.9,49.4,6.5,4.7,1.3)
+![performance](https://chart.googleapis.com/chart?chxt=x,y&cht=bhs&chco=76A4FB&chls=2.0&chbh=62,4,1&chs=600x416&chxl=-1:|ajv|@exodus&#x2F;schemasafe|is-my-json-valid|z-schema|@cfworker&#x2F;json-schema|jsonschema&chd=t:100,88.2,50.3,6.7,4.6,1.3)
 
 |Validator|Relative speed|Number of test runs per second|
 |---------|:------------:|:----------------------------:|
-|[`@exodus/schemasafe`](https://github.com/ExodusMovement/schemasafe)|100%|21046 (± 0.3%)|
-|[`ajv`](https://github.com/ajv-validator/ajv)|96.9%|20397 (± 0.35%)|
-|[`is-my-json-valid`](https://github.com/mafintosh/is-my-json-valid#readme)|49.4%|10399 (± 0.34%)|
-|[`z-schema`](https://github.com/zaggino/z-schema)|6.5%|1365 (± 0.22%)|
-|[`@cfworker/json-schema`](https://github.com/cfworker/cfworker/tree/master/packages/json-schema/README.md)|4.7%|988 (± 2.25%)|
-|[`jsonschema`](https://github.com/tdegrunt/jsonschema#readme)|1.3%|281 (± 1.06%)|
+|[`ajv`](https://github.com/ajv-validator/ajv)|100%|21035 (± 0.35%)|
+|[`@exodus/schemasafe`](https://github.com/ExodusMovement/schemasafe)|88.2%|18551 (± 0.37%)|
+|[`is-my-json-valid`](https://github.com/mafintosh/is-my-json-valid#readme)|50.3%|10580 (± 0.52%)|
+|[`z-schema`](https://github.com/zaggino/z-schema)|6.7%|1408 (± 0.34%)|
+|[`@cfworker/json-schema`](https://github.com/cfworker/cfworker/tree/master/packages/json-schema/README.md)|4.6%|975 (± 2.24%)|
+|[`jsonschema`](https://github.com/tdegrunt/jsonschema#readme)|1.3%|281 (± 0.88%)|
 
 692 tests are run in each test run.
 
@@ -25,7 +25,7 @@ Validators tested: [`@exodus/schemasafe (1.0.0-rc.3)`](https://github.com/Exodus
 
 (validators not in the results above where excluded because of failing tests - see below for details)
 
-[`@exodus/schemasafe`](https://github.com/ExodusMovement/schemasafe) is currently the fastest JSON-schema validator out there.
+[`ajv`](https://github.com/ajv-validator/ajv) is currently the fastest JSON-schema validator out there.
 
 # Test failure summary
 

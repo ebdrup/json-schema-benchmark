@@ -18,3 +18,4 @@ This is to make sure that the tests remain as objective as possible.
 Also, do not *tweak* any of the settings or options of a validator. Each validator should be run in it's standard
 setting. This is to make sure that nothing breaks if the benchmarks changes. But also to reflect the kind of
 performance a user of the validator would get, if using it without tweaking.
+Edit: Nov 29th 2021: Full error reporting should be enabled in the benchmark for all validators.
