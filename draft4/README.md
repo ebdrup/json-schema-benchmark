@@ -8,22 +8,22 @@ for validators that cause side-effects on schema or data. The top 6 validators t
 
 # Tests for other JSON-schema versions
 
-[draft6](https://github.com/ebdrup/json-schema-benchmark/)
-[draft4](https://github.com/ebdrup/json-schema-benchmark/draft4/README.md)
+- [draft6](https://github.com/ebdrup/json-schema-benchmark/)
+- [draft4](https://github.com/ebdrup/json-schema-benchmark/tree/master/draft4)
 
 
 # Performance
 
-![performance](https://chart.googleapis.com/chart?chxt=x,y&cht=bhs&chco=76A4FB&chls=2.0&chbh=62,4,1&chs=600x416&chxl=-1:|ajv|@exodus&#x2F;schemasafe|is-my-json-valid|z-schema|@cfworker&#x2F;json-schema|jsonschema&chd=t:100,68.7,42.8,6.4,5.1,1.2)
+![performance](https://chart.googleapis.com/chart?chxt=x,y&cht=bhs&chco=76A4FB&chls=2.0&chbh=62,4,1&chs=600x416&chxl=-1:|ajv|@exodus&#x2F;schemasafe|is-my-json-valid|z-schema|@cfworker&#x2F;json-schema|jsonschema&chd=t:100,70.5,45.1,6.6,4.3,1.3)
 
 |Validator|Relative speed|Number of test runs per second|
 |---------|:------------:|:----------------------------:|
-|[`ajv`](https://github.com/ajv-validator/ajv)|100%|19744 (± 0.57%)|
-|[`@exodus/schemasafe`](https://github.com/ExodusMovement/schemasafe)|68.7%|13559 (± 0.72%)|
-|[`is-my-json-valid`](https://github.com/mafintosh/is-my-json-valid#readme)|42.8%|8449 (± 0.34%)|
-|[`z-schema`](https://github.com/zaggino/z-schema)|6.4%|1259 (± 0.56%)|
-|[`@cfworker/json-schema`](https://github.com/cfworker/cfworker/tree/master/packages/json-schema/README.md)|5.1%|999 (± 1.15%)|
-|[`jsonschema`](https://github.com/tdegrunt/jsonschema#readme)|1.2%|232 (± 1.07%)|
+|[`ajv`](https://github.com/ajv-validator/ajv)|100%|18802 (± 0.61%)|
+|[`@exodus/schemasafe`](https://github.com/ExodusMovement/schemasafe)|70.5%|13259 (± 0.61%)|
+|[`is-my-json-valid`](https://github.com/mafintosh/is-my-json-valid#readme)|45.1%|8481 (± 0.36%)|
+|[`z-schema`](https://github.com/zaggino/z-schema)|6.6%|1249 (± 0.3%)|
+|[`@cfworker/json-schema`](https://github.com/cfworker/cfworker/tree/master/packages/json-schema/README.md)|4.3%|812 (± 1.13%)|
+|[`jsonschema`](https://github.com/tdegrunt/jsonschema#readme)|1.3%|238 (± 1.08%)|
 
 692 tests are run in each test run.
 
