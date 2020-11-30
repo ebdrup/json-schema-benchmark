@@ -41,14 +41,15 @@ module.exports = async function valivators(draftUri, draftVersion) {
     },
     {
       "http://json-schema.org/draft-04/schema": require("./refs/json-schema-draft-04.json"),
-      "http://json-schema.org/draft-06/schema": require("./refs/json-schema-draft-06.json")
+      "http://json-schema.org/draft-06/schema": require("./refs/json-schema-draft-06.json"),
+      "http://json-schema.org/draft-07/schema": require("./refs/json-schema-draft-07.json"),
     }
   );
 
-  Object.keys(refs).forEach(function (uri) {
+  Object.keys(refs).forEach(function(uri) {
     try {
       ajv.addSchema(refs[uri], uri);
-    } catch (ex) { } //ignore draft-04 already loaded
+    } catch (ex) {} //ignore draft-04 already loaded
     djv.addSchema(uri, refs[uri]);
     jlib.addSchema(uri, refs[uri]);
   });
@@ -61,7 +62,7 @@ module.exports = async function valivators(draftUri, draftVersion) {
       },
       test: function(instance, json, schema) {
         return instance.root(json) === 0;
-      }
+      },
     },
     {
       name: "is-my-json-valid",
@@ -71,7 +72,7 @@ module.exports = async function valivators(draftUri, draftVersion) {
       },
       test: function(instance, json, schema) {
         return instance(json);
-      }
+      },
     },
     {
       name: "jsen",
@@ -80,7 +81,7 @@ module.exports = async function valivators(draftUri, draftVersion) {
       },
       test: function(instance, json, schema) {
         return instance(json);
-      }
+      },
     },
     {
       name: "ajv",
@@ -90,7 +91,7 @@ module.exports = async function valivators(draftUri, draftVersion) {
       },
       test: function(instance, json, schema) {
         return instance(json);
-      }
+      },
     },
     {
       name: "themis",
@@ -102,13 +103,13 @@ module.exports = async function valivators(draftUri, draftVersion) {
         return instance(json, "0").valid;
       },
       benchmarks:
-        "https://cdn.rawgit.com/playlyfe/themis/master/benchmark/results.html"
+        "https://cdn.rawgit.com/playlyfe/themis/master/benchmark/results.html",
     },
     {
       name: "z-schema",
       setup: function() {
         const validator = new ZSchema({
-          ignoreUnresolvableReferences: true
+          ignoreUnresolvableReferences: true,
         });
         Object.keys(refs).forEach(function(uri) {
           validator.setRemoteReference(uri, refs[uri]);
@@ -119,7 +120,7 @@ module.exports = async function valivators(draftUri, draftVersion) {
         return instance.validate(json, schema);
       },
       benchmarks:
-        "https://rawgit.com/zaggino/z-schema/master/benchmark/results.html"
+        "https://rawgit.com/zaggino/z-schema/master/benchmark/results.html",
     },
     {
       name: "jjv",
@@ -133,21 +134,22 @@ module.exports = async function valivators(draftUri, draftVersion) {
       },
       test: function(instance, json, schema) {
         return instance.validate(schema, json) === null;
-      }
+      },
     },
     {
       name: "djv",
       setup: function(schema) {
         const version = {
           "4": "draft-04",
-          "6": "draft-06"
+          "6": "draft-06",
+          "7": "draft-07",
         }[draftVersion];
         djv.useVersion(version);
         return djv.addSchema("test", schema).fn;
       },
       test: function(instance, json, schema) {
         return instance(json) === undefined;
-      }
+      },
     },
     {
       name: "skeemas",
@@ -160,7 +162,7 @@ module.exports = async function valivators(draftUri, draftVersion) {
       },
       test: function(instance, json, schema) {
         return instance.validate(json, schema).valid;
-      }
+      },
     },
     {
       name: "schemasaurus",
@@ -169,19 +171,19 @@ module.exports = async function valivators(draftUri, draftVersion) {
       },
       test: function(instance, json) {
         return instance(json).valid;
-      }
+      },
     },
     {
       name: "jsck",
       setup: function(schema) {
         // no $refs supported
-        return new jsck.draft4(schema); // draft-04 is max supported versio
+        return new jsck.draft4(schema); // draft-04 is max supported version
       },
       test: function(instance, json, schema) {
         return instance.validate(json).valid;
       },
       benchmarks:
-        "https://github.com/pandastrike/jsck/blob/master/doc/benchmarks.md"
+        "https://github.com/pandastrike/jsck/blob/master/doc/benchmarks.md",
     },
     {
       name: "jassi",
@@ -191,7 +193,7 @@ module.exports = async function valivators(draftUri, draftVersion) {
       },
       test: function(instance, json, schema) {
         return instance(json, schema).length === 0;
-      }
+      },
     },
 
     {
@@ -205,7 +207,7 @@ module.exports = async function valivators(draftUri, draftVersion) {
           instance.JSV.createEnvironment().validate(json, schema).errors
             .length === 0
         );
-      }
+      },
     },
     {
       name: "request-validator",
@@ -220,7 +222,7 @@ module.exports = async function valivators(draftUri, draftVersion) {
         } catch (e) {
           return false;
         }
-      }
+      },
     },
     {
       name: "json-gate",
@@ -235,7 +237,7 @@ module.exports = async function valivators(draftUri, draftVersion) {
         } catch (e) {
           return false;
         }
-      }
+      },
     },
     {
       name: "json-model",
@@ -245,7 +247,7 @@ module.exports = async function valivators(draftUri, draftVersion) {
       },
       test: function(instance, json, schema) {
         return instance(json).valid;
-      }
+      },
     },
     {
       name: "tv4",
@@ -258,7 +260,7 @@ module.exports = async function valivators(draftUri, draftVersion) {
       },
       test: function(instance, json, schema) {
         return instance.validateResult(json, schema).valid;
-      }
+      },
     },
     {
       name: "jsonschema",
@@ -271,7 +273,7 @@ module.exports = async function valivators(draftUri, draftVersion) {
       },
       test: function(instance, json, schema) {
         return instance.validate(json, schema).errors.length === 0;
-      }
+      },
     },
     {
       name: "revalidator",
@@ -280,7 +282,7 @@ module.exports = async function valivators(draftUri, draftVersion) {
       },
       test: function(instance, json, schema) {
         return instance.validate(json, schema).valid;
-      }
+      },
     },
     {
       name: "json-schema-library",
@@ -289,7 +291,7 @@ module.exports = async function valivators(draftUri, draftVersion) {
       },
       test: function(instance, json, schema) {
         return instance.isValid(json);
-      }
+      },
     },
     {
       name: "@exodus/schemasafe",
@@ -298,22 +300,22 @@ module.exports = async function valivators(draftUri, draftVersion) {
           allowUnusedKeywords: true,
           includeErrors: true,
           schemas: refs,
-          $schemaDefault: "https://json-schema.org/draft-06/schema"
+          $schemaDefault: "https://json-schema.org/draft-06/schema",
         });
       },
       test: function(instance, json, schema) {
         return instance(json);
-      }
+      },
     },
     {
       name: "@cfworker/json-schema",
-      setup: schema => {
+      setup: (schema) => {
         const validator = new cfworker.Validator(schema, draftVersion);
-        Object.keys(refs).forEach(id => validator.addSchema(refs[id], id));
+        Object.keys(refs).forEach((id) => validator.addSchema(refs[id], id));
         return validator;
       },
-      test: (validator, json) => validator.validate(json).valid
-    }
+      test: (validator, json) => validator.validate(json).valid,
+    },
   ];
 
   cfworker = await import("@cfworker/json-schema");

@@ -8,16 +8,16 @@ for validators that cause side-effects on schema or data. The top 6 validators t
 
 # Performance
 
-![performance](https://chart.googleapis.com/chart?chxt=x,y&cht=bhs&chco=76A4FB&chls=2.0&chbh=62,4,1&chs=600x416&chxl=-1:|ajv|@exodus&#x2F;schemasafe|is-my-json-valid|z-schema|@cfworker&#x2F;json-schema|jsonschema&chd=t:100,67.5,43,6.2,5,1.1)
+![performance](https://chart.googleapis.com/chart?chxt=x,y&cht=bhs&chco=76A4FB&chls=2.0&chbh=62,4,1&chs=600x416&chxl=-1:|ajv|@exodus&#x2F;schemasafe|is-my-json-valid|z-schema|@cfworker&#x2F;json-schema|jsonschema&chd=t:100,70.2,46.9,6.5,5.3,1.2)
 
 |Validator|Relative speed|Number of test runs per second|
 |---------|:------------:|:----------------------------:|
-|[`ajv`](https://github.com/ajv-validator/ajv)|100%|19250 (± 0.91%)|
-|[`@exodus/schemasafe`](https://github.com/ExodusMovement/schemasafe)|67.5%|12998 (± 1.04%)|
-|[`is-my-json-valid`](https://github.com/mafintosh/is-my-json-valid#readme)|43%|8268 (± 0.49%)|
-|[`z-schema`](https://github.com/zaggino/z-schema)|6.2%|1187 (± 1.53%)|
-|[`@cfworker/json-schema`](https://github.com/cfworker/cfworker/tree/master/packages/json-schema/README.md)|5%|962 (± 0.8%)|
-|[`jsonschema`](https://github.com/tdegrunt/jsonschema#readme)|1.1%|217 (± 1.22%)|
+|[`ajv`](https://github.com/ajv-validator/ajv)|100%|18434 (± 1.13%)|
+|[`@exodus/schemasafe`](https://github.com/ExodusMovement/schemasafe)|70.2%|12937 (± 3.11%)|
+|[`is-my-json-valid`](https://github.com/mafintosh/is-my-json-valid#readme)|46.9%|8643 (± 1.25%)|
+|[`z-schema`](https://github.com/zaggino/z-schema)|6.5%|1207 (± 0.55%)|
+|[`@cfworker/json-schema`](https://github.com/cfworker/cfworker/tree/master/packages/json-schema/README.md)|5.3%|982 (± 1.64%)|
+|[`jsonschema`](https://github.com/tdegrunt/jsonschema#readme)|1.2%|227 (± 0.35%)|
 
 692 tests are run in each test run.
 
@@ -77,6 +77,7 @@ Validators not in the list have no side-effects on data or schemas.
 
 # Tests for other JSON-schema versions
 
+- [draft7](https://github.com/ebdrup/json-schema-benchmark/tree/master/draft7)
 - [draft6](https://github.com/ebdrup/json-schema-benchmark/)
 - [draft4](https://github.com/ebdrup/json-schema-benchmark/tree/master/draft4)
 

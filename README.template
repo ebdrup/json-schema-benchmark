@@ -55,6 +55,7 @@ Validators not in the list have no side-effects on data or schemas.
 
 # Tests for other JSON-schema versions
 
+- [draft7](https://github.com/ebdrup/json-schema-benchmark/tree/master/draft7)
 - [draft6](https://github.com/ebdrup/json-schema-benchmark/)
 - [draft4](https://github.com/ebdrup/json-schema-benchmark/tree/master/draft4)
 

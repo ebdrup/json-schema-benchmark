@@ -10,7 +10,16 @@ const validators = require("./validators");
     "http://json-schema.org/draft-06/schema",
     "6"
   );
+  const draft07Validators = await validators(
+    "http://json-schema.org/draft-07/schema",
+    "7"
+  );
 
+  await testRunner({
+    validators: draft07Validators,
+    schemaVersion: "draft7",
+    folder: "draft7/",
+  });
   await testRunner({
     validators: draft06Validators,
     schemaVersion: "draft6",

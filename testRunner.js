@@ -277,20 +277,26 @@ async function saveResults({
   schemaVersion,
   folder,
 }) {
-  await promisify(require("child_process").exec)(
-    "rm -f " + path.join(__dirname, folder, "/reports/*.md")
-  );
+  if (folder) {
+    await promisify(require("child_process").exec)(
+      "rm -rf " + path.join(__dirname, folder)
+    );
+  } else {
+    await promisify(require("child_process").exec)(
+      "rm -rf " + path.join(__dirname, folder, "reports")
+    );
+  }
   var readmePath = path.join(__dirname, folder, "README.md");
   var readmeTemplate = fs.readFileSync(
     path.join(__dirname, "README.template"),
     "utf-8"
   );
   var testsTemplate = fs.readFileSync(
-    path.join(__dirname, "reports/TESTS.template"),
+    path.join(__dirname, "TESTS.template"),
     "utf-8"
   );
   var sideEffectsTemplate = fs.readFileSync(
-    path.join(__dirname, "reports/SIDE-EFFECTS.template"),
+    path.join(__dirname, "SIDE-EFFECTS.template"),
     "utf-8"
   );
 
@@ -373,6 +379,16 @@ async function saveResults({
     folder,
   };
   var html = mustache.render(readmeTemplate, data);
+  if (folder) {
+    const folderPath = path.join(__dirname, folder);
+    if (!fs.existsSync(folderPath)) {
+      fs.mkdirSync(folderPath);
+    }
+  }
+  const reportsPath = path.join(__dirname, folder, "reports");
+  if (!fs.existsSync(reportsPath)) {
+    fs.mkdirSync(reportsPath);
+  }
   fs.writeFileSync(readmePath, html);
   validators.forEach(function(validator) {
     var html = mustache.render(testsTemplate, {
@@ -385,12 +401,6 @@ async function saveResults({
         })
       ),
     });
-    var testSummaryPath = path.join(
-      __dirname,
-      folder,
-      "/reports/",
-      validator.name + ".md"
-    );
     if (validator.name.startsWith("@")) {
       const scope = validator.name.substr(0, validator.name.indexOf("/"));
       const scopeDir = path.join(__dirname, folder, "/reports/", scope);
@@ -398,6 +408,12 @@ async function saveResults({
         fs.mkdirSync(scopeDir);
       }
     }
+    const testSummaryPath = path.join(
+      __dirname,
+      folder,
+      "/reports/",
+      validator.name + ".md"
+    );
     fs.writeFileSync(testSummaryPath, html);
   });
   validatorsSideEffects.forEach(function(sideEffects) {
