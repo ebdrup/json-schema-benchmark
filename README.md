@@ -6,24 +6,18 @@ for validators that cause side-effects on schema or data. The top 6 validators t
 
 [Contribute to these benchmarks](https://github.com/ebdrup/json-schema-benchmark/blob/master/CONTRIBUTING.md)
 
-# Tests for other JSON-schema versions
-
-- [draft6](https://github.com/ebdrup/json-schema-benchmark/)
-- [draft4](https://github.com/ebdrup/json-schema-benchmark/tree/master/draft4)
-
-
 # Performance
 
-![performance](https://chart.googleapis.com/chart?chxt=x,y&cht=bhs&chco=76A4FB&chls=2.0&chbh=62,4,1&chs=600x416&chxl=-1:|ajv|@exodus&#x2F;schemasafe|is-my-json-valid|djv|@cfworker&#x2F;json-schema|jsonschema&chd=t:100,69.1,49.8,12.5,5,1.2)
+![performance](https://chart.googleapis.com/chart?chxt=x,y&cht=bhs&chco=76A4FB&chls=2.0&chbh=62,4,1&chs=600x416&chxl=-1:|ajv|@exodus&#x2F;schemasafe|is-my-json-valid|djv|@cfworker&#x2F;json-schema|jsonschema&chd=t:100,69.8,49.8,12.6,4.2,1.1)
 
 |Validator|Relative speed|Number of test runs per second|
 |---------|:------------:|:----------------------------:|
-|[`ajv`](https://github.com/ajv-validator/ajv)|100%|17909 (± 0.3%)|
-|[`@exodus/schemasafe`](https://github.com/ExodusMovement/schemasafe)|69.1%|12371 (± 0.47%)|
-|[`is-my-json-valid`](https://github.com/mafintosh/is-my-json-valid#readme)|49.8%|8915 (± 0.52%)|
-|[`djv`](https://github.com/korzio/djv#readme)|12.5%|2239 (± 1.45%)|
-|[`@cfworker/json-schema`](https://github.com/cfworker/cfworker/tree/master/packages/json-schema/README.md)|5%|887 (± 1.02%)|
-|[`jsonschema`](https://github.com/tdegrunt/jsonschema#readme)|1.2%|206 (± 1.2%)|
+|[`ajv`](https://github.com/ajv-validator/ajv)|100%|17743 (± 0.42%)|
+|[`@exodus/schemasafe`](https://github.com/ExodusMovement/schemasafe)|69.8%|12383 (± 0.35%)|
+|[`is-my-json-valid`](https://github.com/mafintosh/is-my-json-valid#readme)|49.8%|8840 (± 0.27%)|
+|[`djv`](https://github.com/korzio/djv#readme)|12.6%|2239 (± 1.4%)|
+|[`@cfworker/json-schema`](https://github.com/cfworker/cfworker/tree/master/packages/json-schema/README.md)|4.2%|753 (± 1%)|
+|[`jsonschema`](https://github.com/tdegrunt/jsonschema#readme)|1.1%|197 (± 1.22%)|
 
 884 tests are run in each test run.
 
@@ -79,6 +73,11 @@ Number of tests that caused side-effects. The schema or data was altered by the 
 |[`revalidator`](https://github.com/flatiron/revalidator)|[818](https://github.com/ebdrup/json-schema-benchmark/blob/master/reports/revalidator-side-effects.md)|
 
 Validators not in the list have no side-effects on data or schemas.
+
+# Tests for other JSON-schema versions
+
+- [draft6](https://github.com/ebdrup/json-schema-benchmark/)
+- [draft4](https://github.com/ebdrup/json-schema-benchmark/tree/master/draft4)
 
 # Features of validators
 

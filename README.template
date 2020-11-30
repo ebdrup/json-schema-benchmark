@@ -6,12 +6,6 @@ for validators that cause side-effects on schema or data. The top 6 validators t
 
 [Contribute to these benchmarks](https://github.com/ebdrup/json-schema-benchmark/blob/master/CONTRIBUTING.md)
 
-# Tests for other JSON-schema versions
-
-- [draft6](https://github.com/ebdrup/json-schema-benchmark/)
-- [draft4](https://github.com/ebdrup/json-schema-benchmark/tree/master/draft4)
-
-
 # Performance
 
 ![performance](https://chart.googleapis.com/chart?chxt=x,y&cht=bhs&chco=76A4FB&chls=2.0&chbh={{resultGraphBarHeight}},{{graphBarSpacing}},1&chs=600x{{resultsGraphHeight}}&chxl=-1:{{#results}}|{{name}}{{/results}}&chd=t:{{#results}}{{percentage}}{{#comma}},{{/comma}}{{/results}})
@@ -58,6 +52,11 @@ Number of tests that caused side-effects. The schema or data was altered by the 
 {{/validatorsSideEffects}}
 
 Validators not in the list have no side-effects on data or schemas.
+
+# Tests for other JSON-schema versions
+
+- [draft6](https://github.com/ebdrup/json-schema-benchmark/)
+- [draft4](https://github.com/ebdrup/json-schema-benchmark/tree/master/draft4)
 
 # Features of validators
 
