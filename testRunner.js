@@ -51,29 +51,26 @@ module.exports = function(validators, schemaVersion) {
         }
       });
       var testSuites = readTests(
-        path.join(__dirname + "/JSON-Schema-Test-Suite/tests/draft4/")
-      );
-      var optionalTests = getTestNames(
-        readTests(
-          path.join(__dirname + "/JSON-Schema-Test-Suite/tests/draft4/optional")
-        )
-      );
-      validators.forEach(validator => {
+        path.join(__dirname + `/JSON-Schema-Test-Suite/tests/${schemaVersion}/`)
+      )
+      validators.forEach((validator) => {
         validator.failingTests = [];
         validator.sideEffects = [];
         validator.timesFastest = 0;
-        testSuites.forEach(testSuite => verifyValidator(validator, testSuite));
+        testSuites.forEach((testSuite) =>
+          verifyValidator(validator, testSuite)
+        );
       });
       var goodValidators = validators
         .sort((a, b) => a.failingTests.length - b.failingTests.length)
         .slice(0, 6); //top 6 validators with the least failing tests are included in benchmark
       const excludeTests = goodValidators.reduce(
         (acc, validator) =>
-          acc.concat(validator.failingTests.map(t => t.testName)),
+          acc.concat(validator.failingTests.map((t) => t.testName)),
         []
       );
-      validators.forEach(validator => {
-        validator.failingTests.forEach(failingTest => {
+      validators.forEach((validator) => {
+        validator.failingTests.forEach((failingTest) => {
           if (!excludeTests.includes(failingTest.testName)) {
             failingTest.message +=
               ". **This excludes this validator from performance tests**";
@@ -209,8 +206,8 @@ function runBenchmark(validators, testSuites, excludeTests) {
   var suite = new benchmark.Suite();
   validators.forEach(function(validator) {
     var testSuitesCopy = JSON.parse(JSON.stringify(testSuites)).filter(
-      testSuite => {
-        testSuite.tests = testSuite.tests.filter(test => {
+      (testSuite) => {
+        testSuite.tests = testSuite.tests.filter((test) => {
           var testName = [testSuite.description, test.description].join(", ");
           return excludeTests.indexOf(testName) === -1;
         });
@@ -239,7 +236,7 @@ function runBenchmark(validators, testSuites, excludeTests) {
       console.log(String(event.target));
     })
     .run({
-      async: false
+      async: false,
     });
 
   var fastestTestResult = suite.reduce(function(acc, testResult) {
@@ -265,7 +262,7 @@ function runBenchmark(validators, testSuites, excludeTests) {
         Math.round(((result.hz || 0) / fastestTestResult.hz) * 1000) / 10,
       name: validator.name,
       plusMinusPercent: Math.round(result.stats.rme * 100) / 100,
-      link: validator.link
+      link: validator.link,
     };
   });
   return suiteResult;
@@ -317,7 +314,7 @@ function saveResults(
           return {
             name: validator.name,
             link: validator.link,
-            count: validator.failingTests.length
+            count: validator.failingTests.length,
           };
         })
         .sort(function(a, b) {
@@ -329,7 +326,7 @@ function saveResults(
             name: validator.name,
             link: validator.link,
             count: validator.sideEffects.length,
-            sideEffects: validator.sideEffects
+            sideEffects: validator.sideEffects,
           };
         })
         .filter(function(o) {
@@ -355,7 +352,7 @@ function saveResults(
         })
         .map(function(v) {
           return {
-            link: format("[Benchmarks owned by %s](%s)", v.name, v.benchmarks)
+            link: format("[Benchmarks owned by %s](%s)", v.name, v.benchmarks),
           };
         });
       var graphBarSpacing = 4;
@@ -388,7 +385,7 @@ function saveResults(
         resultGraphBarHeight,
         validatorBenchmarks,
         testCount: allTestNames.length,
-        schemaVersion
+        schemaVersion,
       };
       var html = mustache.render(readmeTemplate, data);
       fs.writeFileSync(readmePath, html);
@@ -401,7 +398,7 @@ function saveResults(
             testsThatAllValidatorsFail.map(function(testName) {
               return { name: testName };
             })
-          )
+          ),
         });
         var testSummaryPath = path.join(
           __dirname,

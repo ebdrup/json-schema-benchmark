@@ -1,8 +1,5 @@
 # [`@cfworker/json-schema`](https://github.com/cfworker/cfworker/tree/master/packages/json-schema/README.md) - test summary
 
-# All validators fail this test
-
-`some languages do not distinguish between different types of numeric value, a float is not an integer even without fractional part`
 
 # [`@cfworker/json-schema`](https://github.com/cfworker/cfworker/tree/master/packages/json-schema/README.md) failed tests
 
@@ -11,10 +8,6 @@ that is the case for these tests.
 
 |test failed|reason
 |-----------|------
-`maximum validation (explicit false exclusivity), below the maximum is valid`|Expected result: `true` but validator returned: `false`
-`maximum validation (explicit false exclusivity), boundary point is valid`|Expected result: `true` but validator returned: `false`
-`exclusiveMaximum validation, below the maximum is still valid`|Expected result: `true` but validator returned: `false`
-`exclusiveMinimum validation, boundary point is invalid`|Expected result: `false` but validator returned: `true`
 `invalid instance should not raise error when float division = inf, always invalid, but naive implementations may raise an overflow error`|Expected result: `false` but validator returned: `true`
 `validation of IPv6 addresses, leading whitespace is invalid`|Expected result: `false` but validator returned: `true`
 `validation of IPv6 addresses, trailing whitespace is invalid`|Expected result: `false` but validator returned: `true`

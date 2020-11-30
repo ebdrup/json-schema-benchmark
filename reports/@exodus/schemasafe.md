@@ -1,8 +1,5 @@
 # [`@exodus/schemasafe`](https://github.com/ExodusMovement/schemasafe) - test summary
 
-# All validators fail this test
-
-`some languages do not distinguish between different types of numeric value, a float is not an integer even without fractional part`
 
 # [`@exodus/schemasafe`](https://github.com/ExodusMovement/schemasafe) failed tests
 
@@ -11,8 +8,14 @@ that is the case for these tests.
 
 |test failed|reason
 |-----------|------
+`anyOf with boolean schemas, all true, any value is valid`|The schema failed to load(`some checks are never reachable at #`)
+`anyOf with boolean schemas, some true, any value is valid`|The schema failed to load(`some checks are never reachable at #`)
 `anyOf with one empty schema, string is valid`|The schema failed to load(`some checks are never reachable at #`)
 `anyOf with one empty schema, number is valid`|The schema failed to load(`some checks are never reachable at #`)
+`not with boolean schema false, any value is valid`|The schema failed to load(`some checks are never reachable at #`)
+`oneOf with boolean schemas, one true, any value is valid`|The schema failed to load(`some checks are never reachable at #`)
+`oneOf with boolean schemas, more than one true, any value is invalid`|The schema failed to load(`some checks are never reachable at #`)
+`oneOf with boolean schemas, all false, any value is invalid`|The schema failed to load(`some checks are never reachable at #`)
 
 **All other tests passed**.
 

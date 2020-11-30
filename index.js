@@ -11,5 +11,5 @@ const validators = require("./validators");
     "6"
   );
 
-  testRunner(draft06Validators);
+  testRunner(draft06Validators, "draft6");
 })();

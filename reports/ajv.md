@@ -1,8 +1,5 @@
 # [`ajv`](https://github.com/ajv-validator/ajv) - test summary
 
-# All validators fail this test
-
-`some languages do not distinguish between different types of numeric value, a float is not an integer even without fractional part`
 
 # [`ajv`](https://github.com/ajv-validator/ajv) failed tests
 
@@ -11,20 +8,6 @@ that is the case for these tests.
 
 |test failed|reason
 |-----------|------
-`maximum validation (explicit false exclusivity), below the maximum is valid`|The schema failed to load(`schema is invalid: data.exclusiveMaximum should be number`)
-`maximum validation (explicit false exclusivity), boundary point is valid`|The schema failed to load(`schema is invalid: data.exclusiveMaximum should be number`)
-`maximum validation (explicit false exclusivity), above the maximum is invalid`|The schema failed to load(`schema is invalid: data.exclusiveMaximum should be number`)
-`maximum validation (explicit false exclusivity), ignores non-numbers`|The schema failed to load(`schema is invalid: data.exclusiveMaximum should be number`)
-`exclusiveMaximum validation, below the maximum is still valid`|The schema failed to load(`schema is invalid: data.exclusiveMaximum should be number`)
-`exclusiveMaximum validation, boundary point is invalid`|The schema failed to load(`schema is invalid: data.exclusiveMaximum should be number`)
-`minimum validation (explicit false exclusivity), above the minimum is valid`|The schema failed to load(`schema is invalid: data.exclusiveMinimum should be number`)
-`minimum validation (explicit false exclusivity), boundary point is valid`|The schema failed to load(`schema is invalid: data.exclusiveMinimum should be number`)
-`minimum validation (explicit false exclusivity), below the minimum is invalid`|The schema failed to load(`schema is invalid: data.exclusiveMinimum should be number`)
-`minimum validation (explicit false exclusivity), ignores non-numbers`|The schema failed to load(`schema is invalid: data.exclusiveMinimum should be number`)
-`exclusiveMinimum validation, above the minimum is still valid`|The schema failed to load(`schema is invalid: data.exclusiveMinimum should be number`)
-`exclusiveMinimum validation, boundary point is invalid`|The schema failed to load(`schema is invalid: data.exclusiveMinimum should be number`)
-`float comparison with high precision, comparison works for high numbers`|The schema failed to load(`schema is invalid: data.exclusiveMaximum should be number`)
-`float comparison with high precision on negative numbers, comparison works for very negative numbers`|The schema failed to load(`schema is invalid: data.exclusiveMinimum should be number`)
 `all integers are multiples of 0.5, if overflow is handled, valid if optional overflow handling is implemented`|Expected result: `true` but validator returned: `false`
 `validation of e-mail addresses, dot before local part is not valid`|Expected result: `false` but validator returned: `true`
 `validation of e-mail addresses, dot after local part is not valid`|Expected result: `false` but validator returned: `true`
