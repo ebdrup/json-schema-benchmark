@@ -11,5 +11,14 @@ const validators = require("./validators");
     "6"
   );
 
-  testRunner(draft06Validators, "draft6");
+  await testRunner({
+    validators: draft06Validators,
+    schemaVersion: "draft6",
+    folder: "",
+  });
+  await testRunner({
+    validators: draft04Validators,
+    schemaVersion: "draft4",
+    folder: "draft4/",
+  });
 })();
