@@ -52,8 +52,8 @@ that is the case for these tests.
 `Recursive references between schemas, invalid tree`|The schema failed to load(`Cannot read property 'split' of undefined`)
 `refs with quote, object with numbers is valid`|The schema failed to load(`Invalid or unexpected token`). **This excludes this validator from performance tests**
 `refs with quote, object with strings is invalid`|The schema failed to load(`Invalid or unexpected token`). **This excludes this validator from performance tests**
-`Location-independent identifier, match`|The schema failed to load(`Cannot find ref '#foo' in schema`)
-`Location-independent identifier, mismatch`|The schema failed to load(`Cannot find ref '#foo' in schema`)
+`Location-independent identifier, match`|The schema failed to load(`Cannot find ref '#foo' in schema`). **This excludes this validator from performance tests**
+`Location-independent identifier, mismatch`|The schema failed to load(`Cannot find ref '#foo' in schema`). **This excludes this validator from performance tests**
 `Location-independent identifier with absolute URI, match`|The schema failed to load(`Remote refs are not supported for now :(`)
 `Location-independent identifier with absolute URI, mismatch`|The schema failed to load(`Remote refs are not supported for now :(`). **This excludes this validator from performance tests**
 `Location-independent identifier with base URI change in subschema, match`|The schema failed to load(`Remote refs are not supported for now :(`)
@@ -64,7 +64,7 @@ that is the case for these tests.
 `fragment within remote ref, remote fragment invalid`|The schema failed to load(`Remote refs are not supported for now :(`). **This excludes this validator from performance tests**
 `ref within remote ref, ref within ref valid`|The schema failed to load(`Remote refs are not supported for now :(`)
 `ref within remote ref, ref within ref invalid`|The schema failed to load(`Remote refs are not supported for now :(`)
-`base URI change, base URI change ref valid`|The schema failed to load(`Cannot read property 'split' of undefined`)
+`base URI change, base URI change ref valid`|The schema failed to load(`Cannot read property 'split' of undefined`). **This excludes this validator from performance tests**
 `base URI change, base URI change ref invalid`|The schema failed to load(`Cannot read property 'split' of undefined`)
 `base URI change - change folder, number is valid`|The schema failed to load(`Cannot read property 'split' of undefined`)
 `base URI change - change folder, string is invalid`|The schema failed to load(`Cannot read property 'split' of undefined`)

@@ -87,7 +87,7 @@ that is the case for these tests.
 `property named $ref, containing an actual $ref, property named $ref invalid`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
 `Recursive references between schemas, invalid tree`|Expected result: `false` but validator returned: `true`
 `refs with quote, object with strings is invalid`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
-`Location-independent identifier, mismatch`|Expected result: `false` but validator returned: `true`
+`Location-independent identifier, mismatch`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
 `Location-independent identifier with absolute URI, mismatch`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
 `Location-independent identifier with base URI change in subschema, mismatch`|Expected result: `false` but validator returned: `true`
 `remote ref, remote ref invalid`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**

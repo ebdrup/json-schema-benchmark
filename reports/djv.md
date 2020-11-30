@@ -48,6 +48,10 @@ that is the case for these tests.
 `validation of URIs, ignores arrays`|Expected result: `true` but validator returned: `false`. **This excludes this validator from performance tests**
 `validation of URIs, ignores booleans`|Expected result: `true` but validator returned: `false`. **This excludes this validator from performance tests**
 `validation of URIs, ignores null`|Expected result: `true` but validator returned: `false`. **This excludes this validator from performance tests**
+`maximum validation (explicit false exclusivity), below the maximum is valid`|Expected result: `true` but validator returned: `false`
+`maximum validation (explicit false exclusivity), boundary point is valid`|Expected result: `true` but validator returned: `false`
+`exclusiveMaximum validation, below the maximum is still valid`|Expected result: `true` but validator returned: `false`
+`exclusiveMinimum validation, boundary point is invalid`|Expected result: `false` but validator returned: `true`
 `all integers are multiples of 0.5, if overflow is handled, valid if optional overflow handling is implemented`|Expected result: `true` but validator returned: `false`
 `validation of e-mail addresses, dot before local part is not valid`|Expected result: `false` but validator returned: `true`
 `validation of e-mail addresses, dot after local part is not valid`|Expected result: `false` but validator returned: `true`
@@ -59,12 +63,18 @@ that is the case for these tests.
 `Proper UTF-16 surrogate pair handling: pattern, matches empty`|Expected result: `true` but validator returned: `false`
 `Proper UTF-16 surrogate pair handling: pattern, matches two`|Expected result: `true` but validator returned: `false`
 `Proper UTF-16 surrogate pair handling: patternProperties, doesn't match two`|Expected result: `false` but validator returned: `true`
-`Location-independent identifier, match`|Expected result: `true` but validator returned: `"Maximum call stack size exceeded"`
-`Location-independent identifier, mismatch`|Expected result: `false` but validator returned: `"Maximum call stack size exceeded"`
+`Location-independent identifier, match`|Expected result: `true` but validator returned: `"Maximum call stack size exceeded"`. **This excludes this validator from performance tests**
+`Location-independent identifier, mismatch`|Expected result: `false` but validator returned: `"Maximum call stack size exceeded"`. **This excludes this validator from performance tests**
 `Location-independent identifier with absolute URI, match`|Expected result: `true` but validator returned: `"Maximum call stack size exceeded"`
 `Location-independent identifier with absolute URI, mismatch`|Expected result: `false` but validator returned: `"Maximum call stack size exceeded"`. **This excludes this validator from performance tests**
 `Location-independent identifier with base URI change in subschema, match`|Expected result: `true` but validator returned: `"Maximum call stack size exceeded"`
 `Location-independent identifier with base URI change in subschema, mismatch`|Expected result: `false` but validator returned: `"Maximum call stack size exceeded"`
+`base URI change, base URI change ref invalid`|Expected result: `false` but validator returned: `true`
+`base URI change - change folder, number is valid`|Expected result: `true` but validator returned: `false`
+`base URI change - change folder in subschema, number is valid`|Expected result: `true` but validator returned: `false`
+`root ref in remote ref, string is valid`|The schema failed to load(`Cannot read property 'orNull' of undefined`)
+`root ref in remote ref, null is valid`|The schema failed to load(`Cannot read property 'orNull' of undefined`). **This excludes this validator from performance tests**
+`root ref in remote ref, object is invalid`|The schema failed to load(`Cannot read property 'orNull' of undefined`)
 `uniqueItems validation, unique heterogeneous types are valid`|Expected result: `true` but validator returned: `false`
 `uniqueItems validation, objects are non-unique despite key order`|Expected result: `false` but validator returned: `true`
 `uniqueItems=false validation, unique array of integers is valid`|Expected result: `true` but validator returned: `false`. **This excludes this validator from performance tests**

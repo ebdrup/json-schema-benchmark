@@ -95,15 +95,15 @@ that is the case for these tests.
 `maxProperties = 0 means the object is empty, one property is invalid`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
 `maximum validation, above the maximum is invalid`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
 `maximum validation with unsigned integer, above the maximum is invalid`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
-`maximum validation (explicit false exclusivity), above the maximum is invalid`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
-`exclusiveMaximum validation, boundary point is invalid`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
+`maximum validation (explicit false exclusivity), above the maximum is invalid`|Expected result: `false` but validator returned: `true`
+`exclusiveMaximum validation, boundary point is invalid`|Expected result: `false` but validator returned: `true`
 `minItems validation, too short is invalid`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
 `minLength validation, too short is invalid`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
 `minLength validation, one supplementary Unicode code point is not long enough`|Expected result: `false` but validator returned: `true`
 `minProperties validation, too short is invalid`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
 `minimum validation, below the minimum is invalid`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
-`minimum validation (explicit false exclusivity), below the minimum is invalid`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
-`exclusiveMinimum validation, boundary point is invalid`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
+`minimum validation (explicit false exclusivity), below the minimum is invalid`|Expected result: `false` but validator returned: `true`
+`exclusiveMinimum validation, boundary point is invalid`|Expected result: `false` but validator returned: `true`
 `minimum validation with signed integer, float below the minimum is invalid`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
 `minimum validation with signed integer, int below the minimum is invalid`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
 `by int, int by int fail`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
@@ -129,8 +129,8 @@ that is the case for these tests.
 `nested oneOf, to check validation semantics, null is valid`|Expected result: `true` but validator returned: `"Cannot convert undefined or null to object"`. **This excludes this validator from performance tests**
 `nested oneOf, to check validation semantics, anything non-null is invalid`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
 `string, a bignum is not a string`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
-`float comparison with high precision, comparison works for high numbers`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
-`float comparison with high precision on negative numbers, comparison works for very negative numbers`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
+`float comparison with high precision, comparison works for high numbers`|Expected result: `false` but validator returned: `true`
+`float comparison with high precision on negative numbers, comparison works for very negative numbers`|Expected result: `false` but validator returned: `true`
 `ECMA 262 regex $ does not match trailing newline, matches in Python, but should not in jsonschema`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
 `ECMA 262 regex converts \t to horizontal tab, does not match`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
 `ECMA 262 regex escapes control codes with \c and upper letter, does not match`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
@@ -224,7 +224,7 @@ that is the case for these tests.
 `property named $ref, containing an actual $ref, property named $ref invalid`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
 `Recursive references between schemas, invalid tree`|Expected result: `false` but validator returned: `true`
 `refs with quote, object with strings is invalid`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
-`Location-independent identifier, mismatch`|Expected result: `false` but validator returned: `true`
+`Location-independent identifier, mismatch`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
 `Location-independent identifier with absolute URI, mismatch`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**
 `Location-independent identifier with base URI change in subschema, mismatch`|Expected result: `false` but validator returned: `true`
 `naive replacement of $ref with its destination is not correct, do not evaluate the $ref inside the enum`|Expected result: `false` but validator returned: `true`. **This excludes this validator from performance tests**

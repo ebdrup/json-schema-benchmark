@@ -11,6 +11,20 @@ that is the case for these tests.
 
 |test failed|reason
 |-----------|------
+`maximum validation (explicit false exclusivity), below the maximum is valid`|The schema failed to load(`schema is invalid: data.exclusiveMaximum should be number`)
+`maximum validation (explicit false exclusivity), boundary point is valid`|The schema failed to load(`schema is invalid: data.exclusiveMaximum should be number`)
+`maximum validation (explicit false exclusivity), above the maximum is invalid`|The schema failed to load(`schema is invalid: data.exclusiveMaximum should be number`)
+`maximum validation (explicit false exclusivity), ignores non-numbers`|The schema failed to load(`schema is invalid: data.exclusiveMaximum should be number`)
+`exclusiveMaximum validation, below the maximum is still valid`|The schema failed to load(`schema is invalid: data.exclusiveMaximum should be number`)
+`exclusiveMaximum validation, boundary point is invalid`|The schema failed to load(`schema is invalid: data.exclusiveMaximum should be number`)
+`minimum validation (explicit false exclusivity), above the minimum is valid`|The schema failed to load(`schema is invalid: data.exclusiveMinimum should be number`)
+`minimum validation (explicit false exclusivity), boundary point is valid`|The schema failed to load(`schema is invalid: data.exclusiveMinimum should be number`)
+`minimum validation (explicit false exclusivity), below the minimum is invalid`|The schema failed to load(`schema is invalid: data.exclusiveMinimum should be number`)
+`minimum validation (explicit false exclusivity), ignores non-numbers`|The schema failed to load(`schema is invalid: data.exclusiveMinimum should be number`)
+`exclusiveMinimum validation, above the minimum is still valid`|The schema failed to load(`schema is invalid: data.exclusiveMinimum should be number`)
+`exclusiveMinimum validation, boundary point is invalid`|The schema failed to load(`schema is invalid: data.exclusiveMinimum should be number`)
+`float comparison with high precision, comparison works for high numbers`|The schema failed to load(`schema is invalid: data.exclusiveMaximum should be number`)
+`float comparison with high precision on negative numbers, comparison works for very negative numbers`|The schema failed to load(`schema is invalid: data.exclusiveMinimum should be number`)
 `all integers are multiples of 0.5, if overflow is handled, valid if optional overflow handling is implemented`|Expected result: `true` but validator returned: `false`
 `validation of e-mail addresses, dot before local part is not valid`|Expected result: `false` but validator returned: `true`
 `validation of e-mail addresses, dot after local part is not valid`|Expected result: `false` but validator returned: `true`
@@ -21,16 +35,6 @@ that is the case for these tests.
 `Proper UTF-16 surrogate pair handling: pattern, matches empty`|Expected result: `true` but validator returned: `false`
 `Proper UTF-16 surrogate pair handling: pattern, matches two`|Expected result: `true` but validator returned: `false`
 `Proper UTF-16 surrogate pair handling: patternProperties, doesn't match two`|Expected result: `false` but validator returned: `true`
-`Location-independent identifier, match`|The schema failed to load(`schema is invalid: data.definitions['A'].id should match format "uri"`)
-`Location-independent identifier, mismatch`|The schema failed to load(`schema is invalid: data.definitions['A'].id should match format "uri"`)
-`Location-independent identifier with base URI change in subschema, match`|The schema failed to load(`schema is invalid: data.definitions['A'].id should match format "uri"`)
-`Location-independent identifier with base URI change in subschema, mismatch`|The schema failed to load(`schema is invalid: data.definitions['A'].id should match format "uri"`)
-`base URI change, base URI change ref valid`|The schema failed to load(`schema is invalid: data.items.id should match format "uri", data.items should be array, data.items should match some schema in anyOf`)
-`base URI change, base URI change ref invalid`|The schema failed to load(`schema is invalid: data.items.id should match format "uri", data.items should be array, data.items should match some schema in anyOf`)
-`base URI change - change folder, number is valid`|The schema failed to load(`schema is invalid: data.definitions['baz'].id should match format "uri"`)
-`base URI change - change folder, string is invalid`|The schema failed to load(`schema is invalid: data.definitions['baz'].id should match format "uri"`)
-`base URI change - change folder in subschema, number is valid`|The schema failed to load(`schema is invalid: data.definitions['baz'].id should match format "uri"`)
-`base URI change - change folder in subschema, string is invalid`|The schema failed to load(`schema is invalid: data.definitions['baz'].id should match format "uri"`)
 
 **All other tests passed**.
 

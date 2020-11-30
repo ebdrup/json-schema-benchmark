@@ -9,7 +9,7 @@ var async = require("async");
 var jsonStringifySafe = require("json-stringify-safe");
 var format = require("util").format;
 
-module.exports = function(validators) {
+module.exports = function(validators, schemaVersion) {
   npm.load(npm.config, function(err) {
     if (err) {
       console.error(err.stack);
@@ -93,7 +93,8 @@ module.exports = function(validators) {
         results,
         validators,
         allTestNames,
-        testsThatAllValidatorsFail
+        testsThatAllValidatorsFail,
+        schemaVersion
       );
     });
   });
@@ -287,7 +288,8 @@ function saveResults(
   results,
   validators,
   allTestNames,
-  testsThatAllValidatorsFail
+  testsThatAllValidatorsFail,
+  schemaVersion
 ) {
   require("child_process").exec(
     "rm -f " + path.join(__dirname, "/reports/*.md"),
@@ -368,7 +370,7 @@ function saveResults(
           validatorsFailingTests.length +
         20;
       var data = {
-        graphBarSpacing: graphBarSpacing,
+        graphBarSpacing,
         validators: comma(validators),
         fastestValidator: results[0] && results[0].link,
         testsThatAllValidatorsFail: comma(
@@ -377,15 +379,16 @@ function saveResults(
           })
         ),
         validatorsFailingTests: comma(validatorsFailingTests),
-        validatorsFailingTestsGraphHeight: validatorsFailingTestsGraphHeight,
-        validatorsFailingTestsGraphBarHeight: validatorsFailingTestsGraphBarHeight,
-        maxFailingTests: maxFailingTests,
+        validatorsFailingTestsGraphHeight,
+        validatorsFailingTestsGraphBarHeight,
+        maxFailingTests,
         validatorsSideEffects: comma(validatorsSideEffects),
         results: comma(results),
-        resultsGraphHeight: resultsGraphHeight,
-        resultGraphBarHeight: resultGraphBarHeight,
-        validatorBenchmarks: validatorBenchmarks,
-        testCount: allTestNames.length
+        resultsGraphHeight,
+        resultGraphBarHeight,
+        validatorBenchmarks,
+        testCount: allTestNames.length,
+        schemaVersion
       };
       var html = mustache.render(readmeTemplate, data);
       fs.writeFileSync(readmePath, html);

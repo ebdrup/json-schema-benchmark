@@ -43,7 +43,7 @@ that is the case for these tests.
 `fragment within remote ref, remote fragment invalid`|The schema failed to load(`Unresolvable $ref values: ["http://localhost:1234/subSchemas.json#/integer"]`). **This excludes this validator from performance tests**
 `ref within remote ref, ref within ref valid`|The schema failed to load(`Unresolvable $ref values: ["http://localhost:1234/subSchemas.json#/refToInteger"]`)
 `ref within remote ref, ref within ref invalid`|The schema failed to load(`Unresolvable $ref values: ["http://localhost:1234/subSchemas.json#/refToInteger"]`)
-`base URI change, base URI change ref valid`|The schema failed to load(`Unresolvable $ref values: ["http://localhost:1234/"]`)
+`base URI change, base URI change ref valid`|The schema failed to load(`Unresolvable $ref values: ["http://localhost:1234/"]`). **This excludes this validator from performance tests**
 `base URI change, base URI change ref invalid`|The schema failed to load(`Unresolvable $ref values: ["http://localhost:1234/"]`)
 `base URI change - change folder, number is valid`|The schema failed to load(`Unresolvable $ref values: ["http://localhost:1234/folderInteger.json"]`)
 `base URI change - change folder, string is invalid`|The schema failed to load(`Unresolvable $ref values: ["http://localhost:1234/folderInteger.json"]`)

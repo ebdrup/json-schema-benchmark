@@ -1,5 +1,5 @@
-# json-schema-benchmark
-Performance benchmark for Node.js JSON-schema validators.
+# json-schema-benchmark ({{schemaVersion}})
+Performance benchmark for Node.js JSON-schema validators. 
 
 Also tests against [official JSON-schema test suite](https://github.com/json-schema/JSON-Schema-Test-Suite) and checks
 for validators that cause side-effects on schema or data. The top 6 validators that fail the least tests are included in the benchmark.

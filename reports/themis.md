@@ -57,7 +57,7 @@ that is the case for these tests.
 `fragment within remote ref, remote fragment invalid`|Expected result: `false` but validator returned: `"validators.http://localhost:1234/subSchemas.json#/integer is not a function"`. **This excludes this validator from performance tests**
 `ref within remote ref, ref within ref valid`|Expected result: `true` but validator returned: `"validators.http://localhost:1234/subSchemas.json#/refToInteger is not a function"`
 `ref within remote ref, ref within ref invalid`|Expected result: `false` but validator returned: `"validators.http://localhost:1234/subSchemas.json#/refToInteger is not a function"`
-`base URI change, base URI change ref valid`|The schema failed to load(`invalid ref: folderInteger.json in baseUriChange/`)
+`base URI change, base URI change ref valid`|The schema failed to load(`invalid ref: folderInteger.json in baseUriChange/`). **This excludes this validator from performance tests**
 `base URI change, base URI change ref invalid`|The schema failed to load(`invalid ref: folderInteger.json in baseUriChange/`)
 `base URI change - change folder, number is valid`|The schema failed to load(`invalid ref: folderInteger.json in baseUriChangeFolder/`)
 `base URI change - change folder, string is invalid`|The schema failed to load(`invalid ref: folderInteger.json in baseUriChangeFolder/`)
