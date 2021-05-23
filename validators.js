@@ -287,7 +287,7 @@ module.exports = async function valivators(draftUri, draftVersion) {
     {
       name: "json-schema-library",
       setup: function(schema) {
-        return new jlib.cores.Draft04(schema); // draft-04 is max supported version
+        return new jlib.Draft04(schema); // draft-04 is max supported version
       },
       test: function(instance, json, schema) {
         return instance.isValid(json);
