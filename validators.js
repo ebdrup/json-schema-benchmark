@@ -17,7 +17,10 @@ const revalidator = require("revalidator");
 const jsonGate = require("json-gate");
 const jsen = require("jsen");
 const schemasaurus = require("schemasaurus");
-const ajv = require("ajv")({ schemaId: "auto" });
+const ajv = require("ajv");
+const ajv_draft_04 = require("ajv-draft-04")
+const ajv_formats = require("ajv-formats");
+const ajv_formats_draft2019 = require("ajv-formats-draft2019");
 const djv = require("djv")();
 const jsvg = require("json-schema-validator-generator").default;
 const jlib = require("json-schema-library");
@@ -86,8 +89,30 @@ module.exports = async function valivators(draftUri, draftVersion) {
     {
       name: "ajv",
       setup: function(schema) {
-        ajv._opts.defaultMeta = draftUri;
-        return ajv.compile(schema);
+        const optionsForAJV = { strict: false, };
+        let ajv_selected;
+        switch (draftVersion) {
+          default:
+          case "4":
+            ajv_selected = new ajv_draft_04(optionsForAJV);
+            break;
+          case "6":
+          case "7":
+            ajv_selected = new ajv(optionsForAJV);
+            if(draftVersion === "6"){
+              ajv_selected.addMetaSchema(require("ajv/dist/refs/json-schema-draft-06.json"));
+            }else{
+              ajv_formats_draft2019(ajv_selected);
+            }
+            break;
+        }
+        Object.keys(refs).forEach(function(uri) {
+          if(!uri.includes("http://json-schema.org/")){
+            ajv_selected.addSchema(JSON.parse(JSON.stringify(refs[uri])), uri);
+          }
+        });
+        ajv_formats(ajv_selected);
+        return ajv_selected.compile(schema);
       },
       test: function(instance, json, schema) {
         return instance(json);
