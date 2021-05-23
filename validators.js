@@ -47,11 +47,11 @@ module.exports = async function valivators(draftUri, draftVersion) {
   );
 
   Object.keys(refs).forEach(function(uri) {
-    try {
-      ajv.addSchema(refs[uri], uri);
-    } catch (ex) {} //ignore draft-04 already loaded
-    djv.addSchema(uri, refs[uri]);
-    jlib.addSchema(uri, refs[uri]);
+    // Some validator change the refs[uri].
+    // Deep cloning is needed to fix this issue for all validators
+    djv.addSchema(uri, JSON.parse(JSON.stringify(refs[uri])));
+    // jlib change the refs[uri] without deap cloning
+    jlib.addSchema(uri, JSON.parse(JSON.stringify(refs[uri])));
   });
 
   const validators = [
@@ -112,7 +112,7 @@ module.exports = async function valivators(draftUri, draftVersion) {
           ignoreUnresolvableReferences: true,
         });
         Object.keys(refs).forEach(function(uri) {
-          validator.setRemoteReference(uri, refs[uri]);
+          validator.setRemoteReference(uri, JSON.parse(JSON.stringify(refs[uri])));
         });
         return validator;
       },
@@ -127,7 +127,7 @@ module.exports = async function valivators(draftUri, draftVersion) {
       setup: function() {
         const validator = jjv();
         Object.keys(refs).forEach(function(uri) {
-          validator.addSchema(uri, refs[uri]);
+          validator.addSchema(uri, JSON.parse(JSON.stringify(refs[uri])));
         });
 
         return validator;
@@ -156,7 +156,7 @@ module.exports = async function valivators(draftUri, draftVersion) {
       setup: function(schema) {
         const validator = skeemas();
         Object.keys(refs).forEach(function(uri) {
-          validator.addRef(uri, refs[uri]);
+          validator.addRef(uri, JSON.parse(JSON.stringify(refs[uri])));
         });
         return validator;
       },
@@ -254,7 +254,7 @@ module.exports = async function valivators(draftUri, draftVersion) {
       setup: function() {
         //adding this actually makes tv4 fail all tests with "Maximum call stack size exceeded" on loading schemas
         //Object.keys(refs).forEach(function (uri) {
-        //	tv4.addSchema(uri, refs[uri]);
+        //	tv4.addSchema(uri, JSON.stringify(refs[uri])));
         //});
         return tv4;
       },
@@ -267,7 +267,7 @@ module.exports = async function valivators(draftUri, draftVersion) {
       setup: function() {
         const validator = new JsonSchema.Validator();
         Object.keys(refs).forEach(function(uri) {
-          validator.addSchema(refs[uri], uri);
+          validator.addSchema(JSON.parse(JSON.stringify(refs[uri])), uri);
         });
         return validator;
       },
@@ -311,7 +311,7 @@ module.exports = async function valivators(draftUri, draftVersion) {
       name: "@cfworker/json-schema",
       setup: (schema) => {
         const validator = new cfworker.Validator(schema, draftVersion);
-        Object.keys(refs).forEach((id) => validator.addSchema(refs[id], id));
+        Object.keys(refs).forEach((id) => validator.addSchema(JSON.parse(JSON.stringify(refs[id])), id));
         return validator;
       },
       test: (validator, json) => validator.validate(json).valid,
