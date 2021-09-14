@@ -300,7 +300,7 @@ module.exports = async function valivators(draftUri, draftVersion) {
           allowUnusedKeywords: true,
           includeErrors: true,
           schemas: refs,
-          $schemaDefault: "https://json-schema.org/draft-06/schema",
+          $schemaDefault: draftUri,
         });
       },
       test: function(instance, json, schema) {
