@@ -297,7 +297,9 @@ module.exports = async function valivators(draftUri, draftVersion) {
       name: "@exodus/schemasafe",
       setup: function(schema) {
         return schemasafe.validator(schema, {
+          // some tests are ill-formed on a purpose, we disable bail-out on those to check the actual behavior
           allowUnusedKeywords: true,
+          allowUnreachable: true,
           includeErrors: true,
           schemas: refs,
           $schemaDefault: draftUri,
