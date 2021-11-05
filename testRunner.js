@@ -257,7 +257,7 @@ function runBenchmark(validators, testSuites, excludeTests) {
 }
 
 function readTests(dirpath) {
-  return require("fs-readdir-recursive")(dirpath).reduce(function(acc, value) {
+  return require("fs-readdir-recursive")(dirpath).filter((value) => !value.startsWith("optional")).reduce(function(acc, value) {
     return acc.concat(require(path.join(dirpath, value)));
   }, []);
 }

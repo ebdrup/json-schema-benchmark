@@ -4,8 +4,9 @@
   "license": "MIT",
   "dependencies": {
     "@cfworker/json-schema": "*",
-    "@exodus/schemasafe": "^1.0.0-rc.3",
+    "@exodus/schemasafe": "*",
     "ajv": "*",
+    "ajv-draft-04": "*",
     "async": "^3.2.0",
     "benchmark": "^2.1.4",
     "deep-equal": "^2.0.4",
@@ -20,7 +21,6 @@
     "json-gate": "*",
     "json-model": "*",
     "json-schema-library": "*",
-    "json-schema-validator-generator": "*",
     "json-stringify-safe": "^5.0.1",
     "jsonschema": "*",
     "JSV": "*",
@@ -31,7 +31,6 @@
     "revalidator": "*",
     "schemasaurus": "*",
     "skeemas": "*",
-    "themis": "*",
     "tv4": "*",
     "z-schema": "*"
   },
