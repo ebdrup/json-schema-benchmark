@@ -14,7 +14,25 @@ const validators = require("./validators");
     "http://json-schema.org/draft-07/schema",
     "7"
   );
+  const draft201909Validators = await validators(
+    "https://json-schema.org/draft/2019-09/schema",
+    "2019-09"
+  );
+  const draft202012Validators = await validators(
+    "https://json-schema.org/draft/2020-12/schema",
+    "2020-12"
+  );
 
+  await testRunner({
+    validators: draft202012Validators,
+    schemaVersion: "draft2020-12",
+    folder: "",
+  });
+  await testRunner({
+    validators: draft201909Validators,
+    schemaVersion: "draft2019-09",
+    folder: "draft2019-09/",
+  });
   await testRunner({
     validators: draft07Validators,
     schemaVersion: "draft7",
@@ -23,7 +41,7 @@ const validators = require("./validators");
   await testRunner({
     validators: draft06Validators,
     schemaVersion: "draft6",
-    folder: "",
+    folder: "draft6/",
   });
   await testRunner({
     validators: draft04Validators,

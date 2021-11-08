@@ -18,6 +18,8 @@ const jsen = require("jsen");
 const schemasaurus = require("schemasaurus");
 const Ajv = require("ajv");
 const AjvDraft04 = require("ajv-draft-04");
+const Ajv2019 = require("ajv/dist/2019");
+const Ajv2020 = require("ajv/dist/2020");
 const djv = require("djv")();
 const jlib = require("json-schema-library");
 const schemasafe = require("@exodus/schemasafe");
@@ -72,6 +74,10 @@ module.exports = async function valivators(draftUri, draftVersion) {
           ajv.addMetaSchema(require("ajv/dist/refs/json-schema-draft-06.json"));
         } else if (draftVersion === "7") {
           ajv = new Ajv({ strict: false, allErrors: true, validateFormats: false });
+        } else if (draftVersion === "2019-09") {
+          ajv = new Ajv2019({ strict: false, allErrors: true, validateFormats: false });
+        } else if (draftVersion === "2020-12") {
+          ajv = new Ajv2020({ strict: false, allErrors: true, validateFormats: false });
         } else {
           throw Error(`ajv: Draft ${draftVersion} not supported`);
         }
@@ -293,8 +299,7 @@ module.exports = async function valivators(draftUri, draftVersion) {
       name: "@exodus/schemasafe",
       setup: function(schema) {
         return schemasafe.validator(schema, {
-          allowUnusedKeywords: true,
-          allowUnreachable: true,
+          mode: "lax",
           includeErrors: true,
           formats: {
             "idn-email": () => true,
@@ -306,7 +311,23 @@ module.exports = async function valivators(draftUri, draftVersion) {
             ...refs,
             "http://json-schema.org/draft-04/schema": require("./refs/json-schema-draft-04.json"),
             "http://json-schema.org/draft-06/schema": require("./refs/json-schema-draft-04.json"),
-            "http://json-schema.org/draft-07/schema": require("./refs/json-schema-draft-07.json")
+            "http://json-schema.org/draft-07/schema": require("./refs/json-schema-draft-07.json"),
+            "https://json-schema.org/draft/2019-09/schema": require("./refs/json-schema-draft-2019-09.json"),
+            "https://json-schema.org/draft/2019-09/meta/applicator": require("./refs/json-schema-draft-2019-09-applicator.json"),
+            "https://json-schema.org/draft/2019-09/meta/content": require("./refs/json-schema-draft-2019-09-content.json"),
+            "https://json-schema.org/draft/2019-09/meta/core": require("./refs/json-schema-draft-2019-09-core.json"),
+            "https://json-schema.org/draft/2019-09/meta/format": require("./refs/json-schema-draft-2019-09-format.json"),
+            "https://json-schema.org/draft/2019-09/meta/meta-data": require("./refs/json-schema-draft-2019-09-meta-data.json"),
+            "https://json-schema.org/draft/2019-09/meta/validation": require("./refs/json-schema-draft-2019-09-validation.json"),
+            "https://json-schema.org/draft/2020-12/schema": require("./refs/json-schema-draft-2020-12.json"),
+            "https://json-schema.org/draft/2020-12/meta/applicator": require("./refs/json-schema-draft-2020-12-applicator.json"),
+            "https://json-schema.org/draft/2020-12/meta/content": require("./refs/json-schema-draft-2020-12-content.json"),
+            "https://json-schema.org/draft/2020-12/meta/core": require("./refs/json-schema-draft-2020-12-core.json"),
+            "https://json-schema.org/draft/2020-12/meta/format-annotation": require("./refs/json-schema-draft-2020-12-format-annotation.json"),
+            "https://json-schema.org/draft/2020-12/meta/format-assertion": require("./refs/json-schema-draft-2020-12-format-assertion.json"),
+            "https://json-schema.org/draft/2020-12/meta/meta-data": require("./refs/json-schema-draft-2020-12-meta-data.json"),
+            "https://json-schema.org/draft/2020-12/meta/unevaluated": require("./refs/json-schema-draft-2020-12-unevaluated.json"),
+            "https://json-schema.org/draft/2020-12/meta/validation": require("./refs/json-schema-draft-2020-12-validation.json"),
           },
           $schemaDefault: draftUri,
         });
@@ -325,6 +346,24 @@ module.exports = async function valivators(draftUri, draftVersion) {
           validator.addSchema(require("./refs/json-schema-draft-06.json"));
         } else if (draftVersion === "7") {
           validator.addSchema(require("./refs/json-schema-draft-07.json"));
+        } else if (draftVersion === "2019-09") {
+          validator.addSchema(require("./refs/json-schema-draft-2019-09.json"));
+          validator.addSchema(require("./refs/json-schema-draft-2019-09-applicator.json"));
+          validator.addSchema(require("./refs/json-schema-draft-2019-09-content.json"));
+          validator.addSchema(require("./refs/json-schema-draft-2019-09-core.json"));
+          validator.addSchema(require("./refs/json-schema-draft-2019-09-format.json"));
+          validator.addSchema(require("./refs/json-schema-draft-2019-09-meta-data.json"));
+          validator.addSchema(require("./refs/json-schema-draft-2019-09-validation.json"));
+        } else if (draftVersion === "2020-12") {
+          validator.addSchema(require("./refs/json-schema-draft-2020-12.json"));
+          validator.addSchema(require("./refs/json-schema-draft-2020-12-applicator.json"));
+          validator.addSchema(require("./refs/json-schema-draft-2020-12-content.json"));
+          validator.addSchema(require("./refs/json-schema-draft-2020-12-core.json"));
+          validator.addSchema(require("./refs/json-schema-draft-2020-12-format-annotation.json"));
+          validator.addSchema(require("./refs/json-schema-draft-2020-12-format-assertion.json"));
+          validator.addSchema(require("./refs/json-schema-draft-2020-12-meta-data.json"));
+          validator.addSchema(require("./refs/json-schema-draft-2020-12-unevaluated.json"));
+          validator.addSchema(require("./refs/json-schema-draft-2020-12-validation.json"));
         }
         Object.keys(refs).forEach((id) => validator.addSchema(refs[id], id));
         return validator;
@@ -368,6 +407,16 @@ module.exports = async function valivators(draftUri, draftVersion) {
     7: [
       allValidators["ajv"],
       allValidators["json-schema-library"],
+      allValidators["@exodus/schemasafe"],
+      allValidators["@cfworker/json-schema"],
+    ],
+    "2019-09": [
+      allValidators["ajv"],
+      allValidators["@exodus/schemasafe"],
+      allValidators["@cfworker/json-schema"],
+    ],
+    "2020-12": [
+      allValidators["ajv"],
       allValidators["@exodus/schemasafe"],
       allValidators["@cfworker/json-schema"],
     ],
