@@ -22,6 +22,7 @@ const djv = require("djv")();
 const jsvg = require("json-schema-validator-generator").default;
 const jlib = require("json-schema-library");
 const schemasafe = require("@exodus/schemasafe");
+const zod = require("zod");
 let cfworker;
 
 module.exports = async function valivators(draftUri, draftVersion) {
@@ -305,6 +306,15 @@ module.exports = async function valivators(draftUri, draftVersion) {
       },
       test: function(instance, json, schema) {
         return instance(json);
+      },
+    },
+    {
+      name: "zod",
+      setup: function(schema) {
+        return zod.inferType(schema);
+      },
+      test: function(instance, json, schema) {
+        return instance.parse(json);
       },
     },
     {
