@@ -33,6 +33,7 @@
     "skeemas": "*",
     "themis": "*",
     "tv4": "*",
+    "zod": "*",
     "z-schema": "*"
   },
   "description": "Benchmarks for Node.js JSON-schema validators",
