@@ -4,6 +4,7 @@
   "license": "MIT",
   "dependencies": {
     "@cfworker/json-schema": "*",
+    "@criteria/json-schema-validation": "*",
     "@exodus/schemasafe": "^1.0.0-rc.3",
     "ajv": "*",
     "async": "^3.2.0",

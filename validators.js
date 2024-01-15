@@ -22,6 +22,7 @@ const djv = require("djv")();
 const jsvg = require("json-schema-validator-generator").default;
 const jlib = require("json-schema-library");
 const schemasafe = require("@exodus/schemasafe");
+const Criteria = require("@criteria/json-schema-validation");
 let cfworker;
 
 module.exports = async function valivators(draftUri, draftVersion) {
@@ -315,6 +316,18 @@ module.exports = async function valivators(draftUri, draftVersion) {
         return validator;
       },
       test: (validator, json) => validator.validate(json).valid,
+    },
+    {
+      name: "@criteria/json-schema-validation",
+      setup: function(schema) {
+        return Criteria.jsonValidator(schema, {
+          retrieve: (uri) => refs[uri],
+          defaultMetaSchemaURI: draftUri,
+        });
+      },
+      test: function(instance, json, schema) {
+        return instance(json).valid;
+      },
     },
   ];
 
