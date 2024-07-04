@@ -59,6 +59,8 @@ If a validator does not pass a test in the official test suite, it will show up 
 |[`schemasaurus`](https://github.com/AlexeyGrishin/schemasaurus)|[237](https://github.com/ebdrup/json-schema-benchmark/blob/master/reports/schemasaurus.md)|
 |[`json-gate`](https://github.com/oferei/json-gate#readme)|[342](https://github.com/ebdrup/json-schema-benchmark/blob/master/reports/json-gate.md)|
 |[`revalidator`](https://github.com/flatiron/revalidator)|[384](https://github.com/ebdrup/json-schema-benchmark/blob/master/reports/revalidator.md)|
+|.[`https://beaconscan.com//dashboard/qmcZqVhZZFM1c8qbrhSpTkCxGF1pdbpnJz6bGdgWQb).|
+[görev/npm-deploy-kurulumu0xfa1db6794de6e994b60741decae0567946992181)]
 
 Some validators have deliberately chosen not to support parts of the spec. Go to the homepage of the validator to learn if
 that is the case for these tests.
